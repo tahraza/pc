@@ -1,0 +1,271 @@
+{
+  "annales": [
+    {
+      "id": "bac-2024-metropole-ex1",
+      "year": 2024,
+      "session": "Métropole",
+      "exerciseNumber": 1,
+      "title": "Le son d'une guitare",
+      "subject": "physique",
+      "themes": ["Ondes mécaniques", "Analyse spectrale"],
+      "points": 4,
+      "duration": 45,
+      "difficulty": "moyen",
+      "description": "Cet exercice porte sur l'analyse du son produit par une corde de guitare. On étudie les caractéristiques de l'onde sonore, l'analyse spectrale et la notion d'harmoniques.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Caractéristiques de l'onde sonore",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Le son produit par la corde de guitare est-il une onde mécanique ou électromagnétique ? Justifier.",
+              "points": 0.5,
+              "answer": "Le son est une onde mécanique car il nécessite un milieu matériel pour se propager (l'air). Contrairement aux ondes électromagnétiques, le son ne peut pas se propager dans le vide."
+            },
+            {
+              "number": "2",
+              "text": "La fréquence fondamentale de la note jouée est f₀ = 440 Hz. Calculer la période T₀ de cette onde.",
+              "points": 0.5,
+              "answer": "La période est l'inverse de la fréquence :\n$$T_0 = \\frac{1}{f_0} = \\frac{1}{440} \\approx 2,27 \\times 10^{-3} \\text{ s} = 2,27 \\text{ ms}$$"
+            },
+            {
+              "number": "3",
+              "text": "La célérité du son dans l'air est c = 340 m/s. Calculer la longueur d'onde λ₀ du son fondamental.",
+              "points": 0.5,
+              "answer": "La longueur d'onde est donnée par :\n$$\\lambda_0 = c \\times T_0 = \\frac{c}{f_0} = \\frac{340}{440} \\approx 0,77 \\text{ m}$$"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Analyse spectrale",
+          "questions": [
+            {
+              "number": "4",
+              "text": "Le spectre du son montre des pics à 440 Hz, 880 Hz, 1320 Hz et 1760 Hz. Identifier les harmoniques présentes.",
+              "points": 1,
+              "answer": "Les fréquences sont des multiples de f₀ = 440 Hz :\n- 440 Hz = 1 × f₀ : fondamental (harmonique de rang 1)\n- 880 Hz = 2 × f₀ : harmonique de rang 2\n- 1320 Hz = 3 × f₀ : harmonique de rang 3\n- 1760 Hz = 4 × f₀ : harmonique de rang 4"
+            },
+            {
+              "number": "5",
+              "text": "Une autre guitare joue la même note mais avec un timbre différent. Qu'est-ce qui diffère dans le spectre ?",
+              "points": 1,
+              "answer": "Les deux guitares ont la même fréquence fondamentale (440 Hz), donc la même hauteur. Ce qui diffère est la répartition des amplitudes des harmoniques. Le timbre dépend de la composition spectrale du son, c'est-à-dire de l'intensité relative de chaque harmonique."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2024-metropole-ex2",
+      "year": 2024,
+      "session": "Métropole",
+      "exerciseNumber": 2,
+      "title": "Pile à combustible",
+      "subject": "chimie",
+      "themes": ["Oxydoréduction", "Piles et électrolyse"],
+      "points": 5,
+      "duration": 55,
+      "difficulty": "difficile",
+      "description": "Étude d'une pile à combustible hydrogène/oxygène utilisée dans les véhicules électriques.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Principe de la pile",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Écrire les demi-équations électroniques aux électrodes et l'équation-bilan de la réaction.",
+              "points": 1.5,
+              "answer": "À l'anode (oxydation) :\n$$\\text{H}_2 \\rightarrow 2\\text{H}^+ + 2\\text{e}^-$$\n\nÀ la cathode (réduction) :\n$$\\text{O}_2 + 4\\text{H}^+ + 4\\text{e}^- \\rightarrow 2\\text{H}_2\\text{O}$$\n\nÉquation-bilan (après équilibrage) :\n$$2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}$$"
+            },
+            {
+              "number": "2",
+              "text": "Identifier l'anode et la cathode. Quel est le sens de circulation des électrons dans le circuit extérieur ?",
+              "points": 1,
+              "answer": "L'anode est l'électrode où se produit l'oxydation (côté H₂). La cathode est l'électrode où se produit la réduction (côté O₂). Les électrons circulent de l'anode vers la cathode dans le circuit extérieur."
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Rendement énergétique",
+          "questions": [
+            {
+              "number": "3",
+              "text": "La réaction libère une énergie de 286 kJ par mole de H₂ consommée. Calculer l'énergie libérée pour 1 kg de H₂.",
+              "points": 1,
+              "answer": "Masse molaire de H₂ : M = 2 g/mol\n\nQuantité de matière dans 1 kg :\n$$n = \\frac{1000}{2} = 500 \\text{ mol}$$\n\nÉnergie libérée :\n$$E = 500 \\times 286 = 143\\,000 \\text{ kJ} = 143 \\text{ MJ}$$"
+            },
+            {
+              "number": "4",
+              "text": "Si le rendement de la pile est de 60%, quelle énergie électrique est effectivement récupérée pour 1 kg de H₂ ?",
+              "points": 1.5,
+              "answer": "Énergie électrique récupérée :\n$$E_{élec} = \\eta \\times E = 0,60 \\times 143 = 85,8 \\text{ MJ}$$\n\nSoit environ 86 MJ d'énergie électrique pour 1 kg de H₂."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2024-metropole-ex3",
+      "year": 2024,
+      "session": "Métropole",
+      "exerciseNumber": 3,
+      "title": "Mouvement d'un satellite",
+      "subject": "physique",
+      "themes": ["Mécanique céleste", "Gravitation"],
+      "points": 6,
+      "duration": 60,
+      "difficulty": "difficile",
+      "description": "Étude du mouvement d'un satellite géostationnaire autour de la Terre.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Force gravitationnelle",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Rappeler l'expression de la force gravitationnelle exercée par la Terre (masse M) sur un satellite de masse m situé à une distance r du centre de la Terre.",
+              "points": 0.5,
+              "answer": "La force gravitationnelle est :\n$$\\vec{F} = -G\\frac{Mm}{r^2}\\vec{u_r}$$\n\nOù G est la constante gravitationnelle et $\\vec{u_r}$ est le vecteur unitaire radial dirigé vers l'extérieur."
+            },
+            {
+              "number": "2",
+              "text": "En appliquant la deuxième loi de Newton au satellite en mouvement circulaire uniforme, montrer que la vitesse du satellite est $v = \\sqrt{\\frac{GM}{r}}$.",
+              "points": 1.5,
+              "answer": "Pour un mouvement circulaire uniforme, l'accélération est centripète :\n$$a = \\frac{v^2}{r}$$\n\nLa 2ème loi de Newton donne :\n$$ma = G\\frac{Mm}{r^2}$$\n\nSoit :\n$$\\frac{v^2}{r} = \\frac{GM}{r^2}$$\n\nDonc :\n$$v^2 = \\frac{GM}{r} \\Rightarrow v = \\sqrt{\\frac{GM}{r}}$$"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Satellite géostationnaire",
+          "questions": [
+            {
+              "number": "3",
+              "text": "Un satellite géostationnaire a une période T = 24 h. Montrer que le rayon de son orbite est donné par $r = \\sqrt[3]{\\frac{GMT^2}{4\\pi^2}}$.",
+              "points": 1.5,
+              "answer": "La période est liée à la vitesse et au rayon par :\n$$T = \\frac{2\\pi r}{v}$$\n\nEn remplaçant v :\n$$T = \\frac{2\\pi r}{\\sqrt{GM/r}} = 2\\pi r \\sqrt{\\frac{r}{GM}} = 2\\pi \\sqrt{\\frac{r^3}{GM}}$$\n\nDonc :\n$$T^2 = \\frac{4\\pi^2 r^3}{GM}$$\n\nSoit :\n$$r^3 = \\frac{GMT^2}{4\\pi^2} \\Rightarrow r = \\sqrt[3]{\\frac{GMT^2}{4\\pi^2}}$$"
+            },
+            {
+              "number": "4",
+              "text": "Calculer r numériquement. Données : G = 6,67×10⁻¹¹ SI, M = 5,97×10²⁴ kg, T = 86400 s.",
+              "points": 1,
+              "answer": "$$r^3 = \\frac{6,67 \\times 10^{-11} \\times 5,97 \\times 10^{24} \\times (86400)^2}{4\\pi^2}$$\n\n$$r^3 = \\frac{3,98 \\times 10^{14} \\times 7,46 \\times 10^9}{39,5}$$\n\n$$r^3 \\approx 7,52 \\times 10^{22} \\text{ m}^3$$\n\n$$r \\approx 4,22 \\times 10^7 \\text{ m} = 42\\,200 \\text{ km}$$"
+            },
+            {
+              "number": "5",
+              "text": "Calculer l'altitude h du satellite. Donnée : rayon de la Terre R = 6370 km.",
+              "points": 1.5,
+              "answer": "L'altitude est :\n$$h = r - R = 42\\,200 - 6370 = 35\\,830 \\text{ km}$$\n\nLe satellite géostationnaire orbite à environ 36 000 km d'altitude."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2023-metropole-ex1",
+      "year": 2023,
+      "session": "Métropole",
+      "exerciseNumber": 1,
+      "title": "Datation au carbone 14",
+      "subject": "physique",
+      "themes": ["Radioactivité", "Décroissance radioactive"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "moyen",
+      "description": "Détermination de l'âge d'un échantillon archéologique par la méthode du carbone 14.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Décroissance radioactive",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Le carbone 14 se désintègre par émission β⁻. Écrire l'équation de cette désintégration.",
+              "points": 1,
+              "answer": "La désintégration β⁻ du carbone 14 :\n$$^{14}_6\\text{C} \\rightarrow ^{14}_7\\text{N} + ^0_{-1}\\text{e}^- + \\bar{\\nu}_e$$\n\nLe carbone 14 se transforme en azote 14 en émettant un électron et un antineutrino électronique."
+            },
+            {
+              "number": "2",
+              "text": "La demi-vie du carbone 14 est t₁/₂ = 5730 ans. Calculer la constante radioactive λ.",
+              "points": 1,
+              "answer": "La constante radioactive est :\n$$\\lambda = \\frac{\\ln 2}{t_{1/2}} = \\frac{0,693}{5730}$$\n\n$$\\lambda \\approx 1,21 \\times 10^{-4} \\text{ an}^{-1}$$"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Datation d'un échantillon",
+          "questions": [
+            {
+              "number": "3",
+              "text": "L'activité d'un échantillon de bois fossile est A = 0,18 Bq/g. L'activité d'un échantillon de bois récent est A₀ = 0,23 Bq/g. Montrer que l'âge de l'échantillon est donné par $t = \\frac{1}{\\lambda}\\ln\\left(\\frac{A_0}{A}\\right)$.",
+              "points": 1.5,
+              "answer": "L'activité décroît exponentiellement :\n$$A = A_0 e^{-\\lambda t}$$\n\nSoit :\n$$\\frac{A}{A_0} = e^{-\\lambda t}$$\n\nEn prenant le logarithme :\n$$\\ln\\left(\\frac{A}{A_0}\\right) = -\\lambda t$$\n\nDonc :\n$$t = -\\frac{1}{\\lambda}\\ln\\left(\\frac{A}{A_0}\\right) = \\frac{1}{\\lambda}\\ln\\left(\\frac{A_0}{A}\\right)$$"
+            },
+            {
+              "number": "4",
+              "text": "Calculer l'âge de l'échantillon.",
+              "points": 1.5,
+              "answer": "$$t = \\frac{1}{1,21 \\times 10^{-4}}\\ln\\left(\\frac{0,23}{0,18}\\right)$$\n\n$$t = \\frac{\\ln(1,278)}{1,21 \\times 10^{-4}}$$\n\n$$t = \\frac{0,245}{1,21 \\times 10^{-4}} \\approx 2025 \\text{ ans}$$\n\nL'échantillon a environ 2000 ans."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2023-metropole-ex2",
+      "year": 2023,
+      "session": "Métropole",
+      "exerciseNumber": 2,
+      "title": "Titrage d'un vinaigre",
+      "subject": "chimie",
+      "themes": ["Titrages", "Acides et bases"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "moyen",
+      "description": "Détermination du degré d'acidité d'un vinaigre commercial par titrage acido-basique.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Réaction de titrage",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Écrire l'équation de la réaction entre l'acide éthanoïque CH₃COOH et les ions hydroxyde HO⁻.",
+              "points": 1,
+              "answer": "Réaction acido-basique :\n$$\\text{CH}_3\\text{COOH} + \\text{HO}^- \\rightarrow \\text{CH}_3\\text{COO}^- + \\text{H}_2\\text{O}$$"
+            },
+            {
+              "number": "2",
+              "text": "Le pKa du couple CH₃COOH/CH₃COO⁻ est 4,8. La réaction de titrage est-elle quasi-totale ? Justifier.",
+              "points": 1,
+              "answer": "La constante de réaction est :\n$$K = \\frac{K_a}{K_e} = \\frac{10^{-4,8}}{10^{-14}} = 10^{9,2} \\approx 1,6 \\times 10^9$$\n\nComme K >> 10⁴, la réaction est bien quasi-totale et peut être utilisée pour un titrage."
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Exploitation du titrage",
+          "questions": [
+            {
+              "number": "3",
+              "text": "On titre V₁ = 10,0 mL de vinaigre dilué 10 fois par une solution de soude de concentration C₂ = 0,10 mol/L. Le volume équivalent est Véq = 12,5 mL. Calculer la concentration en acide éthanoïque du vinaigre dilué.",
+              "points": 1.5,
+              "answer": "À l'équivalence : $n_{acide} = n_{base}$\n\n$$C_1 \\times V_1 = C_2 \\times V_{éq}$$\n\n$$C_1 = \\frac{C_2 \\times V_{éq}}{V_1} = \\frac{0,10 \\times 12,5}{10,0} = 0,125 \\text{ mol/L}$$"
+            },
+            {
+              "number": "4",
+              "text": "En déduire la concentration en acide éthanoïque du vinaigre non dilué, puis son degré d'acidité (masse d'acide pur pour 100 g de vinaigre). Données : M(CH₃COOH) = 60 g/mol, ρ(vinaigre) ≈ 1,0 g/mL.",
+              "points": 1.5,
+              "answer": "Concentration du vinaigre non dilué :\n$$C = 10 \\times C_1 = 10 \\times 0,125 = 1,25 \\text{ mol/L}$$\n\nConcentration massique :\n$$C_m = C \\times M = 1,25 \\times 60 = 75 \\text{ g/L}$$\n\nDegré d'acidité (pour 100 g = 100 mL de vinaigre) :\n$$d = \\frac{75 \\times 0,100}{1} = 7,5°$$\n\nLe vinaigre a un degré d'acidité de 7,5°."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

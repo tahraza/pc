@@ -1,0 +1,402 @@
+{
+  "guidedExercises": [
+    {
+      "id": "guided-ondes-1",
+      "title": "Calcul de la célérité d'une onde",
+      "subject": "physique",
+      "chapter": "Ondes mécaniques",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "Une onde se propage le long d'une corde. On observe que la perturbation met 0,4 s pour parcourir 2 m.",
+      "question": "Calculer la célérité de l'onde et déterminer la longueur d'onde si la fréquence vaut 5 Hz.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier les données",
+          "instruction": "Repère les données de l'énoncé et les grandeurs demandées.",
+          "hint": "Cherche les valeurs numériques : distance parcourue, durée, fréquence.",
+          "solution": "Données :\n- Distance parcourue : d = 2 m\n- Durée : Δt = 0,4 s\n- Fréquence : f = 5 Hz\n\nGrandeurs cherchées :\n- Célérité c\n- Longueur d'onde λ"
+        },
+        {
+          "id": 2,
+          "title": "Rappeler la formule de la célérité",
+          "instruction": "Écris la relation entre la célérité, la distance et le temps.",
+          "hint": "La célérité est le rapport entre la distance parcourue et la durée.",
+          "solution": "La célérité d'une onde est donnée par :\n$$c = \\frac{d}{\\Delta t}$$"
+        },
+        {
+          "id": 3,
+          "title": "Calculer la célérité",
+          "instruction": "Applique la formule avec les valeurs numériques.",
+          "hint": "Remplace d par 2 m et Δt par 0,4 s.",
+          "solution": "$$c = \\frac{2}{0,4} = 5 \\text{ m/s}$$\n\nLa célérité de l'onde est c = 5 m/s."
+        },
+        {
+          "id": 4,
+          "title": "Rappeler la relation entre célérité, fréquence et longueur d'onde",
+          "instruction": "Écris la relation fondamentale des ondes.",
+          "hint": "Cette relation lie c, f et λ.",
+          "solution": "La relation fondamentale des ondes est :\n$$c = \\lambda \\times f$$\n\nSoit : $\\lambda = \\frac{c}{f}$"
+        },
+        {
+          "id": 5,
+          "title": "Calculer la longueur d'onde",
+          "instruction": "Applique la formule pour trouver λ.",
+          "hint": "Divise la célérité par la fréquence.",
+          "solution": "$$\\lambda = \\frac{c}{f} = \\frac{5}{5} = 1 \\text{ m}$$\n\nLa longueur d'onde est λ = 1 m."
+        }
+      ],
+      "finalAnswer": "La célérité de l'onde est **c = 5 m/s** et la longueur d'onde est **λ = 1 m**."
+    },
+    {
+      "id": "guided-energie-1",
+      "title": "Conservation de l'énergie mécanique",
+      "subject": "physique",
+      "chapter": "Énergie mécanique",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Une bille de masse m = 100 g est lâchée sans vitesse initiale d'une hauteur h = 2 m. On néglige les frottements.",
+      "question": "Calculer la vitesse de la bille au moment où elle touche le sol.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier le système et les données",
+          "instruction": "Identifie le système étudié et les données numériques.",
+          "hint": "Convertis la masse en kg.",
+          "solution": "Système : la bille\nDonnées :\n- Masse : m = 100 g = 0,1 kg\n- Hauteur initiale : h = 2 m\n- Vitesse initiale : v₀ = 0 m/s\n- g = 9,8 m/s² (ou 10 m/s² pour simplifier)"
+        },
+        {
+          "id": 2,
+          "title": "Choisir l'origine des énergies potentielles",
+          "instruction": "Définis le niveau de référence pour l'énergie potentielle de pesanteur.",
+          "hint": "On choisit généralement le sol comme référence.",
+          "solution": "On choisit le sol comme origine des altitudes (z = 0).\n\nAinsi, au sol : Ep = 0\nEt à la hauteur h : Ep = mgh"
+        },
+        {
+          "id": 3,
+          "title": "Exprimer l'énergie mécanique initiale",
+          "instruction": "Calcule l'énergie mécanique au départ (position haute).",
+          "hint": "Em = Ec + Ep. La bille est lâchée sans vitesse initiale.",
+          "solution": "Position initiale (en haut) :\n- Ec₁ = ½mv₀² = 0 (car v₀ = 0)\n- Ep₁ = mgh = 0,1 × 10 × 2 = 2 J\n\n$$E_{m1} = E_{c1} + E_{p1} = 0 + 2 = 2 \\text{ J}$$"
+        },
+        {
+          "id": 4,
+          "title": "Appliquer la conservation de l'énergie mécanique",
+          "instruction": "Écris que l'énergie mécanique se conserve (pas de frottements).",
+          "hint": "Sans frottements, Em reste constante.",
+          "solution": "En l'absence de frottements, l'énergie mécanique se conserve :\n$$E_{m1} = E_{m2}$$\n\nSoit : $E_{c1} + E_{p1} = E_{c2} + E_{p2}$"
+        },
+        {
+          "id": 5,
+          "title": "Exprimer l'énergie mécanique finale",
+          "instruction": "Exprime l'énergie mécanique au sol et isole la vitesse.",
+          "hint": "Au sol, l'altitude est nulle donc Ep = 0.",
+          "solution": "Position finale (au sol) :\n- Ep₂ = 0 (car z = 0)\n- Ec₂ = ½mv²\n\nDonc : $E_{m2} = \\frac{1}{2}mv^2$\n\nConservation : $2 = \\frac{1}{2} \\times 0,1 \\times v^2$"
+        },
+        {
+          "id": 6,
+          "title": "Calculer la vitesse finale",
+          "instruction": "Résous l'équation pour trouver v.",
+          "hint": "Isole v² puis prends la racine carrée.",
+          "solution": "$$v^2 = \\frac{2 \\times 2}{0,1} = 40$$\n\n$$v = \\sqrt{40} \\approx 6,3 \\text{ m/s}$$\n\nOu avec la formule directe : $v = \\sqrt{2gh} = \\sqrt{2 \\times 10 \\times 2} = \\sqrt{40} \\approx 6,3$ m/s"
+        }
+      ],
+      "finalAnswer": "La vitesse de la bille au moment de toucher le sol est **v ≈ 6,3 m/s**."
+    },
+    {
+      "id": "guided-ph-1",
+      "title": "Calcul du pH d'une solution",
+      "subject": "chimie",
+      "chapter": "Acides et bases",
+      "difficulty": "facile",
+      "estimatedTime": 10,
+      "description": "On dispose d'une solution d'acide chlorhydrique (HCl) de concentration C = 0,01 mol/L.",
+      "question": "Calculer le pH de cette solution, sachant que HCl est un acide fort.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier la nature de l'acide",
+          "instruction": "Rappelle ce qu'est un acide fort et écris l'équation de dissolution.",
+          "hint": "Un acide fort est totalement dissocié dans l'eau.",
+          "solution": "HCl est un acide fort : il se dissocie totalement dans l'eau.\n\nÉquation de dissolution :\n$$\\text{HCl} \\rightarrow \\text{H}^+ + \\text{Cl}^-$$"
+        },
+        {
+          "id": 2,
+          "title": "Déterminer la concentration en ions H⁺",
+          "instruction": "Déduis la concentration en ions H⁺ à partir de la concentration de l'acide.",
+          "hint": "Pour un acide fort totalement dissocié, [H⁺] = C.",
+          "solution": "Puisque HCl est totalement dissocié :\n$$[\\text{H}^+] = C = 0,01 \\text{ mol/L} = 10^{-2} \\text{ mol/L}$$"
+        },
+        {
+          "id": 3,
+          "title": "Rappeler la définition du pH",
+          "instruction": "Écris la formule du pH.",
+          "hint": "Le pH est défini à partir du logarithme décimal.",
+          "solution": "Le pH est défini par :\n$$\\text{pH} = -\\log([\\text{H}^+])$$"
+        },
+        {
+          "id": 4,
+          "title": "Calculer le pH",
+          "instruction": "Applique la formule avec la concentration trouvée.",
+          "hint": "log(10⁻²) = -2",
+          "solution": "$$\\text{pH} = -\\log(10^{-2}) = -(-2) = 2$$\n\nLe pH de la solution est 2."
+        }
+      ],
+      "finalAnswer": "Le pH de la solution d'acide chlorhydrique est **pH = 2**."
+    },
+    {
+      "id": "guided-titrage-1",
+      "title": "Titrage acido-basique",
+      "subject": "chimie",
+      "chapter": "Titrages",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "On titre V₁ = 20 mL d'une solution d'acide éthanoïque (CH₃COOH) par une solution de soude (NaOH) de concentration C₂ = 0,1 mol/L. Le volume équivalent est Véq = 15 mL.",
+      "question": "Déterminer la concentration C₁ de l'acide éthanoïque.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Écrire l'équation de la réaction de titrage",
+          "instruction": "Écris l'équation-bilan de la réaction entre l'acide éthanoïque et la soude.",
+          "hint": "C'est une réaction acido-basique entre un acide faible et une base forte.",
+          "solution": "$$\\text{CH}_3\\text{COOH} + \\text{HO}^- \\rightarrow \\text{CH}_3\\text{COO}^- + \\text{H}_2\\text{O}$$\n\nLes coefficients stœchiométriques sont tous égaux à 1."
+        },
+        {
+          "id": 2,
+          "title": "Identifier les données",
+          "instruction": "Liste les grandeurs connues et la grandeur cherchée.",
+          "hint": "N'oublie pas de convertir les volumes en litres si nécessaire.",
+          "solution": "Données :\n- V₁ = 20 mL = 0,020 L (volume d'acide)\n- C₂ = 0,1 mol/L (concentration de soude)\n- Véq = 15 mL = 0,015 L (volume équivalent)\n\nGrandeur cherchée : C₁ (concentration de l'acide)"
+        },
+        {
+          "id": 3,
+          "title": "Définir l'équivalence",
+          "instruction": "Rappelle ce qui caractérise l'équivalence d'un titrage.",
+          "hint": "À l'équivalence, les réactifs ont été introduits en proportions stœchiométriques.",
+          "solution": "À l'équivalence, les réactifs sont introduits dans les proportions stœchiométriques.\n\nPour cette réaction (coefficients = 1) :\n$$n_{\\text{acide}} = n_{\\text{base}}$$"
+        },
+        {
+          "id": 4,
+          "title": "Exprimer les quantités de matière",
+          "instruction": "Exprime les quantités de matière d'acide et de base en fonction des concentrations et volumes.",
+          "hint": "n = C × V",
+          "solution": "Quantité d'acide : $n_1 = C_1 \\times V_1$\n\nQuantité de base à l'équivalence : $n_2 = C_2 \\times V_{éq}$"
+        },
+        {
+          "id": 5,
+          "title": "Appliquer la relation à l'équivalence",
+          "instruction": "Écris l'égalité des quantités de matière et isole C₁.",
+          "hint": "C₁ × V₁ = C₂ × Véq",
+          "solution": "À l'équivalence :\n$$C_1 \\times V_1 = C_2 \\times V_{éq}$$\n\nDonc :\n$$C_1 = \\frac{C_2 \\times V_{éq}}{V_1}$$"
+        },
+        {
+          "id": 6,
+          "title": "Effectuer le calcul numérique",
+          "instruction": "Remplace par les valeurs numériques et calcule C₁.",
+          "hint": "Vérifie les unités : les volumes peuvent rester en mL.",
+          "solution": "$$C_1 = \\frac{0,1 \\times 15}{20} = \\frac{1,5}{20} = 0,075 \\text{ mol/L}$$\n\nOu en notation scientifique : C₁ = 7,5 × 10⁻² mol/L"
+        }
+      ],
+      "finalAnswer": "La concentration de l'acide éthanoïque est **C₁ = 0,075 mol/L** (soit 7,5 × 10⁻² mol/L)."
+    },
+    {
+      "id": "guided-circuit-rc-1",
+      "title": "Charge d'un condensateur",
+      "subject": "physique",
+      "chapter": "Circuit RC",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Un condensateur de capacité C = 100 μF, initialement déchargé, est relié à un générateur de tension E = 12 V à travers une résistance R = 1 kΩ.",
+      "question": "Déterminer la constante de temps τ du circuit et la tension aux bornes du condensateur après t = 2τ.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Convertir les données en unités SI",
+          "instruction": "Convertis toutes les grandeurs dans les unités du système international.",
+          "hint": "1 μF = 10⁻⁶ F et 1 kΩ = 10³ Ω",
+          "solution": "Données en unités SI :\n- C = 100 μF = 100 × 10⁻⁶ F = 10⁻⁴ F\n- R = 1 kΩ = 1000 Ω = 10³ Ω\n- E = 12 V"
+        },
+        {
+          "id": 2,
+          "title": "Rappeler la formule de la constante de temps",
+          "instruction": "Écris l'expression de la constante de temps τ d'un circuit RC.",
+          "hint": "τ est le produit de R et C.",
+          "solution": "La constante de temps d'un circuit RC est :\n$$\\tau = R \\times C$$"
+        },
+        {
+          "id": 3,
+          "title": "Calculer la constante de temps",
+          "instruction": "Effectue le calcul numérique.",
+          "hint": "Multiplie R et C en unités SI.",
+          "solution": "$$\\tau = 10^3 \\times 10^{-4} = 10^{-1} = 0,1 \\text{ s}$$\n\nLa constante de temps est τ = 0,1 s = 100 ms."
+        },
+        {
+          "id": 4,
+          "title": "Rappeler l'expression de la tension aux bornes du condensateur",
+          "instruction": "Écris l'équation de la tension uc(t) lors de la charge.",
+          "hint": "C'est une croissance exponentielle vers E.",
+          "solution": "Lors de la charge, la tension aux bornes du condensateur est :\n$$u_C(t) = E \\left(1 - e^{-t/\\tau}\\right)$$"
+        },
+        {
+          "id": 5,
+          "title": "Calculer la tension à t = 2τ",
+          "instruction": "Applique la formule pour t = 2τ.",
+          "hint": "e⁻² ≈ 0,135",
+          "solution": "Pour t = 2τ :\n$$u_C(2\\tau) = E \\left(1 - e^{-2}\\right)$$\n\nAvec e⁻² ≈ 0,135 :\n$$u_C(2\\tau) = 12 \\times (1 - 0,135) = 12 \\times 0,865$$\n$$u_C(2\\tau) \\approx 10,4 \\text{ V}$$"
+        }
+      ],
+      "finalAnswer": "La constante de temps est **τ = 0,1 s** et la tension aux bornes du condensateur après 2τ est **uc ≈ 10,4 V** (soit environ 86,5% de E)."
+    },
+    {
+      "id": "guided-diffraction-1",
+      "title": "Diffraction par une fente",
+      "subject": "physique",
+      "chapter": "Diffraction",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "Un faisceau laser de longueur d'onde λ = 633 nm éclaire une fente de largeur a = 0,1 mm. Un écran est placé à D = 2 m de la fente.",
+      "question": "Calculer la largeur de la tache centrale de diffraction sur l'écran.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Convertir les données en unités SI",
+          "instruction": "Convertis toutes les grandeurs en mètres.",
+          "hint": "1 nm = 10⁻⁹ m et 1 mm = 10⁻³ m",
+          "solution": "Données en unités SI :\n- λ = 633 nm = 633 × 10⁻⁹ m = 6,33 × 10⁻⁷ m\n- a = 0,1 mm = 0,1 × 10⁻³ m = 10⁻⁴ m\n- D = 2 m"
+        },
+        {
+          "id": 2,
+          "title": "Rappeler la formule de l'angle de diffraction",
+          "instruction": "Écris la relation donnant le demi-angle θ de la tache centrale.",
+          "hint": "Le premier minimum d'intensité est obtenu pour sin(θ) = λ/a.",
+          "solution": "Pour le premier minimum de diffraction :\n$$\\sin(\\theta) = \\frac{\\lambda}{a}$$\n\nPour de petits angles (approximation) : $\\theta \\approx \\frac{\\lambda}{a}$"
+        },
+        {
+          "id": 3,
+          "title": "Exprimer la demi-largeur de la tache centrale",
+          "instruction": "Relie l'angle θ à la demi-largeur L/2 sur l'écran.",
+          "hint": "Utilise tan(θ) ≈ θ pour les petits angles.",
+          "solution": "Pour les petits angles : $\\tan(\\theta) \\approx \\theta$\n\nDonc : $\\frac{L/2}{D} = \\theta = \\frac{\\lambda}{a}$\n\nSoit : $\\frac{L}{2} = \\frac{\\lambda \\times D}{a}$"
+        },
+        {
+          "id": 4,
+          "title": "Calculer la largeur totale de la tache centrale",
+          "instruction": "Calcule L, la largeur totale de la tache centrale.",
+          "hint": "L = 2 × (L/2)",
+          "solution": "Largeur totale :\n$$L = 2 \\times \\frac{\\lambda \\times D}{a} = \\frac{2\\lambda D}{a}$$\n\n$$L = \\frac{2 \\times 6,33 \\times 10^{-7} \\times 2}{10^{-4}}$$\n\n$$L = \\frac{2,532 \\times 10^{-6}}{10^{-4}} = 2,53 \\times 10^{-2} \\text{ m}$$"
+        },
+        {
+          "id": 5,
+          "title": "Exprimer le résultat",
+          "instruction": "Convertis le résultat en centimètres.",
+          "hint": "1 cm = 10⁻² m",
+          "solution": "$$L = 2,53 \\times 10^{-2} \\text{ m} = 2,53 \\text{ cm}$$\n\nLa tache centrale mesure environ 2,5 cm de large."
+        }
+      ],
+      "finalAnswer": "La largeur de la tache centrale de diffraction est **L ≈ 2,5 cm**."
+    },
+    {
+      "id": "guided-radioactivite-1",
+      "title": "Décroissance radioactive",
+      "subject": "physique",
+      "chapter": "Radioactivité",
+      "difficulty": "difficile",
+      "estimatedTime": 20,
+      "description": "Un échantillon contient initialement N₀ = 10⁸ noyaux radioactifs de demi-vie t₁/₂ = 2 heures.",
+      "question": "Calculer le nombre de noyaux restants après 6 heures et l'activité initiale de l'échantillon.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier les données",
+          "instruction": "Liste les données et convertis la demi-vie en secondes.",
+          "hint": "1 heure = 3600 secondes",
+          "solution": "Données :\n- N₀ = 10⁸ noyaux\n- t₁/₂ = 2 h = 2 × 3600 = 7200 s\n- t = 6 h = 6 × 3600 = 21600 s"
+        },
+        {
+          "id": 2,
+          "title": "Déterminer le nombre de demi-vies écoulées",
+          "instruction": "Calcule combien de demi-vies se sont écoulées en 6 heures.",
+          "hint": "Divise le temps total par la demi-vie.",
+          "solution": "Nombre de demi-vies :\n$$n = \\frac{t}{t_{1/2}} = \\frac{6}{2} = 3$$\n\n3 demi-vies se sont écoulées."
+        },
+        {
+          "id": 3,
+          "title": "Appliquer la loi de décroissance",
+          "instruction": "Utilise la relation entre le nombre de noyaux et le nombre de demi-vies.",
+          "hint": "Après n demi-vies, il reste N₀/2ⁿ noyaux.",
+          "solution": "Après n demi-vies, le nombre de noyaux restants est :\n$$N = \\frac{N_0}{2^n}$$\n\nOu avec la formule exponentielle : $N = N_0 \\times e^{-\\lambda t}$"
+        },
+        {
+          "id": 4,
+          "title": "Calculer le nombre de noyaux restants",
+          "instruction": "Applique la formule pour n = 3 demi-vies.",
+          "hint": "2³ = 8",
+          "solution": "$$N = \\frac{10^8}{2^3} = \\frac{10^8}{8} = 1,25 \\times 10^7 \\text{ noyaux}$$\n\nIl reste 12,5 millions de noyaux après 6 heures."
+        },
+        {
+          "id": 5,
+          "title": "Calculer la constante radioactive",
+          "instruction": "Détermine λ à partir de la demi-vie.",
+          "hint": "λ = ln(2)/t₁/₂",
+          "solution": "La constante radioactive est :\n$$\\lambda = \\frac{\\ln(2)}{t_{1/2}} = \\frac{0,693}{7200} \\approx 9,6 \\times 10^{-5} \\text{ s}^{-1}$$"
+        },
+        {
+          "id": 6,
+          "title": "Calculer l'activité initiale",
+          "instruction": "Utilise la définition de l'activité pour calculer A₀.",
+          "hint": "A = λ × N",
+          "solution": "L'activité est A = λN.\n\nActivité initiale :\n$$A_0 = \\lambda \\times N_0 = 9,6 \\times 10^{-5} \\times 10^8$$\n$$A_0 = 9,6 \\times 10^3 \\text{ Bq} = 9600 \\text{ Bq}$$\n\nSoit environ 9,6 kBq."
+        }
+      ],
+      "finalAnswer": "Après 6 heures, il reste **N = 1,25 × 10⁷ noyaux** et l'activité initiale est **A₀ ≈ 9,6 kBq**."
+    },
+    {
+      "id": "guided-synthese-1",
+      "title": "Rendement d'une synthèse",
+      "subject": "chimie",
+      "chapter": "Synthèse organique",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "On réalise la synthèse de l'aspirine à partir de 2,0 g d'acide salicylique. On obtient 1,8 g d'aspirine.",
+      "question": "Calculer le rendement de cette synthèse. Masses molaires : acide salicylique : 138 g/mol ; aspirine : 180 g/mol.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier les données",
+          "instruction": "Liste les masses et masses molaires données.",
+          "hint": "Distingue le réactif et le produit.",
+          "solution": "Données :\n- Masse d'acide salicylique : m₁ = 2,0 g\n- Masse d'aspirine obtenue : m₂ = 1,8 g\n- M(acide salicylique) = 138 g/mol\n- M(aspirine) = 180 g/mol"
+        },
+        {
+          "id": 2,
+          "title": "Calculer la quantité de matière initiale",
+          "instruction": "Calcule la quantité de matière d'acide salicylique utilisée.",
+          "hint": "n = m/M",
+          "solution": "Quantité d'acide salicylique :\n$$n_1 = \\frac{m_1}{M_1} = \\frac{2,0}{138} = 0,0145 \\text{ mol}$$\n\nSoit environ 1,45 × 10⁻² mol."
+        },
+        {
+          "id": 3,
+          "title": "Déterminer la quantité théorique d'aspirine",
+          "instruction": "En supposant un rendement de 100%, quelle quantité d'aspirine obtiendrait-on ?",
+          "hint": "La réaction est de stœchiométrie 1:1.",
+          "solution": "La réaction entre l'acide salicylique et l'anhydride éthanoïque est de stœchiométrie 1:1.\n\nQuantité théorique d'aspirine :\n$$n_{th} = n_1 = 0,0145 \\text{ mol}$$"
+        },
+        {
+          "id": 4,
+          "title": "Calculer la masse théorique d'aspirine",
+          "instruction": "Convertis la quantité théorique en masse.",
+          "hint": "m = n × M",
+          "solution": "Masse théorique d'aspirine :\n$$m_{th} = n_{th} \\times M_{asp} = 0,0145 \\times 180 = 2,61 \\text{ g}$$"
+        },
+        {
+          "id": 5,
+          "title": "Calculer le rendement",
+          "instruction": "Calcule le rapport entre la masse obtenue et la masse théorique.",
+          "hint": "Rendement = (masse obtenue / masse théorique) × 100",
+          "solution": "Rendement :\n$$\\eta = \\frac{m_{obtenue}}{m_{théorique}} \\times 100 = \\frac{1,8}{2,61} \\times 100$$\n\n$$\\eta \\approx 69 \\%$$"
+        }
+      ],
+      "finalAnswer": "Le rendement de la synthèse de l'aspirine est **η ≈ 69%**."
+    }
+  ]
+}
