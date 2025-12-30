@@ -1,0 +1,152 @@
+---
+id: titrages
+title: "Titrages acido-basiques et d'oxydoréduction"
+track: chimie
+chapter: reactions
+level: 3
+estimatedTime: 50
+prerequisites:
+  - acides-bases
+  - oxydoreduction
+tags:
+  - titrage
+  - équivalence
+  - indicateur coloré
+  - conductimétrie
+objectives:
+  - Comprendre le principe d'un titrage
+  - Déterminer l'équivalence par différentes méthodes
+  - Exploiter un titrage pour déterminer une concentration
+  - Choisir un indicateur coloré adapté
+---
+
+# Titrages
+
+## Introduction
+
+Un **titrage** est une technique de dosage qui permet de déterminer la concentration d'une espèce chimique en solution en la faisant réagir avec une solution de concentration connue.
+
+## Principe du titrage
+
+### Vocabulaire
+
+<Definition title="Réactif titrant et titré">
+- **Réactif titré** : espèce dont on cherche la concentration (dans le bécher)
+- **Réactif titrant** : espèce de concentration connue (dans la burette)
+</Definition>
+
+### Réaction de titrage
+
+La réaction de titrage doit être :
+- **Rapide**
+- **Totale** (ou quasi-totale)
+- **Unique** (une seule réaction)
+
+### Équivalence
+
+<Definition title="Équivalence">
+L'équivalence est atteinte lorsque les réactifs ont été introduits dans les proportions stœchiométriques. À l'équivalence, il y a changement de réactif limitant.
+</Definition>
+
+Pour une réaction : $a \cdot A + b \cdot B \rightarrow$ produits
+
+À l'équivalence :
+$$\frac{n_A}{a} = \frac{n_B}{b}$$
+
+<Formula title="Relation à l'équivalence">
+$$\frac{C_A \cdot V_A}{a} = \frac{C_B \cdot V_{BE}}{b}$$
+Où $V_{BE}$ est le volume de titrant versé à l'équivalence.
+</Formula>
+
+## Titrages acido-basiques
+
+### Exemple : titrage d'un acide par une base
+
+Réaction : $HA + HO^- \rightarrow A^- + H_2O$
+
+À l'équivalence : $n(HA) = n(HO^-)$
+$$C_A \cdot V_A = C_B \cdot V_{BE}$$
+
+### Évolution du pH
+
+Le pH évolue au cours du titrage :
+- Avant l'équivalence : excès de réactif titré
+- À l'équivalence : changement brutal de pH
+- Après l'équivalence : excès de réactif titrant
+
+<Method title="Repérer l'équivalence sur une courbe de pH">
+L'équivalence correspond au point d'inflexion de la courbe pH = f(V).
+C'est le point où la dérivée $\frac{dpH}{dV}$ est maximale.
+</Method>
+
+### Indicateurs colorés
+
+<Definition title="Zone de virage">
+Un indicateur coloré change de couleur dans une zone de pH appelée zone de virage. L'indicateur doit être choisi pour que sa zone de virage contienne le pH à l'équivalence.
+</Definition>
+
+| Indicateur | Zone de virage | Couleur acide | Couleur basique |
+|------------|----------------|---------------|-----------------|
+| Hélianthine | 3.1 - 4.4 | Rouge | Jaune |
+| BBT | 6.0 - 7.6 | Jaune | Bleu |
+| Phénolphtaléine | 8.2 - 10.0 | Incolore | Rose |
+
+## Titrages conductimétrique
+
+### Principe
+
+La conductivité $\sigma$ de la solution dépend des ions présents :
+$$\sigma = \sum_i \lambda_i \cdot [X_i]$$
+
+où $\lambda_i$ est la conductivité molaire ionique de l'ion $X_i$.
+
+### Allure de la courbe
+
+La courbe $\sigma = f(V)$ présente un changement de pente à l'équivalence.
+
+<Trap title="Conductivités molaires ioniques">
+$H^+$ et $HO^-$ ont des conductivités molaires ioniques beaucoup plus élevées que les autres ions. Leur disparition/apparition provoque des variations importantes de conductivité.
+</Trap>
+
+## Titrages d'oxydoréduction
+
+### Exemple : titrage du fer(II) par le permanganate
+
+$$5 Fe^{2+} + MnO_4^- + 8H^+ \rightarrow 5 Fe^{3+} + Mn^{2+} + 4H_2O$$
+
+À l'équivalence : $\frac{n(Fe^{2+})}{5} = \frac{n(MnO_4^-)}{1}$
+
+### Repérage de l'équivalence
+
+- **Colorimétrique** : le permanganate est violet, les autres espèces sont peu colorées. L'équivalence est repérée par la persistance de la coloration violette.
+- **Potentiométrique** : mesure du potentiel E
+
+## Exercice de compréhension
+
+<Exercise id="comp-titr-1">
+On titre 20.0 mL d'une solution d'acide chlorhydrique par une solution d'hydroxyde de sodium de concentration $C_B = 0.10$ mol/L. L'équivalence est atteinte pour $V_{BE} = 15.0$ mL.
+
+1. Écrire l'équation de la réaction de titrage.
+2. Calculer la concentration de l'acide chlorhydrique.
+3. Quel indicateur coloré choisir sachant que le pH à l'équivalence vaut 7 ?
+
+<Solution>
+1. Équation de la réaction :
+$$H_3O^+ + HO^- \rightarrow 2H_2O$$
+
+2. À l'équivalence : $n(H_3O^+) = n(HO^-)$
+$$C_A \times V_A = C_B \times V_{BE}$$
+$$C_A = \frac{C_B \times V_{BE}}{V_A} = \frac{0.10 \times 15.0}{20.0} = 0.075 \text{ mol/L}$$
+
+3. Le pH à l'équivalence est 7. Le **BBT** (zone de virage 6.0 - 7.6) convient car sa zone de virage contient le pH 7.
+</Solution>
+</Exercise>
+
+## Points clés à retenir
+
+<Summary>
+- À l'équivalence : réactifs en proportions stœchiométriques
+- Relation : $\frac{C_A V_A}{a} = \frac{C_B V_{BE}}{b}$
+- Équivalence repérée par : changement de couleur, saut de pH, changement de pente en conductimétrie
+- Choisir un indicateur dont la zone de virage contient le pH à l'équivalence
+</Summary>

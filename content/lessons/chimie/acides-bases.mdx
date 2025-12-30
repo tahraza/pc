@@ -1,0 +1,181 @@
+---
+id: "acides-bases"
+title: "Transformations acide-base"
+track: "chimie"
+level: 2
+prerequisites: []
+tags: ["acide", "base", "pH", "pKa", "équilibre"]
+estimatedTime: 50
+chapter: "acide-base"
+order: 1
+---
+
+# Transformations acide-base
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Identifier les couples acide/base
+- Calculer le pH d'une solution
+- Utiliser le pKa pour prévoir les réactions
+- Exploiter les diagrammes de prédominance
+
+## Définitions
+
+:::definition
+**Acide et base selon Brønsted**
+
+- Un **acide** est une espèce capable de **céder** un proton H⁺
+- Une **base** est une espèce capable de **capter** un proton H⁺
+
+Tout acide AH a une base conjuguée A⁻ :
+$$\text{AH} \rightleftharpoons \text{A}^- + \text{H}^+$$
+
+Le couple acide/base se note AH/A⁻.
+:::
+
+:::definition
+**Réaction acide-base**
+
+Une réaction acide-base est un transfert de proton de l'acide d'un couple vers la base d'un autre couple.
+
+$$\text{AH}_1 + \text{A}_2^- \rightleftharpoons \text{A}_1^- + \text{AH}_2$$
+:::
+
+## Le pH
+
+:::definition
+**Définition du pH**
+
+Le pH mesure l'acidité d'une solution aqueuse :
+
+$$\text{pH} = -\log[\text{H}_3\text{O}^+]$$
+
+où $[\text{H}_3\text{O}^+]$ est en mol/L.
+
+Inversement : $[\text{H}_3\text{O}^+] = 10^{-\text{pH}}$
+:::
+
+:::property[Échelle de pH]
+À 25°C :
+- pH < 7 : solution acide
+- pH = 7 : solution neutre
+- pH > 7 : solution basique
+
+Le produit ionique de l'eau : $K_e = [\text{H}_3\text{O}^+][\text{HO}^-] = 10^{-14}$
+:::
+
+## Constante d'acidité Ka
+
+:::definition
+**Constante d'acidité**
+
+Pour un couple AH/A⁻, la constante d'acidité Ka caractérise la force de l'acide :
+
+$$K_a = \frac{[\text{A}^-][\text{H}_3\text{O}^+]}{[\text{AH}]}$$
+
+$$\text{p}K_a = -\log K_a$$
+:::
+
+:::property[Force des acides]
+- **Acide fort** : réaction totale avec l'eau (pKa < 0)
+  - HCl, HNO₃, H₂SO₄...
+- **Acide faible** : réaction partielle (0 < pKa < 14)
+  - CH₃COOH (pKa = 4,8), NH₄⁺ (pKa = 9,2)...
+:::
+
+## Diagramme de prédominance
+
+:::property[Relation pH - pKa]
+$$\text{pH} = \text{p}K_a + \log\frac{[\text{A}^-]}{[\text{AH}]}$$
+
+- Si pH < pKa : la forme acide AH prédomine
+- Si pH = pKa : [AH] = [A⁻]
+- Si pH > pKa : la forme basique A⁻ prédomine
+:::
+
+:::method[Diagramme de prédominance]
+```
+     AH prédomine    |    A⁻ prédomine
+←────────────────────|────────────────────→ pH
+                   pKa
+```
+
+À pH = pKa, les deux formes sont en concentrations égales.
+:::
+
+## Réaction prépondérante
+
+:::method[Prévision de réaction]
+Entre deux couples (AH₁/A₁⁻) de pKa₁ et (AH₂/A₂⁻) de pKa₂ :
+
+La réaction prépondérante est celle où **l'acide le plus fort réagit avec la base la plus forte** :
+- L'acide le plus fort a le pKa le plus petit
+- La base la plus forte a le pKa conjugué le plus grand
+
+Si pKa₁ < pKa₂ : AH₁ + A₂⁻ → A₁⁻ + AH₂
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Calcul de pH
+
+Solution d'acide chlorhydrique HCl à c = 0,01 mol/L.
+
+HCl est un acide fort (réaction totale) :
+$$[\text{H}_3\text{O}^+] = c = 0.01 = 10^{-2} \text{ mol/L}$$
+
+$$\text{pH} = -\log(10^{-2}) = 2$$
+
+### Exemple 2 : Concentration en H₃O⁺
+
+Solution de pH = 4,5.
+
+$$[\text{H}_3\text{O}^+] = 10^{-4.5} = 3.2 \times 10^{-5} \text{ mol/L}$$
+
+### Exemple 3 : pKa et prédominance
+
+Acide acétique CH₃COOH/CH₃COO⁻, pKa = 4,8.
+
+Dans une solution de pH = 6 :
+- pH > pKa donc la forme basique **CH₃COO⁻ prédomine**
+
+Rapport : $\frac{[\text{CH}_3\text{COO}^-]}{[\text{CH}_3\text{COOH}]} = 10^{6-4.8} = 10^{1.2} \approx 16$
+
+### Exemple 4 : Réaction prépondérante
+
+Couples : CH₃COOH/CH₃COO⁻ (pKa = 4,8) et NH₄⁺/NH₃ (pKa = 9,2)
+
+On mélange CH₃COOH et NH₃.
+
+Réaction : CH₃COOH + NH₃ → CH₃COO⁻ + NH₄⁺
+
+(L'acide le plus fort, pKa = 4,8, réagit avec la base la plus forte)
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre pH et pKa
+
+pH caractérise la solution, pKa caractérise le couple.
+
+**Erreur 2** : Oublier le signe du log
+
+pH = -log[H₃O⁺], pas +log !
+
+**Erreur 3** : Appliquer les formules des acides forts aux acides faibles
+
+Pour un acide faible, [H₃O⁺] ≠ c.
+
+**Erreur 4** : Inverser le sens de prédominance
+
+pH < pKa → forme acide prédomine (et non l'inverse).
+:::
+
+## Mini-résumé
+
+- **Acide** : cède H⁺ | **Base** : capte H⁺
+- $\text{pH} = -\log[\text{H}_3\text{O}^+]$
+- $K_a = \frac{[\text{A}^-][\text{H}_3\text{O}^+]}{[\text{AH}]}$
+- pH < pKa : AH prédomine | pH > pKa : A⁻ prédomine
+- Réaction acide fort + base forte → produits

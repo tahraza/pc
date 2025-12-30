@@ -1,0 +1,149 @@
+---
+id: diffraction
+title: "Diffraction des ondes"
+track: physique
+chapter: ondes
+level: 3
+estimatedTime: 45
+prerequisites:
+  - ondes-lumineuses
+tags:
+  - diffraction
+  - fente
+  - obstacle
+  - tache centrale
+objectives:
+  - Comprendre le phénomène de diffraction
+  - Connaître la condition d'observation de la diffraction
+  - Calculer l'écart angulaire du faisceau diffracté
+  - Déterminer la largeur de la tache centrale
+---
+
+# Diffraction des ondes
+
+## Introduction
+
+La **diffraction** est un phénomène caractéristique des ondes : lorsqu'une onde rencontre un obstacle ou une ouverture de dimension comparable à sa longueur d'onde, elle se propage dans des directions qui ne sont pas rectilignes.
+
+## Observation de la diffraction
+
+### Condition d'observation
+
+La diffraction est observable lorsque la dimension de l'obstacle ou de l'ouverture $a$ est du même ordre de grandeur que la longueur d'onde $\lambda$ :
+$$a \approx \lambda \quad \text{ou} \quad a < 10\lambda$$
+
+<Trap title="Condition importante">
+Si l'ouverture est très grande devant $\lambda$, la lumière se propage en ligne droite (optique géométrique). La diffraction n'est visible que pour des ouvertures suffisamment petites.
+</Trap>
+
+### Expérience avec une fente
+
+Quand un faisceau laser traverse une fente fine de largeur $a$, on observe sur un écran :
+- Une **tache centrale** brillante, large
+- Des **taches secondaires** moins lumineuses de part et d'autre
+
+## Écart angulaire
+
+<Definition title="Écart angulaire">
+L'écart angulaire $\theta$ correspond au demi-angle d'ouverture du faisceau diffracté. Il est lié à la position du premier minimum de diffraction.
+</Definition>
+
+Pour une fente de largeur $a$ éclairée par une lumière de longueur d'onde $\lambda$ :
+$$\sin\theta = \frac{\lambda}{a}$$
+
+Pour les petits angles ($\theta < 10°$) :
+$$\theta \approx \frac{\lambda}{a}$$
+
+<Formula title="Écart angulaire">
+$$\theta = \frac{\lambda}{a} \quad \text{(en radians, pour petits angles)}$$
+</Formula>
+
+## Tache centrale de diffraction
+
+### Largeur de la tache centrale
+
+La largeur $L$ de la tache centrale sur un écran situé à la distance $D$ est :
+$$L = 2 \times D \times \tan\theta \approx 2D\theta = \frac{2\lambda D}{a}$$
+
+<Formula title="Largeur de la tache centrale">
+$$L = \frac{2\lambda D}{a}$$
+</Formula>
+
+### Propriétés de la tache centrale
+
+- La tache centrale est **deux fois plus large** que les taches secondaires
+- Elle contient environ **84%** de l'énergie lumineuse
+- Sa largeur **augmente** quand la fente est plus étroite
+
+<Method title="Calculer la largeur de la tache centrale">
+1. Identifier les données : $\lambda$, $a$, $D$
+2. Vérifier que les unités sont cohérentes (tout en mètres)
+3. Appliquer $L = \frac{2\lambda D}{a}$
+4. Convertir le résultat dans l'unité demandée
+</Method>
+
+## Diffraction par différents objets
+
+### Fil ou cheveu
+
+Un fil de diamètre $d$ produit une figure de diffraction similaire à celle d'une fente de même largeur. Cela permet de mesurer le diamètre d'un cheveu !
+
+### Trou circulaire
+
+Pour un trou circulaire de diamètre $d$, on observe des anneaux concentriques. L'écart angulaire vaut :
+$$\theta = 1.22 \frac{\lambda}{d}$$
+
+### Réseau de diffraction
+
+Un réseau est constitué de nombreuses fentes parallèles équidistantes. Il permet de séparer les différentes longueurs d'onde (spectroscopie).
+
+## Applications
+
+### Limite de résolution
+
+La diffraction limite le pouvoir de résolution des instruments d'optique :
+- Télescopes
+- Microscopes
+- Appareils photo
+
+Plus l'ouverture est grande, meilleure est la résolution.
+
+### Spectroscopie
+
+Les réseaux de diffraction permettent d'analyser la composition spectrale de la lumière (identification d'éléments chimiques).
+
+<Trap title="Plus la fente est fine...">
+Plus la fente est fine, plus la diffraction est importante et plus la tache centrale est large. C'est contre-intuitif mais c'est bien $L \propto \frac{1}{a}$.
+</Trap>
+
+## Exercice de compréhension
+
+<Exercise id="comp-diffr-1">
+Un faisceau laser de longueur d'onde $\lambda = 633$ nm traverse une fente de largeur $a = 0.1$ mm. L'écran est placé à $D = 3$ m de la fente.
+
+1. Calculer l'écart angulaire $\theta$ en radians puis en degrés.
+2. Calculer la largeur de la tache centrale de diffraction.
+3. On réduit la largeur de la fente de moitié. Que devient la largeur de la tache centrale ?
+
+<Solution>
+1. Écart angulaire :
+$$\theta = \frac{\lambda}{a} = \frac{633 \times 10^{-9}}{0.1 \times 10^{-3}} = 6.33 \times 10^{-3} \text{ rad}$$
+En degrés : $\theta = 6.33 \times 10^{-3} \times \frac{180}{\pi} \approx 0.36°$
+
+2. Largeur de la tache centrale :
+$$L = \frac{2\lambda D}{a} = \frac{2 \times 633 \times 10^{-9} \times 3}{0.1 \times 10^{-3}} = 0.038 \text{ m} = 3.8 \text{ cm}$$
+
+3. Si $a' = a/2$, alors :
+$$L' = \frac{2\lambda D}{a'} = \frac{2\lambda D}{a/2} = 2L = 7.6 \text{ cm}$$
+La tache centrale **double** de largeur.
+</Solution>
+</Exercise>
+
+## Points clés à retenir
+
+<Summary>
+- Diffraction observable si $a \approx \lambda$
+- Écart angulaire : $\theta = \frac{\lambda}{a}$
+- Largeur tache centrale : $L = \frac{2\lambda D}{a}$
+- Plus la fente est fine, plus la diffraction est importante
+</Summary>

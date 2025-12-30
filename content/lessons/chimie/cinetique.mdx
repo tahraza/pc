@@ -1,0 +1,172 @@
+---
+id: "cinetique"
+title: "Cinétique chimique"
+track: "chimie"
+level: 2
+prerequisites: []
+tags: ["cinétique", "vitesse", "concentration", "catalyse"]
+estimatedTime: 45
+chapter: "cinetique"
+order: 1
+---
+
+# Cinétique chimique
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Définir et calculer une vitesse de réaction
+- Identifier les facteurs cinétiques
+- Exploiter le temps de demi-réaction
+- Comprendre le rôle d'un catalyseur
+
+## Avancement de réaction
+
+:::definition
+**Avancement**
+
+L'**avancement** ξ (xi) d'une réaction mesure la "quantité de réaction" qui s'est produite.
+
+Pour aA + bB → cC + dD :
+$$\xi = \frac{n_A^0 - n_A}{a} = \frac{n_B^0 - n_B}{b} = \frac{n_C - n_C^0}{c} = \frac{n_D - n_D^0}{d}$$
+
+Unité : la mole (mol)
+:::
+
+## Vitesse de réaction
+
+:::definition
+**Vitesse volumique**
+
+La **vitesse volumique** de réaction est la dérivée de l'avancement par rapport au temps, divisée par le volume :
+
+$$v = \frac{1}{V}\frac{d\xi}{dt}$$
+
+Unité : mol·L⁻¹·s⁻¹
+
+Pour un réactif A : $v = -\frac{1}{a}\frac{d[A]}{dt}$
+
+Pour un produit C : $v = \frac{1}{c}\frac{d[C]}{dt}$
+:::
+
+:::property[Caractéristiques de la vitesse]
+- v est toujours **positive**
+- v **diminue** généralement au cours du temps (les réactifs s'épuisent)
+- v = 0 à l'équilibre ou quand la réaction est terminée
+:::
+
+## Temps de demi-réaction
+
+:::definition
+**Temps de demi-réaction**
+
+Le **temps de demi-réaction** $t_{1/2}$ est le temps au bout duquel l'avancement atteint la moitié de sa valeur finale :
+
+$$\xi(t_{1/2}) = \frac{\xi_f}{2}$$
+
+Pour un réactif limitant, c'est le temps pour que sa concentration soit divisée par 2.
+:::
+
+:::property[Durée de réaction]
+On considère souvent qu'une réaction est "terminée" après environ **5 à 6 fois** le temps de demi-réaction.
+:::
+
+## Facteurs cinétiques
+
+:::property[Température]
+Une **augmentation de température** accélère la réaction :
+- Les molécules ont plus d'énergie cinétique
+- Les chocs efficaces sont plus fréquents
+
+Règle empirique : v double pour +10°C (approximatif)
+:::
+
+:::property[Concentration]
+Une **augmentation de concentration** des réactifs accélère généralement la réaction :
+- Plus de molécules → plus de collisions
+- Plus de chocs efficaces
+:::
+
+:::property[Solvant et état physique]
+- Un réactif dissous réagit plus vite qu'un solide
+- La surface de contact influence la vitesse
+:::
+
+## Catalyse
+
+:::definition
+**Catalyseur**
+
+Un **catalyseur** est une espèce qui accélère une réaction sans être consommée. Il est régénéré en fin de réaction.
+
+Le catalyseur :
+- Diminue l'énergie d'activation
+- Ne modifie pas la thermodynamique (équilibre)
+- N'apparaît pas dans l'équation bilan
+:::
+
+:::property[Types de catalyse]
+- **Catalyse homogène** : catalyseur et réactifs dans la même phase
+- **Catalyse hétérogène** : catalyseur dans une phase différente (ex : solide dans liquide)
+- **Catalyse enzymatique** : cas particulier en biologie (très spécifique)
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Vitesse de réaction
+
+Pour 2H₂O₂ → 2H₂O + O₂, on mesure que [H₂O₂] passe de 0,5 mol/L à 0,3 mol/L en 100 s.
+
+**Vitesse moyenne** :
+$$v = -\frac{1}{2}\frac{\Delta[H_2O_2]}{\Delta t} = -\frac{1}{2} \times \frac{0.3 - 0.5}{100} = 1.0 \times 10^{-3} \text{ mol·L}^{-1}\text{·s}^{-1}$$
+
+### Exemple 2 : Temps de demi-réaction
+
+La concentration d'un réactif passe de 0,10 mol/L à 0,025 mol/L.
+
+Concentration divisée par 4 = 2 demi-réactions.
+
+Si $t_{1/2}$ = 20 min, le temps écoulé est **40 min**.
+
+### Exemple 3 : Effet de la température
+
+À 20°C, une réaction a un $t_{1/2}$ de 40 min. À 40°C, $t_{1/2}$ = 10 min.
+
+La réaction est **4 fois plus rapide** à 40°C qu'à 20°C.
+
+## Suivi cinétique
+
+:::method[Méthodes de suivi]
+- **Spectrophotométrie** : mesure de l'absorbance (espèce colorée)
+- **Conductimétrie** : mesure de la conductivité (ions)
+- **pH-métrie** : mesure du pH (réaction acide-base)
+- **Volumétrie** : mesure du volume de gaz dégagé
+- **Titrage** : prélèvements et dosages
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier le coefficient stœchiométrique
+
+$v = -\frac{1}{a}\frac{d[A]}{dt}$, pas juste $-\frac{d[A]}{dt}$.
+
+**Erreur 2** : Confondre vitesse instantanée et moyenne
+
+Vitesse instantanée = pente de la tangente, vitesse moyenne = pente de la sécante.
+
+**Erreur 3** : Croire que le catalyseur est consommé
+
+Un catalyseur participe au mécanisme mais est régénéré.
+
+**Erreur 4** : Penser que le catalyseur change l'équilibre
+
+Le catalyseur accélère la réaction mais ne déplace pas l'équilibre.
+:::
+
+## Mini-résumé
+
+- **Vitesse** : $v = \frac{1}{V}\frac{d\xi}{dt}$ (toujours positive)
+- **$t_{1/2}$** : temps pour atteindre la moitié de l'avancement final
+- **Facteurs cinétiques** : température, concentration, catalyseur
+- **Catalyseur** : accélère sans être consommé

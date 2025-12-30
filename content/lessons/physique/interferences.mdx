@@ -1,0 +1,161 @@
+---
+id: interferences
+title: "Interférences lumineuses"
+track: physique
+chapter: ondes
+level: 4
+estimatedTime: 50
+prerequisites:
+  - ondes-lumineuses
+tags:
+  - interférences
+  - fentes de Young
+  - cohérence
+  - interfrange
+objectives:
+  - Comprendre le phénomène d'interférences
+  - Connaître les conditions d'interférences constructives et destructives
+  - Savoir exploiter la figure d'interférences des fentes de Young
+  - Calculer l'interfrange
+---
+
+# Interférences lumineuses
+
+## Introduction
+
+Lorsque deux ondes lumineuses se superposent, elles peuvent se renforcer ou s'annuler : c'est le phénomène d'**interférences**. Ce phénomène prouve la nature ondulatoire de la lumière.
+
+## Conditions d'interférences
+
+### Sources cohérentes
+
+Pour observer des interférences stables, il faut des **sources cohérentes** :
+- Même fréquence (donc même longueur d'onde)
+- Différence de phase constante dans le temps
+
+<Definition title="Cohérence temporelle">
+Deux sources sont cohérentes si elles émettent des ondes de même fréquence avec un déphasage constant.
+</Definition>
+
+### Différence de marche
+
+<Definition title="Différence de marche">
+La différence de marche $\delta$ est la différence entre les distances parcourues par deux ondes depuis leurs sources respectives jusqu'au point d'observation :
+$$\delta = d_2 - d_1$$
+</Definition>
+
+## Conditions d'interférences
+
+### Interférences constructives
+
+Les interférences sont **constructives** (amplitude maximale) si :
+$$\delta = k \lambda \quad \text{avec } k \in \mathbb{Z}$$
+
+Les ondes arrivent **en phase** au point considéré.
+
+### Interférences destructives
+
+Les interférences sont **destructives** (amplitude nulle) si :
+$$\delta = \left(k + \frac{1}{2}\right) \lambda \quad \text{avec } k \in \mathbb{Z}$$
+
+Les ondes arrivent **en opposition de phase**.
+
+<Formula title="Conditions d'interférences">
+$$\text{Constructives : } \delta = k\lambda$$
+$$\text{Destructives : } \delta = \left(k + \frac{1}{2}\right)\lambda$$
+</Formula>
+
+## Fentes de Young
+
+### Dispositif expérimental
+
+Le dispositif des fentes de Young comprend :
+- Une source lumineuse monochromatique
+- Deux fentes fines parallèles séparées d'une distance $a$
+- Un écran d'observation à la distance $D$
+
+### Figure d'interférences
+
+On observe sur l'écran une alternance de **franges brillantes** et de **franges sombres** parallèles aux fentes.
+
+### Interfrange
+
+<Definition title="Interfrange">
+L'interfrange $i$ est la distance entre deux franges brillantes (ou sombres) consécutives :
+$$i = \frac{\lambda D}{a}$$
+</Definition>
+
+Où :
+- $\lambda$ : longueur d'onde de la lumière (m)
+- $D$ : distance fentes-écran (m)
+- $a$ : distance entre les deux fentes (m)
+
+<Formula title="Interfrange">
+$$i = \frac{\lambda D}{a}$$
+</Formula>
+
+### Position des franges
+
+La position $x$ de la frange brillante d'ordre $k$ par rapport au centre :
+$$x_k = k \cdot i = k \cdot \frac{\lambda D}{a}$$
+
+## Différence de marche géométrique
+
+Pour un point M de l'écran situé à la distance $x$ du centre O :
+
+$$\delta = \frac{a \cdot x}{D}$$
+
+Cette formule est valable dans l'approximation des petits angles.
+
+<Method title="Déterminer la nature d'une frange">
+1. Calculer la différence de marche $\delta = \frac{ax}{D}$
+2. Comparer $\delta$ à $\lambda$ :
+   - Si $\delta = k\lambda$ → frange brillante d'ordre $k$
+   - Si $\delta = (k + 0.5)\lambda$ → frange sombre
+</Method>
+
+## Applications
+
+### Mesure de longueur d'onde
+
+En mesurant l'interfrange $i$, on peut déterminer la longueur d'onde :
+$$\lambda = \frac{i \cdot a}{D}$$
+
+### Contrôle de surface
+
+Les interférences permettent de contrôler la planéité de surfaces optiques avec une précision de l'ordre de la longueur d'onde.
+
+<Trap title="Attention aux unités">
+Dans la formule de l'interfrange, toutes les longueurs doivent être dans la même unité. $\lambda$ est souvent donné en nm qu'il faut convertir en m.
+</Trap>
+
+## Exercice de compréhension
+
+<Exercise id="comp-interf-1">
+On réalise une expérience de fentes de Young avec une lumière de longueur d'onde $\lambda = 600$ nm. Les fentes sont distantes de $a = 0.5$ mm et l'écran est placé à $D = 2$ m.
+
+1. Calculer l'interfrange.
+2. Quelle est la position de la troisième frange brillante ?
+3. Quelle est la nature de la frange située à 4.8 mm du centre ?
+
+<Solution>
+1. Interfrange :
+$$i = \frac{\lambda D}{a} = \frac{600 \times 10^{-9} \times 2}{0.5 \times 10^{-3}} = 2.4 \times 10^{-3} \text{ m} = 2.4 \text{ mm}$$
+
+2. Position de la 3ème frange brillante ($k = 3$) :
+$$x_3 = 3 \times i = 3 \times 2.4 = 7.2 \text{ mm}$$
+
+3. Pour $x = 4.8$ mm :
+$$\frac{x}{i} = \frac{4.8}{2.4} = 2$$
+$k = 2$ est un entier, donc c'est une **frange brillante** d'ordre 2.
+</Solution>
+</Exercise>
+
+## Points clés à retenir
+
+<Summary>
+- Les interférences nécessitent des sources cohérentes
+- Constructives si $\delta = k\lambda$, destructives si $\delta = (k+0.5)\lambda$
+- Interfrange : $i = \frac{\lambda D}{a}$
+- Différence de marche : $\delta = \frac{ax}{D}$
+</Summary>

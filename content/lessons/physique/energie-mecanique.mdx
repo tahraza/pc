@@ -1,0 +1,160 @@
+---
+id: "energie-mecanique"
+title: "Énergie mécanique et conservation"
+track: "physique"
+level: 2
+prerequisites: ["mouvement-newton"]
+tags: ["énergie", "cinétique", "potentielle", "conservation"]
+estimatedTime: 45
+chapter: "energie"
+order: 1
+---
+
+# Énergie mécanique et conservation
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Calculer les énergies cinétique et potentielle
+- Appliquer le théorème de l'énergie cinétique
+- Utiliser la conservation de l'énergie mécanique
+
+## Énergie cinétique
+
+:::definition
+**Énergie cinétique**
+
+L'énergie cinétique d'un système de masse m et de vitesse v :
+
+$$E_c = \frac{1}{2}mv^2$$
+
+Unité : le joule (J)
+:::
+
+:::property[Théorème de l'énergie cinétique]
+La variation d'énergie cinétique est égale à la somme des travaux des forces :
+
+$$\Delta E_c = E_{c,f} - E_{c,i} = \sum W(\vec{F})$$
+:::
+
+## Énergie potentielle
+
+:::definition
+**Énergie potentielle de pesanteur**
+
+Pour un système de masse m à l'altitude z (par rapport à une origine choisie) :
+
+$$E_{pp} = mgz$$
+
+L'origine des altitudes est choisie arbitrairement (souvent le sol).
+:::
+
+:::definition
+**Énergie potentielle élastique**
+
+Pour un ressort de raideur k, déformé de x par rapport à sa position d'équilibre :
+
+$$E_{pe} = \frac{1}{2}kx^2$$
+:::
+
+## Énergie mécanique
+
+:::definition
+**Énergie mécanique**
+
+$$E_m = E_c + E_p = \frac{1}{2}mv^2 + E_p$$
+
+où $E_p$ peut inclure $E_{pp}$ et/ou $E_{pe}$.
+:::
+
+:::property[Conservation de l'énergie mécanique]
+Si les forces non conservatives (frottements) ne travaillent pas :
+
+$$E_m = \text{constante}$$
+
+$$\frac{1}{2}mv_1^2 + E_{p,1} = \frac{1}{2}mv_2^2 + E_{p,2}$$
+:::
+
+:::property[Non-conservation]
+En présence de frottements :
+
+$$\Delta E_m = W_{nc}$$
+
+où $W_{nc}$ est le travail des forces non conservatives (négatif pour les frottements).
+:::
+
+## Travail d'une force
+
+:::definition
+**Travail d'une force constante**
+
+$$W(\vec{F}) = \vec{F} \cdot \vec{AB} = F \times AB \times \cos\alpha$$
+
+où α est l'angle entre $\vec{F}$ et $\vec{AB}$.
+
+- W > 0 : travail moteur
+- W < 0 : travail résistant
+:::
+
+:::property[Travail du poids]
+$$W(\vec{P}) = mg(z_A - z_B) = -\Delta E_{pp}$$
+
+Le travail du poids ne dépend que de la dénivellation.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Chute libre
+
+Une bille de 100 g tombe de h = 5 m. Quelle est sa vitesse à l'arrivée ?
+
+**Conservation de l'énergie** (z = 0 au sol) :
+$$mgh + 0 = 0 + \frac{1}{2}mv^2$$
+
+$$v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 5} = 9.9 \text{ m/s}$$
+
+### Exemple 2 : Pendule simple
+
+Un pendule de longueur L = 1 m est lâché d'un angle θ₀ = 60°. Quelle est sa vitesse au point le plus bas ?
+
+**Hauteur initiale** : $h = L(1 - \cos\theta_0) = 1 \times (1 - 0.5) = 0.5$ m
+
+**Conservation** : $mgh = \frac{1}{2}mv^2$
+
+$$v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 0.5} = 3.1 \text{ m/s}$$
+
+### Exemple 3 : Avec frottements
+
+Un bloc de 2 kg glisse sur 3 m avec une force de frottement f = 4 N. Vitesse initiale v₀ = 5 m/s.
+
+**Énergie initiale** : $E_{c,i} = \frac{1}{2} \times 2 \times 5^2 = 25$ J
+
+**Travail des frottements** : $W_f = -f \times d = -4 \times 3 = -12$ J
+
+**Énergie finale** : $E_{c,f} = E_{c,i} + W_f = 25 - 12 = 13$ J
+
+**Vitesse finale** : $v = \sqrt{\frac{2E_{c,f}}{m}} = \sqrt{\frac{2 \times 13}{2}} = 3.6$ m/s
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier de choisir l'origine des altitudes
+
+Toujours préciser où z = 0.
+
+**Erreur 2** : Confondre énergie et travail
+
+L'énergie est un état, le travail est un transfert.
+
+**Erreur 3** : Appliquer la conservation avec des frottements
+
+Conservation uniquement si pas de forces non conservatives qui travaillent !
+:::
+
+## Mini-résumé
+
+- $E_c = \frac{1}{2}mv^2$
+- $E_{pp} = mgz$
+- $E_m = E_c + E_p$
+- **Conservation** : $E_m = cste$ (sans frottements)
+- **Avec frottements** : $\Delta E_m = W_{nc}$

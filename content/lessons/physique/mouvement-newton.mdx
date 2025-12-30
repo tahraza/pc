@@ -1,0 +1,153 @@
+---
+id: "mouvement-newton"
+title: "Lois de Newton et mouvement"
+track: "physique"
+level: 2
+prerequisites: []
+tags: ["mécanique", "Newton", "forces", "accélération"]
+estimatedTime: 50
+chapter: "mecanique"
+order: 1
+---
+
+# Lois de Newton et mouvement
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Énoncer et appliquer les trois lois de Newton
+- Établir les équations du mouvement
+- Analyser différents types de mouvements
+
+## Les trois lois de Newton
+
+:::property[Première loi : Principe d'inertie]
+Dans un référentiel galiléen, si la somme des forces extérieures est nulle, le centre de masse du système :
+- reste immobile s'il était immobile
+- conserve un mouvement rectiligne uniforme
+
+$$\sum \vec{F}_{ext} = \vec{0} \Rightarrow \vec{v} = \text{constante}$$
+:::
+
+:::property[Deuxième loi : Principe fondamental de la dynamique (PFD)]
+Dans un référentiel galiléen, la somme des forces extérieures est égale au produit de la masse par l'accélération :
+
+$$\sum \vec{F}_{ext} = m\vec{a}$$
+
+C'est la loi la plus utilisée pour établir les équations du mouvement.
+:::
+
+:::property[Troisième loi : Principe des actions réciproques]
+Si un corps A exerce une force sur un corps B, alors B exerce sur A une force opposée :
+
+$$\vec{F}_{A/B} = -\vec{F}_{B/A}$$
+:::
+
+## Forces courantes
+
+:::definition
+**Poids**
+$$\vec{P} = m\vec{g}$$
+Dirigé vers le centre de la Terre, avec g ≈ 9,81 m/s² à la surface.
+:::
+
+:::definition
+**Réaction du support**
+$$\vec{R} = \vec{R}_N + \vec{f}$$
+- $\vec{R}_N$ : composante normale (perpendiculaire au support)
+- $\vec{f}$ : force de frottement (tangente au support)
+:::
+
+:::definition
+**Tension d'un fil**
+Force exercée par un fil tendu, dirigée le long du fil, toujours dans le sens qui "tire".
+:::
+
+## Méthode de résolution
+
+:::method[Appliquer le PFD]
+1. **Définir le système** et le référentiel (galiléen)
+2. **Faire le bilan des forces** extérieures
+3. **Choisir un repère** adapté (axes)
+4. **Appliquer** $\sum \vec{F}_{ext} = m\vec{a}$
+5. **Projeter** sur les axes
+6. **Résoudre** les équations différentielles
+:::
+
+## Mouvements types
+
+:::property[Mouvement rectiligne uniforme (MRU)]
+Si $\sum \vec{F}_{ext} = \vec{0}$ :
+- $\vec{a} = \vec{0}$
+- $\vec{v} = \vec{v}_0 = \text{constante}$
+- $x(t) = x_0 + v_0 t$
+:::
+
+:::property[Mouvement rectiligne uniformément varié (MRUV)]
+Si $\sum \vec{F}_{ext} = \text{constante}$ :
+- $\vec{a} = \text{constante}$
+- $v(t) = v_0 + at$
+- $x(t) = x_0 + v_0 t + \frac{1}{2}at^2$
+:::
+
+## Chute libre
+
+:::property[Chute libre (sans frottements)]
+Seul le poids agit : $\vec{P} = m\vec{g}$
+
+Avec l'axe z vertical vers le haut :
+- $a_z = -g$
+- $v_z(t) = v_{0z} - gt$
+- $z(t) = z_0 + v_{0z}t - \frac{1}{2}gt^2$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Objet sur plan horizontal
+
+Un objet de 2 kg est tiré sur un plan horizontal par une force F = 10 N. Les frottements sont négligés.
+
+**Bilan des forces** : $\vec{P}$, $\vec{R}_N$, $\vec{F}$
+
+**PFD projection sur x** : $F = ma$
+
+**Accélération** : $a = \frac{F}{m} = \frac{10}{2} = 5$ m/s²
+
+### Exemple 2 : Chute libre
+
+Une balle est lâchée sans vitesse initiale d'une hauteur h = 20 m.
+
+**Temps de chute** : $h = \frac{1}{2}gt^2 \Rightarrow t = \sqrt{\frac{2h}{g}} = \sqrt{\frac{2 \times 20}{9.81}} = 2.0$ s
+
+**Vitesse à l'arrivée** : $v = gt = 9.81 \times 2.0 = 19.6$ m/s
+
+### Exemple 3 : Plan incliné
+
+Masse m = 5 kg sur un plan incliné de 30°, sans frottement.
+
+**PFD projection sur l'axe de la pente** : $mg\sin\alpha = ma$
+
+**Accélération** : $a = g\sin(30°) = 9.81 \times 0.5 = 4.9$ m/s²
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier des forces dans le bilan
+
+Faire systématiquement le bilan : poids, réaction, tension, frottements...
+
+**Erreur 2** : Mal orienter les axes
+
+Choisir un repère adapté (souvent un axe dans le sens du mouvement).
+
+**Erreur 3** : Confondre vitesse et accélération
+
+L'accélération est la dérivée de la vitesse, pas la vitesse elle-même.
+:::
+
+## Mini-résumé
+
+- **PFD** : $\sum \vec{F}_{ext} = m\vec{a}$
+- **Poids** : $\vec{P} = m\vec{g}$
+- **MRU** : v = constante, $x = x_0 + vt$
+- **MRUV** : $v = v_0 + at$, $x = x_0 + v_0t + \frac{1}{2}at^2$

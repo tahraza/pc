@@ -1,0 +1,162 @@
+---
+id: "mouvement-champ-uniforme"
+title: "Mouvement dans un champ uniforme"
+track: "physique"
+level: 3
+prerequisites: ["mouvement-newton"]
+tags: ["champ", "projectile", "parabole", "champ électrique"]
+estimatedTime: 50
+chapter: "mecanique"
+order: 2
+---
+
+# Mouvement dans un champ uniforme
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Décrire le mouvement d'un projectile
+- Établir les équations horaires
+- Déterminer la trajectoire (équation cartésienne)
+- Analyser le mouvement dans un champ électrique
+
+## Mouvement d'un projectile
+
+:::definition
+**Projectile**
+
+Un projectile est un objet lancé avec une vitesse initiale $\vec{v}_0$ et soumis uniquement à son poids (on néglige les frottements).
+
+Le mouvement s'effectue dans le **champ de pesanteur uniforme** $\vec{g}$.
+:::
+
+## Équations du mouvement
+
+:::method[Établissement des équations]
+**Système** : le projectile, masse m
+**Référentiel** : terrestre (galiléen)
+**Repère** : O au point de lancement, Ox horizontal, Oy vertical vers le haut
+
+**PFD** : $m\vec{a} = m\vec{g}$, donc $\vec{a} = \vec{g}$
+
+Projections :
+- $a_x = 0$
+- $a_y = -g$
+:::
+
+:::property[Équations horaires]
+Avec $\vec{v}_0 = v_0\cos\alpha \vec{u}_x + v_0\sin\alpha \vec{u}_y$ :
+
+**Vitesse** :
+- $v_x(t) = v_0\cos\alpha$
+- $v_y(t) = v_0\sin\alpha - gt$
+
+**Position** :
+- $x(t) = v_0\cos\alpha \times t$
+- $y(t) = v_0\sin\alpha \times t - \frac{1}{2}gt^2$
+:::
+
+## Trajectoire
+
+:::property[Équation de la trajectoire]
+En éliminant t entre x(t) et y(t) :
+
+$$y = \tan\alpha \times x - \frac{g}{2v_0^2\cos^2\alpha} x^2$$
+
+C'est l'équation d'une **parabole** à concavité vers le bas.
+:::
+
+:::property[Caractéristiques]
+**Flèche** (altitude maximale) :
+$$H = \frac{v_0^2\sin^2\alpha}{2g}$$
+atteinte au temps $t_H = \frac{v_0\sin\alpha}{g}$
+
+**Portée** (distance horizontale) :
+$$P = \frac{v_0^2\sin(2\alpha)}{g}$$
+
+La portée est maximale pour α = 45°.
+:::
+
+## Mouvement dans un champ électrique
+
+:::definition
+**Champ électrique uniforme**
+
+Un champ électrique $\vec{E}$ uniforme existe entre deux plaques parallèles chargées.
+
+Une particule de charge q subit la force :
+$$\vec{F} = q\vec{E}$$
+:::
+
+:::property[Équations du mouvement]
+**PFD** : $m\vec{a} = q\vec{E}$ (si on néglige le poids)
+
+$$\vec{a} = \frac{q}{m}\vec{E}$$
+
+Si $\vec{E}$ est selon Oy et la vitesse initiale selon Ox :
+- $a_x = 0$, $v_x = v_0$, $x = v_0 t$
+- $a_y = \frac{qE}{m}$, $v_y = \frac{qE}{m}t$, $y = \frac{1}{2}\frac{qE}{m}t^2$
+
+La trajectoire est aussi une **parabole**.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Tir parabolique
+
+Un projectile est lancé avec v₀ = 20 m/s et α = 30°.
+
+**Flèche** :
+$$H = \frac{20^2 \times \sin^2(30°)}{2 \times 9.81} = \frac{400 \times 0.25}{19.62} = 5.1 \text{ m}$$
+
+**Portée** :
+$$P = \frac{20^2 \times \sin(60°)}{9.81} = \frac{400 \times 0.866}{9.81} = 35.3 \text{ m}$$
+
+### Exemple 2 : Temps de vol
+
+Même projectile. Temps pour atteindre le sol (y = 0) ?
+
+$y(t) = v_0\sin\alpha \times t - \frac{1}{2}gt^2 = 0$
+
+$t(v_0\sin\alpha - \frac{1}{2}gt) = 0$
+
+t = 0 (départ) ou $t = \frac{2v_0\sin\alpha}{g} = \frac{2 \times 20 \times 0.5}{9.81} = 2.04$ s
+
+### Exemple 3 : Électron dans un champ
+
+Un électron (m = 9,1×10⁻³¹ kg, q = -1,6×10⁻¹⁹ C) entre avec v₀ = 10⁷ m/s dans un champ E = 10⁴ V/m perpendiculaire à sa trajectoire.
+
+**Accélération** :
+$$a = \frac{|q|E}{m} = \frac{1.6 \times 10^{-19} \times 10^4}{9.1 \times 10^{-31}} = 1.76 \times 10^{15} \text{ m/s}^2$$
+
+Si les plaques ont une longueur L = 5 cm :
+- Temps de traversée : $t = \frac{L}{v_0} = \frac{0.05}{10^7} = 5 \times 10^{-9}$ s
+- Déviation : $y = \frac{1}{2}at^2 = \frac{1}{2} \times 1.76 \times 10^{15} \times (5 \times 10^{-9})^2 = 0.022$ m = 2,2 cm
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier le signe de g
+
+Avec l'axe Oy vers le haut, $a_y = -g$ (g > 0).
+
+**Erreur 2** : Mal décomposer la vitesse initiale
+
+$v_{0x} = v_0\cos\alpha$, $v_{0y} = v_0\sin\alpha$ (attention à l'angle)
+
+**Erreur 3** : Confondre temps de montée et temps de vol
+
+Temps de vol = 2 × temps de montée (pour un lancer depuis le sol)
+
+**Erreur 4** : Oublier le signe de q pour un électron
+
+q = -e pour un électron, donc la force est opposée à $\vec{E}$.
+:::
+
+## Mini-résumé
+
+- **Projectile** : $\vec{a} = \vec{g}$, trajectoire parabolique
+- $x(t) = v_0\cos\alpha \times t$, $y(t) = v_0\sin\alpha \times t - \frac{1}{2}gt^2$
+- **Flèche** : $H = \frac{v_0^2\sin^2\alpha}{2g}$
+- **Portée** : $P = \frac{v_0^2\sin(2\alpha)}{g}$, max pour α = 45°
+- **Champ électrique** : $\vec{F} = q\vec{E}$, trajectoire parabolique aussi

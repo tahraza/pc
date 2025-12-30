@@ -1,0 +1,160 @@
+---
+id: "circuit-rc"
+title: "Circuits RC"
+track: "physique"
+level: 3
+prerequisites: []
+tags: ["électricité", "condensateur", "RC", "constante de temps"]
+estimatedTime: 50
+chapter: "electricite"
+order: 1
+---
+
+# Circuits RC
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Décrire le fonctionnement d'un condensateur
+- Établir l'équation différentielle d'un circuit RC
+- Résoudre le régime transitoire (charge/décharge)
+- Déterminer la constante de temps
+
+## Le condensateur
+
+:::definition
+**Condensateur**
+
+Un **condensateur** est un dipôle constitué de deux armatures conductrices séparées par un isolant (diélectrique). Il stocke de l'énergie sous forme électrique.
+
+**Capacité** C (en farads, F) : $q = Cu_C$
+
+où q est la charge (en coulombs) et $u_C$ la tension aux bornes.
+:::
+
+:::property[Intensité et condensateur]
+$$i = \frac{dq}{dt} = C\frac{du_C}{dt}$$
+
+Un condensateur s'oppose aux variations brusques de tension.
+:::
+
+:::property[Énergie stockée]
+$$E = \frac{1}{2}Cu_C^2 = \frac{1}{2}\frac{q^2}{C}$$
+:::
+
+## Circuit RC série
+
+:::definition
+**Circuit RC**
+
+Un circuit RC contient une résistance R et un condensateur C en série.
+
+L'équation aux bornes : $u_R + u_C = E$ (si alimenté par une source E)
+:::
+
+:::property[Constante de temps]
+$$\tau = RC$$
+
+La constante de temps τ caractérise la rapidité de charge/décharge.
+- En t = τ, la grandeur atteint ~63% de sa valeur finale
+- En t = 5τ, le régime permanent est pratiquement atteint (>99%)
+:::
+
+## Charge du condensateur
+
+:::method[Équation de charge]
+À t = 0, on ferme l'interrupteur (condensateur initialement déchargé).
+
+**Équation différentielle** :
+$$RC\frac{du_C}{dt} + u_C = E$$
+
+**Solution** :
+$$u_C(t) = E(1 - e^{-t/\tau})$$
+
+$$i(t) = \frac{E}{R}e^{-t/\tau}$$
+
+La tension croît de 0 vers E, l'intensité décroît de E/R vers 0.
+:::
+
+## Décharge du condensateur
+
+:::method[Équation de décharge]
+Le condensateur initialement chargé à $U_0$ se décharge dans R.
+
+**Équation différentielle** :
+$$RC\frac{du_C}{dt} + u_C = 0$$
+
+**Solution** :
+$$u_C(t) = U_0 e^{-t/\tau}$$
+
+$$i(t) = -\frac{U_0}{R}e^{-t/\tau}$$
+
+La tension décroît exponentiellement vers 0.
+:::
+
+## Détermination de τ
+
+:::method[Méthode graphique]
+1. **Tangente à l'origine** : elle coupe l'asymptote en t = τ
+2. **À t = τ** : $u_C = 0.63 \times E$ (charge) ou $u_C = 0.37 \times U_0$ (décharge)
+3. **Régression** : ln(E - uC) = f(t) donne une droite de pente -1/τ
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Constante de temps
+
+R = 10 kΩ, C = 100 µF.
+
+$$\tau = RC = 10 \times 10^3 \times 100 \times 10^{-6} = 1 \text{ s}$$
+
+### Exemple 2 : Charge
+
+E = 12 V, R = 5 kΩ, C = 200 µF. Calculer uC à t = 2 s.
+
+$$\tau = 5000 \times 200 \times 10^{-6} = 1 \text{ s}$$
+
+$$u_C(2) = 12(1 - e^{-2/1}) = 12(1 - e^{-2}) = 12 \times 0.865 = 10.4 \text{ V}$$
+
+### Exemple 3 : Temps pour atteindre 90%
+
+Quel temps pour que $u_C = 0.9E$ ?
+
+$$0.9E = E(1 - e^{-t/\tau})$$
+$$e^{-t/\tau} = 0.1$$
+$$-t/\tau = \ln(0.1) = -2.3$$
+$$t = 2.3\tau$$
+
+### Exemple 4 : Décharge
+
+Un condensateur chargé à 10 V se décharge. Après 3 ms, uC = 3,7 V.
+
+$$3.7 = 10 \times e^{-0.003/\tau}$$
+$$e^{-0.003/\tau} = 0.37$$
+$$-0.003/\tau = \ln(0.37) = -1$$
+$$\tau = 3 \text{ ms}$$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre charge et décharge
+
+Charge : $u_C = E(1 - e^{-t/\tau})$ (croissante)
+Décharge : $u_C = U_0 e^{-t/\tau}$ (décroissante)
+
+**Erreur 2** : Se tromper dans τ
+
+τ = RC, pas R/C ni C/R. Vérifier les unités : Ω × F = s
+
+**Erreur 3** : Oublier les conditions initiales
+
+Toujours vérifier l'état initial du condensateur.
+:::
+
+## Mini-résumé
+
+- **Capacité** : $q = Cu_C$, $i = C\frac{du_C}{dt}$
+- **Constante de temps** : $\tau = RC$
+- **Charge** : $u_C = E(1 - e^{-t/\tau})$
+- **Décharge** : $u_C = U_0 e^{-t/\tau}$
+- À t = 5τ, régime permanent atteint

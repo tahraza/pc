@@ -1,0 +1,151 @@
+---
+id: "ondes-lumineuses"
+title: "Ondes lumineuses : diffraction et interférences"
+track: "physique"
+level: 3
+prerequisites: ["ondes-mecaniques"]
+tags: ["lumière", "diffraction", "interférences", "fentes"]
+estimatedTime: 50
+chapter: "ondes"
+order: 2
+---
+
+# Ondes lumineuses : diffraction et interférences
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Décrire le phénomène de diffraction
+- Expliquer les interférences lumineuses
+- Appliquer les conditions d'interférences constructives/destructives
+- Exploiter les relations pour les fentes d'Young
+
+## Diffraction
+
+:::definition
+**Diffraction**
+
+La **diffraction** est l'éparpillement d'une onde lorsqu'elle rencontre un obstacle ou une ouverture de dimension comparable à sa longueur d'onde.
+
+La lumière, onde électromagnétique, est diffractée par des ouvertures très fines (fentes, trous).
+:::
+
+:::property[Condition de diffraction]
+La diffraction est observable quand la dimension $a$ de l'ouverture est du même ordre de grandeur que $\lambda$ :
+
+$$a \approx \lambda$$
+
+Plus l'ouverture est petite, plus la diffraction est importante.
+:::
+
+:::property[Écart angulaire]
+L'écart angulaire $\theta$ du premier minimum de diffraction pour une fente de largeur $a$ :
+
+$$\theta \approx \frac{\lambda}{a}$$ (en radians, pour les petits angles)
+
+La largeur de la tache centrale :
+
+$$L = 2 \times D \times \tan\theta \approx \frac{2\lambda D}{a}$$
+
+où D est la distance fente-écran.
+:::
+
+## Interférences
+
+:::definition
+**Interférences**
+
+Les **interférences** résultent de la superposition de deux ondes cohérentes (même fréquence, déphasage constant).
+
+- **Interférences constructives** : les ondes s'additionnent (amplitude maximale)
+- **Interférences destructives** : les ondes s'annulent (amplitude nulle)
+:::
+
+:::property[Condition d'interférences]
+Pour deux sources S₁ et S₂, en un point M :
+- **Différence de marche** : $\delta = S_2M - S_1M$
+
+**Interférences constructives** (franges brillantes) :
+$$\delta = k\lambda \quad (k \in \mathbb{Z})$$
+
+**Interférences destructives** (franges sombres) :
+$$\delta = (k + \frac{1}{2})\lambda \quad (k \in \mathbb{Z})$$
+:::
+
+## Fentes d'Young
+
+:::definition
+**Dispositif des fentes d'Young**
+
+Deux fentes fines F₁ et F₂ espacées de $a$ sont éclairées par une source monochromatique. Sur un écran à distance D, on observe des franges d'interférences.
+:::
+
+:::property[Interfrange]
+L'**interfrange** $i$ est la distance entre deux franges brillantes (ou sombres) consécutives :
+
+$$i = \frac{\lambda D}{a}$$
+
+où :
+- λ : longueur d'onde
+- D : distance fentes-écran
+- a : distance entre les fentes
+:::
+
+:::property[Position des franges]
+Position de la frange brillante d'ordre k :
+
+$$x_k = k \times i = k \times \frac{\lambda D}{a}$$
+
+La frange centrale (k = 0) est située sur l'axe optique.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Diffraction par une fente
+
+Lumière rouge (λ = 650 nm) diffractée par une fente de 0,1 mm. Distance écran D = 2 m.
+
+**Largeur de la tache centrale** :
+$$L = \frac{2\lambda D}{a} = \frac{2 \times 650 \times 10^{-9} \times 2}{0.1 \times 10^{-3}} = 0.026 \text{ m} = 2.6 \text{ cm}$$
+
+### Exemple 2 : Fentes d'Young
+
+Fentes espacées de a = 0,5 mm, écran à D = 1,5 m, lumière λ = 600 nm.
+
+**Interfrange** :
+$$i = \frac{\lambda D}{a} = \frac{600 \times 10^{-9} \times 1.5}{0.5 \times 10^{-3}} = 1.8 \times 10^{-3} \text{ m} = 1.8 \text{ mm}$$
+
+**Position de la 3ème frange brillante** :
+$$x_3 = 3 \times i = 3 \times 1.8 = 5.4 \text{ mm}$$
+
+### Exemple 3 : Différence de marche
+
+En un point M, $\delta$ = 1200 nm avec λ = 600 nm.
+
+$\delta = 1200 = 2 \times 600 = 2\lambda$
+
+Donc k = 2 : **frange brillante** d'ordre 2.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre diffraction et interférences
+
+Diffraction = étalement par UNE ouverture. Interférences = superposition de DEUX ondes.
+
+**Erreur 2** : Oublier de convertir en mètres
+
+λ souvent en nm, a en mm : tout convertir en m pour le calcul.
+
+**Erreur 3** : Se tromper dans la formule de l'interfrange
+
+$i = \frac{\lambda D}{a}$ : λ et a sont "en haut et en bas", D est le grand (distance écran).
+:::
+
+## Mini-résumé
+
+**Diffraction** : $\theta \approx \frac{\lambda}{a}$, tache centrale $L = \frac{2\lambda D}{a}$
+
+**Interférences** : constructives si $\delta = k\lambda$, destructives si $\delta = (k+\frac{1}{2})\lambda$
+
+**Fentes d'Young** : interfrange $i = \frac{\lambda D}{a}$

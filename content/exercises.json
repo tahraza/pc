@@ -1,0 +1,1694 @@
+[
+  {
+    "id": "ex-ondes-meca-1",
+    "lessonId": "ondes-mecaniques",
+    "title": "Calcul de la célérité d'une onde sur une corde",
+    "difficulty": 2,
+    "statement": "Une corde de longueur L = 2,0 m et de masse m = 50 g est tendue avec une force T = 80 N. Calculer la célérité de l'onde sur cette corde.",
+    "hints": [
+      "La célérité dépend de la tension et de la masse linéique",
+      "La masse linéique μ = m/L",
+      "Utilise la formule v = √(T/μ)"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de la masse linéique",
+        "content": "μ = m/L = 0,050 / 2,0 = 0,025 kg/m",
+        "explanation": "La masse linéique est la masse par unité de longueur"
+      },
+      {
+        "step": 2,
+        "title": "Application de la formule",
+        "content": "v = √(T/μ) = √(80/0,025) = √3200 = 56,6 m/s",
+        "explanation": "La célérité augmente avec la tension et diminue avec la masse linéique"
+      }
+    ],
+    "method": "Calcul de célérité sur une corde",
+    "commonMistakes": [
+      "Oublier de convertir la masse en kg",
+      "Confondre tension et masse linéique"
+    ],
+    "tags": ["onde", "célérité", "corde"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-ondes-meca-2",
+    "lessonId": "ondes-mecaniques",
+    "title": "Longueur d'onde et fréquence",
+    "difficulty": 2,
+    "statement": "Une onde sonore de fréquence f = 440 Hz se propage dans l'air à la vitesse v = 340 m/s. Calculer sa longueur d'onde λ.",
+    "hints": [
+      "Utilise la relation fondamentale des ondes",
+      "λ = v/f"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la relation",
+        "content": "λ = v/f = 340/440 = 0,77 m",
+        "explanation": "Cette longueur d'onde correspond à la note La (diapason)"
+      }
+    ],
+    "method": "Relation λ = v/f",
+    "commonMistakes": [
+      "Inverser la formule",
+      "Oublier l'unité"
+    ],
+    "tags": ["onde", "longueur d'onde", "fréquence"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-ondes-meca-3",
+    "lessonId": "ondes-mecaniques",
+    "title": "Retard d'une onde",
+    "difficulty": 3,
+    "statement": "Deux capteurs A et B sont distants de d = 1,5 m. Une onde de célérité v = 300 m/s passe d'abord par A puis par B. Quel est le retard τ de B par rapport à A ?",
+    "hints": [
+      "Le retard est le temps mis par l'onde pour aller de A à B",
+      "τ = d/v"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du retard",
+        "content": "τ = d/v = 1,5/300 = 5,0 × 10⁻³ s = 5,0 ms",
+        "explanation": "Le retard est proportionnel à la distance et inversement proportionnel à la célérité"
+      }
+    ],
+    "method": "Calcul du retard τ = d/v",
+    "commonMistakes": [
+      "Inverser la formule",
+      "Mauvaise conversion des unités"
+    ],
+    "tags": ["onde", "retard", "propagation"]
+  },
+  {
+    "id": "ex-ondes-lum-1",
+    "lessonId": "ondes-lumineuses",
+    "title": "Calcul de la fréquence d'une radiation",
+    "difficulty": 2,
+    "statement": "Une radiation lumineuse a une longueur d'onde λ = 589 nm dans le vide. Calculer sa fréquence f. (c = 3,00 × 10⁸ m/s)",
+    "hints": [
+      "Convertis d'abord λ en mètres",
+      "Utilise c = λf"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion",
+        "content": "λ = 589 nm = 589 × 10⁻⁹ m",
+        "explanation": "1 nm = 10⁻⁹ m"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de f",
+        "content": "f = c/λ = (3,00 × 10⁸)/(589 × 10⁻⁹) = 5,09 × 10¹⁴ Hz",
+        "explanation": "Cette fréquence correspond au jaune du sodium"
+      }
+    ],
+    "method": "Relation c = λf",
+    "commonMistakes": [
+      "Oublier de convertir en mètres",
+      "Erreur de puissance de 10"
+    ],
+    "tags": ["lumière", "fréquence", "longueur d'onde"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-ondes-lum-2",
+    "lessonId": "ondes-lumineuses",
+    "title": "Diffraction par une fente",
+    "difficulty": 3,
+    "statement": "Un faisceau laser de longueur d'onde λ = 633 nm traverse une fente de largeur a = 0,1 mm. La figure de diffraction est observée sur un écran situé à D = 2 m. Calculer la largeur L de la tache centrale.",
+    "hints": [
+      "L'angle de diffraction θ ≈ λ/a",
+      "La largeur de la tache centrale est L = 2 × D × tan(θ) ≈ 2Dλ/a"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion des unités",
+        "content": "λ = 633 × 10⁻⁹ m, a = 0,1 × 10⁻³ m = 10⁻⁴ m",
+        "explanation": "On convertit en mètres pour l'homogénéité"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de L",
+        "content": "L = 2Dλ/a = 2 × 2 × (633 × 10⁻⁹)/(10⁻⁴) = 2,53 × 10⁻² m = 2,53 cm",
+        "explanation": "La tache centrale mesure environ 2,5 cm"
+      }
+    ],
+    "method": "Diffraction par une fente",
+    "commonMistakes": [
+      "Oublier le facteur 2",
+      "Mauvaise conversion des unités"
+    ],
+    "tags": ["diffraction", "fente", "laser"]
+  },
+  {
+    "id": "ex-ondes-lum-3",
+    "lessonId": "ondes-lumineuses",
+    "title": "Interférences à deux fentes",
+    "difficulty": 4,
+    "statement": "Deux fentes distantes de a = 0,5 mm sont éclairées par une lumière de longueur d'onde λ = 600 nm. L'écran est placé à D = 1,5 m. Calculer l'interfrange i.",
+    "hints": [
+      "L'interfrange est i = λD/a",
+      "C'est la distance entre deux franges brillantes consécutives"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion des unités",
+        "content": "λ = 600 × 10⁻⁹ m, a = 0,5 × 10⁻³ m",
+        "explanation": "Tout en mètres"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'interfrange",
+        "content": "i = λD/a = (600 × 10⁻⁹ × 1,5)/(0,5 × 10⁻³) = 1,8 × 10⁻³ m = 1,8 mm",
+        "explanation": "L'interfrange augmente avec D et λ, diminue avec a"
+      }
+    ],
+    "method": "Interférences de Young",
+    "commonMistakes": [
+      "Confondre a (distance entre fentes) et largeur des fentes",
+      "Erreur de puissance de 10"
+    ],
+    "tags": ["interférences", "Young", "interfrange"]
+  },
+  {
+    "id": "ex-newton-1",
+    "lessonId": "mouvement-newton",
+    "title": "Accélération d'un objet",
+    "difficulty": 2,
+    "statement": "Un objet de masse m = 2 kg est soumis à une force F = 10 N. Calculer son accélération.",
+    "hints": [
+      "Applique le PFD : ΣF = ma",
+      "Isole a"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application du PFD",
+        "content": "a = F/m = 10/2 = 5 m/s²",
+        "explanation": "L'accélération est proportionnelle à la force et inversement proportionnelle à la masse"
+      }
+    ],
+    "method": "Application directe du PFD",
+    "commonMistakes": [
+      "Inverser la formule",
+      "Oublier l'unité"
+    ],
+    "tags": ["PFD", "accélération", "force"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-newton-2",
+    "lessonId": "mouvement-newton",
+    "title": "Plan incliné sans frottement",
+    "difficulty": 3,
+    "statement": "Un objet de masse m = 5 kg glisse sans frottement sur un plan incliné d'angle α = 30°. Déterminer son accélération. (g = 9,8 m/s²)",
+    "hints": [
+      "Projette les forces sur l'axe du mouvement",
+      "Le poids a une composante P sin(α) selon la pente"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Bilan des forces",
+        "content": "Forces : poids P = mg et réaction normale N",
+        "explanation": "Pas de frottement donc pas de force tangentielle de frottement"
+      },
+      {
+        "step": 2,
+        "title": "Projection sur l'axe de la pente",
+        "content": "ma = mg sin(α)",
+        "explanation": "La composante du poids selon la pente est la seule force motrice"
+      },
+      {
+        "step": 3,
+        "title": "Calcul de a",
+        "content": "a = g sin(30°) = 9,8 × 0,5 = 4,9 m/s²",
+        "explanation": "L'accélération ne dépend pas de la masse"
+      }
+    ],
+    "method": "Plan incliné sans frottement",
+    "commonMistakes": [
+      "Confondre sin et cos",
+      "Oublier de projeter les forces"
+    ],
+    "tags": ["plan incliné", "PFD", "projection"]
+  },
+  {
+    "id": "ex-newton-3",
+    "lessonId": "mouvement-newton",
+    "title": "Mouvement circulaire uniforme",
+    "difficulty": 3,
+    "statement": "Un objet de masse m = 200 g tourne à vitesse constante v = 4 m/s sur un cercle de rayon R = 0,5 m. Calculer la force centripète.",
+    "hints": [
+      "L'accélération centripète est a = v²/R",
+      "La force est F = ma"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Accélération centripète",
+        "content": "a = v²/R = 16/0,5 = 32 m/s²",
+        "explanation": "L'accélération est dirigée vers le centre"
+      },
+      {
+        "step": 2,
+        "title": "Force centripète",
+        "content": "F = ma = 0,2 × 32 = 6,4 N",
+        "explanation": "Cette force maintient l'objet sur sa trajectoire circulaire"
+      }
+    ],
+    "method": "Force centripète",
+    "commonMistakes": [
+      "Oublier de convertir la masse en kg",
+      "Confondre vitesse et accélération"
+    ],
+    "tags": ["circulaire", "centripète", "force"]
+  },
+  {
+    "id": "ex-champ-1",
+    "lessonId": "mouvement-champ-uniforme",
+    "title": "Portée d'un projectile",
+    "difficulty": 3,
+    "statement": "Un projectile est lancé avec une vitesse initiale v₀ = 25 m/s et un angle α = 45° par rapport à l'horizontale. Calculer la portée P du tir. (g = 10 m/s²)",
+    "hints": [
+      "La portée est maximale pour α = 45°",
+      "Utilise P = v₀² sin(2α)/g"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la formule",
+        "content": "P = v₀² sin(2α)/g = 25² × sin(90°)/10 = 625 × 1/10 = 62,5 m",
+        "explanation": "sin(90°) = 1, donc c'est bien la portée maximale"
+      }
+    ],
+    "method": "Portée d'un projectile",
+    "commonMistakes": [
+      "Oublier le 2 devant α",
+      "Confondre sin(2α) et 2sin(α)"
+    ],
+    "tags": ["projectile", "portée", "trajectoire"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-champ-2",
+    "lessonId": "mouvement-champ-uniforme",
+    "title": "Flèche d'un tir",
+    "difficulty": 3,
+    "statement": "Un projectile est lancé avec v₀ = 20 m/s et α = 60°. Calculer l'altitude maximale H atteinte (flèche). (g = 10 m/s²)",
+    "hints": [
+      "H = v₀² sin²(α)/(2g)",
+      "sin(60°) = √3/2"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de sin²(60°)",
+        "content": "sin(60°) = √3/2, donc sin²(60°) = 3/4",
+        "explanation": "Valeur remarquable à connaître"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de H",
+        "content": "H = v₀² sin²(α)/(2g) = 400 × (3/4)/(20) = 300/20 = 15 m",
+        "explanation": "L'altitude maximale est atteinte quand vy = 0"
+      }
+    ],
+    "method": "Flèche d'un projectile",
+    "commonMistakes": [
+      "Oublier le carré sur sin(α)",
+      "Se tromper dans sin(60°)"
+    ],
+    "tags": ["projectile", "flèche", "altitude"]
+  },
+  {
+    "id": "ex-champ-3",
+    "lessonId": "mouvement-champ-uniforme",
+    "title": "Déviation d'un électron",
+    "difficulty": 4,
+    "statement": "Un électron (m = 9,1×10⁻³¹ kg, q = -1,6×10⁻¹⁹ C) entre avec v₀ = 10⁷ m/s dans un champ électrique E = 10⁴ V/m perpendiculaire à sa trajectoire. Les plaques ont une longueur L = 5 cm. Calculer la déviation y en sortie des plaques.",
+    "hints": [
+      "L'accélération est a = |q|E/m",
+      "Le temps de traversée est t = L/v₀",
+      "La déviation est y = ½at²"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de l'accélération",
+        "content": "a = |q|E/m = (1,6×10⁻¹⁹ × 10⁴)/(9,1×10⁻³¹) = 1,76×10¹⁵ m/s²",
+        "explanation": "On utilise la valeur absolue de q"
+      },
+      {
+        "step": 2,
+        "title": "Temps de traversée",
+        "content": "t = L/v₀ = 0,05/(10⁷) = 5×10⁻⁹ s",
+        "explanation": "L'électron traverse les plaques à vitesse constante selon x"
+      },
+      {
+        "step": 3,
+        "title": "Déviation",
+        "content": "y = ½at² = ½ × 1,76×10¹⁵ × (5×10⁻⁹)² = 2,2×10⁻² m = 2,2 cm",
+        "explanation": "L'électron est dévié de 2,2 cm"
+      }
+    ],
+    "method": "Déviation dans un champ électrique",
+    "commonMistakes": [
+      "Oublier le signe de q",
+      "Erreur de puissance de 10"
+    ],
+    "tags": ["électron", "champ électrique", "déviation"]
+  },
+  {
+    "id": "ex-energie-1",
+    "lessonId": "energie-mecanique",
+    "title": "Conservation de l'énergie mécanique",
+    "difficulty": 2,
+    "statement": "Une bille de masse m = 100 g est lâchée sans vitesse initiale d'une hauteur h = 2 m. Quelle est sa vitesse juste avant de toucher le sol ? (g = 10 m/s²)",
+    "hints": [
+      "L'énergie mécanique se conserve",
+      "Ep initiale = Ec finale"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conservation de l'énergie",
+        "content": "mgh = ½mv²",
+        "explanation": "Toute l'énergie potentielle se transforme en énergie cinétique"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de v",
+        "content": "v = √(2gh) = √(2 × 10 × 2) = √40 = 6,3 m/s",
+        "explanation": "La masse s'élimine, la vitesse ne dépend que de h"
+      }
+    ],
+    "method": "Conservation de l'énergie mécanique",
+    "commonMistakes": [
+      "Oublier le facteur 2 sous la racine",
+      "Utiliser la masse alors qu'elle s'élimine"
+    ],
+    "tags": ["énergie", "conservation", "chute"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-energie-2",
+    "lessonId": "energie-mecanique",
+    "title": "Travail d'une force",
+    "difficulty": 3,
+    "statement": "Une force F = 50 N déplace un objet sur une distance d = 3 m. L'angle entre la force et le déplacement est θ = 60°. Calculer le travail de cette force.",
+    "hints": [
+      "W = F × d × cos(θ)",
+      "cos(60°) = 0,5"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la formule",
+        "content": "W = F × d × cos(θ) = 50 × 3 × cos(60°) = 150 × 0,5 = 75 J",
+        "explanation": "Seule la composante de la force dans la direction du mouvement travaille"
+      }
+    ],
+    "method": "Travail d'une force",
+    "commonMistakes": [
+      "Oublier le cosinus",
+      "Confondre sin et cos"
+    ],
+    "tags": ["travail", "force", "énergie"]
+  },
+  {
+    "id": "ex-energie-3",
+    "lessonId": "energie-mecanique",
+    "title": "Pendule simple",
+    "difficulty": 4,
+    "statement": "Un pendule de longueur L = 1 m est écarté d'un angle θ₀ = 60° puis lâché. Quelle est sa vitesse au point le plus bas ? (g = 10 m/s²)",
+    "hints": [
+      "La hauteur de chute est h = L(1 - cos θ₀)",
+      "Conservation de l'énergie mécanique"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de la hauteur",
+        "content": "h = L(1 - cos 60°) = 1 × (1 - 0,5) = 0,5 m",
+        "explanation": "La masse descend de 0,5 m par rapport au point le plus bas"
+      },
+      {
+        "step": 2,
+        "title": "Vitesse au point bas",
+        "content": "v = √(2gh) = √(2 × 10 × 0,5) = √10 = 3,2 m/s",
+        "explanation": "Conservation de l'énergie mécanique"
+      }
+    ],
+    "method": "Énergie du pendule",
+    "commonMistakes": [
+      "Se tromper dans la hauteur de chute",
+      "Oublier le (1 - cos θ₀)"
+    ],
+    "tags": ["pendule", "énergie", "conservation"]
+  },
+  {
+    "id": "ex-rc-1",
+    "lessonId": "circuit-rc",
+    "title": "Constante de temps d'un circuit RC",
+    "difficulty": 2,
+    "statement": "Un circuit RC est constitué d'une résistance R = 10 kΩ et d'un condensateur C = 100 μF. Calculer la constante de temps τ.",
+    "hints": [
+      "τ = RC",
+      "Attention aux unités"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion des unités",
+        "content": "R = 10 × 10³ Ω, C = 100 × 10⁻⁶ F",
+        "explanation": "k = 10³, μ = 10⁻⁶"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de τ",
+        "content": "τ = RC = 10 × 10³ × 100 × 10⁻⁶ = 1 s",
+        "explanation": "La constante de temps s'exprime en secondes"
+      }
+    ],
+    "method": "Calcul de τ = RC",
+    "commonMistakes": [
+      "Erreur de conversion des préfixes",
+      "Oublier de multiplier"
+    ],
+    "tags": ["RC", "constante de temps", "condensateur"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-rc-2",
+    "lessonId": "circuit-rc",
+    "title": "Charge d'un condensateur",
+    "difficulty": 3,
+    "statement": "Un condensateur initialement déchargé est branché sur une source E = 12 V à travers une résistance. τ = 2 ms. Quelle est la tension aux bornes du condensateur après t = 5 ms ?",
+    "hints": [
+      "uc(t) = E(1 - e^(-t/τ))",
+      "Calcule d'abord t/τ"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de t/τ",
+        "content": "t/τ = 5/2 = 2,5",
+        "explanation": "Rapport sans unité"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de e^(-2,5)",
+        "content": "e^(-2,5) ≈ 0,082",
+        "explanation": "Utilise la calculatrice"
+      },
+      {
+        "step": 3,
+        "title": "Calcul de uc",
+        "content": "uc = 12 × (1 - 0,082) = 12 × 0,918 = 11,0 V",
+        "explanation": "Après 2,5τ, le condensateur est chargé à 92%"
+      }
+    ],
+    "method": "Charge du condensateur",
+    "commonMistakes": [
+      "Oublier le signe moins dans l'exponentielle",
+      "Confondre charge et décharge"
+    ],
+    "tags": ["RC", "charge", "exponentielle"]
+  },
+  {
+    "id": "ex-rc-3",
+    "lessonId": "circuit-rc",
+    "title": "Énergie stockée dans un condensateur",
+    "difficulty": 3,
+    "statement": "Un condensateur de capacité C = 470 μF est chargé sous une tension U = 12 V. Calculer l'énergie stockée.",
+    "hints": [
+      "E = ½CU²",
+      "Attention aux unités"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion",
+        "content": "C = 470 × 10⁻⁶ F",
+        "explanation": "μ = 10⁻⁶"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'énergie",
+        "content": "E = ½ × 470 × 10⁻⁶ × 12² = ½ × 470 × 10⁻⁶ × 144 = 3,4 × 10⁻² J = 34 mJ",
+        "explanation": "L'énergie est proportionnelle au carré de la tension"
+      }
+    ],
+    "method": "Énergie du condensateur",
+    "commonMistakes": [
+      "Oublier le facteur ½",
+      "Erreur de conversion"
+    ],
+    "tags": ["condensateur", "énergie", "capacité"]
+  },
+  {
+    "id": "ex-acide-1",
+    "lessonId": "acides-bases",
+    "title": "Calcul du pH d'un acide fort",
+    "difficulty": 2,
+    "statement": "Calculer le pH d'une solution d'acide chlorhydrique HCl de concentration c = 10⁻³ mol/L.",
+    "hints": [
+      "HCl est un acide fort : dissociation totale",
+      "[H₃O⁺] = c"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Concentration en H₃O⁺",
+        "content": "[H₃O⁺] = c = 10⁻³ mol/L",
+        "explanation": "Acide fort : dissociation totale"
+      },
+      {
+        "step": 2,
+        "title": "Calcul du pH",
+        "content": "pH = -log[H₃O⁺] = -log(10⁻³) = 3",
+        "explanation": "Le pH est l'opposé du logarithme de la concentration"
+      }
+    ],
+    "method": "pH d'un acide fort",
+    "commonMistakes": [
+      "Oublier que l'acide est fort",
+      "Se tromper dans le log"
+    ],
+    "tags": ["pH", "acide fort", "concentration"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-acide-2",
+    "lessonId": "acides-bases",
+    "title": "pH d'un acide faible",
+    "difficulty": 3,
+    "statement": "L'acide éthanoïque CH₃COOH a un pKa = 4,8. Calculer le pH d'une solution de concentration c = 0,1 mol/L.",
+    "hints": [
+      "Acide faible : pH = ½(pKa - log c)",
+      "Cette formule suppose [H₃O⁺] << c"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la formule",
+        "content": "pH = ½(pKa - log c) = ½(4,8 - log(0,1)) = ½(4,8 - (-1)) = ½ × 5,8 = 2,9",
+        "explanation": "log(0,1) = -1"
+      }
+    ],
+    "method": "pH d'un acide faible",
+    "commonMistakes": [
+      "Oublier le facteur ½",
+      "Se tromper dans le signe du log"
+    ],
+    "tags": ["pH", "acide faible", "pKa"]
+  },
+  {
+    "id": "ex-acide-3",
+    "lessonId": "acides-bases",
+    "title": "Solution tampon",
+    "difficulty": 4,
+    "statement": "On mélange V₁ = 50 mL d'acide éthanoïque 0,1 mol/L et V₂ = 50 mL d'éthanoate de sodium 0,1 mol/L. pKa = 4,8. Calculer le pH de la solution tampon.",
+    "hints": [
+      "Utilise l'équation de Henderson-Hasselbalch",
+      "pH = pKa + log([A⁻]/[AH])"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul des concentrations",
+        "content": "[AH] = [A⁻] = 0,1 × 50/100 = 0,05 mol/L",
+        "explanation": "Les concentrations sont divisées par 2 (dilution)"
+      },
+      {
+        "step": 2,
+        "title": "Application de Henderson-Hasselbalch",
+        "content": "pH = pKa + log([A⁻]/[AH]) = 4,8 + log(1) = 4,8 + 0 = 4,8",
+        "explanation": "Quand [A⁻] = [AH], pH = pKa"
+      }
+    ],
+    "method": "Solution tampon",
+    "commonMistakes": [
+      "Oublier la dilution",
+      "Se tromper dans le rapport"
+    ],
+    "tags": ["tampon", "pH", "Henderson-Hasselbalch"]
+  },
+  {
+    "id": "ex-acide-4",
+    "lessonId": "acides-bases",
+    "title": "pH d'une base forte",
+    "difficulty": 2,
+    "statement": "Calculer le pH d'une solution de soude NaOH de concentration c = 10⁻² mol/L.",
+    "hints": [
+      "NaOH est une base forte",
+      "[OH⁻] = c, puis utilise pOH et la relation pH + pOH = 14"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Concentration en OH⁻",
+        "content": "[OH⁻] = c = 10⁻² mol/L",
+        "explanation": "Base forte : dissociation totale"
+      },
+      {
+        "step": 2,
+        "title": "Calcul du pOH",
+        "content": "pOH = -log[OH⁻] = -log(10⁻²) = 2",
+        "explanation": "Même principe que le pH"
+      },
+      {
+        "step": 3,
+        "title": "Calcul du pH",
+        "content": "pH = 14 - pOH = 14 - 2 = 12",
+        "explanation": "Relation fondamentale à 25°C"
+      }
+    ],
+    "method": "pH d'une base forte",
+    "commonMistakes": [
+      "Confondre pH et pOH",
+      "Oublier la relation pH + pOH = 14"
+    ],
+    "tags": ["pH", "base forte", "soude"]
+  },
+  {
+    "id": "ex-redox-1",
+    "lessonId": "oxydoreduction",
+    "title": "Équilibrage d'une demi-équation",
+    "difficulty": 2,
+    "statement": "Équilibrer la demi-équation : MnO₄⁻ → Mn²⁺ (en milieu acide)",
+    "hints": [
+      "Équilibre d'abord Mn (déjà fait)",
+      "Puis O avec H₂O, puis H avec H⁺, puis les charges avec e⁻"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Équilibrer O avec H₂O",
+        "content": "MnO₄⁻ → Mn²⁺ + 4H₂O",
+        "explanation": "4 oxygènes à gauche, donc 4H₂O à droite"
+      },
+      {
+        "step": 2,
+        "title": "Équilibrer H avec H⁺",
+        "content": "MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O",
+        "explanation": "8 hydrogènes à droite, donc 8H⁺ à gauche"
+      },
+      {
+        "step": 3,
+        "title": "Équilibrer les charges",
+        "content": "MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O",
+        "explanation": "Gauche : -1+8 = +7, Droite : +2. Ajout de 5e⁻ à gauche"
+      }
+    ],
+    "method": "Équilibrage redox",
+    "commonMistakes": [
+      "Oublier d'équilibrer les charges",
+      "Se tromper dans le nombre de H₂O"
+    ],
+    "tags": ["redox", "équilibrage", "permanganate"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-redox-2",
+    "lessonId": "oxydoreduction",
+    "title": "Équation bilan redox",
+    "difficulty": 3,
+    "statement": "Écrire l'équation bilan de la réaction entre les ions permanganate MnO₄⁻ et les ions fer(II) Fe²⁺ en milieu acide. Couples : MnO₄⁻/Mn²⁺ et Fe³⁺/Fe²⁺.",
+    "hints": [
+      "Écris les deux demi-équations",
+      "Multiplie pour avoir le même nombre d'électrons",
+      "Additionne"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Demi-équations",
+        "content": "MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O\nFe²⁺ → Fe³⁺ + e⁻",
+        "explanation": "Réduction du permanganate, oxydation du fer(II)"
+      },
+      {
+        "step": 2,
+        "title": "Multiplication",
+        "content": "(×1) MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O\n(×5) 5Fe²⁺ → 5Fe³⁺ + 5e⁻",
+        "explanation": "5 électrons de chaque côté"
+      },
+      {
+        "step": 3,
+        "title": "Addition",
+        "content": "MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 4H₂O + 5Fe³⁺",
+        "explanation": "Les électrons s'éliminent"
+      }
+    ],
+    "method": "Équation bilan redox",
+    "commonMistakes": [
+      "Oublier de multiplier",
+      "Se tromper dans les coefficients"
+    ],
+    "tags": ["redox", "équation bilan", "permanganate", "fer"]
+  },
+  {
+    "id": "ex-redox-3",
+    "lessonId": "oxydoreduction",
+    "title": "Pile Daniell",
+    "difficulty": 3,
+    "statement": "On réalise une pile avec les couples Cu²⁺/Cu et Zn²⁺/Zn. Le zinc est plus réducteur que le cuivre. Identifier l'anode, la cathode et écrire les réactions aux électrodes.",
+    "hints": [
+      "L'anode est l'électrode où a lieu l'oxydation",
+      "Le réducteur le plus fort s'oxyde"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identification des électrodes",
+        "content": "Anode (-) : électrode de zinc\nCathode (+) : électrode de cuivre",
+        "explanation": "Le zinc s'oxyde, le cuivre se réduit"
+      },
+      {
+        "step": 2,
+        "title": "Réaction à l'anode",
+        "content": "Zn → Zn²⁺ + 2e⁻",
+        "explanation": "Oxydation du zinc"
+      },
+      {
+        "step": 3,
+        "title": "Réaction à la cathode",
+        "content": "Cu²⁺ + 2e⁻ → Cu",
+        "explanation": "Réduction des ions cuivre"
+      },
+      {
+        "step": 4,
+        "title": "Équation bilan",
+        "content": "Zn + Cu²⁺ → Zn²⁺ + Cu",
+        "explanation": "Le zinc se dissout, le cuivre se dépose"
+      }
+    ],
+    "method": "Fonctionnement d'une pile",
+    "commonMistakes": [
+      "Inverser anode et cathode",
+      "Confondre oxydation et réduction"
+    ],
+    "tags": ["pile", "anode", "cathode", "Daniell"]
+  },
+  {
+    "id": "ex-cinetique-1",
+    "lessonId": "cinetique",
+    "title": "Calcul de vitesse de réaction",
+    "difficulty": 2,
+    "statement": "Pour la réaction 2H₂O₂ → 2H₂O + O₂, [H₂O₂] passe de 0,5 mol/L à 0,3 mol/L en 100 s. Calculer la vitesse moyenne de réaction.",
+    "hints": [
+      "v = -(1/a) × Δ[A]/Δt pour un réactif",
+      "a = 2 pour H₂O₂"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de Δ[H₂O₂]",
+        "content": "Δ[H₂O₂] = 0,3 - 0,5 = -0,2 mol/L",
+        "explanation": "Variation négative car le réactif est consommé"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de la vitesse",
+        "content": "v = -(1/2) × (-0,2)/100 = 1,0 × 10⁻³ mol·L⁻¹·s⁻¹",
+        "explanation": "Le coefficient 2 vient de l'équation bilan"
+      }
+    ],
+    "method": "Vitesse de réaction",
+    "commonMistakes": [
+      "Oublier le coefficient stœchiométrique",
+      "Se tromper dans le signe"
+    ],
+    "tags": ["cinétique", "vitesse", "concentration"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-cinetique-2",
+    "lessonId": "cinetique",
+    "title": "Temps de demi-réaction",
+    "difficulty": 3,
+    "statement": "La concentration d'un réactif passe de 0,10 mol/L à 0,025 mol/L. Si le temps de demi-réaction t₁/₂ = 20 min, quel est le temps écoulé ?",
+    "hints": [
+      "Combien de fois la concentration a-t-elle été divisée par 2 ?",
+      "0,10 → 0,05 → 0,025"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Nombre de demi-réactions",
+        "content": "0,10/0,025 = 4 = 2²",
+        "explanation": "La concentration a été divisée par 4, soit 2 fois par 2"
+      },
+      {
+        "step": 2,
+        "title": "Temps écoulé",
+        "content": "t = 2 × t₁/₂ = 2 × 20 = 40 min",
+        "explanation": "Deux demi-réactions successives"
+      }
+    ],
+    "method": "Temps de demi-réaction",
+    "commonMistakes": [
+      "Confondre division par 4 et 2 demi-réactions",
+      "Croire que le temps est proportionnel au rapport"
+    ],
+    "tags": ["cinétique", "t1/2", "concentration"]
+  },
+  {
+    "id": "ex-cinetique-3",
+    "lessonId": "cinetique",
+    "title": "Effet de la température",
+    "difficulty": 3,
+    "statement": "À 20°C, une réaction a un temps de demi-réaction t₁/₂ = 40 min. À 40°C, t₁/₂ = 10 min. Quel est le facteur d'accélération ?",
+    "hints": [
+      "Le facteur d'accélération est le rapport des vitesses",
+      "La vitesse est inversement proportionnelle à t₁/₂"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Rapport des temps",
+        "content": "t₁/₂(20°C) / t₁/₂(40°C) = 40/10 = 4",
+        "explanation": "Le temps de demi-réaction est 4 fois plus court à 40°C"
+      },
+      {
+        "step": 2,
+        "title": "Facteur d'accélération",
+        "content": "La réaction est 4 fois plus rapide à 40°C qu'à 20°C",
+        "explanation": "Une augmentation de 20°C multiplie la vitesse par 4"
+      }
+    ],
+    "method": "Effet de la température",
+    "commonMistakes": [
+      "Confondre temps et vitesse",
+      "Inverser le rapport"
+    ],
+    "tags": ["cinétique", "température", "facteur cinétique"]
+  },
+  {
+    "id": "ex-organique-1",
+    "lessonId": "chimie-organique",
+    "title": "Nomenclature d'un alcool",
+    "difficulty": 2,
+    "statement": "Donner le nom de la molécule : CH₃–CH₂–CH₂–CH₂–OH",
+    "hints": [
+      "Compte le nombre de carbones",
+      "Identifie le groupe fonctionnel",
+      "Indique la position"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Chaîne carbonée",
+        "content": "4 carbones → but-",
+        "explanation": "Préfixe pour 4 carbones"
+      },
+      {
+        "step": 2,
+        "title": "Groupe fonctionnel",
+        "content": "–OH (alcool) → -ol",
+        "explanation": "Suffixe des alcools"
+      },
+      {
+        "step": 3,
+        "title": "Position",
+        "content": "–OH sur le carbone 1",
+        "explanation": "On numérote pour minimiser l'indice du groupe OH"
+      },
+      {
+        "step": 4,
+        "title": "Nom complet",
+        "content": "butan-1-ol",
+        "explanation": "Préfixe + position + suffixe"
+      }
+    ],
+    "method": "Nomenclature des alcools",
+    "commonMistakes": [
+      "Oublier la position",
+      "Se tromper dans la numérotation"
+    ],
+    "tags": ["nomenclature", "alcool", "organique"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-organique-2",
+    "lessonId": "chimie-organique",
+    "title": "Identification d'un groupe fonctionnel",
+    "difficulty": 2,
+    "statement": "Identifier le groupe fonctionnel et la famille de : CH₃–CO–CH₃",
+    "hints": [
+      "Repère le groupe caractéristique",
+      "Le carbone central a une double liaison avec O"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identification du groupe",
+        "content": "–CO– : groupe carbonyle (C=O)",
+        "explanation": "Double liaison carbone-oxygène"
+      },
+      {
+        "step": 2,
+        "title": "Position dans la chaîne",
+        "content": "Le groupe C=O est au milieu de la chaîne",
+        "explanation": "Ce n'est pas en bout de chaîne (ce serait un aldéhyde)"
+      },
+      {
+        "step": 3,
+        "title": "Famille",
+        "content": "C'est une cétone",
+        "explanation": "Groupe carbonyle en milieu de chaîne = cétone"
+      },
+      {
+        "step": 4,
+        "title": "Nom",
+        "content": "propan-2-one (ou acétone)",
+        "explanation": "3 carbones, C=O en position 2"
+      }
+    ],
+    "method": "Identification des groupes fonctionnels",
+    "commonMistakes": [
+      "Confondre cétone et aldéhyde",
+      "Oublier que l'aldéhyde est en bout de chaîne"
+    ],
+    "tags": ["cétone", "groupe fonctionnel", "identification"]
+  },
+  {
+    "id": "ex-organique-3",
+    "lessonId": "chimie-organique",
+    "title": "Nomenclature d'un ester",
+    "difficulty": 3,
+    "statement": "Donner le nom de l'ester : CH₃–CH₂–COO–CH₃",
+    "hints": [
+      "Identifie la partie acide (avant –COO–)",
+      "Identifie la partie alcool (après –O–)"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Partie acide",
+        "content": "CH₃–CH₂–CO– provient de l'acide propanoïque (3 C)",
+        "explanation": "La partie acide donne le suffixe -oate"
+      },
+      {
+        "step": 2,
+        "title": "Partie alcool",
+        "content": "–O–CH₃ provient du méthanol (1 C)",
+        "explanation": "La partie alcool donne le suffixe -yle"
+      },
+      {
+        "step": 3,
+        "title": "Nom complet",
+        "content": "propanoate de méthyle",
+        "explanation": "(acide)-oate de (alcool)-yle"
+      }
+    ],
+    "method": "Nomenclature des esters",
+    "commonMistakes": [
+      "Inverser les parties acide et alcool",
+      "Se tromper dans le nombre de carbones"
+    ],
+    "tags": ["ester", "nomenclature", "organique"]
+  },
+  {
+    "id": "ex-organique-4",
+    "lessonId": "chimie-organique",
+    "title": "Classe d'un alcool",
+    "difficulty": 2,
+    "statement": "Déterminer la classe de l'alcool : (CH₃)₃C–OH",
+    "hints": [
+      "Compte le nombre de chaînes carbonées liées au carbone portant OH",
+      "Primaire, secondaire ou tertiaire ?"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse du carbone porteur",
+        "content": "Le carbone portant –OH est lié à 3 groupes CH₃",
+        "explanation": "C'est un carbone tertiaire"
+      },
+      {
+        "step": 2,
+        "title": "Classe de l'alcool",
+        "content": "C'est un alcool tertiaire",
+        "explanation": "Le carbone fonctionnel porte 3 chaînes carbonées"
+      },
+      {
+        "step": 3,
+        "title": "Nom",
+        "content": "2-méthylpropan-2-ol (ou alcool tert-butylique)",
+        "explanation": "4 carbones avec OH en position 2"
+      }
+    ],
+    "method": "Classification des alcools",
+    "commonMistakes": [
+      "Confondre le nombre de carbones total avec la classe",
+      "Oublier les ramifications"
+    ],
+    "tags": ["alcool", "classe", "tertiaire"]
+  },
+  {
+    "id": "ex-interf-1",
+    "lessonId": "interferences",
+    "title": "Calcul de l'interfrange",
+    "difficulty": 2,
+    "statement": "Dans une expérience de fentes de Young, on utilise une lumière de longueur d'onde λ = 550 nm. Les fentes sont espacées de a = 0,4 mm et l'écran est à D = 1,5 m. Calculer l'interfrange.",
+    "hints": [
+      "Utilise la formule i = λD/a",
+      "Attention aux unités : tout en mètres"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion des unités",
+        "content": "λ = 550 nm = 550 × 10⁻⁹ m, a = 0,4 mm = 0,4 × 10⁻³ m",
+        "explanation": "On convertit tout en mètres"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'interfrange",
+        "content": "i = λD/a = (550 × 10⁻⁹ × 1,5) / (0,4 × 10⁻³) = 2,06 × 10⁻³ m = 2,06 mm",
+        "explanation": "L'interfrange est la distance entre deux franges brillantes consécutives"
+      }
+    ],
+    "method": "Formule de l'interfrange",
+    "commonMistakes": [
+      "Oublier de convertir en mètres",
+      "Inverser a et D dans la formule"
+    ],
+    "tags": ["interférences", "interfrange", "Young"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-interf-2",
+    "lessonId": "interferences",
+    "title": "Nature d'une frange",
+    "difficulty": 3,
+    "statement": "Avec λ = 600 nm, a = 0,5 mm et D = 2 m, déterminer la nature de la frange située à x = 4,8 mm du centre de la figure d'interférences.",
+    "hints": [
+      "Calcule d'abord l'interfrange i",
+      "Détermine le rang k = x/i",
+      "Si k est entier → frange brillante"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de l'interfrange",
+        "content": "i = λD/a = (600 × 10⁻⁹ × 2) / (0,5 × 10⁻³) = 2,4 mm",
+        "explanation": "Distance entre franges brillantes"
+      },
+      {
+        "step": 2,
+        "title": "Calcul du rang",
+        "content": "k = x/i = 4,8 / 2,4 = 2",
+        "explanation": "k est un entier"
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "k = 2 est entier, donc c'est une frange brillante d'ordre 2",
+        "explanation": "Si k était demi-entier, ce serait une frange sombre"
+      }
+    ],
+    "method": "Détermination de la nature d'une frange",
+    "commonMistakes": [
+      "Oublier que k doit être entier pour une frange brillante",
+      "Se tromper dans le calcul de i"
+    ],
+    "tags": ["interférences", "frange", "ordre"]
+  },
+  {
+    "id": "ex-diffr-1",
+    "lessonId": "diffraction",
+    "title": "Largeur de la tache centrale",
+    "difficulty": 2,
+    "statement": "Un laser He-Ne (λ = 633 nm) éclaire une fente de largeur a = 0,1 mm. L'écran est à D = 2 m. Calculer la largeur de la tache centrale de diffraction.",
+    "hints": [
+      "Utilise L = 2λD/a",
+      "Convertis toutes les longueurs en mètres"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion des unités",
+        "content": "λ = 633 × 10⁻⁹ m, a = 1 × 10⁻⁴ m",
+        "explanation": "Tout en mètres pour la cohérence"
+      },
+      {
+        "step": 2,
+        "title": "Application de la formule",
+        "content": "L = 2λD/a = 2 × 633 × 10⁻⁹ × 2 / (10⁻⁴) = 2,53 × 10⁻² m = 2,53 cm",
+        "explanation": "La tache centrale fait environ 2,5 cm de large"
+      }
+    ],
+    "method": "Calcul de la tache centrale de diffraction",
+    "commonMistakes": [
+      "Oublier le facteur 2",
+      "Confusion avec l'interfrange"
+    ],
+    "tags": ["diffraction", "tache centrale", "laser"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-diffr-2",
+    "lessonId": "diffraction",
+    "title": "Écart angulaire",
+    "difficulty": 2,
+    "statement": "Calculer l'écart angulaire θ pour une fente de 0,2 mm éclairée par une lumière de 500 nm. Donner le résultat en radians et en degrés.",
+    "hints": [
+      "θ = λ/a (en radians pour petits angles)",
+      "Pour convertir : θ(°) = θ(rad) × 180/π"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul en radians",
+        "content": "θ = λ/a = 500 × 10⁻⁹ / (0,2 × 10⁻³) = 2,5 × 10⁻³ rad",
+        "explanation": "C'est un petit angle, l'approximation est valide"
+      },
+      {
+        "step": 2,
+        "title": "Conversion en degrés",
+        "content": "θ = 2,5 × 10⁻³ × 180/π ≈ 0,14°",
+        "explanation": "Angle très petit, confirmant l'approximation"
+      }
+    ],
+    "method": "Calcul de l'écart angulaire",
+    "commonMistakes": [
+      "Inverser λ et a",
+      "Oublier la conversion en degrés si demandée"
+    ],
+    "tags": ["diffraction", "écart angulaire", "angle"]
+  },
+  {
+    "id": "ex-radio-1",
+    "lessonId": "radioactivite",
+    "title": "Calcul de demi-vie",
+    "difficulty": 2,
+    "statement": "Un isotope radioactif a une constante radioactive λ = 2,41 × 10⁻⁴ s⁻¹. Calculer sa demi-vie en minutes.",
+    "hints": [
+      "t₁/₂ = ln(2)/λ",
+      "ln(2) ≈ 0,693"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la formule",
+        "content": "t₁/₂ = ln(2)/λ = 0,693 / (2,41 × 10⁻⁴) = 2875 s",
+        "explanation": "On obtient le résultat en secondes"
+      },
+      {
+        "step": 2,
+        "title": "Conversion en minutes",
+        "content": "t₁/₂ = 2875 / 60 ≈ 48 min",
+        "explanation": "La demi-vie est d'environ 48 minutes"
+      }
+    ],
+    "method": "Relation demi-vie et constante radioactive",
+    "commonMistakes": [
+      "Inverser la formule",
+      "Oublier la conversion d'unités"
+    ],
+    "tags": ["radioactivité", "demi-vie", "constante radioactive"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-radio-2",
+    "lessonId": "radioactivite",
+    "title": "Décroissance radioactive",
+    "difficulty": 3,
+    "statement": "L'iode 131 a une demi-vie de 8 jours. Quelle fraction de l'activité initiale reste-t-il après 24 jours ?",
+    "hints": [
+      "Calcule le nombre de demi-vies n = t/t₁/₂",
+      "L'activité restante est A₀/2ⁿ"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Nombre de demi-vies",
+        "content": "n = 24/8 = 3 demi-vies",
+        "explanation": "Il s'est écoulé exactement 3 demi-vies"
+      },
+      {
+        "step": 2,
+        "title": "Fraction restante",
+        "content": "A/A₀ = 1/2³ = 1/8 = 12,5%",
+        "explanation": "Il reste 1/8 soit 12,5% de l'activité initiale"
+      }
+    ],
+    "method": "Loi de décroissance radioactive",
+    "commonMistakes": [
+      "Diviser par 3 au lieu de 2³",
+      "Confondre activité et nombre de noyaux (même loi)"
+    ],
+    "tags": ["radioactivité", "décroissance", "iode"]
+  },
+  {
+    "id": "ex-radio-3",
+    "lessonId": "radioactivite",
+    "title": "Datation au carbone 14",
+    "difficulty": 4,
+    "statement": "Un échantillon archéologique a une activité égale à 25% de celle d'un échantillon récent. Le ¹⁴C a une demi-vie de 5730 ans. Quel est l'âge de l'échantillon ?",
+    "hints": [
+      "Si A = A₀/4, combien de demi-vies ?",
+      "Ou utilise A = A₀ × e^(-λt)"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Nombre de demi-vies",
+        "content": "A/A₀ = 1/4 = 1/2² → n = 2 demi-vies",
+        "explanation": "25% = 1/4 = (1/2)²"
+      },
+      {
+        "step": 2,
+        "title": "Âge de l'échantillon",
+        "content": "t = n × t₁/₂ = 2 × 5730 = 11460 ans",
+        "explanation": "L'échantillon a environ 11 500 ans"
+      }
+    ],
+    "method": "Datation au carbone 14",
+    "commonMistakes": [
+      "Se tromper dans le nombre de demi-vies",
+      "Confondre 25% et 1/4"
+    ],
+    "tags": ["radioactivité", "datation", "carbone 14"]
+  },
+  {
+    "id": "ex-titr-1",
+    "lessonId": "titrages",
+    "title": "Titrage acide-base simple",
+    "difficulty": 2,
+    "statement": "On titre 20,0 mL d'une solution d'acide chlorhydrique par une solution de soude de concentration 0,10 mol/L. L'équivalence est atteinte pour VE = 15,0 mL. Calculer la concentration de l'acide.",
+    "hints": [
+      "HCl + NaOH → NaCl + H₂O (réaction 1:1)",
+      "À l'équivalence : nₐcide = nbase"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Relation à l'équivalence",
+        "content": "Ca × Va = Cb × Vb,E",
+        "explanation": "Réaction équimolaire, coefficients 1:1"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de la concentration",
+        "content": "Ca = Cb × Vb,E / Va = 0,10 × 15,0 / 20,0 = 0,075 mol/L",
+        "explanation": "L'acide est moins concentré que la base"
+      }
+    ],
+    "method": "Titrage acide-base",
+    "commonMistakes": [
+      "Inverser titrant et titré",
+      "Oublier les coefficients stœchiométriques (ici égaux à 1)"
+    ],
+    "tags": ["titrage", "acide-base", "équivalence"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-titr-2",
+    "lessonId": "titrages",
+    "title": "Choix d'indicateur coloré",
+    "difficulty": 2,
+    "statement": "On titre une solution d'ammoniac (base faible) par de l'acide chlorhydrique (acide fort). Le pH à l'équivalence est 5,2. Quel indicateur choisir parmi : hélianthine (3,1-4,4), BBT (6,0-7,6), phénolphtaléine (8,2-10,0) ?",
+    "hints": [
+      "L'indicateur doit avoir sa zone de virage autour du pH à l'équivalence",
+      "Le pH à l'équivalence doit être DANS la zone de virage"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse des zones de virage",
+        "content": "Hélianthine : 3,1-4,4, BBT : 6,0-7,6, Phénolphtaléine : 8,2-10,0",
+        "explanation": "Le pH à l'équivalence (5,2) doit être dans la zone de virage"
+      },
+      {
+        "step": 2,
+        "title": "Choix",
+        "content": "pH = 5,2 est le plus proche de la zone 3,1-4,4 mais n'y est pas. Aucun indicateur parfait. L'hélianthine est le moins mauvais choix.",
+        "explanation": "En pratique, on peut utiliser un indicateur mixte ou la méthode des tangentes"
+      }
+    ],
+    "method": "Choix d'indicateur coloré",
+    "commonMistakes": [
+      "Choisir un indicateur sans vérifier la zone de virage",
+      "Oublier que le pH à l'équivalence dépend des espèces titrées"
+    ],
+    "tags": ["titrage", "indicateur", "zone de virage"]
+  },
+  {
+    "id": "ex-titr-3",
+    "lessonId": "titrages",
+    "title": "Titrage redox : permanganate",
+    "difficulty": 3,
+    "statement": "On titre 10,0 mL de solution de fer(II) par une solution de permanganate de potassium à 0,020 mol/L. L'équivalence est atteinte pour VE = 12,0 mL. Calculer la concentration en Fe²⁺.\nRéaction : 5 Fe²⁺ + MnO₄⁻ + 8 H⁺ → 5 Fe³⁺ + Mn²⁺ + 4 H₂O",
+    "hints": [
+      "Attention aux coefficients stœchiométriques",
+      "À l'équivalence : n(Fe²⁺)/5 = n(MnO₄⁻)/1"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Quantité de permanganate à l'équivalence",
+        "content": "n(MnO₄⁻) = C × V = 0,020 × 12,0 × 10⁻³ = 2,4 × 10⁻⁴ mol",
+        "explanation": "Calculée à partir du volume à l'équivalence"
+      },
+      {
+        "step": 2,
+        "title": "Quantité de fer(II)",
+        "content": "n(Fe²⁺) = 5 × n(MnO₄⁻) = 5 × 2,4 × 10⁻⁴ = 1,2 × 10⁻³ mol",
+        "explanation": "D'après la stœchiométrie 5:1"
+      },
+      {
+        "step": 3,
+        "title": "Concentration",
+        "content": "[Fe²⁺] = n/V = 1,2 × 10⁻³ / (10,0 × 10⁻³) = 0,12 mol/L",
+        "explanation": "Concentration initiale en ions fer(II)"
+      }
+    ],
+    "method": "Titrage d'oxydoréduction",
+    "commonMistakes": [
+      "Oublier le coefficient 5 dans la stœchiométrie",
+      "Confondre le volume titrant et titré"
+    ],
+    "tags": ["titrage", "redox", "permanganate", "fer"]
+  },
+  {
+    "id": "ex-pile-1",
+    "lessonId": "piles-electrolyse",
+    "title": "Réactions dans une pile Daniell",
+    "difficulty": 2,
+    "statement": "Dans une pile Daniell (Zn/Zn²⁺ // Cu²⁺/Cu), écrire les réactions aux électrodes et la réaction bilan. Identifier l'anode et la cathode.",
+    "hints": [
+      "Le zinc s'oxyde (plus réducteur)",
+      "Le cuivre(II) se réduit"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Réaction à l'anode (oxydation)",
+        "content": "Zn → Zn²⁺ + 2e⁻",
+        "explanation": "Le zinc est l'anode (borne -), il s'oxyde"
+      },
+      {
+        "step": 2,
+        "title": "Réaction à la cathode (réduction)",
+        "content": "Cu²⁺ + 2e⁻ → Cu",
+        "explanation": "Le cuivre est la cathode (borne +), Cu²⁺ se réduit"
+      },
+      {
+        "step": 3,
+        "title": "Réaction bilan",
+        "content": "Zn + Cu²⁺ → Zn²⁺ + Cu",
+        "explanation": "Le zinc remplace le cuivre dans la solution"
+      }
+    ],
+    "method": "Écriture des réactions dans une pile",
+    "commonMistakes": [
+      "Inverser anode et cathode",
+      "Oublier les électrons dans les demi-équations"
+    ],
+    "tags": ["pile", "Daniell", "oxydoréduction"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-pile-2",
+    "lessonId": "piles-electrolyse",
+    "title": "Calcul de masse par électrolyse",
+    "difficulty": 3,
+    "statement": "On réalise l'électrolyse d'une solution de CuSO₄ avec un courant de 2,0 A pendant 1 heure. Quelle masse de cuivre se dépose à la cathode ?\nDonnées : M(Cu) = 63,5 g/mol, F = 96500 C/mol",
+    "hints": [
+      "Calcule d'abord la charge Q = I × t",
+      "Cu²⁺ + 2e⁻ → Cu"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Quantité d'électricité",
+        "content": "Q = I × t = 2,0 × 3600 = 7200 C",
+        "explanation": "1 heure = 3600 secondes"
+      },
+      {
+        "step": 2,
+        "title": "Quantité d'électrons",
+        "content": "n(e⁻) = Q/F = 7200/96500 = 0,0746 mol",
+        "explanation": "Nombre de moles d'électrons transférés"
+      },
+      {
+        "step": 3,
+        "title": "Quantité de cuivre",
+        "content": "n(Cu) = n(e⁻)/2 = 0,0373 mol (car 2 e⁻ par Cu)",
+        "explanation": "D'après la stœchiométrie de la réduction"
+      },
+      {
+        "step": 4,
+        "title": "Masse de cuivre",
+        "content": "m = n × M = 0,0373 × 63,5 = 2,4 g",
+        "explanation": "Masse de cuivre déposée à la cathode"
+      }
+    ],
+    "method": "Loi de Faraday en électrolyse",
+    "commonMistakes": [
+      "Oublier que Cu²⁺ nécessite 2 électrons",
+      "Erreur de conversion du temps"
+    ],
+    "tags": ["électrolyse", "Faraday", "cuivre"]
+  },
+  {
+    "id": "ex-pile-3",
+    "lessonId": "piles-electrolyse",
+    "title": "Capacité d'une pile",
+    "difficulty": 3,
+    "statement": "Une pile contient 6,5 g de zinc qui peut réagir. Calculer la capacité de cette pile en Ah.\nDonnées : M(Zn) = 65 g/mol, F = 96500 C/mol",
+    "hints": [
+      "Zn → Zn²⁺ + 2e⁻",
+      "Capacité Q = n(e⁻) × F"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Quantité de zinc",
+        "content": "n(Zn) = m/M = 6,5/65 = 0,1 mol",
+        "explanation": "Nombre de moles de zinc disponible"
+      },
+      {
+        "step": 2,
+        "title": "Quantité d'électrons libérés",
+        "content": "n(e⁻) = 2 × n(Zn) = 0,2 mol",
+        "explanation": "Chaque atome de zinc libère 2 électrons"
+      },
+      {
+        "step": 3,
+        "title": "Charge totale",
+        "content": "Q = n(e⁻) × F = 0,2 × 96500 = 19300 C",
+        "explanation": "Quantité d'électricité en coulombs"
+      },
+      {
+        "step": 4,
+        "title": "Conversion en Ah",
+        "content": "Q = 19300/3600 = 5,36 Ah",
+        "explanation": "1 Ah = 3600 C"
+      }
+    ],
+    "method": "Calcul de capacité",
+    "commonMistakes": [
+      "Oublier le facteur 2 pour le zinc",
+      "Erreur de conversion C → Ah"
+    ],
+    "tags": ["pile", "capacité", "zinc"]
+  },
+  {
+    "id": "ex-synth-1",
+    "lessonId": "synthese-organique",
+    "title": "Calcul de rendement",
+    "difficulty": 2,
+    "statement": "On synthétise de l'aspirine (M = 180 g/mol) à partir de 10,0 g d'acide salicylique (M = 138 g/mol) en excès d'anhydride acétique. On obtient 8,5 g d'aspirine. Calculer le rendement.",
+    "hints": [
+      "La réaction est équimolaire",
+      "Rendement = n_obtenu / n_théorique × 100%"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Quantité d'acide salicylique",
+        "content": "n(AS) = 10,0/138 = 0,0725 mol",
+        "explanation": "C'est le réactif limitant"
+      },
+      {
+        "step": 2,
+        "title": "Masse théorique d'aspirine",
+        "content": "m_théo = n(AS) × M(aspirine) = 0,0725 × 180 = 13,0 g",
+        "explanation": "Si le rendement était de 100%"
+      },
+      {
+        "step": 3,
+        "title": "Rendement",
+        "content": "η = 8,5/13,0 × 100 = 65%",
+        "explanation": "Le rendement est de 65%"
+      }
+    ],
+    "method": "Calcul de rendement",
+    "commonMistakes": [
+      "Confondre masse théorique et masse obtenue",
+      "Oublier que la réaction est équimolaire"
+    ],
+    "tags": ["synthèse", "rendement", "aspirine"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-synth-2",
+    "lessonId": "synthese-organique",
+    "title": "Rendement global",
+    "difficulty": 3,
+    "statement": "Une synthèse comporte 4 étapes de rendements respectifs 90%, 85%, 80% et 95%. Calculer le rendement global.",
+    "hints": [
+      "Les rendements se multiplient",
+      "η_global = η₁ × η₂ × η₃ × η₄"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion en fractions",
+        "content": "η₁ = 0,90, η₂ = 0,85, η₃ = 0,80, η₄ = 0,95",
+        "explanation": "On exprime les rendements en fractions décimales"
+      },
+      {
+        "step": 2,
+        "title": "Produit des rendements",
+        "content": "η_global = 0,90 × 0,85 × 0,80 × 0,95 = 0,58",
+        "explanation": "Le rendement global chute rapidement"
+      },
+      {
+        "step": 3,
+        "title": "Résultat",
+        "content": "η_global = 58%",
+        "explanation": "Même avec de bons rendements individuels, le rendement global est modeste"
+      }
+    ],
+    "method": "Calcul de rendement global",
+    "commonMistakes": [
+      "Additionner les rendements au lieu de les multiplier",
+      "Oublier une étape"
+    ],
+    "tags": ["synthèse", "rendement", "multi-étapes"]
+  },
+  {
+    "id": "ex-synth-3",
+    "lessonId": "synthese-organique",
+    "title": "Économie d'atomes",
+    "difficulty": 3,
+    "statement": "Comparer l'économie d'atomes de deux réactions :\nA) CH₂=CH₂ + H₂ → CH₃-CH₃ (addition)\nB) CH₃-CH₂-Br + OH⁻ → CH₂=CH₂ + Br⁻ + H₂O (élimination)",
+    "hints": [
+      "EA = M(produit désiré) / Σ M(réactifs) × 100%",
+      "L'addition incorpore tous les atomes"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Économie d'atomes de A (addition)",
+        "content": "EA(A) = M(C₂H₆) / [M(C₂H₄) + M(H₂)] = 30 / (28 + 2) = 100%",
+        "explanation": "Tous les atomes sont dans le produit"
+      },
+      {
+        "step": 2,
+        "title": "Économie d'atomes de B (élimination)",
+        "content": "EA(B) = M(C₂H₄) / [M(C₂H₅Br) + M(OH⁻)] = 28 / (109 + 17) = 22%",
+        "explanation": "Beaucoup de « déchets » (Br⁻ + H₂O)"
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "L'addition (A) a une bien meilleure économie d'atomes que l'élimination (B)",
+        "explanation": "Principe de chimie verte : privilégier les additions"
+      }
+    ],
+    "method": "Calcul d'économie d'atomes",
+    "commonMistakes": [
+      "Oublier certains réactifs ou produits",
+      "Confondre économie d'atomes et rendement"
+    ],
+    "tags": ["synthèse", "économie d'atomes", "chimie verte"]
+  },
+  {
+    "id": "ex-newton-3",
+    "lessonId": "mouvement-newton",
+    "title": "Chute avec frottements",
+    "difficulty": 4,
+    "statement": "Une bille de masse 50 g chute dans un fluide visqueux. La force de frottement est f = -k.v avec k = 0,2 N.s/m. Calculer la vitesse limite.",
+    "hints": [
+      "À la vitesse limite, l'accélération est nulle",
+      "ΣF = 0 → mg = k.v_limite"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Condition de vitesse limite",
+        "content": "À v_limite : a = 0, donc ΣF = 0",
+        "explanation": "La bille n'accélère plus"
+      },
+      {
+        "step": 2,
+        "title": "Bilan des forces",
+        "content": "mg = k × v_limite (poids = frottement)",
+        "explanation": "Les forces se compensent"
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "v_limite = mg/k = 0,050 × 10 / 0,2 = 2,5 m/s",
+        "explanation": "La bille atteint une vitesse constante de 2,5 m/s"
+      }
+    ],
+    "method": "Vitesse limite avec frottements",
+    "commonMistakes": [
+      "Oublier que a = 0 à la vitesse limite",
+      "Erreur de signe dans le bilan des forces"
+    ],
+    "tags": ["Newton", "frottements", "vitesse limite"]
+  },
+  {
+    "id": "ex-energie-3",
+    "lessonId": "energie-mecanique",
+    "title": "Conservation de l'énergie mécanique",
+    "difficulty": 3,
+    "statement": "Une bille de 200 g est lâchée sans vitesse initiale d'une hauteur h = 1,8 m sur un plan incliné sans frottement. Calculer sa vitesse au bas du plan. (g = 10 m/s²)",
+    "hints": [
+      "L'énergie mécanique se conserve (pas de frottement)",
+      "Ep initiale = Ec finale"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conservation de l'énergie",
+        "content": "Ec₁ + Ep₁ = Ec₂ + Ep₂",
+        "explanation": "Pas de frottement, donc Em se conserve"
+      },
+      {
+        "step": 2,
+        "title": "Simplification",
+        "content": "0 + mgh = ½mv² + 0 → v = √(2gh)",
+        "explanation": "Au départ : Ec = 0, à l'arrivée : Ep = 0"
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "v = √(2 × 10 × 1,8) = √36 = 6 m/s",
+        "explanation": "La vitesse ne dépend pas de la masse ni de l'angle"
+      }
+    ],
+    "method": "Conservation de l'énergie mécanique",
+    "commonMistakes": [
+      "Oublier la racine carrée",
+      "Confondre Ec et Ep"
+    ],
+    "tags": ["énergie", "conservation", "plan incliné"]
+  }
+]

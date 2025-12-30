@@ -1,0 +1,174 @@
+---
+id: radioactivite
+title: "Radioactivité et décroissance radioactive"
+track: physique
+chapter: energie
+level: 3
+estimatedTime: 55
+prerequisites: []
+tags:
+  - radioactivité
+  - décroissance
+  - demi-vie
+  - activité
+  - datation
+objectives:
+  - Connaître les différents types de radioactivité
+  - Comprendre la loi de décroissance radioactive
+  - Savoir utiliser la demi-vie
+  - Calculer l'activité d'un échantillon
+---
+
+# Radioactivité et décroissance radioactive
+
+## Introduction
+
+La **radioactivité** est un phénomène nucléaire au cours duquel des noyaux instables se transforment spontanément en émettant des rayonnements. C'est un phénomène aléatoire au niveau d'un noyau mais prévisible statistiquement pour un grand nombre de noyaux.
+
+## Les types de radioactivité
+
+### Radioactivité alpha ($\alpha$)
+
+Le noyau émet une particule $\alpha$ (noyau d'hélium $^4_2$He) :
+$$^A_Z X \rightarrow ^{A-4}_{Z-2} Y + ^4_2 He$$
+
+<Definition title="Rayonnement alpha">
+Émission d'un noyau d'hélium. Peu pénétrant (arrêté par une feuille de papier) mais très ionisant.
+</Definition>
+
+### Radioactivité bêta moins ($\beta^-$)
+
+Un neutron se transforme en proton avec émission d'un électron :
+$$^A_Z X \rightarrow ^{A}_{Z+1} Y + ^0_{-1} e + \bar{\nu}_e$$
+
+### Radioactivité bêta plus ($\beta^+$)
+
+Un proton se transforme en neutron avec émission d'un positon :
+$$^A_Z X \rightarrow ^{A}_{Z-1} Y + ^0_{+1} e + \nu_e$$
+
+### Rayonnement gamma ($\gamma$)
+
+Émission d'un photon très énergétique lors de la désexcitation du noyau. Accompagne souvent les autres désintégrations.
+
+## Loi de décroissance radioactive
+
+### Caractère aléatoire
+
+La désintégration d'un noyau individuel est **imprévisible**. On ne peut définir qu'une probabilité de désintégration.
+
+### Constante radioactive
+
+<Definition title="Constante radioactive">
+La constante radioactive $\lambda$ (en s$^{-1}$) caractérise la probabilité de désintégration d'un noyau par unité de temps.
+</Definition>
+
+### Loi de décroissance
+
+Le nombre de noyaux radioactifs décroît exponentiellement :
+$$N(t) = N_0 \cdot e^{-\lambda t}$$
+
+<Formula title="Loi de décroissance radioactive">
+$$N(t) = N_0 \cdot e^{-\lambda t}$$
+Où $N_0$ est le nombre initial de noyaux et $\lambda$ la constante radioactive.
+</Formula>
+
+## Demi-vie
+
+<Definition title="Demi-vie (ou période radioactive)">
+La demi-vie $t_{1/2}$ est la durée au bout de laquelle la moitié des noyaux radioactifs initialement présents se sont désintégrés.
+</Definition>
+
+### Relation avec la constante radioactive
+
+$$t_{1/2} = \frac{\ln 2}{\lambda} = \frac{0.693}{\lambda}$$
+
+<Formula title="Demi-vie">
+$$t_{1/2} = \frac{\ln 2}{\lambda}$$
+</Formula>
+
+### Évolution du nombre de noyaux
+
+Après $n$ demi-vies :
+$$N = N_0 \times \left(\frac{1}{2}\right)^n = \frac{N_0}{2^n}$$
+
+<Method title="Utiliser la demi-vie">
+1. Calculer le nombre de demi-vies écoulées : $n = \frac{t}{t_{1/2}}$
+2. Appliquer : $N = \frac{N_0}{2^n}$ ou $N = N_0 \times (0.5)^n$
+3. Si $n$ n'est pas entier, utiliser la formule exponentielle
+</Method>
+
+## Activité
+
+<Definition title="Activité">
+L'activité $A$ d'un échantillon est le nombre de désintégrations par seconde. Elle s'exprime en becquerels (Bq).
+</Definition>
+
+$$A = \lambda N = -\frac{dN}{dt}$$
+
+L'activité décroît aussi exponentiellement :
+$$A(t) = A_0 \cdot e^{-\lambda t}$$
+
+<Formula title="Activité">
+$$A = \lambda N$$
+$$A(t) = A_0 \cdot e^{-\lambda t}$$
+</Formula>
+
+<Trap title="Unités de l'activité">
+1 Bq = 1 désintégration par seconde. Attention, on utilise parfois le curie (Ci) : 1 Ci = 3.7 × 10¹⁰ Bq.
+</Trap>
+
+## Applications
+
+### Datation au carbone 14
+
+Le carbone 14 ($t_{1/2} = 5730$ ans) permet de dater des échantillons organiques jusqu'à environ 50 000 ans.
+
+Principe :
+- Les êtres vivants échangent du carbone avec leur environnement
+- À la mort, les échanges cessent et le C-14 décroît
+- En mesurant l'activité résiduelle, on détermine l'âge
+
+### Applications médicales
+
+- **Diagnostic** : traceurs radioactifs (scintigraphie)
+- **Thérapie** : destruction de cellules cancéreuses
+
+### Production d'énergie
+
+Les centrales nucléaires utilisent la fission de l'uranium 235.
+
+## Exercice de compréhension
+
+<Exercise id="comp-radio-1">
+Le phosphore 32 a une demi-vie de 14.3 jours. Un échantillon a une activité initiale de 8.0 × 10⁶ Bq.
+
+1. Calculer la constante radioactive $\lambda$ en s⁻¹.
+2. Quelle sera l'activité après 28.6 jours ?
+3. Au bout de combien de temps l'activité sera-t-elle réduite à 1.0 × 10⁶ Bq ?
+
+<Solution>
+1. Constante radioactive :
+$$\lambda = \frac{\ln 2}{t_{1/2}} = \frac{0.693}{14.3 \times 24 \times 3600} = 5.61 \times 10^{-7} \text{ s}^{-1}$$
+
+2. 28.6 jours = 2 demi-vies, donc :
+$$A = \frac{A_0}{2^2} = \frac{8.0 \times 10^6}{4} = 2.0 \times 10^6 \text{ Bq}$$
+
+3. On cherche $t$ tel que $A = A_0 \cdot e^{-\lambda t}$ :
+$$\frac{A}{A_0} = e^{-\lambda t}$$
+$$\ln\left(\frac{A}{A_0}\right) = -\lambda t$$
+$$t = -\frac{1}{\lambda}\ln\left(\frac{1.0 \times 10^6}{8.0 \times 10^6}\right) = -\frac{\ln(0.125)}{\lambda}$$
+$$t = \frac{\ln 8}{\lambda} = \frac{2.08}{5.61 \times 10^{-7}} = 3.7 \times 10^6 \text{ s} \approx 43 \text{ jours}$$
+
+Vérification : $\frac{43}{14.3} = 3$ demi-vies, $\frac{1}{2^3} = \frac{1}{8}$ ✓
+</Solution>
+</Exercise>
+
+## Points clés à retenir
+
+<Summary>
+- Trois types : $\alpha$, $\beta^{\pm}$, $\gamma$
+- Loi de décroissance : $N(t) = N_0 e^{-\lambda t}$
+- Demi-vie : $t_{1/2} = \frac{\ln 2}{\lambda}$
+- Activité : $A = \lambda N$ (en Bq)
+- Après $n$ demi-vies : $N = \frac{N_0}{2^n}$
+</Summary>

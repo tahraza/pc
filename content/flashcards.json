@@ -1,0 +1,614 @@
+[
+  {
+    "id": "fc-ondes-meca-1",
+    "lessonId": "ondes-mecaniques",
+    "front": "Quelle est la relation entre longueur d'onde, fréquence et célérité ?",
+    "back": "λ = v/f ou v = λf\n\nλ : longueur d'onde (m)\nv : célérité (m/s)\nf : fréquence (Hz)",
+    "tags": ["onde", "longueur d'onde", "fréquence"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ondes-meca-2",
+    "lessonId": "ondes-mecaniques",
+    "front": "Comment calcule-t-on le retard τ entre deux points distants de d ?",
+    "back": "τ = d/v\n\nτ : retard (s)\nd : distance (m)\nv : célérité (m/s)",
+    "tags": ["onde", "retard", "propagation"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ondes-meca-3",
+    "lessonId": "ondes-mecaniques",
+    "front": "Qu'est-ce qu'une onde mécanique ?",
+    "back": "Une onde mécanique est une perturbation qui se propage dans un milieu matériel sans transport de matière, mais avec transport d'énergie.\n\nExemples : son, vagues, séisme",
+    "tags": ["onde", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ondes-meca-4",
+    "lessonId": "ondes-mecaniques",
+    "front": "Quelle est la différence entre une onde transversale et longitudinale ?",
+    "back": "• Transversale : la perturbation est perpendiculaire à la direction de propagation (vague, corde)\n\n• Longitudinale : la perturbation est parallèle à la direction de propagation (son)",
+    "tags": ["onde", "transversale", "longitudinale"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ondes-meca-5",
+    "lessonId": "ondes-mecaniques",
+    "front": "Célérité d'une onde sur une corde tendue ?",
+    "back": "v = √(T/μ)\n\nT : tension de la corde (N)\nμ : masse linéique (kg/m)\n\nμ = m/L",
+    "tags": ["onde", "corde", "célérité"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ondes-lum-1",
+    "lessonId": "ondes-lumineuses",
+    "front": "Quelle est la vitesse de la lumière dans le vide ?",
+    "back": "c = 3,00 × 10⁸ m/s\n\nC'est une constante fondamentale de la physique.",
+    "tags": ["lumière", "vitesse", "constante"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ondes-lum-2",
+    "lessonId": "ondes-lumineuses",
+    "front": "Qu'est-ce que l'indice de réfraction n d'un milieu ?",
+    "back": "n = c/v\n\nn : indice (sans unité, n ≥ 1)\nc : vitesse de la lumière dans le vide\nv : vitesse dans le milieu\n\nExemple : n(eau) ≈ 1,33 ; n(verre) ≈ 1,5",
+    "tags": ["lumière", "indice", "réfraction"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ondes-lum-3",
+    "lessonId": "ondes-lumineuses",
+    "front": "Condition de diffraction observable ?",
+    "back": "La diffraction est significative quand la taille de l'obstacle a est du même ordre de grandeur que la longueur d'onde λ.\n\nθ ≈ λ/a",
+    "tags": ["diffraction", "condition"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-ondes-lum-4",
+    "lessonId": "ondes-lumineuses",
+    "front": "Formule de l'interfrange (fentes de Young) ?",
+    "back": "i = λD/a\n\ni : interfrange (m)\nλ : longueur d'onde (m)\nD : distance à l'écran (m)\na : distance entre les fentes (m)",
+    "tags": ["interférences", "interfrange", "Young"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ondes-lum-5",
+    "lessonId": "ondes-lumineuses",
+    "front": "Domaine des longueurs d'onde visibles ?",
+    "back": "400 nm (violet) à 800 nm (rouge)\n\n• Violet : ~400 nm\n• Bleu : ~470 nm\n• Vert : ~530 nm\n• Jaune : ~580 nm\n• Orange : ~600 nm\n• Rouge : ~700 nm",
+    "tags": ["lumière", "visible", "couleurs"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-newton-1",
+    "lessonId": "mouvement-newton",
+    "front": "Énoncé de la 2ème loi de Newton ?",
+    "back": "Dans un référentiel galiléen :\n\nΣF⃗ = ma⃗\n\nLa somme des forces est égale à la masse fois l'accélération.",
+    "tags": ["Newton", "PFD", "force"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-newton-2",
+    "lessonId": "mouvement-newton",
+    "front": "Qu'est-ce qu'un référentiel galiléen ?",
+    "back": "Un référentiel dans lequel le principe d'inertie est vérifié.\n\nEn pratique : référentiel terrestre (approximation), référentiel de Copernic (héliocentrique).",
+    "tags": ["référentiel", "galiléen", "inertie"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-newton-3",
+    "lessonId": "mouvement-newton",
+    "front": "Expression du poids ?",
+    "back": "P⃗ = mg⃗\n\nP : poids (N)\nm : masse (kg)\ng : champ de pesanteur (~9,81 m/s² sur Terre)\n\nLe poids est toujours dirigé vers le centre de la Terre.",
+    "tags": ["poids", "gravité", "force"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-newton-4",
+    "lessonId": "mouvement-newton",
+    "front": "Accélération centripète ?",
+    "back": "a = v²/R\n\nPour un mouvement circulaire uniforme.\n\nL'accélération est dirigée vers le centre du cercle.",
+    "tags": ["circulaire", "centripète", "accélération"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-newton-5",
+    "lessonId": "mouvement-newton",
+    "front": "Qu'est-ce que le principe d'inertie ?",
+    "back": "1ère loi de Newton : dans un référentiel galiléen, un objet isolé ou pseudo-isolé a un mouvement rectiligne uniforme (ou reste immobile).\n\nSi ΣF⃗ = 0⃗, alors v⃗ = constante.",
+    "tags": ["inertie", "Newton", "première loi"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-champ-1",
+    "lessonId": "mouvement-champ-uniforme",
+    "front": "Équations horaires d'un projectile ?",
+    "back": "Avec lancement à l'angle α :\n\nx(t) = v₀ cos(α) × t\ny(t) = v₀ sin(α) × t - ½gt²\n\nvₓ = v₀ cos(α)\nvᵧ = v₀ sin(α) - gt",
+    "tags": ["projectile", "équations horaires"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-champ-2",
+    "lessonId": "mouvement-champ-uniforme",
+    "front": "Portée d'un projectile ?",
+    "back": "P = v₀² sin(2α) / g\n\nLa portée est maximale pour α = 45°.",
+    "tags": ["projectile", "portée"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-champ-3",
+    "lessonId": "mouvement-champ-uniforme",
+    "front": "Flèche (altitude maximale) d'un projectile ?",
+    "back": "H = v₀² sin²(α) / (2g)\n\nAtteinte au temps tₕ = v₀ sin(α) / g",
+    "tags": ["projectile", "flèche", "altitude"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-champ-4",
+    "lessonId": "mouvement-champ-uniforme",
+    "front": "Force sur une particule chargée dans un champ électrique ?",
+    "back": "F⃗ = qE⃗\n\nF : force (N)\nq : charge (C)\nE : champ électrique (V/m)\n\nSi q > 0 : même sens que E⃗\nSi q < 0 : sens opposé à E⃗",
+    "tags": ["champ électrique", "force", "charge"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-energie-1",
+    "lessonId": "energie-mecanique",
+    "front": "Expression de l'énergie cinétique ?",
+    "back": "Ec = ½mv²\n\nEc : énergie cinétique (J)\nm : masse (kg)\nv : vitesse (m/s)",
+    "tags": ["énergie", "cinétique"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-energie-2",
+    "lessonId": "energie-mecanique",
+    "front": "Expression de l'énergie potentielle de pesanteur ?",
+    "back": "Ep = mgh\n\nEp : énergie potentielle (J)\nm : masse (kg)\ng : champ de pesanteur (m/s²)\nh : altitude (m)\n\nL'origine des altitudes est à choisir.",
+    "tags": ["énergie", "potentielle", "pesanteur"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-energie-3",
+    "lessonId": "energie-mecanique",
+    "front": "Quand l'énergie mécanique se conserve-t-elle ?",
+    "back": "L'énergie mécanique Em = Ec + Ep se conserve quand les forces non conservatives (frottements) ne travaillent pas.\n\nΔEm = 0 si pas de frottements.",
+    "tags": ["énergie", "conservation"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-energie-4",
+    "lessonId": "energie-mecanique",
+    "front": "Expression du travail d'une force constante ?",
+    "back": "W = F⃗ · AB⃗ = F × AB × cos(θ)\n\nW : travail (J)\nF : force (N)\nAB : déplacement (m)\nθ : angle entre F⃗ et AB⃗",
+    "tags": ["travail", "force"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-energie-5",
+    "lessonId": "energie-mecanique",
+    "front": "Théorème de l'énergie cinétique ?",
+    "back": "ΔEc = Σ Wforces\n\nLa variation d'énergie cinétique est égale à la somme des travaux de toutes les forces.",
+    "tags": ["énergie", "théorème", "travail"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-rc-1",
+    "lessonId": "circuit-rc",
+    "front": "Constante de temps d'un circuit RC ?",
+    "back": "τ = RC\n\nτ : constante de temps (s)\nR : résistance (Ω)\nC : capacité (F)",
+    "tags": ["RC", "constante de temps"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-rc-2",
+    "lessonId": "circuit-rc",
+    "front": "Tension aux bornes d'un condensateur lors de la charge ?",
+    "back": "uc(t) = E(1 - e^(-t/τ))\n\nÀ t = τ : uc ≈ 0,63 E\nÀ t = 5τ : uc ≈ E (charge complète)",
+    "tags": ["RC", "charge", "condensateur"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-rc-3",
+    "lessonId": "circuit-rc",
+    "front": "Énergie stockée dans un condensateur ?",
+    "back": "E = ½CU² = ½QU = Q²/(2C)\n\nE : énergie (J)\nC : capacité (F)\nU : tension (V)\nQ : charge (C)",
+    "tags": ["condensateur", "énergie"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-rc-4",
+    "lessonId": "circuit-rc",
+    "front": "Relation charge-tension pour un condensateur ?",
+    "back": "q = Cu\n\nq : charge (C)\nC : capacité (F)\nu : tension (V)\n\ni = dq/dt = C × du/dt",
+    "tags": ["condensateur", "charge", "capacité"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-1",
+    "lessonId": "acides-bases",
+    "front": "Définition du pH ?",
+    "back": "pH = -log[H₃O⁺]\n\nDonc [H₃O⁺] = 10^(-pH)\n\npH < 7 : solution acide\npH = 7 : solution neutre\npH > 7 : solution basique",
+    "tags": ["pH", "définition"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-2",
+    "lessonId": "acides-bases",
+    "front": "Relation entre Ka et pKa ?",
+    "back": "pKa = -log(Ka)\nKa = 10^(-pKa)\n\nPlus pKa est petit, plus l'acide est fort.",
+    "tags": ["Ka", "pKa", "constante"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-3",
+    "lessonId": "acides-bases",
+    "front": "Équation de Henderson-Hasselbalch ?",
+    "back": "pH = pKa + log([A⁻]/[AH])\n\nQuand [A⁻] = [AH] : pH = pKa",
+    "tags": ["Henderson", "tampon", "pH"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-4",
+    "lessonId": "acides-bases",
+    "front": "pH d'un acide fort de concentration c ?",
+    "back": "pH = -log(c)\n\nCar [H₃O⁺] = c (dissociation totale)",
+    "tags": ["pH", "acide fort"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-5",
+    "lessonId": "acides-bases",
+    "front": "pH d'un acide faible de concentration c ?",
+    "back": "pH = ½(pKa - log c)\n\nFormule valable si Ka << c et c >> [H₃O⁺]eau",
+    "tags": ["pH", "acide faible"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-6",
+    "lessonId": "acides-bases",
+    "front": "Produit ionique de l'eau ?",
+    "back": "Ke = [H₃O⁺][OH⁻] = 10⁻¹⁴ à 25°C\n\npH + pOH = pKe = 14",
+    "tags": ["eau", "produit ionique"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-redox-1",
+    "lessonId": "oxydoreduction",
+    "front": "Définition d'un oxydant et d'un réducteur ?",
+    "back": "• Oxydant : espèce qui GAGNE des e⁻ (se réduit)\n• Réducteur : espèce qui PERD des e⁻ (s'oxyde)\n\nMoyen mnémotechnique : le réducteur \"réduit\" sa charge en perdant des e⁻",
+    "tags": ["oxydant", "réducteur", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-redox-2",
+    "lessonId": "oxydoreduction",
+    "front": "Méthode d'équilibrage d'une demi-équation redox ?",
+    "back": "1. Équilibrer l'élément principal\n2. Équilibrer O avec H₂O\n3. Équilibrer H avec H⁺\n4. Équilibrer les charges avec e⁻",
+    "tags": ["redox", "équilibrage", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-redox-3",
+    "lessonId": "oxydoreduction",
+    "front": "Dans une pile, que se passe-t-il à l'anode et à la cathode ?",
+    "back": "• Anode (-) : OXYDATION\nRed → Ox + ne⁻\n\n• Cathode (+) : RÉDUCTION\nOx + ne⁻ → Red\n\nLes e⁻ vont de l'anode vers la cathode.",
+    "tags": ["pile", "anode", "cathode"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-redox-4",
+    "lessonId": "oxydoreduction",
+    "front": "Différence entre pile et électrolyse ?",
+    "back": "• Pile : réaction SPONTANÉE\nProduit de l'énergie électrique\nAnode (-), Cathode (+)\n\n• Électrolyse : réaction FORCÉE\nConsomme de l'énergie électrique\nAnode (+), Cathode (-)",
+    "tags": ["pile", "électrolyse", "différence"],
+    "level": 3,
+    "category": "definition"
+  },
+  {
+    "id": "fc-cinetique-1",
+    "lessonId": "cinetique",
+    "front": "Expression de la vitesse de réaction ?",
+    "back": "v = (1/V) × dξ/dt\n\nPour un réactif A : v = -(1/a) × d[A]/dt\nPour un produit P : v = (1/p) × d[P]/dt\n\nv est toujours positive.",
+    "tags": ["vitesse", "cinétique"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-cinetique-2",
+    "lessonId": "cinetique",
+    "front": "Qu'est-ce que le temps de demi-réaction t₁/₂ ?",
+    "back": "Temps pour que l'avancement atteigne la moitié de sa valeur finale.\n\nξ(t₁/₂) = ξf/2\n\nOu : temps pour que la concentration du réactif limitant soit divisée par 2.",
+    "tags": ["t1/2", "demi-réaction"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-cinetique-3",
+    "lessonId": "cinetique",
+    "front": "Quels sont les facteurs cinétiques ?",
+    "back": "1. Température : ↑T → ↑vitesse\n2. Concentration : ↑c → ↑vitesse\n3. Catalyseur : accélère sans être consommé\n4. Surface de contact",
+    "tags": ["facteurs cinétiques", "température"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-cinetique-4",
+    "lessonId": "cinetique",
+    "front": "Qu'est-ce qu'un catalyseur ?",
+    "back": "Espèce qui accélère une réaction sans être consommée.\n\n• Diminue l'énergie d'activation\n• Ne change pas la thermodynamique\n• N'apparaît pas dans l'équation bilan",
+    "tags": ["catalyseur", "catalyse"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-cinetique-5",
+    "lessonId": "cinetique",
+    "front": "Durée approximative d'une réaction en fonction de t₁/₂ ?",
+    "back": "Une réaction est considérée comme terminée après environ 5 à 6 fois t₁/₂.\n\nÀ 5t₁/₂ : avancement ≈ 97% de ξf",
+    "tags": ["durée", "t1/2"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-organique-1",
+    "lessonId": "chimie-organique",
+    "front": "Suffixes des principales familles organiques ?",
+    "back": "• Alcool : -ol\n• Aldéhyde : -al\n• Cétone : -one\n• Acide : acide ...-oïque\n• Ester : -oate de ...-yle\n• Amine : -amine\n• Amide : -amide",
+    "tags": ["nomenclature", "suffixes"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-organique-2",
+    "lessonId": "chimie-organique",
+    "front": "Préfixes pour le nombre de carbones ?",
+    "back": "1C : méth-\n2C : éth-\n3C : prop-\n4C : but-\n5C : pent-\n6C : hex-\n7C : hept-\n8C : oct-",
+    "tags": ["nomenclature", "préfixes"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-organique-3",
+    "lessonId": "chimie-organique",
+    "front": "Classes d'alcool : primaire, secondaire, tertiaire ?",
+    "back": "• Primaire : –CH₂OH (1 chaîne carbonée liée au C-OH)\n• Secondaire : –CHOH– (2 chaînes carbonées)\n• Tertiaire : C–OH avec 3 chaînes carbonées",
+    "tags": ["alcool", "classes"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-organique-4",
+    "lessonId": "chimie-organique",
+    "front": "Différence entre aldéhyde et cétone ?",
+    "back": "• Aldéhyde : C=O en BOUT de chaîne (–CHO)\n• Cétone : C=O au MILIEU de la chaîne (–CO–)\n\nLes deux ont un groupe carbonyle.",
+    "tags": ["aldéhyde", "cétone", "différence"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-organique-5",
+    "lessonId": "chimie-organique",
+    "front": "Comment nommer un ester ?",
+    "back": "(nom de l'acide en -oate) de (nom de l'alcool en -yle)\n\nExemple : CH₃COOCH₂CH₃\n→ éthanoate d'éthyle\n\nPartie acide : éthanoate (2C)\nPartie alcool : éthyle (2C)",
+    "tags": ["ester", "nomenclature"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-interf-1",
+    "lessonId": "interferences",
+    "front": "Formule de l'interfrange (fentes de Young) ?",
+    "back": "i = λD/a\n\noù :\n• λ = longueur d'onde\n• D = distance fentes-écran\n• a = écartement des fentes",
+    "tags": ["interfrange", "Young"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-interf-2",
+    "lessonId": "interferences",
+    "front": "Conditions d'interférences constructives et destructives ?",
+    "back": "• Constructives (franges brillantes) : δ = kλ (k entier)\n• Destructives (franges sombres) : δ = (k + 0,5)λ\n\nδ = différence de marche",
+    "tags": ["interférences", "conditions"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-interf-3",
+    "lessonId": "interferences",
+    "front": "Sources cohérentes : définition ?",
+    "back": "Deux sources sont cohérentes si :\n• Même fréquence (même λ)\n• Déphasage constant dans le temps\n\nNécessaire pour observer des interférences stables.",
+    "tags": ["cohérence", "sources"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-diffr-1",
+    "lessonId": "diffraction",
+    "front": "Écart angulaire en diffraction ?",
+    "back": "θ = λ/a\n\navec θ en radians (petits angles)\n\nPlus la fente est fine (a petit), plus θ est grand.",
+    "tags": ["diffraction", "écart angulaire"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-diffr-2",
+    "lessonId": "diffraction",
+    "front": "Largeur de la tache centrale de diffraction ?",
+    "back": "L = 2λD/a\n\nAttention au facteur 2 !\n\nLa tache centrale contient ~84% de l'énergie.",
+    "tags": ["diffraction", "tache centrale"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-diffr-3",
+    "lessonId": "diffraction",
+    "front": "Piège : relation taille fente / taille tache ?",
+    "back": "CONTRE-INTUITIF :\n\n• Fente plus fine → Tache plus LARGE\n• Fente plus large → Tache plus étroite\n\nCar L = 2λD/a (L inversement proportionnel à a)",
+    "tags": ["diffraction", "piège"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-radio-1",
+    "lessonId": "radioactivite",
+    "front": "Loi de décroissance radioactive ?",
+    "back": "N(t) = N₀ × e^(-λt)\n\nou après n demi-vies :\nN = N₀/2ⁿ\n\nMême loi pour l'activité A.",
+    "tags": ["radioactivité", "décroissance"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-radio-2",
+    "lessonId": "radioactivite",
+    "front": "Relation demi-vie / constante radioactive ?",
+    "back": "t₁/₂ = ln(2)/λ ≈ 0,693/λ\n\nλ = ln(2)/t₁/₂\n\nλ en s⁻¹, t₁/₂ en s",
+    "tags": ["demi-vie", "constante radioactive"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-radio-3",
+    "lessonId": "radioactivite",
+    "front": "Activité radioactive : définition et formule ?",
+    "back": "A = nombre de désintégrations par seconde\n\nA = λN (en Bq)\n\nA(t) = A₀ × e^(-λt)\n\n1 Bq = 1 désintégration/s",
+    "tags": ["activité", "becquerel"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-radio-4",
+    "lessonId": "radioactivite",
+    "front": "Types de radioactivité : α, β⁻, β⁺, γ ?",
+    "back": "• α : émission de ⁴₂He (peu pénétrant)\n• β⁻ : n → p + e⁻ (Z augmente de 1)\n• β⁺ : p → n + e⁺ (Z diminue de 1)\n• γ : photon (désexcitation, très pénétrant)",
+    "tags": ["radioactivité", "types"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-titr-1",
+    "lessonId": "titrages",
+    "front": "Relation à l'équivalence d'un titrage ?",
+    "back": "À l'équivalence, les réactifs sont en proportions stœchiométriques :\n\nCₐVₐ/a = CᵦVᵦ/b\n\nsi a = b = 1 : CₐVₐ = CᵦVᵦ",
+    "tags": ["titrage", "équivalence"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-titr-2",
+    "lessonId": "titrages",
+    "front": "Comment choisir un indicateur coloré ?",
+    "back": "La zone de virage de l'indicateur doit CONTENIR le pH à l'équivalence.\n\nIndicateurs usuels :\n• Hélianthine : 3,1-4,4\n• BBT : 6,0-7,6\n• Phénolphtaléine : 8,2-10,0",
+    "tags": ["indicateur", "zone de virage"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-titr-3",
+    "lessonId": "titrages",
+    "front": "Titrant vs Titré : différence ?",
+    "back": "• TITRANT : dans la burette, concentration CONNUE\n• TITRÉ : dans le bécher, concentration à DÉTERMINER\n\nOn ajoute le titrant au titré jusqu'à l'équivalence.",
+    "tags": ["titrage", "vocabulaire"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-pile-1",
+    "lessonId": "piles-electrolyse",
+    "front": "Anode et cathode : où se passent oxydation et réduction ?",
+    "back": "Anode = Oxydation (moyen : AnOx)\nCathode = Réduction\n\nDans une PILE : Anode = borne –\nDans une ÉLECTROLYSE : Anode = borne +",
+    "tags": ["pile", "électrolyse", "électrodes"],
+    "level": 1,
+    "category": "trap"
+  },
+  {
+    "id": "fc-pile-2",
+    "lessonId": "piles-electrolyse",
+    "front": "Constante de Faraday et son utilisation ?",
+    "back": "F = 96 500 C/mol\n\nQ = n(e⁻) × F\n\nPermet de relier la charge électrique au nombre de moles d'électrons échangés.",
+    "tags": ["Faraday", "charge"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-pile-3",
+    "lessonId": "piles-electrolyse",
+    "front": "Pile vs Électrolyse : différences ?",
+    "back": "PILE :\n• Spontanée (énergie chimique → électrique)\n• Anode = borne –\n\nÉLECTROLYSE :\n• Forcée (énergie électrique → chimique)\n• Anode = borne +",
+    "tags": ["pile", "électrolyse", "comparaison"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-synth-1",
+    "lessonId": "synthese-organique",
+    "front": "Formule du rendement d'une synthèse ?",
+    "back": "η = (n_obtenu / n_théorique) × 100%\n\nou\n\nη = (m_obtenue / m_théorique) × 100%\n\nToujours < 100% en pratique.",
+    "tags": ["synthèse", "rendement"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-synth-2",
+    "lessonId": "synthese-organique",
+    "front": "Rendement global d'une synthèse multi-étapes ?",
+    "back": "η_global = η₁ × η₂ × ... × ηₙ\n\nLes rendements se MULTIPLIENT !\n\nExemple : 4 étapes à 80% → 0,8⁴ = 41%",
+    "tags": ["synthèse", "rendement global"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-synth-3",
+    "lessonId": "synthese-organique",
+    "front": "Économie d'atomes : définition et intérêt ?",
+    "back": "EA = M(produit) / Σ M(réactifs) × 100%\n\nMesure quelle fraction des réactifs finit dans le produit.\n\nChimie verte : privilégier EA élevée (réactions d'addition : EA = 100%).",
+    "tags": ["économie d'atomes", "chimie verte"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-synth-4",
+    "lessonId": "synthese-organique",
+    "front": "Protection de groupe fonctionnel : pourquoi et comment ?",
+    "back": "POURQUOI : éviter qu'un groupe réagisse pendant une étape\n\nCOMMENT :\n1. Protection (rendre inerte)\n2. Réaction souhaitée\n3. Déprotection (régénérer le groupe)\n\nExemple : protéger un -OH en ester.",
+    "tags": ["protection", "synthèse"],
+    "level": 3,
+    "category": "method"
+  }
+]

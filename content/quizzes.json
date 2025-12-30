@@ -1,0 +1,1330 @@
+[
+  {
+    "id": "quiz-pre-ondes-meca",
+    "lessonId": "ondes-mecaniques",
+    "type": "pre",
+    "title": "Pré-test : Ondes mécaniques",
+    "description": "Évalue tes connaissances avant la leçon sur les ondes mécaniques",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-om-1",
+        "question": "Une onde mécanique transporte :",
+        "choices": ["De la matière", "De l'énergie", "De la matière et de l'énergie", "Ni l'un ni l'autre"],
+        "correct": 1,
+        "explanation": "Une onde mécanique transporte de l'énergie sans transport de matière.",
+        "tag": "onde",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-om-2",
+        "question": "La longueur d'onde λ s'exprime en :",
+        "choices": ["Hertz", "Mètres", "Secondes", "Mètres par seconde"],
+        "correct": 1,
+        "explanation": "La longueur d'onde est une distance, elle s'exprime en mètres.",
+        "tag": "longueur d'onde",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-om-3",
+        "question": "Si la fréquence d'une onde double, sa longueur d'onde :",
+        "choices": ["Double", "Est divisée par 2", "Reste identique", "Est multipliée par 4"],
+        "correct": 1,
+        "explanation": "λ = v/f, donc si f double, λ est divisée par 2 (à célérité constante).",
+        "tag": "fréquence",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-ondes-meca",
+    "lessonId": "ondes-mecaniques",
+    "type": "post",
+    "title": "Post-test : Ondes mécaniques",
+    "description": "Vérifie ta compréhension des ondes mécaniques",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-om-1",
+        "question": "Une onde sonore de fréquence 680 Hz se propage à 340 m/s. Sa longueur d'onde est :",
+        "choices": ["0,25 m", "0,5 m", "1 m", "2 m"],
+        "correct": 1,
+        "explanation": "λ = v/f = 340/680 = 0,5 m",
+        "tag": "longueur d'onde",
+        "difficulty": 2
+      },
+      {
+        "id": "post-om-2",
+        "question": "Le retard entre deux points distants de 3 m pour une onde de célérité 300 m/s est :",
+        "choices": ["0,01 s", "0,001 s", "10 ms", "100 ms"],
+        "correct": 0,
+        "explanation": "τ = d/v = 3/300 = 0,01 s = 10 ms",
+        "tag": "retard",
+        "difficulty": 2
+      },
+      {
+        "id": "post-om-3",
+        "question": "Une onde est dite longitudinale quand :",
+        "choices": ["Elle se propage dans un solide", "La perturbation est parallèle à la propagation", "La perturbation est perpendiculaire à la propagation", "Elle a une grande longueur d'onde"],
+        "correct": 1,
+        "explanation": "Onde longitudinale : la perturbation est parallèle à la direction de propagation (ex: son).",
+        "tag": "type d'onde",
+        "difficulty": 2
+      },
+      {
+        "id": "post-om-4",
+        "question": "La célérité d'une onde sur une corde dépend de :",
+        "choices": ["La fréquence de l'onde", "La tension et la masse linéique", "La longueur d'onde uniquement", "La couleur de la corde"],
+        "correct": 1,
+        "explanation": "v = √(T/μ), avec T la tension et μ la masse linéique.",
+        "tag": "célérité",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-ondes-lum",
+    "lessonId": "ondes-lumineuses",
+    "type": "pre",
+    "title": "Pré-test : Ondes lumineuses",
+    "description": "Évalue tes connaissances avant la leçon sur les ondes lumineuses",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-ol-1",
+        "question": "La vitesse de la lumière dans le vide est environ :",
+        "choices": ["3 × 10⁵ m/s", "3 × 10⁸ m/s", "3 × 10¹¹ m/s", "340 m/s"],
+        "correct": 1,
+        "explanation": "c = 3 × 10⁸ m/s dans le vide.",
+        "tag": "vitesse lumière",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-ol-2",
+        "question": "Le domaine des longueurs d'onde visibles est approximativement :",
+        "choices": ["400-800 nm", "100-400 nm", "800-1200 nm", "1-100 nm"],
+        "correct": 0,
+        "explanation": "La lumière visible va de 400 nm (violet) à 800 nm (rouge).",
+        "tag": "visible",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-ol-3",
+        "question": "L'indice de réfraction d'un milieu est toujours :",
+        "choices": ["Inférieur à 1", "Égal à 1", "Supérieur ou égal à 1", "Compris entre 0 et 1"],
+        "correct": 2,
+        "explanation": "n = c/v ≥ 1 car v ≤ c.",
+        "tag": "indice",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-ondes-lum",
+    "lessonId": "ondes-lumineuses",
+    "type": "post",
+    "title": "Post-test : Ondes lumineuses",
+    "description": "Vérifie ta compréhension des ondes lumineuses",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-ol-1",
+        "question": "Une radiation de longueur d'onde 600 nm a une fréquence de :",
+        "choices": ["5 × 10¹⁴ Hz", "5 × 10¹² Hz", "2 × 10⁶ Hz", "1,8 × 10¹¹ Hz"],
+        "correct": 0,
+        "explanation": "f = c/λ = 3×10⁸/(600×10⁻⁹) = 5×10¹⁴ Hz",
+        "tag": "fréquence",
+        "difficulty": 2
+      },
+      {
+        "id": "post-ol-2",
+        "question": "La diffraction est d'autant plus marquée que :",
+        "choices": ["L'ouverture est grande", "L'ouverture est petite", "La lumière est intense", "L'écran est proche"],
+        "correct": 1,
+        "explanation": "La diffraction augmente quand l'ouverture a est petite (comparable à λ).",
+        "tag": "diffraction",
+        "difficulty": 2
+      },
+      {
+        "id": "post-ol-3",
+        "question": "L'interfrange dans les fentes de Young est donné par :",
+        "choices": ["i = aD/λ", "i = λD/a", "i = λa/D", "i = D/(λa)"],
+        "correct": 1,
+        "explanation": "i = λD/a où a est la distance entre les fentes et D la distance à l'écran.",
+        "tag": "interférences",
+        "difficulty": 3
+      },
+      {
+        "id": "post-ol-4",
+        "question": "Dans un milieu d'indice n = 1,5, la vitesse de la lumière est :",
+        "choices": ["4,5 × 10⁸ m/s", "2 × 10⁸ m/s", "3 × 10⁸ m/s", "1,5 × 10⁸ m/s"],
+        "correct": 1,
+        "explanation": "v = c/n = 3×10⁸/1,5 = 2×10⁸ m/s",
+        "tag": "indice",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-newton",
+    "lessonId": "mouvement-newton",
+    "type": "pre",
+    "title": "Pré-test : Lois de Newton",
+    "description": "Évalue tes connaissances avant la leçon sur les lois de Newton",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-n-1",
+        "question": "La 2ème loi de Newton s'écrit :",
+        "choices": ["F = mv", "F = ma", "F = m/a", "F = a/m"],
+        "correct": 1,
+        "explanation": "ΣF = ma est la deuxième loi de Newton.",
+        "tag": "PFD",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-n-2",
+        "question": "L'unité de force dans le SI est :",
+        "choices": ["Le kilogramme", "Le newton", "Le joule", "Le watt"],
+        "correct": 1,
+        "explanation": "La force s'exprime en newtons (N).",
+        "tag": "force",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-n-3",
+        "question": "Un référentiel galiléen est un référentiel où :",
+        "choices": ["La gravité est nulle", "Le principe d'inertie est vérifié", "Tout est au repos", "La vitesse de la lumière varie"],
+        "correct": 1,
+        "explanation": "Un référentiel galiléen vérifie le principe d'inertie.",
+        "tag": "référentiel",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-newton",
+    "lessonId": "mouvement-newton",
+    "type": "post",
+    "title": "Post-test : Lois de Newton",
+    "description": "Vérifie ta compréhension des lois de Newton",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-n-1",
+        "question": "Un objet de 4 kg soumis à une force de 20 N a une accélération de :",
+        "choices": ["5 m/s²", "80 m/s²", "0,2 m/s²", "16 m/s²"],
+        "correct": 0,
+        "explanation": "a = F/m = 20/4 = 5 m/s²",
+        "tag": "PFD",
+        "difficulty": 2
+      },
+      {
+        "id": "post-n-2",
+        "question": "Sur un plan incliné de 30° sans frottement, l'accélération d'un objet est :",
+        "choices": ["g", "g sin(30°)", "g cos(30°)", "g tan(30°)"],
+        "correct": 1,
+        "explanation": "a = g sin(α) sur un plan incliné sans frottement.",
+        "tag": "plan incliné",
+        "difficulty": 3
+      },
+      {
+        "id": "post-n-3",
+        "question": "L'accélération centripète pour un mouvement circulaire uniforme est :",
+        "choices": ["v/R", "v²/R", "vR", "v²R"],
+        "correct": 1,
+        "explanation": "L'accélération centripète est a = v²/R.",
+        "tag": "circulaire",
+        "difficulty": 2
+      },
+      {
+        "id": "post-n-4",
+        "question": "Selon le principe d'inertie, un objet isolé :",
+        "choices": ["Est immobile", "A un mouvement rectiligne uniforme ou est immobile", "Accélère", "Décélère"],
+        "correct": 1,
+        "explanation": "Un objet isolé garde un mouvement rectiligne uniforme ou reste immobile.",
+        "tag": "inertie",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-champ",
+    "lessonId": "mouvement-champ-uniforme",
+    "type": "pre",
+    "title": "Pré-test : Mouvement dans un champ uniforme",
+    "description": "Évalue tes connaissances avant la leçon",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-c-1",
+        "question": "La trajectoire d'un projectile dans le champ de pesanteur est :",
+        "choices": ["Une droite", "Un cercle", "Une parabole", "Une ellipse"],
+        "correct": 2,
+        "explanation": "La trajectoire d'un projectile est une parabole.",
+        "tag": "trajectoire",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-c-2",
+        "question": "Pour un tir parabolique, la portée maximale est atteinte pour un angle de :",
+        "choices": ["30°", "45°", "60°", "90°"],
+        "correct": 1,
+        "explanation": "La portée est maximale pour α = 45°.",
+        "tag": "portée",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-c-3",
+        "question": "La force électrique sur une charge q dans un champ E est :",
+        "choices": ["F = qE", "F = q/E", "F = E/q", "F = qE²"],
+        "correct": 0,
+        "explanation": "F = qE dans un champ électrique.",
+        "tag": "champ électrique",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-champ",
+    "lessonId": "mouvement-champ-uniforme",
+    "type": "post",
+    "title": "Post-test : Mouvement dans un champ uniforme",
+    "description": "Vérifie ta compréhension du mouvement dans un champ uniforme",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-c-1",
+        "question": "Pour un projectile lancé à 30° avec v₀ = 20 m/s, la composante horizontale de la vitesse est :",
+        "choices": ["10 m/s", "17,3 m/s", "20 m/s", "5 m/s"],
+        "correct": 1,
+        "explanation": "vₓ = v₀ cos(30°) = 20 × 0,866 ≈ 17,3 m/s",
+        "tag": "vitesse",
+        "difficulty": 2
+      },
+      {
+        "id": "post-c-2",
+        "question": "La flèche d'un projectile est donnée par :",
+        "choices": ["H = v₀² sin(α)/(2g)", "H = v₀² sin²(α)/(2g)", "H = v₀² sin(2α)/g", "H = v₀² cos²(α)/(2g)"],
+        "correct": 1,
+        "explanation": "H = v₀² sin²(α)/(2g) est la formule de la flèche.",
+        "tag": "flèche",
+        "difficulty": 3
+      },
+      {
+        "id": "post-c-3",
+        "question": "Un électron (q < 0) dans un champ E dirigé vers le haut subit une force :",
+        "choices": ["Vers le haut", "Vers le bas", "Nulle", "Variable"],
+        "correct": 1,
+        "explanation": "F = qE. Comme q < 0, la force est opposée à E, donc vers le bas.",
+        "tag": "champ électrique",
+        "difficulty": 3
+      },
+      {
+        "id": "post-c-4",
+        "question": "La portée P d'un projectile est donnée par :",
+        "choices": ["P = v₀² sin(α)/g", "P = v₀² sin(2α)/g", "P = v₀² cos(2α)/g", "P = 2v₀² sin(α)/g"],
+        "correct": 1,
+        "explanation": "P = v₀² sin(2α)/g est la formule de la portée.",
+        "tag": "portée",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-energie",
+    "lessonId": "energie-mecanique",
+    "type": "pre",
+    "title": "Pré-test : Énergie mécanique",
+    "description": "Évalue tes connaissances avant la leçon sur l'énergie",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-e-1",
+        "question": "L'énergie cinétique s'exprime par :",
+        "choices": ["Ec = mv", "Ec = ½mv²", "Ec = mv²", "Ec = ½mv"],
+        "correct": 1,
+        "explanation": "Ec = ½mv² est l'expression de l'énergie cinétique.",
+        "tag": "énergie cinétique",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-e-2",
+        "question": "L'unité d'énergie dans le SI est :",
+        "choices": ["Le watt", "Le newton", "Le joule", "Le kilogramme"],
+        "correct": 2,
+        "explanation": "L'énergie s'exprime en joules (J).",
+        "tag": "unité",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-e-3",
+        "question": "L'énergie potentielle de pesanteur est :",
+        "choices": ["Ep = mgh", "Ep = ½mgh", "Ep = mg/h", "Ep = m²gh"],
+        "correct": 0,
+        "explanation": "Ep = mgh est l'énergie potentielle de pesanteur.",
+        "tag": "énergie potentielle",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-energie",
+    "lessonId": "energie-mecanique",
+    "type": "post",
+    "title": "Post-test : Énergie mécanique",
+    "description": "Vérifie ta compréhension de l'énergie mécanique",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-e-1",
+        "question": "Une bille lâchée de 5 m atteint le sol avec une vitesse de (g = 10 m/s²) :",
+        "choices": ["5 m/s", "10 m/s", "50 m/s", "100 m/s"],
+        "correct": 1,
+        "explanation": "v = √(2gh) = √(2×10×5) = √100 = 10 m/s",
+        "tag": "conservation",
+        "difficulty": 2
+      },
+      {
+        "id": "post-e-2",
+        "question": "Le travail d'une force de 100 N sur 2 m avec un angle de 60° est :",
+        "choices": ["200 J", "100 J", "173 J", "50 J"],
+        "correct": 1,
+        "explanation": "W = F×d×cos(θ) = 100×2×cos(60°) = 100×2×0,5 = 100 J",
+        "tag": "travail",
+        "difficulty": 3
+      },
+      {
+        "id": "post-e-3",
+        "question": "L'énergie mécanique se conserve quand :",
+        "choices": ["Il y a des frottements", "Il n'y a pas de frottements", "La masse est constante", "La vitesse est constante"],
+        "correct": 1,
+        "explanation": "L'énergie mécanique se conserve en l'absence de forces non conservatives (frottements).",
+        "tag": "conservation",
+        "difficulty": 2
+      },
+      {
+        "id": "post-e-4",
+        "question": "Le théorème de l'énergie cinétique stipule que :",
+        "choices": ["ΔEc = Σ travaux", "ΔEp = Σ travaux", "Ec = constante", "Ep = constante"],
+        "correct": 0,
+        "explanation": "La variation d'énergie cinétique est égale à la somme des travaux.",
+        "tag": "théorème",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-rc",
+    "lessonId": "circuit-rc",
+    "type": "pre",
+    "title": "Pré-test : Circuit RC",
+    "description": "Évalue tes connaissances avant la leçon sur les circuits RC",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-rc-1",
+        "question": "Un condensateur stocke :",
+        "choices": ["De l'énergie électrique", "De l'énergie cinétique", "De la matière", "Du courant"],
+        "correct": 0,
+        "explanation": "Un condensateur stocke de l'énergie électrique.",
+        "tag": "condensateur",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-rc-2",
+        "question": "La relation charge-tension d'un condensateur est :",
+        "choices": ["q = C/u", "q = Cu", "q = u/C", "q = C²u"],
+        "correct": 1,
+        "explanation": "q = Cu est la relation fondamentale du condensateur.",
+        "tag": "condensateur",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-rc-3",
+        "question": "L'unité de capacité est :",
+        "choices": ["Le volt", "L'ampère", "Le farad", "L'ohm"],
+        "correct": 2,
+        "explanation": "La capacité s'exprime en farads (F).",
+        "tag": "unité",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-rc",
+    "lessonId": "circuit-rc",
+    "type": "post",
+    "title": "Post-test : Circuit RC",
+    "description": "Vérifie ta compréhension des circuits RC",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-rc-1",
+        "question": "La constante de temps d'un circuit avec R = 1 kΩ et C = 10 μF est :",
+        "choices": ["10 ms", "100 ms", "1 s", "0,1 s"],
+        "correct": 0,
+        "explanation": "τ = RC = 10³ × 10×10⁻⁶ = 10⁻² s = 10 ms",
+        "tag": "constante de temps",
+        "difficulty": 2
+      },
+      {
+        "id": "post-rc-2",
+        "question": "Après un temps t = τ lors de la charge, la tension du condensateur atteint environ :",
+        "choices": ["37% de E", "50% de E", "63% de E", "95% de E"],
+        "correct": 2,
+        "explanation": "À t = τ, uc = E(1 - e⁻¹) ≈ 0,63E soit 63%.",
+        "tag": "charge",
+        "difficulty": 2
+      },
+      {
+        "id": "post-rc-3",
+        "question": "L'énergie stockée dans un condensateur est :",
+        "choices": ["E = CU", "E = ½CU²", "E = CU²", "E = ½C²U"],
+        "correct": 1,
+        "explanation": "E = ½CU² est l'énergie stockée dans un condensateur.",
+        "tag": "énergie",
+        "difficulty": 2
+      },
+      {
+        "id": "post-rc-4",
+        "question": "Lors de la décharge d'un condensateur, la tension :",
+        "choices": ["Augmente exponentiellement", "Diminue exponentiellement", "Reste constante", "Diminue linéairement"],
+        "correct": 1,
+        "explanation": "La tension diminue exponentiellement : uc = E × e^(-t/τ).",
+        "tag": "décharge",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-acide",
+    "lessonId": "acides-bases",
+    "type": "pre",
+    "title": "Pré-test : Acides et bases",
+    "description": "Évalue tes connaissances avant la leçon sur les acides et bases",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-ab-1",
+        "question": "Une solution de pH = 3 est :",
+        "choices": ["Acide", "Neutre", "Basique", "On ne peut pas savoir"],
+        "correct": 0,
+        "explanation": "pH < 7 signifie solution acide.",
+        "tag": "pH",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-ab-2",
+        "question": "Le pH est défini par :",
+        "choices": ["pH = log[H₃O⁺]", "pH = -log[H₃O⁺]", "pH = [H₃O⁺]", "pH = 1/[H₃O⁺]"],
+        "correct": 1,
+        "explanation": "pH = -log[H₃O⁺] par définition.",
+        "tag": "pH",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-ab-3",
+        "question": "Un acide fort est un acide qui :",
+        "choices": ["Est très concentré", "Se dissocie totalement", "Se dissocie partiellement", "A un pH très bas"],
+        "correct": 1,
+        "explanation": "Un acide fort se dissocie totalement dans l'eau.",
+        "tag": "acide fort",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-acide",
+    "lessonId": "acides-bases",
+    "type": "post",
+    "title": "Post-test : Acides et bases",
+    "description": "Vérifie ta compréhension des acides et bases",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-ab-1",
+        "question": "Le pH d'une solution de HCl à 10⁻² mol/L est :",
+        "choices": ["2", "12", "-2", "0,02"],
+        "correct": 0,
+        "explanation": "HCl est un acide fort : pH = -log(10⁻²) = 2",
+        "tag": "pH acide fort",
+        "difficulty": 2
+      },
+      {
+        "id": "post-ab-2",
+        "question": "Pour une solution tampon, quand [A⁻] = [AH], le pH est égal à :",
+        "choices": ["7", "Ka", "pKa", "14 - pKa"],
+        "correct": 2,
+        "explanation": "pH = pKa + log([A⁻]/[AH]) = pKa + log(1) = pKa",
+        "tag": "tampon",
+        "difficulty": 3
+      },
+      {
+        "id": "post-ab-3",
+        "question": "Le produit ionique de l'eau à 25°C est :",
+        "choices": ["10⁻⁷", "10⁻¹⁴", "7", "14"],
+        "correct": 1,
+        "explanation": "Ke = [H₃O⁺][OH⁻] = 10⁻¹⁴ à 25°C.",
+        "tag": "produit ionique",
+        "difficulty": 2
+      },
+      {
+        "id": "post-ab-4",
+        "question": "Le pH d'une solution de NaOH à 10⁻³ mol/L est :",
+        "choices": ["3", "11", "7", "-3"],
+        "correct": 1,
+        "explanation": "[OH⁻] = 10⁻³, pOH = 3, donc pH = 14 - 3 = 11",
+        "tag": "pH base forte",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-redox",
+    "lessonId": "oxydoreduction",
+    "type": "pre",
+    "title": "Pré-test : Oxydoréduction",
+    "description": "Évalue tes connaissances avant la leçon sur l'oxydoréduction",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-r-1",
+        "question": "Un oxydant est une espèce qui :",
+        "choices": ["Gagne des électrons", "Perd des électrons", "Gagne des protons", "Perd des protons"],
+        "correct": 0,
+        "explanation": "Un oxydant gagne des électrons (il se réduit).",
+        "tag": "oxydant",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-r-2",
+        "question": "L'oxydation correspond à :",
+        "choices": ["Un gain d'électrons", "Une perte d'électrons", "Un gain de protons", "Une perte de protons"],
+        "correct": 1,
+        "explanation": "L'oxydation est une perte d'électrons.",
+        "tag": "oxydation",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-r-3",
+        "question": "Dans une pile, l'anode est :",
+        "choices": ["Le pôle positif", "Le pôle négatif", "Neutre", "Variable"],
+        "correct": 1,
+        "explanation": "Dans une pile, l'anode est le pôle négatif (-) où a lieu l'oxydation.",
+        "tag": "pile",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-redox",
+    "lessonId": "oxydoreduction",
+    "type": "post",
+    "title": "Post-test : Oxydoréduction",
+    "description": "Vérifie ta compréhension de l'oxydoréduction",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-r-1",
+        "question": "Pour équilibrer MnO₄⁻ → Mn²⁺, combien faut-il d'électrons ?",
+        "choices": ["2", "3", "5", "7"],
+        "correct": 2,
+        "explanation": "MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (5 électrons).",
+        "tag": "équilibrage",
+        "difficulty": 3
+      },
+      {
+        "id": "post-r-2",
+        "question": "Dans la pile Daniell (Zn/Cu), le zinc :",
+        "choices": ["Se réduit", "S'oxyde", "Ne réagit pas", "Gagne des électrons"],
+        "correct": 1,
+        "explanation": "Le zinc s'oxyde : Zn → Zn²⁺ + 2e⁻",
+        "tag": "pile",
+        "difficulty": 2
+      },
+      {
+        "id": "post-r-3",
+        "question": "L'électrolyse est une réaction :",
+        "choices": ["Spontanée", "Forcée", "Exothermique", "Isotherme"],
+        "correct": 1,
+        "explanation": "L'électrolyse est une réaction forcée par apport d'énergie électrique.",
+        "tag": "électrolyse",
+        "difficulty": 2
+      },
+      {
+        "id": "post-r-4",
+        "question": "À la cathode d'une pile, il se produit :",
+        "choices": ["Une oxydation", "Une réduction", "Aucune réaction", "Un équilibre"],
+        "correct": 1,
+        "explanation": "La cathode est le siège de la réduction (gain d'électrons).",
+        "tag": "cathode",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-cinetique",
+    "lessonId": "cinetique",
+    "type": "pre",
+    "title": "Pré-test : Cinétique chimique",
+    "description": "Évalue tes connaissances avant la leçon sur la cinétique",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-cin-1",
+        "question": "La vitesse d'une réaction chimique s'exprime en :",
+        "choices": ["mol/L", "mol·L⁻¹·s⁻¹", "L/mol", "s⁻¹"],
+        "correct": 1,
+        "explanation": "La vitesse s'exprime en mol·L⁻¹·s⁻¹.",
+        "tag": "vitesse",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-cin-2",
+        "question": "Un catalyseur est une espèce qui :",
+        "choices": ["Est consommée", "Accélère sans être consommée", "Ralentit la réaction", "Change l'équilibre"],
+        "correct": 1,
+        "explanation": "Un catalyseur accélère la réaction sans être consommé.",
+        "tag": "catalyseur",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-cin-3",
+        "question": "Quand la température augmente, la vitesse de réaction :",
+        "choices": ["Diminue", "Augmente", "Reste constante", "S'annule"],
+        "correct": 1,
+        "explanation": "La température est un facteur cinétique : elle accélère la réaction.",
+        "tag": "température",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-cinetique",
+    "lessonId": "cinetique",
+    "type": "post",
+    "title": "Post-test : Cinétique chimique",
+    "description": "Vérifie ta compréhension de la cinétique chimique",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-cin-1",
+        "question": "Le temps de demi-réaction t₁/₂ est le temps pour que :",
+        "choices": ["La réaction soit terminée", "L'avancement atteigne ξf/2", "La vitesse soit maximale", "Les réactifs disparaissent"],
+        "correct": 1,
+        "explanation": "t₁/₂ est le temps pour atteindre la moitié de l'avancement final.",
+        "tag": "t1/2",
+        "difficulty": 2
+      },
+      {
+        "id": "post-cin-2",
+        "question": "Si [A] passe de 0,1 à 0,025 mol/L, combien de t₁/₂ se sont écoulés ?",
+        "choices": ["1", "2", "3", "4"],
+        "correct": 1,
+        "explanation": "0,1 → 0,05 → 0,025 : la concentration a été divisée par 4 = 2², soit 2 t₁/₂.",
+        "tag": "t1/2",
+        "difficulty": 3
+      },
+      {
+        "id": "post-cin-3",
+        "question": "Un catalyseur :",
+        "choices": ["Modifie l'équilibre", "Diminue l'énergie d'activation", "Apparaît dans l'équation bilan", "Ralentit la réaction"],
+        "correct": 1,
+        "explanation": "Le catalyseur diminue l'énergie d'activation sans modifier l'équilibre.",
+        "tag": "catalyseur",
+        "difficulty": 2
+      },
+      {
+        "id": "post-cin-4",
+        "question": "La vitesse de réaction est toujours :",
+        "choices": ["Négative", "Positive", "Nulle", "Constante"],
+        "correct": 1,
+        "explanation": "La vitesse de réaction est toujours positive par définition.",
+        "tag": "vitesse",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-organique",
+    "lessonId": "chimie-organique",
+    "type": "pre",
+    "title": "Pré-test : Chimie organique",
+    "description": "Évalue tes connaissances avant la leçon sur la chimie organique",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-org-1",
+        "question": "Le groupe caractéristique d'un alcool est :",
+        "choices": ["-COOH", "-OH", "-CHO", "-NH₂"],
+        "correct": 1,
+        "explanation": "Le groupe hydroxyle -OH caractérise les alcools.",
+        "tag": "alcool",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-org-2",
+        "question": "Le préfixe pour une chaîne de 4 carbones est :",
+        "choices": ["Méth-", "Éth-", "Prop-", "But-"],
+        "correct": 3,
+        "explanation": "But- correspond à 4 carbones.",
+        "tag": "nomenclature",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-org-3",
+        "question": "Le suffixe -al désigne :",
+        "choices": ["Un alcool", "Un aldéhyde", "Une cétone", "Un acide"],
+        "correct": 1,
+        "explanation": "Le suffixe -al désigne les aldéhydes.",
+        "tag": "nomenclature",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-organique",
+    "lessonId": "chimie-organique",
+    "type": "post",
+    "title": "Post-test : Chimie organique",
+    "description": "Vérifie ta compréhension de la chimie organique",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-org-1",
+        "question": "CH₃-CH₂-OH se nomme :",
+        "choices": ["Méthanol", "Éthanol", "Propanol", "Butanol"],
+        "correct": 1,
+        "explanation": "2 carbones = éth-, groupe OH = -ol : éthanol",
+        "tag": "nomenclature",
+        "difficulty": 2
+      },
+      {
+        "id": "post-org-2",
+        "question": "CH₃-CO-CH₃ est :",
+        "choices": ["Un aldéhyde", "Une cétone", "Un acide", "Un ester"],
+        "correct": 1,
+        "explanation": "C=O au milieu de la chaîne = cétone (propan-2-one ou acétone).",
+        "tag": "identification",
+        "difficulty": 2
+      },
+      {
+        "id": "post-org-3",
+        "question": "Le nom de CH₃-COO-CH₂-CH₃ est :",
+        "choices": ["Éthanoate de méthyle", "Méthanoate d'éthyle", "Éthanoate d'éthyle", "Propanoate de méthyle"],
+        "correct": 2,
+        "explanation": "Partie acide : éthanoate (2C), partie alcool : éthyle (2C) = éthanoate d'éthyle.",
+        "tag": "ester",
+        "difficulty": 3
+      },
+      {
+        "id": "post-org-4",
+        "question": "Un alcool tertiaire est un alcool dont le carbone porteur de -OH est lié à :",
+        "choices": ["0 autre carbone", "1 autre carbone", "2 autres carbones", "3 autres carbones"],
+        "correct": 3,
+        "explanation": "Alcool tertiaire : le C-OH est lié à 3 chaînes carbonées.",
+        "tag": "classe",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-interferences",
+    "lessonId": "interferences",
+    "type": "pre",
+    "title": "Pré-test : Interférences lumineuses",
+    "description": "Évalue tes connaissances avant la leçon sur les interférences",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-int-1",
+        "question": "Les interférences sont un phénomène caractéristique :",
+        "choices": ["Des particules", "Des ondes", "De la chaleur", "De l'électricité"],
+        "correct": 1,
+        "explanation": "Les interférences sont un phénomène purement ondulatoire.",
+        "tag": "interférences",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-int-2",
+        "question": "Pour observer des interférences stables, il faut des sources :",
+        "choices": ["Très intenses", "Cohérentes", "Monochromatiques uniquement", "De couleurs différentes"],
+        "correct": 1,
+        "explanation": "Les sources doivent être cohérentes (même fréquence, déphasage constant).",
+        "tag": "cohérence",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-int-3",
+        "question": "La différence de marche se mesure en :",
+        "choices": ["Hertz", "Mètres", "Secondes", "Radians"],
+        "correct": 1,
+        "explanation": "La différence de marche est une différence de distance, en mètres.",
+        "tag": "différence de marche",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-interferences",
+    "lessonId": "interferences",
+    "type": "post",
+    "title": "Post-test : Interférences lumineuses",
+    "description": "Vérifie ta compréhension des interférences lumineuses",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-int-1",
+        "question": "L'interfrange dans les fentes de Young est donné par i = :",
+        "choices": ["λD/a", "aD/λ", "λa/D", "D/(λa)"],
+        "correct": 0,
+        "explanation": "i = λD/a où a est l'écartement des fentes et D la distance à l'écran.",
+        "tag": "interfrange",
+        "difficulty": 2
+      },
+      {
+        "id": "post-int-2",
+        "question": "Les interférences sont constructives si δ = :",
+        "choices": ["(k+0.5)λ", "kλ", "λ/2", "2kπ"],
+        "correct": 1,
+        "explanation": "Interférences constructives si δ = kλ (k entier).",
+        "tag": "condition",
+        "difficulty": 2
+      },
+      {
+        "id": "post-int-3",
+        "question": "Avec λ = 600 nm, a = 0.5 mm et D = 2 m, l'interfrange vaut :",
+        "choices": ["1.2 mm", "2.4 mm", "4.8 mm", "0.6 mm"],
+        "correct": 1,
+        "explanation": "i = λD/a = 600×10⁻⁹ × 2 / (0.5×10⁻³) = 2.4×10⁻³ m = 2.4 mm",
+        "tag": "calcul",
+        "difficulty": 3
+      },
+      {
+        "id": "post-int-4",
+        "question": "La différence de marche pour un point à la distance x du centre est δ = :",
+        "choices": ["xD/a", "ax/D", "λx/a", "aD/x"],
+        "correct": 1,
+        "explanation": "δ = ax/D dans l'approximation des petits angles.",
+        "tag": "différence de marche",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-diffraction",
+    "lessonId": "diffraction",
+    "type": "pre",
+    "title": "Pré-test : Diffraction",
+    "description": "Évalue tes connaissances avant la leçon sur la diffraction",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-dif-1",
+        "question": "La diffraction est observable quand l'ouverture est :",
+        "choices": ["Très grande devant λ", "De l'ordre de λ", "Très petite devant λ", "N'importe quelle taille"],
+        "correct": 1,
+        "explanation": "La diffraction est marquée quand a ≈ λ.",
+        "tag": "condition",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-dif-2",
+        "question": "Plus la fente est fine, la tache centrale est :",
+        "choices": ["Plus étroite", "Plus large", "De même taille", "Invisible"],
+        "correct": 1,
+        "explanation": "L ∝ 1/a : fente fine → tache large.",
+        "tag": "tache centrale",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-dif-3",
+        "question": "La diffraction prouve la nature :",
+        "choices": ["Corpusculaire de la lumière", "Ondulatoire de la lumière", "Thermique de la lumière", "Électrique de la lumière"],
+        "correct": 1,
+        "explanation": "La diffraction est un phénomène typiquement ondulatoire.",
+        "tag": "nature",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-diffraction",
+    "lessonId": "diffraction",
+    "type": "post",
+    "title": "Post-test : Diffraction",
+    "description": "Vérifie ta compréhension de la diffraction",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-dif-1",
+        "question": "L'écart angulaire θ pour une fente de largeur a est donné par :",
+        "choices": ["θ = a/λ", "θ = λ/a", "θ = aλ", "θ = 1/(aλ)"],
+        "correct": 1,
+        "explanation": "θ = λ/a (en radians, pour petits angles).",
+        "tag": "écart angulaire",
+        "difficulty": 2
+      },
+      {
+        "id": "post-dif-2",
+        "question": "La largeur de la tache centrale est L = :",
+        "choices": ["λD/a", "2λD/a", "aD/λ", "λa/D"],
+        "correct": 1,
+        "explanation": "L = 2λD/a pour la tache centrale.",
+        "tag": "tache centrale",
+        "difficulty": 2
+      },
+      {
+        "id": "post-dif-3",
+        "question": "Si on double la longueur d'onde, la tache centrale :",
+        "choices": ["Reste identique", "Double de largeur", "Devient deux fois plus étroite", "Disparaît"],
+        "correct": 1,
+        "explanation": "L = 2λD/a, donc L ∝ λ : si λ double, L double.",
+        "tag": "proportionnalité",
+        "difficulty": 2
+      },
+      {
+        "id": "post-dif-4",
+        "question": "La tache centrale contient environ :",
+        "choices": ["50% de l'énergie", "63% de l'énergie", "84% de l'énergie", "95% de l'énergie"],
+        "correct": 2,
+        "explanation": "La tache centrale contient environ 84% de l'énergie lumineuse.",
+        "tag": "énergie",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-radioactivite",
+    "lessonId": "radioactivite",
+    "type": "pre",
+    "title": "Pré-test : Radioactivité",
+    "description": "Évalue tes connaissances avant la leçon sur la radioactivité",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-rad-1",
+        "question": "La radioactivité est un phénomène :",
+        "choices": ["Chimique", "Nucléaire", "Électrique", "Thermique"],
+        "correct": 1,
+        "explanation": "La radioactivité est un phénomène nucléaire.",
+        "tag": "nature",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-rad-2",
+        "question": "L'unité d'activité radioactive est :",
+        "choices": ["Le gray", "Le sievert", "Le becquerel", "Le curie"],
+        "correct": 2,
+        "explanation": "L'activité s'exprime en becquerels (Bq) dans le SI.",
+        "tag": "unité",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-rad-3",
+        "question": "Une particule α est :",
+        "choices": ["Un électron", "Un positon", "Un noyau d'hélium", "Un photon"],
+        "correct": 2,
+        "explanation": "Une particule α est un noyau d'hélium ⁴₂He.",
+        "tag": "alpha",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-radioactivite",
+    "lessonId": "radioactivite",
+    "type": "post",
+    "title": "Post-test : Radioactivité",
+    "description": "Vérifie ta compréhension de la radioactivité",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-rad-1",
+        "question": "La relation entre demi-vie et constante radioactive est :",
+        "choices": ["t₁/₂ = ln2/λ", "t₁/₂ = λ/ln2", "t₁/₂ = 1/λ", "t₁/₂ = λ"],
+        "correct": 0,
+        "explanation": "t₁/₂ = ln2/λ ≈ 0.693/λ",
+        "tag": "demi-vie",
+        "difficulty": 2
+      },
+      {
+        "id": "post-rad-2",
+        "question": "Après 3 demi-vies, il reste :",
+        "choices": ["1/3 des noyaux", "1/4 des noyaux", "1/6 des noyaux", "1/8 des noyaux"],
+        "correct": 3,
+        "explanation": "N = N₀/2³ = N₀/8 après 3 demi-vies.",
+        "tag": "décroissance",
+        "difficulty": 2
+      },
+      {
+        "id": "post-rad-3",
+        "question": "L'activité A est liée au nombre de noyaux par :",
+        "choices": ["A = N/λ", "A = λN", "A = λ/N", "A = N + λ"],
+        "correct": 1,
+        "explanation": "A = λN, l'activité est proportionnelle au nombre de noyaux.",
+        "tag": "activité",
+        "difficulty": 2
+      },
+      {
+        "id": "post-rad-4",
+        "question": "Lors d'une désintégration β⁻, un neutron se transforme en :",
+        "choices": ["Proton + électron", "Neutron + positon", "Deux protons", "Photon gamma"],
+        "correct": 0,
+        "explanation": "β⁻ : n → p + e⁻ + antineutrino",
+        "tag": "beta",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-titrages",
+    "lessonId": "titrages",
+    "type": "pre",
+    "title": "Pré-test : Titrages",
+    "description": "Évalue tes connaissances avant la leçon sur les titrages",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-tit-1",
+        "question": "Un titrage permet de déterminer :",
+        "choices": ["La température", "Le pH", "La concentration", "La masse molaire"],
+        "correct": 2,
+        "explanation": "Un titrage permet de déterminer la concentration d'une espèce.",
+        "tag": "objectif",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-tit-2",
+        "question": "À l'équivalence, les réactifs sont :",
+        "choices": ["En excès", "En défaut", "En proportions stœchiométriques", "Absents"],
+        "correct": 2,
+        "explanation": "À l'équivalence, les réactifs ont été introduits en proportions stœchiométriques.",
+        "tag": "équivalence",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-tit-3",
+        "question": "Un indicateur coloré change de couleur dans :",
+        "choices": ["Toute la gamme de pH", "Une zone de pH appelée zone de virage", "Uniquement à pH = 7", "Les solutions incolores"],
+        "correct": 1,
+        "explanation": "L'indicateur change de couleur dans sa zone de virage.",
+        "tag": "indicateur",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-titrages",
+    "lessonId": "titrages",
+    "type": "post",
+    "title": "Post-test : Titrages",
+    "description": "Vérifie ta compréhension des titrages",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-tit-1",
+        "question": "On titre 20 mL d'acide par NaOH 0.1 mol/L, équivalence à 10 mL. La concentration de l'acide est :",
+        "choices": ["0.05 mol/L", "0.1 mol/L", "0.2 mol/L", "0.02 mol/L"],
+        "correct": 0,
+        "explanation": "Ca×Va = Cb×Vb → Ca = 0.1×10/20 = 0.05 mol/L",
+        "tag": "calcul",
+        "difficulty": 2
+      },
+      {
+        "id": "post-tit-2",
+        "question": "Pour titrer un acide faible par une base forte, l'indicateur adapté est :",
+        "choices": ["L'hélianthine (3.1-4.4)", "Le BBT (6.0-7.6)", "La phénolphtaléine (8.2-10)", "N'importe lequel"],
+        "correct": 2,
+        "explanation": "Le pH à l'équivalence est basique, il faut un indicateur de zone de virage basique.",
+        "tag": "indicateur",
+        "difficulty": 3
+      },
+      {
+        "id": "post-tit-3",
+        "question": "En conductimétrie, l'équivalence se repère par :",
+        "choices": ["Un changement de couleur", "Un saut de pH", "Un changement de pente", "Une augmentation de température"],
+        "correct": 2,
+        "explanation": "En conductimétrie, l'équivalence correspond à un changement de pente.",
+        "tag": "conductimétrie",
+        "difficulty": 2
+      },
+      {
+        "id": "post-tit-4",
+        "question": "Le réactif titrant est celui :",
+        "choices": ["Dans le bécher", "Dont on cherche la concentration", "De concentration connue dans la burette", "Qui change de couleur"],
+        "correct": 2,
+        "explanation": "Le titrant est dans la burette, de concentration connue.",
+        "tag": "vocabulaire",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-piles",
+    "lessonId": "piles-electrolyse",
+    "type": "pre",
+    "title": "Pré-test : Piles et électrolyse",
+    "description": "Évalue tes connaissances avant la leçon sur les piles",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-pil-1",
+        "question": "Une pile convertit l'énergie :",
+        "choices": ["Électrique en chimique", "Chimique en électrique", "Thermique en électrique", "Électrique en thermique"],
+        "correct": 1,
+        "explanation": "Une pile convertit l'énergie chimique en énergie électrique.",
+        "tag": "pile",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-pil-2",
+        "question": "L'anode est le siège de :",
+        "choices": ["La réduction", "L'oxydation", "Aucune réaction", "Les deux"],
+        "correct": 1,
+        "explanation": "L'anode est toujours le siège de l'oxydation (moyen mnémotechnique : AnOx).",
+        "tag": "anode",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-pil-3",
+        "question": "La constante de Faraday vaut environ :",
+        "choices": ["96 C/mol", "965 C/mol", "9650 C/mol", "96500 C/mol"],
+        "correct": 3,
+        "explanation": "F = 96500 C/mol.",
+        "tag": "Faraday",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-piles",
+    "lessonId": "piles-electrolyse",
+    "type": "post",
+    "title": "Post-test : Piles et électrolyse",
+    "description": "Vérifie ta compréhension des piles et de l'électrolyse",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-pil-1",
+        "question": "Dans une pile, la borne positive est :",
+        "choices": ["L'anode", "La cathode", "Le pont salin", "L'électrolyte"],
+        "correct": 1,
+        "explanation": "Dans une pile : cathode = borne +, anode = borne -.",
+        "tag": "pile",
+        "difficulty": 2
+      },
+      {
+        "id": "post-pil-2",
+        "question": "Dans une électrolyse, la borne positive est :",
+        "choices": ["L'anode", "La cathode", "Le pont salin", "Variable"],
+        "correct": 0,
+        "explanation": "Dans une électrolyse : anode = borne +, cathode = borne -.",
+        "tag": "électrolyse",
+        "difficulty": 2
+      },
+      {
+        "id": "post-pil-3",
+        "question": "Pour déposer 0.1 mol de cuivre (Cu²⁺ + 2e⁻ → Cu), la charge nécessaire est :",
+        "choices": ["9650 C", "19300 C", "4825 C", "96500 C"],
+        "correct": 1,
+        "explanation": "Q = n × 2 × F = 0.1 × 2 × 96500 = 19300 C",
+        "tag": "calcul",
+        "difficulty": 3
+      },
+      {
+        "id": "post-pil-4",
+        "question": "L'électrolyse est une réaction :",
+        "choices": ["Spontanée", "Forcée", "Réversible", "Exothermique"],
+        "correct": 1,
+        "explanation": "L'électrolyse est forcée par apport d'énergie électrique.",
+        "tag": "nature",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-synthese",
+    "lessonId": "synthese-organique",
+    "type": "pre",
+    "title": "Pré-test : Stratégie de synthèse",
+    "description": "Évalue tes connaissances avant la leçon sur la synthèse organique",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-syn-1",
+        "question": "Le rendement d'une synthèse se calcule par :",
+        "choices": ["n_obtenu × n_théorique", "n_obtenu / n_théorique", "n_théorique / n_obtenu", "n_obtenu + n_théorique"],
+        "correct": 1,
+        "explanation": "η = n_obtenu / n_théorique × 100%",
+        "tag": "rendement",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-syn-2",
+        "question": "Un catalyseur permet de :",
+        "choices": ["Augmenter le rendement", "Accélérer la réaction", "Modifier l'équilibre", "Refroidir le milieu"],
+        "correct": 1,
+        "explanation": "Un catalyseur accélère la réaction sans modifier l'équilibre.",
+        "tag": "catalyseur",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-syn-3",
+        "question": "La chimie verte cherche à :",
+        "choices": ["Utiliser des réactifs verts", "Réduire l'impact environnemental", "Travailler à température ambiante", "Utiliser uniquement des plantes"],
+        "correct": 1,
+        "explanation": "La chimie verte vise à réduire l'impact environnemental des synthèses.",
+        "tag": "chimie verte",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-synthese",
+    "lessonId": "synthese-organique",
+    "type": "post",
+    "title": "Post-test : Stratégie de synthèse",
+    "description": "Vérifie ta compréhension de la synthèse organique",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-syn-1",
+        "question": "Une synthèse en 3 étapes de rendements 80%, 90% et 75% a un rendement global de :",
+        "choices": ["81.7%", "54%", "75%", "245%"],
+        "correct": 1,
+        "explanation": "η_global = 0.8 × 0.9 × 0.75 = 0.54 = 54%",
+        "tag": "rendement global",
+        "difficulty": 3
+      },
+      {
+        "id": "post-syn-2",
+        "question": "On protège un groupe fonctionnel pour :",
+        "choices": ["L'activer", "Le rendre inerte temporairement", "L'éliminer", "Le transformer"],
+        "correct": 1,
+        "explanation": "La protection rend le groupe inerte pendant une autre réaction.",
+        "tag": "protection",
+        "difficulty": 2
+      },
+      {
+        "id": "post-syn-3",
+        "question": "L'économie d'atomes est maximale pour les réactions :",
+        "choices": ["D'élimination", "De substitution", "D'addition", "De fragmentation"],
+        "correct": 2,
+        "explanation": "Les réactions d'addition incorporent tous les atomes dans le produit.",
+        "tag": "économie d'atomes",
+        "difficulty": 2
+      },
+      {
+        "id": "post-syn-4",
+        "question": "Pour améliorer le rendement d'une réaction équilibrée, on peut :",
+        "choices": ["Diminuer la concentration des réactifs", "Éliminer un produit", "Ajouter un catalyseur", "Diminuer la température"],
+        "correct": 1,
+        "explanation": "Éliminer un produit déplace l'équilibre vers sa formation.",
+        "tag": "optimisation",
+        "difficulty": 2
+      }
+    ]
+  }
+]
