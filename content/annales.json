@@ -266,6 +266,342 @@
           ]
         }
       ]
+    },
+    {
+      "id": "bac-2024-polynesie-ex1",
+      "year": 2024,
+      "session": "Polynésie",
+      "exerciseNumber": 1,
+      "title": "Circuit RC et défibrillateur",
+      "subject": "physique",
+      "themes": ["Circuits RC", "Charge et décharge"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "moyen",
+      "description": "Étude du circuit RC d'un défibrillateur cardiaque utilisé en médecine d'urgence.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Charge du condensateur",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Un condensateur de capacité C = 32 μF est chargé par un générateur de tension E = 5000 V à travers une résistance R = 500 Ω. Établir l'équation différentielle vérifiée par la tension uC aux bornes du condensateur.",
+              "points": 1,
+              "answer": "Loi des mailles : $E = u_R + u_C = Ri + u_C$\n\nOr $i = C\\frac{du_C}{dt}$, donc :\n$$E = RC\\frac{du_C}{dt} + u_C$$\n\nSoit l'équation différentielle :\n$$\\frac{du_C}{dt} + \\frac{u_C}{RC} = \\frac{E}{RC}$$"
+            },
+            {
+              "number": "2",
+              "text": "Calculer la constante de temps τ du circuit. Quelle est sa signification physique ?",
+              "points": 1,
+              "answer": "La constante de temps est :\n$$\\tau = RC = 500 \\times 32 \\times 10^{-6} = 16 \\times 10^{-3} \\text{ s} = 16 \\text{ ms}$$\n\nτ représente le temps caractéristique de charge/décharge du condensateur. Après une durée 5τ ≈ 80 ms, le condensateur est considéré comme complètement chargé (à 99%)."
+            },
+            {
+              "number": "3",
+              "text": "La solution de l'équation différentielle est $u_C(t) = E(1 - e^{-t/\\tau})$. Calculer l'énergie stockée dans le condensateur lorsqu'il est complètement chargé.",
+              "points": 1,
+              "answer": "L'énergie stockée dans un condensateur est :\n$$E_C = \\frac{1}{2}Cu_C^2$$\n\nQuand le condensateur est chargé, $u_C = E = 5000$ V :\n$$E_C = \\frac{1}{2} \\times 32 \\times 10^{-6} \\times 5000^2$$\n$$E_C = \\frac{1}{2} \\times 32 \\times 10^{-6} \\times 25 \\times 10^6 = 400 \\text{ J}$$"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Décharge et choc électrique",
+          "questions": [
+            {
+              "number": "4",
+              "text": "Lors du choc, le condensateur se décharge dans le patient (résistance équivalente R' = 50 Ω). Calculer l'intensité maximale du courant de décharge.",
+              "points": 1,
+              "answer": "À t = 0, le condensateur est chargé à $u_C = E = 5000$ V.\n\nL'intensité initiale (maximale) est :\n$$I_{max} = \\frac{E}{R'} = \\frac{5000}{50} = 100 \\text{ A}$$"
+            },
+            {
+              "number": "5",
+              "text": "Calculer la nouvelle constante de temps τ' lors de la décharge. En combien de temps peut-on considérer que toute l'énergie a été transférée au patient ?",
+              "points": 1,
+              "answer": "Nouvelle constante de temps :\n$$\\tau' = R'C = 50 \\times 32 \\times 10^{-6} = 1,6 \\times 10^{-3} \\text{ s} = 1,6 \\text{ ms}$$\n\nLa décharge est complète après $5\\tau' = 8$ ms.\n\nLe choc électrique dure donc environ 8 millisecondes, pendant lesquelles 400 J sont transférés au cœur du patient."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2024-polynesie-ex2",
+      "year": 2024,
+      "session": "Polynésie",
+      "exerciseNumber": 2,
+      "title": "Cinétique de décomposition de l'eau oxygénée",
+      "subject": "chimie",
+      "themes": ["Cinétique chimique", "Catalyse"],
+      "points": 5,
+      "duration": 55,
+      "difficulty": "moyen",
+      "description": "Étude cinétique de la décomposition de l'eau oxygénée catalysée par les ions fer III.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Suivi cinétique",
+          "questions": [
+            {
+              "number": "1",
+              "text": "L'eau oxygénée H₂O₂ se décompose selon : 2H₂O₂ → 2H₂O + O₂. Identifier l'oxydant et le réducteur dans cette réaction.",
+              "points": 1,
+              "answer": "Cette réaction est une dismutation où H₂O₂ joue les deux rôles :\n\n- **Oxydant** : H₂O₂ est réduit en H₂O (gain d'électrons)\n$$\\text{H}_2\\text{O}_2 + 2\\text{H}^+ + 2\\text{e}^- \\rightarrow 2\\text{H}_2\\text{O}$$\n\n- **Réducteur** : H₂O₂ est oxydé en O₂ (perte d'électrons)\n$$\\text{H}_2\\text{O}_2 \\rightarrow \\text{O}_2 + 2\\text{H}^+ + 2\\text{e}^-$$"
+            },
+            {
+              "number": "2",
+              "text": "On suit la concentration [H₂O₂] en fonction du temps. Le temps de demi-réaction t₁/₂ est le temps au bout duquel la concentration a diminué de moitié. Si [H₂O₂]₀ = 0,40 mol/L et t₁/₂ = 600 s, quelle est la concentration à t = 600 s ?",
+              "points": 1,
+              "answer": "Par définition du temps de demi-réaction :\n$$[\\text{H}_2\\text{O}_2]_{t_{1/2}} = \\frac{[\\text{H}_2\\text{O}_2]_0}{2} = \\frac{0,40}{2} = 0,20 \\text{ mol/L}$$"
+            },
+            {
+              "number": "3",
+              "text": "La vitesse volumique de réaction est définie par $v = -\\frac{1}{2}\\frac{d[H_2O_2]}{dt}$. Pourquoi le facteur 1/2 apparaît-il ?",
+              "points": 1,
+              "answer": "Le facteur 1/2 correspond au coefficient stœchiométrique de H₂O₂ dans l'équation-bilan.\n\nLa vitesse de réaction est définie de manière unique, indépendamment de l'espèce suivie. Pour une réaction aA → produits :\n$$v = -\\frac{1}{a}\\frac{d[A]}{dt}$$\n\nIci, 2 moles de H₂O₂ disparaissent pour 1 \"événement\" réactionnel, d'où le facteur 1/2."
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Catalyse",
+          "questions": [
+            {
+              "number": "4",
+              "text": "En présence d'ions Fe³⁺, le temps de demi-réaction passe de 600 s à 60 s. Quel est le rôle des ions Fe³⁺ ? Comment appelle-t-on ce type de catalyse ?",
+              "points": 1,
+              "answer": "Les ions Fe³⁺ jouent le rôle de **catalyseur** : ils accélèrent la réaction sans être consommés.\n\nComme les ions Fe³⁺ sont en solution aqueuse, comme les réactifs, il s'agit d'une **catalyse homogène** (catalyseur et réactifs dans la même phase)."
+            },
+            {
+              "number": "5",
+              "text": "Le catalyseur modifie-t-il l'état final du système ? Justifier.",
+              "points": 1,
+              "answer": "**Non**, le catalyseur ne modifie pas l'état final du système.\n\nIl accélère l'atteinte de l'équilibre mais ne déplace pas cet équilibre. La composition finale (concentrations, quantités de matière) est identique avec ou sans catalyseur.\n\nSeul le **chemin réactionnel** est modifié : le catalyseur abaisse l'énergie d'activation, ce qui augmente la vitesse de réaction."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2023-antilles-ex1",
+      "year": 2023,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 1,
+      "title": "Interférences lumineuses",
+      "subject": "physique",
+      "themes": ["Interférences", "Ondes lumineuses"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "difficile",
+      "description": "Étude des interférences produites par les fentes d'Young avec une lumière monochromatique.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Conditions d'interférences",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Deux fentes fines F₁ et F₂, distantes de a = 0,50 mm, sont éclairées par une source laser de longueur d'onde λ = 633 nm. Un écran est placé à D = 1,5 m des fentes. Rappeler la condition pour observer une frange brillante au point M de l'écran.",
+              "points": 1,
+              "answer": "Une frange brillante (maximum d'intensité) est observée lorsque les deux ondes arrivent **en phase** au point M.\n\nCela correspond à une différence de marche égale à un nombre entier de longueurs d'onde :\n$$\\delta = k\\lambda \\quad \\text{avec } k \\in \\mathbb{Z}$$"
+            },
+            {
+              "number": "2",
+              "text": "La différence de marche au point M d'abscisse x sur l'écran est donnée par $\\delta = \\frac{ax}{D}$. En déduire l'expression de l'interfrange i.",
+              "points": 1.5,
+              "answer": "La position des franges brillantes est donnée par $\\delta = k\\lambda$ :\n$$\\frac{ax}{D} = k\\lambda \\Rightarrow x_k = k\\frac{\\lambda D}{a}$$\n\nL'interfrange est la distance entre deux franges brillantes consécutives :\n$$i = x_{k+1} - x_k = \\frac{\\lambda D}{a}$$"
+            },
+            {
+              "number": "3",
+              "text": "Calculer la valeur de l'interfrange i.",
+              "points": 0.5,
+              "answer": "$$i = \\frac{\\lambda D}{a} = \\frac{633 \\times 10^{-9} \\times 1,5}{0,50 \\times 10^{-3}}$$\n\n$$i = \\frac{633 \\times 1,5}{0,50} \\times 10^{-6} = 1,90 \\times 10^{-3} \\text{ m} = 1,90 \\text{ mm}$$"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Exploitation de la figure d'interférences",
+          "questions": [
+            {
+              "number": "4",
+              "text": "On observe 11 franges brillantes sur l'écran. Quelle est la largeur de la zone d'interférences ?",
+              "points": 1,
+              "answer": "11 franges brillantes correspondent à 10 interfranges (de la frange centrale aux franges extrêmes de part et d'autre).\n\nLargeur totale :\n$$L = 10 \\times i = 10 \\times 1,90 = 19,0 \\text{ mm}$$"
+            },
+            {
+              "number": "5",
+              "text": "On remplace le laser rouge par un laser vert (λ' = 532 nm). Comment évolue l'interfrange ? Calculer sa nouvelle valeur.",
+              "points": 1,
+              "answer": "L'interfrange est proportionnel à λ : $i = \\frac{\\lambda D}{a}$\n\nComme λ' < λ (vert < rouge), l'interfrange **diminue** : les franges sont plus resserrées.\n\n$$i' = \\frac{\\lambda' D}{a} = \\frac{532 \\times 10^{-9} \\times 1,5}{0,50 \\times 10^{-3}} = 1,60 \\text{ mm}$$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2023-antilles-ex2",
+      "year": 2023,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 2,
+      "title": "Synthèse de l'aspirine",
+      "subject": "chimie",
+      "themes": ["Chimie organique", "Synthèse"],
+      "points": 6,
+      "duration": 60,
+      "difficulty": "difficile",
+      "description": "Étude de la synthèse de l'acide acétylsalicylique (aspirine) par acétylation de l'acide salicylique.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Mécanisme réactionnel",
+          "questions": [
+            {
+              "number": "1",
+              "text": "L'acide salicylique possède un groupe hydroxyle -OH et un groupe carboxyle -COOH. Identifier ces groupes caractéristiques et nommer les familles de composés correspondantes.",
+              "points": 1,
+              "answer": "L'acide salicylique possède :\n- Un groupe **hydroxyle -OH** lié à un cycle benzénique → famille des **phénols**\n- Un groupe **carboxyle -COOH** → famille des **acides carboxyliques**\n\nL'acide salicylique est donc un acide phénolique."
+            },
+            {
+              "number": "2",
+              "text": "La synthèse utilise l'anhydride éthanoïque (CH₃CO)₂O. L'aspirine obtenue possède un groupe ester. Écrire l'équation de la réaction de synthèse.",
+              "points": 1.5,
+              "answer": "L'acétylation du groupe -OH de l'acide salicylique :\n\n$$\\text{C}_6\\text{H}_4(\\text{OH})(\\text{COOH}) + (\\text{CH}_3\\text{CO})_2\\text{O} \\rightarrow \\text{C}_6\\text{H}_4(\\text{OCOCH}_3)(\\text{COOH}) + \\text{CH}_3\\text{COOH}$$\n\nOu de façon simplifiée :\n**Acide salicylique + Anhydride éthanoïque → Aspirine + Acide éthanoïque**"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Rendement de synthèse",
+          "questions": [
+            {
+              "number": "3",
+              "text": "On fait réagir m₁ = 5,0 g d'acide salicylique avec un excès d'anhydride éthanoïque. Calculer la quantité de matière initiale d'acide salicylique. M(acide salicylique) = 138 g/mol.",
+              "points": 1,
+              "answer": "$$n_1 = \\frac{m_1}{M} = \\frac{5,0}{138} = 0,0362 \\text{ mol} = 36,2 \\text{ mmol}$$"
+            },
+            {
+              "number": "4",
+              "text": "Après purification, on obtient m₂ = 5,2 g d'aspirine. Calculer le rendement de la synthèse. M(aspirine) = 180 g/mol.",
+              "points": 1.5,
+              "answer": "La réaction est équimolaire (1:1), donc la quantité maximale d'aspirine est égale à la quantité initiale d'acide salicylique.\n\nMasse théorique d'aspirine :\n$$m_{théo} = n_1 \\times M_{aspirine} = 0,0362 \\times 180 = 6,52 \\text{ g}$$\n\nRendement :\n$$\\eta = \\frac{m_2}{m_{théo}} \\times 100 = \\frac{5,2}{6,52} \\times 100 = 79,8\\%$$\n\nLe rendement est d'environ **80%**."
+            },
+            {
+              "number": "5",
+              "text": "Proposer deux raisons expliquant que le rendement n'est pas de 100%.",
+              "points": 1,
+              "answer": "Le rendement n'est pas de 100% car :\n\n1. **Pertes lors des étapes de purification** : filtration, recristallisation, lavages... Une partie du produit reste dans les eaux-mères ou est perdue lors des transferts.\n\n2. **Réaction incomplète** : même avec un réactif en excès, l'équilibre chimique peut ne pas être totalement déplacé vers les produits.\n\n3. **Réactions secondaires** : formation de sous-produits (hydrolyse de l'anhydride par l'humidité de l'air, par exemple)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2022-metropole-ex1",
+      "year": 2022,
+      "session": "Métropole",
+      "exerciseNumber": 1,
+      "title": "Diffraction par une fente",
+      "subject": "physique",
+      "themes": ["Diffraction", "Ondes lumineuses"],
+      "points": 4,
+      "duration": 45,
+      "difficulty": "moyen",
+      "description": "Étude de la diffraction de la lumière laser par une fente fine et détermination de sa largeur.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Figure de diffraction",
+          "questions": [
+            {
+              "number": "1",
+              "text": "Un faisceau laser de longueur d'onde λ = 650 nm traverse une fente de largeur a. On observe sur un écran situé à D = 2,0 m une figure de diffraction. Expliquer qualitativement le phénomène de diffraction.",
+              "points": 1,
+              "answer": "La **diffraction** est un phénomène qui se produit lorsqu'une onde rencontre un obstacle ou une ouverture de dimension comparable à sa longueur d'onde.\n\nLa fente se comporte comme une source secondaire et la lumière se propage dans des directions qui n'étaient pas celles du faisceau incident. On observe un étalement de la lumière au-delà de l'ombre géométrique."
+            },
+            {
+              "number": "2",
+              "text": "L'angle θ du premier minimum de diffraction vérifie sin(θ) = λ/a. Pour des petits angles, on admet sin(θ) ≈ tan(θ) ≈ θ. Si la largeur de la tache centrale est L = 5,2 cm, exprimer L en fonction de λ, D et a.",
+              "points": 1,
+              "answer": "La demi-largeur de la tache centrale correspond à la position du premier minimum.\n\nPour un petit angle : $\\tan(\\theta) \\approx \\theta \\approx \\sin(\\theta) = \\frac{\\lambda}{a}$\n\nLa demi-largeur est : $\\frac{L}{2} = D \\times \\tan(\\theta) \\approx D \\times \\frac{\\lambda}{a}$\n\nDonc :\n$$L = \\frac{2\\lambda D}{a}$$"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Détermination de la largeur de la fente",
+          "questions": [
+            {
+              "number": "3",
+              "text": "En déduire l'expression de a en fonction de L, λ et D, puis calculer la largeur de la fente.",
+              "points": 1,
+              "answer": "De $L = \\frac{2\\lambda D}{a}$, on tire :\n$$a = \\frac{2\\lambda D}{L}$$\n\nApplication numérique :\n$$a = \\frac{2 \\times 650 \\times 10^{-9} \\times 2,0}{5,2 \\times 10^{-2}}$$\n$$a = \\frac{2,6 \\times 10^{-6}}{5,2 \\times 10^{-2}} = 5,0 \\times 10^{-5} \\text{ m} = 50 \\text{ μm}$$"
+            },
+            {
+              "number": "4",
+              "text": "Comment évolue la largeur de la tache centrale si on diminue la largeur de la fente ? Justifier.",
+              "points": 1,
+              "answer": "D'après $L = \\frac{2\\lambda D}{a}$, L est **inversement proportionnel** à a.\n\nSi on **diminue** la largeur de la fente a, la largeur de la tache centrale L **augmente**.\n\nPlus l'obstacle est petit (proche de λ), plus la diffraction est marquée et plus la lumière s'étale. C'est un résultat caractéristique de la diffraction."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bac-2022-metropole-ex2",
+      "year": 2022,
+      "session": "Métropole",
+      "exerciseNumber": 2,
+      "title": "Équilibre chimique et synthèse industrielle",
+      "subject": "chimie",
+      "themes": ["Équilibres chimiques", "Thermochimie"],
+      "points": 5,
+      "duration": 55,
+      "difficulty": "difficile",
+      "description": "Étude de l'équilibre de synthèse de l'ammoniac (procédé Haber-Bosch) et optimisation des conditions opératoires.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Constante d'équilibre",
+          "questions": [
+            {
+              "number": "1",
+              "text": "La synthèse de l'ammoniac suit l'équation : N₂(g) + 3H₂(g) ⇌ 2NH₃(g). Écrire l'expression de la constante d'équilibre K.",
+              "points": 1,
+              "answer": "La constante d'équilibre K s'écrit :\n$$K = \\frac{[\\text{NH}_3]^2_{éq}}{[\\text{N}_2]_{éq} \\times [\\text{H}_2]^3_{éq}}$$\n\nOù les concentrations sont celles à l'équilibre."
+            },
+            {
+              "number": "2",
+              "text": "À 25°C, K = 6 × 10⁸. À 450°C, K = 0,5. Que peut-on en déduire sur le signe de ΔrH° de la réaction ?",
+              "points": 1,
+              "answer": "On constate que K **diminue** lorsque la température **augmente**.\n\nD'après la loi de Van't Hoff, si K diminue quand T augmente, alors la réaction directe est **exothermique** (ΔrH° < 0).\n\nLa synthèse de l'ammoniac libère de la chaleur : ΔrH° ≈ -92 kJ/mol."
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Optimisation industrielle",
+          "questions": [
+            {
+              "number": "3",
+              "text": "D'après le principe de Le Chatelier, comment faut-il modifier la pression pour favoriser la formation de NH₃ ? Justifier.",
+              "points": 1,
+              "answer": "Comptons les moles de gaz de chaque côté :\n- Réactifs : 1 + 3 = 4 moles de gaz\n- Produits : 2 moles de gaz\n\nD'après Le Chatelier, une **augmentation de pression** déplace l'équilibre vers le côté avec **moins de moles gazeuses**, donc vers les **produits** (NH₃).\n\nIl faut donc **augmenter la pression** pour favoriser la synthèse de l'ammoniac."
+            },
+            {
+              "number": "4",
+              "text": "Pourquoi utilise-t-on industriellement une température de 450°C alors qu'une basse température favoriserait l'équilibre ?",
+              "points": 1,
+              "answer": "Paradoxe température/cinétique :\n\n- **Thermodynamiquement** : une basse température favorise l'équilibre (K plus grand)\n- **Cinétiquement** : une basse température ralentit considérablement la réaction\n\nÀ 25°C, même si K est favorable, la réaction serait **trop lente** pour être exploitable industriellement.\n\nLe choix de 450°C est un **compromis** entre :\n- Un K encore acceptable (0,5)\n- Une vitesse de réaction suffisante\n- L'utilisation d'un **catalyseur** (fer) pour accélérer l'atteinte de l'équilibre"
+            },
+            {
+              "number": "5",
+              "text": "L'énergie de la réaction est ΔrH° = -92 kJ/mol. Calculer l'énergie libérée pour produire 1 tonne de NH₃. M(NH₃) = 17 g/mol.",
+              "points": 1,
+              "answer": "Quantité de matière pour 1 tonne :\n$$n = \\frac{10^6}{17} = 58\\,800 \\text{ mol}$$\n\nL'équation produit 2 mol de NH₃, donc le nombre d'événements réactionnels est :\n$$\\xi = \\frac{n}{2} = 29\\,400 \\text{ mol}$$\n\nÉnergie libérée :\n$$|Q| = |\\Delta_r H°| \\times \\xi = 92 \\times 29\\,400 = 2,70 \\times 10^6 \\text{ kJ}$$\n\nSoit **2 700 MJ** ou **2,7 GJ** libérés pour 1 tonne de NH₃."
+            }
+          ]
+        }
+      ]
     }
   ]
 }
