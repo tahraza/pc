@@ -1,9 +1,133 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Calendar, CheckCircle2, Clock, Gift, Target } from 'lucide-react'
+import { Calendar, CheckCircle2, Clock, Gift, Target, Flame, Trophy } from 'lucide-react'
 import { useChallengesStore, Challenge } from '@/stores/challengesStore'
 import { cn } from '@/lib/utils'
+
+// Calculate time remaining helper
+function getTimeRemaining(expiresAt: string): string {
+  const expires = new Date(expiresAt)
+  const now = new Date()
+  const diff = expires.getTime() - now.getTime()
+
+  if (diff <= 0) return 'Terminé'
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+
+  if (days > 0) return `${days}j ${hours}h`
+  if (hours > 0) return `${hours}h ${minutes}m`
+  return `${minutes}m`
+}
+
+export function AllChallenges() {
+  const [mounted, setMounted] = useState(false)
+  const {
+    dailyChallenges,
+    activeChallenges,
+    monthlyChallenges,
+    refreshDailyChallenges,
+    refreshWeeklyChallenges,
+    refreshMonthlyChallenges,
+  } = useChallengesStore()
+
+  useEffect(() => {
+    setMounted(true)
+    refreshDailyChallenges()
+    refreshWeeklyChallenges()
+    refreshMonthlyChallenges()
+  }, [refreshDailyChallenges, refreshWeeklyChallenges, refreshMonthlyChallenges])
+
+  if (!mounted) {
+    return null
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* Daily Challenges */}
+      <ChallengeSection
+        title="Défis du jour"
+        icon={<Flame className="h-5 w-5 text-orange-500" />}
+        challenges={dailyChallenges}
+        accentColor="orange"
+      />
+
+      {/* Weekly Challenges */}
+      <ChallengeSection
+        title="Défis de la semaine"
+        icon={<Calendar className="h-5 w-5 text-primary-500" />}
+        challenges={activeChallenges}
+        accentColor="primary"
+      />
+
+      {/* Monthly Challenges */}
+      <ChallengeSection
+        title="Défis du mois"
+        icon={<Trophy className="h-5 w-5 text-amber-500" />}
+        challenges={monthlyChallenges}
+        accentColor="amber"
+      />
+    </div>
+  )
+}
+
+interface ChallengeSectionProps {
+  title: string
+  icon: React.ReactNode
+  challenges: Challenge[]
+  accentColor: 'orange' | 'primary' | 'amber'
+}
+
+function ChallengeSection({ title, icon, challenges, accentColor }: ChallengeSectionProps) {
+  if (challenges.length === 0) return null
+
+  const completedCount = challenges.filter(c => c.completedAt).length
+  const totalCount = challenges.length
+  const timeRemaining = challenges[0] ? getTimeRemaining(challenges[0].expiresAt) : ''
+
+  const gradientClasses = {
+    orange: 'from-orange-500 to-orange-600',
+    primary: 'from-primary-500 to-primary-600',
+    amber: 'from-amber-500 to-amber-600',
+  }
+
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+      <div className="mb-4 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {icon}
+          <h3 className="font-bold text-slate-900 dark:text-slate-100">{title}</h3>
+        </div>
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+          <Clock className="h-4 w-4" />
+          <span>{timeRemaining}</span>
+        </div>
+      </div>
+
+      <div className="mb-4 flex items-center gap-2">
+        <div className="flex-1">
+          <div className="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
+            <div
+              className={cn('h-full rounded-full bg-gradient-to-r transition-all duration-500', gradientClasses[accentColor])}
+              style={{ width: `${totalCount > 0 ? (completedCount / totalCount) * 100 : 0}%` }}
+            />
+          </div>
+        </div>
+        <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
+          {completedCount}/{totalCount}
+        </span>
+      </div>
+
+      <div className="space-y-3">
+        {challenges.map(challenge => (
+          <ChallengeCard key={challenge.id} challenge={challenge} />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export function WeeklyChallenges() {
   const [mounted, setMounted] = useState(false)
@@ -20,22 +144,7 @@ export function WeeklyChallenges() {
 
   const completedCount = activeChallenges.filter(c => c.completedAt).length
   const totalCount = activeChallenges.length
-
-  // Calculate time remaining
-  const getTimeRemaining = () => {
-    if (activeChallenges.length === 0) return ''
-    const expiresAt = new Date(activeChallenges[0].expiresAt)
-    const now = new Date()
-    const diff = expiresAt.getTime() - now.getTime()
-
-    if (diff <= 0) return 'Terminé'
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-
-    if (days > 0) return `${days}j ${hours}h`
-    return `${hours}h`
-  }
+  const timeRemaining = activeChallenges[0] ? getTimeRemaining(activeChallenges[0].expiresAt) : ''
 
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
@@ -46,7 +155,7 @@ export function WeeklyChallenges() {
         </div>
         <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
           <Clock className="h-4 w-4" />
-          <span>{getTimeRemaining()}</span>
+          <span>{timeRemaining}</span>
         </div>
       </div>
 
@@ -77,12 +186,14 @@ function ChallengeCard({ challenge }: { challenge: Challenge }) {
   const progress = Math.min((challenge.current / challenge.target) * 100, 100)
   const isCompleted = !!challenge.completedAt
 
-  const typeIcons = {
+  const typeIcons: Record<string, string> = {
     lessons: '📖',
     exercises: '✏️',
     quizzes: '📝',
     streak: '🔥',
     points: '⭐',
+    flashcards: '🧠',
+    perfect_quiz: '💯',
   }
 
   return (

@@ -16,6 +16,7 @@ import {
 import { cn } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
 import { useGamificationStore } from '@/stores/gamificationStore'
+import { useChallengesStore } from '@/stores/challengesStore'
 import MathText from '@/components/MathText'
 import type { Quiz, QuizQuestion, QuizAttempt, PreQuizDiagnostic } from '@/types'
 
@@ -41,6 +42,7 @@ export default function QCMPage({ params }: PageProps) {
   const router = useRouter()
   const { addQuizAttempt, updateLessonProgress } = useStore()
   const { recordQuizCompleted } = useGamificationStore()
+  const { updateChallengeProgress } = useChallengesStore()
 
   const [quiz, setQuiz] = useState<Quiz | null>(null)
   const [loading, setLoading] = useState(true)
@@ -187,6 +189,12 @@ export default function QCMPage({ params }: PageProps) {
 
     // Attribuer les points de gamification
     recordQuizCompleted(quiz.id, correctCount, totalQuestions)
+
+    // Mettre à jour les défis
+    updateChallengeProgress('quizzes', 1)
+    if (score === 100) {
+      updateChallengeProgress('perfect_quiz', 1)
+    }
 
     // Update lesson progress
     if (quiz.type === 'pre') {

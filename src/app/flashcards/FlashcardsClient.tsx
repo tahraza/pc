@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
+import { useChallengesStore } from '@/stores/challengesStore'
 import type { Flashcard, FlashcardResponse } from '@/types'
 
 // Fisher-Yates shuffle
@@ -34,6 +35,7 @@ export default function FlashcardsClient() {
   const lessonFilter = searchParams.get('lesson')
 
   const { flashcardProgress, reviewFlashcard, getFlashcardsDueForReview } = useStore()
+  const { updateChallengeProgress } = useChallengesStore()
 
   const [flashcards, setFlashcards] = useState<Flashcard[]>([])
   const [loading, setLoading] = useState(true)
@@ -98,6 +100,9 @@ export default function FlashcardsClient() {
     if (!currentFlashcard) return
 
     reviewFlashcard(currentFlashcard.id, currentFlashcard.lessonId, response)
+
+    // Update challenge progress for flashcards
+    updateChallengeProgress('flashcards', 1)
 
     // Move to next card
     if (currentIndex < totalCards - 1) {
