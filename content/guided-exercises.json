@@ -397,6 +397,329 @@
         }
       ],
       "finalAnswer": "Le rendement de la synthèse de l'aspirine est **η ≈ 69%**."
+    },
+    {
+      "id": "guided-lorentz-1",
+      "title": "Force de Lorentz et trajectoire circulaire",
+      "subject": "physique",
+      "chapter": "Électromagnétisme",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "Un proton (masse m = 1,67 × 10⁻²⁷ kg, charge q = 1,6 × 10⁻¹⁹ C) pénètre avec une vitesse v = 2 × 10⁶ m/s perpendiculairement à un champ magnétique uniforme B = 0,5 T.",
+      "question": "Calculer la force de Lorentz, le rayon de la trajectoire et la période du mouvement.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier les données",
+          "instruction": "Liste toutes les données numériques de l'énoncé.",
+          "hint": "Repère la masse, la charge, la vitesse et le champ magnétique.",
+          "solution": "Données :\n- Masse du proton : m = 1,67 × 10⁻²⁷ kg\n- Charge du proton : q = 1,6 × 10⁻¹⁹ C\n- Vitesse : v = 2 × 10⁶ m/s\n- Champ magnétique : B = 0,5 T\n- v ⊥ B (vitesse perpendiculaire au champ)"
+        },
+        {
+          "id": 2,
+          "title": "Rappeler l'expression de la force de Lorentz",
+          "instruction": "Écris la formule de la force de Lorentz pour une particule chargée.",
+          "hint": "La force dépend de q, v et B.",
+          "solution": "La force de Lorentz est :\n$$\\vec{F} = q\\vec{v} \\times \\vec{B}$$\n\nLorsque v ⊥ B, la norme vaut :\n$$F = |q|vB$$"
+        },
+        {
+          "id": 3,
+          "title": "Calculer la force de Lorentz",
+          "instruction": "Effectue le calcul numérique de F.",
+          "hint": "Multiplie les trois valeurs : q, v et B.",
+          "solution": "$$F = |q|vB = 1,6 \\times 10^{-19} \\times 2 \\times 10^6 \\times 0,5$$\n$$F = 1,6 \\times 10^{-13} \\text{ N}$$"
+        },
+        {
+          "id": 4,
+          "title": "Établir l'expression du rayon de la trajectoire",
+          "instruction": "Utilise la 2ème loi de Newton pour une trajectoire circulaire.",
+          "hint": "La force de Lorentz joue le rôle de force centripète.",
+          "solution": "Pour un mouvement circulaire uniforme, l'accélération est centripète : a = v²/r\n\nLa 2ème loi de Newton donne :\n$$F = ma \\Rightarrow qvB = m\\frac{v^2}{r}$$\n\nDonc :\n$$r = \\frac{mv}{qB}$$"
+        },
+        {
+          "id": 5,
+          "title": "Calculer le rayon",
+          "instruction": "Applique la formule avec les valeurs numériques.",
+          "hint": "Vérifie les unités : le résultat doit être en mètres.",
+          "solution": "$$r = \\frac{mv}{qB} = \\frac{1,67 \\times 10^{-27} \\times 2 \\times 10^6}{1,6 \\times 10^{-19} \\times 0,5}$$\n\n$$r = \\frac{3,34 \\times 10^{-21}}{8 \\times 10^{-20}} = 4,18 \\times 10^{-2} \\text{ m}$$\n\nSoit r ≈ 4,2 cm"
+        },
+        {
+          "id": 6,
+          "title": "Calculer la période du mouvement",
+          "instruction": "Détermine le temps pour parcourir un tour complet.",
+          "hint": "T = périmètre / vitesse = 2πr/v",
+          "solution": "La période est :\n$$T = \\frac{2\\pi r}{v} = \\frac{2\\pi m}{qB}$$\n\n$$T = \\frac{2\\pi \\times 1,67 \\times 10^{-27}}{1,6 \\times 10^{-19} \\times 0,5}$$\n\n$$T = \\frac{1,05 \\times 10^{-26}}{8 \\times 10^{-20}} = 1,31 \\times 10^{-7} \\text{ s}$$\n\nSoit T ≈ 131 ns"
+        }
+      ],
+      "finalAnswer": "La force de Lorentz est **F = 1,6 × 10⁻¹³ N**, le rayon de la trajectoire est **r ≈ 4,2 cm** et la période est **T ≈ 131 ns**."
+    },
+    {
+      "id": "guided-thermochimie-1",
+      "title": "Enthalpie de réaction par la loi de Hess",
+      "subject": "chimie",
+      "chapter": "Thermochimie",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "On donne les enthalpies standard de formation : ΔfH°(CO₂) = -394 kJ/mol, ΔfH°(H₂O) = -286 kJ/mol, ΔfH°(CH₄) = -75 kJ/mol.",
+      "question": "Calculer l'enthalpie de combustion du méthane : CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier les données",
+          "instruction": "Liste les enthalpies de formation données.",
+          "hint": "L'enthalpie de formation de O₂ est nulle (corps simple dans son état standard).",
+          "solution": "Enthalpies standard de formation :\n- ΔfH°(CO₂) = -394 kJ/mol\n- ΔfH°(H₂O) = -286 kJ/mol\n- ΔfH°(CH₄) = -75 kJ/mol\n- ΔfH°(O₂) = 0 kJ/mol (corps simple)"
+        },
+        {
+          "id": 2,
+          "title": "Rappeler la loi de Hess",
+          "instruction": "Écris la relation permettant de calculer l'enthalpie de réaction.",
+          "hint": "ΔrH° = Σ(produits) - Σ(réactifs)",
+          "solution": "La loi de Hess stipule que l'enthalpie de réaction est :\n$$\\Delta_r H° = \\sum \\nu_i \\Delta_f H°(\\text{produits}) - \\sum \\nu_j \\Delta_f H°(\\text{réactifs})$$\n\nOù νi et νj sont les coefficients stœchiométriques."
+        },
+        {
+          "id": 3,
+          "title": "Identifier les produits et réactifs",
+          "instruction": "Liste les produits et réactifs avec leurs coefficients stœchiométriques.",
+          "hint": "Attention au coefficient 2 devant H₂O et O₂.",
+          "solution": "Réaction : CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)\n\nRéactifs :\n- 1 × CH₄\n- 2 × O₂\n\nProduits :\n- 1 × CO₂\n- 2 × H₂O"
+        },
+        {
+          "id": 4,
+          "title": "Calculer la somme pour les produits",
+          "instruction": "Calcule Σ(νi × ΔfH°) pour les produits.",
+          "hint": "N'oublie pas de multiplier par les coefficients.",
+          "solution": "Somme des produits :\n$$\\sum_{\\text{produits}} = 1 \\times \\Delta_f H°(\\text{CO}_2) + 2 \\times \\Delta_f H°(\\text{H}_2\\text{O})$$\n$$= 1 \\times (-394) + 2 \\times (-286)$$\n$$= -394 - 572 = -966 \\text{ kJ/mol}$$"
+        },
+        {
+          "id": 5,
+          "title": "Calculer la somme pour les réactifs",
+          "instruction": "Calcule Σ(νj × ΔfH°) pour les réactifs.",
+          "hint": "ΔfH°(O₂) = 0 donc sa contribution est nulle.",
+          "solution": "Somme des réactifs :\n$$\\sum_{\\text{réactifs}} = 1 \\times \\Delta_f H°(\\text{CH}_4) + 2 \\times \\Delta_f H°(\\text{O}_2)$$\n$$= 1 \\times (-75) + 2 \\times 0$$\n$$= -75 \\text{ kJ/mol}$$"
+        },
+        {
+          "id": 6,
+          "title": "Calculer l'enthalpie de réaction",
+          "instruction": "Applique la loi de Hess pour trouver ΔrH°.",
+          "hint": "ΔrH° = (produits) - (réactifs)",
+          "solution": "$$\\Delta_r H° = \\sum_{\\text{produits}} - \\sum_{\\text{réactifs}}$$\n$$\\Delta_r H° = -966 - (-75) = -966 + 75 = -891 \\text{ kJ/mol}$$\n\nLa réaction est exothermique (ΔrH° < 0)."
+        }
+      ],
+      "finalAnswer": "L'enthalpie de combustion du méthane est **ΔrH° = -891 kJ/mol**. La réaction libère 891 kJ par mole de méthane brûlée."
+    },
+    {
+      "id": "guided-equilibre-1",
+      "title": "Constante d'équilibre et sens d'évolution",
+      "subject": "chimie",
+      "chapter": "Équilibres chimiques",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Pour la réaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), la constante d'équilibre vaut K = 0,5 à 450°C. On prépare un mélange avec [N₂] = 1,0 mol/L, [H₂] = 2,0 mol/L et [NH₃] = 0,5 mol/L.",
+      "question": "Déterminer le quotient de réaction Qr et prédire le sens d'évolution du système.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Écrire l'expression de la constante d'équilibre",
+          "instruction": "Écris l'expression de K pour cette réaction.",
+          "hint": "K s'exprime en fonction des concentrations à l'équilibre.",
+          "solution": "Pour N₂ + 3H₂ ⇌ 2NH₃ :\n$$K = \\frac{[\\text{NH}_3]^2}{[\\text{N}_2][\\text{H}_2]^3}$$"
+        },
+        {
+          "id": 2,
+          "title": "Définir le quotient de réaction",
+          "instruction": "Rappelle ce qu'est le quotient de réaction Qr.",
+          "hint": "Qr a la même expression que K, mais calculé à un instant quelconque.",
+          "solution": "Le quotient de réaction Qr a la même expression que K :\n$$Q_r = \\frac{[\\text{NH}_3]^2}{[\\text{N}_2][\\text{H}_2]^3}$$\n\nMais il est calculé avec les concentrations à un instant donné (pas forcément à l'équilibre)."
+        },
+        {
+          "id": 3,
+          "title": "Calculer le quotient de réaction",
+          "instruction": "Calcule Qr avec les concentrations données.",
+          "hint": "Attention à la puissance 3 pour [H₂].",
+          "solution": "Avec [N₂] = 1,0 mol/L, [H₂] = 2,0 mol/L, [NH₃] = 0,5 mol/L :\n\n$$Q_r = \\frac{(0,5)^2}{1,0 \\times (2,0)^3}$$\n$$Q_r = \\frac{0,25}{1,0 \\times 8,0} = \\frac{0,25}{8,0}$$\n$$Q_r = 0,03125 \\approx 3,1 \\times 10^{-2}$$"
+        },
+        {
+          "id": 4,
+          "title": "Comparer Qr et K",
+          "instruction": "Compare la valeur de Qr avec celle de K.",
+          "hint": "K = 0,5 et Qr ≈ 0,031",
+          "solution": "Comparaison :\n- Qr ≈ 0,031\n- K = 0,5\n\nDonc **Qr < K**"
+        },
+        {
+          "id": 5,
+          "title": "Prédire le sens d'évolution",
+          "instruction": "Déduis le sens d'évolution du système à partir de la comparaison Qr/K.",
+          "hint": "Si Qr < K, le système évolue dans le sens qui augmente Qr.",
+          "solution": "Règle de prédiction :\n- Si Qr < K : le système évolue dans le **sens direct (→)**\n- Si Qr > K : le système évolue dans le **sens inverse (←)**\n- Si Qr = K : le système est à l'équilibre\n\nIci Qr < K, donc le système évolue dans le **sens direct** : formation de NH₃."
+        },
+        {
+          "id": 6,
+          "title": "Interpréter le résultat",
+          "instruction": "Explique ce qui va se passer concrètement.",
+          "hint": "Quelles concentrations vont augmenter ? Diminuer ?",
+          "solution": "Le système évolue dans le sens direct (→) :\n- Les réactifs N₂ et H₂ vont être consommés → leurs concentrations diminuent\n- Le produit NH₃ va être formé → sa concentration augmente\n\nL'évolution se poursuit jusqu'à ce que Qr = K (équilibre atteint)."
+        }
+      ],
+      "finalAnswer": "Le quotient de réaction est **Qr ≈ 0,031**. Comme Qr < K, le système évolue dans le **sens direct (→)** : il y a formation de NH₃ jusqu'à l'équilibre."
+    },
+    {
+      "id": "guided-cinetique-1",
+      "title": "Temps de demi-réaction et vitesse",
+      "subject": "chimie",
+      "chapter": "Cinétique chimique",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "La décomposition de N₂O₅ est suivie par spectrophotométrie. La concentration initiale est [N₂O₅]₀ = 0,80 mol/L. Après 400 s, [N₂O₅] = 0,40 mol/L.",
+      "question": "Déterminer le temps de demi-réaction et la vitesse initiale de disparition de N₂O₅.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier les données",
+          "instruction": "Liste les concentrations et le temps donnés.",
+          "hint": "Identifie la concentration initiale et celle à t = 400 s.",
+          "solution": "Données :\n- [N₂O₅]₀ = 0,80 mol/L (à t = 0)\n- [N₂O₅] = 0,40 mol/L (à t = 400 s)\n\nGrandeurs cherchées :\n- Temps de demi-réaction t₁/₂\n- Vitesse initiale v₀"
+        },
+        {
+          "id": 2,
+          "title": "Définir le temps de demi-réaction",
+          "instruction": "Rappelle la définition de t₁/₂.",
+          "hint": "C'est le temps pour que la concentration soit divisée par 2.",
+          "solution": "Le temps de demi-réaction t₁/₂ est le temps nécessaire pour que la concentration du réactif soit divisée par deux :\n$$[N_2O_5]_{t_{1/2}} = \\frac{[N_2O_5]_0}{2}$$"
+        },
+        {
+          "id": 3,
+          "title": "Déterminer t₁/₂ graphiquement",
+          "instruction": "Analyse les données pour trouver t₁/₂.",
+          "hint": "Compare [N₂O₅]₀/2 avec la concentration à t = 400 s.",
+          "solution": "Calculons [N₂O₅]₀/2 :\n$$\\frac{[N_2O_5]_0}{2} = \\frac{0,80}{2} = 0,40 \\text{ mol/L}$$\n\nOr à t = 400 s, [N₂O₅] = 0,40 mol/L\n\nDonc **t₁/₂ = 400 s**"
+        },
+        {
+          "id": 4,
+          "title": "Définir la vitesse de disparition",
+          "instruction": "Rappelle l'expression de la vitesse de disparition.",
+          "hint": "La vitesse est liée à la dérivée de la concentration.",
+          "solution": "La vitesse volumique de disparition de N₂O₅ est :\n$$v = -\\frac{d[N_2O_5]}{dt}$$\n\nLe signe moins assure que v > 0 (la concentration diminue)."
+        },
+        {
+          "id": 5,
+          "title": "Estimer la vitesse initiale",
+          "instruction": "Calcule une approximation de la vitesse initiale.",
+          "hint": "Utilise la variation de concentration sur l'intervalle [0 ; 400 s].",
+          "solution": "On peut estimer la vitesse moyenne sur l'intervalle :\n$$v_{moy} = -\\frac{\\Delta[N_2O_5]}{\\Delta t} = -\\frac{0,40 - 0,80}{400 - 0}$$\n$$v_{moy} = -\\frac{-0,40}{400} = 1,0 \\times 10^{-3} \\text{ mol·L}^{-1}\\text{·s}^{-1}$$\n\nLa vitesse initiale v₀ est légèrement supérieure (la vitesse diminue au cours du temps)."
+        },
+        {
+          "id": 6,
+          "title": "Affiner l'estimation de la vitesse initiale",
+          "instruction": "Pour une réaction d'ordre 1, utilise la relation avec t₁/₂.",
+          "hint": "Pour l'ordre 1 : v₀ = k × [N₂O₅]₀ et k = ln(2)/t₁/₂",
+          "solution": "Pour une réaction d'ordre 1 :\n$$k = \\frac{\\ln 2}{t_{1/2}} = \\frac{0,693}{400} = 1,73 \\times 10^{-3} \\text{ s}^{-1}$$\n\nVitesse initiale :\n$$v_0 = k \\times [N_2O_5]_0 = 1,73 \\times 10^{-3} \\times 0,80$$\n$$v_0 = 1,4 \\times 10^{-3} \\text{ mol·L}^{-1}\\text{·s}^{-1}$$"
+        }
+      ],
+      "finalAnswer": "Le temps de demi-réaction est **t₁/₂ = 400 s** et la vitesse initiale de disparition est **v₀ ≈ 1,4 × 10⁻³ mol·L⁻¹·s⁻¹**."
+    },
+    {
+      "id": "guided-newton-1",
+      "title": "Application des lois de Newton",
+      "subject": "physique",
+      "chapter": "Lois de Newton",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Un bloc de masse m = 5 kg est tiré sur un plan horizontal par une force F = 30 N faisant un angle α = 30° avec l'horizontale. Le coefficient de frottement est μ = 0,2.",
+      "question": "Calculer l'accélération du bloc. On prend g = 10 m/s².",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Faire le bilan des forces",
+          "instruction": "Liste toutes les forces qui s'exercent sur le bloc.",
+          "hint": "Il y a 4 forces : le poids, la réaction normale, la force de traction et le frottement.",
+          "solution": "Forces sur le bloc :\n1. **Poids** : $\\vec{P} = m\\vec{g}$ (verticale, vers le bas)\n2. **Réaction normale** : $\\vec{N}$ (verticale, vers le haut)\n3. **Force de traction** : $\\vec{F}$ (inclinée de α = 30°)\n4. **Force de frottement** : $\\vec{f} = -\\mu N \\vec{u_x}$ (opposée au mouvement)"
+        },
+        {
+          "id": 2,
+          "title": "Projeter sur l'axe vertical (Oy)",
+          "instruction": "Écris l'équilibre des forces selon l'axe vertical.",
+          "hint": "Le bloc ne décolle pas, donc ay = 0.",
+          "solution": "Projection sur Oy (verticale, vers le haut) :\n$$N + F\\sin(\\alpha) - P = 0$$\n\nDonc :\n$$N = P - F\\sin(\\alpha) = mg - F\\sin(30°)$$\n$$N = 5 \\times 10 - 30 \\times 0,5 = 50 - 15 = 35 \\text{ N}$$"
+        },
+        {
+          "id": 3,
+          "title": "Calculer la force de frottement",
+          "instruction": "Utilise la loi de Coulomb pour calculer f.",
+          "hint": "f = μN",
+          "solution": "Force de frottement :\n$$f = \\mu N = 0,2 \\times 35 = 7 \\text{ N}$$"
+        },
+        {
+          "id": 4,
+          "title": "Projeter sur l'axe horizontal (Ox)",
+          "instruction": "Applique la 2ème loi de Newton sur l'axe horizontal.",
+          "hint": "ΣFx = max",
+          "solution": "Projection sur Ox (horizontale, sens du mouvement) :\n$$F\\cos(\\alpha) - f = ma_x$$\n\nSoit :\n$$30 \\times \\cos(30°) - 7 = 5 \\times a_x$$\n$$30 \\times 0,866 - 7 = 5a_x$$\n$$26 - 7 = 5a_x$$"
+        },
+        {
+          "id": 5,
+          "title": "Calculer l'accélération",
+          "instruction": "Isole ax et effectue le calcul.",
+          "hint": "Divise par la masse.",
+          "solution": "$$5a_x = 19$$\n$$a_x = \\frac{19}{5} = 3,8 \\text{ m/s}^2$$\n\nL'accélération est positive : le bloc accélère dans le sens du mouvement."
+        }
+      ],
+      "finalAnswer": "L'accélération du bloc est **a = 3,8 m/s²** dans le sens du mouvement."
+    },
+    {
+      "id": "guided-interferences-1",
+      "title": "Interférences lumineuses",
+      "subject": "physique",
+      "chapter": "Interférences",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Dans un dispositif de fentes d'Young, deux fentes sont distantes de a = 0,4 mm. L'écran est situé à D = 1,5 m des fentes. Un laser de longueur d'onde λ = 600 nm éclaire les fentes.",
+      "question": "Calculer l'interfrange i et déterminer si le point M situé à x = 4,5 mm de la frange centrale est une frange brillante ou sombre.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Convertir les données en unités SI",
+          "instruction": "Convertis toutes les grandeurs dans le système international.",
+          "hint": "mm → m et nm → m",
+          "solution": "Données en SI :\n- a = 0,4 mm = 4 × 10⁻⁴ m\n- D = 1,5 m\n- λ = 600 nm = 6 × 10⁻⁷ m\n- x = 4,5 mm = 4,5 × 10⁻³ m"
+        },
+        {
+          "id": 2,
+          "title": "Rappeler la formule de l'interfrange",
+          "instruction": "Écris l'expression de l'interfrange i.",
+          "hint": "i dépend de λ, D et a.",
+          "solution": "L'interfrange est la distance entre deux franges brillantes (ou sombres) consécutives :\n$$i = \\frac{\\lambda D}{a}$$"
+        },
+        {
+          "id": 3,
+          "title": "Calculer l'interfrange",
+          "instruction": "Effectue le calcul numérique.",
+          "hint": "Vérifie que le résultat est en mètres.",
+          "solution": "$$i = \\frac{\\lambda D}{a} = \\frac{6 \\times 10^{-7} \\times 1,5}{4 \\times 10^{-4}}$$\n$$i = \\frac{9 \\times 10^{-7}}{4 \\times 10^{-4}} = 2,25 \\times 10^{-3} \\text{ m}$$\n\nSoit i = 2,25 mm"
+        },
+        {
+          "id": 4,
+          "title": "Calculer le rapport x/i",
+          "instruction": "Détermine combien d'interfranges séparent M de la frange centrale.",
+          "hint": "Divise x par i.",
+          "solution": "$$\\frac{x}{i} = \\frac{4,5 \\times 10^{-3}}{2,25 \\times 10^{-3}} = 2,0$$\n\nLe point M est situé exactement à 2 interfranges de la frange centrale."
+        },
+        {
+          "id": 5,
+          "title": "Déterminer la nature de la frange",
+          "instruction": "Déduis si M correspond à une frange brillante ou sombre.",
+          "hint": "Les franges brillantes sont situées à x = k × i (k entier).",
+          "solution": "Position des franges brillantes : x = k × i (k ∈ ℤ)\nPosition des franges sombres : x = (k + ½) × i\n\nIci x/i = 2 = entier\n\nDonc **M est sur une frange brillante** (frange brillante d'ordre k = 2)."
+        },
+        {
+          "id": 6,
+          "title": "Vérifier par la différence de marche",
+          "instruction": "Confirme le résultat en calculant la différence de marche.",
+          "hint": "δ = ax/D et frange brillante si δ = kλ",
+          "solution": "Différence de marche :\n$$\\delta = \\frac{ax}{D} = \\frac{4 \\times 10^{-4} \\times 4,5 \\times 10^{-3}}{1,5}$$\n$$\\delta = 1,2 \\times 10^{-6} \\text{ m} = 1200 \\text{ nm}$$\n\nVérification : δ/λ = 1200/600 = 2 = k (entier)\n\nConfirmé : frange brillante d'ordre 2."
+        }
+      ],
+      "finalAnswer": "L'interfrange est **i = 2,25 mm**. Le point M situé à x = 4,5 mm est sur une **frange brillante** (ordre k = 2)."
     }
   ]
 }
