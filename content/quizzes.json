@@ -1326,5 +1326,88 @@
         "difficulty": 2
       }
     ]
+  },
+  {
+    "id": "quiz-pre-thermo",
+    "lessonId": "thermodynamique",
+    "type": "pre",
+    "title": "Pré-test : Thermodynamique",
+    "description": "Évalue tes connaissances avant la leçon sur la thermodynamique",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-th-1",
+        "question": "La température 20°C correspond en Kelvin à :",
+        "choices": ["20 K", "253 K", "293 K", "373 K"],
+        "correct": 2,
+        "explanation": "T(K) = T(°C) + 273, donc 20 + 273 = 293 K",
+        "tag": "température",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-th-2",
+        "question": "Dans la loi PV = nRT, R représente :",
+        "choices": ["La résistance", "Le rayon", "La constante des gaz parfaits", "La réactivité"],
+        "correct": 2,
+        "explanation": "R = 8,314 J·mol⁻¹·K⁻¹ est la constante des gaz parfaits.",
+        "tag": "gaz parfait",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-th-3",
+        "question": "L'énergie se conserve lors d'une transformation. C'est :",
+        "choices": ["Le second principe", "Le premier principe", "La loi de Joule", "Le principe d'entropie"],
+        "correct": 1,
+        "explanation": "Le premier principe de la thermodynamique exprime la conservation de l'énergie.",
+        "tag": "premier principe",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-thermo",
+    "lessonId": "thermodynamique",
+    "type": "post",
+    "title": "Post-test : Thermodynamique",
+    "description": "Vérifie ta compréhension de la thermodynamique",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-th-1",
+        "question": "Pour n = 2 mol de gaz parfait à T = 300 K et P = 1 bar, le volume V vaut environ :",
+        "choices": ["25 L", "50 L", "100 L", "5 L"],
+        "correct": 1,
+        "explanation": "V = nRT/P = 2 × 8,314 × 300 / 10⁵ ≈ 0,050 m³ = 50 L",
+        "tag": "gaz parfait",
+        "difficulty": 2
+      },
+      {
+        "id": "post-th-2",
+        "question": "Lors d'une compression isobare, le travail W est :",
+        "choices": ["Toujours nul", "Positif (reçu)", "Négatif (fourni)", "Égal à la chaleur Q"],
+        "correct": 1,
+        "explanation": "Compression : ΔV < 0, donc W = -PΔV > 0. Le système reçoit du travail.",
+        "tag": "travail",
+        "difficulty": 2
+      },
+      {
+        "id": "post-th-3",
+        "question": "Pour une transformation isotherme d'un gaz parfait, ΔU vaut :",
+        "choices": ["W + Q", "nRT", "0", "PΔV"],
+        "correct": 2,
+        "explanation": "U ne dépend que de T pour un gaz parfait. Si T = cste, alors ΔU = 0.",
+        "tag": "énergie interne",
+        "difficulty": 3
+      },
+      {
+        "id": "post-th-4",
+        "question": "Le second principe affirme que l'entropie de l'univers :",
+        "choices": ["Reste constante", "Diminue toujours", "Ne peut qu'augmenter ou rester constante", "Peut varier dans les deux sens"],
+        "correct": 2,
+        "explanation": "ΔS(univers) ≥ 0 : l'entropie de l'univers ne peut qu'augmenter.",
+        "tag": "entropie",
+        "difficulty": 3
+      }
+    ]
   }
 ]

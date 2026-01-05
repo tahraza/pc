@@ -1690,5 +1690,134 @@
       "Confondre Ec et Ep"
     ],
     "tags": ["énergie", "conservation", "plan incliné"]
+  },
+  {
+    "id": "ex-thermo-1",
+    "lessonId": "thermodynamique",
+    "title": "Application de la loi des gaz parfaits",
+    "difficulty": 2,
+    "statement": "Un ballon contient n = 0,5 mol de gaz parfait à la pression P = 2,0 bar et à la température T = 300 K. Calculer le volume V du ballon. (R = 8,314 J·mol⁻¹·K⁻¹)",
+    "hints": [
+      "Utilise la loi des gaz parfaits PV = nRT",
+      "Convertis la pression en Pa (1 bar = 10⁵ Pa)",
+      "V = nRT/P"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion de la pression",
+        "content": "P = 2,0 bar = 2,0 × 10⁵ Pa",
+        "explanation": "Il faut toujours travailler en unités SI"
+      },
+      {
+        "step": 2,
+        "title": "Application de PV = nRT",
+        "content": "V = nRT/P = (0,5 × 8,314 × 300) / (2,0 × 10⁵) = 1247,1 / 200000 = 6,24 × 10⁻³ m³ = 6,24 L",
+        "explanation": "Le volume est d'environ 6,2 litres"
+      }
+    ],
+    "method": "Loi des gaz parfaits PV = nRT",
+    "commonMistakes": [
+      "Oublier de convertir la pression en Pa",
+      "Utiliser la température en °C au lieu de K"
+    ],
+    "tags": ["gaz parfait", "thermodynamique", "pression"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-thermo-2",
+    "lessonId": "thermodynamique",
+    "title": "Premier principe - Compression isobare",
+    "difficulty": 3,
+    "statement": "Un gaz parfait est comprimé de façon isobare à P = 1,5 bar. Son volume passe de V₁ = 20 L à V₂ = 8 L. Calculer le travail W reçu par le gaz.",
+    "hints": [
+      "Transformation isobare : P = constante",
+      "W = -PΔV = -P(V₂ - V₁)",
+      "Attention aux unités : convertis tout en SI"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversions",
+        "content": "P = 1,5 × 10⁵ Pa\nV₁ = 20 × 10⁻³ m³\nV₂ = 8 × 10⁻³ m³",
+        "explanation": "Conversion en unités SI"
+      },
+      {
+        "step": 2,
+        "title": "Calcul du travail",
+        "content": "W = -P(V₂ - V₁) = -1,5 × 10⁵ × (8 - 20) × 10⁻³ = -1,5 × 10⁵ × (-12 × 10⁻³) = 1800 J",
+        "explanation": "W > 0 car c'est une compression : le système reçoit du travail"
+      }
+    ],
+    "method": "Travail des forces de pression en transformation isobare",
+    "commonMistakes": [
+      "Oublier le signe moins dans W = -PΔV",
+      "Confondre compression (W > 0) et détente (W < 0)"
+    ],
+    "tags": ["premier principe", "travail", "isobare"]
+  },
+  {
+    "id": "ex-thermo-3",
+    "lessonId": "thermodynamique",
+    "title": "Variation d'énergie interne",
+    "difficulty": 3,
+    "statement": "n = 2 mol de gaz parfait monoatomique sont chauffées de T₁ = 300 K à T₂ = 500 K à volume constant. Calculer la variation d'énergie interne ΔU et la chaleur Q échangée. (R = 8,314 J·mol⁻¹·K⁻¹)",
+    "hints": [
+      "Pour un gaz parfait monoatomique : U = (3/2)nRT",
+      "À volume constant : W = 0 donc ΔU = Q",
+      "ΔU = (3/2)nR(T₂ - T₁)"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de ΔU",
+        "content": "ΔU = (3/2)nR(T₂ - T₁) = (3/2) × 2 × 8,314 × (500 - 300) = 3 × 8,314 × 200 = 4988 J ≈ 5,0 kJ",
+        "explanation": "L'énergie interne augmente car la température augmente"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de Q",
+        "content": "À volume constant : W = 0\nD'après le premier principe : ΔU = W + Q = Q\nDonc Q = 4988 J ≈ 5,0 kJ",
+        "explanation": "Toute la chaleur reçue sert à augmenter l'énergie interne"
+      }
+    ],
+    "method": "Premier principe et énergie interne d'un gaz parfait",
+    "commonMistakes": [
+      "Oublier le facteur 3/2 pour un gaz monoatomique",
+      "Ne pas identifier que W = 0 à volume constant"
+    ],
+    "tags": ["énergie interne", "premier principe", "isochore"]
+  },
+  {
+    "id": "ex-thermo-4",
+    "lessonId": "thermodynamique",
+    "title": "Transformation isotherme réversible",
+    "difficulty": 4,
+    "statement": "n = 1 mol de gaz parfait subit une détente isotherme réversible à T = 400 K. Le volume double (V₂ = 2V₁). Calculer le travail W et la chaleur Q échangés. (R = 8,314 J·mol⁻¹·K⁻¹)",
+    "hints": [
+      "Pour une transformation isotherme : ΔU = 0 (car U ne dépend que de T)",
+      "W = -nRT ln(V₂/V₁) pour une transformation réversible",
+      "Premier principe : ΔU = W + Q"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du travail",
+        "content": "W = -nRT ln(V₂/V₁) = -1 × 8,314 × 400 × ln(2) = -3326 × 0,693 = -2305 J",
+        "explanation": "W < 0 : le système fournit du travail (détente)"
+      },
+      {
+        "step": 2,
+        "title": "Application du premier principe",
+        "content": "ΔU = 0 (isotherme, gaz parfait)\nΔU = W + Q → 0 = -2305 + Q\nQ = 2305 J",
+        "explanation": "Le système absorbe de la chaleur pour compenser le travail fourni"
+      }
+    ],
+    "method": "Transformation isotherme d'un gaz parfait",
+    "commonMistakes": [
+      "Oublier que ΔU = 0 pour une isotherme d'un gaz parfait",
+      "Se tromper dans le signe du travail"
+    ],
+    "tags": ["isotherme", "premier principe", "travail"]
   }
 ]

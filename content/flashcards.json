@@ -610,5 +610,50 @@
     "tags": ["protection", "synthèse"],
     "level": 3,
     "category": "method"
+  },
+  {
+    "id": "fc-thermo-1",
+    "lessonId": "thermodynamique",
+    "front": "Quelle est l'équation d'état des gaz parfaits ?",
+    "back": "PV = nRT\n\nP : pression (Pa)\nV : volume (m³)\nn : quantité de matière (mol)\nR = 8,314 J·mol⁻¹·K⁻¹\nT : température (K)",
+    "tags": ["gaz parfait", "équation d'état"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermo-2",
+    "lessonId": "thermodynamique",
+    "front": "Quel est le premier principe de la thermodynamique ?",
+    "back": "ΔU = W + Q\n\nΔU : variation d'énergie interne (J)\nW : travail reçu par le système (J)\nQ : chaleur reçue par le système (J)\n\nC'est le principe de conservation de l'énergie.",
+    "tags": ["premier principe", "énergie"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermo-3",
+    "lessonId": "thermodynamique",
+    "front": "Comment calcule-t-on le travail en transformation isobare ?",
+    "back": "W = -PΔV = -P(V₂ - V₁)\n\n• Compression (ΔV < 0) → W > 0 : travail reçu\n• Détente (ΔV > 0) → W < 0 : travail fourni",
+    "tags": ["travail", "isobare"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermo-4",
+    "lessonId": "thermodynamique",
+    "front": "Quelle est l'énergie interne d'un gaz parfait monoatomique ?",
+    "back": "U = (3/2)nRT\n\nL'énergie interne ne dépend QUE de la température pour un gaz parfait.\n\nPour un gaz diatomique : U = (5/2)nRT",
+    "tags": ["énergie interne", "gaz parfait"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermo-5",
+    "lessonId": "thermodynamique",
+    "front": "Que dit le second principe de la thermodynamique ?",
+    "back": "ΔS(univers) ≥ 0\n\nL'entropie d'un système isolé ne peut qu'augmenter.\n\n• Transformation réversible : ΔS = 0\n• Transformation irréversible : ΔS > 0",
+    "tags": ["entropie", "second principe"],
+    "level": 3,
+    "category": "definition"
   }
 ]

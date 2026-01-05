@@ -1,0 +1,212 @@
+---
+id: "thermodynamique"
+title: "Thermodynamique"
+track: "physique"
+level: 3
+prerequisites: ["energie-mecanique"]
+tags: ["thermodynamique", "chaleur", "entropie", "gaz parfait", "premier principe"]
+estimatedTime: 55
+chapter: "thermodynamique"
+order: 1
+---
+
+# Thermodynamique
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Distinguer travail et transfert thermique
+- Appliquer le premier principe de la thermodynamique
+- Utiliser l'équation d'état des gaz parfaits
+- Comprendre la notion d'entropie et le second principe
+
+## Système thermodynamique
+
+:::definition
+**Système thermodynamique**
+
+Un **système thermodynamique** est une portion de l'univers délimitée par une frontière (réelle ou fictive) qu'on étudie.
+
+- **Système isolé** : aucun échange (ni matière, ni énergie)
+- **Système fermé** : échange d'énergie mais pas de matière
+- **Système ouvert** : échange de matière et d'énergie
+:::
+
+:::property[Variables d'état]
+Les **variables d'état** décrivent l'état du système :
+- Pression P (en Pa)
+- Volume V (en m³)
+- Température T (en K)
+- Quantité de matière n (en mol)
+:::
+
+## Énergie interne
+
+:::definition
+**Énergie interne U**
+
+L'**énergie interne** U d'un système est la somme des énergies cinétiques et potentielles de toutes les particules qui le composent.
+
+Pour un gaz parfait monoatomique :
+$$U = \frac{3}{2}nRT$$
+
+L'énergie interne ne dépend que de la température pour un gaz parfait.
+:::
+
+## Premier principe de la thermodynamique
+
+:::property[Premier principe]
+$$\Delta U = W + Q$$
+
+- **ΔU** : variation d'énergie interne (J)
+- **W** : travail reçu par le système (J)
+- **Q** : chaleur reçue par le système (J)
+
+Le premier principe exprime la **conservation de l'énergie**.
+:::
+
+:::method[Conventions de signe]
+- W > 0 : le système **reçoit** du travail (compression)
+- W < 0 : le système **fournit** du travail (détente)
+- Q > 0 : le système **reçoit** de la chaleur
+- Q < 0 : le système **cède** de la chaleur
+:::
+
+## Travail des forces de pression
+
+:::property[Travail en transformation quasi-statique]
+$$W = -\int_{V_1}^{V_2} P_{ext} \, dV$$
+
+Pour une transformation **isobare** (P = cste) :
+$$W = -P_{ext}(V_2 - V_1) = -P_{ext}\Delta V$$
+:::
+
+:::warning
+Le signe moins vient de la convention : une compression (ΔV < 0) correspond à un travail reçu (W > 0).
+:::
+
+## Équation d'état des gaz parfaits
+
+:::property[Loi des gaz parfaits]
+$$PV = nRT$$
+
+- P : pression (Pa)
+- V : volume (m³)
+- n : quantité de matière (mol)
+- R = 8,314 J·mol⁻¹·K⁻¹ : constante des gaz parfaits
+- T : température (K)
+:::
+
+:::method[Transformations particulières]
+Pour une quantité de matière constante :
+$$\frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2}$$
+
+- **Isotherme** (T = cste) : $P_1V_1 = P_2V_2$
+- **Isobare** (P = cste) : $\frac{V_1}{T_1} = \frac{V_2}{T_2}$
+- **Isochore** (V = cste) : $\frac{P_1}{T_1} = \frac{P_2}{T_2}$
+:::
+
+## Capacités thermiques
+
+:::definition
+**Capacités thermiques**
+
+La **capacité thermique** mesure la quantité de chaleur nécessaire pour élever la température d'un système.
+
+- **À volume constant** : $C_V = \left(\frac{\partial U}{\partial T}\right)_V$
+- **À pression constante** : $C_P = \left(\frac{\partial H}{\partial T}\right)_P$
+
+Pour un gaz parfait : $C_P - C_V = nR$
+:::
+
+:::property[Relation de Mayer]
+$$C_P - C_V = nR$$
+
+Le coefficient $\gamma = \frac{C_P}{C_V}$ vaut :
+- 5/3 ≈ 1,67 pour un gaz monoatomique
+- 7/5 = 1,4 pour un gaz diatomique
+:::
+
+## Second principe et entropie
+
+:::definition
+**Entropie S**
+
+L'**entropie** S est une fonction d'état qui mesure le désordre du système.
+
+Pour une transformation réversible :
+$$dS = \frac{\delta Q_{rev}}{T}$$
+:::
+
+:::property[Second principe]
+L'entropie d'un système isolé ne peut qu'**augmenter** ou rester constante :
+
+$$\Delta S_{univers} \geq 0$$
+
+- Transformation réversible : $\Delta S_{univers} = 0$
+- Transformation irréversible : $\Delta S_{univers} > 0$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Gaz parfait
+
+n = 2 mol de gaz parfait passent de (P₁ = 1 bar, T₁ = 300 K) à (P₂ = 2 bar, T₂ = 600 K). Calculer V₁ et V₂.
+
+$$V_1 = \frac{nRT_1}{P_1} = \frac{2 \times 8.314 \times 300}{10^5} = 0.0499 \text{ m}^3 = 49.9 \text{ L}$$
+
+$$V_2 = \frac{nRT_2}{P_2} = \frac{2 \times 8.314 \times 600}{2 \times 10^5} = 0.0499 \text{ m}^3 = 49.9 \text{ L}$$
+
+### Exemple 2 : Compression isobare
+
+Un gaz parfait subit une compression isobare à P = 2 bar de V₁ = 10 L à V₂ = 5 L. Calculer W.
+
+$$W = -P\Delta V = -2 \times 10^5 \times (5 - 10) \times 10^{-3}$$
+$$W = -2 \times 10^5 \times (-5 \times 10^{-3}) = 1000 \text{ J}$$
+
+Le système reçoit 1000 J de travail (compression).
+
+### Exemple 3 : Premier principe
+
+Un système reçoit Q = 500 J de chaleur et son énergie interne augmente de ΔU = 200 J. Quel travail a-t-il fourni ?
+
+$$\Delta U = W + Q$$
+$$200 = W + 500$$
+$$W = -300 \text{ J}$$
+
+Le système a fourni 300 J de travail à l'extérieur.
+
+### Exemple 4 : Transformation isotherme
+
+n = 1 mol de gaz parfait subit une détente isotherme à T = 400 K de V₁ = 10 L à V₂ = 20 L. Calculer W.
+
+$$W = -nRT\ln\left(\frac{V_2}{V_1}\right) = -1 \times 8.314 \times 400 \times \ln(2)$$
+$$W = -3326 \times 0.693 = -2305 \text{ J}$$
+
+Le système fournit 2305 J de travail.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier de convertir en unités SI
+
+- Pression : 1 bar = 10⁵ Pa
+- Volume : 1 L = 10⁻³ m³
+- Température : T(K) = T(°C) + 273
+
+**Erreur 2** : Confondre les signes de W et Q
+
+Toujours vérifier : compression → W > 0, détente → W < 0
+
+**Erreur 3** : Utiliser °C au lieu de K
+
+Dans PV = nRT, la température DOIT être en Kelvin.
+:::
+
+## Mini-résumé
+
+- **Premier principe** : $\Delta U = W + Q$ (conservation de l'énergie)
+- **Gaz parfait** : $PV = nRT$, $U = \frac{3}{2}nRT$ (monoatomique)
+- **Travail isobare** : $W = -P\Delta V$
+- **Second principe** : $\Delta S_{univers} \geq 0$
+- **Relation de Mayer** : $C_P - C_V = nR$
