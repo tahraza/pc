@@ -96,6 +96,33 @@ export const ACCESSORIES: Accessory[] = [
   { id: 'special-fire', name: 'Aura de feu', emoji: '🔥', price: 800, category: 'special', description: 'En feu !', rarity: 'legendary' },
   { id: 'special-rainbow', name: 'Arc-en-ciel', emoji: '🌈', price: 700, category: 'special', description: 'Toutes les couleurs du spectre', rarity: 'legendary' },
   { id: 'special-lightning', name: 'Éclair', emoji: '⚡', price: 600, category: 'special', description: 'Rapide comme l\'éclair', rarity: 'epic' },
+
+  // ==========================================
+  // Accessoires Premium (1000+ points)
+  // ==========================================
+
+  // Premium Hats
+  { id: 'hat-einstein', name: 'Perruque Einstein', emoji: '👨‍🔬', price: 1500, category: 'hat', description: 'E = mc² dans le style !', rarity: 'legendary' },
+  { id: 'hat-astronaut', name: 'Casque d\'astronaute', emoji: '👨‍🚀', price: 2000, category: 'hat', description: 'Prêt pour l\'espace', rarity: 'legendary' },
+  { id: 'hat-pharaoh', name: 'Coiffe de pharaon', emoji: '🏺', price: 1800, category: 'hat', description: 'Roi de l\'ancienne Égypte', rarity: 'legendary' },
+  { id: 'hat-viking', name: 'Casque Viking', emoji: '⚔️', price: 1200, category: 'hat', description: 'Conquérant des examens', rarity: 'epic' },
+
+  // Premium Glasses
+  { id: 'glasses-vr', name: 'Casque VR', emoji: '🥽', price: 1500, category: 'glasses', description: 'Vision du futur', rarity: 'legendary' },
+  { id: 'glasses-monocle', name: 'Monocle d\'or', emoji: '🧐', price: 1000, category: 'glasses', description: 'Élégance scientifique', rarity: 'epic' },
+  { id: 'glasses-laser', name: 'Lunettes laser', emoji: '🔴', price: 2500, category: 'glasses', description: 'Vision perçante', rarity: 'legendary' },
+
+  // Premium Necklaces
+  { id: 'necklace-planet', name: 'Pendentif système solaire', emoji: '🪐', price: 1200, category: 'necklace', description: 'Le cosmos autour du cou', rarity: 'epic' },
+  { id: 'necklace-infinity', name: 'Collier infini', emoji: '♾️', price: 2000, category: 'necklace', description: 'Limites infinies', rarity: 'legendary' },
+  { id: 'necklace-quantum', name: 'Pendentif quantique', emoji: '🔮', price: 2500, category: 'necklace', description: 'Superposition d\'états', rarity: 'legendary' },
+
+  // Ultra Premium Special
+  { id: 'special-blackhole', name: 'Trou noir', emoji: '🕳️', price: 3000, category: 'special', description: 'Attire les bonnes notes', rarity: 'legendary' },
+  { id: 'special-phoenix', name: 'Ailes de phénix', emoji: '🔥🦅', price: 3500, category: 'special', description: 'Renaître de ses erreurs', rarity: 'legendary' },
+  { id: 'special-galaxy', name: 'Aura galactique', emoji: '🌌', price: 4000, category: 'special', description: 'L\'univers t\'entoure', rarity: 'legendary' },
+  { id: 'special-time', name: 'Distorsion temporelle', emoji: '⏳', price: 4500, category: 'special', description: 'Maîtrise le temps', rarity: 'legendary' },
+  { id: 'special-cosmic', name: 'Énergie cosmique ultime', emoji: '✨🌟✨', price: 5000, category: 'special', description: 'Pouvoir absolu du cosmos', rarity: 'legendary' },
 ]
 
 // Available backgrounds
