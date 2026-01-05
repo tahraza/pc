@@ -115,3 +115,131 @@ export function getRevisionSchedule(): { label: string; days: number }[] {
     { label: 'J+90', days: 90 },
   ]
 }
+
+// ==========================================
+// Système de décroissance de maîtrise
+// ==========================================
+
+export interface MasteryLevel {
+  percentage: number // 0-100
+  status: 'excellent' | 'good' | 'warning' | 'critical' | 'forgotten'
+  label: string
+  color: string
+  bgColor: string
+  daysUntilNextLevel: number | null
+  needsReview: boolean
+}
+
+/**
+ * Calcule le niveau de maîtrise basé sur la courbe de l'oubli
+ * La maîtrise décroît exponentiellement avec le temps
+ */
+export function calculateMasteryLevel(
+  masteredAt: string | undefined,
+  lastReviewedAt: string | undefined
+): MasteryLevel {
+  // Si jamais maîtrisé, retourne 0%
+  if (!masteredAt) {
+    return {
+      percentage: 0,
+      status: 'forgotten',
+      label: 'Non maîtrisé',
+      color: 'text-slate-500',
+      bgColor: 'bg-slate-200',
+      daysUntilNextLevel: null,
+      needsReview: false,
+    }
+  }
+
+  const referenceDate = lastReviewedAt || masteredAt
+  const daysSinceReview = Math.floor(
+    (Date.now() - new Date(referenceDate).getTime()) / (1000 * 60 * 60 * 24)
+  )
+
+  // Courbe de l'oubli (Ebbinghaus) simplifiée
+  // Rétention = 100 * e^(-t/S) où S est la force du souvenir
+  // Simplifié : on définit des seuils
+  let percentage: number
+  let status: MasteryLevel['status']
+  let label: string
+  let color: string
+  let bgColor: string
+  let daysUntilNextLevel: number | null = null
+  let needsReview = false
+
+  if (daysSinceReview <= 1) {
+    percentage = 100
+    status = 'excellent'
+    label = 'Fraîchement maîtrisé'
+    color = 'text-success-600'
+    bgColor = 'bg-success-500'
+    daysUntilNextLevel = 2 - daysSinceReview
+  } else if (daysSinceReview <= 7) {
+    percentage = Math.round(100 - (daysSinceReview - 1) * 3) // 97% → 82%
+    status = 'excellent'
+    label = 'Excellent'
+    color = 'text-success-600'
+    bgColor = 'bg-success-500'
+    daysUntilNextLevel = 8 - daysSinceReview
+  } else if (daysSinceReview <= 14) {
+    percentage = Math.round(82 - (daysSinceReview - 7) * 3) // 79% → 61%
+    status = 'good'
+    label = 'Bon'
+    color = 'text-emerald-600'
+    bgColor = 'bg-emerald-500'
+    daysUntilNextLevel = 15 - daysSinceReview
+    needsReview = daysSinceReview >= 10
+  } else if (daysSinceReview <= 30) {
+    percentage = Math.round(61 - (daysSinceReview - 14) * 1.3) // 60% → 40%
+    status = 'warning'
+    label = 'À réviser'
+    color = 'text-warning-600'
+    bgColor = 'bg-warning-500'
+    daysUntilNextLevel = 31 - daysSinceReview
+    needsReview = true
+  } else if (daysSinceReview <= 60) {
+    percentage = Math.round(40 - (daysSinceReview - 30) * 0.7) // 39% → 19%
+    status = 'critical'
+    label = 'Révision urgente'
+    color = 'text-orange-600'
+    bgColor = 'bg-orange-500'
+    daysUntilNextLevel = 61 - daysSinceReview
+    needsReview = true
+  } else {
+    percentage = Math.max(5, Math.round(19 - (daysSinceReview - 60) * 0.2)) // 18% → 5%
+    status = 'forgotten'
+    label = 'Oublié'
+    color = 'text-danger-600'
+    bgColor = 'bg-danger-500'
+    daysUntilNextLevel = null
+    needsReview = true
+  }
+
+  return {
+    percentage: Math.max(0, Math.min(100, percentage)),
+    status,
+    label,
+    color,
+    bgColor,
+    daysUntilNextLevel,
+    needsReview,
+  }
+}
+
+/**
+ * Retourne le temps écoulé depuis une date en format lisible
+ */
+export function getTimeSince(dateString: string): string {
+  const date = new Date(dateString)
+  const now = new Date()
+  const diffMs = now.getTime() - date.getTime()
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+
+  if (diffDays === 0) return "Aujourd'hui"
+  if (diffDays === 1) return 'Hier'
+  if (diffDays < 7) return `Il y a ${diffDays} jours`
+  if (diffDays < 14) return 'Il y a 1 semaine'
+  if (diffDays < 30) return `Il y a ${Math.floor(diffDays / 7)} semaines`
+  if (diffDays < 60) return 'Il y a 1 mois'
+  return `Il y a ${Math.floor(diffDays / 30)} mois`
+}

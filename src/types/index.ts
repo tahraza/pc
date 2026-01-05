@@ -37,6 +37,8 @@ export interface LessonProgress {
   status: MasteryStatus
   completedAt?: string
   lastViewedAt: string
+  masteredAt?: string // Date de maîtrise pour le calcul de décroissance
+  lastReviewedAt?: string // Date de dernière révision
   preQuizScore?: number
   postQuizScore?: number
   revisionSchedule: RevisionScheduleItem[]

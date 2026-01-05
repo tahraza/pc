@@ -146,16 +146,25 @@ export const useStore = create<Store>()(
         set((state) => {
           const wasCompleted = state.lessonProgress[lessonId]?.status === 'mastered'
           const isNowCompleted = status === 'mastered'
+          const existingProgress = state.lessonProgress[lessonId]
 
           return {
             lessonProgress: {
               ...state.lessonProgress,
               [lessonId]: {
-                ...state.lessonProgress[lessonId],
+                ...existingProgress,
                 lessonId,
                 status,
                 completedAt: isNowCompleted ? now.toISOString() : undefined,
                 lastViewedAt: now.toISOString(),
+                // Définir masteredAt seulement si c'est la première fois qu'on maîtrise
+                masteredAt: isNowCompleted
+                  ? (existingProgress?.masteredAt || now.toISOString())
+                  : existingProgress?.masteredAt,
+                // Mettre à jour lastReviewedAt si on re-maîtrise
+                lastReviewedAt: isNowCompleted && wasCompleted
+                  ? now.toISOString()
+                  : existingProgress?.lastReviewedAt,
                 revisionSchedule,
               },
             },
@@ -172,9 +181,10 @@ export const useStore = create<Store>()(
           const progress = state.lessonProgress[lessonId]
           if (!progress) return state
 
+          const now = new Date().toISOString()
           const updatedSchedule = progress.revisionSchedule.map((item) =>
             item.dayOffset === dayOffset
-              ? { ...item, completed: true, completedAt: new Date().toISOString() }
+              ? { ...item, completed: true, completedAt: now }
               : item
           )
 
@@ -184,6 +194,7 @@ export const useStore = create<Store>()(
               [lessonId]: {
                 ...progress,
                 revisionSchedule: updatedSchedule,
+                lastReviewedAt: now, // Mettre à jour pour le calcul de décroissance
               },
             },
           }
