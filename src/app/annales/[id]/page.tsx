@@ -16,6 +16,8 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import MathText from '@/components/MathText'
+import { useStore } from '@/store/useStore'
+import { useGamificationStore } from '@/stores/gamificationStore'
 import annalesData from '../../../../content/annales.json'
 
 interface Question {
@@ -52,12 +54,25 @@ export default function AnnalePage() {
   const [expandedParts, setExpandedParts] = useState<string[]>([])
   const [shownAnswers, setShownAnswers] = useState<string[]>([])
 
+  const { exerciseProgress, markExerciseCompleted } = useStore()
+  const { recordExerciseCompleted } = useGamificationStore()
+
   useEffect(() => {
     setMounted(true)
   }, [])
 
   const annaleId = params.id as string
   const annale = annalesData.annales.find((a) => a.id === annaleId) as Annale | undefined
+
+  // Vérifier si l'annale est déjà complétée
+  const isCompleted = exerciseProgress[annaleId]?.status === 'completed'
+
+  const handleMarkCompleted = () => {
+    if (!isCompleted) {
+      recordExerciseCompleted(annaleId, true)
+      markExerciseCompleted(annaleId, annale?.subject || 'physique')
+    }
+  }
 
   const togglePart = (partId: string) => {
     setExpandedParts(prev =>
@@ -161,15 +176,31 @@ export default function AnnalePage() {
             {annale.description}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-              <Award className="h-4 w-4" />
-              {annale.points} points
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                <Award className="h-4 w-4" />
+                {annale.points} points
+              </div>
+              <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                <Clock className="h-4 w-4" />
+                ~{annale.duration} minutes
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-              <Clock className="h-4 w-4" />
-              ~{annale.duration} minutes
-            </div>
+            {isCompleted ? (
+              <span className="flex items-center gap-2 rounded-full bg-success-100 px-4 py-2 text-sm font-semibold text-success-700 dark:bg-success-900/30 dark:text-success-300">
+                <CheckCircle2 className="h-4 w-4" />
+                Terminé
+              </span>
+            ) : (
+              <button
+                onClick={handleMarkCompleted}
+                className="flex items-center gap-2 rounded-lg bg-success-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-success-700"
+              >
+                <CheckCircle2 className="h-4 w-4" />
+                Marquer comme terminé
+              </button>
+            )}
           </div>
 
           <div className="mt-4 flex flex-wrap gap-1">

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { cn, getDifficultyLabel, getDifficultyColor } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
+import { useGamificationStore } from '@/stores/gamificationStore'
 import { LessonContent } from '@/components/LessonContent'
 import MathText from '@/components/MathText'
 import type { Exercise, SolutionStep } from '@/types'
@@ -25,6 +26,7 @@ interface PageProps {
 
 export default function ExercisePage({ params }: PageProps) {
   const { exerciseProgress, useExerciseHint, viewExerciseSolution, markExerciseCompleted } = useStore()
+  const { recordExerciseCompleted } = useGamificationStore()
 
   const [exercise, setExercise] = useState<Exercise | null>(null)
   const [loading, setLoading] = useState(true)
@@ -66,6 +68,11 @@ export default function ExercisePage({ params }: PageProps) {
 
   const handleMarkCompleted = () => {
     if (exercise) {
+      // Attribuer les points uniquement si l'exercice n'était pas déjà complété
+      const wasCompleted = progress?.status === 'completed'
+      if (!wasCompleted) {
+        recordExerciseCompleted(params.id, true)
+      }
       markExerciseCompleted(params.id, exercise.lessonId)
     }
   }

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
+import { useGamificationStore } from '@/stores/gamificationStore'
 import MathText from '@/components/MathText'
 import type { Quiz, QuizQuestion, QuizAttempt, PreQuizDiagnostic } from '@/types'
 
@@ -39,6 +40,7 @@ interface PageProps {
 export default function QCMPage({ params }: PageProps) {
   const router = useRouter()
   const { addQuizAttempt, updateLessonProgress } = useStore()
+  const { recordQuizCompleted } = useGamificationStore()
 
   const [quiz, setQuiz] = useState<Quiz | null>(null)
   const [loading, setLoading] = useState(true)
@@ -182,6 +184,9 @@ export default function QCMPage({ params }: PageProps) {
       recommendations,
     }
     addQuizAttempt(attempt)
+
+    // Attribuer les points de gamification
+    recordQuizCompleted(quiz.id, correctCount, totalQuestions)
 
     // Update lesson progress
     if (quiz.type === 'pre') {

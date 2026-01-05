@@ -1,6 +1,7 @@
 'use client'
 
 import { useStore } from '@/store/useStore'
+import { useGamificationStore } from '@/stores/gamificationStore'
 import { CheckCircle, Circle, RefreshCw, Eye } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { MasteryStatus } from '@/types'
@@ -18,10 +19,15 @@ const statusConfig: Record<MasteryStatus, { label: string; icon: typeof CheckCir
 
 export function LessonProgress({ lessonId }: LessonProgressProps) {
   const { lessonProgress, markLessonStatus } = useStore()
+  const { recordLessonCompleted } = useGamificationStore()
   const progress = lessonProgress[lessonId]
   const currentStatus: MasteryStatus = progress?.status || 'not_started'
 
   const handleStatusChange = (status: MasteryStatus) => {
+    // Attribuer les points uniquement si le statut passe à "mastered" pour la première fois
+    if (status === 'mastered' && currentStatus !== 'mastered') {
+      recordLessonCompleted(lessonId)
+    }
     markLessonStatus(lessonId, status)
   }
 
