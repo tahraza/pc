@@ -68,7 +68,7 @@ interface GamificationState {
   addPoints: (points: number, reason: string) => void
   recordLessonCompleted: (lessonId: string) => void
   recordExerciseCompleted: (exerciseId: string, isCorrect: boolean) => void
-  recordQuizCompleted: (quizId: string, score: number, total: number) => void
+  recordQuizCompleted: (quizId: string, score: number, total: number, bonusPoints?: number) => void
   checkAndUnlockBadges: () => Badge[]
   updateStreak: () => void
   getLevel: () => { level: number; currentXP: number; requiredXP: number; progress: number }
@@ -240,7 +240,7 @@ export const useGamificationStore = create<GamificationState>()(
         get().checkAndUnlockBadges()
       },
 
-      recordQuizCompleted: (quizId, score, total) => {
+      recordQuizCompleted: (quizId, score, total, bonusPoints = 0) => {
         const today = getTodayString()
         const percentage = (score / total) * 100
 
@@ -260,7 +260,11 @@ export const useGamificationStore = create<GamificationState>()(
           reason = 'Bon résultat au QCM'
         }
 
-        get().addPoints(points, reason)
+        // Ajouter les points bonus de difficulté
+        const totalPoints = points + bonusPoints
+        const finalReason = bonusPoints > 0 ? `${reason} (+${bonusPoints} bonus difficulté)` : reason
+
+        get().addPoints(totalPoints, finalReason)
         get().updateStreak()
 
         // Update daily activity
