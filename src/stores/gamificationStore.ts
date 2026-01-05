@@ -29,6 +29,12 @@ interface DailyActivity {
   pointsEarned: number
 }
 
+interface ProgressData {
+  lessonProgress: Record<string, { status?: string; lessonId?: string }>
+  exerciseProgress: Record<string, { status?: string; exerciseId?: string }>
+  quizAttempts: Array<{ quizId: string; score: number; totalQuestions: number }>
+}
+
 interface GamificationState {
   // Points
   totalPoints: number
@@ -55,6 +61,9 @@ interface GamificationState {
   totalQuizzesCompleted: number
   totalCorrectAnswers: number
 
+  // Migration
+  migrationVersion: number
+
   // Actions
   addPoints: (points: number, reason: string) => void
   recordLessonCompleted: (lessonId: string) => void
@@ -64,6 +73,7 @@ interface GamificationState {
   updateStreak: () => void
   getLevel: () => { level: number; currentXP: number; requiredXP: number; progress: number }
   getTodayActivity: () => DailyActivity | null
+  migrateFromProgressData: (data: ProgressData) => { migratedLessons: number; migratedExercises: number; migratedQuizzes: number; totalPoints: number }
 }
 
 // Point values
@@ -132,6 +142,7 @@ export const useGamificationStore = create<GamificationState>()(
       totalExercisesCompleted: 0,
       totalQuizzesCompleted: 0,
       totalCorrectAnswers: 0,
+      migrationVersion: 0,
 
       addPoints: (points, reason) => {
         const today = getTodayString()
@@ -389,6 +400,77 @@ export const useGamificationStore = create<GamificationState>()(
       getTodayActivity: () => {
         const today = getTodayString()
         return get().dailyActivities.find(a => a.date === today) || null
+      },
+
+      migrateFromProgressData: (data: ProgressData) => {
+        const state = get()
+
+        // Ne migrer que si pas encore fait (version 0)
+        if (state.migrationVersion >= 1) {
+          return { migratedLessons: 0, migratedExercises: 0, migratedQuizzes: 0, totalPoints: 0 }
+        }
+
+        let totalPointsAdded = 0
+        let migratedLessons = 0
+        let migratedExercises = 0
+        let migratedQuizzes = 0
+        const today = getTodayString()
+
+        // Migrer les leçons maîtrisées
+        Object.values(data.lessonProgress).forEach((progress) => {
+          if (progress.status === 'mastered') {
+            totalPointsAdded += POINTS.LESSON_COMPLETED
+            migratedLessons++
+          }
+        })
+
+        // Migrer les exercices complétés
+        Object.values(data.exerciseProgress).forEach((progress) => {
+          if (progress.status === 'completed') {
+            totalPointsAdded += POINTS.EXERCISE_CORRECT
+            migratedExercises++
+          }
+        })
+
+        // Migrer les QCM
+        data.quizAttempts.forEach((attempt) => {
+          const percentage = (attempt.score / attempt.totalQuestions) * 100
+          if (percentage === 100) {
+            totalPointsAdded += POINTS.QUIZ_PERFECT
+          } else if (percentage >= 70) {
+            totalPointsAdded += POINTS.QUIZ_GOOD
+          } else {
+            totalPointsAdded += POINTS.QUIZ_COMPLETE
+          }
+          migratedQuizzes++
+        })
+
+        // Appliquer la migration si des points sont à ajouter
+        if (totalPointsAdded > 0) {
+          set((state) => ({
+            totalPoints: state.totalPoints + totalPointsAdded,
+            pointsHistory: [
+              ...state.pointsHistory,
+              { date: today, points: totalPointsAdded, reason: 'Migration rétroactive des points' }
+            ],
+            totalLessonsCompleted: state.totalLessonsCompleted + migratedLessons,
+            totalExercisesCompleted: state.totalExercisesCompleted + migratedExercises,
+            totalQuizzesCompleted: state.totalQuizzesCompleted + migratedQuizzes,
+            totalCorrectAnswers: state.totalCorrectAnswers + migratedExercises,
+            migrationVersion: 1,
+          }))
+
+          // Ajouter les points au pet
+          usePetStore.getState().addPetPoints(totalPointsAdded)
+
+          // Vérifier les badges
+          get().checkAndUnlockBadges()
+        } else {
+          // Marquer comme migré même si aucun point à ajouter
+          set({ migrationVersion: 1 })
+        }
+
+        return { migratedLessons, migratedExercises, migratedQuizzes, totalPoints: totalPointsAdded }
       },
     }),
     {

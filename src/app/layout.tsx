@@ -4,6 +4,7 @@ import './globals.css'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { GamificationMigration } from '@/components/GamificationMigration'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,6 +36,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <GamificationMigration />
         </ThemeProvider>
       </body>
     </html>
