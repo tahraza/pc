@@ -655,5 +655,140 @@
     "tags": ["entropie", "second principe"],
     "level": 3,
     "category": "definition"
+  },
+  {
+    "id": "fc-thermochim-1",
+    "lessonId": "thermochimie",
+    "front": "Qu'est-ce que l'enthalpie de réaction ΔrH ?",
+    "back": "L'énergie échangée sous forme de chaleur lors d'une réaction à pression constante.\n\n• ΔrH < 0 : exothermique (libère de la chaleur)\n• ΔrH > 0 : endothermique (absorbe de la chaleur)",
+    "tags": ["enthalpie", "réaction"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-thermochim-2",
+    "lessonId": "thermochimie",
+    "front": "Comment appliquer la loi de Hess ?",
+    "back": "ΔrH° = Σ νi·ΔfH°(produits) - Σ νj·ΔfH°(réactifs)\n\nOù νi et νj sont les coefficients stœchiométriques.\n\nΔfH°(corps simple stable) = 0",
+    "tags": ["Hess", "enthalpie"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermochim-3",
+    "lessonId": "thermochimie",
+    "front": "Comment calculer ΔrH avec les énergies de liaison ?",
+    "back": "ΔrH = Σ D(liaisons rompues) - Σ D(liaisons formées)\n\nRompre une liaison coûte de l'énergie (+)\nFormer une liaison libère de l'énergie (-)",
+    "tags": ["énergie de liaison", "enthalpie"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermochim-4",
+    "lessonId": "thermochimie",
+    "front": "Quelle est la formule de calorimétrie ?",
+    "back": "Q = m·c·ΔT = C·ΔT\n\nQ : chaleur (J)\nm : masse (kg)\nc : capacité thermique massique (J·kg⁻¹·K⁻¹)\nC : capacité thermique (J/K)\nΔT : variation de température (K)",
+    "tags": ["calorimétrie", "chaleur"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermochim-5",
+    "lessonId": "thermochimie",
+    "front": "Qu'est-ce que le pouvoir calorifique ?",
+    "back": "L'énergie libérée par la combustion complète d'1 kg (massique) ou 1 m³ (volumique) de combustible.\n\n• PCS : eau produite liquide\n• PCI : eau produite gazeuse\n\nPCI < PCS",
+    "tags": ["pouvoir calorifique", "combustion"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-equil-1",
+    "lessonId": "equilibres-chimiques",
+    "front": "Comment s'écrit la constante d'équilibre K ?",
+    "back": "Pour aA + bB ⇌ cC + dD :\n\nK = [C]ᶜ·[D]ᵈ / [A]ᵃ·[B]ᵇ\n\nK ne dépend QUE de la température.\nLes solides et liquides purs n'apparaissent pas.",
+    "tags": ["équilibre", "constante K"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-equil-2",
+    "lessonId": "equilibres-chimiques",
+    "front": "Comment prédire le sens d'évolution avec Qr et K ?",
+    "back": "Comparer le quotient de réaction Qr à K :\n\n• Qr < K → sens direct (→)\n• Qr > K → sens inverse (←)\n• Qr = K → équilibre atteint",
+    "tags": ["quotient", "évolution"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-equil-3",
+    "lessonId": "equilibres-chimiques",
+    "front": "Quel est le principe de Le Chatelier ?",
+    "back": "Lorsqu'on modifie un paramètre d'un système à l'équilibre, celui-ci évolue pour s'opposer partiellement à cette modification.\n\nConcentration, pression, température affectent l'équilibre.\nUn catalyseur NE déplace PAS l'équilibre.",
+    "tags": ["Le Chatelier", "équilibre"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-equil-4",
+    "lessonId": "equilibres-chimiques",
+    "front": "Effet de la pression sur l'équilibre gazeux ?",
+    "back": "Selon Le Chatelier :\n\n• Augmenter P → déplacement vers le côté avec MOINS de moles gazeuses\n• Diminuer P → déplacement vers le côté avec PLUS de moles gazeuses\n\nSi même nombre de moles de chaque côté → pas d'effet",
+    "tags": ["pression", "Le Chatelier"],
+    "level": 3,
+    "category": "method"
+  },
+  {
+    "id": "fc-equil-5",
+    "lessonId": "equilibres-chimiques",
+    "front": "Effet de la température sur l'équilibre ?",
+    "back": "• Augmenter T → favorise le sens ENDOTHERMIQUE\n• Diminuer T → favorise le sens EXOTHERMIQUE\n\nRappel :\n- Exothermique : ΔrH < 0\n- Endothermique : ΔrH > 0",
+    "tags": ["température", "Le Chatelier"],
+    "level": 3,
+    "category": "method"
+  },
+  {
+    "id": "fc-em-1",
+    "lessonId": "electromagnetisme",
+    "front": "Quelle est l'expression du champ électrique uniforme ?",
+    "back": "E = U/d\n\nE : champ électrique (V/m ou N/C)\nU : tension entre les plaques (V)\nd : distance entre les plaques (m)\n\nLe champ est dirigé du + vers le -",
+    "tags": ["champ électrique", "uniforme"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-em-2",
+    "lessonId": "electromagnetisme",
+    "front": "Quelle est la force de Lorentz ?",
+    "back": "F⃗ = q(v⃗ × B⃗)\n\nPour v ⊥ B : F = |q|vB\n\nCaractéristiques :\n• F ⊥ v (ne travaille pas)\n• F ⊥ B\n• Trajectoire circulaire",
+    "tags": ["Lorentz", "force magnétique"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-em-3",
+    "lessonId": "electromagnetisme",
+    "front": "Rayon de la trajectoire d'une particule chargée dans B ?",
+    "back": "r = mv/(|q|B)\n\nPériode : T = 2πm/(|q|B)\n\nLa période ne dépend PAS de la vitesse (principe du cyclotron)",
+    "tags": ["trajectoire", "rayon", "cyclotron"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-em-4",
+    "lessonId": "electromagnetisme",
+    "front": "Quelle est la loi de Faraday (induction) ?",
+    "back": "e = -dΦ/dt\n\ne : f.é.m. induite (V)\nΦ : flux magnétique (Wb)\n\nLe signe - traduit la loi de Lenz : le courant induit s'oppose à la cause qui lui donne naissance.",
+    "tags": ["Faraday", "induction"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-em-5",
+    "lessonId": "electromagnetisme",
+    "front": "Quelle est la relation du transformateur ?",
+    "back": "U₂/U₁ = N₂/N₁\n\n• N₂ > N₁ : transformateur élévateur\n• N₂ < N₁ : transformateur abaisseur\n\nPuissance conservée : U₁I₁ = U₂I₂ (idéal)",
+    "tags": ["transformateur", "tension"],
+    "level": 2,
+    "category": "formula"
   }
 ]

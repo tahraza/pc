@@ -1,0 +1,191 @@
+---
+id: "thermochimie"
+title: "Thermochimie"
+track: "chimie"
+level: 3
+prerequisites: ["cinetique"]
+tags: ["thermochimie", "enthalpie", "énergie", "calorimétrie", "liaison"]
+estimatedTime: 50
+chapter: "thermochimie"
+order: 1
+---
+
+# Thermochimie
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Définir et calculer l'enthalpie de réaction
+- Utiliser les énergies de liaison
+- Appliquer la loi de Hess
+- Interpréter les aspects énergétiques d'une réaction
+
+## Enthalpie de réaction
+
+:::definition
+**Enthalpie de réaction ΔrH**
+
+L'**enthalpie de réaction** ΔrH représente l'énergie échangée sous forme de chaleur lors d'une réaction chimique à pression constante.
+
+$$\Delta_rH = \sum H_{produits} - \sum H_{réactifs}$$
+
+Unité : kJ·mol⁻¹
+:::
+
+:::property[Conventions de signe]
+- **ΔrH < 0** : réaction **exothermique** (libère de la chaleur)
+- **ΔrH > 0** : réaction **endothermique** (absorbe de la chaleur)
+:::
+
+## Réactions exo et endothermiques
+
+:::method[Diagramme enthalpique]
+```
+Réaction exothermique (ΔrH < 0)     Réaction endothermique (ΔrH > 0)
+
+  Réactifs ────┐                           ┌──── Produits
+               │ ΔrH < 0                   │ ΔrH > 0
+               ▼                           │
+  Produits ────                   Réactifs ┘
+```
+
+L'énergie du système diminue (exo) ou augmente (endo).
+:::
+
+## Enthalpies standard de formation
+
+:::definition
+**Enthalpie standard de formation ΔfH°**
+
+L'enthalpie standard de formation d'un composé est l'enthalpie de la réaction de formation d'une mole de ce composé à partir des corps simples dans leur état standard (25°C, 1 bar).
+
+Par convention : **ΔfH°(corps simple stable) = 0**
+:::
+
+:::property[Loi de Hess]
+$$\Delta_rH° = \sum \nu_i \cdot \Delta_fH°(produits) - \sum \nu_j \cdot \Delta_fH°(réactifs)$$
+
+où νi et νj sont les coefficients stœchiométriques.
+:::
+
+## Énergies de liaison
+
+:::definition
+**Énergie de liaison D**
+
+L'**énergie de liaison** D(A-B) est l'énergie nécessaire pour rompre une mole de liaisons A-B à l'état gazeux.
+
+D > 0 toujours (il faut fournir de l'énergie pour casser une liaison)
+:::
+
+:::property[Calcul avec les énergies de liaison]
+$$\Delta_rH = \sum D(liaisons \, rompues) - \sum D(liaisons \, formées)$$
+
+- Rompre des liaisons : coûte de l'énergie (+)
+- Former des liaisons : libère de l'énergie (-)
+:::
+
+| Liaison | D (kJ/mol) | Liaison | D (kJ/mol) |
+|---------|------------|---------|------------|
+| C-C | 346 | C=C | 614 |
+| C-H | 413 | O-H | 463 |
+| C-O | 358 | C=O | 799 |
+| O=O | 498 | H-H | 436 |
+| C≡C | 839 | N≡N | 945 |
+
+## Pouvoir calorifique
+
+:::definition
+**Pouvoir calorifique**
+
+Le **pouvoir calorifique** d'un combustible est l'énergie libérée par la combustion complète d'un kg (PCI/PCS massique) ou d'un m³ (volumique) de combustible.
+
+- **PCS** (Pouvoir Calorifique Supérieur) : eau produite liquide
+- **PCI** (Pouvoir Calorifique Inférieur) : eau produite gazeuse
+:::
+
+## Calorimétrie
+
+:::definition
+**Capacité thermique**
+
+La **capacité thermique** C d'un système est l'énergie nécessaire pour élever sa température de 1 K.
+
+$$Q = C \cdot \Delta T = m \cdot c \cdot \Delta T$$
+
+- C : capacité thermique (J/K)
+- c : capacité thermique massique (J·kg⁻¹·K⁻¹)
+- m : masse (kg)
+:::
+
+:::method[Calorimétrie]
+Dans un calorimètre adiabatique, l'énergie se conserve :
+$$Q_{réaction} + Q_{calorimètre} = 0$$
+
+$$\Delta_rH \cdot n + (m_{eau} \cdot c_{eau} + C_{calo}) \cdot \Delta T = 0$$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Combustion du méthane
+
+Calculer ΔrH° pour : CH₄(g) + 2 O₂(g) → CO₂(g) + 2 H₂O(l)
+
+Données : ΔfH°(CH₄) = -75 kJ/mol ; ΔfH°(CO₂) = -394 kJ/mol ; ΔfH°(H₂O,l) = -286 kJ/mol
+
+$$\Delta_rH° = [\Delta_fH°(CO_2) + 2\Delta_fH°(H_2O)] - [\Delta_fH°(CH_4) + 2\Delta_fH°(O_2)]$$
+$$\Delta_rH° = [-394 + 2 \times (-286)] - [-75 + 0]$$
+$$\Delta_rH° = -966 + 75 = -891 \text{ kJ/mol}$$
+
+La réaction est fortement exothermique.
+
+### Exemple 2 : Énergies de liaison
+
+Calculer ΔrH pour : H₂(g) + Cl₂(g) → 2 HCl(g)
+
+Données : D(H-H) = 436 kJ/mol ; D(Cl-Cl) = 242 kJ/mol ; D(H-Cl) = 431 kJ/mol
+
+Liaisons rompues : 1 H-H + 1 Cl-Cl = 436 + 242 = 678 kJ
+Liaisons formées : 2 H-Cl = 2 × 431 = 862 kJ
+
+$$\Delta_rH = 678 - 862 = -184 \text{ kJ/mol}$$
+
+### Exemple 3 : Calorimétrie
+
+On dissout 5,0 g de NaOH dans 200 mL d'eau dans un calorimètre. La température passe de 20,0°C à 26,5°C. Calculer ΔdissH. (M(NaOH) = 40 g/mol, ccalo = 50 J/K, ceau = 4,18 J·g⁻¹·K⁻¹)
+
+Quantité de matière : n = 5,0/40 = 0,125 mol
+ΔT = 26,5 - 20,0 = 6,5 K
+
+$$Q_{solution} = -(m_{eau} \cdot c_{eau} + C_{calo}) \cdot \Delta T$$
+$$Q_{solution} = -(200 \times 4,18 + 50) \times 6,5 = -5759 \text{ J}$$
+
+$$\Delta_{diss}H = \frac{Q_{solution}}{n} = \frac{-5759}{0,125} = -46,1 \text{ kJ/mol}$$
+
+La dissolution est exothermique.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier les coefficients stœchiométriques
+
+Dans la loi de Hess, toujours multiplier ΔfH° par le coefficient.
+
+**Erreur 2** : Se tromper de signe avec les énergies de liaison
+
+Rompre = + (coûte de l'énergie)
+Former = - (libère de l'énergie)
+
+**Erreur 3** : Confondre ΔfH° et ΔrH°
+
+ΔfH° = formation à partir des corps simples
+ΔrH° = enthalpie d'une réaction quelconque
+:::
+
+## Mini-résumé
+
+- **ΔrH < 0** : exothermique ; **ΔrH > 0** : endothermique
+- **Loi de Hess** : ΔrH° = Σ νi·ΔfH°(produits) - Σ νj·ΔfH°(réactifs)
+- **Énergies de liaison** : ΔrH = Σ D(rompues) - Σ D(formées)
+- **Calorimétrie** : Q = m·c·ΔT
+- ΔfH°(corps simple stable) = 0

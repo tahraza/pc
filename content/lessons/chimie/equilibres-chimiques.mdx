@@ -1,0 +1,212 @@
+---
+id: "equilibres-chimiques"
+title: "Équilibres chimiques"
+track: "chimie"
+level: 3
+prerequisites: ["cinetique", "acides-bases"]
+tags: ["équilibre", "constante", "Le Chatelier", "quotient", "déplacement"]
+estimatedTime: 50
+chapter: "equilibres"
+order: 1
+---
+
+# Équilibres chimiques
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Écrire l'expression de la constante d'équilibre K
+- Calculer le quotient de réaction Qr
+- Prédire le sens d'évolution d'un système
+- Appliquer le principe de Le Chatelier
+
+## Équilibre chimique
+
+:::definition
+**État d'équilibre**
+
+Un système est à l'**équilibre chimique** lorsque les vitesses des réactions directe et inverse sont égales. Les concentrations restent constantes mais les réactions continuent (équilibre dynamique).
+
+On note l'équilibre avec une double flèche : ⇌
+:::
+
+:::property[Caractéristiques de l'équilibre]
+- La composition du système reste constante
+- Les réactions directe et inverse ont lieu simultanément
+- L'équilibre est **dynamique** (pas statique)
+- Il ne dépend pas du chemin parcouru
+:::
+
+## Constante d'équilibre K
+
+:::definition
+**Constante d'équilibre K**
+
+Pour une réaction : aA + bB ⇌ cC + dD
+
+$$K = \frac{[C]^c_{éq} \cdot [D]^d_{éq}}{[A]^a_{éq} \cdot [B]^b_{éq}}$$
+
+K ne dépend que de la **température**.
+:::
+
+:::property[Interprétation de K]
+- **K >> 1** : l'équilibre est déplacé vers les produits
+- **K << 1** : l'équilibre est déplacé vers les réactifs
+- **K ≈ 1** : réactifs et produits en quantités comparables
+:::
+
+## Quotient de réaction Qr
+
+:::definition
+**Quotient de réaction Qr**
+
+Le quotient de réaction a la même expression que K, mais calculé à un instant quelconque (pas forcément à l'équilibre).
+
+$$Q_r = \frac{[C]^c \cdot [D]^d}{[A]^a \cdot [B]^b}$$
+:::
+
+:::method[Prédire le sens d'évolution]
+Comparer Qr à K :
+
+| Condition | Évolution | Sens |
+|-----------|-----------|------|
+| Qr < K | Vers l'équilibre | → (sens direct) |
+| Qr > K | Vers l'équilibre | ← (sens inverse) |
+| Qr = K | Équilibre atteint | Pas d'évolution nette |
+:::
+
+## Tableau d'avancement
+
+:::method[Tableau ICE (Initial, Change, Equilibrium)]
+Pour suivre l'évolution vers l'équilibre :
+
+| | A | B | C | D |
+|---|---|---|---|---|
+| Initial | [A]₀ | [B]₀ | [C]₀ | [D]₀ |
+| Variation | -ax | -bx | +cx | +dx |
+| Équilibre | [A]₀-ax | [B]₀-bx | [C]₀+cx | [D]₀+dx |
+
+où x est l'avancement volumique (mol/L).
+:::
+
+## Principe de Le Chatelier
+
+:::property[Le Chatelier]
+Lorsqu'on modifie un paramètre d'un système à l'équilibre, celui-ci évolue de façon à **s'opposer partiellement** à cette modification.
+:::
+
+:::method[Applications du principe]
+
+**Modification de concentration :**
+- Ajouter un réactif → déplacement vers les produits
+- Retirer un produit → déplacement vers les produits
+- Ajouter un produit → déplacement vers les réactifs
+
+**Modification de pression (gaz) :**
+- Augmenter P → déplacement vers le côté avec moins de moles gazeuses
+- Diminuer P → déplacement vers le côté avec plus de moles gazeuses
+
+**Modification de température :**
+- Augmenter T → favorise le sens endothermique
+- Diminuer T → favorise le sens exothermique
+:::
+
+:::warning
+Un **catalyseur** ne déplace PAS l'équilibre. Il permet seulement de l'atteindre plus rapidement.
+:::
+
+## Cas particuliers
+
+:::property[Réactions acido-basiques]
+Pour un acide faible AH : AH + H₂O ⇌ A⁻ + H₃O⁺
+
+$$K_a = \frac{[A^-][H_3O^+]}{[AH]}$$
+
+pKa = -log(Ka)
+:::
+
+:::property[Réactions de précipitation]
+Pour AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq)
+
+$$K_s = [Ag^+][Cl^-]$$
+
+Ks est le produit de solubilité.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Calcul de K
+
+À 25°C, on a à l'équilibre : [N₂] = 0,50 M, [H₂] = 0,30 M, [NH₃] = 0,20 M
+Pour : N₂ + 3H₂ ⇌ 2NH₃, calculer K.
+
+$$K = \frac{[NH_3]^2}{[N_2][H_2]^3} = \frac{(0,20)^2}{(0,50)(0,30)^3} = \frac{0,040}{0,50 \times 0,027} = \frac{0,040}{0,0135} = 2,96$$
+
+### Exemple 2 : Sens d'évolution
+
+Pour la réaction ci-dessus avec K = 2,96, on part de [N₂] = 0,40 M, [H₂] = 0,40 M, [NH₃] = 0,10 M.
+
+$$Q_r = \frac{(0,10)^2}{(0,40)(0,40)^3} = \frac{0,01}{0,40 \times 0,064} = \frac{0,01}{0,0256} = 0,39$$
+
+Qr = 0,39 < K = 2,96
+
+Le système évolue dans le sens direct (→) : formation de NH₃.
+
+### Exemple 3 : Tableau ICE
+
+Pour : H₂(g) + I₂(g) ⇌ 2HI(g) avec K = 50 à 448°C.
+On part de [H₂]₀ = [I₂]₀ = 0,10 M et [HI]₀ = 0.
+
+| | H₂ | I₂ | HI |
+|---|---|---|---|
+| Initial | 0,10 | 0,10 | 0 |
+| Variation | -x | -x | +2x |
+| Équilibre | 0,10-x | 0,10-x | 2x |
+
+$$K = \frac{(2x)^2}{(0,10-x)^2} = 50$$
+
+$$\frac{2x}{0,10-x} = \sqrt{50} = 7,07$$
+
+$$2x = 0,707 - 7,07x$$
+$$9,07x = 0,707$$
+$$x = 0,078 \text{ M}$$
+
+À l'équilibre : [H₂] = [I₂] = 0,022 M ; [HI] = 0,156 M
+
+### Exemple 4 : Le Chatelier
+
+Pour N₂(g) + 3H₂(g) ⇌ 2NH₃(g) (ΔrH < 0)
+
+| Action | Effet |
+|--------|-------|
+| Ajouter N₂ | → plus de NH₃ |
+| Retirer NH₃ | → plus de NH₃ |
+| Augmenter P | → plus de NH₃ (4 mol gaz → 2 mol gaz) |
+| Augmenter T | ← moins de NH₃ (réaction exothermique) |
+| Ajouter catalyseur | Équilibre atteint plus vite, pas de déplacement |
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Inclure les solides ou liquides purs dans K
+
+Les solides et liquides purs n'apparaissent pas dans l'expression de K.
+
+**Erreur 2** : Confondre K et Qr
+
+K est la constante à l'équilibre (ne change qu'avec T).
+Qr est le quotient à un instant donné.
+
+**Erreur 3** : Penser que le catalyseur déplace l'équilibre
+
+Le catalyseur accélère l'atteinte de l'équilibre mais ne modifie pas K.
+:::
+
+## Mini-résumé
+
+- **Constante d'équilibre** : K = [produits]/[réactifs] (à l'équilibre)
+- **Quotient de réaction** : Qr (même forme, à tout instant)
+- Qr < K → sens direct ; Qr > K → sens inverse
+- **Le Chatelier** : le système s'oppose aux perturbations
+- K ne dépend que de la température
+- Les solides/liquides purs n'apparaissent pas dans K

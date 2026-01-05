@@ -1409,5 +1409,254 @@
         "difficulty": 3
       }
     ]
+  },
+  {
+    "id": "quiz-pre-thermochim",
+    "lessonId": "thermochimie",
+    "type": "pre",
+    "title": "Pré-test : Thermochimie",
+    "description": "Évalue tes connaissances avant la leçon sur la thermochimie",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-tc-1",
+        "question": "Une réaction exothermique :",
+        "choices": ["Absorbe de la chaleur", "Libère de la chaleur", "N'échange pas de chaleur", "Absorbe puis libère"],
+        "correct": 1,
+        "explanation": "Exothermique = libère de la chaleur (ΔrH < 0).",
+        "tag": "enthalpie",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-tc-2",
+        "question": "L'enthalpie de formation d'un corps simple stable vaut :",
+        "choices": ["-100 kJ/mol", "100 kJ/mol", "0", "Dépend du corps"],
+        "correct": 2,
+        "explanation": "Par convention, ΔfH°(corps simple stable) = 0.",
+        "tag": "formation",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-tc-3",
+        "question": "Rompre une liaison chimique :",
+        "choices": ["Libère de l'énergie", "Coûte de l'énergie", "N'échange pas d'énergie", "Dépend de la liaison"],
+        "correct": 1,
+        "explanation": "Il faut fournir de l'énergie pour casser une liaison (D > 0).",
+        "tag": "liaison",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-thermochim",
+    "lessonId": "thermochimie",
+    "type": "post",
+    "title": "Post-test : Thermochimie",
+    "description": "Vérifie ta compréhension de la thermochimie",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-tc-1",
+        "question": "Pour calculer ΔrH° avec la loi de Hess, on utilise :",
+        "choices": ["ΔrH° = Σ ΔfH°(réactifs) - Σ ΔfH°(produits)", "ΔrH° = Σ ΔfH°(produits) - Σ ΔfH°(réactifs)", "ΔrH° = Σ ΔfH°(produits) + Σ ΔfH°(réactifs)", "ΔrH° = Σ ΔfH°(produits) × Σ ΔfH°(réactifs)"],
+        "correct": 1,
+        "explanation": "Loi de Hess : ΔrH° = Σ νi·ΔfH°(produits) - Σ νj·ΔfH°(réactifs)",
+        "tag": "Hess",
+        "difficulty": 2
+      },
+      {
+        "id": "post-tc-2",
+        "question": "Avec les énergies de liaison : D(H-H) = 436 kJ/mol, D(Cl-Cl) = 242 kJ/mol, D(H-Cl) = 431 kJ/mol. Pour H₂ + Cl₂ → 2HCl, ΔrH vaut :",
+        "choices": ["+184 kJ/mol", "-184 kJ/mol", "+678 kJ/mol", "-862 kJ/mol"],
+        "correct": 1,
+        "explanation": "ΔrH = (436 + 242) - 2×431 = 678 - 862 = -184 kJ/mol",
+        "tag": "liaison",
+        "difficulty": 3
+      },
+      {
+        "id": "post-tc-3",
+        "question": "En calorimétrie, Q = m·c·ΔT. Si m = 100 g, c = 4,18 J/(g·K), ΔT = 10 K :",
+        "choices": ["Q = 418 J", "Q = 4180 J", "Q = 41,8 J", "Q = 41800 J"],
+        "correct": 1,
+        "explanation": "Q = 100 × 4,18 × 10 = 4180 J",
+        "tag": "calorimétrie",
+        "difficulty": 2
+      },
+      {
+        "id": "post-tc-4",
+        "question": "Le pouvoir calorifique d'un combustible représente :",
+        "choices": ["L'énergie nécessaire pour le brûler", "L'énergie libérée par sa combustion", "Sa température de combustion", "Sa vitesse de combustion"],
+        "correct": 1,
+        "explanation": "Le pouvoir calorifique est l'énergie libérée par la combustion d'1 kg (ou 1 m³).",
+        "tag": "pouvoir calorifique",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-equil",
+    "lessonId": "equilibres-chimiques",
+    "type": "pre",
+    "title": "Pré-test : Équilibres chimiques",
+    "description": "Évalue tes connaissances avant la leçon sur les équilibres",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-eq-1",
+        "question": "Un équilibre chimique est :",
+        "choices": ["Statique (rien ne se passe)", "Dynamique (réactions dans les deux sens)", "Irréversible", "Impossible à atteindre"],
+        "correct": 1,
+        "explanation": "À l'équilibre, les réactions directe et inverse ont lieu simultanément (équilibre dynamique).",
+        "tag": "équilibre",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-eq-2",
+        "question": "Si K = 10⁶, l'équilibre est :",
+        "choices": ["Très déplacé vers les réactifs", "Très déplacé vers les produits", "Équilibré", "Impossible à prédire"],
+        "correct": 1,
+        "explanation": "K >> 1 signifie que les produits sont majoritaires à l'équilibre.",
+        "tag": "constante K",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-eq-3",
+        "question": "Un catalyseur :",
+        "choices": ["Déplace l'équilibre vers les produits", "Déplace l'équilibre vers les réactifs", "Accélère l'atteinte de l'équilibre sans le déplacer", "N'a aucun effet sur l'équilibre"],
+        "correct": 2,
+        "explanation": "Un catalyseur accélère les réactions directe ET inverse de la même façon.",
+        "tag": "catalyseur",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-equil",
+    "lessonId": "equilibres-chimiques",
+    "type": "post",
+    "title": "Post-test : Équilibres chimiques",
+    "description": "Vérifie ta compréhension des équilibres chimiques",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-eq-1",
+        "question": "Pour 2A ⇌ B + C, K s'écrit :",
+        "choices": ["K = [A]²/([B][C])", "K = [B][C]/[A]²", "K = [B][C]/[A]", "K = [A]/([B][C])"],
+        "correct": 1,
+        "explanation": "K = [produits]/[réactifs] avec les coefficients en exposant.",
+        "tag": "expression K",
+        "difficulty": 2
+      },
+      {
+        "id": "post-eq-2",
+        "question": "Si Qr < K, le système évolue :",
+        "choices": ["Dans le sens inverse", "Dans le sens direct", "Il est à l'équilibre", "Il est impossible de savoir"],
+        "correct": 1,
+        "explanation": "Qr < K : le système évolue vers les produits (sens direct) pour augmenter Qr.",
+        "tag": "quotient",
+        "difficulty": 2
+      },
+      {
+        "id": "post-eq-3",
+        "question": "Pour N₂ + 3H₂ ⇌ 2NH₃ (ΔrH < 0), augmenter la pression :",
+        "choices": ["Déplace vers NH₃", "Déplace vers N₂ + H₂", "N'a pas d'effet", "Stoppe la réaction"],
+        "correct": 0,
+        "explanation": "4 mol gaz → 2 mol gaz. Augmenter P favorise le côté avec moins de moles.",
+        "tag": "Le Chatelier",
+        "difficulty": 3
+      },
+      {
+        "id": "post-eq-4",
+        "question": "Augmenter T pour une réaction exothermique :",
+        "choices": ["Favorise le sens direct", "Favorise le sens inverse", "N'a pas d'effet sur l'équilibre", "Augmente K"],
+        "correct": 1,
+        "explanation": "Augmenter T favorise le sens endothermique (inverse pour une exothermique).",
+        "tag": "température",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "quiz-pre-em",
+    "lessonId": "electromagnetisme",
+    "type": "pre",
+    "title": "Pré-test : Électromagnétisme",
+    "description": "Évalue tes connaissances avant la leçon sur l'électromagnétisme",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-em-1",
+        "question": "Le champ électrique s'exprime en :",
+        "choices": ["Tesla", "Volt/mètre", "Ampère", "Weber"],
+        "correct": 1,
+        "explanation": "Le champ électrique E s'exprime en V/m ou N/C.",
+        "tag": "champ électrique",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-em-2",
+        "question": "Le champ magnétique s'exprime en :",
+        "choices": ["Volt", "Ampère", "Tesla", "Ohm"],
+        "correct": 2,
+        "explanation": "Le champ magnétique B s'exprime en Tesla (T).",
+        "tag": "champ magnétique",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-em-3",
+        "question": "La force de Lorentz sur une particule immobile est :",
+        "choices": ["Maximale", "Nulle", "Égale à qB", "Égale à qE"],
+        "correct": 1,
+        "explanation": "F = qv×B, si v = 0 alors F = 0.",
+        "tag": "Lorentz",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-em",
+    "lessonId": "electromagnetisme",
+    "type": "post",
+    "title": "Post-test : Électromagnétisme",
+    "description": "Vérifie ta compréhension de l'électromagnétisme",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-em-1",
+        "question": "Entre deux plaques séparées de 2 cm sous 100 V, E vaut :",
+        "choices": ["50 V/m", "500 V/m", "5000 V/m", "200 V/m"],
+        "correct": 2,
+        "explanation": "E = U/d = 100/(2×10⁻²) = 5000 V/m",
+        "tag": "champ électrique",
+        "difficulty": 2
+      },
+      {
+        "id": "post-em-2",
+        "question": "La force de Lorentz F = qv×B est toujours :",
+        "choices": ["Parallèle à v", "Parallèle à B", "Perpendiculaire à v et B", "Nulle"],
+        "correct": 2,
+        "explanation": "Le produit vectoriel donne un vecteur perpendiculaire aux deux vecteurs.",
+        "tag": "Lorentz",
+        "difficulty": 2
+      },
+      {
+        "id": "post-em-3",
+        "question": "La loi de Faraday donne : e = -dΦ/dt. Le signe - traduit :",
+        "choices": ["La conservation de la charge", "La loi de Lenz", "La résistance du circuit", "L'effet Joule"],
+        "correct": 1,
+        "explanation": "Le signe - exprime la loi de Lenz : le courant induit s'oppose à la cause.",
+        "tag": "Faraday",
+        "difficulty": 2
+      },
+      {
+        "id": "post-em-4",
+        "question": "Un transformateur avec N₁ = 1000 et N₂ = 100 est :",
+        "choices": ["Élévateur", "Abaisseur", "Ni l'un ni l'autre", "Impossible à dire"],
+        "correct": 1,
+        "explanation": "N₂ < N₁ donc U₂ < U₁ : c'est un transformateur abaisseur.",
+        "tag": "transformateur",
+        "difficulty": 2
+      }
+    ]
   }
 ]

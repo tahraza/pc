@@ -1,0 +1,224 @@
+---
+id: "electromagnetisme"
+title: "Électromagnétisme"
+track: "physique"
+level: 4
+prerequisites: ["circuit-rc"]
+tags: ["électromagnétisme", "champ", "force", "induction", "Lorentz"]
+estimatedTime: 55
+chapter: "electricite"
+order: 2
+---
+
+# Électromagnétisme
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Décrire les champs électrique et magnétique
+- Calculer la force de Lorentz
+- Expliquer l'induction électromagnétique
+- Appliquer la loi de Lenz
+
+## Champ électrique
+
+:::definition
+**Champ électrique E**
+
+Le **champ électrique** E créé par une charge Q à une distance r est :
+
+$$\vec{E} = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2} \vec{u_r}$$
+
+- ε₀ = 8,85 × 10⁻¹² F/m (permittivité du vide)
+- E s'exprime en V/m ou N/C
+:::
+
+:::property[Champ uniforme]
+Entre deux plaques parallèles séparées de d et soumises à une tension U :
+
+$$E = \frac{U}{d}$$
+
+Le champ est dirigé du + vers le -.
+:::
+
+:::property[Force électrique]
+Une charge q placée dans un champ E subit la force :
+
+$$\vec{F} = q\vec{E}$$
+:::
+
+## Champ magnétique
+
+:::definition
+**Champ magnétique B**
+
+Le **champ magnétique** B caractérise l'espace autour d'un aimant ou d'un courant électrique.
+
+- B s'exprime en Tesla (T)
+- Lignes de champ : du pôle Nord vers le pôle Sud
+:::
+
+:::property[Champ créé par un solénoïde]
+À l'intérieur d'un solénoïde de N spires, longueur L, parcouru par I :
+
+$$B = \mu_0 \frac{N}{L} I = \mu_0 n I$$
+
+- μ₀ = 4π × 10⁻⁷ T·m/A (perméabilité du vide)
+- n = N/L (nombre de spires par mètre)
+:::
+
+## Force de Lorentz
+
+:::definition
+**Force de Lorentz**
+
+Une particule de charge q, animée de vitesse v dans un champ magnétique B, subit :
+
+$$\vec{F} = q\vec{v} \times \vec{B}$$
+
+La force est perpendiculaire à v et à B.
+:::
+
+:::method[Règle de la main droite]
+Pour trouver le sens de F :
+1. Pouce : sens de v
+2. Index : sens de B
+3. Majeur : sens de F (pour q > 0)
+
+Pour q < 0, inverser le sens de F.
+:::
+
+:::property[Caractéristiques de la force de Lorentz]
+- F ⊥ v → la force ne travaille pas (W = 0)
+- F ⊥ v → la vitesse change de direction, pas de norme
+- Dans un champ B uniforme : trajectoire circulaire
+:::
+
+## Mouvement dans un champ magnétique
+
+:::property[Rayon de la trajectoire circulaire]
+Pour une particule de masse m, charge q, vitesse v dans B uniforme :
+
+$$r = \frac{mv}{|q|B}$$
+:::
+
+:::property[Période du mouvement]
+$$T = \frac{2\pi m}{|q|B}$$
+
+La période ne dépend pas de la vitesse (principe du cyclotron).
+:::
+
+## Induction électromagnétique
+
+:::definition
+**Flux magnétique Φ**
+
+Le **flux** du champ magnétique B à travers une surface S est :
+
+$$\Phi = \vec{B} \cdot \vec{S} = BS\cos(\theta)$$
+
+- Φ s'exprime en Weber (Wb)
+- θ : angle entre B et la normale à S
+:::
+
+:::property[Loi de Faraday]
+La variation du flux magnétique à travers un circuit induit une force électromotrice (f.é.m.) :
+
+$$e = -\frac{d\Phi}{dt}$$
+
+Le signe moins traduit la loi de Lenz.
+:::
+
+:::definition
+**Loi de Lenz**
+
+Le courant induit crée un champ magnétique qui **s'oppose** à la variation de flux qui lui a donné naissance.
+
+C'est une manifestation de la conservation de l'énergie.
+:::
+
+## Applications
+
+:::method[Générateur]
+Un cadre tournant dans un champ magnétique produit une f.é.m. alternative :
+
+$$e = NBS\omega\sin(\omega t)$$
+
+C'est le principe de l'alternateur.
+:::
+
+:::method[Transformateur]
+Rapport de transformation :
+$$\frac{U_2}{U_1} = \frac{N_2}{N_1}$$
+
+- N₂ > N₁ : transformateur élévateur
+- N₂ < N₁ : transformateur abaisseur
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Champ électrique
+
+Deux plaques parallèles distantes de d = 2 cm sont soumises à U = 200 V.
+Calculer E et la force sur un électron.
+
+$$E = \frac{U}{d} = \frac{200}{0,02} = 10^4 \text{ V/m}$$
+
+$$F = |q|E = 1,6 \times 10^{-19} \times 10^4 = 1,6 \times 10^{-15} \text{ N}$$
+
+### Exemple 2 : Force de Lorentz
+
+Un proton (m = 1,67 × 10⁻²⁷ kg, q = 1,6 × 10⁻¹⁹ C) se déplace à v = 10⁶ m/s perpendiculairement à B = 0,5 T.
+
+Force : $F = qvB = 1,6 \times 10^{-19} \times 10^6 \times 0,5 = 8 \times 10^{-14}$ N
+
+Rayon : $r = \frac{mv}{qB} = \frac{1,67 \times 10^{-27} \times 10^6}{1,6 \times 10^{-19} \times 0,5} = 0,021$ m = 2,1 cm
+
+### Exemple 3 : Induction
+
+Une bobine de N = 100 spires, section S = 10 cm², est placée dans un champ B qui passe de 0 à 0,2 T en Δt = 0,1 s.
+
+$$\Delta\Phi = NBS = 100 \times 0,2 \times 10^{-3} = 0,02 \text{ Wb}$$
+
+$$e = -\frac{\Delta\Phi}{\Delta t} = -\frac{0,02}{0,1} = -0,2 \text{ V}$$
+
+La f.é.m. induite est de 0,2 V.
+
+### Exemple 4 : Transformateur
+
+Un transformateur a N₁ = 500 spires au primaire et N₂ = 50 spires au secondaire.
+Si U₁ = 230 V, quelle est U₂ ?
+
+$$U_2 = U_1 \times \frac{N_2}{N_1} = 230 \times \frac{50}{500} = 23 \text{ V}$$
+
+C'est un transformateur abaisseur.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier que F ⊥ v
+
+La force de Lorentz est toujours perpendiculaire à la vitesse. Elle dévie mais n'accélère pas.
+
+**Erreur 2** : Se tromper dans le produit vectoriel
+
+Utiliser systématiquement la règle de la main droite et vérifier le signe de q.
+
+**Erreur 3** : Confondre flux et champ
+
+Φ = B·S (produit scalaire), c'est une grandeur scalaire en Wb.
+
+**Erreur 4** : Oublier le signe dans la loi de Faraday
+
+e = -dΦ/dt (le signe traduit Lenz).
+:::
+
+## Mini-résumé
+
+- **Champ électrique** : E = U/d (uniforme) ; F = qE
+- **Force de Lorentz** : F = qv × B (perpendiculaire à v et B)
+- **Trajectoire circulaire** : r = mv/(qB), T = 2πm/(qB)
+- **Flux magnétique** : Φ = BS·cos(θ)
+- **Loi de Faraday** : e = -dΦ/dt
+- **Loi de Lenz** : le courant induit s'oppose à la cause
+- **Transformateur** : U₂/U₁ = N₂/N₁

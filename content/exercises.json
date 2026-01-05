@@ -1819,5 +1819,409 @@
       "Se tromper dans le signe du travail"
     ],
     "tags": ["isotherme", "premier principe", "travail"]
+  },
+  {
+    "id": "ex-thermochim-1",
+    "lessonId": "thermochimie",
+    "title": "Enthalpie de combustion",
+    "difficulty": 2,
+    "statement": "Calculer l'enthalpie de combustion du méthane : CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l). Données : ΔfH°(CH₄) = -75 kJ/mol, ΔfH°(CO₂) = -394 kJ/mol, ΔfH°(H₂O,l) = -286 kJ/mol.",
+    "hints": [
+      "Utilise la loi de Hess",
+      "ΔrH° = Σ ΔfH°(produits) - Σ ΔfH°(réactifs)",
+      "N'oublie pas les coefficients stœchiométriques"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la loi de Hess",
+        "content": "ΔrH° = [ΔfH°(CO₂) + 2×ΔfH°(H₂O)] - [ΔfH°(CH₄) + 2×ΔfH°(O₂)]",
+        "explanation": "ΔfH°(O₂) = 0 car c'est un corps simple stable"
+      },
+      {
+        "step": 2,
+        "title": "Calcul numérique",
+        "content": "ΔrH° = [-394 + 2×(-286)] - [-75 + 0] = -394 - 572 + 75 = -891 kJ/mol",
+        "explanation": "La réaction est fortement exothermique"
+      }
+    ],
+    "method": "Loi de Hess avec enthalpies de formation",
+    "commonMistakes": [
+      "Oublier le coefficient 2 devant H₂O",
+      "Ne pas mettre ΔfH°(O₂) = 0"
+    ],
+    "tags": ["enthalpie", "combustion", "Hess"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-thermochim-2",
+    "lessonId": "thermochimie",
+    "title": "Énergies de liaison",
+    "difficulty": 3,
+    "statement": "Calculer ΔrH pour : H₂(g) + Cl₂(g) → 2HCl(g). Données : D(H-H) = 436 kJ/mol, D(Cl-Cl) = 242 kJ/mol, D(H-Cl) = 431 kJ/mol.",
+    "hints": [
+      "ΔrH = Σ D(liaisons rompues) - Σ D(liaisons formées)",
+      "Compte le nombre de liaisons rompues et formées",
+      "On rompt 1 H-H et 1 Cl-Cl, on forme 2 H-Cl"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Bilan des liaisons",
+        "content": "Liaisons rompues : 1 H-H + 1 Cl-Cl = 436 + 242 = 678 kJ\nLiaisons formées : 2 H-Cl = 2 × 431 = 862 kJ",
+        "explanation": "Rompre coûte de l'énergie, former en libère"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de ΔrH",
+        "content": "ΔrH = 678 - 862 = -184 kJ/mol",
+        "explanation": "ΔrH < 0 : réaction exothermique"
+      }
+    ],
+    "method": "Calcul avec les énergies de liaison",
+    "commonMistakes": [
+      "Inverser le signe (rompues - formées)",
+      "Oublier qu'on forme 2 liaisons H-Cl"
+    ],
+    "tags": ["énergie de liaison", "enthalpie"]
+  },
+  {
+    "id": "ex-thermochim-3",
+    "lessonId": "thermochimie",
+    "title": "Calorimétrie",
+    "difficulty": 3,
+    "statement": "On dissout 4,0 g de NaOH (M = 40 g/mol) dans 150 mL d'eau dans un calorimètre de capacité thermique 45 J/K. La température passe de 22,0°C à 28,5°C. Calculer l'enthalpie de dissolution. (ceau = 4,18 J·g⁻¹·K⁻¹)",
+    "hints": [
+      "Calcule d'abord la quantité de matière n",
+      "Q absorbé par l'eau et le calorimètre = -Q dissolution",
+      "ΔdissH = Q/n"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Quantité de matière",
+        "content": "n = m/M = 4,0/40 = 0,10 mol",
+        "explanation": ""
+      },
+      {
+        "step": 2,
+        "title": "Chaleur absorbée",
+        "content": "Q = (meau × ceau + Ccalo) × ΔT = (150 × 4,18 + 45) × 6,5 = 672 × 6,5 = 4368 J",
+        "explanation": "ΔT = 28,5 - 22,0 = 6,5 K"
+      },
+      {
+        "step": 3,
+        "title": "Enthalpie de dissolution",
+        "content": "ΔdissH = -Q/n = -4368/0,10 = -43,7 kJ/mol",
+        "explanation": "Le signe - car la dissolution libère de la chaleur (exothermique)"
+      }
+    ],
+    "method": "Calorimétrie et conservation de l'énergie",
+    "commonMistakes": [
+      "Oublier la capacité thermique du calorimètre",
+      "Se tromper dans le signe de ΔdissH"
+    ],
+    "tags": ["calorimétrie", "dissolution", "enthalpie"]
+  },
+  {
+    "id": "ex-thermochim-4",
+    "lessonId": "thermochimie",
+    "title": "Pouvoir calorifique",
+    "difficulty": 3,
+    "statement": "Le propane C₃H₈ a une enthalpie de combustion ΔcH° = -2220 kJ/mol. Calculer son pouvoir calorifique massique. (M(C₃H₈) = 44 g/mol)",
+    "hints": [
+      "Le pouvoir calorifique est l'énergie libérée par kg",
+      "Convertis d'abord par gramme, puis par kg",
+      "Attention : on veut une valeur positive"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Énergie par gramme",
+        "content": "Par mole : |ΔcH°| = 2220 kJ\nPar gramme : 2220/44 = 50,5 kJ/g",
+        "explanation": "On prend la valeur absolue pour le pouvoir calorifique"
+      },
+      {
+        "step": 2,
+        "title": "Pouvoir calorifique massique",
+        "content": "PCI = 50,5 × 1000 = 50 500 kJ/kg ≈ 50,5 MJ/kg",
+        "explanation": "Valeur typique pour un hydrocarbure"
+      }
+    ],
+    "method": "Conversion mol → kg pour le pouvoir calorifique",
+    "commonMistakes": [
+      "Garder le signe négatif",
+      "Oublier de convertir en kg"
+    ],
+    "tags": ["pouvoir calorifique", "combustion"]
+  },
+  {
+    "id": "ex-equil-1",
+    "lessonId": "equilibres-chimiques",
+    "title": "Calcul de la constante K",
+    "difficulty": 2,
+    "statement": "Pour la réaction 2NO₂(g) ⇌ N₂O₄(g), à l'équilibre on mesure [NO₂] = 0,040 M et [N₂O₄] = 0,080 M. Calculer K.",
+    "hints": [
+      "K = [produits]/[réactifs] avec les coefficients en exposant",
+      "Attention à l'exposant de [NO₂]"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Expression de K",
+        "content": "K = [N₂O₄]/[NO₂]²",
+        "explanation": "Le coefficient 2 de NO₂ devient un exposant"
+      },
+      {
+        "step": 2,
+        "title": "Calcul",
+        "content": "K = 0,080/(0,040)² = 0,080/0,0016 = 50",
+        "explanation": "K > 1 : l'équilibre favorise le produit N₂O₄"
+      }
+    ],
+    "method": "Expression et calcul de la constante d'équilibre",
+    "commonMistakes": [
+      "Oublier l'exposant 2",
+      "Inverser produits et réactifs"
+    ],
+    "tags": ["équilibre", "constante K"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-equil-2",
+    "lessonId": "equilibres-chimiques",
+    "title": "Quotient de réaction et sens d'évolution",
+    "difficulty": 3,
+    "statement": "Pour H₂(g) + I₂(g) ⇌ 2HI(g), K = 50 à 448°C. On mélange [H₂] = [I₂] = 0,10 M et [HI] = 0,50 M. Dans quel sens évolue le système ?",
+    "hints": [
+      "Calcule d'abord Qr",
+      "Compare Qr à K",
+      "Qr < K : sens direct, Qr > K : sens inverse"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de Qr",
+        "content": "Qr = [HI]²/([H₂][I₂]) = (0,50)²/(0,10 × 0,10) = 0,25/0,01 = 25",
+        "explanation": ""
+      },
+      {
+        "step": 2,
+        "title": "Comparaison",
+        "content": "Qr = 25 < K = 50\nLe système évolue dans le sens direct (→)",
+        "explanation": "Il va se former plus de HI jusqu'à ce que Qr = K"
+      }
+    ],
+    "method": "Comparaison Qr et K pour prédire l'évolution",
+    "commonMistakes": [
+      "Confondre Qr et K",
+      "Se tromper dans le sens d'évolution"
+    ],
+    "tags": ["quotient", "évolution", "équilibre"]
+  },
+  {
+    "id": "ex-equil-3",
+    "lessonId": "equilibres-chimiques",
+    "title": "Tableau d'avancement (ICE)",
+    "difficulty": 4,
+    "statement": "Pour A ⇌ 2B avec K = 4,0. On part de [A]₀ = 1,0 M et [B]₀ = 0. Calculer les concentrations à l'équilibre.",
+    "hints": [
+      "Fais un tableau ICE",
+      "Pose [A]éq = 1,0 - x et [B]éq = 2x",
+      "Résous K = [B]²/[A]"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Tableau ICE",
+        "content": "| | A | B |\n|Initial| 1,0 | 0 |\n|Variation| -x | +2x |\n|Équilibre| 1,0-x | 2x |",
+        "explanation": ""
+      },
+      {
+        "step": 2,
+        "title": "Équation avec K",
+        "content": "K = (2x)²/(1,0-x) = 4,0\n4x² = 4,0(1,0-x)\n4x² + 4x - 4 = 0\nx² + x - 1 = 0",
+        "explanation": ""
+      },
+      {
+        "step": 3,
+        "title": "Résolution",
+        "content": "x = (-1 + √5)/2 = 0,618 M\n[A]éq = 1,0 - 0,618 = 0,38 M\n[B]éq = 2 × 0,618 = 1,24 M",
+        "explanation": "On garde la solution positive"
+      }
+    ],
+    "method": "Résolution avec tableau ICE",
+    "commonMistakes": [
+      "Oublier le coefficient 2 dans la variation de B",
+      "Garder une solution négative"
+    ],
+    "tags": ["ICE", "équilibre", "résolution"]
+  },
+  {
+    "id": "ex-equil-4",
+    "lessonId": "equilibres-chimiques",
+    "title": "Principe de Le Chatelier",
+    "difficulty": 2,
+    "statement": "Pour N₂(g) + 3H₂(g) ⇌ 2NH₃(g) (ΔrH < 0), prédire l'effet de : a) Ajouter N₂, b) Augmenter la pression, c) Augmenter la température.",
+    "hints": [
+      "Le Chatelier : le système s'oppose à la perturbation",
+      "Pour la pression, compte les moles de gaz",
+      "Pour T, regarde le signe de ΔrH"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Ajout de N₂",
+        "content": "Le système consomme N₂ → sens direct → plus de NH₃",
+        "explanation": "Le système s'oppose à l'augmentation de [N₂]"
+      },
+      {
+        "step": 2,
+        "title": "Augmentation de P",
+        "content": "Réactifs : 1+3 = 4 mol gaz\nProduits : 2 mol gaz\nLe système se déplace vers moins de moles → sens direct → plus de NH₃",
+        "explanation": ""
+      },
+      {
+        "step": 3,
+        "title": "Augmentation de T",
+        "content": "ΔrH < 0 : réaction exothermique\nAugmenter T favorise le sens endothermique → sens inverse → moins de NH₃",
+        "explanation": "Le système absorbe de la chaleur pour s'opposer"
+      }
+    ],
+    "method": "Application du principe de Le Chatelier",
+    "commonMistakes": [
+      "Confondre exo et endothermique",
+      "Mal compter les moles de gaz"
+    ],
+    "tags": ["Le Chatelier", "équilibre", "déplacement"]
+  },
+  {
+    "id": "ex-em-1",
+    "lessonId": "electromagnetisme",
+    "title": "Champ électrique uniforme",
+    "difficulty": 2,
+    "statement": "Deux plaques parallèles distantes de d = 5,0 cm sont soumises à une tension U = 500 V. Calculer le champ électrique E et la force sur un électron (e = 1,6 × 10⁻¹⁹ C).",
+    "hints": [
+      "E = U/d pour un champ uniforme",
+      "F = qE pour la force électrique",
+      "Attention aux unités"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du champ",
+        "content": "E = U/d = 500/(5,0 × 10⁻²) = 10 000 V/m = 10⁴ V/m",
+        "explanation": ""
+      },
+      {
+        "step": 2,
+        "title": "Force sur l'électron",
+        "content": "F = |q|E = 1,6 × 10⁻¹⁹ × 10⁴ = 1,6 × 10⁻¹⁵ N",
+        "explanation": "Force dirigée vers la plaque positive (opposée à E)"
+      }
+    ],
+    "method": "Champ et force électriques",
+    "commonMistakes": [
+      "Oublier de convertir cm en m",
+      "Se tromper dans la direction de F"
+    ],
+    "tags": ["champ électrique", "force"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-em-2",
+    "lessonId": "electromagnetisme",
+    "title": "Force de Lorentz",
+    "difficulty": 3,
+    "statement": "Un proton (m = 1,67 × 10⁻²⁷ kg, q = 1,6 × 10⁻¹⁹ C) entre à v = 2 × 10⁶ m/s dans un champ magnétique B = 0,50 T, perpendiculairement à B. Calculer la force et le rayon de la trajectoire.",
+    "hints": [
+      "F = qvB (mouvement perpendiculaire à B)",
+      "r = mv/(qB) pour le rayon",
+      "Vérifier les unités"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Force de Lorentz",
+        "content": "F = qvB = 1,6 × 10⁻¹⁹ × 2 × 10⁶ × 0,50 = 1,6 × 10⁻¹³ N",
+        "explanation": "Force perpendiculaire à v et B"
+      },
+      {
+        "step": 2,
+        "title": "Rayon de la trajectoire",
+        "content": "r = mv/(qB) = (1,67 × 10⁻²⁷ × 2 × 10⁶)/(1,6 × 10⁻¹⁹ × 0,50)\nr = 3,34 × 10⁻²¹/(8 × 10⁻²⁰) = 0,042 m = 4,2 cm",
+        "explanation": "Trajectoire circulaire dans le champ"
+      }
+    ],
+    "method": "Force de Lorentz et mouvement circulaire",
+    "commonMistakes": [
+      "Confondre masse et charge",
+      "Oublier que F ⊥ v"
+    ],
+    "tags": ["Lorentz", "trajectoire", "magnétique"]
+  },
+  {
+    "id": "ex-em-3",
+    "lessonId": "electromagnetisme",
+    "title": "Induction électromagnétique",
+    "difficulty": 3,
+    "statement": "Une bobine de N = 200 spires et de section S = 25 cm² est placée dans un champ magnétique B perpendiculaire à son axe. B passe de 0 à 0,30 T en 50 ms. Calculer la f.é.m. induite.",
+    "hints": [
+      "Calcule d'abord la variation de flux ΔΦ",
+      "e = -ΔΦ/Δt (loi de Faraday)",
+      "Pour N spires, le flux total est NBS"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Variation de flux",
+        "content": "Φ = NBS (θ = 0°, cos(0) = 1)\nΔΦ = N × S × ΔB = 200 × 25 × 10⁻⁴ × 0,30 = 0,15 Wb",
+        "explanation": "Le flux varie car B varie"
+      },
+      {
+        "step": 2,
+        "title": "F.é.m. induite",
+        "content": "e = -ΔΦ/Δt = -0,15/(50 × 10⁻³) = -3,0 V",
+        "explanation": "|e| = 3,0 V, le signe indique le sens du courant (Lenz)"
+      }
+    ],
+    "method": "Loi de Faraday et induction",
+    "commonMistakes": [
+      "Oublier de convertir cm² en m²",
+      "Confondre ΔB et B"
+    ],
+    "tags": ["induction", "Faraday", "flux"]
+  },
+  {
+    "id": "ex-em-4",
+    "lessonId": "electromagnetisme",
+    "title": "Transformateur",
+    "difficulty": 2,
+    "statement": "Un transformateur a N₁ = 1000 spires au primaire et N₂ = 100 spires au secondaire. La tension d'entrée est U₁ = 230 V. Calculer U₂ et préciser s'il est élévateur ou abaisseur.",
+    "hints": [
+      "Rapport de transformation : U₂/U₁ = N₂/N₁",
+      "Si U₂ < U₁ : abaisseur",
+      "Si U₂ > U₁ : élévateur"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Tension au secondaire",
+        "content": "U₂ = U₁ × N₂/N₁ = 230 × 100/1000 = 23 V",
+        "explanation": ""
+      },
+      {
+        "step": 2,
+        "title": "Type de transformateur",
+        "content": "U₂ = 23 V < U₁ = 230 V\nC'est un transformateur abaisseur",
+        "explanation": "Utilisé par exemple pour les chargeurs de téléphone"
+      }
+    ],
+    "method": "Loi du transformateur idéal",
+    "commonMistakes": [
+      "Inverser N₁ et N₂",
+      "Confondre élévateur et abaisseur"
+    ],
+    "tags": ["transformateur", "tension"]
   }
 ]
