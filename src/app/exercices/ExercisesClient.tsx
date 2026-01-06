@@ -93,14 +93,14 @@ export default function ExercisesClient() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 py-8">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="animate-pulse">
-            <div className="h-8 w-48 bg-slate-200 rounded mb-4"></div>
-            <div className="h-4 w-96 bg-slate-200 rounded mb-8"></div>
+            <div className="h-8 w-48 bg-slate-200 dark:bg-slate-700 rounded mb-4"></div>
+            <div className="h-4 w-96 bg-slate-200 dark:bg-slate-700 rounded mb-8"></div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="h-40 bg-slate-200 rounded-xl"></div>
+                <div key={i} className="h-40 bg-slate-200 dark:bg-slate-700 rounded-xl"></div>
               ))}
             </div>
           </div>
@@ -110,22 +110,22 @@ export default function ExercisesClient() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3">
             <ClipboardList className="h-8 w-8 text-amber-600" />
             Exercices
           </h1>
-          <p className="mt-2 text-slate-600">
+          <p className="mt-2 text-slate-600 dark:text-slate-400">
             {exercises.length} exercices corrigés avec indices et solutions détaillées
           </p>
         </div>
 
         {/* Filters */}
         <div className="mb-6 flex flex-wrap items-center gap-4">
-          <div className="flex items-center gap-2 text-sm text-slate-600">
+          <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
             <Filter className="h-4 w-4" />
             Filtrer :
           </div>
@@ -159,7 +159,7 @@ export default function ExercisesClient() {
           {(lessonFilter || difficultyFilter) && (
             <Link
               href="/exercices"
-              className="text-sm text-slate-500 hover:text-slate-700"
+              className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300"
             >
               Réinitialiser
             </Link>
@@ -167,7 +167,7 @@ export default function ExercisesClient() {
         </div>
 
         {/* Results count */}
-        <div className="mb-6 text-sm text-slate-600">
+        <div className="mb-6 text-sm text-slate-600 dark:text-slate-400">
           {filteredExercises.length} exercice{filteredExercises.length > 1 ? 's' : ''} trouvé{filteredExercises.length > 1 ? 's' : ''}
         </div>
 
@@ -180,11 +180,11 @@ export default function ExercisesClient() {
 
               return (
                 <div key={difficulty}>
-                  <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold text-slate-900">
+                  <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-slate-100">
                     <span className={`badge ${getDifficultyColor(difficulty)}`}>
                       {getDifficultyLabel(difficulty)}
                     </span>
-                    <span className="text-slate-400 font-normal text-sm">
+                    <span className="text-slate-400 dark:text-slate-500 font-normal text-sm">
                       ({exercisesForDifficulty.length} exercice{exercisesForDifficulty.length > 1 ? 's' : ''})
                     </span>
                   </h2>
@@ -197,31 +197,31 @@ export default function ExercisesClient() {
                         <Link
                           key={exercise.id}
                           href={`/exercices/${exercise.id}`}
-                          className="card group hover:border-amber-200 hover:shadow-md transition-all"
+                          className="card group hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-md transition-all"
                         >
                           <div className="flex items-start justify-between">
                             <span className={`badge ${getDifficultyColor(exercise.difficulty)}`}>
                               {getDifficultyLabel(exercise.difficulty)}
                             </span>
-                            <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-amber-600 transition-colors" />
+                            <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors" />
                           </div>
 
-                          <h3 className="mt-3 font-semibold text-slate-900 group-hover:text-amber-600 transition-colors">
+                          <h3 className="mt-3 font-semibold text-slate-900 dark:text-slate-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                             {exercise.title}
                           </h3>
 
-                          <div className="mt-2 text-sm text-slate-600 line-clamp-2">
+                          <div className="mt-2 text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
                             <MathText text={exercise.statement.length > 120 ? exercise.statement.slice(0, 120) + '...' : exercise.statement} />
                           </div>
 
                           {lesson && (
-                            <div className="mt-3 flex items-center gap-1 text-xs text-slate-500">
+                            <div className="mt-3 flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
                               <Tag className="h-3 w-3" />
                               {lesson.title}
                             </div>
                           )}
 
-                          <div className="mt-3 flex items-center gap-4 text-xs text-slate-500">
+                          <div className="mt-3 flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
                             <span>{exercise.hints.length} indice{exercise.hints.length > 1 ? 's' : ''}</span>
                             <span>{exercise.solutionSteps.length} étape{exercise.solutionSteps.length > 1 ? 's' : ''}</span>
                           </div>
@@ -235,16 +235,16 @@ export default function ExercisesClient() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <ClipboardList className="mx-auto h-12 w-12 text-slate-300" />
-            <h3 className="mt-4 text-lg font-medium text-slate-900">
+            <ClipboardList className="mx-auto h-12 w-12 text-slate-300 dark:text-slate-600" />
+            <h3 className="mt-4 text-lg font-medium text-slate-900 dark:text-slate-100">
               Aucun exercice trouvé
             </h3>
-            <p className="mt-2 text-slate-600">
+            <p className="mt-2 text-slate-600 dark:text-slate-400">
               Essayez de modifier vos filtres
             </p>
             <Link
               href="/exercices"
-              className="mt-4 inline-block text-primary-600 hover:text-primary-700"
+              className="mt-4 inline-block text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
             >
               Réinitialiser les filtres
             </Link>

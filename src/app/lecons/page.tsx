@@ -34,12 +34,12 @@ export default function LessonsPage({ searchParams }: PageProps) {
   const chimieModule = structure.find((m) => m.track === 'chimie')
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900">Toutes les leçons</h1>
-          <p className="mt-2 text-slate-600">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Toutes les leçons</h1>
+          <p className="mt-2 text-slate-600 dark:text-slate-400">
             {allLessons.length} leçons couvrant tout le programme de Terminale
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function LessonsPage({ searchParams }: PageProps) {
         />
 
         {/* Results count */}
-        <div className="mb-6 text-sm text-slate-600">
+        <div className="mb-6 text-sm text-slate-600 dark:text-slate-400">
           {filteredLessons.length} leçon{filteredLessons.length > 1 ? 's' : ''} trouvée{filteredLessons.length > 1 ? 's' : ''}
         </div>
 
@@ -64,7 +64,7 @@ export default function LessonsPage({ searchParams }: PageProps) {
               <Link
                 key={lesson.id}
                 href={`/lecons/${lesson.track}/${lesson.slug}`}
-                className="card group hover:border-primary-200 hover:shadow-md transition-all"
+                className="card group hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-md transition-all"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-2">
@@ -78,11 +78,11 @@ export default function LessonsPage({ searchParams }: PageProps) {
                   <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-primary-600 transition-colors" />
                 </div>
 
-                <h3 className="mt-4 text-lg font-semibold text-slate-900 group-hover:text-primary-600 transition-colors">
+                <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   {lesson.title}
                 </h3>
 
-                <div className="mt-4 flex items-center gap-4 text-sm text-slate-500">
+                <div className="mt-4 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
                   <div className="flex items-center gap-1">
                     <Clock className="h-4 w-4" />
                     {formatDuration(lesson.estimatedTime)}
@@ -98,13 +98,13 @@ export default function LessonsPage({ searchParams }: PageProps) {
                     {lesson.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                        className="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded"
                       >
                         {tag}
                       </span>
                     ))}
                     {lesson.tags.length > 3 && (
-                      <span className="text-xs text-slate-400">
+                      <span className="text-xs text-slate-400 dark:text-slate-500">
                         +{lesson.tags.length - 3}
                       </span>
                     )}
@@ -115,16 +115,16 @@ export default function LessonsPage({ searchParams }: PageProps) {
           </div>
         ) : (
           <div className="text-center py-12">
-            <BookOpen className="mx-auto h-12 w-12 text-slate-300" />
-            <h3 className="mt-4 text-lg font-medium text-slate-900">
+            <BookOpen className="mx-auto h-12 w-12 text-slate-300 dark:text-slate-600" />
+            <h3 className="mt-4 text-lg font-medium text-slate-900 dark:text-slate-100">
               Aucune leçon trouvée
             </h3>
-            <p className="mt-2 text-slate-600">
+            <p className="mt-2 text-slate-600 dark:text-slate-400">
               Essayez de modifier vos filtres
             </p>
             <Link
               href="/lecons"
-              className="mt-4 inline-block text-primary-600 hover:text-primary-700"
+              className="mt-4 inline-block text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
             >
               Réinitialiser les filtres
             </Link>
@@ -134,13 +134,13 @@ export default function LessonsPage({ searchParams }: PageProps) {
         {/* Quick access by chapter */}
         {!searchParams.track && !searchParams.chapter && (
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-slate-900 mb-8">Par chapitre</h2>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8">Par chapitre</h2>
 
             <div className="space-y-12">
               {/* Physique */}
               {physiqueModule && (
                 <div>
-                  <h3 className="flex items-center gap-2 text-xl font-semibold text-slate-900 mb-4">
+                  <h3 className="flex items-center gap-2 text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 text-white text-sm font-bold">
                       P
                     </span>
@@ -151,15 +151,15 @@ export default function LessonsPage({ searchParams }: PageProps) {
                       <Link
                         key={chapter.id}
                         href={`/lecons?track=physique&chapter=${chapter.id}`}
-                        className="card group hover:border-primary-200 hover:shadow-md transition-all"
+                        className="card group hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-md transition-all"
                       >
-                        <h4 className="font-semibold text-slate-900 group-hover:text-primary-600">
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400">
                           {chapter.title}
                         </h4>
-                        <p className="mt-1 text-sm text-slate-600">
+                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                           {chapter.description}
                         </p>
-                        <div className="mt-2 text-xs text-slate-500">
+                        <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                           {chapter.lessons.length} leçon{chapter.lessons.length > 1 ? 's' : ''}
                         </div>
                       </Link>
@@ -171,7 +171,7 @@ export default function LessonsPage({ searchParams }: PageProps) {
               {/* Chimie */}
               {chimieModule && (
                 <div>
-                  <h3 className="flex items-center gap-2 text-xl font-semibold text-slate-900 mb-4">
+                  <h3 className="flex items-center gap-2 text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600 text-white text-sm font-bold">
                       C
                     </span>
@@ -182,15 +182,15 @@ export default function LessonsPage({ searchParams }: PageProps) {
                       <Link
                         key={chapter.id}
                         href={`/lecons?track=chimie&chapter=${chapter.id}`}
-                        className="card group hover:border-emerald-200 hover:shadow-md transition-all"
+                        className="card group hover:border-emerald-200 dark:hover:border-emerald-700 hover:shadow-md transition-all"
                       >
-                        <h4 className="font-semibold text-slate-900 group-hover:text-emerald-600">
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
                           {chapter.title}
                         </h4>
-                        <p className="mt-1 text-sm text-slate-600">
+                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                           {chapter.description}
                         </p>
-                        <div className="mt-2 text-xs text-slate-500">
+                        <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                           {chapter.lessons.length} leçon{chapter.lessons.length > 1 ? 's' : ''}
                         </div>
                       </Link>

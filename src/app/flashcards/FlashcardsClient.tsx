@@ -150,10 +150,10 @@ export default function FlashcardsClient() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary-600 border-t-transparent mx-auto" />
-          <p className="mt-4 text-slate-600">Chargement des flashcards...</p>
+          <p className="mt-4 text-slate-600 dark:text-slate-400">Chargement des flashcards...</p>
         </div>
       </div>
     )
@@ -161,13 +161,13 @@ export default function FlashcardsClient() {
 
   if (flashcards.length === 0) {
     return (
-      <div className="min-h-screen bg-slate-50 py-8">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
         <div className="mx-auto max-w-2xl px-4 text-center">
-          <Brain className="h-16 w-16 text-slate-300 mx-auto" />
-          <h1 className="mt-4 text-2xl font-bold text-slate-900">
+          <Brain className="h-16 w-16 text-slate-300 dark:text-slate-600 mx-auto" />
+          <h1 className="mt-4 text-2xl font-bold text-slate-900 dark:text-slate-100">
             Aucune flashcard disponible
           </h1>
-          <p className="mt-2 text-slate-600">
+          <p className="mt-2 text-slate-600 dark:text-slate-400">
             {lessonFilter
               ? 'Cette leçon n\'a pas encore de flashcards.'
               : 'Aucune flashcard n\'a été créée.'}
@@ -181,16 +181,16 @@ export default function FlashcardsClient() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
       <div className="mx-auto max-w-2xl px-4">
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <Brain className="h-7 w-7 text-purple-600" />
               Flashcards
             </h1>
-            <p className="mt-1 text-slate-600">
+            <p className="mt-1 text-slate-600 dark:text-slate-400">
               {totalCards} carte{totalCards > 1 ? 's' : ''}
               {lessonFilter && ' pour cette leçon'}
             </p>
@@ -227,10 +227,10 @@ export default function FlashcardsClient() {
 
         {/* Progress */}
         <div className="mb-6">
-          <div className="flex items-center justify-between text-sm text-slate-600 mb-2">
+          <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 mb-2">
             <span>Carte {currentIndex + 1} / {totalCards}</span>
             {sessionMode === 'review' && (
-              <span className="text-purple-600 font-medium">Mode révision</span>
+              <span className="text-purple-600 dark:text-purple-400 font-medium">Mode révision</span>
             )}
           </div>
           <div className="progress-bar">
@@ -254,26 +254,26 @@ export default function FlashcardsClient() {
                 <div className="absolute top-4 right-4">
                   <span className={cn(
                     'badge text-xs',
-                    currentFlashcard.category === 'formula' && 'bg-primary-100 text-primary-700',
-                    currentFlashcard.category === 'definition' && 'bg-amber-100 text-amber-700',
-                    currentFlashcard.category === 'method' && 'bg-purple-100 text-purple-700',
-                    currentFlashcard.category === 'trap' && 'bg-danger-100 text-danger-700',
-                    currentFlashcard.category === 'interpretation' && 'bg-emerald-100 text-emerald-700'
+                    currentFlashcard.category === 'formula' && 'bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300',
+                    currentFlashcard.category === 'definition' && 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300',
+                    currentFlashcard.category === 'method' && 'bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300',
+                    currentFlashcard.category === 'trap' && 'bg-danger-100 dark:bg-danger-900/50 text-danger-700 dark:text-danger-300',
+                    currentFlashcard.category === 'interpretation' && 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300'
                   )}>
                     {currentFlashcard.category}
                   </span>
                 </div>
-                <p className="text-lg font-medium text-slate-900">
+                <p className="text-lg font-medium text-slate-900 dark:text-slate-100">
                   {currentFlashcard.front}
                 </p>
-                <p className="mt-4 text-sm text-slate-400">
+                <p className="mt-4 text-sm text-slate-400 dark:text-slate-500">
                   Cliquez ou appuyez sur Espace pour retourner
                 </p>
               </div>
 
               {/* Back */}
-              <div className="flashcard-back card flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-purple-50 to-white">
-                <p className="text-lg text-slate-900">
+              <div className="flashcard-back card flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-purple-50 to-white dark:from-purple-900/30 dark:to-slate-800">
+                <p className="text-lg text-slate-900 dark:text-slate-100">
                   {currentFlashcard.back}
                 </p>
               </div>
@@ -313,7 +313,7 @@ export default function FlashcardsClient() {
             </div>
           ) : isFlipped ? (
             <div className="space-y-4">
-              <p className="text-center text-sm text-slate-600">
+              <p className="text-center text-sm text-slate-600 dark:text-slate-400">
                 Comment as-tu trouvé cette carte ?
               </p>
               <div className="grid grid-cols-4 gap-2">
@@ -365,7 +365,7 @@ export default function FlashcardsClient() {
         </div>
 
         {/* Keyboard shortcuts help */}
-        <div className="mt-8 text-center text-xs text-slate-400">
+        <div className="mt-8 text-center text-xs text-slate-400 dark:text-slate-500">
           <p>Raccourcis : Espace = retourner, ← → = naviguer</p>
           {sessionMode === 'review' && <p>1-4 = répondre (après avoir retourné)</p>}
         </div>
