@@ -79,10 +79,10 @@ export default function ExercisePage({ params }: PageProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary-600 border-t-transparent mx-auto" />
-          <p className="mt-4 text-slate-600">Chargement de l'exercice...</p>
+          <p className="mt-4 text-slate-600 dark:text-slate-400">Chargement de l'exercice...</p>
         </div>
       </div>
     )
@@ -90,10 +90,10 @@ export default function ExercisePage({ params }: PageProps) {
 
   if (!exercise) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
         <div className="text-center">
           <AlertTriangle className="h-12 w-12 text-warning-500 mx-auto" />
-          <h1 className="mt-4 text-xl font-semibold text-slate-900">Exercice introuvable</h1>
+          <h1 className="mt-4 text-xl font-semibold text-slate-900 dark:text-slate-100">Exercice introuvable</h1>
           <Link href="/exercices" className="btn-primary mt-4 inline-block">
             Retour aux exercices
           </Link>
@@ -103,13 +103,13 @@ export default function ExercisePage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
       <div className="mx-auto max-w-3xl px-4">
         {/* Header */}
         <div className="mb-6">
           <Link
             href="/exercices"
-            className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 mb-4"
+            className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 mb-4"
           >
             <ArrowLeft className="h-4 w-4" />
             Retour aux exercices
@@ -122,12 +122,12 @@ export default function ExercisePage({ params }: PageProps) {
                   {getDifficultyLabel(exercise.difficulty)}
                 </span>
                 {exercise.isComprehension && (
-                  <span className="badge bg-cyan-100 text-cyan-700">
+                  <span className="badge bg-cyan-100 dark:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300">
                     Compréhension
                   </span>
                 )}
               </div>
-              <h1 className="text-2xl font-bold text-slate-900">{exercise.title}</h1>
+              <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{exercise.title}</h1>
             </div>
 
             {progress?.status === 'completed' ? (
@@ -148,7 +148,7 @@ export default function ExercisePage({ params }: PageProps) {
 
         {/* Statement */}
         <div className="card mb-6">
-          <h2 className="font-semibold text-slate-900 mb-4">Énoncé</h2>
+          <h2 className="font-semibold text-slate-900 dark:text-slate-100 mb-4">Énoncé</h2>
           <div className="lesson-content">
             <LessonContent content={exercise.statement} />
           </div>
@@ -157,7 +157,7 @@ export default function ExercisePage({ params }: PageProps) {
         {/* Hints */}
         {exercise.hints.length > 0 && (
           <div className="card mb-6">
-            <h2 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
+            <h2 className="font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
               <Lightbulb className="h-5 w-5 text-amber-500" />
               Indices ({exercise.hints.length})
             </h2>
@@ -166,25 +166,25 @@ export default function ExercisePage({ params }: PageProps) {
                 const isRevealed = hintsRevealed.includes(index)
 
                 return (
-                  <div key={index} className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+                  <div key={index} className="rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/30 p-4">
                     <div className="flex items-center justify-between">
-                      <span className="font-medium text-amber-900">
+                      <span className="font-medium text-amber-900 dark:text-amber-200">
                         Indice {index + 1}
                       </span>
                       {!isRevealed ? (
                         <button
                           onClick={() => handleRevealHint(index)}
-                          className="flex items-center gap-1 text-sm text-amber-700 hover:text-amber-900"
+                          className="flex items-center gap-1 text-sm text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-100"
                         >
                           <Eye className="h-4 w-4" />
                           Révéler
                         </button>
                       ) : (
-                        <EyeOff className="h-4 w-4 text-amber-400" />
+                        <EyeOff className="h-4 w-4 text-amber-400 dark:text-amber-500" />
                       )}
                     </div>
                     {isRevealed && (
-                      <div className="mt-2 text-amber-800">
+                      <div className="mt-2 text-amber-800 dark:text-amber-300">
                         <MathText text={hint} />
                       </div>
                     )}
@@ -198,7 +198,7 @@ export default function ExercisePage({ params }: PageProps) {
         {/* Solution */}
         <div className="card mb-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-semibold text-slate-900 flex items-center gap-2">
+            <h2 className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-success-500" />
               Solution détaillée
             </h2>
@@ -221,21 +221,21 @@ export default function ExercisePage({ params }: PageProps) {
                   className={cn(
                     'rounded-lg border p-4',
                     index === currentStep
-                      ? 'border-primary-300 bg-primary-50'
-                      : 'border-slate-200 bg-white'
+                      ? 'border-primary-300 dark:border-primary-700 bg-primary-50 dark:bg-primary-900/30'
+                      : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800'
                   )}
                 >
                   <button
                     onClick={() => setCurrentStep(currentStep === index ? -1 : index)}
                     className="flex w-full items-center justify-between"
                   >
-                    <span className="font-medium text-slate-900">
+                    <span className="font-medium text-slate-900 dark:text-slate-100">
                       Étape {step.step} : {step.title}
                     </span>
                     {currentStep === index ? (
-                      <ChevronUp className="h-5 w-5 text-slate-400" />
+                      <ChevronUp className="h-5 w-5 text-slate-400 dark:text-slate-500" />
                     ) : (
-                      <ChevronDown className="h-5 w-5 text-slate-400" />
+                      <ChevronDown className="h-5 w-5 text-slate-400 dark:text-slate-500" />
                     )}
                   </button>
 
@@ -245,7 +245,7 @@ export default function ExercisePage({ params }: PageProps) {
                         <LessonContent content={step.content} />
                       </div>
                       {step.explanation && (
-                        <div className="mt-3 rounded-lg bg-slate-100 p-3 text-sm text-slate-700">
+                        <div className="mt-3 rounded-lg bg-slate-100 dark:bg-slate-700 p-3 text-sm text-slate-700 dark:text-slate-300">
                           <strong>Explication :</strong> <MathText text={step.explanation} />
                         </div>
                       )}
@@ -256,11 +256,11 @@ export default function ExercisePage({ params }: PageProps) {
 
               {/* Method to remember */}
               {exercise.method && (
-                <div className="rounded-lg border-l-4 border-purple-500 bg-purple-50 p-4">
-                  <h3 className="font-semibold text-purple-900 mb-2">
+                <div className="rounded-lg border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-900/30 p-4">
+                  <h3 className="font-semibold text-purple-900 dark:text-purple-200 mb-2">
                     Méthode à retenir
                   </h3>
-                  <div className="text-purple-800">
+                  <div className="text-purple-800 dark:text-purple-300">
                     <MathText text={exercise.method} />
                   </div>
                 </div>
@@ -268,12 +268,12 @@ export default function ExercisePage({ params }: PageProps) {
 
               {/* Common mistakes */}
               {exercise.commonMistakes.length > 0 && (
-                <div className="rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4">
-                  <h3 className="font-semibold text-danger-900 mb-2 flex items-center gap-2">
+                <div className="rounded-lg border-l-4 border-danger-500 bg-danger-50 dark:bg-danger-900/30 p-4">
+                  <h3 className="font-semibold text-danger-900 dark:text-danger-200 mb-2 flex items-center gap-2">
                     <AlertTriangle className="h-5 w-5" />
                     Erreurs fréquentes
                   </h3>
-                  <ul className="space-y-1 text-danger-800">
+                  <ul className="space-y-1 text-danger-800 dark:text-danger-300">
                     {exercise.commonMistakes.map((mistake, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <span className="mt-1">•</span>
@@ -285,7 +285,7 @@ export default function ExercisePage({ params }: PageProps) {
               )}
             </div>
           ) : (
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Essaie de résoudre l'exercice par toi-même avant de regarder la solution.
               Tu peux utiliser les indices si tu as besoin d'aide.
             </p>
@@ -296,7 +296,7 @@ export default function ExercisePage({ params }: PageProps) {
         <div className="text-center">
           <Link
             href={`/lecons?id=${exercise.lessonId}`}
-            className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700"
+            className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
           >
             <BookOpen className="h-4 w-4" />
             Voir la leçon associée
