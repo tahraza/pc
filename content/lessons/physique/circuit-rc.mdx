@@ -1,172 +1,230 @@
 ---
 id: "circuit-rc"
-title: "Circuits RC"
+title: "Le Circuit RC : Stockage d'énergie et évolution temporelle"
 track: "physique"
-level: 3
+level: 2
 prerequisites: []
-tags: ["électricité", "condensateur", "RC", "constante de temps"]
-estimatedTime: 50
+tags: ["électricité", "condensateur", "équation différentielle", "constante de temps", "exponentielle"]
+estimatedTime: 90
 chapter: "electricite"
 order: 1
 ---
 
-# Circuits RC
+# Le Circuit RC
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Décrire le fonctionnement d'un condensateur
-- Établir l'équation différentielle d'un circuit RC
-- Résoudre le régime transitoire (charge/décharge)
-- Déterminer la constante de temps
+- Définir un condensateur et utiliser les relations $q = C \cdot u$ et $i = dq/dt$
+- Établir l'équation différentielle de la charge et de la décharge
+- Vérifier les solutions (fonctions exponentielles)
+- Déterminer graphiquement la constante de temps $\tau$
+- Interpréter le rôle de $R$ et $C$ sur la vitesse de charge/décharge
 
-## Intuition et analogie
+## Intuition et analogie : Le Réservoir Élastique
 
-Imagine un **réservoir d'eau** relié à un robinet par un tuyau étroit :
-- Le **condensateur** C, c'est le réservoir — il stocke l'eau (les charges électriques)
-- La **résistance** R, c'est l'étroitesse du tuyau — elle freine l'écoulement (le courant)
+Pour comprendre le condensateur, il faut imaginer un **réservoir** ou une membrane élastique dans un circuit hydraulique.
 
-Quand tu ouvres le robinet pour **remplir** le réservoir : au début l'eau coule vite (fort courant), puis de plus en plus lentement à mesure que le réservoir se remplit et que la pression s'équilibre. C'est exactement la **charge du condensateur** : le courant est fort au début, puis décroît exponentiellement.
+:::tip[Analogie : Le Château d'Eau et le Tuyau]
+**Le Générateur** est une pompe qui pousse l'eau (les charges).
 
-Quand tu **vides** le réservoir : l'eau s'écoule d'abord rapidement (réservoir plein = forte pression), puis le débit diminue à mesure que le niveau baisse. C'est la **décharge du condensateur**.
+**Le Condensateur** est un réservoir avec une membrane élastique au milieu. L'eau ne le traverse pas (isolant), mais elle pousse la membrane qui se tend.
+- Au début, la membrane est molle (condensateur vide), l'eau rentre vite (courant fort)
+- Plus la membrane se tend (tension $u_C$ augmente), plus elle résiste. L'eau rentre de moins en moins vite
+- À la fin, la membrane exerce une contre-pression égale à celle de la pompe : l'eau s'arrête (courant nul)
 
-La **constante de temps** $\tau = RC$, c'est la "vitesse" de remplissage ou vidange : un gros réservoir (grand C) ou un tuyau étroit (grand R) ralentissent le processus. Après $5\tau$, on considère que le régime permanent est atteint (réservoir plein ou vide à 99%).
+**La Résistance** est l'étroitesse du tuyau. Plus il est fin ($R$ grand), plus il faut de temps pour remplir le réservoir.
+:::
 
-## Le condensateur
+## Le Composant : Le Condensateur
+
+### Description et Modèle
 
 :::definition
 **Condensateur**
 
-Un **condensateur** est un dipôle constitué de deux armatures conductrices séparées par un isolant (diélectrique). Il stocke de l'énergie sous forme électrique.
-
-**Capacité** C (en farads, F) : $q = Cu_C$
-
-où q est la charge (en coulombs) et $u_C$ la tension aux bornes.
+Un condensateur est constitué de deux conducteurs métalliques (les **armatures**) séparés par un isolant (le **diélectrique**).
+- Symbole : Deux traits parallèles
+- Il stocke des charges électriques opposées sur ses armatures : $q_A = -q_B$
 :::
 
-:::property[Intensité et condensateur]
-$$i = \frac{dq}{dt} = C\frac{du_C}{dt}$$
+### Relations Fondamentales
 
-Un condensateur s'oppose aux variations brusques de tension.
+Trois formules clés régissent son fonctionnement :
+
+:::property[Relation Charge-Tension]
+La charge $q$ (en Coulombs C) est proportionnelle à la tension $u_C$ (en Volts V). Le coefficient est la **capacité $C$** (en Farads F) :
+
+$$q = C \times u_C$$
 :::
 
-:::property[Énergie stockée]
-$$E = \frac{1}{2}Cu_C^2 = \frac{1}{2}\frac{q^2}{C}$$
+:::property[Relation Courant-Charge]
+L'intensité $i$ (en Ampères A) est le débit de charges (la vitesse à laquelle le réservoir se remplit) :
+
+$$i = \frac{dq}{dt}$$
 :::
 
-## Circuit RC série
+:::property[Relation Courant-Tension (La synthèse)]
+En combinant les deux précédentes ($q$ étant remplacé par $C \cdot u_C$), on obtient la relation fondamentale pour l'étude des circuits :
 
-:::definition
-**Circuit RC**
-
-Un circuit RC contient une résistance R et un condensateur C en série.
-
-L'équation aux bornes : $u_R + u_C = E$ (si alimenté par une source E)
+$$i = C \cdot \frac{du_C}{dt}$$
 :::
 
-:::property[Constante de temps]
-$$\tau = RC$$
-
-La constante de temps τ caractérise la rapidité de charge/décharge.
-- En t = τ, la grandeur atteint ~63% de sa valeur finale
-- En t = 5τ, le régime permanent est pratiquement atteint (>99%)
+:::tip[Effet Capacitif]
+Cette relation montre que le courant dépend de la *variation* de la tension. Si la tension est constante (régime permanent), le courant est nul : le condensateur se comporte comme un **interrupteur ouvert**.
 :::
 
-## Charge du condensateur
+## La Charge du Condensateur
 
-:::method[Équation de charge]
-À t = 0, on ferme l'interrupteur (condensateur initialement déchargé).
+On associe en série un générateur idéal de tension $E$, une résistance $R$ et un condensateur $C$. À $t=0$, on ferme l'interrupteur.
 
-**Équation différentielle** :
-$$RC\frac{du_C}{dt} + u_C = E$$
+### Établissement de l'équation différentielle
 
-**Solution** :
-$$u_C(t) = E(1 - e^{-t/\tau})$$
+:::method[Loi des mailles]
+On applique la **loi des mailles** (additivité des tensions) :
 
-$$i(t) = \frac{E}{R}e^{-t/\tau}$$
+$$u_R + u_C = E$$
 
-La tension croît de 0 vers E, l'intensité décroît de E/R vers 0.
+1. D'après la loi d'Ohm : $u_R = R \times i$
+2. On remplace $i$ par $C \frac{du_C}{dt}$
+3. On obtient l'équation différentielle :
+
+$$R \cdot C \cdot \frac{du_C}{dt} + u_C = E$$
 :::
 
-## Décharge du condensateur
+### Solution (Évolution temporelle)
+
+:::property[Solution de l'équation de charge]
+C'est une équation différentielle du premier ordre. La solution est une fonction exponentielle croissante :
+
+$$u_C(t) = E \times \left(1 - e^{-t/\tau}\right)$$
+
+- **$\tau = R \cdot C$** est la **constante de temps** (en secondes)
+- À $t=0$, $u_C = 0$ (condensateur déchargé)
+- À $t \to \infty$, $u_C = E$ (condensateur chargé)
+:::
+
+:::example[Vérification de la solution]
+**Question :** Montrer que $u_C(t) = E(1 - e^{-t/\tau})$ est bien solution de $RC \frac{du_C}{dt} + u_C = E$.
+
+**Résolution :**
+1. **Dérivons** la fonction :
+   $$\frac{du_C}{dt} = E \times \left(0 - \left(-\frac{1}{\tau}\right)e^{-t/\tau}\right) = \frac{E}{\tau}e^{-t/\tau}$$
+
+2. **Injectons** dans l'équation :
+   $$RC \times \frac{E}{\tau}e^{-t/\tau} + E(1 - e^{-t/\tau})$$
+
+3. Comme $\tau = RC$, le terme $RC/\tau$ vaut 1 :
+   $$E \cdot e^{-t/\tau} + E - E \cdot e^{-t/\tau} = E$$
+
+4. L'égalité est vérifiée ($E=E$). **La solution est correcte.**
+:::
+
+## La Décharge du Condensateur
+
+Une fois chargé ($u_C = E$), on bascule l'interrupteur pour relier le condensateur directement à la résistance (sans générateur). Le condensateur se vide.
+
+### Équation et Solution
 
 :::method[Équation de décharge]
-Le condensateur initialement chargé à $U_0$ se décharge dans R.
+La loi des mailles devient : $u_R + u_C = 0$ (car il n'y a plus de générateur $E$).
 
-**Équation différentielle** :
-$$RC\frac{du_C}{dt} + u_C = 0$$
+**Équation différentielle :**
+$$R \cdot C \cdot \frac{du_C}{dt} + u_C = 0$$
 
-**Solution** :
-$$u_C(t) = U_0 e^{-t/\tau}$$
+**Solution :**
+$$u_C(t) = E \times e^{-t/\tau}$$
 
-$$i(t) = -\frac{U_0}{R}e^{-t/\tau}$$
-
-La tension décroît exponentiellement vers 0.
+La tension décroît progressivement de $E$ jusqu'à 0.
 :::
 
-## Détermination de τ
-
-:::method[Méthode graphique]
-1. **Tangente à l'origine** : elle coupe l'asymptote en t = τ
-2. **À t = τ** : $u_C = 0.63 \times E$ (charge) ou $u_C = 0.37 \times U_0$ (décharge)
-3. **Régression** : ln(E - uC) = f(t) donne une droite de pente -1/τ
+:::tip[Note sur le courant]
+Lors de la décharge, le courant circule en **sens inverse**. Son intensité est négative par rapport à la convention de charge :
+$$i(t) = -\frac{E}{R}e^{-t/\tau}$$
 :::
 
-## Exemples résolus
+## La Constante de Temps $\tau$ (Tau)
 
-### Exemple 1 : Constante de temps
+La grandeur $\tau = R \times C$ donne l'ordre de grandeur de la durée du phénomène.
 
-R = 10 kΩ, C = 100 µF.
+### Définitions pratiques
 
-$$\tau = RC = 10 \times 10^3 \times 100 \times 10^{-6} = 1 \text{ s}$$
+:::property[Valeurs caractéristiques]
+**À $t = \tau$ :**
+- En charge, le condensateur est chargé à **63%** ($u_C = 0{,}63 \cdot E$)
+- En décharge, il ne reste que **37%** de la tension initiale ($u_C = 0{,}37 \cdot E$)
 
-### Exemple 2 : Charge
+**À $t = 5\tau$ :**
+- Le régime transitoire est terminé (charge > 99%)
+- On est en **régime permanent**
+:::
 
-E = 12 V, R = 5 kΩ, C = 200 µF. Calculer uC à t = 2 s.
+### Méthodes graphiques pour trouver $\tau$
 
-$$\tau = 5000 \times 200 \times 10^{-6} = 1 \text{ s}$$
+:::method[Détermination graphique de $\tau$]
+Sur la courbe $u_C = f(t)$ :
 
-$$u_C(2) = 12(1 - e^{-2/1}) = 12(1 - e^{-2}) = 12 \times 0.865 = 10.4 \text{ V}$$
+1. **Méthode de l'abscisse :** Lire l'abscisse correspondant à l'ordonnée $0{,}63E$ (charge) ou $0{,}37E$ (décharge)
 
-### Exemple 3 : Temps pour atteindre 90%
+2. **Méthode de la tangente :** Tracer la tangente à la courbe à l'instant $t=0$. Elle coupe l'asymptote (la droite $u=E$ pour la charge, ou l'axe des temps $u=0$ pour la décharge) à l'instant $t = \tau$
+:::
 
-Quel temps pour que $u_C = 0.9E$ ?
+:::example[Détermination graphique de C]
+**Données :** On charge un condensateur $C$ inconnu à travers une résistance $R = 100\ \text{k}\Omega$. La tension du générateur est $E=5\ \text{V}$. Sur le graphe, la tangente à l'origine coupe la droite $u=5\ \text{V}$ à l'instant $t = 10\ \text{s}$.
 
-$$0.9E = E(1 - e^{-t/\tau})$$
-$$e^{-t/\tau} = 0.1$$
-$$-t/\tau = \ln(0.1) = -2.3$$
-$$t = 2.3\tau$$
+**Question :** Trouver la capacité $C$.
 
-### Exemple 4 : Décharge
+**Résolution :**
+1. D'après la méthode de la tangente, l'abscisse de l'intersection est $\tau$. Donc $\tau = 10\ \text{s}$
+2. On sait que $\tau = R \times C$
+3. On isole $C$ : $C = \tau / R$
+4. Calcul :
+   $$C = \frac{10}{100\,000} = 10^{-4}\ \text{F} = \mathbf{100\ \mu\text{F}}$$
+:::
 
-Un condensateur chargé à 10 V se décharge. Après 3 ms, uC = 3,7 V.
+## Énergie stockée
 
-$$3.7 = 10 \times e^{-0.003/\tau}$$
-$$e^{-0.003/\tau} = 0.37$$
-$$-0.003/\tau = \ln(0.37) = -1$$
-$$\tau = 3 \text{ ms}$$
+:::property[Énergie du condensateur]
+Le condensateur stocke de l'énergie sous forme électrostatique :
+
+$$E_C = \frac{1}{2}C \cdot u_C^2 = \frac{1}{2}\frac{q^2}{C}$$
+
+- $E_C$ en Joules (J)
+- $C$ en Farads (F)
+- $u_C$ en Volts (V)
+:::
 
 ## Erreurs fréquentes
 
 :::warning
-**Erreur 1** : Confondre charge et décharge
+**Erreur 1 : Confondre charge et décharge**
 
-Charge : $u_C = E(1 - e^{-t/\tau})$ (croissante)
-Décharge : $u_C = U_0 e^{-t/\tau}$ (décroissante)
+- Charge : $u_C = E(1 - e^{-t/\tau})$ → courbe **croissante** vers $E$
+- Décharge : $u_C = E \cdot e^{-t/\tau}$ → courbe **décroissante** vers 0
 
-**Erreur 2** : Se tromper dans τ
+**Erreur 2 : Se tromper dans $\tau$**
 
-τ = RC, pas R/C ni C/R. Vérifier les unités : Ω × F = s
+$\tau = R \times C$, pas $R/C$ ni $C/R$. Vérifier les unités : $\Omega \times F = s$
 
-**Erreur 3** : Oublier les conditions initiales
+**Erreur 3 : Oublier les conditions initiales**
 
-Toujours vérifier l'état initial du condensateur.
+Toujours vérifier l'état initial du condensateur (chargé ou déchargé, et à quelle tension).
+
+**Erreur 4 : Confondre régime transitoire et permanent**
+
+- **Transitoire** : $t < 5\tau$, les grandeurs évoluent
+- **Permanent** : $t > 5\tau$, le courant est nul dans le condensateur
 :::
 
 ## Mini-résumé
 
-- **Capacité** : $q = Cu_C$, $i = C\frac{du_C}{dt}$
-- **Constante de temps** : $\tau = RC$
-- **Charge** : $u_C = E(1 - e^{-t/\tau})$
-- **Décharge** : $u_C = U_0 e^{-t/\tau}$
-- À t = 5τ, régime permanent atteint
+| Concept | Formule / Astuce |
+|---------|------------------|
+| **Condensateur** | Stocke des charges ($q$) et de l'énergie |
+| **Relations** | $q = Cu$ et $i = C \frac{du}{dt}$ |
+| **Éq. Diff. (Charge)** | $RC \frac{du}{dt} + u = E$ |
+| **Solution (Charge)** | $u(t)$ monte vers $E$ : $E(1 - e^{-t/\tau})$ |
+| **Solution (Décharge)** | $u(t)$ descend vers 0 : $E \cdot e^{-t/\tau}$ |
+| **Constante $\tau$** | $\tau = R \cdot C$ — correspond à 63% de la charge |
+| **Régime permanent** | Atteint après environ $5\tau$ — le condensateur bloque le courant continu |
+| **Énergie** | $E_C = \frac{1}{2}Cu^2$ |
