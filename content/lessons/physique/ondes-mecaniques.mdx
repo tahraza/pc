@@ -1,136 +1,343 @@
 ---
 id: "ondes-mecaniques"
-title: "Ondes mécaniques progressives"
+title: "Les Ondes Mécaniques : Propagation et Périodicité"
 track: "physique"
 level: 2
 prerequisites: []
-tags: ["ondes", "période", "longueur d'onde", "célérité"]
-estimatedTime: 45
+tags: ["ondes", "célérité", "longueur d'onde", "période", "son", "décibel", "retard"]
+estimatedTime: 120
 chapter: "ondes"
 order: 1
 ---
 
-# Ondes mécaniques progressives
+# Les Ondes Mécaniques Progressives
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Définir une onde mécanique progressive
-- Distinguer onde transversale et longitudinale
-- Calculer célérité, période et longueur d'onde
-- Exploiter la relation fondamentale
+- Comprendre **ce qu'est réellement une onde** et ce qui se propage
+- Distinguer **déplacement de matière** et **propagation d'une perturbation**
+- Définir et exploiter **célérité, retard, période et longueur d'onde**
+- Lire et interpréter des **graphes temporels et spatiaux**
+- Manipuler les notions d'**intensité sonore** et de **niveau sonore** (décibels)
+- Éviter les **confusions classiques du bac**
 
-## Intuition et analogie
+## Intuition fondamentale : Qu'est-ce qui se déplace vraiment ?
 
-Imagine la **"Ola"** dans un stade : les spectateurs se lèvent puis se rassoient les uns après les autres. La vague se propage tout autour du stade, mais aucun spectateur ne change de place ! C'est exactement ce qu'est une onde mécanique : **une perturbation qui voyage, sans que la matière ne se déplace**.
+### Question de départ
 
-Autre image : jette un caillou dans une mare. Les ronds dans l'eau s'éloignent du point d'impact, mais si tu poses une feuille sur l'eau, elle monte et descend sans être emportée vers le bord. L'onde transporte de l'**énergie** (elle peut faire bouger la feuille), mais pas de **matière**.
+Quand une vague arrive sur la plage :
+- L'eau avance-t-elle jusqu'au sable ?
+- Ou est-ce autre chose qui se propage ?
 
-La **longueur d'onde** $\lambda$, c'est la distance entre deux crêtes successives — comme l'écart entre deux spectateurs au même moment de leur mouvement dans la Ola. La **période** $T$, c'est le temps qu'il faut à un spectateur pour faire un cycle complet (se lever et se rasseoir).
+**Ce n'est pas la matière qui se déplace**, c'est une **perturbation** qui se transmet de proche en proche.
 
-## Définitions
+:::tip[Analogie 1 : La Ola du stade]
+Dans un stade, les spectateurs se lèvent puis se rassoient les uns après les autres :
+- **Le milieu :** Ce sont les spectateurs (ils restent à leur place)
+- **L'onde :** C'est la forme de la vague qui parcourt le stade
+- **Ce qui voyage :** L'information ou l'énergie, pas la matière
+
+Chaque spectateur oscille verticalement sur place, mais la perturbation se déplace horizontalement.
+:::
+
+:::tip[Analogie 2 : La rumeur]
+Une personne chuchote à une autre, qui chuchote à une autre...
+- L'information se propage
+- Les personnes restent à leur place
+
+L'onde transporte de l'**information** et de l'**énergie**, pas de matière.
+:::
+
+:::warning[Erreur intuitive très fréquente]
+"L'onde transporte la matière"
+
+**FAUX !** Chaque point du milieu **oscille autour de sa position d'équilibre**. Pose une feuille sur l'eau : elle monte et descend, mais n'est pas emportée vers le bord.
+:::
+
+## Définitions Fondamentales
+
+### L'Onde Mécanique Progressive
 
 :::definition
 **Onde mécanique progressive**
 
-Une **onde mécanique progressive** est la propagation d'une perturbation dans un milieu matériel, sans transport de matière mais avec transport d'énergie.
+C'est la propagation d'une **perturbation** dans un milieu matériel (solide, liquide, gaz), de proche en proche.
 
-Exemples : vague sur l'eau, son dans l'air, onde le long d'une corde.
+**Propriétés clés :**
+- Transport d'**énergie** sans transport de **matière**
+- Nécessite un **milieu matériel** (ne se propage pas dans le vide)
+- Met un **temps fini** à se propager
+
+*Exemples :* Le son, une vague sur l'eau, une onde le long d'une corde.
 :::
+
+:::example[Mini-question guidée]
+**Question :** Le son peut-il se propager dans le vide (dans l'espace) ?
+
+**Réponse :** Non ! Le son est une onde mécanique, il a besoin d'un milieu matériel. C'est pourquoi dans l'espace, personne ne vous entend crier.
+:::
+
+### Ondes Transversales et Longitudinales
 
 :::definition
-**Onde transversale vs longitudinale**
+**Types d'ondes mécaniques**
 
-- **Onde transversale** : la perturbation est perpendiculaire à la direction de propagation (ex : vague, corde)
-- **Onde longitudinale** : la perturbation est parallèle à la direction de propagation (ex : son)
+- **Onde transversale :** La perturbation est **perpendiculaire** à la direction de propagation
+  - *Exemples :* Vague sur l'eau, onde sur une corde
+
+- **Onde longitudinale :** La perturbation est **parallèle** à la direction de propagation
+  - *Exemple :* Le son (compression/dilatation de l'air)
 :::
 
-## Grandeurs caractéristiques
+## Célérité de l'onde
 
-:::property[Période et fréquence]
-- **Période T** : durée d'un motif élémentaire (en secondes, s)
-- **Fréquence f** : nombre de motifs par seconde (en hertz, Hz)
+:::definition
+**Célérité**
 
-$$f = \frac{1}{T}$$
+La célérité $v$ est la vitesse de propagation de la perturbation dans le milieu :
+
+$$v = \frac{d}{\Delta t}$$
+
+- $v$ : célérité en m·s⁻¹
+- $d$ : distance parcourue en mètres (m)
+- $\Delta t$ : durée du parcours en secondes (s)
 :::
 
-:::property[Longueur d'onde]
-La **longueur d'onde** $\lambda$ est la distance parcourue par l'onde pendant une période T.
+:::property[De quoi dépend la célérité ?]
+La célérité dépend de :
+- La **nature du milieu** (air, eau, acier...)
+- Les **propriétés physiques** du milieu (température, pression...)
 
-$$\lambda = v \times T = \frac{v}{f}$$
-
-où $v$ est la célérité de l'onde (en m/s).
+Elle **ne dépend pas** de :
+- L'amplitude de l'onde
+- La fréquence de la source (au programme de lycée)
 :::
 
-:::property[Célérité]
-La **célérité** $v$ est la vitesse de propagation de l'onde dans le milieu. Elle dépend du milieu mais pas de la fréquence (pour les ondes mécaniques non dispersives).
+:::example[Mini-exercice]
+**Question :** Le son se propage plus vite dans l'air, dans l'eau ou dans l'acier ?
 
-$$v = \frac{d}{\Delta t} = \lambda \times f$$
+**Réponse :** Dans l'**acier** (~5000 m/s), puis dans l'**eau** (~1500 m/s), puis dans l'**air** (~340 m/s). Plus le milieu est rigide/dense, plus le son va vite.
 :::
 
-## Relation fondamentale
+:::warning[Erreur classique]
+"Plus l'onde est forte, plus elle va vite"
 
-:::method[Relation fondamentale des ondes]
-$$\lambda = v \times T = \frac{v}{f}$$
-
-ou encore :
-
-$$v = \lambda \times f$$
-
-Cette relation lie les trois grandeurs caractéristiques d'une onde.
+**FAUX !** L'amplitude n'affecte pas la célérité.
 :::
 
-## Retard
+## Retard de propagation
 
 :::definition
 **Retard**
 
-Le **retard** $\tau$ entre deux points M₁ et M₂ est le temps mis par l'onde pour aller de M₁ à M₂ :
+Deux points A et B séparés d'une distance $d$ : le point B reproduit le mouvement du point A **avec un retard** $\tau$ (tau) :
 
-$$\tau = \frac{M_1M_2}{v} = \frac{d}{v}$$
+$$\tau = \frac{d}{v}$$
 
-Si M₁ vibre à l'instant t, M₂ vibre à l'instant t + τ avec le même mouvement.
+Le signal est le **même**, simplement **décalé dans le temps**.
 :::
 
-## Exemples résolus
+:::example[Mini-question guidée]
+**Question :** Si un point vibre à $t = 0$, quand le point suivant (distant de $d$) commence-t-il à vibrer ?
 
-### Exemple 1 : Célérité d'une onde
+**Réponse :** À $t = \tau = \frac{d}{v}$.
+:::
 
-Une perturbation parcourt 15 m en 0,5 s le long d'une corde.
+## Les Ondes Périodiques : La Double Périodicité
 
-**Célérité** : $v = \frac{d}{\Delta t} = \frac{15}{0.5} = 30$ m/s
+Une onde est **périodique** si la source impose une perturbation qui se répète identique à elle-même à intervalles réguliers.
 
-### Exemple 2 : Longueur d'onde
+### Périodicité Temporelle
 
-Une onde sonore de fréquence 440 Hz se propage à 340 m/s.
+:::property[Période et Fréquence]
+- **Période $T$** : Plus petite durée au bout de laquelle un point retrouve le même état vibratoire (en secondes, s)
+- **Fréquence $f$** : Nombre de répétitions par seconde (en Hertz, Hz)
 
-**Longueur d'onde** : $\lambda = \frac{v}{f} = \frac{340}{440} = 0.77$ m
+$$f = \frac{1}{T}$$
+:::
 
-### Exemple 3 : Retard
+### Périodicité Spatiale
 
-Deux microphones M₁ et M₂ sont distants de 1,7 m. La célérité du son est 340 m/s.
+:::property[Longueur d'onde]
+La **longueur d'onde** $\lambda$ (lambda) est la plus petite distance séparant deux points qui vibrent **en phase** (font la même chose en même temps).
 
-**Retard** : $\tau = \frac{d}{v} = \frac{1.7}{340} = 5.0 \times 10^{-3}$ s = 5,0 ms
+C'est aussi la distance parcourue par l'onde pendant une période $T$ :
 
-## Erreurs fréquentes
+$$\lambda = v \times T = \frac{v}{f}$$
+:::
+
+:::tip[Analogie : Le Train]
+Imaginez un train composé de wagons identiques de longueur $\lambda$ :
+- Si vous restez au bord de la voie, un wagon entier passe devant vous en une durée $T$
+- La vitesse du train est donc $v = \frac{\lambda}{T}$
+:::
+
+### Relation Fondamentale
+
+:::method[Relation fondamentale des ondes]
+$$\lambda = v \times T = \frac{v}{f}$$
+
+ou encore : $v = \lambda \times f$
+
+Cette relation lie les trois grandeurs caractéristiques. Elle est **toujours valable** pour les ondes périodiques.
+:::
+
+## Lecture de Graphes (Compétence Bac)
+
+:::method[Deux types de graphes à distinguer]
+**Graphe temporel $y(t)$ :**
+- Représente le mouvement d'un **point fixe** au cours du temps
+- Permet de mesurer la **période $T$**
+
+**Graphe spatial $y(x)$ :**
+- Représente l'état de l'onde **à un instant donné** (comme une photo)
+- Permet de mesurer la **longueur d'onde $\lambda$**
+:::
+
+:::warning[Erreur fréquente]
+"Le graphe spatial montre le mouvement d'un point"
+
+**FAUX !** Il montre une **photo instantanée** de l'onde entière.
+:::
+
+## Cas Particulier : Les Ondes Sonores
+
+Le son est une onde mécanique **longitudinale** qui se propage grâce aux chocs entre les molécules (compression/dilatation). Il ne se propage pas dans le vide.
+
+### Intensité et Niveau Sonore
+
+L'oreille humaine n'est pas sensible linéairement à l'énergie reçue. On distingue deux grandeurs :
+
+:::definition
+**Intensité sonore $I$**
+
+C'est la puissance reçue par unité de surface :
+
+$$I = \frac{P}{S}$$
+
+Unité : Watt par mètre carré (W·m⁻²)
+:::
+
+:::definition
+**Niveau d'intensité sonore $L$**
+
+Il modélise la sensation auditive (échelle logarithmique) :
+
+$$L = 10 \cdot \log\left(\frac{I}{I_0}\right)$$
+
+- $L$ : niveau sonore en décibels (dB)
+- $I_0 = 1{,}0 \times 10^{-12}$ W·m⁻² : seuil d'audibilité humaine
+
+**Formule inverse :** $I = I_0 \cdot 10^{L/10}$
+:::
+
+:::tip[Astuce importante]
+**Doubler l'intensité sonore ajoute toujours +3 dB** (car $10 \times \log(2) \approx 3$)
+:::
+
+### L'Atténuation
+
+:::property[Types d'atténuation]
+Le son diminue lorsqu'on s'éloigne de la source :
+
+**Atténuation géométrique :**
+L'énergie se répartit sur une sphère de plus en plus grande. L'intensité diminue en $1/r^2$ :
+$$I(r) = \frac{P_{source}}{4\pi r^2}$$
+
+**Atténuation par absorption :**
+Le milieu (air, mur) absorbe une partie de l'énergie (dissipation thermique).
+:::
+
+## Exemples Résolus
+
+:::example[Calcul de longueur d'onde]
+**Énoncé :** Une onde ultrasonore de fréquence $f = 40$ kHz se propage dans l'air à $v = 340$ m·s⁻¹. Quelle est sa longueur d'onde ?
+
+**Résolution :**
+1. Conversion : $f = 40$ kHz $= 40 \times 10^3$ Hz
+2. Formule : $\lambda = \frac{v}{f}$
+3. Calcul : $\lambda = \frac{340}{40 \times 10^3} = 8{,}5 \times 10^{-3}$ m
+4. **Résultat : $\lambda = 8{,}5$ mm**
+:::
+
+:::example[Calcul du retard]
+**Énoncé :** Deux microphones M₁ et M₂ sont distants de 1,7 m. La célérité du son est 340 m/s.
+
+**Résolution :**
+$$\tau = \frac{d}{v} = \frac{1{,}7}{340} = 5{,}0 \times 10^{-3}\ \text{s} = \mathbf{5{,}0\ \text{ms}}$$
+:::
+
+:::example[Calcul du niveau sonore]
+**Énoncé :** Un musicien produit un son d'intensité $I = 1{,}0 \times 10^{-4}$ W·m⁻². Quel est le niveau sonore ?
+
+**Résolution :**
+1. Formule : $L = 10 \cdot \log\left(\frac{I}{I_0}\right)$
+2. Application : $L = 10 \cdot \log\left(\frac{1{,}0 \times 10^{-4}}{1{,}0 \times 10^{-12}}\right)$
+3. Simplification : $\frac{10^{-4}}{10^{-12}} = 10^8$ et $\log(10^8) = 8$
+4. **Résultat : $L = 10 \times 8 = 80$ dB**
+:::
+
+:::example[Addition de sons (piège classique)]
+**Énoncé :** Deux machines produisent chacune 80 dB. Le niveau total est-il 160 dB ?
+
+**Résolution :**
+**Non !** Les niveaux en dB ne s'additionnent pas, ce sont les **intensités** qui s'ajoutent.
+
+1. Intensité d'une machine : $I = I_0 \cdot 10^{80/10} = I_0 \cdot 10^8$
+2. Intensité totale : $I_{tot} = 2I = 2 \cdot 10^8 \cdot I_0$
+3. Nouveau niveau : $L_{tot} = 10 \cdot \log(2 \cdot 10^8) = 10 \cdot (\log 2 + 8)$
+4. **Résultat : $L_{tot} \approx 10 \times 8{,}3 = 83$ dB** (et non 160 dB !)
+:::
+
+## Méthode Type Bac
+
+:::method[Les 6 étapes]
+1. **Identifier** le type d'onde (mécanique, sonore...)
+2. **Identifier** le milieu de propagation
+3. **Déterminer** la célérité (donnée ou à calculer)
+4. **Identifier** ce qu'on cherche : retard, période ou longueur d'onde
+5. **Appliquer** la relation adaptée ($\tau = d/v$, $\lambda = vT$, $L = 10\log(I/I_0)$...)
+6. **Vérifier** la cohérence physique du résultat
+:::
+
+## Erreurs Classiques et Comment les Éviter
 
 :::warning
-**Erreur 1** : Confondre vitesse de l'onde et vitesse des particules du milieu
+**Erreur 1 : Confondre propagation et déplacement**
 
-L'onde se propage à la célérité v, mais les particules du milieu oscillent sur place.
+Toujours se demander : "Est-ce la matière ou la perturbation qui se déplace ?"
 
-**Erreur 2** : Oublier les unités
+**Erreur 2 : Croire que l'onde est instantanée**
 
-Toujours vérifier : T en s, f en Hz, λ en m, v en m/s.
+Toujours introduire un retard. L'onde met un temps fini à se propager.
 
-**Erreur 3** : Confondre période temporelle et spatiale
+**Erreur 3 : Confondre $v$, $f$ et $\lambda$**
 
-T est la période temporelle (durée), λ est la période spatiale (longueur d'onde).
+Utiliser systématiquement $v = \lambda f$. Attention aux unités !
+
+**Erreur 4 : Confondre période temporelle et spatiale**
+
+$T$ est en secondes (durée), $\lambda$ est en mètres (distance).
+
+**Erreur 5 : Lire un graphe sans identifier son type**
+
+Toujours préciser : graphe **temporel** (→ $T$) ou **spatial** (→ $\lambda$) ?
+
+**Erreur 6 : Additionner des décibels**
+
+Les dB ne s'additionnent pas ! Ce sont les **intensités** qui s'ajoutent.
 :::
 
 ## Mini-résumé
 
-- Onde : propagation d'une perturbation sans transport de matière
-- $f = \frac{1}{T}$
-- $\lambda = v \times T = \frac{v}{f}$
-- Retard : $\tau = \frac{d}{v}$
+| Concept | Formule / Définition | Astuce / Unité |
+|---------|----------------------|----------------|
+| **Onde** | Transport d'énergie sans matière | Nécessite un milieu |
+| **Célérité** | $v = \frac{d}{\Delta t}$ | en m/s |
+| **Retard** | $\tau = \frac{d}{v}$ | Temps de parcours |
+| **Période** | $T = \frac{1}{f}$ | en secondes |
+| **Relation clé** | $\lambda = v \times T = \frac{v}{f}$ | $\lambda$ (m), $f$ (Hz) |
+| **Niveau sonore** | $L = 10 \log(I/I_0)$ | en dB |
+| **Intensité** | $I = I_0 \cdot 10^{L/10}$ | en W/m² |
+| **Astuce dB** | +3 dB ⟺ Intensité × 2 | |
