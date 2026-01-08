@@ -1,159 +1,207 @@
 ---
-id: diffraction
-title: "Diffraction des ondes"
-track: physique
-chapter: ondes
-level: 3
-estimatedTime: 45
-prerequisites:
-  - ondes-lumineuses
-tags:
-  - diffraction
-  - fente
-  - obstacle
-  - tache centrale
-objectives:
-  - Comprendre le phénomène de diffraction
-  - Connaître la condition d'observation de la diffraction
-  - Calculer l'écart angulaire du faisceau diffracté
-  - Déterminer la largeur de la tache centrale
+id: "diffraction"
+title: "La Diffraction : Quand les ondes contournent les obstacles"
+track: "physique"
+level: 2
+prerequisites: []
+tags: ["diffraction", "onde lumineuse", "écart angulaire", "laser", "mesure"]
+estimatedTime: 90
+chapter: "ondes"
+order: 1
 ---
 
-# Diffraction des ondes
+# La Diffraction des Ondes
 
-## Intuition et analogie
+## Objectifs
 
-Tu es dans ta chambre, porte fermée, et tu entends quand même la conversation dans le salon. Comment le son fait-il pour "contourner" les obstacles ? C'est la **diffraction** !
+À la fin de cette leçon, tu sauras :
+- Définir le phénomène de diffraction et ses conditions d'apparition
+- Schématiser une expérience de diffraction (laser, fente, écran)
+- Exploiter la relation entre l'écart angulaire $\theta$, la longueur d'onde $\lambda$ et la taille de l'ouverture $a$
+- Démontrer la relation entre la largeur de la tache centrale $L$ et la distance $D$
+- Mesurer la taille d'un objet fin (cheveu, fil) par diffraction
 
-Imagine une vague océanique qui arrive vers une digue avec une petite ouverture. Au lieu de continuer tout droit, l'eau qui passe par l'ouverture **s'étale en éventail** de l'autre côté, comme si l'ouverture était devenue une nouvelle source de vagues. Plus l'ouverture est petite (par rapport à la longueur d'onde), plus l'étalement est important.
+## Intuition et analogie : L'éparpillement de l'onde
 
-La lumière fait pareil, mais comme sa longueur d'onde est minuscule (environ 0,5 micromètre, soit 0,0005 mm), il faut des fentes **extrêmement fines** pour voir cet effet. Quand on éclaire une fente très fine avec un laser, au lieu d'obtenir une fine ligne lumineuse, on voit une **tache étalée** avec des franges — preuve que la lumière est bien une onde !
+Contrairement à une bille ou une particule qui voyage en ligne droite et s'arrête net devant un mur, une onde a la capacité de contourner les obstacles ou de s'évaser en traversant une ouverture. C'est la **diffraction**.
 
-La formule $\theta \approx \frac{\lambda}{a}$ traduit cette idée : plus la fente est petite ($a$ petit), plus l'angle d'étalement $\theta$ est grand.
+:::tip[Analogie : Le Port et la Vague]
+Imagine une houle (vagues parallèles) arrivant vers l'entrée d'un port protégée par une digue.
 
-## Introduction
+**Sans diffraction (Comportement particulaire) :** Les vagues passeraient tout droit à travers l'ouverture, créant un "couloir" de vagues calme, et le reste du port serait parfaitement plat.
 
-La **diffraction** est un phénomène caractéristique des ondes : lorsqu'une onde rencontre un obstacle ou une ouverture de dimension comparable à sa longueur d'onde, elle se propage dans des directions qui ne sont pas rectilignes.
+**Avec diffraction (Réalité ondulatoire) :** Dès que les vagues franchissent l'ouverture, elles s'arrondissent et s'étalent en demi-cercles pour atteindre des zones qui devraient être protégées (zones d'ombre géométrique).
+:::
 
-## Observation de la diffraction
+## Définition et Conditions d'observation
 
-### Condition d'observation
+### Définition
 
-La diffraction est observable lorsque la dimension de l'obstacle ou de l'ouverture $a$ est du même ordre de grandeur que la longueur d'onde $\lambda$ :
-$$a \approx \lambda \quad \text{ou} \quad a < 10\lambda$$
+:::definition
+**Diffraction**
 
-<Trap title="Condition importante">
-Si l'ouverture est très grande devant $\lambda$, la lumière se propage en ligne droite (optique géométrique). La diffraction n'est visible que pour des ouvertures suffisamment petites.
-</Trap>
+La diffraction est la modification de la direction de propagation d'une onde lorsqu'elle rencontre une ouverture ou un obstacle. L'onde "s'éparpille" après l'obstacle.
+:::
 
-### Expérience avec une fente
+### Condition d'apparition
 
-Quand un faisceau laser traverse une fente fine de largeur $a$, on observe sur un écran :
-- Une **tache centrale** brillante, large
-- Des **taches secondaires** moins lumineuses de part et d'autre
+:::property[Condition de diffraction]
+Le phénomène est notable lorsque la dimension $a$ de l'ouverture ou de l'obstacle est **inférieure ou du même ordre de grandeur** que la longueur d'onde $\lambda$ de l'onde incidente :
 
-## Écart angulaire
+$$a \lesssim \lambda$$
 
-<Definition title="Écart angulaire">
-L'écart angulaire $\theta$ correspond au demi-angle d'ouverture du faisceau diffracté. Il est lié à la position du premier minimum de diffraction.
-</Definition>
+- Si l'ouverture est très grande devant $\lambda$ ($a \gg \lambda$), l'onde continue quasiment tout droit (propagation rectiligne)
+- Plus l'ouverture $a$ est petite, plus la diffraction est marquée (l'onde s'étale davantage)
+:::
 
-Pour une fente de largeur $a$ éclairée par une lumière de longueur d'onde $\lambda$ :
-$$\sin\theta = \frac{\lambda}{a}$$
+## L'expérience de Diffraction Lumineuse
 
-Pour les petits angles ($\theta < 10°$) :
-$$\theta \approx \frac{\lambda}{a}$$
+On éclaire une fente fine (ou un fil) de largeur $a$ avec un laser monochromatique de longueur d'onde $\lambda$. On place un écran à une distance $D$ (avec $D \gg a$).
 
-<Formula title="Écart angulaire">
-$$\theta = \frac{\lambda}{a} \quad \text{(en radians, pour petits angles)}$$
-</Formula>
+### Observation
 
-## Tache centrale de diffraction
+:::property[Figure de diffraction]
+Au lieu d'observer une simple tache lumineuse de la forme de la fente, on observe une **figure de diffraction** caractéristique :
 
-### Largeur de la tache centrale
+1. Une **tache centrale** très brillante et large (largeur notée $L$)
+2. Des taches latérales plus petites et moins lumineuses
+3. Des zones sombres appelées **extinctions** entre les taches
+:::
 
-La largeur $L$ de la tache centrale sur un écran situé à la distance $D$ est :
-$$L = 2 \times D \times \tan\theta \approx 2D\theta = \frac{2\lambda D}{a}$$
+:::tip[Attention à l'orientation]
+La figure de diffraction s'étale **perpendiculairement** à la fente :
+- Une fente **verticale** donne une figure de diffraction **horizontale**
+- Une fente **horizontale** donne une figure de diffraction **verticale**
+:::
 
-<Formula title="Largeur de la tache centrale">
-$$L = \frac{2\lambda D}{a}$$
-</Formula>
+## Modélisation Mathématique
 
-### Propriétés de la tache centrale
+Pour quantifier cet étalement, on définit l'**écart angulaire** $\theta$ (thêta).
 
-- La tache centrale est **deux fois plus large** que les taches secondaires
-- Elle contient environ **84%** de l'énergie lumineuse
-- Sa largeur **augmente** quand la fente est plus étroite
+### A. Définition de l'écart angulaire $\theta$
 
-<Method title="Calculer la largeur de la tache centrale">
-1. Identifier les données : $\lambda$, $a$, $D$
-2. Vérifier que les unités sont cohérentes (tout en mètres)
-3. Appliquer $L = \frac{2\lambda D}{a}$
-4. Convertir le résultat dans l'unité demandée
-</Method>
+:::definition
+**Écart angulaire**
+
+C'est l'angle entre l'axe optique (le centre de la tache centrale) et la première extinction (le milieu de la première zone sombre).
+
+La relation fondamentale est :
+
+$$\theta = \frac{\lambda}{a}$$
+
+- $\theta$ : écart angulaire en radians (rad)
+- $\lambda$ : longueur d'onde en mètres (m)
+- $a$ : largeur de la fente ou du fil en mètres (m)
+:::
+
+:::tip[Interprétation physique]
+- Si $a$ diminue (fente plus fine), $\theta$ augmente (la lumière s'étale plus)
+- Si $\lambda$ augmente (lumière rouge vs bleue), $\theta$ augmente
+:::
+
+### B. Lien avec la géométrie de l'expérience
+
+:::method[Relation géométrique]
+En regardant le schéma de l'expérience (un triangle rectangle formé par l'axe, l'écran et le bord de la tache centrale), on peut relier $\theta$ aux distances $L$ et $D$.
+
+Dans ce triangle :
+
+$$\tan(\theta) = \frac{\text{Côté opposé}}{\text{Côté adjacent}} = \frac{L/2}{D} = \frac{L}{2D}$$
+
+Comme l'angle $\theta$ est très petit (condition usuelle de diffraction), on utilise l'**approximation des petits angles** : $\tan(\theta) \approx \theta$ (en rad).
+
+D'où la relation géométrique :
+
+$$\theta \approx \frac{L}{2D}$$
+:::
+
+### C. La Formule Complète
+
+:::property[Formule de la largeur de la tache centrale]
+En combinant la relation physique ($\theta = \lambda/a$) et géométrique ($\theta = L/2D$), on obtient :
+
+$$\frac{\lambda}{a} = \frac{L}{2D} \quad \iff \quad L = \frac{2 \cdot \lambda \cdot D}{a}$$
+:::
+
+## Exemples Résolus
+
+:::example[Calcul de la longueur d'onde]
+**Énoncé :** On éclaire une fente de largeur $a = 32{,}5\ \mu\text{m}$ avec un laser. Sur un écran situé à $D = 2{,}00\ \text{m}$, on mesure une tache centrale de largeur $L = 8{,}60\ \text{cm}$. Quelle est la longueur d'onde du laser ?
+
+**Résolution :**
+1. **Conversion :** Tout mettre en mètres.
+   - $a = 32{,}5 \times 10^{-6}\ \text{m}$
+   - $L = 8{,}60 \times 10^{-2}\ \text{m}$
+   - $D = 2{,}00\ \text{m}$
+
+2. **Formule :** On part de $\theta = \frac{\lambda}{a}$ et $\theta = \frac{L}{2D}$. Donc $\lambda = \frac{a \cdot L}{2D}$.
+
+3. **Calcul :**
+   $$\lambda = \frac{(32{,}5 \times 10^{-6}) \times (8{,}60 \times 10^{-2})}{2 \times 2{,}00}$$
+   $$\lambda \approx 6{,}99 \times 10^{-7}\ \text{m}$$
+
+4. **Conclusion :** $\lambda = 699\ \text{nm}$. Il s'agit d'un **laser rouge**.
+:::
+
+:::example[Mesure d'un cheveu (Principe de Babinet)]
+**Énoncé :** On remplace la fente par un cheveu vertical. On obtient une figure de diffraction identique. Pour un laser vert ($\lambda = 530\ \text{nm}$) et un écran à $D=2{,}00\ \text{m}$, la tache centrale mesure $L=16\ \text{mm}$. Quel est le diamètre $a$ du cheveu ?
+
+**Résolution :**
+1. **Principe :** Un fil diffracte la lumière exactement comme une fente de même largeur (Principe de Babinet).
+
+2. **Formule :** On isole $a$ dans la relation combinée : $a = \frac{2 \cdot \lambda \cdot D}{L}$.
+
+3. **Calcul :**
+   $$a = \frac{2 \times (530 \times 10^{-9}) \times 2{,}00}{16 \times 10^{-3}}$$
+   $$a \approx 1{,}3 \times 10^{-4}\ \text{m}$$
+
+4. **Conclusion :** Le cheveu a un diamètre de **$130\ \mu\text{m}$**.
+:::
 
 ## Diffraction par différents objets
 
-### Fil ou cheveu
+### Fil ou cheveu (Principe de Babinet)
 
-Un fil de diamètre $d$ produit une figure de diffraction similaire à celle d'une fente de même largeur. Cela permet de mesurer le diamètre d'un cheveu !
+:::property[Principe de Babinet]
+Un fil de diamètre $d$ produit une figure de diffraction **identique** à celle d'une fente de même largeur. Cela permet de mesurer le diamètre d'objets très fins comme un cheveu !
+:::
 
 ### Trou circulaire
 
-Pour un trou circulaire de diamètre $d$, on observe des anneaux concentriques. L'écart angulaire vaut :
-$$\theta = 1.22 \frac{\lambda}{d}$$
+Pour un trou circulaire de diamètre $d$, on observe des **anneaux concentriques**. L'écart angulaire vaut :
 
-### Réseau de diffraction
+$$\theta = 1{,}22 \times \frac{\lambda}{d}$$
 
-Un réseau est constitué de nombreuses fentes parallèles équidistantes. Il permet de séparer les différentes longueurs d'onde (spectroscopie).
+Le facteur 1,22 provient de la géométrie circulaire.
 
-## Applications
+## Erreurs fréquentes
 
-### Limite de résolution
+:::warning
+**Erreur 1 : Confondre sens d'étalement**
 
-La diffraction limite le pouvoir de résolution des instruments d'optique :
-- Télescopes
-- Microscopes
-- Appareils photo
+La figure s'étale **perpendiculairement** à la fente, pas parallèlement !
 
-Plus l'ouverture est grande, meilleure est la résolution.
+**Erreur 2 : Oublier les conversions**
 
-### Spectroscopie
+Tout doit être en **mètres** pour utiliser les formules. Attention aux $\mu$m, nm, mm, cm...
 
-Les réseaux de diffraction permettent d'analyser la composition spectrale de la lumière (identification d'éléments chimiques).
+**Erreur 3 : Confondre $\theta$ et $L$**
 
-<Trap title="Plus la fente est fine...">
-Plus la fente est fine, plus la diffraction est importante et plus la tache centrale est large. C'est contre-intuitif mais c'est bien $L \propto \frac{1}{a}$.
-</Trap>
+$\theta$ est l'**angle** (en radians), $L$ est la **largeur** de la tache (en mètres).
 
-## Exercice de compréhension
+**Erreur 4 : Penser que fente fine = tache fine**
 
-<Exercise id="comp-diffr-1">
-Un faisceau laser de longueur d'onde $\lambda = 633$ nm traverse une fente de largeur $a = 0.1$ mm. L'écran est placé à $D = 3$ m de la fente.
+C'est **l'inverse** ! Plus la fente est fine ($a$ petit), plus la tache est large ($L$ grand). C'est la signature du comportement ondulatoire.
+:::
 
-1. Calculer l'écart angulaire $\theta$ en radians puis en degrés.
-2. Calculer la largeur de la tache centrale de diffraction.
-3. On réduit la largeur de la fente de moitié. Que devient la largeur de la tache centrale ?
+## Mini-résumé
 
-<Solution>
-1. Écart angulaire :
-$$\theta = \frac{\lambda}{a} = \frac{633 \times 10^{-9}}{0.1 \times 10^{-3}} = 6.33 \times 10^{-3} \text{ rad}$$
-En degrés : $\theta = 6.33 \times 10^{-3} \times \frac{180}{\pi} \approx 0.36°$
-
-2. Largeur de la tache centrale :
-$$L = \frac{2\lambda D}{a} = \frac{2 \times 633 \times 10^{-9} \times 3}{0.1 \times 10^{-3}} = 0.038 \text{ m} = 3.8 \text{ cm}$$
-
-3. Si $a' = a/2$, alors :
-$$L' = \frac{2\lambda D}{a'} = \frac{2\lambda D}{a/2} = 2L = 7.6 \text{ cm}$$
-La tache centrale **double** de largeur.
-</Solution>
-</Exercise>
-
-## Points clés à retenir
-
-<Summary>
-- Diffraction observable si $a \approx \lambda$
-- Écart angulaire : $\theta = \frac{\lambda}{a}$
-- Largeur tache centrale : $L = \frac{2\lambda D}{a}$
-- Plus la fente est fine, plus la diffraction est importante
-</Summary>
+| Concept | Formule / Astuce |
+|---------|------------------|
+| **Condition diffraction** | $a$ proche de $\lambda$ (plus $a$ est petit, plus ça diffracte) |
+| **Écart angulaire** | $\theta = \frac{\lambda}{a}$ (en radians) |
+| **Géométrie** | $\theta = \frac{L}{2D}$ (Tangente = Opposé/Adjacent) |
+| **Largeur tache centrale** | $L = \frac{2\lambda D}{a}$ |
+| **Orientation** | Fente Verticale → Tache Horizontale |
+| **Babinet** | Fil et fente de même largeur donnent la même figure |
+| **Application** | Mesure de petits objets (cheveux, fils) par laser |
