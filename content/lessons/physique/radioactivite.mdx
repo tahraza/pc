@@ -1,184 +1,333 @@
 ---
-id: radioactivite
-title: "Radioactivité et décroissance radioactive"
-track: physique
-chapter: energie
+id: "radioactivite"
+title: "Radioactivité et Décroissance Radioactive"
+track: "physique"
 level: 3
-estimatedTime: 55
-prerequisites: []
-tags:
-  - radioactivité
-  - décroissance
-  - demi-vie
-  - activité
-  - datation
-objectives:
-  - Connaître les différents types de radioactivité
-  - Comprendre la loi de décroissance radioactive
-  - Savoir utiliser la demi-vie
-  - Calculer l'activité d'un échantillon
+prerequisites: ["structure-atome"]
+tags: ["radioactivité", "désintégration", "alpha", "beta", "gamma", "demi-vie", "activité", "datation", "carbone 14"]
+estimatedTime: 90
+chapter: "energie"
+order: 1
 ---
 
-# Radioactivité et décroissance radioactive
+# Radioactivité et Décroissance Radioactive
 
-## Intuition et analogie
+## Objectifs
 
-Imagine une salle remplie de **grains de pop-corn** dans une poêle chaude. Tu ne peux pas prédire **quel** grain va éclater à quel moment — c'est aléatoire. Mais si tu as des millions de grains, tu peux prédire qu'au bout d'un certain temps, **la moitié** aura éclaté. C'est exactement la radioactivité !
+À la fin de cette leçon, tu sauras :
+- Expliquer les causes de l'instabilité nucléaire (diagramme N, Z)
+- Écrire et équilibrer les équations de désintégration ($\alpha$, $\beta^-$, $\beta^+$, $\gamma$) avec les lois de conservation
+- Établir la **loi de décroissance radioactive** $N(t) = N_0 e^{-\lambda t}$
+- Relier l'**activité** $A$, le nombre de noyaux $N$, la constante $\lambda$ et la **demi-vie** $t_{1/2}$
+- Appliquer ces notions à la **datation au carbone 14**
 
-Chaque noyau radioactif est comme un grain de pop-corn instable : il peut "éclater" (se désintégrer) à tout moment, de façon totalement imprévisible. Mais sur un grand nombre de noyaux, le comportement devient **statistiquement prévisible**. La **demi-vie** $t_{1/2}$, c'est le temps pour que la moitié des noyaux se désintègrent — comme le temps pour que la moitié des pop-corn éclatent.
+## 1. Intuition et Analogies
 
-Pourquoi certains noyaux sont-ils instables ? Pense à une tour de blocs mal équilibrée : elle finira par s'écrouler pour atteindre une configuration plus stable. Les noyaux radioactifs "s'écroulent" en éjectant des particules (alpha, bêta) pour devenir plus stables.
+La radioactivité est un phénomène **aléatoire**, **spontané** et **inéluctable** qui concerne le noyau des atomes.
 
-Ce phénomène naturel permet de **dater** des objets anciens (carbone 14) et de produire de l'énergie (centrales nucléaires) — la même physique, des applications très différentes !
+:::tip[Analogie : Le Pop-Corn]
+Imagine des grains de maïs dans une casserole chaude :
+- **Le noyau instable** = le grain de maïs. Il contient trop d'énergie ou est mal structuré.
+- **La désintégration** = le moment où le grain éclate ("Pop !"). Il se transforme et libère de l'énergie.
+- **Le caractère aléatoire** : Impossible de prédire *quand* un grain précis va éclater.
+- **La loi statistique** : Sur des milliards de grains, on sait parfaitement combien auront éclaté au bout de 2 minutes.
 
-## Introduction
+C'est le cœur de la radioactivité : **hasard microscopique, loi statistique macroscopique**.
+:::
 
-La **radioactivité** est un phénomène nucléaire au cours duquel des noyaux instables se transforment spontanément en émettant des rayonnements. C'est un phénomène aléatoire au niveau d'un noyau mais prévisible statistiquement pour un grand nombre de noyaux.
+:::tip[Analogie : Les Bougies]
+Si tu as 100 bougies identiques qui s'éteignent aléatoirement :
+- Après une "demi-vie" → il en reste 50
+- Après deux demi-vies → il en reste 25
+- Après trois demi-vies → il en reste 12,5...
 
-## Les types de radioactivité
+La **demi-vie** $t_{1/2}$, c'est le temps pour que la moitié des noyaux se désintègrent — pas le temps pour que "tout disparaisse" !
+:::
 
-### Radioactivité alpha ($\alpha$)
+## 2. Stabilité et Instabilité du Noyau
 
-Le noyau émet une particule $\alpha$ (noyau d'hélium $^4_2$He) :
+### Composition et isotopes
+
+:::definition
+**Notation du noyau**
+
+Un noyau est représenté par $^A_Z X$ où :
+- $Z$ = **numéro atomique** (nombre de protons)
+- $A$ = **nombre de masse** (protons + neutrons)
+- $N = A - Z$ = nombre de neutrons
+
+Des **isotopes** sont des noyaux ayant le même $Z$ (même élément) mais des $N$ différents.
+
+*Exemple :* Carbone 12 ($^{12}_6$C, stable) et Carbone 14 ($^{14}_6$C, radioactif) sont des isotopes.
+:::
+
+### La vallée de stabilité (diagramme N, Z)
+
+Pour être stable, un noyau doit respecter un équilibre entre forces attractives (interaction forte) et répulsives (électrostatique entre protons).
+
+:::property[Règles de stabilité]
+- Pour $Z < 20$ : les noyaux stables sont sur la bissectrice $N = Z$
+- Pour $Z > 20$ : il faut plus de neutrons que de protons ($N > Z$) pour compenser la répulsion électrique
+- Les noyaux **hors de la vallée de stabilité** sont radioactifs et cherchent à la rejoindre
+:::
+
+## 3. Lois de Conservation (Soddy)
+
+:::theorem[Lois de conservation]
+Lors d'une désintégration $^{A_1}_{Z_1}X \rightarrow ^{A_2}_{Z_2}Y + ^{A_3}_{Z_3}Q$ :
+
+- **Conservation du nombre de masse** : $A_1 = A_2 + A_3$
+- **Conservation de la charge** : $Z_1 = Z_2 + Z_3$
+:::
+
+:::warning[Réflexe indispensable]
+Si ton équation ne conserve pas $A$ et $Z$, elle est **fausse** !
+:::
+
+## 4. Les Types de Radioactivité
+
+### Radioactivité $\alpha$ (Alpha)
+
+:::property[Émission alpha]
+- **Cause** : Le noyau est **trop lourd** (généralement $Z > 83$)
+- **Particule émise** : Noyau d'hélium $^4_2$He (2 protons + 2 neutrons)
+- **Effet** : $A$ diminue de 4, $Z$ diminue de 2
+
 $$^A_Z X \rightarrow ^{A-4}_{Z-2} Y + ^4_2 He$$
+:::
 
-<Definition title="Rayonnement alpha">
-Émission d'un noyau d'hélium. Peu pénétrant (arrêté par une feuille de papier) mais très ionisant.
-</Definition>
+:::example[Uranium 238]
+$$^{238}_{92} U \rightarrow ^{234}_{90} Th + ^4_2 He$$
+:::
 
-### Radioactivité bêta moins ($\beta^-$)
+### Radioactivité $\beta^-$ (Bêta moins)
 
-Un neutron se transforme en proton avec émission d'un électron :
-$$^A_Z X \rightarrow ^{A}_{Z+1} Y + ^0_{-1} e + \bar{\nu}_e$$
+:::property[Émission bêta moins]
+- **Cause** : Le noyau a un **excès de neutrons** (au-dessus de la vallée)
+- **Mécanisme** : Un neutron se transforme en proton ($n \rightarrow p$)
+- **Particule émise** : Électron $^0_{-1}e$
+- **Effet** : $A$ inchangé, $Z$ augmente de 1
 
-### Radioactivité bêta plus ($\beta^+$)
+$$^A_Z X \rightarrow ^A_{Z+1} Y + ^0_{-1} e$$
+:::
 
-Un proton se transforme en neutron avec émission d'un positon :
-$$^A_Z X \rightarrow ^{A}_{Z-1} Y + ^0_{+1} e + \nu_e$$
+:::example[Carbone 14]
+$$^{14}_{6} C \rightarrow ^{14}_{7} N + ^0_{-1} e$$
+:::
 
-### Rayonnement gamma ($\gamma$)
+### Radioactivité $\beta^+$ (Bêta plus)
 
-Émission d'un photon très énergétique lors de la désexcitation du noyau. Accompagne souvent les autres désintégrations.
+:::property[Émission bêta plus]
+- **Cause** : Le noyau a un **excès de protons** (en dessous de la vallée)
+- **Mécanisme** : Un proton se transforme en neutron ($p \rightarrow n$)
+- **Particule émise** : Positon $^0_{+1}e$ (anti-électron)
+- **Effet** : $A$ inchangé, $Z$ diminue de 1
 
-## Loi de décroissance radioactive
+$$^A_Z X \rightarrow ^A_{Z-1} Y + ^0_{+1} e$$
+:::
 
-### Caractère aléatoire
+:::example[Fluor 18 (imagerie médicale)]
+$$^{18}_{9} F \rightarrow ^{18}_{8} O + ^0_{+1} e$$
+:::
 
-La désintégration d'un noyau individuel est **imprévisible**. On ne peut définir qu'une probabilité de désintégration.
+### Rayonnement $\gamma$ (Gamma)
 
-### Constante radioactive
+:::property[Désexcitation gamma]
+- **Cause** : Le noyau fils est dans un état excité après une désintégration $\alpha$ ou $\beta$
+- **Émission** : Photon $\gamma$ très énergétique
+- **Effet** : $A$ et $Z$ **inchangés**
 
-<Definition title="Constante radioactive">
-La constante radioactive $\lambda$ (en s$^{-1}$) caractérise la probabilité de désintégration d'un noyau par unité de temps.
-</Definition>
+$$^A_Z Y^* \rightarrow ^A_Z Y + \gamma$$
+:::
 
-### Loi de décroissance
+## 5. Loi de Décroissance Radioactive
 
-Le nombre de noyaux radioactifs décroît exponentiellement :
-$$N(t) = N_0 \cdot e^{-\lambda t}$$
+### L'équation différentielle
 
-<Formula title="Loi de décroissance radioactive">
-$$N(t) = N_0 \cdot e^{-\lambda t}$$
-Où $N_0$ est le nombre initial de noyaux et $\lambda$ la constante radioactive.
-</Formula>
+À l'échelle macroscopique, le nombre $N(t)$ de noyaux diminue **proportionnellement** à $N$ :
 
-## Demi-vie
+$$\frac{dN}{dt} = -\lambda N$$
 
-<Definition title="Demi-vie (ou période radioactive)">
-La demi-vie $t_{1/2}$ est la durée au bout de laquelle la moitié des noyaux radioactifs initialement présents se sont désintégrés.
-</Definition>
+où $\lambda$ est la **constante radioactive** (en s⁻¹), caractéristique de chaque isotope.
 
-### Relation avec la constante radioactive
+:::tip[Intuition]
+Plus il reste de noyaux, plus il y a de "candidats" à se désintégrer → la décroissance est rapide au début, plus lente ensuite. C'est pourquoi ce n'est pas une droite mais une **exponentielle**.
+:::
 
-$$t_{1/2} = \frac{\ln 2}{\lambda} = \frac{0.693}{\lambda}$$
+### La solution : exponentielle décroissante
 
-<Formula title="Demi-vie">
-$$t_{1/2} = \frac{\ln 2}{\lambda}$$
-</Formula>
+:::theorem[Loi de décroissance]
+$$N(t) = N_0 e^{-\lambda t}$$
 
-### Évolution du nombre de noyaux
+- $N_0$ = nombre initial de noyaux
+- $\lambda$ = constante radioactive (s⁻¹)
+- $t$ = temps écoulé (s)
+:::
 
+## 6. Activité Radioactive
+
+### Définition
+
+:::definition
+**Activité**
+
+L'activité $A(t)$ est le **nombre de désintégrations par seconde** :
+$$A(t) = -\frac{dN}{dt} = \lambda N(t)$$
+
+**Unité** : Becquerel (Bq), avec 1 Bq = 1 désintégration/s
+:::
+
+:::tip[Analogie : Compteur Geiger]
+- $N$ = nombre de "bombes à retardement" encore actives
+- $A$ = nombre de "clics" par seconde que tu entends
+:::
+
+### Évolution de l'activité
+
+Comme $A = \lambda N$, l'activité suit la même loi exponentielle :
+$$A(t) = A_0 e^{-\lambda t}$$
+
+## 7. Demi-vie et Constante de Temps
+
+### Demi-vie $t_{1/2}$
+
+:::definition
+**Demi-vie**
+
+La demi-vie $t_{1/2}$ est la durée pour que **la moitié** des noyaux se désintègrent.
+
+**Démonstration** : À $t = t_{1/2}$, on a $N = \frac{N_0}{2}$
+$$N_0 e^{-\lambda t_{1/2}} = \frac{N_0}{2} \implies e^{-\lambda t_{1/2}} = \frac{1}{2} \implies -\lambda t_{1/2} = -\ln 2$$
+
+**Relation fondamentale** :
+$$t_{1/2} = \frac{\ln 2}{\lambda} \approx \frac{0{,}693}{\lambda}$$
+:::
+
+### Constante de temps $\tau$
+
+:::property[Constante de temps]
+$$\tau = \frac{1}{\lambda}$$
+
+À $t = \tau$ : il reste $e^{-1} \approx 37\%$ des noyaux (63% se sont désintégrés).
+
+**Relation utile** : $\tau \approx 1{,}44 \times t_{1/2}$
+:::
+
+### Après n demi-vies
+
+:::method[Calcul rapide]
 Après $n$ demi-vies :
-$$N = N_0 \times \left(\frac{1}{2}\right)^n = \frac{N_0}{2^n}$$
+$$N = \frac{N_0}{2^n} \quad \text{et} \quad A = \frac{A_0}{2^n}$$
 
-<Method title="Utiliser la demi-vie">
-1. Calculer le nombre de demi-vies écoulées : $n = \frac{t}{t_{1/2}}$
-2. Appliquer : $N = \frac{N_0}{2^n}$ ou $N = N_0 \times (0.5)^n$
-3. Si $n$ n'est pas entier, utiliser la formule exponentielle
-</Method>
+| Demi-vies | Fraction restante |
+|-----------|-------------------|
+| 1 | 1/2 = 50% |
+| 2 | 1/4 = 25% |
+| 3 | 1/8 = 12,5% |
+| 4 | 1/16 = 6,25% |
+| 10 | 1/1024 ≈ 0,1% |
+:::
 
-## Activité
+## 8. Datation au Carbone 14
 
-<Definition title="Activité">
-L'activité $A$ d'un échantillon est le nombre de désintégrations par seconde. Elle s'exprime en becquerels (Bq).
-</Definition>
+### Principe
 
-$$A = \lambda N = -\frac{dN}{dt}$$
+Le C-14 est produit dans l'atmosphère et absorbé par les organismes vivants. Le ratio $^{14}$C/$^{12}$C reste constant tant que l'organisme vit.
 
-L'activité décroît aussi exponentiellement :
-$$A(t) = A_0 \cdot e^{-\lambda t}$$
+À la mort :
+- Plus d'apport de C-14
+- Le C-14 décroît selon $N(t) = N_0 e^{-\lambda t}$
+- Le C-12 (stable) reste constant
 
-<Formula title="Activité">
-$$A = \lambda N$$
-$$A(t) = A_0 \cdot e^{-\lambda t}$$
-</Formula>
+:::method[Formule de datation]
+$$t = -\frac{1}{\lambda} \ln\left(\frac{A(t)}{A_0}\right) = \frac{t_{1/2}}{\ln 2} \ln\left(\frac{A_0}{A(t)}\right)$$
 
-<Trap title="Unités de l'activité">
-1 Bq = 1 désintégration par seconde. Attention, on utilise parfois le curie (Ci) : 1 Ci = 3.7 × 10¹⁰ Bq.
-</Trap>
+Avec $t_{1/2}$ (C-14) $\approx 5730$ ans
+:::
 
-## Applications
+:::example[Datation d'une momie]
+On mesure un ratio $r(t) = 0{,}65 \times r_0$ (où $r_0$ est le ratio pour un organisme vivant).
 
-### Datation au carbone 14
+Comme le C-12 reste constant : $r(t) = r_0 e^{-\lambda t}$
 
-Le carbone 14 ($t_{1/2} = 5730$ ans) permet de dater des échantillons organiques jusqu'à environ 50 000 ans.
+$$0{,}65 = e^{-\lambda t} \implies t = -\frac{\ln(0{,}65)}{\lambda} = -\frac{\ln(0{,}65)}{\ln 2} \times t_{1/2}$$
 
-Principe :
-- Les êtres vivants échangent du carbone avec leur environnement
-- À la mort, les échanges cessent et le C-14 décroît
-- En mesurant l'activité résiduelle, on détermine l'âge
+$$t \approx 0{,}62 \times 5730 \approx 3600 \text{ ans}$$
+:::
 
-### Applications médicales
+## 9. Exemples Résolus
 
-- **Diagnostic** : traceurs radioactifs (scintigraphie)
-- **Thérapie** : destruction de cellules cancéreuses
+:::example[Calcul d'activité du Radium]
+**Énoncé** : 1,0 mg de Radium 226 ($t_{1/2} = 1600$ ans). Calculer son activité.
+Données : $M_{Ra} = 226$ g/mol, $N_A = 6{,}02 \times 10^{23}$ mol⁻¹
 
-### Production d'énergie
+**Solution** :
+1. **Nombre de noyaux** :
+   - $n = \frac{m}{M} = \frac{1{,}0 \times 10^{-3}}{226} = 4{,}42 \times 10^{-6}$ mol
+   - $N = n \times N_A = 2{,}66 \times 10^{18}$ noyaux
 
-Les centrales nucléaires utilisent la fission de l'uranium 235.
+2. **Constante radioactive** :
+   - $t_{1/2} = 1600 \times 365{,}25 \times 24 \times 3600 = 5{,}05 \times 10^{10}$ s
+   - $\lambda = \frac{\ln 2}{t_{1/2}} = 1{,}37 \times 10^{-11}$ s⁻¹
 
-## Exercice de compréhension
+3. **Activité** :
+   - $A = \lambda N = 3{,}7 \times 10^7$ Bq = 37 MBq
+:::
 
-<Exercise id="comp-radio-1">
-Le phosphore 32 a une demi-vie de 14.3 jours. Un échantillon a une activité initiale de 8.0 × 10⁶ Bq.
+:::example[Datation par activité mesurée]
+**Énoncé** : Un morceau de bois (450 g) a une activité de 495 désintégrations/min.
+Données : $\lambda$(C-14) $= 3{,}93 \times 10^{-12}$ s⁻¹, activité du bois vivant : 0,25 Bq pour 10 g.
 
-1. Calculer la constante radioactive $\lambda$ en s⁻¹.
-2. Quelle sera l'activité après 28.6 jours ?
-3. Au bout de combien de temps l'activité sera-t-elle réduite à 1.0 × 10⁶ Bq ?
+**Solution** :
+1. **Conversion** : $A = \frac{495}{60} = 8{,}25$ Bq (pour 450 g)
 
-<Solution>
-1. Constante radioactive :
-$$\lambda = \frac{\ln 2}{t_{1/2}} = \frac{0.693}{14.3 \times 24 \times 3600} = 5.61 \times 10^{-7} \text{ s}^{-1}$$
+2. **Activité initiale** : $A_0 = 450 \times \frac{0{,}25}{10} = 11{,}3$ Bq
 
-2. 28.6 jours = 2 demi-vies, donc :
-$$A = \frac{A_0}{2^2} = \frac{8.0 \times 10^6}{4} = 2.0 \times 10^6 \text{ Bq}$$
+3. **Âge** :
+$$t = -\frac{1}{\lambda}\ln\left(\frac{A}{A_0}\right) = -\frac{1}{3{,}93 \times 10^{-12}}\ln\left(\frac{8{,}25}{11{,}3}\right) \approx 8{,}0 \times 10^{10} \text{ s} \approx 2500 \text{ ans}$$
+:::
 
-3. On cherche $t$ tel que $A = A_0 \cdot e^{-\lambda t}$ :
-$$\frac{A}{A_0} = e^{-\lambda t}$$
-$$\ln\left(\frac{A}{A_0}\right) = -\lambda t$$
-$$t = -\frac{1}{\lambda}\ln\left(\frac{1.0 \times 10^6}{8.0 \times 10^6}\right) = -\frac{\ln(0.125)}{\lambda}$$
-$$t = \frac{\ln 8}{\lambda} = \frac{2.08}{5.61 \times 10^{-7}} = 3.7 \times 10^6 \text{ s} \approx 43 \text{ jours}$$
+## 10. Erreurs Classiques
 
-Vérification : $\frac{43}{14.3} = 3$ demi-vies, $\frac{1}{2^3} = \frac{1}{8}$ ✓
-</Solution>
-</Exercise>
+:::warning[Erreur 1 : Oublier de convertir le temps en secondes]
+Si $\lambda$ est en s⁻¹, alors $t$ doit être en **secondes**.
+Écris toujours l'unité à chaque ligne de calcul !
+:::
 
-## Points clés à retenir
+:::warning[Erreur 2 : Confondre N(t) et A(t)]
+- $N$ = nombre de noyaux (sans unité particulière)
+- $A$ = désintégrations par seconde (Bq)
+- Lien : $A = \lambda N$
 
-<Summary>
-- Trois types : $\alpha$, $\beta^{\pm}$, $\gamma$
-- Loi de décroissance : $N(t) = N_0 e^{-\lambda t}$
-- Demi-vie : $t_{1/2} = \frac{\ln 2}{\lambda}$
-- Activité : $A = \lambda N$ (en Bq)
-- Après $n$ demi-vies : $N = \frac{N_0}{2^n}$
-</Summary>
+Un compteur Geiger mesure $A$, pas $N$ !
+:::
+
+:::warning[Erreur 3 : Signe du logarithme (âge négatif)]
+Dans $A(t) = A_0 e^{-\lambda t}$, on a toujours $A < A_0$ donc $\ln(A/A_0) < 0$.
+
+**Bonne forme** : $t = -\frac{1}{\lambda}\ln\left(\frac{A}{A_0}\right) = \frac{1}{\lambda}\ln\left(\frac{A_0}{A}\right)$
+:::
+
+:::warning[Erreur 4 : Croire que la demi-vie dépend de la quantité]
+Non ! $t_{1/2}$ dépend **uniquement** de l'isotope (donc de $\lambda$), pas de la quantité d'échantillon.
+:::
+
+:::warning[Erreur 5 : Confondre les effets de β⁻ et β⁺]
+- $\beta^-$ : électron émis → le noyau devient plus positif → $Z$ **augmente**
+- $\beta^+$ : positon émis → le noyau devient moins positif → $Z$ **diminue**
+
+Et dans les deux cas, $A$ reste **inchangé** !
+:::
+
+## Mini-résumé
+
+| Concept | Formule | À retenir |
+|---------|---------|-----------|
+| Isotopes | Même $Z$, différent $A$ | Même élément, masse différente |
+| Alpha ($\alpha$) | $^4_2$He émis | Noyaux lourds, $A-4$, $Z-2$ |
+| Bêta⁻ ($\beta^-$) | $^0_{-1}e$ émis | Trop de neutrons, $Z+1$ |
+| Bêta⁺ ($\beta^+$) | $^0_{+1}e$ émis | Trop de protons, $Z-1$ |
+| Loi décroissance | $N(t) = N_0 e^{-\lambda t}$ | Exponentielle décroissante |
+| Demi-vie | $t_{1/2} = \frac{\ln 2}{\lambda}$ | Temps pour $N \to N/2$ |
+| Activité | $A = \lambda N$ (Bq) | Désintégrations par seconde |
+| Datation | $t = \frac{1}{\lambda}\ln\frac{A_0}{A}$ | Mesurer $A$, connaître $A_0$ |
