@@ -9,7 +9,7 @@ interface ExerciseStep {
   id: number
   title: string
   instruction: string
-  hint: string
+  hint?: string
   solution: string
 }
 
@@ -176,7 +176,7 @@ export function GuidedExercise({ exercise, onComplete }: GuidedExerciseProps) {
                   </p>
 
                   {/* Hint button */}
-                  {!hasHint && (
+                  {step.hint && !hasHint && (
                     <button
                       onClick={() => handleShowHint(step.id)}
                       className="mb-4 flex items-center gap-2 rounded-lg bg-amber-50 px-4 py-2 text-sm font-medium text-amber-700 transition-colors hover:bg-amber-100 dark:bg-amber-900/30 dark:text-amber-300 dark:hover:bg-amber-900/50"
@@ -187,7 +187,7 @@ export function GuidedExercise({ exercise, onComplete }: GuidedExerciseProps) {
                   )}
 
                   {/* Hint content */}
-                  {hasHint && (
+                  {step.hint && hasHint && (
                     <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
                       <div className="flex items-center gap-2 text-amber-700 dark:text-amber-300">
                         <Lightbulb className="h-4 w-4" />
