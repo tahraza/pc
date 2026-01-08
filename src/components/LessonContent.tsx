@@ -80,14 +80,20 @@ function processContent(content: string): string {
 
   // :::warning
   processed = processed.replace(
-    /:::warning\s*\n([\s\S]*?):::/g,
-    '<div class="warning-box"><strong class="text-danger-700">Attention</strong><div class="mt-2">$1</div></div>'
+    /:::warning(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-danger-700">${title}</strong>` : '<strong class="text-danger-700">Attention</strong>'
+      return `<div class="warning-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
   )
 
   // :::tip
   processed = processed.replace(
-    /:::tip\s*\n([\s\S]*?):::/g,
-    '<div class="tip-box"><strong class="text-success-700">Astuce</strong><div class="mt-2">$1</div></div>'
+    /:::tip(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-success-700">${title}</strong>` : '<strong class="text-success-700">Astuce</strong>'
+      return `<div class="tip-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
   )
 
   // Process tables
