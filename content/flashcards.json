@@ -790,5 +790,185 @@
     "tags": ["transformateur", "tension"],
     "level": 2,
     "category": "formula"
+  },
+  {
+    "id": "fc-acide-7",
+    "lessonId": "acides-bases",
+    "front": "Qu'est-ce qu'un acide selon Brønsted ?",
+    "back": "C'est une espèce chimique capable de céder un ou plusieurs protons H⁺.\n\nExemple : AH = A⁻ + H⁺",
+    "tags": ["acide", "définition", "Brønsted"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-acide-8",
+    "lessonId": "acides-bases",
+    "front": "Quelle est la relation d'Henderson-Hasselbalch ?",
+    "back": "pH = pKa + log([A⁻]/[AH])\n\nRelie le pH, le pKa et les concentrations pour un couple acide/base.",
+    "tags": ["pKa", "pH", "Henderson"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-9",
+    "lessonId": "acides-bases",
+    "front": "Qu'est-ce qu'une solution tampon ?",
+    "back": "C'est une solution dont le pH varie peu par addition d'une petite quantité d'acide, de base ou par dilution modérée.\n\nComposition : mélange d'un acide faible et de sa base conjuguée en proportions voisines.",
+    "tags": ["tampon", "pH", "définition"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-cine-6",
+    "lessonId": "cinetique",
+    "front": "Qu'est-ce qu'un catalyseur ?",
+    "back": "Une espèce chimique qui accélère une réaction sans modifier l'état final du système.\n\nIl est consommé puis régénéré (il n'apparaît pas dans l'équation bilan).",
+    "tags": ["catalyseur", "cinétique", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-radio-5",
+    "lessonId": "radioactivite",
+    "front": "Qu'est-ce qu'un isotope ?",
+    "back": "Ce sont des noyaux possédant le même nombre de protons (Z) mais un nombre de neutrons (N) différent.\n\nIls ont donc un nombre de masse A différent mais appartiennent au même élément chimique.",
+    "tags": ["noyau", "isotope", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-newton-6",
+    "lessonId": "mouvement-newton",
+    "front": "Quelle est la 2ème loi de Newton (PFD) ?",
+    "back": "Dans un référentiel galiléen, la somme vectorielle des forces extérieures appliquées à un système est égale au produit de sa masse par le vecteur accélération de son centre de masse.\n\nΣF⃗ext = m·a⃗",
+    "tags": ["Newton", "PFD", "loi"],
+    "level": 2,
+    "category": "law"
+  },
+  {
+    "id": "fc-champ-5",
+    "lessonId": "mouvement-champ-uniforme",
+    "front": "Quelle est la 3ème loi de Kepler ?",
+    "back": "Le carré de la période de révolution est proportionnel au cube du demi-grand axe de l'orbite.\n\nT²/a³ = constante\n\nPour le Soleil : T²/a³ = 4π²/(G·Mₛ)",
+    "tags": ["Kepler", "orbite", "loi"],
+    "level": 2,
+    "category": "law"
+  },
+  {
+    "id": "fc-champ-6",
+    "lessonId": "mouvement-champ-uniforme",
+    "front": "Accélération dans le repère de Frenet pour un mouvement circulaire ?",
+    "back": "a⃗ = (dv/dt)·T⃗ + (v²/R)·N⃗\n\nSi le mouvement est uniforme (v = cste) :\na⃗ = (v²/R)·N⃗ (accélération centripète)",
+    "tags": ["Frenet", "accélération", "circulaire"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermo-6",
+    "lessonId": "thermodynamique",
+    "front": "Expression du flux thermique Φ à travers une paroi ?",
+    "back": "Φ = Q/Δt = (Tc - Tf)/Rth\n\nΦ : flux thermique (W)\nRth : résistance thermique (K·W⁻¹)\nTc, Tf : températures chaude et froide",
+    "tags": ["flux", "thermique", "résistance"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-diff-4",
+    "lessonId": "diffraction",
+    "front": "Condition pour observer le phénomène de diffraction ?",
+    "back": "La diffraction est observable lorsque la taille de l'ouverture ou de l'obstacle 'a' est du même ordre de grandeur ou inférieure à la longueur d'onde λ.\n\na ≤ λ (ou proche)",
+    "tags": ["diffraction", "condition"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-ondes-meca-6",
+    "lessonId": "ondes-mecaniques",
+    "front": "Formule du niveau d'intensité sonore L ?",
+    "back": "L = 10·log(I/I₀)\n\nL : niveau sonore (dB)\nI : intensité sonore (W·m⁻²)\nI₀ = 1,0 × 10⁻¹² W·m⁻² (seuil d'audibilité)",
+    "tags": ["son", "décibel", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-interf-4",
+    "lessonId": "interferences",
+    "front": "Expression de l'interfrange i ?",
+    "back": "i = λ·D/a\n\nλ : longueur d'onde (m)\nD : distance fentes-écran (m)\na : distance entre les fentes (m)",
+    "tags": ["interférences", "interfrange", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-rc-5",
+    "lessonId": "circuit-rc",
+    "front": "Équation différentielle de la charge d'un condensateur (circuit RC) ?",
+    "back": "uC + RC·(duC/dt) = E\n\nD'après la loi des mailles E = uR + uC\net uR = Ri = RC·(duC/dt)",
+    "tags": ["RC", "équation différentielle"],
+    "level": 3,
+    "category": "method"
+  },
+  {
+    "id": "fc-synth-5",
+    "lessonId": "synthese-organique",
+    "front": "Qu'est-ce qu'une molécule isomère de constitution ?",
+    "back": "Ce sont des molécules ayant la même formule brute mais des enchaînements d'atomes (formules semi-développées) différents.\n\nExemple : C₂H₆O → éthanol ou diméthyléther",
+    "tags": ["isomère", "constitution", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-synth-6",
+    "lessonId": "synthese-organique",
+    "front": "Rôle du chauffage à reflux ?",
+    "back": "Il permet d'accélérer la réaction (facteur cinétique température) sans perte de matière.\n\nLes vapeurs sont condensées par le réfrigérant et retombent dans le ballon.",
+    "tags": ["reflux", "montage", "technique"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-synth-7",
+    "lessonId": "synthese-organique",
+    "front": "Définition du rendement d'une synthèse ?",
+    "back": "η = nexp/nmax\n\nnexp : quantité de matière réellement obtenue\nnmax : quantité maximale théorique (si réaction totale)\n\nη s'exprime en % (multiplier par 100)",
+    "tags": ["rendement", "synthèse", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-titr-4",
+    "lessonId": "titrages",
+    "front": "Loi de Beer-Lambert ?",
+    "back": "A = k·C\n\nL'absorbance A est proportionnelle à la concentration C de l'espèce colorée (pour des solutions diluées).\n\nUtilisée en spectrophotométrie.",
+    "tags": ["Beer-Lambert", "absorbance", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-titr-5",
+    "lessonId": "titrages",
+    "front": "Loi de Kohlrausch (Conductivité) ?",
+    "back": "σ = Σ λᵢ·[Xᵢ]\n\nLa conductivité σ est la somme des contributions de chaque ion.\n\nλᵢ : conductivité molaire ionique (S·m²·mol⁻¹)\n[Xᵢ] : concentration de l'ion (mol·m⁻³)",
+    "tags": ["Kohlrausch", "conductivité", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-equil-6",
+    "lessonId": "equilibres-chimiques",
+    "front": "Critère d'évolution spontanée d'un système chimique ?",
+    "back": "• Si Qr,i < K : évolution sens direct (→)\n• Si Qr,i > K : évolution sens inverse (←)\n• Si Qr,i = K : équilibre atteint\n\nQr,i : quotient de réaction initial\nK : constante d'équilibre",
+    "tags": ["équilibre", "Qr", "évolution"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-piles-4",
+    "lessonId": "piles-electrolyse",
+    "front": "Formule de la capacité Q d'une pile ?",
+    "back": "Q = I·Δt = n(e⁻)·F\n\nQ : charge en Coulombs (C)\nn(e⁻) : quantité de matière d'électrons échangés (mol)\nF = 96500 C/mol : constante de Faraday",
+    "tags": ["pile", "capacité", "Faraday"],
+    "level": 2,
+    "category": "formula"
   }
 ]
