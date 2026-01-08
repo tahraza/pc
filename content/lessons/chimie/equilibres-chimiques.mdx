@@ -1,224 +1,267 @@
 ---
 id: "equilibres-chimiques"
-title: "Équilibres chimiques"
+title: "Équilibres Chimiques et Évolution Spontanée"
 track: "chimie"
 level: 3
 prerequisites: ["cinetique", "acides-bases"]
-tags: ["équilibre", "constante", "Le Chatelier", "quotient", "déplacement"]
-estimatedTime: 50
+tags: ["équilibre", "constante K", "quotient Qr", "Le Chatelier", "taux d'avancement", "évolution spontanée"]
+estimatedTime: 70
 chapter: "equilibres"
 order: 1
 ---
 
-# Équilibres chimiques
+# Équilibres Chimiques et Évolution Spontanée
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Écrire l'expression de la constante d'équilibre K
-- Calculer le quotient de réaction Qr
-- Prédire le sens d'évolution d'un système
-- Appliquer le principe de Le Chatelier
+- Distinguer une transformation **totale** d'une transformation **limitée** (notion d'équilibre)
+- Calculer et interpréter le **taux d'avancement final** $\tau$
+- Écrire l'expression du **quotient de réaction** $Q_r$ pour n'importe quelle équation
+- Utiliser la **constante d'équilibre** $K(T)$ pour prédire le sens d'évolution spontanée
+- Appliquer le **principe de Le Chatelier**
+- Comprendre la nature **dynamique** de l'équilibre chimique
 
-## Intuition et analogie
+## 1. Intuition : L'Équilibre Dynamique
 
-Imagine une **salle avec deux portes** : des gens entrent par une porte et sortent par l'autre. Au début, beaucoup entrent et peu sortent. Mais à mesure que la salle se remplit, de plus en plus de gens veulent sortir. À un moment, autant de personnes entrent que sortent : c'est l'**équilibre** !
+On pense souvent que "équilibre" signifie "plus rien ne bouge". En chimie, c'est **faux**. L'équilibre est **dynamique**.
 
-La salle n'est pas vide, elle n'est pas pleine — elle est dans un état **intermédiaire stable**. Et pourtant, les mouvements continuent : c'est un équilibre **dynamique**, pas statique.
+:::tip[Analogie : Le Magasin un jour de soldes]
+Imagine un magasin avec une porte d'entrée et une porte de sortie :
+- **État initial** : Le magasin est vide. Les gens commencent à entrer massivement.
+- **Évolution** : Au début, beaucoup plus d'entrées que de sorties. Le nombre de clients augmente.
+- **L'Équilibre** : À un moment, le magasin semble "plein". Mais les portes ne sont pas fermées ! Il y a toujours **autant de gens qui entrent que de gens qui sortent** chaque minute.
 
-En chimie, c'est pareil : les réactifs se transforment en produits (réaction directe), mais en même temps les produits redeviennent des réactifs (réaction inverse). À l'équilibre, les deux vitesses sont égales et les concentrations restent constantes.
+**Résultat** : Vu de l'extérieur (macroscopique), le nombre de clients semble constant. Vu de près (microscopique), les individus changent en permanence.
 
-Le **principe de Le Chatelier** dit que si tu perturbes l'équilibre (en ajoutant des réactifs, en changeant la température...), le système réagit pour **s'opposer** à la perturbation. C'est comme si la nature cherchait toujours à revenir au calme !
-
-Si tu augmentes la pression sur un gaz, l'équilibre se déplace vers le côté qui a moins de molécules gazeuses — le système "fuit" la contrainte. Malin, non ?
-
-## Équilibre chimique
-
-:::definition
-**État d'équilibre**
-
-Un système est à l'**équilibre chimique** lorsque les vitesses des réactions directe et inverse sont égales. Les concentrations restent constantes mais les réactions continuent (équilibre dynamique).
-
-On note l'équilibre avec une double flèche : ⇌
+C'est exactement ce qui se passe pour les molécules lors d'un équilibre chimique !
 :::
 
-:::property[Caractéristiques de l'équilibre]
-- La composition du système reste constante
-- Les réactions directe et inverse ont lieu simultanément
-- L'équilibre est **dynamique** (pas statique)
-- Il ne dépend pas du chemin parcouru
+:::definition
+**État d'équilibre chimique**
+
+Un système est à l'équilibre chimique lorsque les **vitesses des réactions directe et inverse sont égales**. Les concentrations restent constantes mais les réactions continuent.
+
+On note l'équilibre avec une **double flèche** : $\rightleftarrows$
 :::
 
-## Constante d'équilibre K
+## 2. Transformation Totale ou Limitée ?
+
+Toutes les réactions ne consomment pas intégralement leurs réactifs.
+
+### Définitions
+
+:::property[Types de transformations]
+- **Transformation totale** : Elle s'arrête par épuisement du réactif limitant. L'avancement final $x_f$ égale l'avancement maximal $x_{max}$.
+
+- **Transformation limitée** : Elle s'arrête alors qu'il reste encore de tous les réactifs. On atteint un état final où **réactifs et produits coexistent** : c'est l'**état d'équilibre**.
+:::
+
+### Taux d'avancement final ($\tau$)
 
 :::definition
-**Constante d'équilibre K**
+**Taux d'avancement**
 
-Pour une réaction : aA + bB ⇌ cC + dD
+Pour quantifier l'efficacité d'une réaction :
 
-$$K = \frac{[C]^c_{éq} \cdot [D]^d_{éq}}{[A]^a_{éq} \cdot [B]^b_{éq}}$$
+$$\tau = \frac{x_f}{x_{max}}$$
 
-K ne dépend que de la **température**.
+- $x_f$ = avancement réel mesuré à l'état final (mol)
+- $x_{max}$ = avancement théorique si la réaction était totale (mol)
+:::
+
+:::property[Interprétation de τ]
+- Si $\tau = 1$ (ou 100%) : transformation **totale**
+- Si $\tau < 1$ : transformation **limitée** (état d'équilibre atteint)
+:::
+
+## 3. Le Quotient de Réaction ($Q_r$) : La "Photo" du Système
+
+Le quotient de réaction est une grandeur **sans unité** qui caractérise la composition du système à un instant $t$ donné, **que l'équilibre soit atteint ou non**.
+
+### Expression générale
+
+Pour une équation : $aA_{(aq)} + bB_{(aq)} \rightleftarrows cC_{(aq)} + dD_{(aq)}$
+
+$$Q_r = \frac{[C]^c \cdot [D]^d}{[A]^a \cdot [B]^b}$$
+
+:::method[Règles pour calculer Qr]
+**Ce qui apparaît dans Qr :**
+- **Solutés** (ions, molécules dissoutes) : leur concentration en mol/L
+
+**Ce qui n'apparaît PAS dans Qr :**
+- **L'eau** (solvant) : activité = 1
+- **Les solides** : activité = 1
+:::
+
+:::example[Précipitation AgCl]
+Pour : $Ag^+_{(aq)} + Cl^-_{(aq)} \rightleftarrows AgCl_{(s)}$
+
+Le produit est un solide (activité = 1), donc :
+$$Q_r = \frac{1}{[Ag^+] \cdot [Cl^-]}$$
+:::
+
+## 4. La Constante d'Équilibre ($K$) : La Cible
+
+:::definition
+**Constante d'équilibre**
+
+La constante d'équilibre $K(T)$ est la valeur que prend le quotient de réaction **uniquement lorsque l'état d'équilibre est atteint** :
+
+$$K = Q_{r,\text{éq}}$$
+:::
+
+:::property[Propriétés fondamentales de K]
+1. **Dépendance unique** : $K$ ne dépend que de la **température** $T$
+2. **Indépendance** : $K$ ne dépend pas des concentrations initiales
+3. **Universalité** : Quelle que soit la composition initiale, le système "cherche" toujours à atteindre $K$
 :::
 
 :::property[Interprétation de K]
-- **K >> 1** : l'équilibre est déplacé vers les produits
-- **K << 1** : l'équilibre est déplacé vers les réactifs
-- **K ≈ 1** : réactifs et produits en quantités comparables
+- $K \gg 1$ : l'équilibre est déplacé vers les **produits** (réaction quasi-totale)
+- $K \ll 1$ : l'équilibre est déplacé vers les **réactifs** (réaction très limitée)
+- $K \approx 1$ : réactifs et produits en quantités comparables
 :::
 
-## Quotient de réaction Qr
+### Constantes spécifiques
 
-:::definition
-**Quotient de réaction Qr**
+| Constante | Nom | Exemple |
+|-----------|-----|---------|
+| $K_A$ | Constante d'acidité | Couples acide/base |
+| $K_e$ | Produit ionique de l'eau | $10^{-14}$ à 25°C |
+| $K_s$ | Produit de solubilité | Précipitation |
 
-Le quotient de réaction a la même expression que K, mais calculé à un instant quelconque (pas forcément à l'équilibre).
+## 5. Critère d'Évolution Spontanée : Où va-t-on ?
 
-$$Q_r = \frac{[C]^c \cdot [D]^d}{[A]^a \cdot [B]^b}$$
+Comment savoir si la réaction va se faire vers la droite (sens direct) ou vers la gauche (sens indirect) ?
+
+**Il faut comparer "où on est" ($Q_{r,i}$) avec "où on veut aller" ($K$).**
+
+:::theorem[Critère d'évolution]
+| Comparaison | Sens d'évolution | Interprétation |
+|-------------|------------------|----------------|
+| $Q_{r,i} < K$ | **Sens direct** ($\rightarrow$) | Le quotient est "trop petit". Pour augmenter $Q_r$, il faut former des produits. |
+| $Q_{r,i} > K$ | **Sens indirect** ($\leftarrow$) | Le quotient est "trop grand". Il faut reformer des réactifs. |
+| $Q_{r,i} = K$ | **Équilibre** | Le système ne change plus macroscopiquement. |
 :::
 
-:::method[Prédire le sens d'évolution]
-Comparer Qr à K :
-
-| Condition | Évolution | Sens |
-|-----------|-----------|------|
-| Qr < K | Vers l'équilibre | → (sens direct) |
-| Qr > K | Vers l'équilibre | ← (sens inverse) |
-| Qr = K | Équilibre atteint | Pas d'évolution nette |
+:::tip[Astuce mnémotechnique : La Cible]
+Imagine $K$ comme une **cible sur un axe** :
+- Si $Q$ est à **gauche** de $K$ ($Q < K$), il doit avancer vers la **droite** ($\rightarrow$)
+- Si $Q$ est à **droite** de $K$ ($Q > K$), il doit reculer vers la **gauche** ($\leftarrow$)
 :::
 
-## Tableau d'avancement
+## 6. Principe de Le Chatelier
 
-:::method[Tableau ICE (Initial, Change, Equilibrium)]
-Pour suivre l'évolution vers l'équilibre :
-
-| | A | B | C | D |
-|---|---|---|---|---|
-| Initial | [A]₀ | [B]₀ | [C]₀ | [D]₀ |
-| Variation | -ax | -bx | +cx | +dx |
-| Équilibre | [A]₀-ax | [B]₀-bx | [C]₀+cx | [D]₀+dx |
-
-où x est l'avancement volumique (mol/L).
-:::
-
-## Principe de Le Chatelier
-
-:::property[Le Chatelier]
+:::theorem[Principe de Le Chatelier]
 Lorsqu'on modifie un paramètre d'un système à l'équilibre, celui-ci évolue de façon à **s'opposer partiellement** à cette modification.
 :::
 
 :::method[Applications du principe]
-
 **Modification de concentration :**
-- Ajouter un réactif → déplacement vers les produits
-- Retirer un produit → déplacement vers les produits
-- Ajouter un produit → déplacement vers les réactifs
+- Ajouter un réactif → déplacement vers les produits ($\rightarrow$)
+- Retirer un produit → déplacement vers les produits ($\rightarrow$)
+- Ajouter un produit → déplacement vers les réactifs ($\leftarrow$)
 
 **Modification de pression (gaz) :**
-- Augmenter P → déplacement vers le côté avec moins de moles gazeuses
-- Diminuer P → déplacement vers le côté avec plus de moles gazeuses
+- Augmenter P → déplacement vers le côté avec **moins de moles gazeuses**
+- Diminuer P → déplacement vers le côté avec **plus de moles gazeuses**
 
 **Modification de température :**
-- Augmenter T → favorise le sens endothermique
-- Diminuer T → favorise le sens exothermique
+- Augmenter T → favorise le sens **endothermique** (qui absorbe la chaleur)
+- Diminuer T → favorise le sens **exothermique** (qui libère la chaleur)
 :::
 
-:::warning
-Un **catalyseur** ne déplace PAS l'équilibre. Il permet seulement de l'atteindre plus rapidement.
+:::warning[Le catalyseur ne déplace PAS l'équilibre !]
+Un catalyseur permet d'atteindre l'équilibre **plus rapidement**, mais il ne modifie pas la valeur de $K$ ni la composition finale.
 :::
 
-## Cas particuliers
+## 7. Exemples Résolus
 
-:::property[Réactions acido-basiques]
-Pour un acide faible AH : AH + H₂O ⇌ A⁻ + H₃O⁺
+:::example[Calcul de K]
+À 25°C, à l'équilibre : $[N_2] = 0{,}50$ M, $[H_2] = 0{,}30$ M, $[NH_3] = 0{,}20$ M
 
-$$K_a = \frac{[A^-][H_3O^+]}{[AH]}$$
+Pour : $N_2 + 3H_2 \rightleftarrows 2NH_3$
 
-pKa = -log(Ka)
+$$K = \frac{[NH_3]^2}{[N_2][H_2]^3} = \frac{(0{,}20)^2}{(0{,}50)(0{,}30)^3} = \frac{0{,}040}{0{,}0135} = 2{,}96$$
 :::
 
-:::property[Réactions de précipitation]
-Pour AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq)
+:::example[Prédiction du sens d'évolution]
+Réaction : $2Fe^{3+} + Sn^{2+} \rightleftarrows 2Fe^{2+} + Sn^{4+}$ avec $K = 4{,}6 \times 10^{20}$
 
-$$K_s = [Ag^+][Cl^-]$$
+Concentrations initiales : $[Fe^{2+}]_i = 1{,}6 \times 10^{-3}$, $[Sn^{4+}]_i = 3{,}2 \times 10^{-3}$, $[Fe^{3+}]_i = 2{,}5 \times 10^{-2}$, $[Sn^{2+}]_i = 1{,}2 \times 10^{-2}$ mol/L
 
-Ks est le produit de solubilité.
+**Calcul de $Q_{r,i}$** :
+$$Q_{r,i} = \frac{[Fe^{2+}]^2 \cdot [Sn^{4+}]}{[Fe^{3+}]^2 \cdot [Sn^{2+}]} = \frac{(1{,}6 \times 10^{-3})^2 \times (3{,}2 \times 10^{-3})}{(2{,}5 \times 10^{-2})^2 \times (1{,}2 \times 10^{-2})}$$
+
+$$Q_{r,i} \approx 1{,}1 \times 10^{-3}$$
+
+**Comparaison** : $Q_{r,i} (10^{-3}) \ll K (10^{20})$
+
+**Conclusion** : Le système évolue dans le **sens direct** (formation de $Fe^{2+}$ et $Sn^{4+}$).
 :::
 
-## Exemples résolus
+:::example[Application Le Chatelier]
+Pour : $N_2(g) + 3H_2(g) \rightleftarrows 2NH_3(g)$ avec $\Delta_rH < 0$ (exothermique)
 
-### Exemple 1 : Calcul de K
+| Action | Effet sur l'équilibre | Explication |
+|--------|----------------------|-------------|
+| Ajouter $N_2$ | $\rightarrow$ plus de $NH_3$ | Consommation du réactif ajouté |
+| Retirer $NH_3$ | $\rightarrow$ plus de $NH_3$ | Reformation du produit retiré |
+| Augmenter P | $\rightarrow$ plus de $NH_3$ | 4 mol gaz → 2 mol gaz |
+| Augmenter T | $\leftarrow$ moins de $NH_3$ | Favorise sens endo (inverse) |
+| Catalyseur | Pas de déplacement | Équilibre atteint plus vite |
+:::
 
-À 25°C, on a à l'équilibre : [N₂] = 0,50 M, [H₂] = 0,30 M, [NH₃] = 0,20 M
-Pour : N₂ + 3H₂ ⇌ 2NH₃, calculer K.
+:::example[Tableau ICE]
+Pour : $H_2(g) + I_2(g) \rightleftarrows 2HI(g)$ avec $K = 50$ à 448°C
+On part de $[H_2]_0 = [I_2]_0 = 0{,}10$ M et $[HI]_0 = 0$.
 
-$$K = \frac{[NH_3]^2}{[N_2][H_2]^3} = \frac{(0,20)^2}{(0,50)(0,30)^3} = \frac{0,040}{0,50 \times 0,027} = \frac{0,040}{0,0135} = 2,96$$
-
-### Exemple 2 : Sens d'évolution
-
-Pour la réaction ci-dessus avec K = 2,96, on part de [N₂] = 0,40 M, [H₂] = 0,40 M, [NH₃] = 0,10 M.
-
-$$Q_r = \frac{(0,10)^2}{(0,40)(0,40)^3} = \frac{0,01}{0,40 \times 0,064} = \frac{0,01}{0,0256} = 0,39$$
-
-Qr = 0,39 < K = 2,96
-
-Le système évolue dans le sens direct (→) : formation de NH₃.
-
-### Exemple 3 : Tableau ICE
-
-Pour : H₂(g) + I₂(g) ⇌ 2HI(g) avec K = 50 à 448°C.
-On part de [H₂]₀ = [I₂]₀ = 0,10 M et [HI]₀ = 0.
-
-| | H₂ | I₂ | HI |
-|---|---|---|---|
+| État | $H_2$ | $I_2$ | $HI$ |
+|------|-------|-------|------|
 | Initial | 0,10 | 0,10 | 0 |
-| Variation | -x | -x | +2x |
-| Équilibre | 0,10-x | 0,10-x | 2x |
+| Variation | $-x$ | $-x$ | $+2x$ |
+| Équilibre | $0{,}10-x$ | $0{,}10-x$ | $2x$ |
 
-$$K = \frac{(2x)^2}{(0,10-x)^2} = 50$$
+$$K = \frac{(2x)^2}{(0{,}10-x)^2} = 50 \implies \frac{2x}{0{,}10-x} = 7{,}07$$
 
-$$\frac{2x}{0,10-x} = \sqrt{50} = 7,07$$
+Résolution : $x = 0{,}078$ M
 
-$$2x = 0,707 - 7,07x$$
-$$9,07x = 0,707$$
-$$x = 0,078 \text{ M}$$
+À l'équilibre : $[H_2] = [I_2] = 0{,}022$ M ; $[HI] = 0{,}156$ M
+:::
 
-À l'équilibre : [H₂] = [I₂] = 0,022 M ; [HI] = 0,156 M
+## 8. Erreurs Classiques
 
-### Exemple 4 : Le Chatelier
+:::warning[Erreur 1 : Inclure les solides ou l'eau dans Qr]
+Les solides et le solvant (eau) ont une activité de 1 et n'apparaissent **pas** dans l'expression de $Q_r$ ou $K$.
+:::
 
-Pour N₂(g) + 3H₂(g) ⇌ 2NH₃(g) (ΔrH < 0)
+:::warning[Erreur 2 : Confondre K et Qr]
+- $K$ = constante à l'équilibre (ne change qu'avec la température)
+- $Q_r$ = quotient à un instant quelconque (change avec les concentrations)
+:::
 
-| Action | Effet |
-|--------|-------|
-| Ajouter N₂ | → plus de NH₃ |
-| Retirer NH₃ | → plus de NH₃ |
-| Augmenter P | → plus de NH₃ (4 mol gaz → 2 mol gaz) |
-| Augmenter T | ← moins de NH₃ (réaction exothermique) |
-| Ajouter catalyseur | Équilibre atteint plus vite, pas de déplacement |
+:::warning[Erreur 3 : Oublier les coefficients stœchiométriques en exposant]
+Pour $2A \rightleftarrows B$, on écrit $Q_r = \frac{[B]}{[A]^{\mathbf{2}}}$ et non $\frac{[B]}{[A]}$
+:::
 
-## Erreurs fréquentes
+:::warning[Erreur 4 : Penser que le catalyseur déplace l'équilibre]
+Le catalyseur accélère l'atteinte de l'équilibre mais **ne modifie pas** $K$ ni la composition finale.
+:::
 
-:::warning
-**Erreur 1** : Inclure les solides ou liquides purs dans K
-
-Les solides et liquides purs n'apparaissent pas dans l'expression de K.
-
-**Erreur 2** : Confondre K et Qr
-
-K est la constante à l'équilibre (ne change qu'avec T).
-Qr est le quotient à un instant donné.
-
-**Erreur 3** : Penser que le catalyseur déplace l'équilibre
-
-Le catalyseur accélère l'atteinte de l'équilibre mais ne modifie pas K.
+:::warning[Erreur 5 : Se tromper sur l'effet de la température]
+Augmenter T favorise toujours le sens **endothermique** :
+- Si réaction directe exothermique ($\Delta_rH < 0$) → T↑ favorise sens **inverse**
+- Si réaction directe endothermique ($\Delta_rH > 0$) → T↑ favorise sens **direct**
 :::
 
 ## Mini-résumé
 
-- **Constante d'équilibre** : K = [produits]/[réactifs] (à l'équilibre)
-- **Quotient de réaction** : Qr (même forme, à tout instant)
-- Qr < K → sens direct ; Qr > K → sens inverse
-- **Le Chatelier** : le système s'oppose aux perturbations
-- K ne dépend que de la température
-- Les solides/liquides purs n'apparaissent pas dans K
+| Concept | Formule / Condition | À retenir |
+|---------|---------------------|-----------|
+| Quotient $Q_r$ | $\frac{[C]^c[D]^d}{[A]^a[B]^b}$ | Eau et solides = 1 |
+| Constante $K$ | $K = Q_{r,\text{éq}}$ | Ne dépend que de T |
+| Sens direct | $Q_{r,i} < K$ | On forme des produits |
+| Sens indirect | $Q_{r,i} > K$ | On reforme des réactifs |
+| Taux $\tau$ | $\tau = x_f / x_{max}$ | τ < 1 → équilibre |
+| Le Chatelier | Opposition partielle | Le système "fuit" la contrainte |
