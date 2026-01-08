@@ -1,103 +1,125 @@
 ---
 id: "thermochimie"
-title: "Thermochimie"
+title: "Thermochimie : Bilans d'Énergie, Calorimétrie et Combustions"
 track: "chimie"
 level: 3
-prerequisites: ["cinetique"]
-tags: ["thermochimie", "enthalpie", "énergie", "calorimétrie", "liaison"]
-estimatedTime: 50
+prerequisites: ["cinetique", "mole-masse-molaire"]
+tags: ["thermochimie", "enthalpie", "énergie", "calorimétrie", "liaison", "combustion", "chaleur latente"]
+estimatedTime: 100
 chapter: "thermochimie"
 order: 1
 ---
 
-# Thermochimie
+# Thermochimie : Bilans d'Énergie et Calorimétrie
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Définir et calculer l'enthalpie de réaction
-- Utiliser les énergies de liaison
-- Appliquer la loi de Hess
-- Interpréter les aspects énergétiques d'une réaction
+- Distinguer une transformation **exothermique** d'une transformation **endothermique**
+- Utiliser les **énergies de liaison** pour calculer l'enthalpie d'une réaction
+- Appliquer la **loi de Hess** avec les enthalpies standard de formation
+- Exploiter une expérience de **calorimétrie** (avec capacité du calorimètre)
+- Traiter un **changement d'état** avec une chaleur latente
+- Calculer une **durée de chauffage** à partir d'une puissance
 
-## Intuition et analogie
+## 1. Intuition : D'où vient l'énergie chimique ?
 
-Tu frottes une **chaufferette de poche** : elle devient chaude pendant des heures. À l'intérieur, une réaction chimique libère de la chaleur — c'est une réaction **exothermique**. À l'inverse, quand tu mets du sel sur la glace, le mélange devient très froid : la dissolution du sel **absorbe** de la chaleur — c'est **endothermique**.
+### Analogie 1 — Le Piège à Souris
 
-D'où vient cette énergie ? Des **liaisons chimiques** ! Pour casser une liaison, il faut fournir de l'énergie (comme tirer sur un élastique). Pour former une liaison, de l'énergie est libérée (l'élastique se détend).
+:::tip[Le ressort chimique]
+Imagine une molécule de combustible (essence, bois) comme un **piège à souris tendu** (ressort comprimé).
+- L'énergie est **déjà là**, stockée dans les liaisons des atomes (énergie potentielle microscopique)
+- L'étincelle est le **déclencheur** qui fait "sauter" le piège
+- La réaction chimique est la **détente** : l'énergie stockée est libérée sous forme de chaleur
 
-Le bilan énergétique d'une réaction, c'est :
-- **Énergie pour casser** les liaisons des réactifs (coût)
-- **Énergie libérée** en formant les liaisons des produits (gain)
+En thermochimie, on ne crée pas l'énergie, on la **libère d'une "prison" chimique** !
+:::
 
-Si le gain dépasse le coût → réaction **exothermique** (ΔH < 0)
+### Analogie 2 — Le Compte Bancaire d'Énergie
+
+:::tip[L'énergie interne U]
+Imagine que le système (eau, gaz, métal...) a un **compte bancaire** : son **énergie interne U**.
+- **ΔU > 0** : le compte se remplit (le système gagne de l'énergie)
+- **ΔU < 0** : le compte se vide (le système perd de l'énergie)
+
+Les transferts **Q** (chaleur) et **W** (travail) sont des **virements** qui font varier le solde.
+:::
+
+### Pourquoi une réaction dégage de la chaleur ?
+
+Le bilan énergétique d'une réaction se fait en deux temps :
+1. **Casser les liaisons** des réactifs : cela **coûte** de l'énergie
+2. **Former les liaisons** des produits : cela **libère** de l'énergie
+
+Si l'énergie libérée dépasse le coût → réaction **exothermique** (ΔH < 0)
 Si le coût dépasse le gain → réaction **endothermique** (ΔH > 0)
 
-La **combustion** du bois libère beaucoup d'énergie car les liaisons O=O et C-C sont remplacées par des liaisons C=O et O-H très stables. La nature "préfère" les liaisons fortes — et elle te récompense en chaleur quand tu l'aides à les former !
+## 2. Réactions Exothermiques et Endothermiques
 
-## Enthalpie de réaction
+:::definition
+**Réaction exothermique**
+
+Le système **perd** de l'énergie thermique vers l'extérieur.
+- **Signe** : $Q < 0$ (du point de vue du système)
+- **Effet** : La température du milieu extérieur **augmente** (ça chauffe)
+- *Exemples* : Combustions, réactions acide-base violentes, dissolution de NaOH
+:::
+
+:::definition
+**Réaction endothermique**
+
+Le système **reçoit** (absorbe) de l'énergie thermique de l'extérieur.
+- **Signe** : $Q > 0$
+- **Effet** : La température du milieu extérieur **diminue** (ça refroidit)
+- *Exemples* : Fonte d'un glaçon, dissolution de certains sels (NH₄NO₃)
+:::
+
+:::property[Convention de signe]
+On adopte toujours : **"reçoit = +"**
+- $Q > 0$ si le système **reçoit** de l'énergie thermique
+- $Q < 0$ s'il en **cède**
+:::
+
+## 3. Enthalpie de Réaction et Loi de Hess
 
 :::definition
 **Enthalpie de réaction ΔrH**
 
-L'**enthalpie de réaction** ΔrH représente l'énergie échangée sous forme de chaleur lors d'une réaction chimique à pression constante.
-
+L'enthalpie de réaction représente l'énergie échangée sous forme de chaleur lors d'une réaction chimique à pression constante.
 $$\Delta_rH = \sum H_{produits} - \sum H_{réactifs}$$
 
 Unité : kJ·mol⁻¹
 :::
 
-:::property[Conventions de signe]
-- **ΔrH < 0** : réaction **exothermique** (libère de la chaleur)
-- **ΔrH > 0** : réaction **endothermique** (absorbe de la chaleur)
-:::
-
-## Réactions exo et endothermiques
-
-:::method[Diagramme enthalpique]
-```
-Réaction exothermique (ΔrH < 0)     Réaction endothermique (ΔrH > 0)
-
-  Réactifs ────┐                           ┌──── Produits
-               │ ΔrH < 0                   │ ΔrH > 0
-               ▼                           │
-  Produits ────                   Réactifs ┘
-```
-
-L'énergie du système diminue (exo) ou augmente (endo).
-:::
-
-## Enthalpies standard de formation
-
 :::definition
 **Enthalpie standard de formation ΔfH°**
 
-L'enthalpie standard de formation d'un composé est l'enthalpie de la réaction de formation d'une mole de ce composé à partir des corps simples dans leur état standard (25°C, 1 bar).
+L'enthalpie standard de formation d'un composé est l'enthalpie de la réaction de formation d'**une mole** de ce composé à partir des corps simples dans leur état standard (25°C, 1 bar).
 
 Par convention : **ΔfH°(corps simple stable) = 0**
 :::
 
-:::property[Loi de Hess]
-$$\Delta_rH° = \sum \nu_i \cdot \Delta_fH°(produits) - \sum \nu_j \cdot \Delta_fH°(réactifs)$$
+:::theorem[Loi de Hess]
+$$\Delta_rH° = \sum \nu_i \cdot \Delta_fH°(\text{produits}) - \sum \nu_j \cdot \Delta_fH°(\text{réactifs})$$
 
-où νi et νj sont les coefficients stœchiométriques.
+où $\nu_i$ et $\nu_j$ sont les **coefficients stœchiométriques**.
 :::
 
-## Énergies de liaison
+## 4. Énergies de Liaison
 
 :::definition
 **Énergie de liaison D**
 
-L'**énergie de liaison** D(A-B) est l'énergie nécessaire pour rompre une mole de liaisons A-B à l'état gazeux.
+L'énergie de liaison $D(A\text{-}B)$ est l'énergie nécessaire pour **rompre** une mole de liaisons A-B à l'état gazeux.
 
-D > 0 toujours (il faut fournir de l'énergie pour casser une liaison)
+$D > 0$ toujours (il faut fournir de l'énergie pour casser une liaison)
 :::
 
-:::property[Calcul avec les énergies de liaison]
-$$\Delta_rH = \sum D(liaisons \, rompues) - \sum D(liaisons \, formées)$$
+:::theorem[Calcul avec les énergies de liaison]
+$$\Delta_rH = \sum D(\text{liaisons rompues}) - \sum D(\text{liaisons formées})$$
 
-- Rompre des liaisons : coûte de l'énergie (+)
-- Former des liaisons : libère de l'énergie (-)
+- **Rompre** des liaisons : coûte de l'énergie **(+)**
+- **Former** des liaisons : libère de l'énergie **(-)**
 :::
 
 | Liaison | D (kJ/mol) | Liaison | D (kJ/mol) |
@@ -107,100 +129,231 @@ $$\Delta_rH = \sum D(liaisons \, rompues) - \sum D(liaisons \, formées)$$
 | C-O | 358 | C=O | 799 |
 | O=O | 498 | H-H | 436 |
 | C≡C | 839 | N≡N | 945 |
+| Cl-Cl | 242 | H-Cl | 431 |
 
-## Pouvoir calorifique
-
-:::definition
-**Pouvoir calorifique**
-
-Le **pouvoir calorifique** d'un combustible est l'énergie libérée par la combustion complète d'un kg (PCI/PCS massique) ou d'un m³ (volumique) de combustible.
-
-- **PCS** (Pouvoir Calorifique Supérieur) : eau produite liquide
-- **PCI** (Pouvoir Calorifique Inférieur) : eau produite gazeuse
-:::
-
-## Calorimétrie
+## 5. Combustions et Pouvoir Calorifique
 
 :::definition
-**Capacité thermique**
+**Réaction de combustion**
 
-La **capacité thermique** C d'un système est l'énergie nécessaire pour élever sa température de 1 K.
+Une combustion est une réaction d'oxydoréduction rapide entre un **combustible** (ce qui brûle) et un **comburant** (généralement O₂).
 
-$$Q = C \cdot \Delta T = m \cdot c \cdot \Delta T$$
-
-- C : capacité thermique (J/K)
-- c : capacité thermique massique (J·kg⁻¹·K⁻¹)
-- m : masse (kg)
+Pour une combustion **complète** d'un hydrocarbure :
+$$\text{Combustible} + O_2 \rightarrow CO_2 + H_2O$$
 :::
 
-:::method[Calorimétrie]
-Dans un calorimètre adiabatique, l'énergie se conserve :
-$$Q_{réaction} + Q_{calorimètre} = 0$$
+:::example[Combustion du propane]
+$$C_3H_8 (g) + 5 O_2 (g) \rightarrow 3 CO_2 (g) + 4 H_2O (g)$$
 
-$$\Delta_rH \cdot n + (m_{eau} \cdot c_{eau} + C_{calo}) \cdot \Delta T = 0$$
+Pour équilibrer : d'abord C, puis H, puis O.
 :::
 
-## Exemples résolus
+:::definition
+**Pouvoir calorifique (PC)**
 
-### Exemple 1 : Combustion du méthane
+Le pouvoir calorifique d'un combustible est l'énergie libérée par la combustion complète d'**un kilogramme** de combustible.
+- Unité : J·kg⁻¹ ou **kWh·kg⁻¹**
+- **PCS** : eau produite liquide (plus élevé)
+- **PCI** : eau produite gazeuse (plus faible)
 
-Calculer ΔrH° pour : CH₄(g) + 2 O₂(g) → CO₂(g) + 2 H₂O(l)
+$$E_{\text{libérée}} = m_{\text{combustible}} \times PC$$
+:::
 
-Données : ΔfH°(CH₄) = -75 kJ/mol ; ΔfH°(CO₂) = -394 kJ/mol ; ΔfH°(H₂O,l) = -286 kJ/mol
+:::tip[Conversion utile]
+$$1 \text{ kWh} = 3{,}6 \times 10^6 \text{ J}$$
+:::
 
+## 6. Calorimétrie : Mesurer l'Énergie
+
+### Principe du calorimètre
+
+Un calorimètre est un récipient **isolé thermiquement** (comme un thermos). On considère que le système est **isolé** : toute la chaleur perdue par une partie est gagnée par une autre.
+
+:::theorem[Bilan calorimétrique]
+Dans un calorimètre isolé, la **somme des chaleurs échangées est nulle** :
+$$Q_{\text{chaud}} + Q_{\text{froid}} + Q_{\text{calorimètre}} = 0$$
+:::
+
+### Les formules clés
+
+:::property[Chaleur et variation de température]
+$$Q = m \cdot c \cdot \Delta T = C \cdot \Delta T$$
+
+- $m$ : masse (kg)
+- $c$ : capacité thermique massique (J·kg⁻¹·K⁻¹)
+- $C$ : capacité thermique du système (J·K⁻¹)
+- $\Delta T = T_f - T_i$ : variation de température
+
+**Pour l'eau** : $c_{\text{eau}} \approx 4180$ J·kg⁻¹·K⁻¹
+:::
+
+:::warning[ΔT identique en °C ou en K]
+$$\Delta T = T_f - T_i$$
+Une différence de température est la même en °C et en K !
+:::
+
+## 7. Changement d'État : Chaleur Latente
+
+:::definition
+**Chaleur latente**
+
+Quand un corps change d'état à température **constante**, l'énergie sert à réorganiser les liaisons :
+$$Q = m \cdot L$$
+
+- $L$ : chaleur latente (J·kg⁻¹)
+- $L_f$ (fusion de l'eau) $\approx 334$ kJ·kg⁻¹ = 334 J·g⁻¹
+:::
+
+:::method[Problème "glaçon dans l'eau"]
+Un glaçon à $-2°C$ plongé dans de l'eau chaude suit **3 étapes** :
+1. **Réchauffer la glace** de $-2°C$ à $0°C$ : $Q_1 = m \cdot c_{\text{glace}} \cdot (0 - (-2))$
+2. **Fondre** à $0°C$ : $Q_2 = m \cdot L_f$
+3. **Réchauffer l'eau fondue** de $0°C$ à $T_f$ : $Q_3 = m \cdot c_{\text{eau}} \cdot (T_f - 0)$
+
+Avec $c_{\text{glace}} \approx 2{,}1$ J·g⁻¹·K⁻¹
+:::
+
+## 8. Puissance et Durée de Chauffage
+
+:::theorem[Relation puissance-énergie]
+$$P = \frac{\Delta E}{\Delta t} \quad \Rightarrow \quad \Delta t = \frac{\Delta E}{P}$$
+
+- $P$ : puissance (W)
+- $\Delta E$ : énergie (J)
+- $\Delta t$ : durée (s)
+:::
+
+:::method[Durée de chauffage]
+Pour chauffer une masse $m$ d'eau de $T_i$ à $T_f$ avec une puissance $P$ :
+$$\Delta t = \frac{m \cdot c \cdot (T_f - T_i)}{P}$$
+:::
+
+## 9. Exemples Résolus
+
+:::example[Combustion du méthane - Loi de Hess]
+**Calculer ΔrH° pour** : $CH_4(g) + 2 O_2(g) \rightarrow CO_2(g) + 2 H_2O(l)$
+
+**Données** : $\Delta_fH°(CH_4) = -75$ kJ/mol ; $\Delta_fH°(CO_2) = -394$ kJ/mol ; $\Delta_fH°(H_2O,l) = -286$ kJ/mol
+
+**Solution** :
 $$\Delta_rH° = [\Delta_fH°(CO_2) + 2\Delta_fH°(H_2O)] - [\Delta_fH°(CH_4) + 2\Delta_fH°(O_2)]$$
 $$\Delta_rH° = [-394 + 2 \times (-286)] - [-75 + 0]$$
-$$\Delta_rH° = -966 + 75 = -891 \text{ kJ/mol}$$
+$$\Delta_rH° = -966 + 75 = \mathbf{-891 \text{ kJ/mol}}$$
 
-La réaction est fortement exothermique.
+La réaction est fortement **exothermique**.
+:::
 
-### Exemple 2 : Énergies de liaison
+:::example[Énergies de liaison]
+**Calculer ΔrH pour** : $H_2(g) + Cl_2(g) \rightarrow 2 HCl(g)$
 
-Calculer ΔrH pour : H₂(g) + Cl₂(g) → 2 HCl(g)
+**Données** : $D(H\text{-}H) = 436$ kJ/mol ; $D(Cl\text{-}Cl) = 242$ kJ/mol ; $D(H\text{-}Cl) = 431$ kJ/mol
 
-Données : D(H-H) = 436 kJ/mol ; D(Cl-Cl) = 242 kJ/mol ; D(H-Cl) = 431 kJ/mol
+**Solution** :
+- Liaisons rompues : $1 \times D(H\text{-}H) + 1 \times D(Cl\text{-}Cl) = 436 + 242 = 678$ kJ
+- Liaisons formées : $2 \times D(H\text{-}Cl) = 2 \times 431 = 862$ kJ
 
-Liaisons rompues : 1 H-H + 1 Cl-Cl = 436 + 242 = 678 kJ
-Liaisons formées : 2 H-Cl = 2 × 431 = 862 kJ
+$$\Delta_rH = 678 - 862 = \mathbf{-184 \text{ kJ/mol}}$$
+:::
 
-$$\Delta_rH = 678 - 862 = -184 \text{ kJ/mol}$$
+:::example[Capacité thermique d'un calorimètre]
+**Données** : Dans un calorimètre (capacité $C_{\text{cal}}$ inconnue) contenant $m_1 = 200$ g d'eau à $T_a = 12{,}1°C$, on verse $m_2 = 120$ g d'eau chaude à $T_c = 70{,}0°C$. Température finale : $T_f = 29{,}2°C$.
 
-### Exemple 3 : Calorimétrie
+**Déterminer $C_{\text{cal}}$.**
 
-On dissout 5,0 g de NaOH dans 200 mL d'eau dans un calorimètre. La température passe de 20,0°C à 26,5°C. Calculer ΔdissH. (M(NaOH) = 40 g/mol, ccalo = 50 J/K, ceau = 4,18 J·g⁻¹·K⁻¹)
+**Solution** :
+1. Système : eau froide + eau chaude + calorimètre
+2. Bilan : $Q_{\text{chaud}} + Q_{\text{froid}} + Q_{\text{cal}} = 0$
 
-Quantité de matière : n = 5,0/40 = 0,125 mol
-ΔT = 26,5 - 20,0 = 6,5 K
+$$m_2 c (T_f - T_c) + m_1 c (T_f - T_a) + C_{\text{cal}}(T_f - T_a) = 0$$
 
-$$Q_{solution} = -(m_{eau} \cdot c_{eau} + C_{calo}) \cdot \Delta T$$
-$$Q_{solution} = -(200 \times 4,18 + 50) \times 6,5 = -5759 \text{ J}$$
+$$C_{\text{cal}} = -\frac{m_2 c (T_f - T_c) + m_1 c (T_f - T_a)}{T_f - T_a}$$
 
-$$\Delta_{diss}H = \frac{Q_{solution}}{n} = \frac{-5759}{0,125} = -46,1 \text{ kJ/mol}$$
+Avec $T_f - T_c = -40{,}8$ K et $T_f - T_a = 17{,}1$ K :
 
-La dissolution est exothermique.
+$$C_{\text{cal}} = -\frac{120 \times 4{,}18 \times (-40{,}8) + 200 \times 4{,}18 \times 17{,}1}{17{,}1} \approx \mathbf{361 \text{ J·K}^{-1}}$$
+:::
 
-## Erreurs fréquentes
+:::example[Durée de chauffage micro-ondes]
+**Données** : On chauffe $V = 200$ mL d'eau de $20°C$ à $80°C$ avec un micro-ondes de puissance $P = 800$ W.
 
-:::warning
-**Erreur 1** : Oublier les coefficients stœchiométriques
+**Estimer la durée de chauffage.**
 
-Dans la loi de Hess, toujours multiplier ΔfH° par le coefficient.
+**Solution** :
+1. Masse : $m = \rho V = 1{,}0 \times 0{,}200 = 0{,}200$ kg
+2. Variation : $\Delta T = 80 - 20 = 60$ K
+3. Énergie : $\Delta E = mc\Delta T = 0{,}2 \times 4180 \times 60 \approx 5{,}0 \times 10^4$ J
+4. Durée : $\Delta t = \frac{\Delta E}{P} = \frac{5{,}0 \times 10^4}{800} \approx \mathbf{63 \text{ s}}$
+:::
 
-**Erreur 2** : Se tromper de signe avec les énergies de liaison
+:::example[Glaçon dans l'eau - Chaleur latente]
+**Données** : Dans un calorimètre ($C_{\text{cal}} = 80$ J·K⁻¹) contenant 100 mL d'eau à 30°C, on introduit un glaçon de masse $m_g = 30$ g à $-2°C$. Température finale : $T_f = 7{,}7°C$.
 
-Rompre = + (coûte de l'énergie)
-Former = - (libère de l'énergie)
+**Déterminer $L_f$.**
 
-**Erreur 3** : Confondre ΔfH° et ΔrH°
+**Solution** :
+**(A) Énergie cédée par l'eau + calorimètre**
+$$Q_{\text{eau}} = 100 \times 4{,}19 \times (7{,}7 - 30) \approx -9340 \text{ J}$$
+$$Q_{\text{cal}} = 80 \times (7{,}7 - 30) \approx -1784 \text{ J}$$
+$$Q_{\text{cédé}} \approx -11124 \text{ J}$$
 
-ΔfH° = formation à partir des corps simples
-ΔrH° = enthalpie d'une réaction quelconque
+**(B) Énergie reçue par le glaçon**
+1. Réchauffer la glace : $Q_1 = 30 \times 2{,}1 \times 2 = 126$ J
+2. Fusion : $Q_2 = 30 \times L_f$
+3. Réchauffer l'eau : $Q_3 = 30 \times 4{,}19 \times 7{,}7 \approx 968$ J
+
+**(C) Bilan** : $Q_{\text{cédé}} + Q_{\text{reçu}} = 0$
+$$-11124 + 126 + 30L_f + 968 = 0$$
+$$30L_f \approx 10030 \implies L_f \approx \mathbf{334 \text{ J·g}^{-1}}$$
+:::
+
+## 10. Erreurs Classiques
+
+:::warning[Erreur 1 : Mélanger les unités]
+**Symptôme** : Résultat aberrant (0,063 s au lieu de 63 s).
+
+**Solution** : Choisir un système cohérent :
+- Soit tout en **kg** et J·kg⁻¹·K⁻¹
+- Soit tout en **g** et J·g⁻¹·K⁻¹
+:::
+
+:::warning[Erreur 2 : Se tromper de signe]
+**Symptôme** : Capacité thermique négative.
+
+**Solution** : Utiliser $Q = mc(T_f - T_i)$, le signe vient tout seul !
+- Si $T_f > T_i$ : le corps se réchauffe, $Q > 0$
+- Si $T_f < T_i$ : le corps se refroidit, $Q < 0$
+:::
+
+:::warning[Erreur 3 : Oublier un acteur]
+**Erreurs typiques** :
+- Oublier $Q_{\text{cal}}$ (le calorimètre absorbe de l'énergie !)
+- Oublier de réchauffer la glace de $-2°C$ à $0°C$
+- Oublier de réchauffer l'eau fondue après fusion
+
+**Solution** : Faire une **checklist** : phases présentes ? changements d'état ? calorimètre ?
+:::
+
+:::warning[Erreur 4 : Confondre température et énergie]
+Pendant un changement d'état :
+- La température reste **constante**
+- Mais $Q \neq 0$ (l'énergie sert à changer d'état, pas à chauffer)
+:::
+
+:::warning[Erreur 5 : Oublier les coefficients stœchiométriques]
+Dans la loi de Hess, **toujours** multiplier $\Delta_fH°$ par le coefficient !
+$$\Delta_rH° = \sum \nu_i \cdot \Delta_fH°(\text{produits}) - \sum \nu_j \cdot \Delta_fH°(\text{réactifs})$$
 :::
 
 ## Mini-résumé
 
-- **ΔrH < 0** : exothermique ; **ΔrH > 0** : endothermique
-- **Loi de Hess** : ΔrH° = Σ νi·ΔfH°(produits) - Σ νj·ΔfH°(réactifs)
-- **Énergies de liaison** : ΔrH = Σ D(rompues) - Σ D(formées)
-- **Calorimétrie** : Q = m·c·ΔT
-- ΔfH°(corps simple stable) = 0
+| Concept | Formule | Unité |
+|---------|---------|-------|
+| **Exothermique** | $Q < 0$, $\Delta_rH < 0$ | J |
+| **Endothermique** | $Q > 0$, $\Delta_rH > 0$ | J |
+| **Loi de Hess** | $\Delta_rH° = \Sigma \nu_i \Delta_fH°(\text{prod}) - \Sigma \nu_j \Delta_fH°(\text{réac})$ | kJ·mol⁻¹ |
+| **Énergies de liaison** | $\Delta_rH = \Sigma D(\text{rompues}) - \Sigma D(\text{formées})$ | kJ·mol⁻¹ |
+| **Chaleur** | $Q = mc\Delta T = C\Delta T$ | J |
+| **Changement d'état** | $Q = mL$ | J |
+| **Puissance** | $P = \Delta E / \Delta t$ | W |
+| **Pouvoir calorifique** | $E = m \times PC$ | J |
+| **Calorimétrie** | $\Sigma Q = 0$ (système isolé) | - |
