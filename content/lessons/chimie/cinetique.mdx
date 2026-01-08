@@ -1,185 +1,292 @@
 ---
 id: "cinetique"
-title: "Cinétique chimique"
+title: "Cinétique Chimique : Maîtriser le temps en chimie"
 track: "chimie"
 level: 2
 prerequisites: []
-tags: ["cinétique", "vitesse", "concentration", "catalyse"]
-estimatedTime: 45
+tags: ["vitesse", "cinétique", "catalyseur", "ordre 1", "temps de demi-réaction"]
+estimatedTime: 90
 chapter: "cinetique"
 order: 1
 ---
 
-# Cinétique chimique
+# Suivi Temporel d'une Transformation Chimique
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Définir et calculer une vitesse de réaction
-- Identifier les facteurs cinétiques
-- Exploiter le temps de demi-réaction
-- Comprendre le rôle d'un catalyseur
+- Distinguer une transformation lente d'une transformation rapide
+- Identifier et expliquer l'influence des facteurs cinétiques (température, concentration, catalyse)
+- Définir et calculer une vitesse volumique de disparition ou d'apparition
+- Vérifier si une réaction suit une loi de vitesse d'ordre 1
+- Déterminer un temps de demi-réaction ($t_{1/2}$)
+- Comprendre le lien entre mécanisme microscopique et réaction macroscopique
 
-## Intuition et analogie
+## Intuition et analogie : Lente ou Rapide ?
 
-Tu mets du lait dans ton café : le mélange se fait en quelques secondes. Tu laisses un clou dehors : il lui faut des mois pour rouiller. Pourtant, les deux sont des réactions chimiques ! La différence ? La **vitesse de réaction**.
+Toutes les réactions ne se font pas à la même vitesse. C'est la **cinétique chimique** qui étudie l'évolution temporelle des systèmes.
 
-Pense à une foule qui veut entrer dans un stade :
-- **Concentration** : Plus il y a de monde (molécules), plus les gens se bousculent (se rencontrent) → réaction plus rapide
-- **Température** : Quand il fait froid, les gens bougent lentement. Quand il fait chaud, ils s'agitent → plus de collisions → réaction accélérée
-- **Catalyseur** : C'est comme ouvrir des portillons supplémentaires — le catalyseur offre un "raccourci" à la réaction sans être lui-même consommé
+:::tip
+**Analogie : La Photo vs Le Film**
 
-Le **temps de demi-réaction** $t_{1/2}$, c'est le temps pour que la moitié des réactifs soit consommée. Comme pour la radioactivité, c'est une façon pratique de caractériser la "vitesse" d'une transformation.
-
-Cuisiner, c'est de la cinétique appliquée ! Tu augmentes la température (four), tu divises les ingrédients (hacher = augmenter la surface de contact), tu utilises des catalyseurs (levure, enzymes)... tout pour accélérer les réactions chimiques qui transforment tes aliments.
-
-## Avancement de réaction
+- Une réaction **rapide** est comme un claquement de doigts : sur une photo, c'est flou ou déjà fini
+- Une réaction **lente** est comme la croissance d'une plante : on peut filmer le processus et voir les changements étape par étape
+:::
 
 :::definition
-**Avancement**
+**Transformation Rapide vs Lente**
 
-L'**avancement** ξ (xi) d'une réaction mesure la "quantité de réaction" qui s'est produite.
+- **Transformation Rapide :** Elle s'achève quasi-instantanément dès la mise en contact des réactifs. On ne peut pas suivre son évolution à l'œil nu (durée < 0,1 s)
+  - *Exemple :* Une explosion, une réaction de précipitation
 
-Pour aA + bB → cC + dD :
-$$\xi = \frac{n_A^0 - n_A}{a} = \frac{n_B^0 - n_B}{b} = \frac{n_C - n_C^0}{c} = \frac{n_D - n_D^0}{d}$$
-
-Unité : la mole (mol)
+- **Transformation Lente :** Sa durée permet un suivi (de quelques secondes à plusieurs siècles). On peut mesurer l'évolution des quantités de matière au cours du temps
+  - *Exemple :* La formation de rouille, la fermentation
 :::
 
-## Vitesse de réaction
+## Les Facteurs Cinétiques : Accélérer ou Ralentir
 
-:::definition
-**Vitesse volumique**
+Comment modifier la vitesse d'une réaction lente ? On agit sur les **facteurs cinétiques**.
 
-La **vitesse volumique** de réaction est la dérivée de l'avancement par rapport au temps, divisée par le volume :
+### A. La Température
 
-$$v = \frac{1}{V}\frac{d\xi}{dt}$$
+:::property[Effet de la température]
+En général, plus la température du milieu réactionnel est élevée, plus la réaction est **rapide** (et le temps de demi-réaction court).
 
-Unité : mol·L⁻¹·s⁻¹
-
-Pour un réactif A : $v = -\frac{1}{a}\frac{d[A]}{dt}$
-
-Pour un produit C : $v = \frac{1}{c}\frac{d[C]}{dt}$
+- *Explication microscopique :* L'agitation thermique augmente la vitesse des molécules, donc la fréquence et l'efficacité des chocs entre réactifs
+- *Application :* On met les aliments au frigo pour ralentir leur dégradation. On chauffe un mélange pour accélérer une synthèse
 :::
 
-:::property[Caractéristiques de la vitesse]
-- v est toujours **positive**
-- v **diminue** généralement au cours du temps (les réactifs s'épuisent)
-- v = 0 à l'équilibre ou quand la réaction est terminée
+### B. La Concentration des réactifs
+
+:::property[Effet de la concentration]
+Plus la concentration initiale des réactifs est élevée, plus la réaction est **rapide**.
+
+- *Explication microscopique :* Si les molécules sont plus nombreuses dans un même volume, elles ont statistiquement plus de chances de se rencontrer (chocs efficaces)
 :::
 
-## Temps de demi-réaction
+:::tip
+**Analogie : Les Auto-tamponneuses**
 
-:::definition
-**Temps de demi-réaction**
-
-Le **temps de demi-réaction** $t_{1/2}$ est le temps au bout duquel l'avancement atteint la moitié de sa valeur finale :
-
-$$\xi(t_{1/2}) = \frac{\xi_f}{2}$$
-
-Pour un réactif limitant, c'est le temps pour que sa concentration soit divisée par 2.
+Imaginez une piste d'auto-tamponneuses :
+- **Concentration :** S'il y a 2 voitures sur la piste, les chocs sont rares. S'il y en a 20, les chocs sont fréquents
+- **Température :** Si les voitures roulent au pas (froid), elles se cognent doucement sans dégâts. Si elles roulent très vite (chaud), les chocs sont violents et efficaces (la réaction se fait)
 :::
 
-:::property[Durée de réaction]
-On considère souvent qu'une réaction est "terminée" après environ **5 à 6 fois** le temps de demi-réaction.
-:::
-
-## Facteurs cinétiques
-
-:::property[Température]
-Une **augmentation de température** accélère la réaction :
-- Les molécules ont plus d'énergie cinétique
-- Les chocs efficaces sont plus fréquents
-
-Règle empirique : v double pour +10°C (approximatif)
-:::
-
-:::property[Concentration]
-Une **augmentation de concentration** des réactifs accélère généralement la réaction :
-- Plus de molécules → plus de collisions
-- Plus de chocs efficaces
-:::
-
-:::property[Solvant et état physique]
-- Un réactif dissous réagit plus vite qu'un solide
-- La surface de contact influence la vitesse
-:::
-
-## Catalyse
+### C. La Catalyse
 
 :::definition
 **Catalyseur**
 
-Un **catalyseur** est une espèce qui accélère une réaction sans être consommée. Il est régénéré en fin de réaction.
+Un **catalyseur** est une espèce chimique qui accélère la réaction **sans être consommée** par celle-ci (il n'apparaît pas dans l'équation bilan, ou alors il est consommé puis régénéré).
 
-Le catalyseur :
-- Diminue l'énergie d'activation
-- Ne modifie pas la thermodynamique (équilibre)
-- N'apparaît pas dans l'équation bilan
+Types de catalyse :
+- **Catalyse homogène :** Catalyseur et réactifs dans la même phase (ex: liquide/liquide)
+- **Catalyse hétérogène :** Phases différentes (ex: un solide platine dans un gaz)
+- **Catalyse enzymatique :** Le catalyseur est une enzyme (biologique)
 :::
 
-:::property[Types de catalyse]
-- **Catalyse homogène** : catalyseur et réactifs dans la même phase
-- **Catalyse hétérogène** : catalyseur dans une phase différente (ex : solide dans liquide)
-- **Catalyse enzymatique** : cas particulier en biologie (très spécifique)
+## Vitesse Volumique de Réaction
+
+Pour quantifier à quel point une réaction avance vite, on utilise la vitesse volumique.
+
+### Définitions mathématiques
+
+:::definition
+**Vitesse de réaction**
+
+Pour une réaction se déroulant dans un volume $V$ constant :
+
+**Vitesse de disparition d'un réactif R :**
+$$v_{\text{disp}}(R) = - \frac{d[R]}{dt}$$
+
+*(Note le signe "moins" car la concentration $[R]$ diminue, la dérivée est négative, mais la vitesse est positive)*
+
+**Vitesse d'apparition d'un produit P :**
+$$v_{\text{app}}(P) = \frac{d[P]}{dt}$$
+
+Unité : $\text{mol} \cdot L^{-1} \cdot s^{-1}$
 :::
 
-## Exemples résolus
+:::method[Méthode graphique (Tangente)]
+Sur la courbe de la concentration en fonction du temps :
 
-### Exemple 1 : Vitesse de réaction
+1. Tracer la **tangente** à la courbe à l'instant $t$ choisi
+2. Calculer le **coefficient directeur** (la pente) de cette tangente
+3. La vitesse est égale à la valeur absolue de ce coefficient directeur
 
-Pour 2H₂O₂ → 2H₂O + O₂, on mesure que [H₂O₂] passe de 0,5 mol/L à 0,3 mol/L en 100 s.
+*Observation :* La vitesse est souvent maximale à $t=0$ (pente forte) et diminue au cours du temps (la courbe s'aplatit) car les réactifs se raréfient.
+:::
 
-**Vitesse moyenne** :
-$$v = -\frac{1}{2}\frac{\Delta[H_2O_2]}{\Delta t} = -\frac{1}{2} \times \frac{0.3 - 0.5}{100} = 1.0 \times 10^{-3} \text{ mol·L}^{-1}\text{·s}^{-1}$$
+:::example[Calculer une vitesse graphiquement]
+**Question :** Sur un graphe $[A] = f(t)$, la tangente à $t = 100$ s passe par les points $(0 ; 0{,}8)$ et $(200 ; 0{,}2)$. Calculer la vitesse de disparition de A à cet instant.
 
-### Exemple 2 : Temps de demi-réaction
+**Solution :**
+1. Coefficient directeur : $\frac{0{,}2 - 0{,}8}{200 - 0} = \frac{-0{,}6}{200} = -3{,}0 \times 10^{-3} \text{ mol} \cdot L^{-1} \cdot s^{-1}$
+2. Vitesse de disparition : $v = -\frac{d[A]}{dt} = -(-3{,}0 \times 10^{-3}) = \mathbf{3{,}0 \times 10^{-3} \text{ mol} \cdot L^{-1} \cdot s^{-1}}$
+:::
 
-La concentration d'un réactif passe de 0,10 mol/L à 0,025 mol/L.
+## Loi de Vitesse d'Ordre 1
 
-Concentration divisée par 4 = 2 demi-réactions.
+Certaines réactions suivent une loi simple où la vitesse est directement proportionnelle à la concentration du réactif.
 
-Si $t_{1/2}$ = 20 min, le temps écoulé est **40 min**.
+### Définition et Équation Différentielle
 
-### Exemple 3 : Effet de la température
+:::definition
+**Réaction d'ordre 1**
 
-À 20°C, une réaction a un $t_{1/2}$ de 40 min. À 40°C, $t_{1/2}$ = 10 min.
+Une réaction est d'**ordre 1** par rapport au réactif $A$ si sa vitesse volumique de disparition est proportionnelle à sa concentration $[A]$ :
 
-La réaction est **4 fois plus rapide** à 40°C qu'à 20°C.
+$$v = - \frac{d[A]}{dt} = k \times [A]$$
 
-## Suivi cinétique
+- $k$ est la **constante de vitesse** (en $s^{-1}$)
+- $k$ dépend de la température mais pas des concentrations
+:::
 
-:::method[Méthodes de suivi]
-- **Spectrophotométrie** : mesure de l'absorbance (espèce colorée)
-- **Conductimétrie** : mesure de la conductivité (ions)
-- **pH-métrie** : mesure du pH (réaction acide-base)
-- **Volumétrie** : mesure du volume de gaz dégagé
-- **Titrage** : prélèvements et dosages
+### Solution (Loi exponentielle)
+
+:::property[Évolution temporelle]
+L'intégration de l'équation différentielle donne l'évolution de la concentration :
+
+$$[A](t) = [A]_0 \times e^{-k \cdot t}$$
+
+C'est une **décroissance exponentielle** : la concentration diminue de plus en plus lentement.
+:::
+
+:::method[Vérifier l'ordre 1 graphiquement]
+**Question :** Comment prouver graphiquement qu'une réaction est d'ordre 1 ?
+
+**Méthode :**
+1. On part de la relation $[A](t) = [A]_0 \cdot e^{-kt}$
+2. On prend le logarithme népérien : $\ln[A](t) = -k \cdot t + \ln[A]_0$
+3. On trace le graphe de $\ln([A])$ en fonction du temps $t$
+
+**Conclusion :** Si les points sont **alignés** (fonction affine), alors la réaction est bien d'ordre 1. Le coefficient directeur de la droite vaut $-k$.
+:::
+
+:::example[Déterminer la constante k]
+**Question :** Pour une réaction d'ordre 1, on mesure $[A]_0 = 0{,}50 \text{ mol/L}$ et $[A] = 0{,}20 \text{ mol/L}$ à $t = 120 \text{ s}$. Calculer $k$.
+
+**Solution :**
+1. On utilise : $\ln[A] = -kt + \ln[A]_0$
+2. Donc : $k = \frac{\ln[A]_0 - \ln[A]}{t} = \frac{\ln(0{,}50) - \ln(0{,}20)}{120}$
+3. $k = \frac{\ln(0{,}50/0{,}20)}{120} = \frac{\ln(2{,}5)}{120} = \frac{0{,}916}{120}$
+4. $k = \mathbf{7{,}6 \times 10^{-3} \text{ s}^{-1}}$
+:::
+
+## Le Temps de Demi-Réaction ($t_{1/2}$)
+
+C'est un indicateur clé pour évaluer la rapidité d'une réaction.
+
+:::definition
+**Temps de demi-réaction**
+
+Le temps de demi-réaction $t_{1/2}$ est la durée nécessaire pour que l'avancement $x$ de la réaction atteigne la **moitié de sa valeur finale**.
+
+$$x(t_{1/2}) = \frac{x_{\text{final}}}{2}$$
+
+Si la réaction est totale et que $A$ est le réactif limitant, cela correspond au moment où sa concentration a été divisée par 2 :
+
+$$[A]_{t_{1/2}} = \frac{[A]_0}{2}$$
+:::
+
+:::property[Lien avec k (ordre 1)]
+Pour une réaction d'ordre 1, le temps de demi-réaction est **constant** et **indépendant de la concentration initiale** :
+
+$$t_{1/2} = \frac{\ln(2)}{k} \approx \frac{0{,}693}{k}$$
+:::
+
+:::tip
+**Analogie : Le Sablier**
+
+$t_{1/2}$ est le moment où la moitié du sable du haut (réactifs) est passée en bas (produits). Pour une réaction d'ordre 1, peu importe la taille du sablier, ce temps caractéristique ne dépend que de la géométrie du goulot (la constante $k$).
+:::
+
+:::example[Calculer le temps de demi-réaction]
+**Question :** Une réaction d'ordre 1 a une constante de vitesse $k = 2{,}5 \times 10^{-3} \text{ s}^{-1}$. Calculer $t_{1/2}$. Au bout de combien de temps reste-t-il moins de 10% du réactif initial ?
+
+**Solution :**
+1. $t_{1/2} = \frac{\ln(2)}{k} = \frac{0{,}693}{2{,}5 \times 10^{-3}} = \mathbf{277 \text{ s}}$ (environ 4,6 min)
+
+2. Pour qu'il reste 10% : $[A] = 0{,}10 \times [A]_0$
+   $\ln(0{,}10) = -kt$ donc $t = \frac{-\ln(0{,}10)}{k} = \frac{2{,}30}{2{,}5 \times 10^{-3}} = \mathbf{920 \text{ s}}$ (environ 15 min)
+
+*Remarque :* $920 \text{ s} \approx 3{,}3 \times t_{1/2}$, ce qui est cohérent : après 3 demi-vies, il reste $(1/2)^3 = 12{,}5\%$.
+:::
+
+## Mécanisme Réactionnel (Vision Microscopique)
+
+L'équation bilan (ex: $2A + B \rightarrow C$) est trompeuse : elle résume le début et la fin, mais ne montre pas *comment* cela se passe.
+
+### Actes élémentaires
+
+:::definition
+**Mécanisme réactionnel**
+
+La réaction réelle se déroule souvent en plusieurs étapes simples appelées **actes élémentaires** (ex: choc entre deux molécules). L'ensemble de ces étapes constitue le **mécanisme réactionnel**.
+:::
+
+### Intermédiaire Réactionnel vs Catalyseur
+
+:::warning
+**Ne pas confondre !**
+
+Il faut savoir distinguer ces deux espèces qui n'apparaissent pas dans l'équation bilan :
+
+| | **Intermédiaire réactionnel** | **Catalyseur** |
+|---|------------------------------|----------------|
+| Rôle | Produit puis consommé | Consommé puis régénéré |
+| Durée de vie | Très courte | Présent au début ET à la fin |
+| Dans le bilan | Absent | Absent |
+
+- **Intermédiaire :** Il est **produit** dans une étape puis **consommé** dans une étape suivante (créé puis détruit)
+- **Catalyseur :** Il est **consommé** dans une première étape puis **régénéré** à l'identique dans une étape ultérieure (là au début et à la fin)
+:::
+
+:::example[Identifier les rôles dans un mécanisme]
+**Mécanisme proposé :**
+1. $A + H^+ \rightarrow AH^+$
+2. $AH^+ + B \rightarrow C + D + H^+$
+
+**Question :** Identifier l'équation bilan, l'intermédiaire réactionnel et le catalyseur.
+
+**Solution :**
+1. **Équation bilan :** On additionne les étapes :
+   $A + \cancel{H^+} + \cancel{AH^+} + B \rightarrow \cancel{AH^+} + C + D + \cancel{H^+}$
+   Soit : $\mathbf{A + B \rightarrow C + D}$
+
+2. **$AH^+$** est produit en (1) et consommé en (2) : c'est un **intermédiaire réactionnel**
+
+3. **$H^+$** est consommé en (1) et régénéré en (2) : c'est un **catalyseur**
 :::
 
 ## Erreurs fréquentes
 
 :::warning
-**Erreur 1** : Oublier le coefficient stœchiométrique
+**Erreur 1 : Confondre vitesse et constante de vitesse**
 
-$v = -\frac{1}{a}\frac{d[A]}{dt}$, pas juste $-\frac{d[A]}{dt}$.
+La vitesse $v$ varie au cours du temps (elle diminue). La constante $k$ est fixe pour une température donnée.
 
-**Erreur 2** : Confondre vitesse instantanée et moyenne
+**Erreur 2 : Oublier le signe moins**
 
-Vitesse instantanée = pente de la tangente, vitesse moyenne = pente de la sécante.
+$v_{\text{disp}} = -\frac{d[R]}{dt}$ (le moins rend la vitesse positive car $[R]$ diminue).
 
-**Erreur 3** : Croire que le catalyseur est consommé
+**Erreur 3 : $t_{1/2}$ dépend de $[A]_0$**
 
-Un catalyseur participe au mécanisme mais est régénéré.
+FAUX pour l'ordre 1 ! $t_{1/2} = \frac{\ln 2}{k}$ est indépendant de la concentration initiale.
 
-**Erreur 4** : Penser que le catalyseur change l'équilibre
+**Erreur 4 : Confondre intermédiaire et catalyseur**
 
-Le catalyseur accélère la réaction mais ne déplace pas l'équilibre.
+L'intermédiaire est **créé puis détruit**. Le catalyseur est **consommé puis régénéré** (il est là au début ET à la fin).
 :::
 
 ## Mini-résumé
 
-- **Vitesse** : $v = \frac{1}{V}\frac{d\xi}{dt}$ (toujours positive)
-- **$t_{1/2}$** : temps pour atteindre la moitié de l'avancement final
-- **Facteurs cinétiques** : température, concentration, catalyseur
-- **Catalyseur** : accélère sans être consommé
+| Concept | Formule / Astuce |
+|---------|------------------|
+| **Facteurs cinétiques** | Température ↑, Concentration ↑, Catalyseur → Réaction plus rapide |
+| **Vitesse de disparition** | $v = -\frac{d[R]}{dt}$ (pente de la tangente) |
+| **Ordre 1** | $[A](t) = [A]_0 \cdot e^{-kt}$ |
+| **Vérifier ordre 1** | Tracer $\ln[A] = f(t)$ → droite de pente $-k$ |
+| **Temps de demi-réaction** | $t_{1/2} = \frac{\ln 2}{k}$ (ordre 1) |
+| **Catalyseur** | Consommé puis régénéré (présent au début et à la fin) |
+| **Intermédiaire** | Produit puis consommé (absent du bilan) |
