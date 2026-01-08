@@ -24,9 +24,15 @@ A la fin de cette leçon, tu sauras :
 
 ## 1. Intuition : "voir" le son
 
-### Le son n'est pas une "chose" qui voyage
+:::definition
+**Onde sonore**
 
+Onde mécanique progressive qui correspond à la propagation d'une perturbation de pression dans un milieu matériel. Le son a besoin d'un milieu (air, eau, solide) : **pas de son dans le vide**.
+:::
+
+:::tip[Analogie : La file de dominos]
 Imagine une **file de dominos** : chaque domino ne traverse pas la pièce, mais l'information "je tombe" se propage. Pour le son, c'est pareil : **les molécules d'air oscillent autour de leur position**, et la perturbation avance.
+:::
 
 ### Compression / dilatation : le "ressort" invisible
 
@@ -43,7 +49,9 @@ C'est une onde **longitudinale** (vibration parallèle à la direction de propag
 | **Aigu / Grave** | Fréquence $f$ | Hz |
 | **Fort / Faible** | Intensité $I$ ou Niveau $L$ | W/m² ou dB |
 
-> **Analogie** : La fréquence c'est comme la **vitesse de rotation** d'une perceuse (aigu). L'amplitude c'est comme la **force** avec laquelle tu appuies (fort).
+:::tip[Analogie : La perceuse]
+La fréquence c'est comme la **vitesse de rotation** d'une perceuse (aigu). L'amplitude c'est comme la **force** avec laquelle tu appuies (fort).
+:::
 
 ---
 
@@ -51,35 +59,47 @@ C'est une onde **longitudinale** (vibration parallèle à la direction de propag
 
 ### 2.1 Période et fréquence
 
+:::property[Relation période-fréquence]
 $$f = \frac{1}{T}$$
 
-- $T$ : période (s) - durée d'une oscillation
-- $f$ : fréquence (Hz) - nombre d'oscillations par seconde
+- $T$ : période (s) — durée d'une oscillation
+- $f$ : fréquence (Hz) — nombre d'oscillations par seconde
 
 **Interprétation** : $f$ augmente → son plus aigu | $T$ augmente → son plus grave
+:::
 
 ### 2.2 Longueur d'onde et célérité
 
+:::property[Relation fondamentale des ondes]
 $$\lambda = v \cdot T = \frac{v}{f}$$
 
 $$v = \lambda \cdot f$$
 
+Avec $\lambda$ la longueur d'onde (m), $v$ la célérité (m/s), et $f$ la fréquence (Hz).
+:::
+
 **Ordres de grandeur à connaître :**
+
 | Milieu | Célérité |
 |--------|----------|
 | Air (20°C) | $\approx 340$ m/s |
 | Eau | $\approx 1500$ m/s |
 | Acier | $\approx 5000$ m/s |
 
-> **Piège classique** : Ce n'est pas parce que le son est "plus fort" qu'il va plus vite. **C'est le milieu qui fixe la célérité**, pas l'intensité.
+:::warning[Piège classique]
+Ce n'est pas parce que le son est "plus fort" qu'il va plus vite. **C'est le milieu qui fixe la célérité**, pas l'intensité.
+:::
 
 ---
 
-## 3. Intensité et Niveau Sonore (le coeur du chapitre)
+## 3. Intensité et Niveau Sonore (le cœur du chapitre)
 
 L'oreille humaine n'a pas une sensibilité linéaire. Elle perçoit des sons allant du chuchotement à l'avion au décollage (facteur $10^{12}$ en énergie !). On utilise donc une échelle **logarithmique**.
 
 ### 3.1 Intensité sonore $I$
+
+:::definition
+**Intensité sonore**
 
 L'intensité sonore est une puissance surfacique :
 
@@ -90,16 +110,21 @@ $$I = \frac{P}{S}$$
 - $S$ : surface traversée (m²)
 
 **Seuil d'audibilité** : $I_0 = 1{,}0 \times 10^{-12}$ W·m⁻² (à 1000 Hz)
+:::
 
 ### 3.2 Niveau d'intensité sonore $L$ (en dB)
 
-$$\boxed{L = 10 \cdot \log\left(\frac{I}{I_0}\right)}$$
+:::property[Niveau sonore en décibels]
+$$L = 10 \cdot \log\left(\frac{I}{I_0}\right)$$
 
-**Formule inverse (indispensable) :**
+Avec $I_0 = 10^{-12}$ W·m⁻² le seuil d'audibilité.
+:::
 
-$$\boxed{I = I_0 \cdot 10^{L/10}}$$
+:::property[Formule inverse (indispensable)]
+$$I = I_0 \cdot 10^{L/10}$$
 
-> **Astuce** : Le 10 du dénominateur "descend" dans l'exposant.
+Le 10 du dénominateur "descend" dans l'exposant.
+:::
 
 ### 3.3 Règles d'or en décibels
 
@@ -109,7 +134,8 @@ $$\boxed{I = I_0 \cdot 10^{L/10}}$$
 | **+3 dB** | $I \times 2$ |
 | **+6 dB** | $I \times 4$ |
 
-**Mini-exercice 1** : Un son a $L = 80$ dB. Calculer $I$.
+:::example[Mini-exercice 1]
+Un son a $L = 80$ dB. Calculer $I$.
 
 <details>
 <summary>Voir la correction</summary>
@@ -117,8 +143,10 @@ $$\boxed{I = I_0 \cdot 10^{L/10}}$$
 $$I = 10^{-12} \times 10^{80/10} = 10^{-12} \times 10^{8} = 10^{-4} \text{ W·m}^{-2}$$
 
 </details>
+:::
 
-**Mini-exercice 2** : Tu passes de 70 dB à 76 dB. Par combien est multipliée l'intensité ?
+:::example[Mini-exercice 2]
+Tu passes de 70 dB à 76 dB. Par combien est multipliée l'intensité ?
 
 <details>
 <summary>Voir la correction</summary>
@@ -126,16 +154,19 @@ $$I = 10^{-12} \times 10^{80/10} = 10^{-12} \times 10^{8} = 10^{-4} \text{ W·m}
 +6 dB = +3 dB + 3 dB → intensité ×2 ×2 = **×4**
 
 </details>
+:::
 
 ### 3.4 Additivité : attention piège !
 
+:::warning[Les décibels ne s'additionnent PAS !]
 Les **intensités** s'ajoutent, mais **PAS les décibels** !
 
 Deux trompettes identiques jouant ensemble :
 - $I_{total} = I + I = 2I$
 - $L_{total} = L + 10 \log(2) \approx L + 3$ dB
 
-> **Règle d'or** : Doubler la source sonore ajoute seulement **+3 dB**.
+**Règle d'or** : Doubler la source sonore ajoute seulement **+3 dB**.
+:::
 
 ---
 
@@ -143,14 +174,21 @@ Deux trompettes identiques jouant ensemble :
 
 ### 4.1 L'idée
 
-Imagine une lampe : plus tu t'éloignes, la lumière se répartit sur une surface plus grande. Pour une source sonore isotrope :
+:::tip[Analogie : La lampe]
+Imagine une lampe : plus tu t'éloignes, la lumière se répartit sur une surface plus grande. Pour une source sonore isotrope, l'énergie se répartit sur une sphère de rayon $r$.
+:::
+
+:::property[Atténuation géométrique]
+Pour une source sonore isotrope :
 
 $$I(r) = \frac{P}{4\pi r^2}$$
 
-Donc $I \propto \frac{1}{r^2}$
+Donc $I \propto \frac{1}{r^2}$ — L'intensité décroît avec le carré de la distance.
+:::
 
 ### 4.2 Effet sur le niveau (en dB)
 
+:::method[Calcul de l'atténuation]
 $$L(r_2) = L(r_1) - 20 \cdot \log\left(\frac{r_2}{r_1}\right)$$
 
 **Règle pratique** : **Doubler la distance → -6 dB**
@@ -160,8 +198,10 @@ $$L(r_2) = L(r_1) - 20 \cdot \log\left(\frac{r_2}{r_1}\right)$$
 | ×2 | -6 dB |
 | ×4 | -12 dB |
 | ×10 | -20 dB |
+:::
 
-**Mini-exercice 3** : Une enceinte donne 90 dB à 1 m. Estimer le niveau à 4 m.
+:::example[Mini-exercice 3]
+Une enceinte donne 90 dB à 1 m. Estimer le niveau à 4 m.
 
 <details>
 <summary>Voir la correction</summary>
@@ -171,6 +211,7 @@ $$L(r_2) = L(r_1) - 20 \cdot \log\left(\frac{r_2}{r_1}\right)$$
 - **Total** : $L(4\text{ m}) = 90 - 12 = 78$ dB
 
 </details>
+:::
 
 ---
 
@@ -178,16 +219,25 @@ $$L(r_2) = L(r_1) - 20 \cdot \log\left(\frac{r_2}{r_1}\right)$$
 
 ### 5.1 Condition : cohérence
 
+:::definition
+**Sources cohérentes**
+
 Pour observer des interférences stables, les sources doivent être **cohérentes** : même fréquence et déphasage constant.
+:::
 
 ### 5.2 Différence de marche $\delta$
 
+:::theorem[Conditions d'interférences]
 | Type | Condition | Résultat |
 |------|-----------|----------|
 | **Constructive** | $\delta = k\lambda$ | Son renforcé (max) |
 | **Destructive** | $\delta = (k + \frac{1}{2})\lambda$ | Son atténué (min) |
 
-**Mini-exercice 4** : Deux haut-parleurs émettent à $f = 680$ Hz dans l'air ($v = 340$ m/s). En un point M, $\delta = 0{,}25$ m. Interférence ?
+Avec $k$ entier et $\lambda$ la longueur d'onde.
+:::
+
+:::example[Mini-exercice 4]
+Deux haut-parleurs émettent à $f = 680$ Hz dans l'air ($v = 340$ m/s). En un point M, $\delta = 0{,}25$ m. Interférence ?
 
 <details>
 <summary>Voir la correction</summary>
@@ -197,8 +247,11 @@ $$\lambda = \frac{v}{f} = \frac{340}{680} = 0{,}50 \text{ m}$$
 $$\delta = 0{,}25 = \frac{\lambda}{2} \Rightarrow \text{Interférence destructive}$$
 
 </details>
+:::
 
-> **Application** : Le **casque à réduction de bruit active** capte le bruit et émet un son en opposition de phase. Les deux ondes s'annulent !
+:::tip[Application : Casque anti-bruit]
+Le **casque à réduction de bruit active** capte le bruit et émet un son en opposition de phase. Les deux ondes s'annulent par interférence destructive !
+:::
 
 ---
 
@@ -206,62 +259,78 @@ $$\delta = 0{,}25 = \frac{\lambda}{2} \Rightarrow \text{Interférence destructiv
 
 ### 6.1 Intuition
 
-Sirène d'ambulance :
+:::tip[La sirène d'ambulance]
 - Elle **approche** → fronts d'onde "serrés" → $\lambda$ diminue → $f$ augmente → **son plus aigu**
 - Elle **s'éloigne** → fronts d'onde "écartés" → $\lambda$ augmente → $f$ diminue → **son plus grave**
+:::
 
 ### 6.2 Formule (source mobile, observateur fixe)
 
+:::property[Formule de l'effet Doppler]
 $$f_{obs} = \frac{c}{c \mp v_s} \cdot f_{source}$$
 
 - signe **−** si la source se **rapproche** (fréquence augmente)
 - signe **+** si elle **s'éloigne** (fréquence diminue)
+:::
 
 ### 6.3 Applications
 
+:::example[Applications de l'effet Doppler]
 1. **Radar routier** : mesure de vitesse par décalage de fréquence
 2. **Astrophysique** : le "Redshift" indique que les étoiles s'éloignent (expansion de l'univers)
 3. **Médecine** : échographie Doppler pour mesurer le flux sanguin
+:::
 
 ---
 
 ## 7. Diffraction
+
+:::definition
+**Diffraction**
 
 L'onde sonore contourne les obstacles quand leur taille $a$ est comparable à $\lambda$.
 
 **Condition** : $a \approx \lambda$ ou $a < \lambda$
 
 **Écart angulaire** : $\theta = \frac{\lambda}{a}$
+:::
 
-> **Exemple** : Si tu parles derrière un mur avec une porte ouverte, quelqu'un sur le côté t'entendra quand même grâce à la diffraction.
+:::example[Exemple concret]
+Si tu parles derrière un mur avec une porte ouverte, quelqu'un sur le côté t'entendra quand même grâce à la diffraction.
+:::
 
 ---
 
 ## 8. Erreurs classiques (et comment les éviter)
 
-### Erreur 1 : Confondre Hz et dB
+:::warning[Erreur 1 : Confondre Hz et dB]
 - **Hz** = fréquence → aigu/grave
 - **dB** = niveau → fort/faible
 
-> Astuce : "**H**z = **H**auteur", "**d**B = **d**écibels = volume"
+**Astuce** : "**H**z = **H**auteur", "**d**B = **d**écibels = volume"
+:::
 
-### Erreur 2 : Oublier le log
+:::warning[Erreur 2 : Oublier le log]
 Beaucoup écrivent $L = 10 \cdot (I/I_0)$ au lieu de $10 \cdot \log(...)$
 
-> Réflexe : dès que tu vois "dB", tu penses **logarithme**
+**Réflexe** : dès que tu vois "dB", tu penses **logarithme**
+:::
 
-### Erreur 3 : Mauvaise inversion
+:::warning[Erreur 3 : Mauvaise inversion]
 $$L = 10\log(I/I_0) \Rightarrow I = I_0 \cdot 10^{L/10}$$
 
-> Astuce : le 10 "descend" dans l'exposant
+**Astuce** : le 10 "descend" dans l'exposant
+:::
 
-### Erreur 4 : "Doubler la distance → -3 dB"
+:::warning[Erreur 4 : "Doubler la distance → -3 dB"]
 **Non !** Doubler la distance → intensité ÷4 → **-6 dB**
 
-> Astuce mnémotechnique : "**2** → **4** → **6**" : ×2 distance → ÷4 intensité → -6 dB
+**Astuce mnémotechnique** : "**2** → **4** → **6**" : ×2 distance → ÷4 intensité → -6 dB
+:::
 
-### Erreur 5 : Mélanger $\lambda$ et $f$ dans le Doppler
+:::warning[Erreur 5 : Mélanger λ et f dans le Doppler]
 Si la source se rapproche : $\lambda$ **diminue**, $f$ **augmente** (car $v = \lambda f$ constant)
+:::
 
 ---
 
@@ -297,4 +366,6 @@ Si la source se rapproche : $\lambda$ **diminue**, $f$ **augmente** (car $v = \l
 | **Atténuation géo.** | $-20\log(r_2/r_1)$ | ×2 distance → -6 dB |
 | **Interférences** | $\delta = k\lambda$ (C) ou $(k+\frac{1}{2})\lambda$ (D) | |
 
-**Doppler** : Approche → $f \nearrow$ (aigu) | Éloignement → $f \searrow$ (grave)
+:::tip[Doppler en un mot]
+**Approche** → $f \nearrow$ (aigu) | **Éloignement** → $f \searrow$ (grave)
+:::
