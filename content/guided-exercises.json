@@ -720,6 +720,678 @@
         }
       ],
       "finalAnswer": "L'interfrange est **i = 2,25 mm**. Le point M situé à x = 4,5 mm est sur une **frange brillante** (ordre k = 2)."
+    },
+    {
+      "id": "guided-ph-2",
+      "title": "Diagramme de prédominance (pH et pKa)",
+      "subject": "chimie",
+      "chapter": "Acides et bases",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "On considère le couple de l'acide éthanoïque CH₃COOH/CH₃COO⁻ de pKₐ = 4,8. Le pH de la solution est mesuré à 5,8.",
+      "question": "Déterminer quelle est l'espèce prédominante dans cette solution.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Rappeler la relation d'Henderson-Hasselbalch",
+          "instruction": "Quelle formule relie le pH, le pKa et le rapport des concentrations base/acide ?",
+          "hint": "C'est une réécriture de la formule du Ka.",
+          "solution": "La relation est :\n$$\\text{pH} = \\text{pK}_A + \\log\\left(\\frac{[\\text{Base}]}{[\\text{Acide}]}\\right)$$"
+        },
+        {
+          "id": 2,
+          "title": "Comparer pH et pKa",
+          "instruction": "Compare les valeurs données et déduis-en le signe du logarithme.",
+          "hint": "Si pH > pKa, que vaut le rapport [Base]/[Acide] ?",
+          "solution": "Ici pH = 5,8 et pKₐ = 4,8. Donc pH > pKₐ.\n\nD'après la formule, cela implique que :\n$$\\log\\left(\\frac{[\\text{CH}_3\\text{COO}^-]}{[\\text{CH}_3\\text{COOH}]}\\right) > 0$$\n\nDonc $\\frac{[\\text{CH}_3\\text{COO}^-]}{[\\text{CH}_3\\text{COOH}]} > 1$"
+        }
+      ],
+      "finalAnswer": "Puisque pH > pKa, c'est la **base conjuguée** (CH₃COO⁻) qui prédomine."
+    },
+    {
+      "id": "guided-newton-2",
+      "title": "Chute libre (2ème loi de Newton)",
+      "subject": "physique",
+      "chapter": "Mouvement et Newton",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Un ballon de masse m = 600 g est lâché sans vitesse initiale d'une hauteur h. On néglige les frottements de l'air.",
+      "question": "Déterminer les coordonnées du vecteur accélération du ballon.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Faire le bilan des forces",
+          "instruction": "Identifie les forces s'exerçant sur le système (le ballon) dans le référentiel terrestre.",
+          "hint": "On néglige les frottements et la poussée d'Archimède.",
+          "solution": "Le système n'est soumis qu'à son **poids** $\\vec{P} = m\\vec{g}$."
+        },
+        {
+          "id": 2,
+          "title": "Appliquer la 2ème loi de Newton",
+          "instruction": "Écris la relation vectorielle fondamentale de la dynamique.",
+          "hint": "Somme des forces = masse × accélération",
+          "solution": "$$\\sum \\vec{F}_{ext} = m\\vec{a}$$\n\nIci : $m\\vec{g} = m\\vec{a}$"
+        },
+        {
+          "id": 3,
+          "title": "Déduire l'accélération",
+          "instruction": "Simplifie l'équation précédente.",
+          "hint": "La masse m se simplifie.",
+          "solution": "En divisant par m, on obtient $\\vec{a} = \\vec{g}$.\n\nDans un repère (O,x,y) avec y vertical vers le haut :\n- $a_x = 0$\n- $a_y = -g \\approx -9,8$ m/s²"
+        }
+      ],
+      "finalAnswer": "L'accélération est égale au champ de pesanteur : **$\\vec{a} = \\vec{g}$** (indépendante de la masse)."
+    },
+    {
+      "id": "guided-kepler-1",
+      "title": "3ème loi de Kepler (Masse du Soleil)",
+      "subject": "physique",
+      "chapter": "Mouvement dans un champ",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "La Terre tourne autour du Soleil sur une orbite supposée circulaire de rayon r = 1,50 × 10¹¹ m. Sa période est T = 365,25 jours.",
+      "question": "Calculer la masse du Soleil Mₛ.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Convertir les unités",
+          "instruction": "Convertis la période T en secondes.",
+          "hint": "1 jour = 24h, 1h = 3600s.",
+          "solution": "$$T = 365,25 \\times 24 \\times 3600 \\approx 3,16 \\times 10^7 \\text{ s}$$"
+        },
+        {
+          "id": 2,
+          "title": "Énoncer la 3ème loi de Kepler",
+          "instruction": "Donne la formule reliant T, r, G et M.",
+          "hint": "Le rapport T²/r³ est constant.",
+          "solution": "Pour une orbite circulaire :\n$$\\frac{T^2}{r^3} = \\frac{4\\pi^2}{G \\times M_S}$$"
+        },
+        {
+          "id": 3,
+          "title": "Isoler la masse Mₛ",
+          "instruction": "Retourne la formule pour exprimer Mₛ.",
+          "hint": "Produit en croix.",
+          "solution": "$$M_S = \\frac{4\\pi^2 \\times r^3}{G \\times T^2}$$"
+        },
+        {
+          "id": 4,
+          "title": "Application numérique",
+          "instruction": "Calcule avec G = 6,67 × 10⁻¹¹ SI.",
+          "hint": "Attention aux puissances de 10.",
+          "solution": "$$M_S = \\frac{4 \\times (3,14)^2 \\times (1,50 \\times 10^{11})^3}{6,67 \\times 10^{-11} \\times (3,16 \\times 10^7)^2}$$\n\n$$M_S \\approx 2,0 \\times 10^{30} \\text{ kg}$$"
+        }
+      ],
+      "finalAnswer": "La masse du Soleil est **Mₛ ≈ 2,0 × 10³⁰ kg**."
+    },
+    {
+      "id": "guided-radioactivite-2",
+      "title": "Datation au Carbone 14",
+      "subject": "physique",
+      "chapter": "Radioactivité",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "Un échantillon de bois ancien a une activité A de 200 Bq. Un bois vivant de même masse a une activité A₀ = 400 Bq. La demi-vie du C14 est t₁/₂ = 5730 ans.",
+      "question": "Déterminer l'âge de l'échantillon.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Rappeler la loi de décroissance",
+          "instruction": "Écris la relation entre l'activité A(t) et le temps.",
+          "hint": "Utilise l'exponentielle et la constante λ.",
+          "solution": "$$A(t) = A_0 \\times e^{-\\lambda t}$$"
+        },
+        {
+          "id": 2,
+          "title": "Exprimer λ en fonction de la demi-vie",
+          "instruction": "Quelle est la relation entre λ et t₁/₂ ?",
+          "hint": "ln(2) intervient ici.",
+          "solution": "$$\\lambda = \\frac{\\ln(2)}{t_{1/2}}$$"
+        },
+        {
+          "id": 3,
+          "title": "Isoler le temps t",
+          "instruction": "Inverse la loi de décroissance pour trouver t.",
+          "hint": "Utilise le logarithme népérien.",
+          "solution": "$$e^{-\\lambda t} = \\frac{A}{A_0}$$\n\n$$-\\lambda t = \\ln\\left(\\frac{A}{A_0}\\right)$$\n\n$$t = -\\frac{1}{\\lambda} \\ln\\left(\\frac{A}{A_0}\\right) = \\frac{t_{1/2}}{\\ln(2)} \\ln\\left(\\frac{A_0}{A}\\right)$$"
+        },
+        {
+          "id": 4,
+          "title": "Calculer l'âge",
+          "instruction": "Remplace par les valeurs. Note que A/A₀ = 0,5.",
+          "hint": "Si l'activité est divisée par 2, cela correspond exactement à une demi-vie.",
+          "solution": "Ici $\\frac{A}{A_0} = \\frac{200}{400} = 0,5$\n\nLe temps écoulé correspond donc exactement à une demi-vie :\n$$t = t_{1/2} = 5730 \\text{ ans}$$"
+        }
+      ],
+      "finalAnswer": "L'âge de l'échantillon est de **5730 ans**."
+    },
+    {
+      "id": "guided-radioactivite-3",
+      "title": "Désintégration Alpha du Polonium",
+      "subject": "physique",
+      "chapter": "Radioactivité",
+      "difficulty": "facile",
+      "estimatedTime": 10,
+      "description": "Le Polonium 210 (²¹⁰₈₄Po) est un émetteur alpha.",
+      "question": "Écrire l'équation de sa désintégration et identifier le noyau fils.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier la particule alpha",
+          "instruction": "Quel est le symbole d'une particule alpha ?",
+          "hint": "C'est un noyau d'Hélium.",
+          "solution": "Une particule α est un noyau d'hélium : ⁴₂He"
+        },
+        {
+          "id": 2,
+          "title": "Appliquer les lois de conservation",
+          "instruction": "Équilibre les nombres de masse (A) et de charge (Z).",
+          "hint": "210 - 4 = ? et 84 - 2 = ?",
+          "solution": "$$^{210}_{84}\\text{Po} \\rightarrow ^{A}_{Z}\\text{X} + ^4_2\\text{He}$$\n\nConservation de A : 210 = A + 4, donc A = 206\nConservation de Z : 84 = Z + 2, donc Z = 82"
+        },
+        {
+          "id": 3,
+          "title": "Identifier l'élément",
+          "instruction": "Quel élément a Z = 82 ?",
+          "hint": "C'est le Plomb (Pb).",
+          "solution": "Le noyau fils est le Plomb 206 : ²⁰⁶₈₂Pb"
+        }
+      ],
+      "finalAnswer": "$$^{210}_{84}\\text{Po} \\rightarrow ^{206}_{82}\\text{Pb} + ^4_2\\text{He}$$"
+    },
+    {
+      "id": "guided-circuit-rc-2",
+      "title": "Charge d'un condensateur (Constante de temps)",
+      "subject": "physique",
+      "chapter": "Circuit RC",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Un condensateur de capacité C = 100 μF se charge à travers une résistance R = 1 kΩ.",
+      "question": "Déterminer la constante de temps τ et estimer la durée de la charge quasi-totale.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Convertir les unités",
+          "instruction": "Convertis R et C en unités SI.",
+          "hint": "1 kΩ = 1000 Ω, 1 μF = 10⁻⁶ F",
+          "solution": "R = 1 kΩ = 1000 Ω\nC = 100 μF = 100 × 10⁻⁶ F = 10⁻⁴ F"
+        },
+        {
+          "id": 2,
+          "title": "Calculer la constante de temps",
+          "instruction": "Donne la formule de τ et calcule sa valeur.",
+          "hint": "τ = R × C",
+          "solution": "$$\\tau = R \\times C = 1000 \\times 10^{-4} = 0,1 \\text{ s}$$"
+        },
+        {
+          "id": 3,
+          "title": "Estimer la durée de charge",
+          "instruction": "Au bout de combien de τ considère-t-on le condensateur chargé à 99% ?",
+          "hint": "C'est une valeur usuelle (généralement 5τ).",
+          "solution": "On considère la charge terminée au bout de **5τ** (99,3% de la charge finale).\n\nDurée totale : 5 × 0,1 = **0,5 s**"
+        }
+      ],
+      "finalAnswer": "La constante de temps est **τ = 0,1 s** et la charge dure environ **0,5 s**."
+    },
+    {
+      "id": "guided-circuit-rc-3",
+      "title": "Équation différentielle de décharge",
+      "subject": "physique",
+      "chapter": "Circuit RC",
+      "difficulty": "difficile",
+      "estimatedTime": 30,
+      "description": "Un condensateur chargé (tension uC) se décharge dans une résistance R.",
+      "question": "Établir l'équation différentielle vérifiée par la tension uC(t).",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Loi des mailles",
+          "instruction": "Écris la loi des mailles pour la maille unique.",
+          "hint": "La somme des tensions est nulle (pas de générateur).",
+          "solution": "$$u_R + u_C = 0$$"
+        },
+        {
+          "id": 2,
+          "title": "Loi d'Ohm",
+          "instruction": "Exprime uR en fonction de i.",
+          "hint": "u = Ri",
+          "solution": "$$u_R = R \\times i$$"
+        },
+        {
+          "id": 3,
+          "title": "Relation courant-tension du condensateur",
+          "instruction": "Exprime i en fonction de uC.",
+          "hint": "i = dq/dt et q = C·uC",
+          "solution": "$$i = \\frac{dq}{dt} = C \\frac{du_C}{dt}$$"
+        },
+        {
+          "id": 4,
+          "title": "Assemblage",
+          "instruction": "Remplace tout dans la loi des mailles.",
+          "hint": "Substitue uR et i.",
+          "solution": "$$R \\times C \\frac{du_C}{dt} + u_C = 0$$\n\nOu sous forme canonique :\n$$\\frac{du_C}{dt} + \\frac{u_C}{RC} = 0$$"
+        }
+      ],
+      "finalAnswer": "L'équation différentielle est **RC·(duC/dt) + uC = 0**."
+    },
+    {
+      "id": "guided-thermo-1",
+      "title": "Premier principe (Variation d'énergie interne)",
+      "subject": "physique",
+      "chapter": "Thermodynamique",
+      "difficulty": "facile",
+      "estimatedTime": 15,
+      "description": "Un système fermé reçoit un travail W = 500 J et cède un transfert thermique Q = -200 J à l'extérieur.",
+      "question": "Calculer la variation d'énergie interne ΔU du système.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Énoncer le premier principe",
+          "instruction": "Quelle est la relation entre ΔU, W et Q ?",
+          "hint": "C'est une somme algébrique.",
+          "solution": "$$\\Delta U = W + Q$$"
+        },
+        {
+          "id": 2,
+          "title": "Vérifier les signes",
+          "instruction": "Les signes donnés dans l'énoncé sont-ils corrects selon la convention ?",
+          "hint": "Reçu = positif, Cédé = négatif.",
+          "solution": "W est reçu donc W > 0 (+500 J) ✓\nQ est cédé donc Q < 0 (-200 J) ✓"
+        },
+        {
+          "id": 3,
+          "title": "Calculer ΔU",
+          "instruction": "Fais la somme.",
+          "hint": "500 + (-200)",
+          "solution": "$$\\Delta U = 500 + (-200) = 300 \\text{ J}$$"
+        }
+      ],
+      "finalAnswer": "La variation d'énergie interne est **ΔU = 300 J**."
+    },
+    {
+      "id": "guided-thermo-2",
+      "title": "Résistance thermique d'un mur",
+      "subject": "physique",
+      "chapter": "Thermodynamique",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Un mur d'épaisseur e = 0,2 m a une conductivité thermique λ = 1,0 W/(m·K) et une surface S = 10 m².",
+      "question": "Calculer sa résistance thermique Rth.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Formule de la résistance thermique",
+          "instruction": "Quelle formule lie Rth, e, λ et S ?",
+          "hint": "La résistance augmente avec l'épaisseur et diminue avec la surface.",
+          "solution": "$$R_{th} = \\frac{e}{\\lambda \\times S}$$"
+        },
+        {
+          "id": 2,
+          "title": "Application numérique",
+          "instruction": "Applique la formule.",
+          "hint": "0,2 divisé par (1 × 10).",
+          "solution": "$$R_{th} = \\frac{0,2}{1,0 \\times 10} = 0,02 \\text{ K/W}$$"
+        }
+      ],
+      "finalAnswer": "La résistance thermique est **Rth = 0,02 K/W**."
+    },
+    {
+      "id": "guided-ondes-2",
+      "title": "Atténuation géométrique sonore",
+      "subject": "physique",
+      "chapter": "Ondes mécaniques",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "Le niveau d'intensité sonore à 1 mètre d'une source est L₁ = 100 dB. La source émet dans toutes les directions.",
+      "question": "Quel est le niveau sonore L₂ à 10 mètres de la source ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Relation Intensité-Distance",
+          "instruction": "Comment varie l'intensité I en fonction de la distance d pour une source isotrope ?",
+          "hint": "L'énergie se répartit sur une sphère de surface 4πd².",
+          "solution": "L'intensité I est inversement proportionnelle au carré de la distance :\n$$I \\propto \\frac{1}{d^2}$$"
+        },
+        {
+          "id": 2,
+          "title": "Rapport des intensités",
+          "instruction": "Si la distance est multipliée par 10, par combien est divisée l'intensité ?",
+          "hint": "10² = 100",
+          "solution": "Si d est multiplié par 10, I est divisée par 100 (10²).\n\nDonc : I₂ = I₁/100"
+        },
+        {
+          "id": 3,
+          "title": "Calculer la variation en décibels",
+          "instruction": "Utilise la formule du niveau sonore L = 10·log(I/I₀).",
+          "hint": "Diviser I par 100 revient à soustraire 10·log(100).",
+          "solution": "$$\\Delta L = 10 \\log\\left(\\frac{I_2}{I_1}\\right) = 10 \\log\\left(\\frac{1}{100}\\right) = -20 \\text{ dB}$$"
+        },
+        {
+          "id": 4,
+          "title": "Calcul final",
+          "instruction": "Soustrais l'atténuation au niveau initial.",
+          "hint": "100 - 20",
+          "solution": "$$L_2 = L_1 + \\Delta L = 100 - 20 = 80 \\text{ dB}$$"
+        }
+      ],
+      "finalAnswer": "Le niveau sonore à 10 mètres est **L₂ = 80 dB**."
+    },
+    {
+      "id": "guided-ondes-3",
+      "title": "Diffraction par une fente",
+      "subject": "physique",
+      "chapter": "Diffraction",
+      "difficulty": "facile",
+      "estimatedTime": 15,
+      "description": "Un laser de longueur d'onde λ éclaire une fente fine de largeur a. On observe une tache centrale de demi-largeur angulaire θ.",
+      "question": "Rappeler la relation liant θ, λ et a.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Formule de l'écart angulaire",
+          "instruction": "Écris la relation caractéristique de la diffraction.",
+          "hint": "L'angle est proportionnel à λ et inversement proportionnel à a.",
+          "solution": "$$\\theta = \\frac{\\lambda}{a}$$"
+        },
+        {
+          "id": 2,
+          "title": "Unités",
+          "instruction": "Précise les unités de chaque grandeur.",
+          "hint": "Les longueurs en mètres, l'angle en...",
+          "solution": "λ et a sont en mètres (m)\nθ est en radians (rad)"
+        }
+      ],
+      "finalAnswer": "La relation est **θ = λ/a** (avec θ en radians)."
+    },
+    {
+      "id": "guided-titrage-2",
+      "title": "Dosage par titrage (Équivalence)",
+      "subject": "chimie",
+      "chapter": "Titrages",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "On titre un volume Vₐ = 20,0 mL d'acide AH par une solution de soude (Na⁺ + HO⁻) de concentration Cᵦ = 0,10 mol/L. Le volume équivalent est Vₑ = 15,0 mL.",
+      "question": "Calculer la concentration Cₐ de l'acide.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Écrire l'équation de réaction",
+          "instruction": "Quelle est la réaction entre l'acide AH et les ions hydroxyde ?",
+          "hint": "C'est une réaction acide-base totale.",
+          "solution": "$$\\text{AH}_{(aq)} + \\text{HO}^-_{(aq)} \\rightarrow \\text{A}^-_{(aq)} + \\text{H}_2\\text{O}_{(l)}$$"
+        },
+        {
+          "id": 2,
+          "title": "Relation à l'équivalence",
+          "instruction": "Quelle relation lie les quantités de matière à l'équivalence ?",
+          "hint": "Les réactifs sont introduits dans les proportions stœchiométriques (1 pour 1).",
+          "solution": "À l'équivalence : $n_A = n_{B,versé}$\n\n$$C_A \\times V_A = C_B \\times V_E$$"
+        },
+        {
+          "id": 3,
+          "title": "Calculer Cₐ",
+          "instruction": "Isole Cₐ et fais le calcul.",
+          "hint": "Les volumes sont dans la même unité (mL), pas besoin de convertir.",
+          "solution": "$$C_A = \\frac{C_B \\times V_E}{V_A} = \\frac{0,10 \\times 15,0}{20,0} = 0,075 \\text{ mol/L}$$"
+        }
+      ],
+      "finalAnswer": "La concentration de l'acide est **Cₐ = 0,075 mol/L** (ou 75 mmol/L)."
+    },
+    {
+      "id": "guided-synthese-2",
+      "title": "Rendement d'une synthèse organique",
+      "subject": "chimie",
+      "chapter": "Synthèse organique",
+      "difficulty": "facile",
+      "estimatedTime": 15,
+      "description": "On synthétise de l'aspirine. La quantité de matière théorique attendue est nmax = 0,10 mol. On obtient expérimentalement une masse mexp = 13,5 g d'aspirine (M = 180 g/mol).",
+      "question": "Calculer le rendement de la synthèse.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Calculer la quantité de matière expérimentale",
+          "instruction": "Convertis la masse obtenue en moles.",
+          "hint": "n = m/M",
+          "solution": "$$n_{exp} = \\frac{m_{exp}}{M} = \\frac{13,5}{180} = 0,075 \\text{ mol}$$"
+        },
+        {
+          "id": 2,
+          "title": "Calculer le rendement",
+          "instruction": "Applique la formule du rendement η.",
+          "hint": "Rapport entre quantité obtenue et quantité maximale.",
+          "solution": "$$\\eta = \\frac{n_{exp}}{n_{max}} = \\frac{0,075}{0,10} = 0,75$$\n\nSoit **75%**"
+        }
+      ],
+      "finalAnswer": "Le rendement est de **η = 75%**."
+    },
+    {
+      "id": "guided-synthese-3",
+      "title": "Identification de groupes fonctionnels",
+      "subject": "chimie",
+      "chapter": "Synthèse organique",
+      "difficulty": "facile",
+      "estimatedTime": 10,
+      "description": "Soit la molécule CH₃-CO-NH-CH₃.",
+      "question": "Identifier la famille fonctionnelle de cette molécule.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Repérer le groupe caractéristique",
+          "instruction": "Observe l'enchaînement d'atomes O, C, N.",
+          "hint": "Cherche le motif -CO-N-.",
+          "solution": "La molécule contient un groupe carbonyle (C=O) lié à un atome d'azote (N).\n\nMotif identifié : **-CO-NH-**"
+        },
+        {
+          "id": 2,
+          "title": "Nommer la famille",
+          "instruction": "Quelle famille correspond au groupe -CON- ?",
+          "hint": "Ce n'est pas une amine (pas de -NH₂ isolé), ni une cétone.",
+          "solution": "Le groupe -CO-N< caractérise la fonction **amide**."
+        }
+      ],
+      "finalAnswer": "La molécule appartient à la famille des **amides**."
+    },
+    {
+      "id": "guided-cinetique-2",
+      "title": "Vitesse volumique de réaction",
+      "subject": "chimie",
+      "chapter": "Cinétique chimique",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "On suit la concentration d'un produit P au cours du temps. La courbe [P] = f(t) est tracée.",
+      "question": "Comment déterminer graphiquement la vitesse volumique de formation du produit à un instant t ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Définition de la vitesse volumique",
+          "instruction": "Donne la formule de la vitesse v en fonction de [P].",
+          "hint": "C'est la dérivée de la concentration.",
+          "solution": "$$v(t) = \\frac{d[P]}{dt}$$"
+        },
+        {
+          "id": 2,
+          "title": "Interprétation graphique de la dérivée",
+          "instruction": "À quoi correspond la dérivée sur une courbe ?",
+          "hint": "Pense à la tangente.",
+          "solution": "La dérivée d[P]/dt correspond au **coefficient directeur de la tangente** à la courbe au point d'abscisse t."
+        },
+        {
+          "id": 3,
+          "title": "Méthode de calcul",
+          "instruction": "Explique comment procéder concrètement.",
+          "hint": "Trace, choisis, calcule.",
+          "solution": "1. Tracer la tangente à la courbe à l'instant t choisi\n2. Choisir deux points sur cette tangente\n3. Calculer la pente : $v = \\frac{\\Delta [P]}{\\Delta t}$"
+        }
+      ],
+      "finalAnswer": "La vitesse correspond à la **pente de la tangente** à la courbe [P] = f(t)."
+    },
+    {
+      "id": "guided-equilibre-2",
+      "title": "Quotient de réaction Qr",
+      "subject": "chimie",
+      "chapter": "Équilibres chimiques",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Soit la réaction Cu²⁺(aq) + Zn(s) ⇌ Cu(s) + Zn²⁺(aq).",
+      "question": "Écrire l'expression du quotient de réaction Qr.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier les états physiques",
+          "instruction": "Quelles espèces interviennent dans le quotient de réaction ?",
+          "hint": "Seuls les solutés (aq) et gaz apparaissent. Les solides et solvants valent 1.",
+          "solution": "Espèces en solution : Cu²⁺ et Zn²⁺\nSolides : Cu et Zn (activité = 1)"
+        },
+        {
+          "id": 2,
+          "title": "Appliquer la formule",
+          "instruction": "Produits au numérateur, réactifs au dénominateur.",
+          "hint": "Qr = [Produits]/[Réactifs]",
+          "solution": "$$Q_r = \\frac{[\\text{Zn}^{2+}]}{[\\text{Cu}^{2+}]}$$\n\n(Les solides Cu et Zn n'apparaissent pas car leur activité vaut 1)"
+        }
+      ],
+      "finalAnswer": "Le quotient de réaction est **Qr = [Zn²⁺]/[Cu²⁺]**."
+    },
+    {
+      "id": "guided-pile-1",
+      "title": "Capacité d'une pile",
+      "subject": "chimie",
+      "chapter": "Piles et électrolyse",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Une pile débite un courant constant I = 0,5 A pendant une durée Δt = 2 heures.",
+      "question": "Calculer la capacité Q de la pile consommée durant cette période en Coulombs.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Convertir le temps",
+          "instruction": "Convertis la durée en secondes.",
+          "hint": "1h = 3600s",
+          "solution": "$$\\Delta t = 2 \\times 3600 = 7200 \\text{ s}$$"
+        },
+        {
+          "id": 2,
+          "title": "Calculer la charge Q",
+          "instruction": "Utilise la relation entre charge, intensité et temps.",
+          "hint": "Q = I × Δt",
+          "solution": "$$Q = I \\times \\Delta t = 0,5 \\times 7200 = 3600 \\text{ C}$$"
+        },
+        {
+          "id": 3,
+          "title": "Convertir en Ah (optionnel)",
+          "instruction": "Exprime aussi en Ampère-heures.",
+          "hint": "1 Ah = 3600 C",
+          "solution": "$$Q = 3600 \\text{ C} = 1 \\text{ Ah}$$"
+        }
+      ],
+      "finalAnswer": "La capacité consommée est **Q = 3600 C** (ou 1 Ah)."
+    },
+    {
+      "id": "guided-cinematique-1",
+      "title": "Vecteur vitesse et position",
+      "subject": "physique",
+      "chapter": "Mouvement et Newton",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Le vecteur position d'un point M est donné par OM⃗(t) = (2t)i⃗ + (5t² - 3)j⃗.",
+      "question": "Déterminer les coordonnées du vecteur vitesse v⃗(t).",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Définition du vecteur vitesse",
+          "instruction": "Comment obtient-on la vitesse à partir de la position ?",
+          "hint": "C'est une opération mathématique par rapport au temps.",
+          "solution": "Le vecteur vitesse est la dérivée du vecteur position par rapport au temps :\n$$\\vec{v} = \\frac{d\\vec{OM}}{dt}$$"
+        },
+        {
+          "id": 2,
+          "title": "Dériver chaque coordonnée",
+          "instruction": "Dérive x(t) = 2t et y(t) = 5t² - 3.",
+          "hint": "La dérivée de t² est 2t.",
+          "solution": "$v_x = \\frac{d(2t)}{dt} = 2$\n\n$v_y = \\frac{d(5t^2 - 3)}{dt} = 10t$"
+        }
+      ],
+      "finalAnswer": "Le vecteur vitesse est **v⃗(t) = 2i⃗ + 10t·j⃗**."
+    },
+    {
+      "id": "guided-projectile-1",
+      "title": "Conditions initiales d'un projectile",
+      "subject": "physique",
+      "chapter": "Mouvement dans un champ",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Un projectile est lancé de l'origine O avec une vitesse v₀ faisant un angle α avec l'horizontale.",
+      "question": "Donner les composantes du vecteur vitesse initiale v⃗₀.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Projeter sur l'axe x",
+          "instruction": "Quelle est la coordonnée horizontale v₀ₓ ?",
+          "hint": "Côté adjacent à l'angle, utilise le cosinus.",
+          "solution": "$$v_{0x} = v_0 \\cos(\\alpha)$$"
+        },
+        {
+          "id": 2,
+          "title": "Projeter sur l'axe y",
+          "instruction": "Quelle est la coordonnée verticale v₀ᵧ ?",
+          "hint": "Côté opposé à l'angle, utilise le sinus.",
+          "solution": "$$v_{0y} = v_0 \\sin(\\alpha)$$"
+        }
+      ],
+      "finalAnswer": "v⃗₀ a pour coordonnées **(v₀·cos(α) ; v₀·sin(α))**."
+    },
+    {
+      "id": "guided-interferences-2",
+      "title": "Différence de marche et interférences",
+      "subject": "physique",
+      "chapter": "Interférences",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "Deux ondes synchrones de longueur d'onde λ interfèrent en un point M. La différence de marche est δ = 2λ.",
+      "question": "Les interférences sont-elles constructives ou destructives ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Condition d'interférence constructive",
+          "instruction": "Quelle valeur doit prendre δ pour que l'interférence soit constructive ?",
+          "hint": "C'est un multiple entier de la longueur d'onde.",
+          "solution": "Interférences constructives : $\\delta = k \\times \\lambda$ (k entier)\n\nInterférences destructives : $\\delta = (k + \\frac{1}{2}) \\times \\lambda$"
+        },
+        {
+          "id": 2,
+          "title": "Analyser le cas donné",
+          "instruction": "Compare δ = 2λ à la condition.",
+          "hint": "Est-ce que 2 est un entier ?",
+          "solution": "Ici δ = 2λ, donc δ/λ = 2 = entier.\n\nLa condition d'interférence **constructive** est vérifiée."
+        }
+      ],
+      "finalAnswer": "Les interférences sont **constructives** (amplitude maximale)."
+    },
+    {
+      "id": "guided-spectro-1",
+      "title": "Absorbance et concentration (Beer-Lambert)",
+      "subject": "chimie",
+      "chapter": "Titrages",
+      "difficulty": "facile",
+      "estimatedTime": 10,
+      "description": "Une solution a une absorbance A = 0,50 pour une concentration C. On double la concentration.",
+      "question": "Quelle sera la nouvelle absorbance A' ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Loi de Beer-Lambert",
+          "instruction": "Quelle est la relation entre A et C ?",
+          "hint": "Il y a proportionnalité.",
+          "solution": "$$A = k \\times C$$\n\n(k est une constante pour une cuve et une longueur d'onde données)"
+        },
+        {
+          "id": 2,
+          "title": "Calculer A'",
+          "instruction": "Que se passe-t-il si C est multiplié par 2 ?",
+          "hint": "A est proportionnel à C.",
+          "solution": "$$A' = k \\times (2C) = 2 \\times (kC) = 2A = 2 \\times 0,50 = 1,0$$"
+        }
+      ],
+      "finalAnswer": "La nouvelle absorbance est **A' = 1,0**."
     }
   ]
 }
