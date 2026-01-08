@@ -1,222 +1,459 @@
 ---
 id: "thermodynamique"
-title: "Thermodynamique"
+title: "Thermodynamique : Énergie, Chaleur et Température"
 track: "physique"
-level: 3
-prerequisites: ["energie-mecanique"]
-tags: ["thermodynamique", "chaleur", "entropie", "gaz parfait", "premier principe"]
-estimatedTime: 55
-chapter: "thermodynamique"
-order: 1
+level: 2
+prerequisites: ["Quantité de matière", "Puissance et Énergie"]
+tags: ["thermodynamique", "énergie interne", "premier principe", "gaz parfait", "flux thermique", "transferts", "entropie"]
+estimatedTime: 110
+chapter: "energie-conversions-et-transferts"
+order: 3
 ---
 
-# Thermodynamique
+# Thermodynamique : Énergie, Chaleur et Température
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Distinguer travail et transfert thermique
-- Appliquer le premier principe de la thermodynamique
-- Utiliser l'équation d'état des gaz parfaits
-- Comprendre la notion d'entropie et le second principe
+- Utiliser le modèle du gaz parfait et l'équation d'état $PV=nRT$
+- Appliquer le Premier Principe de la thermodynamique ($\Delta U = W + Q$)
+- Calculer la variation d'énergie interne d'un système incompressible ($\Delta U = C \cdot \Delta T$)
+- Distinguer les trois modes de transfert thermique et utiliser la loi de Newton
+- Comprendre les transformations (isochore, isobare, isotherme, adiabatique)
+- Appliquer le concept d'entropie et le second principe
 
-## Intuition et analogie
+## 1. Intuition et Analogie : Le Compte en Banque Énergétique
 
-Pose une tasse de café chaud sur une table. Que se passe-t-il ? Le café refroidit, la table se réchauffe légèrement. La chaleur "coule" naturellement du chaud vers le froid — **jamais l'inverse**. C'est le cœur de la thermodynamique !
+La thermodynamique étudie les échanges d'énergie. Pour comprendre l'énergie interne et le premier principe, imagine un **compte en banque**.
 
-Le **premier principe** dit que l'énergie se conserve toujours : si ton café perd de l'énergie thermique, l'air ambiant la gagne. Rien ne se perd, tout se transforme. Quand tu comprimes l'air dans une pompe à vélo, tu fournis du **travail** qui se transforme en chaleur (la pompe chauffe).
+:::tip[Analogie : Le Solde Bancaire]
+- **L'Énergie Interne ($U$)** est le **solde** de ton compte. C'est la richesse totale stockée à l'intérieur du système.
+- **La Variation ($\Delta U$)** est la différence entre le solde final et le solde initial.
+- Pour changer ce solde, il n'y a que deux moyens d'échanger avec l'extérieur :
+  1. **Le Travail ($W$)** : C'est l'argent gagné par un effort (salaire) ou perdu par une dépense active. En physique, c'est lié au mouvement (piston qui pousse).
+  2. **Le Transfert Thermique ($Q$)** : C'est l'argent reçu en cadeau ou volé, sans mouvement macroscopique. C'est la **chaleur**.
 
-Le **second principe** est plus subtil : il interdit certaines transformations pourtant compatibles avec la conservation de l'énergie. Une tasse froide ne va jamais spontanément **absorber** la chaleur de l'air pour devenir chaude. L'**entropie** (le "désordre") de l'univers ne peut qu'augmenter.
+**Bilan :** Ta richesse varie selon ce que tu gagnes moins ce que tu perds : $\Delta U = W + Q$.
+:::
 
-Pense à un glaçon dans l'eau : il fond (le désordre augmente). Tu ne verras jamais l'eau se transformer spontanément en glaçon en réchauffant le reste ! Pour faire des glaçons, il faut un frigo qui **consomme de l'énergie** pour forcer la chaleur à aller du froid vers le chaud.
+:::warning[Deux confusions fréquentes à éviter]
+- **Chaleur $\neq$ Température** : La température mesure un état, la chaleur est un transfert.
+- **$Q$ et $W$ ne sont pas des énergies stockées** dans le système. Ce sont des *modes d'échange*.
+:::
 
-## Système thermodynamique
+## 2. Système Thermodynamique
 
 :::definition
 **Système thermodynamique**
 
 Un **système thermodynamique** est une portion de l'univers délimitée par une frontière (réelle ou fictive) qu'on étudie.
 
-- **Système isolé** : aucun échange (ni matière, ni énergie)
-- **Système fermé** : échange d'énergie mais pas de matière
-- **Système ouvert** : échange de matière et d'énergie
+- **Système isolé** : Aucun échange (ni matière, ni énergie)
+- **Système fermé** : Échange d'énergie mais pas de matière
+- **Système ouvert** : Échange de matière et d'énergie
 :::
 
 :::property[Variables d'état]
-Les **variables d'état** décrivent l'état du système :
-- Pression P (en Pa)
-- Volume V (en m³)
-- Température T (en K)
-- Quantité de matière n (en mol)
+Les **variables d'état** décrivent l'état macroscopique du système :
+- Pression $P$ (en Pa)
+- Volume $V$ (en m³)
+- Température $T$ (en K)
+- Quantité de matière $n$ (en mol)
 :::
 
-## Énergie interne
+## 3. Le Modèle du Gaz Parfait
+
+### Description du Modèle
+
+Un gaz est constitué de particules (atomes ou molécules) en mouvement incessant et désordonné.
 
 :::definition
-**Énergie interne U**
+**Gaz parfait**
 
-L'**énergie interne** U d'un système est la somme des énergies cinétiques et potentielles de toutes les particules qui le composent.
+On considère que les particules sont :
+- **Ponctuelles** (volume propre nul)
+- **Sans interaction** entre elles (pas d'attraction ni répulsion), sauf lors des chocs
 
-Pour un gaz parfait monoatomique :
-$$U = \frac{3}{2}nRT$$
-
-L'énergie interne ne dépend que de la température pour un gaz parfait.
+Ce modèle s'applique bien quand le gaz est **suffisamment dilué** (pression faible).
 :::
 
-## Premier principe de la thermodynamique
-
-:::property[Premier principe]
-$$\Delta U = W + Q$$
-
-- **ΔU** : variation d'énergie interne (J)
-- **W** : travail reçu par le système (J)
-- **Q** : chaleur reçue par le système (J)
-
-Le premier principe exprime la **conservation de l'énergie**.
-:::
-
-:::method[Conventions de signe]
-- W > 0 : le système **reçoit** du travail (compression)
-- W < 0 : le système **fournit** du travail (détente)
-- Q > 0 : le système **reçoit** de la chaleur
-- Q < 0 : le système **cède** de la chaleur
-:::
-
-## Travail des forces de pression
-
-:::property[Travail en transformation quasi-statique]
-$$W = -\int_{V_1}^{V_2} P_{ext} \, dV$$
-
-Pour une transformation **isobare** (P = cste) :
-$$W = -P_{ext}(V_2 - V_1) = -P_{ext}\Delta V$$
-:::
-
-:::warning
-Le signe moins vient de la convention : une compression (ΔV < 0) correspond à un travail reçu (W > 0).
-:::
-
-## Équation d'état des gaz parfaits
+### L'Équation d'État
 
 :::property[Loi des gaz parfaits]
 $$PV = nRT$$
 
-- P : pression (Pa)
-- V : volume (m³)
-- n : quantité de matière (mol)
-- R = 8,314 J·mol⁻¹·K⁻¹ : constante des gaz parfaits
-- T : température (K)
+- **$P$** : Pression en **Pascals (Pa)** (Attention : $1 \text{ bar} = 10^5 \text{ Pa}$)
+- **$V$** : Volume en **mètres cubes (m³)** (Attention : $1 \text{ L} = 10^{-3} \text{ m}^3$)
+- **$n$** : Quantité de matière en **moles (mol)**
+- **$R$** : Constante des gaz parfaits ($8{,}314 \text{ J·mol}^{-1}\text{·K}^{-1}$)
+- **$T$** : Température absolue en **Kelvins (K)**
 :::
 
-:::method[Transformations particulières]
-Pour une quantité de matière constante :
-$$\frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2}$$
+:::method[Conversion de température]
+$$T(\text{K}) = \theta(°\text{C}) + 273{,}15$$
 
-- **Isotherme** (T = cste) : $P_1V_1 = P_2V_2$
-- **Isobare** (P = cste) : $\frac{V_1}{T_1} = \frac{V_2}{T_2}$
-- **Isochore** (V = cste) : $\frac{P_1}{T_1} = \frac{P_2}{T_2}$
+**Attention** : Une **variation** $\Delta T$ est identique en K et en °C.
 :::
 
-## Capacités thermiques
+:::example[Quantité de matière dans un ballon]
+**Question :** Un ballon de volume $V = 7{,}0 \text{ L}$ est rempli d'air à $25°\text{C}$ sous une pression $P = 1020 \text{ hPa}$. Calculer la quantité de matière $n$ d'air.
+
+**Solution :**
+1. **Conversions :**
+   - $V = 7{,}0 \times 10^{-3} \text{ m}^3$
+   - $P = 1020 \text{ hPa} = 1{,}02 \times 10^5 \text{ Pa}$
+   - $T = 25 + 273{,}15 = 298{,}15 \text{ K}$
+2. **Formule :** On isole $n$ dans $PV=nRT \Rightarrow n = \frac{PV}{RT}$
+3. **Calcul :** $n = \frac{1{,}02 \times 10^5 \times 7{,}0 \times 10^{-3}}{8{,}31 \times 298{,}15} \approx \mathbf{0{,}29 \text{ mol}}$
+:::
+
+## 4. Le Premier Principe de la Thermodynamique
+
+### Énergie Interne ($U$)
 
 :::definition
-**Capacités thermiques**
+**Énergie interne**
 
-La **capacité thermique** mesure la quantité de chaleur nécessaire pour élever la température d'un système.
+L'énergie interne $U$ d'un système est la somme de toutes les énergies microscopiques :
+- Énergie cinétique d'agitation des molécules
+- Énergies potentielles d'interaction
+
+Pour un **gaz parfait monoatomique** :
+$$U = \frac{3}{2}nRT$$
+
+L'énergie interne d'un gaz parfait **ne dépend que de la température** $T$.
+:::
+
+### Énoncé du Premier Principe
+
+:::property[Premier Principe]
+La variation d'énergie interne $\Delta U$ d'un système fermé est égale à la somme des énergies échangées avec l'extérieur :
+
+$$\Delta U = W + Q$$
+
+- **$\Delta U$** : variation d'énergie interne (J)
+- **$W$** : travail reçu par le système (J)
+- **$Q$** : chaleur reçue par le système (J)
+
+Le premier principe exprime la **conservation de l'énergie**.
+:::
+
+:::method[Convention de signe]
+**Convention : positif si le système reçoit de l'énergie**
+
+| Situation | Signe | Interprétation |
+|-----------|-------|----------------|
+| Compression | $W > 0$ | Le système **reçoit** du travail |
+| Détente | $W < 0$ | Le système **fournit** du travail |
+| Chauffage | $Q > 0$ | Le système **reçoit** de la chaleur |
+| Refroidissement | $Q < 0$ | Le système **cède** de la chaleur |
+:::
+
+### Travail des Forces de Pression
+
+:::property[Travail en transformation quasi-statique]
+Si la pression extérieure est constante :
+$$W = -P_{ext}\Delta V = -P_{ext}(V_f - V_i)$$
+
+- Si $\Delta V < 0$ (compression) alors $W > 0$
+- Si $\Delta V > 0$ (détente) alors $W < 0$
+:::
+
+:::example[Compression isobare]
+**Question :** Un gaz subit une compression à pression constante $P = 1{,}0 \times 10^5$ Pa. Le volume passe de $5{,}0 \text{ m}^3$ à $3{,}0 \text{ m}^3$. Calculer $W$.
+
+**Solution :**
+$\Delta V = 3{,}0 - 5{,}0 = -2{,}0 \text{ m}^3$
+
+$W = -P\Delta V = -10^5 \times (-2{,}0) = +2{,}0 \times 10^5 \text{ J}$
+
+Le système **reçoit** 200 kJ de travail (compression).
+:::
+
+## 5. Transformations Particulières d'un Gaz Parfait
+
+:::method[Les quatre transformations usuelles]
+Pour une quantité de matière constante, on utilise : $\frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2}$
+
+| Transformation | Condition | Conséquence | Premier Principe |
+|----------------|-----------|-------------|------------------|
+| **Isotherme** | $T = \text{cste}$ | $P_1V_1 = P_2V_2$ | $\Delta U = 0 \Rightarrow Q = -W$ |
+| **Isobare** | $P = \text{cste}$ | $\frac{V_1}{T_1} = \frac{V_2}{T_2}$ | $\Delta U = Q + W$ |
+| **Isochore** | $V = \text{cste}$ | $\frac{P_1}{T_1} = \frac{P_2}{T_2}$ | $W = 0 \Rightarrow \Delta U = Q$ |
+| **Adiabatique** | $Q = 0$ | Pas d'échange thermique | $\Delta U = W$ |
+:::
+
+:::tip[Interprétation physique]
+- **Isotherme (gaz parfait)** : $U$ ne dépend que de $T$, donc si $T$ est constant, $\Delta U = 0$. L'énergie reçue par travail est exactement "ressortie" en chaleur (ou inversement).
+- **Isochore** : Pas de variation de volume, donc pas de travail mécanique. Toute l'énergie échangée est thermique.
+- **Adiabatique** : Système parfaitement isolé thermiquement. Toute variation d'énergie interne provient du travail.
+:::
+
+:::example[Mini-question guidée]
+**Question :** Pourquoi la détente de Joule-Gay Lussac (enceinte rigide calorifugée + vide) conduit-elle à $\Delta U = 0$ ?
+
+**Réponse :**
+- Paroi rigide $\Rightarrow$ pas de travail ($W = 0$)
+- Calorifugée $\Rightarrow$ pas d'échange thermique ($Q = 0$)
+- Donc $\Delta U = Q + W = 0$
+- Pour un gaz parfait, cela implique $\Delta T = 0$
+:::
+
+## 6. Capacité Thermique et Systèmes Incompressibles
+
+### Définition
+
+:::definition
+**Capacité thermique**
+
+La **capacité thermique** $C$ mesure la quantité de chaleur nécessaire pour élever la température d'un système :
+
+$$C = \frac{dQ}{dT} \quad (\text{J·K}^{-1})$$
 
 - **À volume constant** : $C_V = \left(\frac{\partial U}{\partial T}\right)_V$
 - **À pression constante** : $C_P = \left(\frac{\partial H}{\partial T}\right)_P$
-
-Pour un gaz parfait : $C_P - C_V = nR$
 :::
 
 :::property[Relation de Mayer]
 $$C_P - C_V = nR$$
 
 Le coefficient $\gamma = \frac{C_P}{C_V}$ vaut :
-- 5/3 ≈ 1,67 pour un gaz monoatomique
-- 7/5 = 1,4 pour un gaz diatomique
+- $\gamma = \frac{5}{3} \approx 1{,}67$ pour un gaz monoatomique
+- $\gamma = \frac{7}{5} = 1{,}4$ pour un gaz diatomique
 :::
 
-## Second principe et entropie
+### Cas des Systèmes Incompressibles (Liquides et Solides)
+
+:::property[Système incompressible]
+Pour un solide ou un liquide, le volume varie très peu : $\Delta V \approx 0$ donc $W \approx 0$.
+
+Le premier principe devient :
+$$\Delta U = Q = C \cdot \Delta T = m \cdot c \cdot (T_f - T_i)$$
+
+- **$C$** : Capacité thermique du système (J·K⁻¹)
+- **$c$** : Capacité thermique **massique** (J·kg⁻¹·K⁻¹)
+- **$m$** : Masse du système (kg)
+:::
+
+:::tip[Intuition]
+Plus $C$ est grand, plus le système est "difficile à chauffer" : il faut beaucoup d'énergie pour augmenter $T$.
+:::
+
+:::example[Mélange thermique : Café au lait]
+**Question :** On mélange $120 \text{ g}$ de café à $75°\text{C}$ ($c_{café} = 4{,}2 \text{ J·g}^{-1}\text{·K}^{-1}$) avec $200 \text{ g}$ de lait à $60°\text{C}$ ($c_{lait} = 3{,}8 \text{ J·g}^{-1}\text{·K}^{-1}$) dans un bol isolant. Quelle est la température finale $T_f$ ?
+
+**Solution :**
+1. **Système isolé :** Pas d'échange avec l'extérieur, donc $Q_{café} + Q_{lait} = 0$
+2. **Expression :** $m_C \cdot c_C \cdot (T_f - T_C) + m_L \cdot c_L \cdot (T_f - T_L) = 0$
+3. **Résolution :** On isole $T_f$ :
+   $$T_f = \frac{m_C c_C T_C + m_L c_L T_L}{m_C c_C + m_L c_L}$$
+4. **Calcul :**
+   $$T_f = \frac{120 \times 4{,}2 \times 75 + 200 \times 3{,}8 \times 60}{120 \times 4{,}2 + 200 \times 3{,}8} = \frac{83400}{1264} \approx \mathbf{66°\text{C}}$$
+:::
+
+:::example[Refroidissement d'un système]
+**Question :** Un système incompressible a $C = 500 \text{ J·K}^{-1}$ et passe de $20°\text{C}$ à $-15°\text{C}$. Calculer $Q$.
+
+**Solution :**
+$\Delta T = -15 - 20 = -35 \text{ K}$
+
+$Q = C \cdot \Delta T = 500 \times (-35) = -1{,}75 \times 10^4 \text{ J}$
+
+Le signe négatif signifie que le système **cède** de l'énergie thermique à l'extérieur.
+:::
+
+## 7. Les Transferts Thermiques
+
+### Les Trois Modes de Transfert
+
+:::property[Modes de transfert thermique]
+1. **Conduction** : Transfert de proche en proche sans déplacement de matière
+   - *Exemple :* Une cuillère dans une tasse chaude
+
+2. **Convection** : Transfert avec déplacement de matière fluide
+   - *Exemple :* L'air chaud qui monte au-dessus d'un radiateur
+
+3. **Rayonnement** : Transfert par ondes électromagnétiques, possible même dans le vide
+   - *Exemple :* Le Soleil qui réchauffe la Terre
+:::
+
+:::tip[Exemple concret]
+Eau qui chauffe dans une casserole :
+- **Conduction** : plaque → casserole puis casserole → eau au contact
+- **Convection** : boucles de circulation dans l'eau
+- **Rayonnement** : flamme ou résistance chauffante
+:::
+
+### Flux Thermique et Résistance Thermique
+
+:::definition
+**Flux thermique**
+
+Le flux thermique $\Phi$ est la puissance thermique, c'est-à-dire la chaleur transférée par unité de temps :
+
+$$\Phi = \frac{Q}{\Delta t} = \frac{T_{chaud} - T_{froid}}{R_{th}}$$
+
+Unité : **Watt (W)**
+:::
+
+:::property[Résistance thermique]
+La résistance thermique $R_{th}$ d'une paroi dépend de sa géométrie et de son matériau :
+
+$$R_{th} = \frac{e}{\lambda \cdot S}$$
+
+- **$e$** : épaisseur de la paroi (m)
+- **$\lambda$** : conductivité thermique du matériau (W·m⁻¹·K⁻¹)
+- **$S$** : surface de la paroi (m²)
+- **$R_{th}$** : résistance thermique (K·W⁻¹)
+
+Plus $R_{th}$ est grand, plus le matériau **isole** (le flux est faible).
+:::
+
+:::tip[Analogie électrique]
+La loi thermique est analogue à la loi d'Ohm :
+
+| Thermique | Électrique |
+|-----------|------------|
+| $\Delta T$ (K) | $\Delta V$ (V) |
+| $\Phi$ (W) | $I$ (A) |
+| $R_{th}$ (K·W⁻¹) | $R$ ($\Omega$) |
+
+$$\Phi = \frac{\Delta T}{R_{th}} \quad \longleftrightarrow \quad I = \frac{\Delta V}{R}$$
+:::
+
+:::example[Flux à travers une vitre]
+**Question :** Une vitre de surface $S = 2{,}0 \text{ m}^2$, d'épaisseur $e = 3{,}0 \text{ mm}$ a une conductivité $\lambda = 1{,}0 \text{ W·m}^{-1}\text{·K}^{-1}$. Il fait $20°\text{C}$ dedans et $5°\text{C}$ dehors. Calculer le flux thermique $\Phi$.
+
+**Solution :**
+1. **Résistance thermique :**
+   $$R_{th} = \frac{e}{\lambda \cdot S} = \frac{0{,}003}{1{,}0 \times 2{,}0} = 1{,}5 \times 10^{-3} \text{ K·W}^{-1}$$
+2. **Flux :**
+   $$\Phi = \frac{T_{int} - T_{ext}}{R_{th}} = \frac{20 - 5}{1{,}5 \times 10^{-3}} = \frac{15}{0{,}0015} = \mathbf{10\,000 \text{ W}}$$
+
+*Note : C'est une valeur énorme, le verre simple isole très mal (d'où l'intérêt du double vitrage).*
+:::
+
+### Loi Phénoménologique de Newton
+
+:::property[Refroidissement de Newton]
+Quand un corps chaud refroidit au contact d'un fluide extérieur (thermostat à température constante $T_{th}$) :
+
+$$\frac{dT}{dt} = -\alpha \cdot (T(t) - T_{th})$$
+
+**Solution :** La température évolue de façon **exponentielle** :
+$$T(t) = T_{th} + (T_0 - T_{th}) \cdot e^{-\alpha t}$$
+
+La température rejoint doucement celle de l'extérieur.
+:::
+
+:::tip[Intuition]
+Le terme $(T - T_{th})$ est "l'écart qui pousse le transfert". Plus l'écart est grand, plus la vitesse de refroidissement/chauffage est grande.
+:::
+
+## 8. Second Principe et Entropie
+
+### L'Entropie
 
 :::definition
 **Entropie S**
 
-L'**entropie** S est une fonction d'état qui mesure le désordre du système.
+L'**entropie** $S$ est une fonction d'état qui mesure le désordre du système.
 
 Pour une transformation réversible :
 $$dS = \frac{\delta Q_{rev}}{T}$$
 :::
 
-:::property[Second principe]
+:::tip[Analogie : Le Glaçon]
+Pense à un glaçon dans l'eau : il fond (le désordre augmente). Tu ne verras jamais l'eau se transformer spontanément en glaçon en réchauffant le reste !
+
+Pour faire des glaçons, il faut un frigo qui **consomme de l'énergie** pour forcer la chaleur à aller du froid vers le chaud.
+:::
+
+### Le Second Principe
+
+:::property[Second Principe]
 L'entropie d'un système isolé ne peut qu'**augmenter** ou rester constante :
 
 $$\Delta S_{univers} \geq 0$$
 
-- Transformation réversible : $\Delta S_{univers} = 0$
-- Transformation irréversible : $\Delta S_{univers} > 0$
+- Transformation **réversible** : $\Delta S_{univers} = 0$
+- Transformation **irréversible** : $\Delta S_{univers} > 0$
+
+Le second principe interdit certaines transformations pourtant compatibles avec la conservation de l'énergie. Une tasse froide ne va jamais spontanément absorber la chaleur de l'air pour devenir chaude.
 :::
 
-## Exemples résolus
+## 9. Bilan Radiatif Terrestre
 
-### Exemple 1 : Gaz parfait
+La température de la Terre résulte d'un équilibre entre l'énergie reçue du Soleil et l'énergie réémise vers l'espace.
 
-n = 2 mol de gaz parfait passent de (P₁ = 1 bar, T₁ = 300 K) à (P₂ = 2 bar, T₂ = 600 K). Calculer V₁ et V₂.
+:::property[Loi de Stefan-Boltzmann]
+Tout corps chaud émet une puissance radiative surfacique proportionnelle à la puissance 4 de sa température :
+$$\phi = \sigma \cdot T^4$$
 
-$$V_1 = \frac{nRT_1}{P_1} = \frac{2 \times 8.314 \times 300}{10^5} = 0.0499 \text{ m}^3 = 49.9 \text{ L}$$
+avec $\sigma \approx 5{,}67 \times 10^{-8} \text{ W·m}^{-2}\text{·K}^{-4}$
+:::
 
-$$V_2 = \frac{nRT_2}{P_2} = \frac{2 \times 8.314 \times 600}{2 \times 10^5} = 0.0499 \text{ m}^3 = 49.9 \text{ L}$$
+:::definition
+**Albédo et Effet de Serre**
 
-### Exemple 2 : Compression isobare
+- **L'Albédo ($A$)** : Proportion de puissance solaire réfléchie par la Terre (environ 0,30 ou 30%). Cette énergie est renvoyée dans l'espace et ne chauffe pas la Terre.
 
-Un gaz parfait subit une compression isobare à P = 2 bar de V₁ = 10 L à V₂ = 5 L. Calculer W.
+- **L'Effet de Serre** : L'atmosphère laisse passer le rayonnement solaire (visible) mais absorbe le rayonnement infrarouge réémis par le sol. Cela piège l'énergie et augmente la température de surface (de $-18°\text{C}$ théorique à $+15°\text{C}$ réel).
+:::
 
-$$W = -P\Delta V = -2 \times 10^5 \times (5 - 10) \times 10^{-3}$$
-$$W = -2 \times 10^5 \times (-5 \times 10^{-3}) = 1000 \text{ J}$$
+:::example[Estimation de la température terrestre]
+**Question :** Si la surface terrestre émet un flux $\phi = 390 \text{ W·m}^{-2}$, estimer $T$.
 
-Le système reçoit 1000 J de travail (compression).
+**Solution :**
+$$T = \left(\frac{\phi}{\sigma}\right)^{1/4} = \left(\frac{390}{5{,}67 \times 10^{-8}}\right)^{1/4} \approx 288 \text{ K} \approx \mathbf{15°\text{C}}$$
+:::
 
-### Exemple 3 : Premier principe
+## 10. Erreurs Classiques et Comment les Éviter
 
-Un système reçoit Q = 500 J de chaleur et son énergie interne augmente de ΔU = 200 J. Quel travail a-t-il fourni ?
+:::warning[Erreur 1 : Oublier de convertir en unités SI]
+- Pression : $1 \text{ bar} = 10^5 \text{ Pa}$
+- Volume : $1 \text{ L} = 10^{-3} \text{ m}^3$
+- Température : $T(\text{K}) = T(°\text{C}) + 273$
 
-$$\Delta U = W + Q$$
-$$200 = W + 500$$
-$$W = -300 \text{ J}$$
+**Vérification :** Dans $PV = nRT$, le résultat doit être cohérent en Joules.
+:::
 
-Le système a fourni 300 J de travail à l'extérieur.
+:::warning[Erreur 2 : Confondre les signes de W et Q]
+**Check-list anti-bug :**
+1. Écris la convention choisie : "positif si le système reçoit..."
+2. Déduis le signe de $\Delta V$ puis celui de $W = -P\Delta V$
+3. Déduis le signe de $Q$ avec le sens du transfert (chaud → froid)
+4. Seulement ensuite, applique $\Delta U = Q + W$
+:::
 
-### Exemple 4 : Transformation isotherme
+:::warning[Erreur 3 : Utiliser °C au lieu de K dans $PV = nRT$]
+Dans l'équation d'état des gaz parfaits, la température **DOIT** être en Kelvins.
 
-n = 1 mol de gaz parfait subit une détente isotherme à T = 400 K de V₁ = 10 L à V₂ = 20 L. Calculer W.
+Par contre, pour $\Delta T$ dans $Q = C\Delta T$, K ou °C donnent le même résultat (car c'est une différence).
+:::
 
-$$W = -nRT\ln\left(\frac{V_2}{V_1}\right) = -1 \times 8.314 \times 400 \times \ln(2)$$
-$$W = -3326 \times 0.693 = -2305 \text{ J}$$
+:::warning[Erreur 4 : Mélanger "température" et "énergie thermique"]
+**Phrase incorrecte :** "L'objet a reçu de la température"
 
-Le système fournit 2305 J de travail.
+**Phrase correcte :** "L'objet a reçu de l'énergie thermique ($Q > 0$) et sa température a augmenté"
+:::
 
-## Erreurs fréquentes
-
-:::warning
-**Erreur 1** : Oublier de convertir en unités SI
-
-- Pression : 1 bar = 10⁵ Pa
-- Volume : 1 L = 10⁻³ m³
-- Température : T(K) = T(°C) + 273
-
-**Erreur 2** : Confondre les signes de W et Q
-
-Toujours vérifier : compression → W > 0, détente → W < 0
-
-**Erreur 3** : Utiliser °C au lieu de K
-
-Dans PV = nRT, la température DOIT être en Kelvin.
+:::warning[Erreur 5 : Confondre "adiabatique" et "isotherme"]
+- **Adiabatique** : $Q = 0$ (pas d'échange thermique, mais $T$ peut varier)
+- **Isotherme** : $T$ constant (peut échanger de la chaleur pour maintenir $T$)
 :::
 
 ## Mini-résumé
 
-- **Premier principe** : $\Delta U = W + Q$ (conservation de l'énergie)
-- **Gaz parfait** : $PV = nRT$, $U = \frac{3}{2}nRT$ (monoatomique)
-- **Travail isobare** : $W = -P\Delta V$
-- **Second principe** : $\Delta S_{univers} \geq 0$
-- **Relation de Mayer** : $C_P - C_V = nR$
+| Concept | Formule / Définition | Astuce / Unité |
+|---------|----------------------|----------------|
+| **Gaz Parfait** | $PV = nRT$ | Unités : Pa, m³, mol, K |
+| **Premier Principe** | $\Delta U = W + Q$ | Conservation de l'énergie |
+| **Travail (isobare)** | $W = -P\Delta V$ | Compression : $W > 0$ |
+| **Système incompressible** | $\Delta U = m \cdot c \cdot \Delta T$ | $W \approx 0$ |
+| **Flux thermique** | $\Phi = \frac{\Delta T}{R_{th}}$ | Analogie : $I = U/R$ |
+| **Résistance thermique** | $R_{th} = \frac{e}{\lambda \cdot S}$ | En K·W⁻¹ |
+| **Loi de Newton** | $\frac{dT}{dt} = -\alpha(T - T_{th})$ | Décroissance exponentielle |
+| **Température K ↔ °C** | $T(\text{K}) = T(°\text{C}) + 273{,}15$ | |
+| **Second Principe** | $\Delta S_{univers} \geq 0$ | Entropie croissante |
+| **Stefan-Boltzmann** | $\phi = \sigma T^4$ | Rayonnement corps noir |
