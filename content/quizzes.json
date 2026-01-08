@@ -1771,6 +1771,52 @@
     ]
   },
   {
+    "id": "quiz-pre-ondes-sonores",
+    "lessonId": "ondes-sonores",
+    "type": "pre",
+    "title": "Pré-test : Ondes sonores",
+    "description": "Évalue tes connaissances avant la leçon sur les ondes sonores",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-son-1",
+        "question": "Le son est une onde :",
+        "choices": ["Électromagnétique", "Mécanique", "Lumineuse", "Stationnaire uniquement"],
+        "correct": 1,
+        "explanation": "Le son est une onde mécanique qui nécessite un milieu matériel pour se propager.",
+        "tag": "nature du son",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-son-2",
+        "question": "La célérité du son dans l'air est environ :",
+        "choices": ["3 × 10⁸ m/s", "340 m/s", "1500 m/s", "100 m/s"],
+        "correct": 1,
+        "explanation": "La célérité du son dans l'air est d'environ 340 m/s (elle dépend de la température).",
+        "tag": "célérité",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-son-3",
+        "question": "La relation entre longueur d'onde λ, fréquence f et célérité c est :",
+        "choices": ["λ = c × f", "λ = c / f", "λ = f / c", "λ = c + f"],
+        "correct": 1,
+        "explanation": "λ = c/f ou c = λ × f est la relation fondamentale des ondes.",
+        "tag": "relation fondamentale",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-son-4",
+        "question": "Le logarithme décimal de 1000 vaut :",
+        "choices": ["1", "2", "3", "10"],
+        "correct": 2,
+        "explanation": "log(1000) = log(10³) = 3, car le logarithme décimal donne l'exposant de 10.",
+        "tag": "logarithme",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
     "id": "quiz-ondes-sonores",
     "lessonId": "ondes-sonores",
     "type": "post",
