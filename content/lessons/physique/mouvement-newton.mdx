@@ -1,106 +1,246 @@
 ---
 id: "mouvement-newton"
-title: "Lois de Newton et mouvement"
+title: "Mouvement et Forces : Les Lois de Newton"
 track: "physique"
 level: 2
 prerequisites: []
-tags: ["mécanique", "Newton", "forces", "accélération"]
-estimatedTime: 50
+tags: ["cinématique", "dynamique", "newton", "accélération", "forces", "frenet"]
+estimatedTime: 120
 chapter: "mecanique"
 order: 1
 ---
 
-# Lois de Newton et mouvement
+# Mouvement et Forces : Les Lois de Newton
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
+- Définir et calculer les vecteurs vitesse et accélération à partir du vecteur position
+- Utiliser le repère de Frenet pour les mouvements circulaires
 - Énoncer et appliquer les trois lois de Newton
-- Établir les équations du mouvement
-- Analyser différents types de mouvements
+- Construire un raisonnement dynamique rigoureux
+- Choisir entre approche dynamique ou énergétique
+- Éviter les erreurs classiques du bac
 
-## Intuition et analogie
+## Intuition fondamentale : Pourquoi un objet change-t-il de mouvement ?
 
-Tu es dans un bus à l'arrêt. Le bus démarre brutalement : tu es projeté vers l'arrière. Il freine brusquement : tu pars vers l'avant. Pourquoi ? C'est la **première loi de Newton** (inertie) : ton corps "veut" continuer dans son état initial (repos ou mouvement).
+### Question de départ
 
-La **deuxième loi** répond à la question : "Que se passe-t-il si je pousse un objet ?" Plus tu pousses fort (grande force $F$), plus l'objet accélère. Mais plus l'objet est lourd (grande masse $m$), moins il accélère. D'où $\vec{F} = m\vec{a}$ — c'est comme pousser un caddie vide vs un caddie plein !
+Pourquoi une voiture :
+- accélère quand on appuie sur l'accélérateur ?
+- freine quand on appuie sur le frein ?
+- continue tout droit quand on lâche le volant ?
 
-La **troisième loi**, c'est le recul : quand tu sautes d'une barque, tu pousses la barque vers l'arrière pendant que tu vas vers l'avant. Quand tu marches, tu pousses le sol vers l'arrière et le sol te pousse vers l'avant. Action = Réaction, toujours par paires, toujours sur des objets **différents**.
+Parce que **des forces agissent (ou n'agissent pas)**. La dynamique cherche à répondre à une seule question centrale :
 
-Ces trois lois expliquent TOUS les mouvements mécaniques de l'Univers, des planètes aux voitures en passant par les balles de tennis.
+**Que font les forces au mouvement ?**
 
-## Les trois lois de Newton
+:::tip[Analogie : La nature est "économe"]
+- Pas de force résultante → pas de raison de changer
+- Force non nulle → obligation de changer
 
-:::property[Première loi : Principe d'inertie]
-Dans un référentiel galiléen, si la somme des forces extérieures est nulle, le centre de masse du système :
-- reste immobile s'il était immobile
-- conserve un mouvement rectiligne uniforme
-
-$$\sum \vec{F}_{ext} = \vec{0} \Rightarrow \vec{v} = \text{constante}$$
+La nature ne modifie le mouvement **que si elle y est contrainte**.
 :::
 
-:::property[Deuxième loi : Principe fondamental de la dynamique (PFD)]
-Dans un référentiel galiléen, la somme des forces extérieures est égale au produit de la masse par l'accélération :
+:::warning[Erreur intuitive très fréquente]
+"Il faut une force pour maintenir le mouvement"
 
-$$\sum \vec{F}_{ext} = m\vec{a}$$
-
-C'est la loi la plus utilisée pour établir les équations du mouvement.
+**FAUX !** C'est notre intuition quotidienne qui nous trompe à cause des frottements. Dans l'espace, sans frottement, un objet lancé continue indéfiniment.
 :::
 
-:::property[Troisième loi : Principe des actions réciproques]
-Si un corps A exerce une force sur un corps B, alors B exerce sur A une force opposée :
+## Cinématique : Décrire le mouvement
 
-$$\vec{F}_{A/B} = -\vec{F}_{B/A}$$
+Avant d'expliquer *pourquoi* ça bouge (dynamique), il faut savoir décrire *comment* ça bouge (cinématique).
+
+### Les Vecteurs du Mouvement
+
+Dans un référentiel donné, la position d'un point M est repérée par le vecteur position $\vec{OM}(t)$.
+
+:::definition
+**Vecteur Vitesse**
+
+C'est la variation de la position par rapport au temps. Mathématiquement, c'est la **dérivée** du vecteur position :
+
+$$\vec{v}(t) = \frac{d\vec{OM}}{dt}$$
+
+Il est toujours **tangent à la trajectoire** et dans le sens du mouvement.
 :::
 
-## Forces courantes
+:::definition
+**Vecteur Accélération**
+
+C'est la variation de la vitesse par rapport au temps. C'est la **dérivée** du vecteur vitesse :
+
+$$\vec{a}(t) = \frac{d\vec{v}}{dt} = \frac{d^2\vec{OM}}{dt^2}$$
+
+L'accélération ne dit pas si on va vite, mais si la vitesse **change** (en valeur ou en direction).
+:::
+
+:::tip[Analogie : La Voiture et le Compteur]
+- **La Position :** C'est votre GPS ("Je suis à 10 km de Paris")
+- **La Vitesse :** C'est l'aiguille du compteur ("Je roule à 130 km/h vers le Nord")
+- **L'Accélération :** C'est ce que vous ressentez dans le dos
+  - Si vous appuyez sur l'accélérateur → plaqué au siège ($\vec{a}$ vers l'avant)
+  - Si vous freinez → projeté vers l'avant ($\vec{a}$ vers l'arrière)
+  - Si vous tournez **même à vitesse constante** → déporté sur le côté (accélération normale)
+:::
+
+### Le Repère de Frenet (Pour les mouvements courbes)
+
+:::property[Repère de Frenet]
+Pour les mouvements circulaires, on utilise le **repère de Frenet**, mobile et lié au point M :
+
+- $\vec{t}$ (tangentiel) : Tangent à la trajectoire, sens du mouvement
+- $\vec{n}$ (normal) : Perpendiculaire à $\vec{t}$, dirigé vers le centre de courbure
+
+L'accélération s'écrit alors :
+
+$$\vec{a} = a_t \cdot \vec{t} + a_n \cdot \vec{n} = \frac{dv}{dt} \cdot \vec{t} + \frac{v^2}{R} \cdot \vec{n}$$
+
+- $a_t = \frac{dv}{dt}$ : Accélération **tangentielle** (variation de la *valeur* de la vitesse)
+- $a_n = \frac{v^2}{R}$ : Accélération **normale** (variation de la *direction*, courbure de rayon R)
+:::
+
+:::example[Mouvement Circulaire Uniforme (MCU)]
+Si le mouvement est circulaire (rayon $R$) et uniforme (vitesse $v$ constante) :
+- Comme $v$ est constante, $\frac{dv}{dt} = 0$ → pas d'accélération tangentielle
+- L'accélération est purement **normale (centripète)** : $\vec{a} = \frac{v^2}{R}\vec{n}$
+- Le vecteur accélération est toujours dirigé vers le centre du cercle
+:::
+
+## Dynamique : Les Trois Lois de Newton
+
+Isaac Newton a établi le lien entre les forces (les causes) et le mouvement (les conséquences). Ces lois ne sont valables que dans un **référentiel Galiléen**.
+
+### Première Loi : Principe d'Inertie
+
+:::property[1ère Loi de Newton]
+Dans un référentiel galiléen, si la somme des forces extérieures est nulle, le centre de masse du système est soit **immobile**, soit en **Mouvement Rectiligne Uniforme (MRU)** :
+
+$$\sum \vec{F}_{ext} = \vec{0} \iff \vec{v}_G = \vec{\text{constante}}$$
+
+**Inversement :** Si le mouvement n'est pas rectiligne uniforme, c'est que les forces ne se compensent pas.
+:::
+
+:::tip[Analogie : Le palet de air-hockey]
+Un palet sur une table de air-hockey, presque sans frottements, continue presque indéfiniment dans la même direction.
+:::
+
+:::example[Mini-question guidée]
+**Question :** Une balle lancée horizontalement ralentit-elle "naturellement" ?
+
+**Réponse :** Non ! Elle ralentit **à cause des frottements** (air), pas "par nature". Sans frottement, elle continuerait indéfiniment.
+:::
+
+### Deuxième Loi : Principe Fondamental de la Dynamique (PFD)
+
+:::property[2ème Loi de Newton]
+C'est la loi centrale de la mécanique. Dans un référentiel galiléen :
+
+$$\sum \vec{F}_{ext} = m \cdot \vec{a}_G$$
+
+- $\vec{F}$ en Newtons (N)
+- $m$ en kilogrammes (kg)
+- $\vec{a}$ en mètres par seconde carrée (m·s⁻²)
+
+**Lecture experte :** Les forces ne créent pas la vitesse, elles créent l'**accélération**, donc les **variations de vitesse**.
+:::
+
+:::tip[Analogie : Le Caddie de Supermarché]
+- **La Force ($\vec{F}$)** : C'est vous qui poussez
+- **L'Accélération ($\vec{a}$)** : C'est à quel point la vitesse change vite
+- **La Masse ($m$)** : C'est la résistance du caddie (inertie)
+
+Si le caddie est vide ($m$ petit) → une petite poussée suffit pour qu'il parte vite ($\vec{a}$ grand).
+Si le caddie est plein ($m$ grand) → pour la même poussée, il accélère à peine ($\vec{a}$ petit).
+
+C'est l'équation $\vec{a} = \frac{\vec{F}}{m}$.
+:::
+
+### Troisième Loi : Principe des Actions Réciproques
+
+:::property[3ème Loi de Newton]
+Si un corps A exerce une force sur B ($\vec{F}_{A/B}$), alors B exerce simultanément une force sur A ($\vec{F}_{B/A}$) de même valeur, même direction, mais de **sens opposé** :
+
+$$\vec{F}_{A/B} = - \vec{F}_{B/A}$$
+
+C'est vrai que les corps soient immobiles ou en mouvement.
+:::
+
+:::warning[Piège classique]
+"Les forces action-réaction se compensent"
+
+**FAUX !** Elles ne s'annulent pas car elles ne s'exercent pas sur le **même objet**. Chaque force agit sur un système différent.
+:::
+
+:::tip[Exemple : La propulsion]
+La fusée pousse les gaz vers le bas, les gaz poussent la fusée vers le haut. Quand tu marches, tu pousses le sol vers l'arrière et le sol te pousse vers l'avant.
+:::
+
+## Forces Courantes
 
 :::definition
 **Poids**
+
 $$\vec{P} = m\vec{g}$$
-Dirigé vers le centre de la Terre, avec g ≈ 9,81 m/s² à la surface.
+
+Dirigé vers le centre de la Terre, avec $g \approx 9{,}81$ m/s² à la surface.
 :::
 
 :::definition
 **Réaction du support**
+
 $$\vec{R} = \vec{R}_N + \vec{f}$$
+
 - $\vec{R}_N$ : composante normale (perpendiculaire au support)
-- $\vec{f}$ : force de frottement (tangente au support)
+- $\vec{f}$ : force de frottement (tangente au support, opposée au mouvement)
 :::
 
 :::definition
 **Tension d'un fil**
+
 Force exercée par un fil tendu, dirigée le long du fil, toujours dans le sens qui "tire".
 :::
 
-## Méthode de résolution
+:::warning[Erreur fréquente]
+"La réaction du support compense toujours le poids"
 
-:::method[Appliquer le PFD]
-1. **Définir le système** et le référentiel (galiléen)
-2. **Faire le bilan des forces** extérieures
-3. **Choisir un repère** adapté (axes)
-4. **Appliquer** $\sum \vec{F}_{ext} = m\vec{a}$
-5. **Projeter** sur les axes
-6. **Résoudre** les équations différentielles
+**FAUX !** Seulement si le mouvement est verticalement uniforme ou nul. Sur un plan incliné ou en accélération verticale, ce n'est plus vrai.
 :::
 
-## Mouvements types
+## Méthode : Résoudre un problème de mécanique
 
-:::property[Mouvement rectiligne uniforme (MRU)]
+:::method[Les 7 étapes de la méthode dynamique]
+Pour réussir un exercice, suivre cette démarche rigoureuse :
+
+1. **Système :** Définir l'objet étudié (ex: {le ballon})
+2. **Référentiel :** Le choisir (souvent Terrestre) et préciser "supposé galiléen"
+3. **Bilan des Forces :** Lister les forces extérieures et les dessiner
+4. **2ème Loi de Newton :** Écrire $\sum \vec{F}_{ext} = m\vec{a}$
+5. **Choix du repère :** Axes adaptés (souvent un axe dans le sens du mouvement)
+6. **Projection :** Projeter sur les axes pour obtenir des équations scalaires
+7. **Résolution :** Trouver l'accélération, puis intégrer pour vitesse et position
+:::
+
+:::tip[Astuce bac]
+Une équation sans phrase explicative = points perdus. Toujours justifier : "D'après la 2ème loi de Newton appliquée au système..."
+:::
+
+## Mouvements Types
+
+:::property[Mouvement Rectiligne Uniforme (MRU)]
 Si $\sum \vec{F}_{ext} = \vec{0}$ :
 - $\vec{a} = \vec{0}$
 - $\vec{v} = \vec{v}_0 = \text{constante}$
 - $x(t) = x_0 + v_0 t$
 :::
 
-:::property[Mouvement rectiligne uniformément varié (MRUV)]
+:::property[Mouvement Rectiligne Uniformément Varié (MRUV)]
 Si $\sum \vec{F}_{ext} = \text{constante}$ :
 - $\vec{a} = \text{constante}$
 - $v(t) = v_0 + at$
 - $x(t) = x_0 + v_0 t + \frac{1}{2}at^2$
 :::
-
-## Chute libre
 
 :::property[Chute libre (sans frottements)]
 Seul le poids agit : $\vec{P} = m\vec{g}$
@@ -109,55 +249,104 @@ Avec l'axe z vertical vers le haut :
 - $a_z = -g$
 - $v_z(t) = v_{0z} - gt$
 - $z(t) = z_0 + v_{0z}t - \frac{1}{2}gt^2$
+
+**Important :** L'accélération $\vec{a} = \vec{g}$ ne dépend pas de la masse !
 :::
 
-## Exemples résolus
+## Exemples Résolus
 
-### Exemple 1 : Objet sur plan horizontal
+:::example[Calcul de l'accélération à partir des équations horaires]
+**Énoncé :** Les équations paramétriques d'un point M sont $x(t) = 2t^2 + 3$ et $y(t) = 5t - 1$ (unités SI). Calculer la valeur de l'accélération.
 
-Un objet de 2 kg est tiré sur un plan horizontal par une force F = 10 N. Les frottements sont négligés.
+**Résolution :**
+1. Vecteur Position : $\vec{OM} = (2t^2 + 3)\vec{i} + (5t - 1)\vec{j}$
+2. Vecteur Vitesse ($\vec{v} = d\vec{OM}/dt$) :
+   - $v_x = \frac{d(2t^2+3)}{dt} = 4t$
+   - $v_y = \frac{d(5t-1)}{dt} = 5$
+3. Vecteur Accélération ($\vec{a} = d\vec{v}/dt$) :
+   - $a_x = \frac{d(4t)}{dt} = 4$
+   - $a_y = \frac{d(5)}{dt} = 0$
+4. Norme : $a = \sqrt{a_x^2 + a_y^2} = \sqrt{16 + 0} = \mathbf{4\ \text{m·s}^{-2}}$
+:::
 
-**Bilan des forces** : $\vec{P}$, $\vec{R}_N$, $\vec{F}$
+:::example[Voiture sur plan horizontal avec frottements]
+**Énoncé :** Une voiture jouet de masse $m = 5{,}0$ kg avance sur un sol horizontal. Elle subit une force motrice $F = 34$ N et des frottements $f = 20$ N. Calculer l'accélération.
 
-**PFD projection sur x** : $F = ma$
+**Résolution :**
+1. Système : {Voiture}, Référentiel : Terrestre galiléen
+2. Bilan des forces : $\vec{P}$ (bas), $\vec{R}$ (haut), $\vec{F}$ (avant), $\vec{f}$ (arrière)
+3. 2ème Loi : $\vec{P} + \vec{R} + \vec{F} + \vec{f} = m\vec{a}$
+4. Projection sur l'axe horizontal (Ox) :
+   - $P_x = 0$ et $R_x = 0$ (forces verticales)
+   - $F_x = +34$ N et $f_x = -20$ N
+5. Calcul :
+   $$a_x = \frac{F - f}{m} = \frac{34 - 20}{5{,}0} = \mathbf{2{,}8\ \text{m·s}^{-2}}$$
+:::
 
-**Accélération** : $a = \frac{F}{m} = \frac{10}{2} = 5$ m/s²
+:::example[Plan incliné sans frottement]
+**Énoncé :** Une masse $m = 5$ kg sur un plan incliné de 30°, sans frottement.
 
-### Exemple 2 : Chute libre
+**Résolution :**
+1. PFD projection sur l'axe de la pente : $mg\sin\alpha = ma$
+2. Accélération : $a = g\sin(30°) = 9{,}81 \times 0{,}5 = \mathbf{4{,}9\ \text{m·s}^{-2}}$
+:::
 
-Une balle est lâchée sans vitesse initiale d'une hauteur h = 20 m.
+## Choisir entre Dynamique et Énergie
 
-**Temps de chute** : $h = \frac{1}{2}gt^2 \Rightarrow t = \sqrt{\frac{2h}{g}} = \sqrt{\frac{2 \times 20}{9.81}} = 2.0$ s
+:::method[Quand utiliser quelle approche ?]
+**Approche Dynamique ($\sum \vec{F} = m\vec{a}$) :**
+- Quand le **temps** intervient explicitement
+- Pour accéder à l'**accélération**
+- Pour des mouvements avec des forces variables
 
-**Vitesse à l'arrivée** : $v = gt = 9.81 \times 2.0 = 19.6$ m/s
+**Approche Énergétique ($E_m = E_c + E_p$) :**
+- Quand seules les **vitesses** importent (pas le temps)
+- Pour s'affranchir du temps
+- Pour des bilans entre état initial et final
+:::
 
-### Exemple 3 : Plan incliné
+:::warning[Règle d'or]
+**Jamais** mélanger Newton et énergie dans la même équation ! Choisir UNE méthode et s'y tenir.
+:::
 
-Masse m = 5 kg sur un plan incliné de 30°, sans frottement.
-
-**PFD projection sur l'axe de la pente** : $mg\sin\alpha = ma$
-
-**Accélération** : $a = g\sin(30°) = 9.81 \times 0.5 = 4.9$ m/s²
-
-## Erreurs fréquentes
+## Erreurs Classiques et Comment les Éviter
 
 :::warning
-**Erreur 1** : Oublier des forces dans le bilan
+**Erreur 1 : Oublier le référentiel**
 
-Faire systématiquement le bilan : poids, réaction, tension, frottements...
+Toujours vérifier qu'il est galiléen. Sans cette condition, les lois de Newton ne s'appliquent pas directement.
 
-**Erreur 2** : Mal orienter les axes
+**Erreur 2 : Confondre vitesse et accélération**
 
-Choisir un repère adapté (souvent un axe dans le sens du mouvement).
+Un mouvement peut être **rapide sans accélérer** (MRU). L'accélération mesure le changement de vitesse, pas la vitesse elle-même.
 
-**Erreur 3** : Confondre vitesse et accélération
+**Erreur 3 : Oublier une force dans le bilan**
 
-L'accélération est la dérivée de la vitesse, pas la vitesse elle-même.
+Une force oubliée = raisonnement faux. Faire systématiquement le tour : poids, réaction, tension, frottements, poussée d'Archimède...
+
+**Erreur 4 : Croire que vitesse constante implique force constante**
+
+FAUX ! Vitesse constante → $\sum \vec{F} = \vec{0}$ (forces qui se compensent).
+
+**Erreur 5 : Écrire $\vec{F} = m\vec{v}$**
+
+FAUX ! La bonne formule est $\vec{F} = m\vec{a}$. Les forces créent l'accélération, pas la vitesse.
+
+**Erreur 6 : Croire que l'absence de mouvement implique absence de force**
+
+FAUX ! C'est l'absence de **résultante** qui compte. Un objet immobile peut subir plusieurs forces qui se compensent.
 :::
 
 ## Mini-résumé
 
-- **PFD** : $\sum \vec{F}_{ext} = m\vec{a}$
-- **Poids** : $\vec{P} = m\vec{g}$
-- **MRU** : v = constante, $x = x_0 + vt$
-- **MRUV** : $v = v_0 + at$, $x = x_0 + v_0t + \frac{1}{2}at^2$
+| Concept | Formule / Définition | Astuce |
+|---------|----------------------|--------|
+| **Vitesse** | $\vec{v} = \frac{d\vec{OM}}{dt}$ | Dérivée de la position |
+| **Accélération** | $\vec{a} = \frac{d\vec{v}}{dt}$ | Dérivée de la vitesse |
+| **Frenet (Cercle)** | $\vec{a} = \frac{dv}{dt}\vec{t} + \frac{v^2}{R}\vec{n}$ | $a_t$ change la vitesse, $a_n$ fait tourner |
+| **1ère Loi** | $\sum \vec{F} = \vec{0} \Rightarrow \vec{v} = \text{cste}$ | Inertie |
+| **2ème Loi (PFD)** | $\sum \vec{F}_{ext} = m\vec{a}$ | Cause = Conséquence |
+| **3ème Loi** | $\vec{F}_{A/B} = -\vec{F}_{B/A}$ | Action = Réaction |
+| **Chute libre** | $\vec{a} = \vec{g}$ | Ne dépend pas de la masse |
+| **MRU** | $x = x_0 + v_0 t$ | Forces compensées |
+| **MRUV** | $x = x_0 + v_0 t + \frac{1}{2}at^2$ | Force résultante constante |
