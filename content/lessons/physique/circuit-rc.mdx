@@ -20,6 +20,18 @@ order: 1
 - Résoudre le régime transitoire (charge/décharge)
 - Déterminer la constante de temps
 
+## Intuition et analogie
+
+Imagine un **réservoir d'eau** relié à un robinet par un tuyau étroit :
+- Le **condensateur** C, c'est le réservoir — il stocke l'eau (les charges électriques)
+- La **résistance** R, c'est l'étroitesse du tuyau — elle freine l'écoulement (le courant)
+
+Quand tu ouvres le robinet pour **remplir** le réservoir : au début l'eau coule vite (fort courant), puis de plus en plus lentement à mesure que le réservoir se remplit et que la pression s'équilibre. C'est exactement la **charge du condensateur** : le courant est fort au début, puis décroît exponentiellement.
+
+Quand tu **vides** le réservoir : l'eau s'écoule d'abord rapidement (réservoir plein = forte pression), puis le débit diminue à mesure que le niveau baisse. C'est la **décharge du condensateur**.
+
+La **constante de temps** $\tau = RC$, c'est la "vitesse" de remplissage ou vidange : un gros réservoir (grand C) ou un tuyau étroit (grand R) ralentissent le processus. Après $5\tau$, on considère que le régime permanent est atteint (réservoir plein ou vide à 99%).
+
 ## Le condensateur
 
 :::definition
