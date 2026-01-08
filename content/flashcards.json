@@ -1060,5 +1060,50 @@
     "tags": ["physique", "interférences", "condition"],
     "level": 3,
     "category": "formula"
+  },
+  {
+    "id": "fc-circ-1",
+    "lessonId": "mouvement-circulaire",
+    "front": "Expression du vecteur accélération dans le repère de Frenet (cas général)",
+    "back": "$\\vec{a} = \\frac{dv}{dt}\\vec{t} + \\frac{v^2}{R}\\vec{n}$\n\nComposante tangentielle (variation de vitesse) + Composante normale (courbure).",
+    "tags": ["physique", "frenet", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-circ-2",
+    "lessonId": "mouvement-circulaire",
+    "front": "Caractéristique du vecteur accélération pour un Mouvement Circulaire Uniforme (MCU)",
+    "back": "L'accélération est purement **centripète** (normale).\n\n$\\vec{a} = \\frac{v^2}{R}\\vec{n}$",
+    "tags": ["physique", "mcu", "accélération"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-circ-3",
+    "lessonId": "mouvement-circulaire",
+    "front": "Formule de la vitesse d'un satellite en orbite circulaire",
+    "back": "$v = \\sqrt{\\frac{G \\cdot M}{r}}$\n\n$M$ est la masse de l'astre attracteur.",
+    "tags": ["physique", "satellite", "vitesse"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-circ-4",
+    "lessonId": "mouvement-circulaire",
+    "front": "Expression de la 3ème loi de Kepler (Loi des périodes)",
+    "back": "$\\frac{T^2}{a^3} = \\frac{4\\pi^2}{G \\cdot M} = \\text{constante}$\n\n(Avec $a=r$ pour un cercle).",
+    "tags": ["physique", "kepler", "loi"],
+    "level": 3,
+    "category": "law"
+  },
+  {
+    "id": "fc-circ-5",
+    "lessonId": "mouvement-circulaire",
+    "front": "Définition d'un satellite géostationnaire",
+    "back": "Satellite qui reste fixe par rapport à un point de la Terre.\nConditions : Orbite circulaire dans le plan équatorial, période T = 24h (jour sidéral), rotation dans le même sens que la Terre.",
+    "tags": ["physique", "satellite", "définition"],
+    "level": 2,
+    "category": "definition"
   }
 ]

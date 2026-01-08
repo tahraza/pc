@@ -1561,6 +1561,113 @@
         }
       ],
       "finalAnswer": "Les interférences sont **destructives**, l'intensité sonore est donc **minimale** (théoriquement nulle)."
+    },
+    {
+      "id": "guided-circ-1",
+      "title": "Déterminer l'altitude d'un satellite géostationnaire",
+      "subject": "physique",
+      "chapter": "Mouvement des satellites",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "On cherche à retrouver l'altitude h d'un satellite géostationnaire (T = 24h).",
+      "question": "Calculer l'altitude h sachant que $R_T = 6371$ km et $M_T = 5,97 \\times 10^{24}$ kg.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Écrire la 3ème loi de Kepler",
+          "instruction": "Donne la relation entre T, r (rayon orbital), G et M.",
+          "hint": "Le rapport $T^2/r^3$ est constant.",
+          "solution": "$$\\frac{T^2}{r^3} = \\frac{4\\pi^2}{G M_T}$$"
+        },
+        {
+          "id": 2,
+          "title": "Isoler le rayon orbital r",
+          "instruction": "Exprime $r$ en fonction des autres variables.",
+          "hint": "$r^3 = ...$ puis prends la racine cubique.",
+          "solution": "$$r^3 = \\frac{G M_T T^2}{4\\pi^2} \\implies r = \\sqrt[3]{\\frac{G M_T T^2}{4\\pi^2}}$$"
+        },
+        {
+          "id": 3,
+          "title": "Calculer r",
+          "instruction": "Effectue le calcul numérique. Attention à convertir T en secondes (86164 s pour le jour sidéral exact, ou 86400 s pour 24h).",
+          "hint": "G = $6,67 \\times 10^{-11}$.",
+          "solution": "Avec T = 86164 s (jour sidéral) :\n$$r \\approx \\sqrt[3]{\\frac{6,67\\cdot 10^{-11} \\times 5,97\\cdot 10^{24} \\times 86164^2}{4\\pi^2}} \\approx 4,22 \\times 10^7 \\text{ m}$$ soit 42 200 km."
+        },
+        {
+          "id": 4,
+          "title": "Déduire l'altitude h",
+          "instruction": "Le rayon orbital est la distance Centre Terre - Satellite. Trouve l'altitude par rapport au sol.",
+          "hint": "$r = R_T + h$.",
+          "solution": "$$h = r - R_T = 42200 - 6371 \\approx 35800 \\text{ km}$$"
+        }
+      ],
+      "finalAnswer": "L'altitude d'un satellite géostationnaire est d'environ **36 000 km**."
+    },
+    {
+      "id": "guided-circ-2",
+      "title": "Accélération dans le repère de Frenet",
+      "subject": "physique",
+      "chapter": "Description d'un mouvement",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "Une voiture prend un virage circulaire de rayon R = 50 m. Sa vitesse diminue : elle passe de 20 m/s à 10 m/s en 2 secondes de manière uniforme.",
+      "question": "Déterminer la valeur de l'accélération normale et tangentielle à l'instant où $v = 15$ m/s.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Calculer l'accélération tangentielle",
+          "instruction": "L'accélération tangentielle $a_t$ est liée à la variation de la valeur de la vitesse.",
+          "hint": "$a_t = \\frac{\\Delta v}{\\Delta t}$. Attention au signe (freinage).",
+          "solution": "$$a_t = \\frac{10 - 20}{2} = -5 \\text{ m/s}^2$$\n(Elle est dirigée en sens opposé au mouvement)."
+        },
+        {
+          "id": 2,
+          "title": "Calculer l'accélération normale",
+          "instruction": "L'accélération normale $a_n$ dépend de la vitesse à l'instant t et du rayon.",
+          "hint": "$a_n = v^2 / R$.",
+          "solution": "À l'instant où $v = 15$ m/s :\n$$a_n = \\frac{15^2}{50} = \\frac{225}{50} = 4,5 \\text{ m/s}^2$$"
+        },
+        {
+          "id": 3,
+          "title": "Vecteur Accélération total",
+          "instruction": "Donne l'expression vectorielle dans le repère de Frenet.",
+          "solution": "$$\\vec{a} = -5 \\vec{t} + 4,5 \\vec{n}$$"
+        }
+      ],
+      "finalAnswer": "Accélération tangentielle : **-5 m/s²**, Accélération normale : **4,5 m/s²**."
+    },
+    {
+      "id": "guided-circ-3",
+      "title": "Masse de Mars (Phobos)",
+      "subject": "physique",
+      "chapter": "Mouvement dans un champ de gravitation",
+      "difficulty": "difficile",
+      "estimatedTime": 20,
+      "description": "Phobos est un satellite de Mars. Il orbite à une distance $r = 9,38 \\times 10^6$ m du centre de Mars avec une période $T = 7$ h $39$ min.",
+      "question": "Déterminer la masse de Mars $M_M$.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Convertir la période",
+          "instruction": "Convertis la période en secondes.",
+          "hint": "1h = 3600s, 1min = 60s.",
+          "solution": "$$T = 7 \\times 3600 + 39 \\times 60 = 25200 + 2340 = 27540 \\text{ s}$$"
+        },
+        {
+          "id": 2,
+          "title": "Utiliser la 3ème loi de Kepler",
+          "instruction": "Isole la masse M dans la formule $T^2/r^3 = 4\\pi^2 / (GM)$.",
+          "hint": "Produit en croix.",
+          "solution": "$$M_M = \\frac{4\\pi^2 r^3}{G T^2}$$"
+        },
+        {
+          "id": 3,
+          "title": "Calcul final",
+          "instruction": "Remplace par les valeurs numériques ($G = 6,67 \\times 10^{-11}$).",
+          "solution": "$$M_M = \\frac{4\\pi^2 \\times (9,38\\cdot 10^6)^3}{6,67\\cdot 10^{-11} \\times (27540)^2} \\approx 6,4 \\times 10^{23} \\text{ kg}$$"
+        }
+      ],
+      "finalAnswer": "La masse de Mars est d'environ **$6,4 \\times 10^{23}$ kg**."
     }
   ]
 }

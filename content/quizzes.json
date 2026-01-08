@@ -1879,5 +1879,115 @@
         "difficulty": 2
       }
     ]
+  },
+  {
+    "id": "quiz-pre-mouvement-circulaire",
+    "lessonId": "mouvement-circulaire",
+    "type": "pre",
+    "title": "Pré-test : Mouvement Circulaire",
+    "description": "Évalue tes prérequis sur les vecteurs, la cinématique et les lois de Newton",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-circ-1",
+        "question": "Lors d'un mouvement curviligne quelconque, comment est orienté le vecteur vitesse par rapport à la trajectoire ?",
+        "choices": ["Perpendiculaire à la trajectoire", "Tangent à la trajectoire", "Dirigé vers le centre de courbure", "Il n'a pas de direction définie"],
+        "correct": 1,
+        "explanation": "Le vecteur vitesse est toujours tangent à la trajectoire au point considéré et orienté dans le sens du mouvement.",
+        "tag": "vecteur vitesse",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-circ-2",
+        "question": "Que signifie le terme \"uniforme\" dans l'expression \"Mouvement Circulaire Uniforme\" ?",
+        "choices": ["Que la trajectoire est un cercle parfait", "Que le vecteur vitesse est constant", "Que la valeur de la vitesse (norme) est constante", "Que l'accélération est nulle"],
+        "correct": 2,
+        "explanation": "Uniforme signifie que la valeur de la vitesse v (en m/s) ne change pas. Attention, le vecteur vitesse, lui, change de direction.",
+        "tag": "définition",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-circ-3",
+        "question": "Quelle est l'unité de la période de révolution T dans le système international ?",
+        "choices": ["Le Hertz (Hz)", "La seconde (s)", "Le mètre par seconde (m/s)", "Le tour par minute (tr/min)"],
+        "correct": 1,
+        "explanation": "La période est une durée, elle s'exprime donc en secondes (s) dans le système international.",
+        "tag": "unités",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-circ-4",
+        "question": "Si vous faites tourner une pierre attachée à une ficelle, quelle force ressentez-vous dans votre main ?",
+        "choices": ["Une force qui pousse la pierre vers l'extérieur", "Une force qui tire votre main vers la pierre", "Aucune force", "Une force verticale uniquement"],
+        "correct": 1,
+        "explanation": "C'est la tension du fil. Pour maintenir la pierre sur sa trajectoire circulaire, le fil doit exercer une force vers le centre (centripète), et par réaction, la pierre tire sur le fil.",
+        "tag": "intuition",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-circ-5",
+        "question": "Quelle est la relation mathématique entre la fréquence f et la période T ?",
+        "choices": ["f = T", "f = 1 / T", "f = T × 2π", "f = T²"],
+        "correct": 1,
+        "explanation": "La fréquence (en Hz) est l'inverse de la période (en s) : f = 1/T.",
+        "tag": "formule",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-mouvement-circulaire",
+    "lessonId": "mouvement-circulaire",
+    "type": "post",
+    "title": "Post-test : Mouvement Circulaire et Satellites",
+    "description": "Vérifie ta maîtrise du repère de Frenet, des lois de Newton et de Kepler",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-circ-1",
+        "question": "Dans le repère de Frenet (M, t, n), quelle est l'expression du vecteur accélération pour un mouvement circulaire uniforme ?",
+        "choices": ["a = (dv/dt)·t", "a = (v²/R)·n", "a = (dv/dt)·t + (v²/R)·n", "a = 0"],
+        "correct": 1,
+        "explanation": "Si le mouvement est uniforme, v est constant donc dv/dt = 0. Il ne reste que l'accélération normale (centripète) : a = (v²/R)·n.",
+        "tag": "frenet",
+        "difficulty": 2
+      },
+      {
+        "id": "post-circ-2",
+        "question": "Quelle est l'expression de la vitesse v d'un satellite en orbite circulaire autour de la Terre (masse M_T) à une distance r du centre ?",
+        "choices": ["v = √(GM_T / r)", "v = GM_T / r", "v = √(r / GM_T)", "v = r² / GM_T"],
+        "correct": 0,
+        "explanation": "C'est la formule classique dérivée de la 2ème loi de Newton : v = √(G·M / r).",
+        "tag": "satellite",
+        "difficulty": 2
+      },
+      {
+        "id": "post-circ-3",
+        "question": "D'après la 3ème loi de Kepler pour une orbite circulaire, à quoi est égal le rapport T²/r³ ?",
+        "choices": ["v² / G", "4π² / (G·M)", "G·M / 4π²", "Une valeur qui dépend de la masse du satellite"],
+        "correct": 1,
+        "explanation": "T²/r³ est une constante qui ne dépend que de l'astre attracteur de masse M : 4π²/(G·M).",
+        "tag": "kepler",
+        "difficulty": 3
+      },
+      {
+        "id": "post-circ-4",
+        "question": "Si un satellite géostationnaire orbite à 36 000 km d'altitude, quelle est sa période de révolution ?",
+        "choices": ["Environ 90 minutes", "Environ 24 heures", "365 jours", "Cela dépend de sa masse"],
+        "correct": 1,
+        "explanation": "Un satellite géostationnaire tourne à la même vitesse angulaire que la Terre pour rester fixe au-dessus d'un point. Sa période est donc d'un jour sidéral (environ 24h).",
+        "tag": "géostationnaire",
+        "difficulty": 1
+      },
+      {
+        "id": "post-circ-5",
+        "question": "Comment évolue la vitesse d'un satellite si le rayon de son orbite augmente ?",
+        "choices": ["Elle augmente", "Elle diminue", "Elle reste constante", "Elle s'annule"],
+        "correct": 1,
+        "explanation": "D'après v = √(GM/r), si r augmente (le dénominateur), alors la vitesse v diminue. Plus on est loin, moins on tourne vite.",
+        "tag": "concept",
+        "difficulty": 2
+      }
+    ]
   }
 ]

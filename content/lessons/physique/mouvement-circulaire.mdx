@@ -1,0 +1,358 @@
+---
+id: "mouvement-circulaire"
+title: "Mouvement Circulaire : MCU, Frenet, Satellites et Kepler"
+track: "physique"
+level: 2
+prerequisites: ["mouvement-newton"]
+tags: ["mouvement circulaire", "MCU", "accélération centripète", "frenet", "satellite", "kepler"]
+estimatedTime: 150
+chapter: "mouvement-et-interactions"
+order: 10
+---
+
+# Mouvement Circulaire et Satellites
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Reconnaître un **mouvement circulaire**, distinguer uniforme / non uniforme
+- Utiliser le **repère de Frenet** $(\vec{t}, \vec{n})$ pour décrire $\vec{v}$ et $\vec{a}$
+- Comprendre et exploiter l'accélération **centripète** : $a_n = \frac{v^2}{R}$
+- Appliquer la **2ème loi de Newton** aux satellites et planètes
+- Retrouver et utiliser les **lois de Kepler**
+
+---
+
+## 1. Intuition : pourquoi "tourner" n'est pas "aller tout droit"
+
+:::tip[Analogie : La pierre au bout d'une ficelle]
+- La pierre "voudrait" partir **tout droit** (inertie)
+- La ficelle la **tire vers le centre** : c'est ce qui "force" la trajectoire à rester circulaire
+
+Si tu coupes la ficelle → la pierre part **tangentiellement** (dans la direction de la vitesse instantanée).
+:::
+
+:::tip[Analogie : Le rond-point glissant]
+Sur un rond-point verglas, si l'adhérence est trop faible :
+- La voiture ne "tourne" plus
+- Elle continue quasiment **tout droit**
+
+Pour tourner, il faut une interaction (frottement pneu/route) qui fournisse une force vers le centre.
+:::
+
+---
+
+## 2. Définition : « vitesse constante » ≠ « accélération nulle »
+
+:::definition
+**Mouvement Circulaire**
+
+La trajectoire est un **cercle** de rayon $R$, de centre $O$.
+:::
+
+:::definition
+**Mouvement Circulaire Uniforme (MCU)**
+
+MCU = trajectoire circulaire + **valeur de la vitesse constante**.
+
+Le vecteur vitesse **change de direction** (il reste tangent au cercle), donc il varie → l'accélération n'est pas nulle !
+:::
+
+:::example[Mini-question]
+Une voiture à vitesse **constante** sur un rond-point est-elle accélérée ?
+
+<details>
+<summary>Voir la réponse</summary>
+
+**Oui !** La norme de $\vec{v}$ est constante, mais sa direction change → il existe une accélération centripète.
+
+</details>
+:::
+
+---
+
+## 3. Le Repère de Frenet $(\vec{t}, \vec{n})$
+
+Pour un mouvement curviligne, le repère cartésien devient pénible. On utilise un repère mobile attaché au point $M$.
+
+:::definition
+**Repère de Frenet**
+
+- $\vec{t}$ : vecteur unitaire **tangent** à la trajectoire, orienté dans le sens du mouvement
+- $\vec{n}$ : vecteur unitaire **normal** (centripète), perpendiculaire à $\vec{t}$ et dirigé vers le centre de courbure
+:::
+
+:::tip[Analogie simple]
+- $\vec{t}$ = "où je vais maintenant" (direction des phares)
+- $\vec{n}$ = "vers où je tourne" (direction du volant)
+:::
+
+---
+
+## 4. Vitesse en Mouvement Circulaire
+
+### 4.1 Vecteur vitesse
+
+:::property[Vecteur Vitesse]
+En MCU, le vecteur vitesse est **tangent** à la trajectoire :
+
+$$\vec{v} = v \cdot \vec{t}$$
+
+où $v$ est la valeur de la vitesse (constante en MCU).
+:::
+
+### 4.2 Lien période / fréquence / vitesse
+
+:::property[Relations fondamentales]
+| Grandeur | Formule | Unité |
+|----------|---------|-------|
+| Période $T$ | Temps pour un tour | s |
+| Fréquence $f$ | $f = \frac{1}{T}$ | Hz |
+| Vitesse | $v = \frac{2\pi R}{T} = 2\pi R f$ | m/s |
+| Vitesse angulaire | $\omega = \frac{2\pi}{T} = 2\pi f$ | rad/s |
+
+**Relation clé** : $v = R \cdot \omega$
+:::
+
+:::example[Mini-exercice]
+Un point décrit un cercle de rayon $R = 0{,}50$ m à la fréquence $f = 2{,}0$ Hz.
+Calculer $T$, $\omega$, puis $v$.
+
+<details>
+<summary>Voir la correction</summary>
+
+- $T = \frac{1}{f} = 0{,}50$ s
+- $\omega = \frac{2\pi}{T} = 4\pi$ rad/s
+- $v = R\omega = 0{,}50 \times 4\pi = 2\pi \approx 6{,}28$ m/s
+
+</details>
+:::
+
+---
+
+## 5. Accélération : Centripète et Tangentielle
+
+### 5.1 Décomposition dans Frenet
+
+:::property[Vecteur Accélération dans Frenet]
+$$\vec{a} = \underbrace{\frac{dv}{dt} \cdot \vec{t}}_{\text{tangentielle } a_t} + \underbrace{\frac{v^2}{R} \cdot \vec{n}}_{\text{normale } a_n}$$
+
+- $a_t = \frac{dv}{dt}$ : change la **valeur** de la vitesse (accélérateur/frein)
+- $a_n = \frac{v^2}{R}$ : change la **direction** de la vitesse (courbure)
+:::
+
+### 5.2 Cas du MCU
+
+:::theorem[Accélération en MCU]
+En MCU, $v$ est constante donc $\frac{dv}{dt} = 0$.
+
+L'accélération est **purement centripète** :
+
+$$\vec{a} = \frac{v^2}{R} \cdot \vec{n}$$
+
+Elle est dirigée vers le centre du cercle, de valeur constante $a = \frac{v^2}{R}$.
+:::
+
+:::example[Mini-question]
+En MCU, $\vec{v}$ et $\vec{a}$ sont-ils parallèles ?
+
+<details>
+<summary>Voir la réponse</summary>
+
+**Non !** $\vec{v}$ est tangentiel ($\vec{t}$) et $\vec{a}$ est normal ($\vec{n}$), donc ils sont **perpendiculaires**.
+
+</details>
+:::
+
+---
+
+## 6. La "Force Centripète" : Attention au piège !
+
+:::warning[Ce n'est pas une force nouvelle !]
+"Force centripète" décrit un **rôle**, pas une force supplémentaire.
+
+C'est la **résultante des forces** (tension, frottement, gravitation...) qui, ensemble, pointent vers le centre.
+
+Ne jamais écrire : "poids + force centripète = ..." car ce serait compter deux fois la même chose !
+:::
+
+:::property[Application de Newton]
+Dans un référentiel galiléen :
+
+$$\sum \vec{F} = m\vec{a}$$
+
+Pour un mouvement circulaire :
+
+$$\sum F_{\text{radiales}} = m\frac{v^2}{R}$$
+:::
+
+---
+
+## 7. Application : Satellite en Orbite Circulaire
+
+### 7.1 Système et forces
+
+- **Système** : Satellite de masse $m$
+- **Référentiel** : Géocentrique (supposé galiléen)
+- **Force** : Attraction gravitationnelle (seule)
+
+:::property[Force gravitationnelle]
+$$\vec{F}_{T/S} = G \frac{M_T \cdot m}{r^2} \vec{n}$$
+
+avec $\vec{n}$ dirigé vers le centre de la Terre.
+:::
+
+### 7.2 Démonstration de la vitesse orbitale
+
+:::method[Démonstration (exigée au Bac)]
+1. **Newton** : $G \frac{M_T m}{r^2} = m \cdot a$
+2. **Simplification** : $a = \frac{GM_T}{r^2}$
+3. **Identification (Frenet)** : $a = \frac{v^2}{r}$
+4. **Égalité** : $\frac{v^2}{r} = \frac{GM_T}{r^2}$
+:::
+
+:::property[Vitesse orbitale]
+$$v = \sqrt{\frac{G \cdot M}{r}}$$
+
+La vitesse ne dépend **pas** de la masse du satellite, uniquement de l'altitude et de la masse de l'astre.
+:::
+
+:::tip[À retenir]
+Plus un satellite est haut ($r$ grand), plus il va **lentement**.
+:::
+
+---
+
+## 8. Les Lois de Kepler
+
+:::theorem[Les trois lois de Kepler]
+**1. Loi des orbites** : Les orbites sont des ellipses dont l'astre attracteur occupe un foyer.
+
+**2. Loi des aires** : Le segment astre-satellite balaie des aires égales en des temps égaux.
+- *Conséquence* : Vitesse plus grande au périhélie qu'à l'aphélie.
+
+**3. Loi des périodes** :
+$$\frac{T^2}{r^3} = \frac{4\pi^2}{G \cdot M} = \text{constante}$$
+:::
+
+### Démonstration de la 3ème loi
+
+:::method[Démonstration (exigée au Bac)]
+On sait que $v = \sqrt{GM/r}$ et $T = \frac{2\pi r}{v}$.
+
+$$T = \frac{2\pi r}{\sqrt{GM/r}} = 2\pi \sqrt{\frac{r^3}{GM}}$$
+
+En élevant au carré :
+
+$$T^2 = \frac{4\pi^2}{GM} \cdot r^3 \implies \frac{T^2}{r^3} = \frac{4\pi^2}{GM}$$
+:::
+
+---
+
+## 9. Satellite Géostationnaire
+
+:::definition
+**Satellite géostationnaire**
+
+Satellite qui reste fixe par rapport à un point de la Terre.
+
+**Conditions** :
+- Orbite circulaire dans le plan équatorial
+- Période $T = 24$ h (jour sidéral ≈ 86164 s)
+- Rotation dans le même sens que la Terre
+:::
+
+:::example[Calcul de l'altitude]
+En utilisant la 3ème loi de Kepler :
+
+$$r = \sqrt[3]{\frac{G M_T T^2}{4\pi^2}} \approx 42\,200 \text{ km}$$
+
+Altitude : $h = r - R_T = 42\,200 - 6\,371 \approx \mathbf{35\,800 \text{ km}}$
+:::
+
+---
+
+## 10. Application "vie quotidienne" : Virage et Adhérence
+
+:::property[Force nécessaire dans un virage]
+Pour tourner à vitesse $v$ sur un virage de rayon $R$ :
+
+$$F_{\text{frottement}} = m\frac{v^2}{R}$$
+:::
+
+:::tip[Pourquoi ralentir avant un virage serré ?]
+- $v$ double → $v^2$ **quadruple** : "un peu plus vite" devient "beaucoup trop vite"
+- $R$ petit (virage serré) → effort requis plus grand
+
+Si le frottement disponible ne suffit pas → la voiture "sort" du virage !
+:::
+
+---
+
+## 11. Erreurs Classiques
+
+:::warning[Erreur 1 : "Si v est constante alors a = 0"]
+**Faux !** En MCU, la direction de $\vec{v}$ change → accélération centripète.
+
+**Astuce** : Accélération = variation du **vecteur** vitesse, pas seulement de sa norme.
+:::
+
+:::warning[Erreur 2 : Dessiner $\vec{v}$ vers le centre]
+**Non !** $\vec{v}$ est **tangentiel** (porté par $\vec{t}$), pas radial.
+:::
+
+:::warning[Erreur 3 : "La force centripète s'ajoute aux forces"]
+**Non !** "Centripète" décrit la **résultante radiale** des forces existantes.
+:::
+
+:::warning[Erreur 4 : Écrire $v/R$ au lieu de $v^2/R$]
+**Contrôle par les unités** :
+- $v^2/R$ → (m²/s²)/m = m/s² ✓
+- $v/R$ → (m/s)/m = s⁻¹ ✗
+:::
+
+:::warning[Erreur 5 : Confondre altitude et rayon orbital]
+Le rayon orbital est : $r = R_T + h$
+
+N'oublie pas d'ajouter le rayon terrestre !
+:::
+
+:::warning[Erreur 6 : Confondre $f$, $T$ et $\omega$]
+- $T$ en **secondes** (s)
+- $f$ en **Hertz** (Hz = s⁻¹)
+- $\omega$ en **rad/s**
+:::
+
+---
+
+## Résumé : Formules Essentielles
+
+### Vitesse / Périodicité
+
+| Grandeur | Formule |
+|----------|---------|
+| Fréquence | $f = \frac{1}{T}$ |
+| Vitesse angulaire | $\omega = \frac{2\pi}{T} = 2\pi f$ |
+| Vitesse linéaire | $v = \frac{2\pi R}{T} = R\omega$ |
+
+### Accélération (Frenet)
+
+| Cas | Formule |
+|-----|---------|
+| Général | $\vec{a} = \frac{dv}{dt}\vec{t} + \frac{v^2}{R}\vec{n}$ |
+| MCU | $\vec{a} = \frac{v^2}{R}\vec{n}$ (centripète) |
+
+### Satellite (orbite circulaire)
+
+| Grandeur | Formule |
+|----------|---------|
+| Vitesse | $v = \sqrt{\frac{GM}{r}}$ |
+| Période | $T = \frac{2\pi r}{v} = 2\pi\sqrt{\frac{r^3}{GM}}$ |
+| 3ème loi Kepler | $\frac{T^2}{r^3} = \frac{4\pi^2}{GM}$ |
+| Géostationnaire | $T = 24$ h, $h \approx 36\,000$ km |
+
+:::tip[Les 3 points clés]
+1. **MCU** : $\vec{a}$ centripète de valeur $v^2/R$
+2. **Satellite** : Plus il est haut, plus il va lentement
+3. **Kepler** : $T^2/r^3 = \text{cste}$ pour un même astre
+:::

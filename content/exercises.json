@@ -3181,5 +3181,122 @@
     ],
     "tags": ["diffraction", "longueur d'onde", "condition"],
     "isComprehension": true
+  },
+  {
+    "id": "ex-circ-1",
+    "lessonId": "mouvement-circulaire",
+    "title": "Identification du mouvement (Roue de Falkirk)",
+    "difficulty": 2,
+    "statement": "On étudie le mouvement d'un godet de la Roue de Falkirk. La trajectoire est un cercle de rayon R = 12 m et la vitesse est constante v = 0,11 m/s. 1. Donner les caractéristiques du vecteur accélération. 2. Calculer sa valeur.",
+    "hints": [
+      "Le mouvement est circulaire et uniforme.",
+      "Dans ce cas, l'accélération tangentielle est nulle.",
+      "L'accélération est normale (centripète)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse du mouvement",
+        "content": "La trajectoire est circulaire et la vitesse est constante. C'est un Mouvement Circulaire Uniforme (MCU).",
+        "explanation": "Dans un MCU, dv/dt = 0."
+      },
+      {
+        "step": 2,
+        "title": "Vecteur accélération",
+        "content": "Le vecteur accélération est centripète (dirigé vers le centre). Sa valeur est a = v²/R.",
+        "explanation": "Seule la composante normale de Frenet existe."
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "a = (0,11)² / 12 ≈ 1,0 × 10⁻³ m/s².",
+        "explanation": "Application numérique directe."
+      }
+    ],
+    "method": "Utilisation des propriétés du MCU",
+    "commonMistakes": [
+      "Penser que l'accélération est nulle car la vitesse est constante (erreur classique)",
+      "Oublier le carré sur la vitesse"
+    ],
+    "tags": ["cinématique", "MCU", "accélération"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-circ-2",
+    "lessonId": "mouvement-circulaire",
+    "title": "Vitesse du satellite SPOT",
+    "difficulty": 2,
+    "statement": "Le satellite SPOT gravite sur une orbite circulaire à l'altitude h = 832 km. Calculer sa vitesse orbitale. (Rt = 6371 km, Mt = 5,97×10²⁴ kg, G = 6,67×10⁻¹¹ SI).",
+    "hints": [
+      "Le rayon de l'orbite est r = Rt + h.",
+      "Utilise la formule de la vitesse orbitale v = √(GM/r).",
+      "Attention aux unités (tout en mètres)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du rayon orbital",
+        "content": "r = Rt + h = 6371 + 832 = 7203 km = 7,203 × 10⁶ m.",
+        "explanation": "Il faut ajouter l'altitude au rayon terrestre et convertir en mètres."
+      },
+      {
+        "step": 2,
+        "title": "Application de la formule",
+        "content": "v = √[(6,67×10⁻¹¹ × 5,97×10²⁴) / (7,203×10⁶)]",
+        "explanation": "La force gravitationnelle joue le rôle de force centripète."
+      },
+      {
+        "step": 3,
+        "title": "Résultat",
+        "content": "v ≈ 7436 m/s ≈ 7,44 km/s.",
+        "explanation": "C'est une vitesse typique pour un satellite en orbite basse."
+      }
+    ],
+    "method": "Application de la formule de vitesse orbitale",
+    "commonMistakes": [
+      "Utiliser h au lieu de (Rt + h)",
+      "Oublier de convertir les km en m"
+    ],
+    "tags": ["gravitation", "satellite", "vitesse"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-circ-3",
+    "lessonId": "mouvement-circulaire",
+    "title": "Période de Vénus (Kepler)",
+    "difficulty": 3,
+    "statement": "L'orbite de Vénus est quasi-circulaire de rayon r = 108 millions de km. Calculer sa période de révolution T. (M_Soleil = 2,0 × 10³⁰ kg).",
+    "hints": [
+      "Utilise la 3ème loi de Kepler : T²/r³ = 4π²/GM.",
+      "Isole T dans l'équation.",
+      "r doit être en mètres."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Expression de T",
+        "content": "T = 2π × √(r³ / GM)",
+        "explanation": "On part de T²/r³ = 4π²/GM et on prend la racine carrée."
+      },
+      {
+        "step": 2,
+        "title": "Conversion",
+        "content": "r = 108 × 10⁶ km = 1,08 × 10¹¹ m.",
+        "explanation": "Conversion indispensable pour utiliser G en unités SI."
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "T = 2π × √[(1,08×10¹¹)³ / (6,67×10⁻¹¹ × 2,0×10³⁰)] ≈ 1,94 × 10⁷ s.",
+        "explanation": "Cela correspond à environ 225 jours terrestres."
+      }
+    ],
+    "method": "Utilisation de la 3ème loi de Kepler",
+    "commonMistakes": [
+      "Erreur d'isolation de T",
+      "Erreur de puissance sur r (r au cube)"
+    ],
+    "tags": ["kepler", "vénus", "période"],
+    "isComprehension": false
   }
 ]
