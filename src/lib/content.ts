@@ -75,6 +75,10 @@ export function getLessonsByChapter(chapter: string): Lesson[] {
   return getAllLessons().filter((l) => l.chapter === chapter)
 }
 
+export function getLessonById(lessonId: string): Lesson | null {
+  return getAllLessons().find((l) => l.id === lessonId) || null
+}
+
 // ==========================================
 // Exercices
 // ==========================================

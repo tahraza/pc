@@ -293,15 +293,17 @@ export default function ExercisePage({ params }: PageProps) {
         </div>
 
         {/* Link to related lesson */}
-        <div className="text-center">
-          <Link
-            href={`/lecons?id=${exercise.lessonId}`}
-            className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
-          >
-            <BookOpen className="h-4 w-4" />
-            Voir la leçon associée
-          </Link>
-        </div>
+        {exercise.lessonUrl && (
+          <div className="text-center">
+            <Link
+              href={exercise.lessonUrl}
+              className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
+            >
+              <BookOpen className="h-4 w-4" />
+              Voir la leçon associée
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   )

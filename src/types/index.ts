@@ -116,6 +116,7 @@ export interface Exercise {
   commonMistakes: string[]
   tags: string[]
   isComprehension?: boolean // true si exercice de compréhension immédiate
+  lessonUrl?: string // URL de la leçon associée (ajoutée par l'API)
 }
 
 export interface SolutionStep {
