@@ -1,189 +1,278 @@
 ---
-id: piles-electrolyse
-title: "Piles et électrolyse"
-track: chimie
-chapter: reactions
-level: 4
-estimatedTime: 55
-prerequisites:
-  - oxydoreduction
-tags:
-  - pile
-  - électrolyse
-  - anode
-  - cathode
-  - fem
-objectives:
-  - Comprendre le fonctionnement d'une pile
-  - Distinguer pile et électrolyse
-  - Identifier anode et cathode
-  - Calculer la capacité d'une pile
+id: "piles-electrolyse"
+title: "Piles et Électrolyse : Transferts d'Énergie Spontanés et Forcés"
+track: "chimie"
+level: 3
+prerequisites: ["oxydoreduction"]
+tags: ["pile", "électrolyse", "anode", "cathode", "Faraday", "capacité", "générateur", "récepteur"]
+estimatedTime: 80
+chapter: "reactions"
+order: 2
 ---
 
-# Piles et électrolyse
+# Piles et Électrolyse : Le Contrôle des Électrons
 
-## Intuition et analogie
+## Objectifs
 
-Ton smartphone fonctionne grâce à une **pile** (une batterie lithium-ion). Mais qu'est-ce qu'une pile, au fond ? C'est une usine chimique miniature qui **convertit de l'énergie chimique en électricité**.
+À la fin de cette leçon, tu sauras :
+- Distinguer une transformation **spontanée** (pile) d'une transformation **forcée** (électrolyse)
+- Identifier l'**anode**, la **cathode** et la **polarité** (+/−) dans les deux cas
+- Écrire les demi-équations et l'équation bilan de fonctionnement
+- Calculer la **capacité** d'une pile ou la durée d'une électrolyse avec la **loi de Faraday**
+- Comprendre le rôle du **pont salin** et du générateur
 
-Imagine deux réservoirs d'eau à des hauteurs différentes, reliés par un tuyau avec une turbine. L'eau coule naturellement du haut vers le bas et fait tourner la turbine. Dans une pile, ce sont des **électrons** qui "coulent" spontanément d'un métal vers un autre, et ce flux produit un courant électrique.
+## 1. Intuition : La Cascade et la Pompe
 
-Les électrons partent de l'**anode** (−), où un métal s'oxyde (perd ses électrons), vers la **cathode** (+), où un autre métal se réduit (gagne des électrons). Le **pont salin** ferme le circuit en laissant passer des ions pour maintenir la neutralité.
+L'électrochimie traite de la conversion entre énergie chimique et énergie électrique.
 
-Et l'**électrolyse** ? C'est l'inverse ! Au lieu de laisser les électrons couler naturellement, tu les **forces** à remonter la pente en fournissant de l'électricité. C'est comme utiliser une pompe pour faire remonter l'eau. C'est ainsi qu'on recharge une batterie, qu'on plaque du chrome sur du métal, ou qu'on produit de l'aluminium.
+:::tip[Analogie : L'eau et la montagne]
+**La Pile (Spontané)** : C'est comme une **cascade**.
+- L'eau coule naturellement du haut vers le bas
+- L'énergie est libérée (on peut mettre une turbine pour produire de l'électricité)
+- Le système évolue seul vers son état d'équilibre
 
-Pile = réaction spontanée → production d'électricité
-Électrolyse = électricité fournie → réaction forcée
+**L'Électrolyse (Forcé)** : C'est comme **remonter l'eau** avec une pompe.
+- Cela ne se fait pas tout seul : il faut fournir de l'énergie (la pompe = le générateur)
+- On force le système à aller dans le sens inverse de sa nature
+- C'est ainsi qu'on "recharge" une batterie
+:::
 
-## Introduction
+:::property[Deux modes de fonctionnement]
+Un système électrochimique peut fonctionner :
+- En **générateur** (pile) : $Q_r$ évolue pour tendre vers $K$ (sens spontané)
+- En **récepteur** (électrolyse) : $Q_r$ s'éloigne de $K$ (sens forcé)
+:::
 
-Les piles et l'électrolyse sont deux applications des réactions d'oxydoréduction. La pile convertit l'énergie chimique en énergie électrique, tandis que l'électrolyse fait l'inverse.
+## 2. Transfert Direct vs Indirect d'Électrons
 
-## La pile électrochimique
+:::definition
+**Transfert direct**
+
+On met en contact $Red_1$ et $Ox_2$ → réaction spontanée, souvent avec dégagement de chaleur. L'énergie chimique est transformée en chaleur (inutilisable pour produire de l'électricité).
+
+**Transfert indirect**
+
+On sépare les couples et on impose un passage d'électrons dans un circuit extérieur → on récupère de l'énergie **électrique**. C'est le principe d'une **pile**.
+:::
+
+:::tip[Pourquoi ne pas tout mélanger dans un bécher ?]
+Parce que cela provoquerait un transfert direct : on perdrait le courant utile ! Le pont salin impose aux électrons de passer par le circuit extérieur.
+:::
+
+## 3. Concepts Fondamentaux : Anode et Cathode
+
+Quelle que soit la situation (pile ou électrolyse), ces définitions sont **invariables** :
+
+:::theorem[Définitions universelles]
+- **ANODE** = siège de l'**OXYDATION** : $Red \rightarrow Ox + ne^-$
+- **CATHODE** = siège de la **RÉDUCTION** : $Ox + ne^- \rightarrow Red$
+:::
+
+:::tip[Moyen mnémotechnique]
+- **O**xydation et **A**node commencent par une **voyelle**
+- **R**éduction et **C**athode commencent par une **consonne**
+:::
+
+:::warning[Attention aux signes !]
+C'est la **polarité** (+/−) des électrodes qui change selon qu'on est en mode pile ou électrolyse. Ne confonds pas !
+:::
+
+## 4. La Pile : Transformation Spontanée (Générateur)
+
+Une pile convertit l'énergie chimique en énergie électrique. Le système évolue spontanément vers l'équilibre.
 
 ### Constitution
 
 Une pile est constituée de deux **demi-piles** reliées par :
 - Un **circuit extérieur** (fil conducteur) où circulent les électrons
-- Un **pont salin** ou une membrane qui assure la neutralité électrique
+- Un **pont salin** (ou membrane) qui ferme le circuit ionique
 
-<Definition title="Demi-pile">
-Une demi-pile est constituée d'un couple oxydant/réducteur. Elle comprend généralement une électrode métallique plongeant dans une solution contenant les ions du même métal.
-</Definition>
+:::property[Rôle du pont salin]
+Le pont salin est **indispensable**. Il :
+1. Ferme le circuit électrique (passage du courant par les ions)
+2. Assure l'**électroneutralité** des solutions (apporte des ions pour compenser ceux formés ou consommés)
+:::
 
-### Fonctionnement
+### Polarité et réactions dans une pile
 
-Dans une pile :
-- À l'**anode** (borne -) : **oxydation** du réducteur
-- À la **cathode** (borne +) : **réduction** de l'oxydant
+:::property[Polarités dans une pile]
+- **Anode = Pôle négatif (−)** : fournit les électrons au circuit
+  - Siège de l'oxydation : $M \rightarrow M^{n+} + ne^-$
+  - L'électrode métallique se consomme (masse diminue)
 
-<Formula title="Réactions aux électrodes (pile)">
-Anode (-) : $Red_1 \rightarrow Ox_1 + ne^-$ (oxydation)
-Cathode (+) : $Ox_2 + ne^- \rightarrow Red_2$ (réduction)
-</Formula>
+- **Cathode = Pôle positif (+)** : attire les électrons
+  - Siège de la réduction : $M^{n+} + ne^- \rightarrow M$
+  - Du métal se dépose (masse augmente)
+:::
 
-<Trap title="Anode et cathode">
-Dans une **pile** : anode = borne négative, cathode = borne positive.
-Dans une **électrolyse** : c'est l'inverse !
-Le moyen mnémotechnique : l'**A**node est toujours le siège de l'oxyd**A**tion.
-</Trap>
+### Exemple : La Pile Daniell (Zn/Cu)
 
-### Force électromotrice (f.é.m.)
+:::example[Pile Daniell]
+**Écriture symbolique** : $(-)\ Zn_{(s)}/Zn^{2+}_{(aq)}\ //\ Cu^{2+}_{(aq)}/Cu_{(s)}\ (+)$
 
-<Definition title="Force électromotrice">
-La f.é.m. d'une pile, notée E, est la tension à vide (sans courant) entre ses bornes. Elle dépend des couples mis en jeu.
-</Definition>
+**Demi-équations** :
+- Anode (Zn, pôle −) : $Zn \rightarrow Zn^{2+} + 2e^-$ (oxydation)
+- Cathode (Cu, pôle +) : $Cu^{2+} + 2e^- \rightarrow Cu$ (réduction)
 
-$$E = E_{cathode} - E_{anode} = E_{+} - E_{-}$$
+**Équation bilan** : $Zn_{(s)} + Cu^{2+}_{(aq)} \rightarrow Zn^{2+}_{(aq)} + Cu_{(s)}$
 
-### Exemple : pile Daniell
+**Circulation** :
+- Électrons : de l'anode (Zn) vers la cathode (Cu) dans le fil
+- Courant : sens inverse des électrons
+:::
 
-Couples : $Cu^{2+}/Cu$ et $Zn^{2+}/Zn$
+## 5. L'Électrolyse : Transformation Forcée (Récepteur)
 
-- Anode (Zn) : $Zn \rightarrow Zn^{2+} + 2e^-$
-- Cathode (Cu) : $Cu^{2+} + 2e^- \rightarrow Cu$
-- Bilan : $Zn + Cu^{2+} \rightarrow Zn^{2+} + Cu$
+L'électrolyse utilise un générateur externe pour **forcer** une réaction dans le sens inverse de son évolution spontanée.
 
-### Capacité d'une pile
+### Polarité et connexion
 
-<Definition title="Capacité">
-La capacité Q d'une pile est la quantité d'électricité qu'elle peut fournir avant d'être usée. Elle s'exprime en coulombs (C) ou en ampères-heures (Ah).
-</Definition>
+C'est le **générateur** qui impose le sens du courant :
 
-$$Q = I \times \Delta t = n_{e^-} \times F$$
+:::property[Polarités en électrolyse]
+- La borne **(+) du générateur** pompe les électrons → reliée à l'**ANODE**
+- La borne **(−) du générateur** fournit les électrons → reliée à la **CATHODE**
 
-où $F = 96500$ C/mol est la constante de Faraday.
+**Attention** : Les polarités (+/−) sont **inversées** par rapport à la pile !
+:::
 
-<Formula title="Capacité">
-$$Q = n_{e^-} \times F$$
-1 Ah = 3600 C
-</Formula>
+### Réactions aux électrodes
 
-## L'électrolyse
+:::method[Réactions en électrolyse]
+**ANODE (reliée au +) : OXYDATION**
+- L'électrode peut être consommée (métal réactif)
+- Ou dégagement gazeux : $2H_2O \rightarrow O_2 + 4H^+ + 4e^-$
 
-### Principe
-
-L'électrolyse est une transformation **forcée** : on impose un courant électrique pour réaliser une réaction non spontanée.
-
-### Fonctionnement
-
-Dans une électrolyse :
-- À l'**anode** (borne +) : **oxydation**
-- À la **cathode** (borne -) : **réduction**
-
-<Formula title="Réactions aux électrodes (électrolyse)">
-Anode (+) : $Red \rightarrow Ox + ne^-$ (oxydation)
-Cathode (-) : $Ox + ne^- \rightarrow Red$ (réduction)
-</Formula>
+**CATHODE (reliée au −) : RÉDUCTION**
+- Dépôt métallique (galvanisation, dorure)
+- Ou dégagement gazeux : $2H_2O + 2e^- \rightarrow H_2 + 2OH^-$
+:::
 
 ### Applications
 
 - **Électrolyse de l'eau** : production de H₂ et O₂
-  - Cathode : $2H_2O + 2e^- \rightarrow H_2 + 2HO^-$
-  - Anode : $2H_2O \rightarrow O_2 + 4H^+ + 4e^-$
-
-- **Électrozingage** : dépôt de zinc sur un métal
-
+- **Galvanoplastie** : dépôt métallique (chrome, or, argent)
 - **Production d'aluminium** : électrolyse de l'alumine
+- **Recharge de batteries** : transformation forcée inverse de la décharge
 
-### Quantité de matière déposée
+## 6. Tableau Comparatif : Pile vs Électrolyse
 
-La quantité de matière formée à une électrode est liée à la quantité d'électricité :
+| Dispositif | Pile (Générateur) | Électrolyseur (Récepteur) |
+|------------|-------------------|---------------------------|
+| Sens d'évolution | Spontané (naturel) | Forcé (contre nature) |
+| Transformation | Chimique → Électrique | Électrique → Chimique |
+| Anode (Oxydation) | Pôle **(−)** | Pôle **(+)** |
+| Cathode (Réduction) | Pôle **(+)** | Pôle **(−)** |
+| $Q_r$ | Tend vers $K$ | S'éloigne de $K$ |
 
-$$n = \frac{Q}{n_e \times F} = \frac{I \times \Delta t}{n_e \times F}$$
+## 7. Aspect Quantitatif : Loi de Faraday
 
-où $n_e$ est le nombre d'électrons échangés.
+### La relation fondamentale
 
-<Method title="Calculer la masse déposée par électrolyse">
-1. Calculer la quantité d'électricité : $Q = I \times \Delta t$
-2. Calculer la quantité de matière d'électrons : $n_{e^-} = \frac{Q}{F}$
-3. Utiliser la stœchiométrie pour trouver $n_{métal}$
-4. Calculer la masse : $m = n \times M$
-</Method>
+:::theorem[Loi de Faraday]
+$$Q = I \times \Delta t = n(e^-) \times F$$
 
-## Comparaison pile / électrolyse
+- $Q$ = charge électrique (Coulombs, C)
+- $I$ = intensité du courant (Ampères, A)
+- $\Delta t$ = durée (secondes, s)
+- $n(e^-)$ = quantité de matière d'électrons (mol)
+- $F \approx 96500$ C·mol⁻¹ (constante de Faraday)
+:::
 
-| | Pile | Électrolyse |
-|---|---|---|
-| Transformation | Spontanée | Forcée |
-| Énergie | Chimique → Électrique | Électrique → Chimique |
-| Anode | Borne - | Borne + |
-| Cathode | Borne + | Borne - |
+### Capacité d'une pile
 
-## Exercice de compréhension
+:::definition
+**Capacité**
 
-<Exercise id="comp-pile-1">
-On réalise l'électrolyse d'une solution de sulfate de cuivre avec des électrodes de graphite. Un courant de 2.0 A circule pendant 30 minutes.
+La capacité $Q_{max}$ d'une pile est la charge maximale qu'elle peut fournir avant d'être usée (réactif limitant épuisé).
 
-Données : M(Cu) = 63.5 g/mol, F = 96500 C/mol
+**Unité courante** : Ampère-heure (A·h)
+- Conversion : $1\ A \cdot h = 3600\ C$
+:::
 
-1. Écrire la réaction à la cathode.
-2. Calculer la quantité d'électricité mise en jeu.
-3. Calculer la masse de cuivre déposée.
+### Méthode de résolution : Dépôt métallique
 
-<Solution>
-1. À la cathode (réduction) :
-$$Cu^{2+} + 2e^- \rightarrow Cu$$
+:::method[Calcul de masse déposée]
+**Étapes** :
+1. **Écrire la demi-équation** à la cathode : $M^{n+} + ne^- \rightarrow M$
+2. **Calculer la charge** : $Q = I \times \Delta t$
+3. **Calculer $n(e^-)$** : $n(e^-) = \frac{Q}{F}$
+4. **Lien stœchiométrique** : $n(M) = \frac{n(e^-)}{n}$ (n = nombre d'électrons)
+5. **Calculer la masse** : $m = n(M) \times M_{molaire}$
 
-2. Quantité d'électricité :
-$$Q = I \times \Delta t = 2.0 \times 30 \times 60 = 3600 \text{ C}$$
+**Formule directe** :
+$$m = \frac{I \times \Delta t \times M_{molaire}}{n \times F}$$
+:::
 
-3. Quantité de matière d'électrons :
-$$n_{e^-} = \frac{Q}{F} = \frac{3600}{96500} = 0.0373 \text{ mol}$$
+## 8. Exemples Résolus
 
-D'après la stœchiométrie, $n_{Cu} = \frac{n_{e^-}}{2} = 0.0187$ mol
+:::example[Argenture d'une fourchette]
+**Données** : $I = 2{,}0$ A, $\Delta t = 20$ min, couple $Ag^+/Ag$, $M(Ag) = 108$ g/mol
 
-Masse de cuivre :
-$$m = n_{Cu} \times M_{Cu} = 0.0187 \times 63.5 = 1.2 \text{ g}$$
-</Solution>
-</Exercise>
+**Solution** :
+1. Réaction cathode : $Ag^+ + e^- \rightarrow Ag$ (1 électron par atome)
+2. Charge : $Q = 2{,}0 \times (20 \times 60) = 2400$ C
+3. Moles d'électrons : $n(e^-) = \frac{2400}{96500} = 0{,}0249$ mol
+4. Moles d'argent : $n(Ag) = n(e^-) = 0{,}0249$ mol
+5. Masse : $m = 0{,}0249 \times 108 = \mathbf{2{,}7\ g}$
+:::
 
-## Points clés à retenir
+:::example[Électrolyse CuBr₂]
+**Données** : $I = 12$ mA, $\Delta t = 15$ min, $M(Br_2) = 160$ g/mol
 
-<Summary>
-- Pile : énergie chimique → électrique (spontané)
-- Électrolyse : énergie électrique → chimique (forcé)
-- L'anode est toujours le siège de l'oxydation
-- Pile : anode (-), cathode (+) / Électrolyse : anode (+), cathode (-)
-- Relation quantité d'électricité : $Q = n_{e^-} \times F$
-</Summary>
+**Solution** :
+1. Demi-équations :
+   - Anode : $2Br^- \rightarrow Br_2 + 2e^-$
+   - Cathode : $Cu^{2+} + 2e^- \rightarrow Cu$
+2. Charge : $Q = 12 \times 10^{-3} \times (15 \times 60) = 11$ C
+3. $n(e^-) = \frac{11}{96500} = 1{,}14 \times 10^{-4}$ mol
+4. D'après la stœchiométrie : $n(Br_2) = \frac{n(e^-)}{2} = 5{,}7 \times 10^{-5}$ mol
+5. Masse : $m = 5{,}7 \times 10^{-5} \times 160 = \mathbf{9{,}1\ mg}$
+:::
+
+:::example[Capacité d'une pile]
+**Données** : Une pile débite $I = 0{,}20$ A pendant $3{,}0$ h.
+
+**Solution** :
+- Capacité : $C = I \times \Delta t = 0{,}20 \times 3{,}0 = 0{,}60$ A·h
+- En coulombs : $Q = 0{,}20 \times (3{,}0 \times 3600) = 2160$ C
+:::
+
+## 9. Erreurs Classiques
+
+:::warning[Erreur 1 : Confondre anode/cathode avec +/− dans tous les cas]
+Les définitions anode = oxydation et cathode = réduction sont **toujours vraies**.
+Mais les polarités changent :
+- Pile : anode (−), cathode (+)
+- Électrolyse : anode (+), cathode (−)
+
+**Astuce bac** : Écris d'abord "oxydation ici / réduction là", puis seulement les signes.
+:::
+
+:::warning[Erreur 2 : Oublier le pont salin (ou son rôle)]
+Sans pont salin, on ne ferme pas le circuit ionique et on perd l'électroneutralité. La pile ne fonctionne pas !
+:::
+
+:::warning[Erreur 3 : Mauvaise stœchiométrie "électrons ↔ espèce formée"]
+Toujours lire la demi-équation ! Par exemple :
+- $Cu^{2+} + \mathbf{2}e^- \rightarrow Cu$ → 2 électrons par atome de Cu
+- $Ag^+ + \mathbf{1}e^- \rightarrow Ag$ → 1 électron par atome d'Ag
+:::
+
+:::warning[Erreur 4 : Confusion de symboles]
+Attention à ne pas confondre :
+- $E$ = tension / force électromotrice
+- $e$ = charge élémentaire ($1{,}6 \times 10^{-19}$ C)
+- $e^-$ = l'électron (particule)
+:::
+
+## Mini-résumé
+
+| Concept | Formule / Règle | À retenir |
+|---------|-----------------|-----------|
+| Anode | Oxydation | Voyelle → Voyelle |
+| Cathode | Réduction | Consonne → Consonne |
+| Pile | Anode (−), Cathode (+) | Spontané, générateur |
+| Électrolyse | Anode (+), Cathode (−) | Forcé, récepteur |
+| Loi de Faraday | $Q = I\Delta t = n(e^-)F$ | Lien électrique ↔ chimique |
+| Capacité | $Q_{max}$ en A·h | 1 A·h = 3600 C |
