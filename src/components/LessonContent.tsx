@@ -96,20 +96,23 @@ function processContent(content: string): string {
     }
   )
 
-  // Process tables (handle tables at end of file without trailing newline)
-  processed = processed.replace(
-    /(?:^|\n)((?:\|[^\n]+\|(?:\n|$))+)/g,
+  // Process tables
+  // First, ensure content ends with newline for consistent matching
+  const contentForTables = processed.endsWith('\n') ? processed : processed + '\n'
+  processed = contentForTables.replace(
+    /(?:^|\n)((?:\|[^\n]+\|\n)+)/g,
     (match, tableContent) => {
       const rows = tableContent.trim().split('\n').filter((row: string) => row.trim())
       if (rows.length < 2) return match
 
       // Check if second row is separator (|---|---|)
-      const separatorPattern = /^\|[\s\-:]+\|$/
-      if (!separatorPattern.test(rows[1].trim().replace(/\|[\s\-:]+/g, '|---|'))) {
-        // Not a valid table, check if it looks like a separator row
-        if (!/^[\s|:-]+$/.test(rows[1].replace(/[^|:-]/g, ''))) {
-          return match
-        }
+      const isSeparator = (row: string) => {
+        const cleaned = row.replace(/[^|:\-\s]/g, '')
+        return /^\|[\s:\-]+(\|[\s:\-]+)+\|$/.test(cleaned) || /^[\s|:\-]+$/.test(cleaned)
+      }
+
+      if (!isSeparator(rows[1])) {
+        return match
       }
 
       const parseRow = (row: string): string[] => {
