@@ -3298,5 +3298,179 @@
     ],
     "tags": ["kepler", "vénus", "période"],
     "isComprehension": false
+  },
+  {
+    "id": "ex-titr-1",
+    "lessonId": "titrages",
+    "title": "Application de la loi de Beer-Lambert",
+    "difficulty": 1,
+    "statement": "Une solution de permanganate de potassium a une absorbance A = 0,80 à 530 nm. Le coefficient d'extinction molaire est ε = 2200 L·mol⁻¹·cm⁻¹. La cuve fait 1 cm de largeur.\n\nCalculer la concentration de la solution.",
+    "hints": [
+      "Utilise la formule A = ε × ℓ × C",
+      "Isole C dans la formule",
+      "Vérifie les unités."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Poser la formule",
+        "content": "A = ε × ℓ × C  ⟹  C = A / (ε × ℓ)",
+        "explanation": "On isole la concentration C."
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "C = 0,80 / (2200 × 1) = 3,64 × 10⁻⁴ mol/L",
+        "explanation": "Application directe avec les valeurs données."
+      }
+    ],
+    "method": "Application directe de Beer-Lambert",
+    "commonMistakes": [
+      "Erreur de calcul sur les puissances de 10",
+      "Oublier de vérifier que la solution est diluée (condition de validité)"
+    ],
+    "tags": ["spectrophotométrie", "beer-lambert", "calcul"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-titr-2",
+    "lessonId": "titrages",
+    "title": "Loi de Kohlrausch : Calcul de conductivité",
+    "difficulty": 2,
+    "statement": "Une solution de chlorure de sodium (Na⁺ + Cl⁻) a une concentration C = 5,0 × 10⁻³ mol/L.\n\nDonnées : λ(Na⁺) = 5,0 mS·m²·mol⁻¹ et λ(Cl⁻) = 7,6 mS·m²·mol⁻¹.\n\nCalculer la conductivité σ de la solution.",
+    "hints": [
+      "Attention à l'unité de concentration ! Il faut convertir mol/L en mol/m³.",
+      "σ = λ(Na⁺) × [Na⁺] + λ(Cl⁻) × [Cl⁻]",
+      "1 mS = 10⁻³ S"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion de la concentration",
+        "content": "C = 5,0 × 10⁻³ mol/L = 5,0 mol/m³",
+        "explanation": "Pour passer de mol/L à mol/m³, on multiplie par 1000."
+      },
+      {
+        "step": 2,
+        "title": "Application de Kohlrausch",
+        "content": "σ = λ(Na⁺) × [Na⁺] + λ(Cl⁻) × [Cl⁻]\nσ = (5,0 + 7,6) × 10⁻³ × 5,0 = 12,6 × 10⁻³ × 5,0 = 0,063 S/m",
+        "explanation": "On somme les contributions de chaque ion."
+      }
+    ],
+    "method": "Utilisation de la loi de Kohlrausch avec conversion d'unités",
+    "commonMistakes": [
+      "Oublier de convertir mol/L en mol/m³",
+      "Oublier de convertir mS en S"
+    ],
+    "tags": ["conductivité", "kohlrausch", "unités"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-titr-3",
+    "lessonId": "titrages",
+    "title": "Relation d'équivalence (Titrage redox)",
+    "difficulty": 2,
+    "statement": "On titre 20,0 mL d'une solution de diiode I₂ (concentration C₁) par du thiosulfate de sodium (2Na⁺ + S₂O₃²⁻) de concentration C₂ = 0,10 mol/L.\n\nÉquation : I₂ + 2 S₂O₃²⁻ → 2 I⁻ + S₄O₆²⁻\n\nLe volume équivalent est V_E = 14,0 mL. Calculer C₁.",
+    "hints": [
+      "Écris la relation à l'équivalence en tenant compte des coefficients stœchiométriques (1 et 2).",
+      "n(I₂) / 1 = n(S₂O₃²⁻) / 2"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Relation à l'équivalence",
+        "content": "n(I₂)_initial / 1 = n(S₂O₃²⁻)_versé / 2",
+        "explanation": "Les réactifs sont introduits dans les proportions stœchiométriques."
+      },
+      {
+        "step": 2,
+        "title": "Remplacement par les concentrations",
+        "content": "C₁ × V₁ = (C₂ × V_E) / 2",
+        "explanation": "On remplace n par C × V."
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "C₁ = (C₂ × V_E) / (2 × V₁) = (0,10 × 14,0) / (2 × 20,0) = 0,035 mol/L",
+        "explanation": "Attention au facteur 2 provenant de l'équation."
+      }
+    ],
+    "method": "Exploitation de l'équivalence d'un titrage avec coefficients stœchiométriques",
+    "commonMistakes": [
+      "Oublier le coefficient stœchiométrique 2",
+      "Inverser C₁ et C₂"
+    ],
+    "tags": ["titrage", "équivalence", "calcul"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-titr-4",
+    "lessonId": "titrages",
+    "title": "Interprétation d'une courbe de titrage pH-métrique",
+    "difficulty": 1,
+    "statement": "On dose un acide par une base. La courbe pH = f(V) montre un saut de pH.\n\nLe pH à la demi-équivalence (V = V_E/2) vaut 4,8.\n\nQue peut-on dire sur l'acide dosé ?",
+    "hints": [
+      "À la demi-équivalence, pH = pKa pour un acide faible.",
+      "Compare la valeur 4,8 avec les pKa connus."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Propriété de la demi-équivalence",
+        "content": "Pour un acide faible, à V = V_E/2, on a pH = pKa.",
+        "explanation": "C'est une propriété caractéristique des couples acide faible/base faible."
+      },
+      {
+        "step": 2,
+        "title": "Identification",
+        "content": "Le pKa est de 4,8. C'est le pKa du couple CH₃COOH/CH₃COO⁻ (acide éthanoïque).",
+        "explanation": "L'acide dosé est un acide faible, probablement l'acide éthanoïque."
+      }
+    ],
+    "method": "Analyse de courbe pH-métrique et identification par le pKa",
+    "commonMistakes": [
+      "Confondre pH à l'équivalence et pH à la demi-équivalence"
+    ],
+    "tags": ["pH-métrie", "pKa", "identification"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-titr-5",
+    "lessonId": "titrages",
+    "title": "Allure de courbe conductimétrique",
+    "difficulty": 3,
+    "statement": "On titre une solution d'acide chlorhydrique (H₃O⁺ + Cl⁻) par de la soude (Na⁺ + HO⁻).\n\nDonnées : λ(H₃O⁺) > λ(HO⁻) > λ(Cl⁻) ≈ λ(Na⁺).\n\nPrévoir l'allure de la courbe de conductivité σ = f(V).",
+    "hints": [
+      "Avant l'équivalence : H₃O⁺ disparaît, Na⁺ apparaît.",
+      "Après l'équivalence : Na⁺ et HO⁻ s'accumulent.",
+      "Compare les conductivités molaires."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Avant l'équivalence",
+        "content": "On remplace H₃O⁺ (très conducteur) par Na⁺ (peu conducteur). La conductivité diminue fortement.",
+        "explanation": "La pente est négative car λ(H₃O⁺) >> λ(Na⁺)."
+      },
+      {
+        "step": 2,
+        "title": "Après l'équivalence",
+        "content": "On ajoute des ions Na⁺ et HO⁻ (conducteur) sans réaction. La conductivité augmente.",
+        "explanation": "La pente est positive car on ajoute des ions."
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "La courbe a une forme en V : décroissance puis croissance. Le minimum correspond à V_E.",
+        "explanation": "L'intersection des deux droites donne le volume équivalent."
+      }
+    ],
+    "method": "Analyse qualitative par comparaison des λ",
+    "commonMistakes": [
+      "Oublier les ions spectateurs (Cl⁻)",
+      "Ne pas connaître l'ordre de grandeur des λ (H⁺ et OH⁻ conduisent très bien)"
+    ],
+    "tags": ["conductimétrie", "courbe", "interprétation"],
+    "isComprehension": true
   }
 ]

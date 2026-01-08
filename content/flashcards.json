@@ -1105,5 +1105,95 @@
     "tags": ["physique", "satellite", "définition"],
     "level": 2,
     "category": "definition"
+  },
+  {
+    "id": "fc-titr-1",
+    "lessonId": "titrages",
+    "front": "Loi de Beer-Lambert (Formule)",
+    "back": "$$A = \\varepsilon \\cdot \\ell \\cdot C$$\n\n$A$ : Absorbance (sans unité)\n$\\varepsilon$ : Coefficient d'extinction molaire (L·mol⁻¹·cm⁻¹)\n$\\ell$ : Largeur de la cuve (cm)\n$C$ : Concentration (mol/L)",
+    "tags": ["chimie", "absorbance", "spectrophotométrie"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-titr-2",
+    "lessonId": "titrages",
+    "front": "Loi de Kohlrausch (Formule)",
+    "back": "$$\\sigma = \\sum \\lambda_i \\times [X_i]$$\n\n$\\sigma$ : Conductivité (S/m)\n$\\lambda_i$ : Conductivité molaire ionique\n$[X_i]$ : Concentration en **mol/m³**\n\n(1 mol/L = 1000 mol/m³)",
+    "tags": ["chimie", "conductivité", "ions"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-titr-3",
+    "lessonId": "titrages",
+    "front": "Définition de l'équivalence d'un titrage",
+    "back": "État du système où les réactifs (titré et titrant) ont été introduits dans les proportions stœchiométriques.\n\nIl y a changement de réactif limitant à ce moment précis.",
+    "tags": ["chimie", "titrage", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-titr-4",
+    "lessonId": "titrages",
+    "front": "Relation à l'équivalence pour : $aA + bB \\rightarrow$ Produits",
+    "back": "$$\\frac{n_{A,initial}}{a} = \\frac{n_{B,équivalence}}{b}$$\n\nSoit avec les concentrations :\n$$\\frac{C_A \\times V_A}{a} = \\frac{C_B \\times V_E}{b}$$",
+    "tags": ["chimie", "titrage", "calcul"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-titr-5",
+    "lessonId": "titrages",
+    "front": "Comment repérer l'équivalence sur un titrage pH-métrique ?",
+    "back": "Par le **saut de pH** (point d'inflexion).\n\n- Méthode des tangentes parallèles\n- Méthode de la dérivée ($V_E$ au maximum de $dpH/dV$)",
+    "tags": ["chimie", "pH-métrie", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-titr-6",
+    "lessonId": "titrages",
+    "front": "Comment repérer l'équivalence sur un titrage conductimétrique ?",
+    "back": "Par la **rupture de pente** de la courbe $\\sigma = f(V)$.\n\nL'équivalence est à l'intersection des deux segments de droite.",
+    "tags": ["chimie", "conductimétrie", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-titr-7",
+    "lessonId": "titrages",
+    "front": "Caractéristiques d'une réaction de titrage",
+    "back": "La réaction doit être :\n1. **Totale** (quantitative)\n2. **Rapide**\n3. **Unique** (pas de réactions parasites)",
+    "tags": ["chimie", "titrage", "propriété"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-titr-8",
+    "lessonId": "titrages",
+    "front": "Différence entre Dosage et Titrage",
+    "back": "**Dosage** : Détermination d'une quantité de matière ou concentration (terme général).\n\n**Titrage** : Méthode chimique de dosage utilisant une réaction chimique destructive.",
+    "tags": ["chimie", "vocabulaire", "définition"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-titr-9",
+    "lessonId": "titrages",
+    "front": "Choix de l'indicateur coloré pour un titrage pH-métrique",
+    "back": "L'indicateur coloré adapté est celui dont la **zone de virage** contient le pH à l'équivalence ($pH_E$).\n\nExemples :\n- BBT : 6.0 - 7.6\n- Phénolphtaléine : 8.2 - 10.0",
+    "tags": ["chimie", "indicateur", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-titr-10",
+    "lessonId": "titrages",
+    "front": "Conversion mol/L vers mol/m³",
+    "back": "$$1 \\text{ mol/L} = 1000 \\text{ mol/m}^3$$\n\n(Indispensable pour la loi de Kohlrausch en unités SI)",
+    "tags": ["chimie", "conversion", "unités"],
+    "level": 1,
+    "category": "formula"
   }
 ]

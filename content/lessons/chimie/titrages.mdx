@@ -1,167 +1,311 @@
 ---
 id: titrages
-title: "Titrages acido-basiques et d'oxydoréduction"
+title: "Dosages et Titrages : Méthodes Physiques et Chimiques"
 track: chimie
 chapter: reactions
 level: 3
-estimatedTime: 50
+estimatedTime: 60
 prerequisites:
   - acides-bases
   - oxydoreduction
 tags:
   - titrage
   - équivalence
-  - indicateur coloré
+  - beer-lambert
+  - kohlrausch
+  - spectrophotométrie
   - conductimétrie
-objectives:
-  - Comprendre le principe d'un titrage
-  - Déterminer l'équivalence par différentes méthodes
-  - Exploiter un titrage pour déterminer une concentration
-  - Choisir un indicateur coloré adapté
+  - indicateur coloré
+order: 5
 ---
 
-# Titrages
+# Dosages et Titrages : Analyse d'un Système Chimique
 
-## Intuition et analogie
+## Intuition et analogies
 
-Imagine que tu veux savoir **combien de sucre** il y a dans un verre de limonade, mais tu ne peux pas goûter ! Voici l'astuce : tu ajoutes quelque chose qui réagit avec le sucre, et tu comptes combien tu en as ajouté avant que tout le sucre ait réagi.
+:::tip[L'enquête du chimiste]
+Imagine que tu es un détective chimiste : tu as un verre de limonade et tu veux savoir **combien de sucre** il contient, mais tu ne peux pas goûter !
 
-C'est exactement le principe du **titrage** ! Tu as une solution mystère (le "titré") dont tu ignores la concentration. Tu y ajoutes goutte à goutte une solution connue (le "titrant") qui réagit avec elle. Quand tout le réactif mystère a été consommé, tu as atteint l'**équivalence**.
+Ta stratégie : ajouter goutte à goutte quelque chose qui réagit avec le sucre, et compter exactement combien tu en as ajouté avant que tout le sucre ait réagi. À ce moment précis — l'**équivalence** — tu connais la quantité de sucre !
+:::
 
-Comment sait-on qu'on a atteint l'équivalence ?
-- Un **indicateur coloré** change de couleur (comme le BBT qui passe du jaune au bleu)
-- La **conductivité** de la solution change brusquement
-- Le **pH** fait un bond spectaculaire
+:::tip[Analogie du tableau de bord]
+Pendant un dosage, tu ne vois pas directement les quantités de matière — comme en voiture, tu regardes un **indicateur** :
 
-C'est comme remplir un seau percé : tant qu'il y a du réactif à consommer, rien ne "déborde". À l'équivalence, le seau est plein — une goutte de plus et tout change !
+- **pH** : "jauge acide/base" (lié à $[\text{H}_3\text{O}^+]$)
+- **Conductivité $\sigma$** : "densité d'ions conducteurs" (plus il y a d'ions mobiles, plus ça conduit)
+- **Absorbance $A$** : "combien la solution absorbe la lumière" (colorée → absorbe davantage)
+:::
 
-La beauté du titrage : connaissant le volume ajouté à l'équivalence et la concentration du titrant, tu calcules exactement la concentration initiale. Précis comme une balance de chimiste !
+:::tip[Analogie du jeu de chaises]
+Pour une réaction 1:1 (acide + base), imagine un jeu de chaises musicales.
 
-## Introduction
+À l'équivalence, il y a **exactement autant de joueurs (base)** que de **chaises (acide)** : tout est occupé, rien ne reste !
 
-Un **titrage** est une technique de dosage qui permet de déterminer la concentration d'une espèce chimique en solution en la faisant réagir avec une solution de concentration connue.
+C'est la définition : **mélange stœchiométrique**, réactifs entièrement consommés.
+:::
 
-## Principe du titrage
+:::definition[Dosage vs Titrage]
+- **Dosage** : terme général désignant la détermination d'une concentration (méthode physique ou chimique)
+- **Titrage** : méthode chimique de dosage utilisant une réaction chimique avec un réactif de concentration connue
+:::
 
-### Vocabulaire
+---
 
-<Definition title="Réactif titrant et titré">
-- **Réactif titré** : espèce dont on cherche la concentration (dans le bécher)
-- **Réactif titrant** : espèce de concentration connue (dans la burette)
-</Definition>
+## 1. Les Méthodes Physiques (Dosage par Étalonnage)
 
-### Réaction de titrage
+Ces méthodes sont **non destructives** : elles ne modifient pas la solution analysée. Elles mesurent une grandeur physique $X$ proportionnelle à la concentration $C$ :
 
-La réaction de titrage doit être :
-- **Rapide**
-- **Totale** (ou quasi-totale)
-- **Unique** (une seule réaction)
+$$X = k \times C$$
 
-### Équivalence
+### A. La Spectrophotométrie (Loi de Beer-Lambert)
 
-<Definition title="Équivalence">
-L'équivalence est atteinte lorsque les réactifs ont été introduits dans les proportions stœchiométriques. À l'équivalence, il y a changement de réactif limitant.
-</Definition>
+Si une solution est colorée (ou absorbe dans l'UV), elle absorbe une partie de la lumière. On mesure l'**absorbance** $A$ (sans unité) à une longueur d'onde spécifique $\lambda_{max}$.
 
-Pour une réaction : $a \cdot A + b \cdot B \rightarrow$ produits
+:::property[Loi de Beer-Lambert]
+$$A = \varepsilon \cdot \ell \cdot C$$
+
+- $A$ : Absorbance (sans unité)
+- $\varepsilon$ : Coefficient d'extinction molaire ($\text{L} \cdot \text{mol}^{-1} \cdot \text{cm}^{-1}$)
+- $\ell$ : Largeur de la cuve (cm)
+- $C$ : Concentration ($\text{mol} \cdot \text{L}^{-1}$)
+:::
+
+:::tip[Analogie des lunettes de soleil]
+Imagine que tu superposes des paires de lunettes de soleil. Plus tu en empiles (concentration élevée) ou plus les verres sont épais ($\ell$), moins la lumière passe : l'absorbance augmente !
+:::
+
+:::warning[Condition de validité]
+La loi de Beer-Lambert n'est valable que pour des **solutions diluées** ($C < 10^{-2}~\text{mol/L}$ environ). Au-delà, la proportionnalité n'est plus respectée.
+:::
+
+### B. La Conductimétrie (Loi de Kohlrausch)
+
+Si la solution contient des ions, elle conduit le courant électrique. On mesure la **conductivité** $\sigma$ (en S·m⁻¹).
+
+:::property[Loi de Kohlrausch]
+$$\sigma = \sum_i \lambda_i \cdot [X_i]$$
+
+- $\sigma$ : Conductivité ($\text{S} \cdot \text{m}^{-1}$)
+- $\lambda_i$ : Conductivité molaire ionique de l'ion $i$ ($\text{S} \cdot \text{m}^2 \cdot \text{mol}^{-1}$)
+- $[X_i]$ : Concentration de l'ion $i$ (**en $\text{mol} \cdot \text{m}^{-3}$** !)
+:::
+
+:::warning[Attention aux unités !]
+Dans la loi de Kohlrausch (unités SI), la concentration doit être en **mol/m³** et non mol/L !
+
+$$1~\text{mol/L} = 1000~\text{mol/m}^3$$
+:::
+
+:::tip[Analogie de l'autoroute]
+Les ions sont comme des voitures transportant des charges électriques sur une autoroute. La conductivité $\sigma$ représente le flux de trafic total.
+
+- Les **petits ions rapides** comme $\text{H}^+$ sont des motos (grand $\lambda$)
+- Les **gros ions lents** sont des camions (petit $\lambda$)
+
+Le trafic total dépend du nombre de véhicules ($C$) et de leur vitesse ($\lambda$).
+:::
+
+### C. Méthode par étalonnage
+
+:::method[Protocole du dosage par étalonnage]
+1. Préparer une **gamme étalon** : solutions de concentrations connues
+2. Mesurer la grandeur physique ($A$ ou $\sigma$) pour chaque étalon
+3. Tracer la **droite d'étalonnage** : $A = f(C)$ ou $\sigma = f(C)$
+4. Mesurer la grandeur de la solution inconnue
+5. Reporter sur la droite pour lire $C_{inconnue}$
+:::
+
+---
+
+## 2. Les Méthodes Chimiques (Titrages)
+
+Le titrage est une méthode **destructive** et rapide. On fait réagir l'espèce à doser (titrée) avec une espèce de concentration connue (titrante).
+
+### A. Vocabulaire
+
+:::definition[Réactif titré et titrant]
+- **Réactif titré** : espèce dont on cherche la concentration (dans le **bécher**)
+- **Réactif titrant** : espèce de concentration connue (dans la **burette**)
+:::
+
+### B. Caractéristiques de la réaction de titrage
+
+:::property[La réaction de titrage doit être]
+1. **Totale** (quantitative) : le réactif limitant est entièrement consommé
+2. **Rapide** : l'état final est atteint quasi-instantanément
+3. **Unique** : pas de réactions parasites
+:::
+
+### C. L'Équivalence
+
+:::definition[Équivalence]
+L'équivalence est atteinte lorsque les réactifs (titré et titrant) ont été introduits dans les **proportions stœchiométriques**.
+
+À ce moment précis, il y a **changement de réactif limitant**.
+:::
+
+Pour une réaction : $a \cdot A_{titré} + b \cdot B_{titrant} \rightarrow \text{Produits}$
 
 À l'équivalence :
-$$\frac{n_A}{a} = \frac{n_B}{b}$$
+$$\frac{n_A(\text{initial})}{a} = \frac{n_B(\text{versé à l'équivalence})}{b}$$
 
-<Formula title="Relation à l'équivalence">
-$$\frac{C_A \cdot V_A}{a} = \frac{C_B \cdot V_{BE}}{b}$$
-Où $V_{BE}$ est le volume de titrant versé à l'équivalence.
-</Formula>
+:::property[Relation à l'équivalence]
+$$\frac{C_A \times V_A}{a} = \frac{C_B \times V_E}{b}$$
 
-## Titrages acido-basiques
+Où $V_E$ est le volume équivalent (volume de titrant versé à l'équivalence).
+:::
 
-### Exemple : titrage d'un acide par une base
+:::tip[Analogie du sandwich]
+Tu fais des sandwichs avec **1 tranche de jambon** (titré A) et **2 tranches de pain** (titrant B).
 
-Réaction : $HA + HO^- \rightarrow A^- + H_2O$
+L'équation est : $1~\text{Jambon} + 2~\text{Pain} \rightarrow \text{Sandwich}$
 
-À l'équivalence : $n(HA) = n(HO^-)$
-$$C_A \cdot V_A = C_B \cdot V_{BE}$$
+Si tu as 5 tranches de jambon sur la table, combien de pain faut-il apporter pour qu'il ne reste **ni jambon ni pain** ?
 
-### Évolution du pH
+Réponse : 10 tranches. Ce moment précis où tu as apporté exactement ce qu'il faut est l'**équivalence** !
+:::
 
-Le pH évolue au cours du titrage :
-- Avant l'équivalence : excès de réactif titré
-- À l'équivalence : changement brutal de pH
-- Après l'équivalence : excès de réactif titrant
+:::tip[Analogie du seau percé]
+C'est comme remplir un seau percé : tant qu'il y a du réactif à consommer, rien ne "déborde". À l'équivalence, le seau est plein — une goutte de plus et tout change !
+:::
 
-<Method title="Repérer l'équivalence sur une courbe de pH">
-L'équivalence correspond au point d'inflexion de la courbe pH = f(V).
-C'est le point où la dérivée $\frac{dpH}{dV}$ est maximale.
-</Method>
+---
 
-### Indicateurs colorés
+## 3. Repérage de l'Équivalence
 
-<Definition title="Zone de virage">
-Un indicateur coloré change de couleur dans une zone de pH appelée zone de virage. L'indicateur doit être choisi pour que sa zone de virage contienne le pH à l'équivalence.
-</Definition>
+### A. Titrage pH-métrique
+
+On suit l'évolution du pH au cours du titrage. L'équivalence correspond au **saut de pH** (point d'inflexion).
+
+:::method[Repérer $V_E$ sur une courbe pH-métrique]
+**Méthode des tangentes :**
+1. Tracer deux tangentes parallèles à la courbe (avant et après le saut)
+2. Tracer une droite équidistante des deux tangentes
+3. $V_E$ est l'abscisse du point d'intersection avec la courbe
+
+**Méthode de la dérivée :**
+- Le maximum de $\frac{dpH}{dV}$ donne directement $V_E$
+:::
+
+### B. Titrage conductimétrique
+
+On suit la conductivité $\sigma$ de la solution. La courbe $\sigma = f(V)$ présente un **changement de pente** à l'équivalence.
+
+:::method[Repérer $V_E$ sur une courbe conductimétrique]
+1. Tracer les deux droites moyennes passant par les points de chaque portion
+2. $V_E$ est l'abscisse du **point d'intersection** des deux droites
+:::
+
+:::example[Interprétation : titrage HCl par NaOH]
+**Avant l'équivalence :** On consomme les ions $\text{H}_3\text{O}^+$ (très conducteurs, $\lambda$ élevé) qui sont remplacés par $\text{Na}^+$ (peu conducteur).
+→ La conductivité **diminue**
+
+**Après l'équivalence :** On ajoute des ions $\text{Na}^+$ et $\text{HO}^-$ (conducteur) sans réaction.
+→ La conductivité **augmente**
+
+**Résultat :** La courbe a une forme en **V** !
+:::
+
+:::warning[Ions très conducteurs]
+$\text{H}^+$ et $\text{HO}^-$ ont des conductivités molaires ioniques **beaucoup plus élevées** que les autres ions. Leur disparition ou apparition provoque des variations importantes de conductivité.
+:::
+
+### C. Titrage colorimétrique
+
+On utilise un **indicateur coloré** dont la zone de virage contient le pH à l'équivalence.
+
+:::definition[Zone de virage]
+Un indicateur coloré change de couleur dans une zone de pH appelée **zone de virage**.
+
+L'indicateur doit être choisi pour que sa zone de virage **contienne le pH à l'équivalence** ($pH_E$).
+:::
 
 | Indicateur | Zone de virage | Couleur acide | Couleur basique |
-|------------|----------------|---------------|-----------------|
+|:-----------|:---------------|:--------------|:----------------|
 | Hélianthine | 3.1 - 4.4 | Rouge | Jaune |
 | BBT | 6.0 - 7.6 | Jaune | Bleu |
 | Phénolphtaléine | 8.2 - 10.0 | Incolore | Rose |
 
-## Titrages conductimétrique
+---
 
-### Principe
+## 4. Titrages particuliers
 
-La conductivité $\sigma$ de la solution dépend des ions présents :
-$$\sigma = \sum_i \lambda_i \cdot [X_i]$$
+### A. Titrages acido-basiques
 
-où $\lambda_i$ est la conductivité molaire ionique de l'ion $X_i$.
+:::example[Titrage d'un acide par une base]
+Réaction : $\text{HA} + \text{HO}^- \rightarrow \text{A}^- + \text{H}_2\text{O}$
 
-### Allure de la courbe
+À l'équivalence (stœchiométrie 1:1) :
+$$n(\text{HA}) = n(\text{HO}^-)$$
+$$C_A \times V_A = C_B \times V_E$$
+:::
 
-La courbe $\sigma = f(V)$ présente un changement de pente à l'équivalence.
+:::tip[Demi-équivalence]
+Pour un acide faible, à la **demi-équivalence** ($V = V_E/2$) :
+$$pH = pK_a$$
 
-<Trap title="Conductivités molaires ioniques">
-$H^+$ et $HO^-$ ont des conductivités molaires ioniques beaucoup plus élevées que les autres ions. Leur disparition/apparition provoque des variations importantes de conductivité.
-</Trap>
+C'est une propriété très utile pour identifier un acide !
+:::
 
-## Titrages d'oxydoréduction
+### B. Titrages d'oxydoréduction
 
-### Exemple : titrage du fer(II) par le permanganate
+:::example[Titrage du fer(II) par le permanganate]
+$$5~\text{Fe}^{2+} + \text{MnO}_4^- + 8~\text{H}^+ \rightarrow 5~\text{Fe}^{3+} + \text{Mn}^{2+} + 4~\text{H}_2\text{O}$$
 
-$$5 Fe^{2+} + MnO_4^- + 8H^+ \rightarrow 5 Fe^{3+} + Mn^{2+} + 4H_2O$$
+À l'équivalence :
+$$\frac{n(\text{Fe}^{2+})}{5} = \frac{n(\text{MnO}_4^-)}{1}$$
 
-À l'équivalence : $\frac{n(Fe^{2+})}{5} = \frac{n(MnO_4^-)}{1}$
+**Repérage :** Le permanganate $\text{MnO}_4^-$ est **violet**, les autres espèces sont peu colorées. L'équivalence est repérée par la **persistance de la coloration violette**.
+:::
 
-### Repérage de l'équivalence
+---
 
-- **Colorimétrique** : le permanganate est violet, les autres espèces sont peu colorées. L'équivalence est repérée par la persistance de la coloration violette.
-- **Potentiométrique** : mesure du potentiel E
+## Mini-résumé pour l'examen
 
-## Exercice de compréhension
+| Méthode | Formule clé | Condition / Remarque |
+|:--------|:------------|:---------------------|
+| **Beer-Lambert** | $A = \varepsilon \cdot \ell \cdot C$ | Solutions colorées, diluées |
+| **Kohlrausch** | $\sigma = \sum \lambda_i [X_i]$ | Concentration en **mol/m³** |
+| **Équivalence** | $\frac{C_A V_A}{a} = \frac{C_B V_E}{b}$ | Changement de réactif limitant |
+| **pH-métrie** | Saut de pH | Tangentes ou dérivée |
+| **Conductimétrie** | Rupture de pente | Intersection de deux droites |
 
-<Exercise id="comp-titr-1">
-On titre 20.0 mL d'une solution d'acide chlorhydrique par une solution d'hydroxyde de sodium de concentration $C_B = 0.10$ mol/L. L'équivalence est atteinte pour $V_{BE} = 15.0$ mL.
+:::tip[À retenir absolument]
+1. L'équivalence = réactifs en proportions stœchiométriques
+2. Relation : $\frac{C_A V_A}{a} = \frac{C_B V_E}{b}$
+3. Conversion : $1~\text{mol/L} = 1000~\text{mol/m}^3$ (pour Kohlrausch)
+4. Indicateur coloré : zone de virage ⊃ $pH_E$
+:::
 
-1. Écrire l'équation de la réaction de titrage.
-2. Calculer la concentration de l'acide chlorhydrique.
-3. Quel indicateur coloré choisir sachant que le pH à l'équivalence vaut 7 ?
+---
 
-<Solution>
-1. Équation de la réaction :
-$$H_3O^+ + HO^- \rightarrow 2H_2O$$
+## Erreurs classiques (et comment les éviter)
 
-2. À l'équivalence : $n(H_3O^+) = n(HO^-)$
-$$C_A \times V_A = C_B \times V_{BE}$$
-$$C_A = \frac{C_B \times V_{BE}}{V_A} = \frac{0.10 \times 15.0}{20.0} = 0.075 \text{ mol/L}$$
+:::warning[Confondre "équivalence" et "pH neutre"]
+Équivalence = proportions stœchiométriques, **pas forcément pH = 7** !
 
-3. Le pH à l'équivalence est 7. Le **BBT** (zone de virage 6.0 - 7.6) convient car sa zone de virage contient le pH 7.
-</Solution>
-</Exercise>
+Exemple : titrage acide faible/base forte → $pH_E > 7$
 
-## Points clés à retenir
+**Réflexe** : toujours raisonner sur la réaction, pas sur l'intuition du pH.
+:::
 
-<Summary>
-- À l'équivalence : réactifs en proportions stœchiométriques
-- Relation : $\frac{C_A V_A}{a} = \frac{C_B V_{BE}}{b}$
-- Équivalence repérée par : changement de couleur, saut de pH, changement de pente en conductimétrie
-- Choisir un indicateur dont la zone de virage contient le pH à l'équivalence
-</Summary>
+:::warning[En pH-métrie : lire "à l'œil" sans méthode]
+Utilise toujours :
+- La méthode des **tangentes** (géométrique)
+- Ou la méthode de la **dérivée** (maximum de $dpH/dV$)
+:::
+
+:::warning[En conductimétrie : oublier les ions spectateurs]
+Inventorie **tous** les ions présents et compare leurs $\lambda$.
+
+**Réflexe** : écrire la solution sous forme ionique (titré + titrant).
+:::
+
+:::warning[Oublier les coefficients stœchiométriques]
+Pour $a \cdot A + b \cdot B \rightarrow \text{Produits}$ :
+
+$$\frac{n_A}{a} = \frac{n_B}{b} \quad \text{et non} \quad n_A = n_B$$
+
+Le facteur est crucial pour les réactions redox (ex: $5~\text{Fe}^{2+} + \text{MnO}_4^-$).
+:::

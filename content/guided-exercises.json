@@ -1668,6 +1668,175 @@
         }
       ],
       "finalAnswer": "La masse de Mars est d'environ **$6,4 \\times 10^{23}$ kg**."
+    },
+    {
+      "id": "guided-titr-1",
+      "title": "Dosage par étalonnage (Spectrophotométrie)",
+      "subject": "chimie",
+      "chapter": "Dosages et Titrages",
+      "difficulty": "moyen",
+      "estimatedTime": 20,
+      "description": "On veut déterminer la concentration d'une solution de diiode. On réalise une gamme étalon et on mesure l'absorbance.",
+      "question": "Déterminer la concentration de la solution inconnue sachant que son absorbance est A = 0,90 et que la droite d'étalonnage a pour équation A = 420 × C (avec C en mol/L).",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier la méthode",
+          "instruction": "Quelle loi physique relie l'absorbance et la concentration ?",
+          "hint": "C'est une loi de proportionnalité pour les solutions diluées.",
+          "solution": "C'est la loi de **Beer-Lambert** : $A = k \\times C$."
+        },
+        {
+          "id": 2,
+          "title": "Identifier les données",
+          "instruction": "Quelles sont les valeurs de A et de k données dans l'énoncé ?",
+          "hint": "Regarde l'équation de la droite d'étalonnage.",
+          "solution": "L'absorbance mesurée est $A = 0,90$. Le coefficient directeur est $k = 420$ L/mol."
+        },
+        {
+          "id": 3,
+          "title": "Calculer la concentration",
+          "instruction": "Inverse la formule pour trouver C.",
+          "hint": "$C = A / k$.",
+          "solution": "$$C = \\frac{A}{k} = \\frac{0,90}{420} \\approx 2,1 \\times 10^{-3} \\text{ mol/L}$$"
+        }
+      ],
+      "finalAnswer": "La concentration est de **2,1 mmol/L** (ou $2,1 \\times 10^{-3}$ mol/L)."
+    },
+    {
+      "id": "guided-titr-2",
+      "title": "Repérage de l'équivalence (Conductimétrie)",
+      "subject": "chimie",
+      "chapter": "Dosages et Titrages",
+      "difficulty": "facile",
+      "estimatedTime": 15,
+      "description": "On titre une solution de chlorure de sodium par du nitrate d'argent. On obtient une courbe de conductivité présentant un changement de pente.",
+      "question": "Comment déterminer le volume équivalent V_E graphiquement ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Analyser la courbe",
+          "instruction": "Combien de parties distinctes observes-tu sur la courbe σ = f(V) ?",
+          "hint": "La pente change à un moment précis.",
+          "solution": "On observe **deux portions de droite** avec des pentes différentes."
+        },
+        {
+          "id": 2,
+          "title": "Méthode géométrique",
+          "instruction": "Que faut-il tracer pour trouver V_E ?",
+          "hint": "Il faut prolonger les segments.",
+          "solution": "Il faut tracer les **deux droites moyennes** passant par les points expérimentaux de chaque partie."
+        },
+        {
+          "id": 3,
+          "title": "Lecture du volume équivalent",
+          "instruction": "Où se lit le volume équivalent sur le graphe ?",
+          "solution": "Le volume équivalent $V_E$ est l'abscisse du **point d'intersection** des deux droites."
+        }
+      ],
+      "finalAnswer": "Le volume équivalent se lit à l'**intersection des deux segments de droite** sur la courbe conductimétrique."
+    },
+    {
+      "id": "guided-titr-3",
+      "title": "Calcul de concentration après titrage (avec dilution)",
+      "subject": "chimie",
+      "chapter": "Dosages et Titrages",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "On titre 10,0 mL de vinaigre dilué 10 fois par de la soude (0,10 mol/L). Le volume équivalent est 13,0 mL. On cherche la concentration du vinaigre commercial.",
+      "question": "Calculer la concentration C₀ du vinaigre commercial.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Équation de réaction",
+          "instruction": "Écris la réaction entre l'acide éthanoïque (vinaigre) et la soude.",
+          "solution": "$$\\text{CH}_3\\text{COOH} + \\text{HO}^- \\rightarrow \\text{CH}_3\\text{COO}^- + \\text{H}_2\\text{O}$$"
+        },
+        {
+          "id": 2,
+          "title": "Relation à l'équivalence",
+          "instruction": "Quelle relation lie les quantités de matière à l'équivalence ?",
+          "hint": "C'est une réaction 1 pour 1.",
+          "solution": "$n_{acide, dilué} = n_{base, versée}$ soit $C_{dilué} \\times V_{prise} = C_B \\times V_E$."
+        },
+        {
+          "id": 3,
+          "title": "Calcul de C_dilué",
+          "instruction": "Calcule la concentration de la solution diluée.",
+          "solution": "$$C_{dilué} = \\frac{C_B \\times V_E}{V_{prise}} = \\frac{0,10 \\times 13,0}{10,0} = 0,13 \\text{ mol/L}$$"
+        },
+        {
+          "id": 4,
+          "title": "Remonter à la solution mère",
+          "instruction": "Tiens compte du facteur de dilution (10).",
+          "solution": "$$C_0 = 10 \\times C_{dilué} = 10 \\times 0,13 = 1,3 \\text{ mol/L}$$"
+        }
+      ],
+      "finalAnswer": "La concentration du vinaigre commercial est **1,3 mol/L**."
+    },
+    {
+      "id": "guided-titr-4",
+      "title": "Relation stœchiométrique Redox (Fer/Permanganate)",
+      "subject": "chimie",
+      "chapter": "Dosages et Titrages",
+      "difficulty": "difficile",
+      "estimatedTime": 25,
+      "description": "On dose du fer (II) par du permanganate (MnO₄⁻). L'équation est : MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O.",
+      "question": "Établir la relation entre les concentrations à l'équivalence.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Repérer les coefficients",
+          "instruction": "Quels sont les coefficients devant le réactif titrant (MnO₄⁻) et titré (Fe²⁺) ?",
+          "solution": "MnO₄⁻ : **1**\nFe²⁺ : **5**"
+        },
+        {
+          "id": 2,
+          "title": "Relation générale",
+          "instruction": "Écris l'égalité des quantités de matière divisées par les coefficients.",
+          "hint": "$\\frac{n(titré)}{a} = \\frac{n(titrant)}{b}$",
+          "solution": "$$\\frac{n(\\text{Fe}^{2+})}{5} = \\frac{n(\\text{MnO}_4^-)}{1}$$"
+        },
+        {
+          "id": 3,
+          "title": "Développement",
+          "instruction": "Remplace n par C × V.",
+          "solution": "$$\\frac{C_{Fe} \\times V_{Fe}}{5} = C_{Mn} \\times V_E$$\n\nSoit $C_{Fe} = \\frac{5 \\times C_{Mn} \\times V_E}{V_{Fe}}$"
+        }
+      ],
+      "finalAnswer": "**$C_{Fe} = 5 \\times C_{Mn} \\times V_E / V_{Fe}$**\n\n(Attention au facteur 5 provenant des coefficients stœchiométriques !)"
+    },
+    {
+      "id": "guided-titr-5",
+      "title": "Choix de l'indicateur coloré",
+      "subject": "chimie",
+      "chapter": "Dosages et Titrages",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "On titre un acide faible (acide éthanoïque) par une base forte (soude). On a déterminé que le pH à l'équivalence est pH_E = 8,5.",
+      "question": "Quel indicateur coloré choisir parmi : Hélianthine (3,1-4,4), BBT (6,0-7,6), Phénolphtaléine (8,2-10,0) ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Rappeler le critère de choix",
+          "instruction": "Quelle condition doit vérifier un indicateur coloré pour être adapté ?",
+          "hint": "C'est lié à la zone de virage.",
+          "solution": "La **zone de virage** de l'indicateur doit **contenir le pH à l'équivalence** ($pH_E$)."
+        },
+        {
+          "id": 2,
+          "title": "Vérifier chaque indicateur",
+          "instruction": "Parmi les trois indicateurs, lesquels ont une zone de virage contenant pH = 8,5 ?",
+          "solution": "- Hélianthine (3,1-4,4) : **non** (8,5 > 4,4)\n- BBT (6,0-7,6) : **non** (8,5 > 7,6)\n- Phénolphtaléine (8,2-10,0) : **oui** (8,2 < 8,5 < 10,0)"
+        },
+        {
+          "id": 3,
+          "title": "Conclusion",
+          "instruction": "Quel est l'indicateur adapté ?",
+          "solution": "L'indicateur adapté est la **phénolphtaléine** car 8,5 est compris dans sa zone de virage [8,2 ; 10,0]."
+        }
+      ],
+      "finalAnswer": "L'indicateur coloré adapté est la **phénolphtaléine** (incolore → rose)."
     }
   ]
 }

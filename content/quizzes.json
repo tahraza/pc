@@ -1082,35 +1082,53 @@
     "id": "quiz-pre-titrages",
     "lessonId": "titrages",
     "type": "pre",
-    "title": "Pré-test : Titrages",
-    "description": "Évalue tes connaissances avant la leçon sur les titrages",
+    "title": "Pré-test : Dosages et Titrages",
+    "description": "Évalue tes connaissances avant la leçon sur les dosages et titrages",
     "passingScore": 60,
     "questions": [
       {
         "id": "pre-tit-1",
-        "question": "Un titrage permet de déterminer :",
-        "choices": ["La température", "Le pH", "La concentration", "La masse molaire"],
-        "correct": 2,
-        "explanation": "Un titrage permet de déterminer la concentration d'une espèce.",
-        "tag": "objectif",
+        "question": "Quelle grandeur mesure-t-on avec un spectrophotomètre ?",
+        "choices": ["La conductivité (σ)", "L'absorbance (A)", "Le pH", "La pression (P)"],
+        "correct": 1,
+        "explanation": "Le spectrophotomètre mesure l'absorbance A, qui quantifie la capacité d'une solution à absorber la lumière.",
+        "tag": "spectrophotométrie",
         "difficulty": 1
       },
       {
         "id": "pre-tit-2",
-        "question": "À l'équivalence, les réactifs sont :",
-        "choices": ["En excès", "En défaut", "En proportions stœchiométriques", "Absents"],
-        "correct": 2,
-        "explanation": "À l'équivalence, les réactifs ont été introduits en proportions stœchiométriques.",
-        "tag": "équivalence",
+        "question": "Quelle est l'unité de la concentration dans la loi de Kohlrausch (conductivité) ?",
+        "choices": ["mol/L", "mol/m³", "g/L", "mol"],
+        "correct": 1,
+        "explanation": "Attention piège ! Dans la formule σ = Σ λi·[Xi] (unités SI), la concentration doit être en mol/m³. (1 mol/L = 1000 mol/m³).",
+        "tag": "unités",
         "difficulty": 2
       },
       {
         "id": "pre-tit-3",
-        "question": "Un indicateur coloré change de couleur dans :",
-        "choices": ["Toute la gamme de pH", "Une zone de pH appelée zone de virage", "Uniquement à pH = 7", "Les solutions incolores"],
+        "question": "Comment qualifie-t-on une méthode d'analyse qui détruit l'échantillon ?",
+        "choices": ["Une méthode physique", "Une méthode chimique (titrage)", "Une méthode par étalonnage", "Une méthode spectroscopique"],
         "correct": 1,
-        "explanation": "L'indicateur change de couleur dans sa zone de virage.",
-        "tag": "indicateur",
+        "explanation": "Le titrage est une méthode chimique destructive car l'espèce dosée réagit et est transformée.",
+        "tag": "méthode",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-tit-4",
+        "question": "Que signifie l'équivalence lors d'un titrage ?",
+        "choices": ["Le pH est égal à 7", "La concentration du réactif titré est égale à celle du titrant", "Les réactifs ont été introduits dans les proportions stœchiométriques", "La moitié du réactif titré a été consommée"],
+        "correct": 2,
+        "explanation": "L'équivalence est définie par le mélange stœchiométrique des réactifs. Le pH n'est pas forcément 7 (sauf acide fort/base forte).",
+        "tag": "équivalence",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-tit-5",
+        "question": "Dans une réaction aA + bB → cC, quelle relation est vraie à l'équivalence ?",
+        "choices": ["nA = nB", "nA / a = nB / b", "CA × VA = CB × VE", "nA × a = nB × b"],
+        "correct": 1,
+        "explanation": "La relation d'équivalence prend en compte les coefficients stœchiométriques : n(titré)/a = n(versé)/b.",
+        "tag": "calcul",
         "difficulty": 2
       }
     ]
@@ -1119,45 +1137,54 @@
     "id": "quiz-post-titrages",
     "lessonId": "titrages",
     "type": "post",
-    "title": "Post-test : Titrages",
-    "description": "Vérifie ta compréhension des titrages",
+    "title": "Post-test : Dosages et Titrages",
+    "description": "Vérifie ta maîtrise des dosages et titrages",
     "passingScore": 70,
     "questions": [
       {
         "id": "post-tit-1",
-        "question": "On titre 20 mL d'acide par NaOH 0.1 mol/L, équivalence à 10 mL. La concentration de l'acide est :",
-        "choices": ["0.05 mol/L", "0.1 mol/L", "0.2 mol/L", "0.02 mol/L"],
-        "correct": 0,
-        "explanation": "Ca×Va = Cb×Vb → Ca = 0.1×10/20 = 0.05 mol/L",
-        "tag": "calcul",
+        "question": "Sur une courbe de titrage pH-métrique, comment repère-t-on le volume équivalent VE ?",
+        "choices": ["Au point où le pH = 0", "Au point d'inflexion (saut de pH) où la dérivée dpH/dV est maximale", "Au point où le pH ne varie plus", "Au début du titrage"],
+        "correct": 1,
+        "explanation": "Le volume équivalent correspond au saut de pH, là où la variation du pH est la plus brutale (pic de la dérivée).",
+        "tag": "pH-métrie",
         "difficulty": 2
       },
       {
         "id": "post-tit-2",
-        "question": "Pour titrer un acide faible par une base forte, l'indicateur adapté est :",
-        "choices": ["L'hélianthine (3.1-4.4)", "Le BBT (6.0-7.6)", "La phénolphtaléine (8.2-10)", "N'importe lequel"],
-        "correct": 2,
-        "explanation": "Le pH à l'équivalence est basique, il faut un indicateur de zone de virage basique.",
-        "tag": "indicateur",
+        "question": "Pourquoi ajoute-t-on de l'eau distillée lors d'un titrage conductimétrique ?",
+        "choices": ["Pour changer le volume équivalent", "Pour négliger les variations de volume et considérer les droites comme linéaires", "Pour augmenter la conductivité", "Pour changer l'équivalence"],
+        "correct": 1,
+        "explanation": "L'ajout d'eau permet de négliger l'effet de dilution dû à l'ajout du titrant, ce qui rend les portions de courbe affines (des droites).",
+        "tag": "conductimétrie",
         "difficulty": 3
       },
       {
         "id": "post-tit-3",
-        "question": "En conductimétrie, l'équivalence se repère par :",
-        "choices": ["Un changement de couleur", "Un saut de pH", "Un changement de pente", "Une augmentation de température"],
-        "correct": 2,
-        "explanation": "En conductimétrie, l'équivalence correspond à un changement de pente.",
-        "tag": "conductimétrie",
+        "question": "Quelle condition doit remplir un indicateur coloré pour un titrage pH-métrique ?",
+        "choices": ["Sa zone de virage doit contenir le pH initial", "Sa zone de virage doit contenir le pH à l'équivalence (pHE)", "Il doit changer de couleur à pH 7", "Il doit être de la même couleur que la solution"],
+        "correct": 1,
+        "explanation": "Pour repérer l'équivalence, l'indicateur doit changer de couleur exactement au moment du saut de pH.",
+        "tag": "indicateur",
         "difficulty": 2
       },
       {
         "id": "post-tit-4",
-        "question": "Le réactif titrant est celui :",
-        "choices": ["Dans le bécher", "Dont on cherche la concentration", "De concentration connue dans la burette", "Qui change de couleur"],
-        "correct": 2,
-        "explanation": "Le titrant est dans la burette, de concentration connue.",
-        "tag": "vocabulaire",
-        "difficulty": 1
+        "question": "Lors du titrage d'un acide fort par une base forte, comment évolue la conductivité avant l'équivalence ?",
+        "choices": ["Elle augmente", "Elle diminue", "Elle reste constante", "Elle est nulle"],
+        "correct": 1,
+        "explanation": "Avant l'équivalence, on consomme des ions H3O+ (très conducteurs) qui sont remplacés par des cations Na+ (moins conducteurs). La conductivité globale diminue.",
+        "tag": "conductimétrie",
+        "difficulty": 3
+      },
+      {
+        "id": "post-tit-5",
+        "question": "On titre 20 mL d'acide par NaOH 0.1 mol/L, équivalence à 10 mL. La concentration de l'acide est :",
+        "choices": ["0.05 mol/L", "0.1 mol/L", "0.2 mol/L", "0.02 mol/L"],
+        "correct": 0,
+        "explanation": "À l'équivalence (1:1) : Ca×Va = Cb×Vb → Ca = 0.1×10/20 = 0.05 mol/L",
+        "tag": "calcul",
+        "difficulty": 2
       }
     ]
   },
