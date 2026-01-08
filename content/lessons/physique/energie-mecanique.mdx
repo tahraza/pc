@@ -1,96 +1,215 @@
 ---
 id: "energie-mecanique"
-title: "Énergie mécanique et conservation"
+title: "Énergie mécanique et principe de conservation"
 track: "physique"
 level: 2
-prerequisites: ["mouvement-newton"]
-tags: ["énergie", "cinétique", "potentielle", "conservation"]
-estimatedTime: 45
+prerequisites: []
+tags: ["énergie", "énergie cinétique", "énergie potentielle", "conservation", "mécanique"]
+estimatedTime: 120
 chapter: "energie"
 order: 1
 ---
 
-# Énergie mécanique et conservation
+# Énergie mécanique et principe de conservation
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Calculer les énergies cinétique et potentielle
-- Appliquer le théorème de l'énergie cinétique
-- Utiliser la conservation de l'énergie mécanique
+- Comprendre **pourquoi** on introduit la notion d'énergie
+- Donner un **sens physique clair** à $E_c$, $E_p$ et $E_m$
+- Appliquer rigoureusement le principe de conservation
+- Identifier quand **il ne s'applique pas**
+- Éviter les **pièges classiques du bac**
+- Résoudre des exercices standards et complexes
 
-## Intuition et analogie
+## Intuition fondamentale : À quoi sert l'énergie ?
 
-Pense aux **montagnes russes**. En haut de la première montée, le wagon est presque immobile mais très haut : il possède beaucoup d'**énergie potentielle** (comme de l'énergie "stockée" par l'altitude). En descendant, il accélère : l'énergie potentielle se transforme en **énergie cinétique** (énergie du mouvement). En bas, il va très vite mais est au niveau le plus bas.
+### Question de départ
 
-Le principe magique : la somme des deux (énergie mécanique) reste **constante** si rien ne frotte ! En montant la pente suivante, le wagon ralentit (perd de l'énergie cinétique) mais regagne de l'altitude (gagne en énergie potentielle). C'est un échange perpétuel.
+Pourquoi un objet **immobile** peut-il se mettre en mouvement ?
 
-C'est pour ça que la première montée d'un grand huit est toujours la plus haute : c'est là qu'on "charge" toute l'énergie du trajet. Si le wagon pouvait remonter aussi haut qu'il est descendu, il n'y aurait pas de freins à la fin — mais les frottements dissipent une partie de l'énergie en chaleur.
+Un livre sur une étagère :
+- ne bouge pas
+- mais peut tomber et casser quelque chose
 
-L'énergie ne se crée ni ne se détruit : elle se **transforme**. C'est l'un des principes les plus puissants de toute la physique.
+Il possède donc quelque chose **avant** de bouger. Cette "chose" est l'**énergie**.
 
-## Énergie cinétique
+:::tip[Analogie 1 : Les Montagnes Russes]
+En haut de la première montée, le wagon est presque immobile mais très haut : il possède beaucoup d'**énergie potentielle** (comme de l'énergie "stockée" par l'altitude).
+
+En descendant, il accélère : l'énergie potentielle se transforme en **énergie cinétique** (énergie du mouvement). En bas, il va très vite mais est au niveau le plus bas.
+
+La somme des deux (énergie mécanique) reste **constante** si rien ne frotte ! C'est pour ça que la première montée est toujours la plus haute : c'est là qu'on "charge" toute l'énergie du trajet.
+:::
+
+:::tip[Analogie 2 : Le Réservoir d'Eau]
+- Eau stockée en hauteur → **énergie potentielle**
+- Eau qui s'écoule → **énergie cinétique**
+
+Tant que le réservoir ne fuit pas, la quantité totale d'eau utilisable reste la même. Seule la **forme** change.
+:::
+
+:::tip[Analogie 3 : Le Budget]
+- Compte épargne → **énergie potentielle**
+- Argent liquide → **énergie cinétique**
+- Budget total → **énergie mécanique**
+
+Sans frottements, on peut transférer d'un compte à l'autre, mais jamais créer ni détruire d'argent.
+:::
+
+:::warning[Erreur d'intuition courante]
+"L'énergie, c'est ce qui fait bouger"
+
+**FAUX !** L'énergie **ne pousse pas**. Les **forces** poussent. L'énergie **mesure ce qui est possible**.
+:::
+
+## Énergie cinétique : l'énergie du mouvement
 
 :::definition
 **Énergie cinétique**
 
-L'énergie cinétique d'un système de masse m et de vitesse v :
+L'énergie cinétique est l'énergie associée au **mouvement effectif** d'un objet :
 
 $$E_c = \frac{1}{2}mv^2$$
 
-Unité : le joule (J)
+- $m$ : masse en kg
+- $v$ : vitesse en m/s
+- $E_c$ : énergie en Joules (J)
+:::
+
+:::property[Ce que dit vraiment la formule]
+- Si $v = 0$ → $E_c = 0$ (un objet immobile n'a pas d'énergie cinétique)
+- Si $v$ double → $E_c$ est multipliée par **4** (relation quadratique)
+- La **direction** du mouvement n'a **aucune importance** (c'est $v^2$, pas $\vec{v}$)
+:::
+
+:::example[Mini-question guidée]
+**Question :** Un objet monte puis redescend. Son énergie cinétique est-elle la même à la montée et à la descente pour une même vitesse ?
+
+**Réponse :** Oui ! $E_c$ dépend de $v^2$, pas du sens du mouvement.
 :::
 
 :::property[Théorème de l'énergie cinétique]
 La variation d'énergie cinétique est égale à la somme des travaux des forces :
 
 $$\Delta E_c = E_{c,f} - E_{c,i} = \sum W(\vec{F})$$
+
+Ce théorème est **toujours valable**, même avec des frottements.
 :::
 
-## Énergie potentielle
+## Énergie potentielle : stocker sans bouger
+
+### Énergie potentielle de pesanteur
 
 :::definition
 **Énergie potentielle de pesanteur**
 
-Pour un système de masse m à l'altitude z (par rapport à une origine choisie) :
+Un objet en hauteur **peut agir plus tard**. Cette capacité stockée s'appelle l'énergie potentielle :
 
-$$E_{pp} = mgz$$
+$$E_p = mgh$$
 
-L'origine des altitudes est choisie arbitrairement (souvent le sol).
+- $m$ : masse en kg
+- $g$ : accélération de la pesanteur ($\approx 9{,}81\ \text{m/s}^2$)
+- $h$ : **différence d'altitude** par rapport à un niveau de référence (en m)
 :::
+
+:::tip[Le choix du niveau de référence]
+Le zéro de l'énergie potentielle est **arbitraire**. Ce qui compte, ce sont les **variations** d'énergie, pas les valeurs absolues.
+
+Conseil : choisir le niveau le plus simple (souvent le sol) et s'y tenir jusqu'au bout.
+:::
+
+:::example[Mini-question guidée]
+**Question :** Un objet immobile a-t-il toujours une énergie nulle ?
+
+**Réponse :** Non ! $E_c = 0$ mais $E_p$ peut être non nulle si l'objet est en hauteur.
+:::
+
+### Énergie potentielle élastique
 
 :::definition
 **Énergie potentielle élastique**
 
-Pour un ressort de raideur k, déformé de x par rapport à sa position d'équilibre :
+Pour un ressort de raideur $k$, déformé de $x$ par rapport à sa position d'équilibre :
 
 $$E_{pe} = \frac{1}{2}kx^2$$
+
+- $k$ : constante de raideur en N/m
+- $x$ : déformation en m
 :::
 
-## Énergie mécanique
+## Énergie mécanique : la vision globale
 
 :::definition
 **Énergie mécanique**
 
-$$E_m = E_c + E_p = \frac{1}{2}mv^2 + E_p$$
+L'énergie mécanique est la somme des énergies cinétique et potentielle :
 
-où $E_p$ peut inclure $E_{pp}$ et/ou $E_{pe}$.
+$$E_m = E_c + E_p = \frac{1}{2}mv^2 + mgh$$
+
+Elle représente la **capacité totale du système à produire du mouvement**.
 :::
 
-:::property[Conservation de l'énergie mécanique]
-Si les forces non conservatives (frottements) ne travaillent pas :
+:::property[Point important]
+Deux systèmes peuvent avoir des $E_c$ différentes et des $E_p$ différentes, mais la **même** $E_m$.
+:::
+
+:::example[Mini-exercice]
+**Question :** Un objet chute. Que fait $E_c$ ? Que fait $E_p$ ? Que fait $E_m$ (sans frottements) ?
+
+**Réponse :**
+- $E_c$ **augmente** (l'objet accélère)
+- $E_p$ **diminue** (l'altitude diminue)
+- $E_m$ reste **constante** (conversion sans perte)
+:::
+
+## Forces conservatives et non conservatives
+
+:::property[Forces conservatives]
+Une force est **conservative** si son travail est **indépendant du chemin** suivi. On peut lui associer une énergie potentielle.
+
+**Exemples :**
+- Le poids → $E_p = mgh$
+- La force de rappel d'un ressort → $E_{pe} = \frac{1}{2}kx^2$
+:::
+
+:::property[Forces non conservatives]
+Une force est **non conservative** si son travail **dépend du trajet**. Elle **dissipe** de l'énergie.
+
+**Exemples :**
+- Les frottements solides
+- La résistance de l'air
+- Les frottements visqueux
+:::
+
+:::warning[Piège classique]
+"S'il y a un contact, il y a frottement"
+
+**FAUX !** Un contact n'implique pas forcément de frottement (ex: surface parfaitement lisse, réaction normale perpendiculaire au déplacement).
+:::
+
+## Principe de conservation de l'énergie mécanique
+
+:::property[Énoncé rigoureux]
+Dans un référentiel galiléen, si le système est soumis **uniquement** à des forces conservatives :
 
 $$E_m = \text{constante}$$
 
-$$\frac{1}{2}mv_1^2 + E_{p,1} = \frac{1}{2}mv_2^2 + E_{p,2}$$
+Forme utilisable entre deux points A et B :
+
+$$E_{c,A} + E_{p,A} = E_{c,B} + E_{p,B}$$
 :::
 
+## Cas avec frottements : quand ça ne marche plus
+
 :::property[Non-conservation]
-En présence de frottements :
+Si des forces non conservatives travaillent :
 
-$$\Delta E_m = W_{nc}$$
+$$\Delta E_m = W_{\text{nc}}$$
 
-où $W_{nc}$ est le travail des forces non conservatives (négatif pour les frottements).
+où $W_{\text{nc}}$ est le travail des forces non conservatives (négatif pour les frottements).
+
+L'énergie mécanique **diminue**, mais elle n'est pas "perdue" : elle est **transformée** (chaleur, son, déformation).
 :::
 
 ## Travail d'une force
@@ -100,71 +219,131 @@ où $W_{nc}$ est le travail des forces non conservatives (négatif pour les frot
 
 $$W(\vec{F}) = \vec{F} \cdot \vec{AB} = F \times AB \times \cos\alpha$$
 
-où α est l'angle entre $\vec{F}$ et $\vec{AB}$.
+où $\alpha$ est l'angle entre $\vec{F}$ et $\vec{AB}$.
 
-- W > 0 : travail moteur
-- W < 0 : travail résistant
+- $W > 0$ : travail **moteur** (la force aide le mouvement)
+- $W < 0$ : travail **résistant** (la force s'oppose au mouvement)
 :::
 
 :::property[Travail du poids]
-$$W(\vec{P}) = mg(z_A - z_B) = -\Delta E_{pp}$$
+$$W(\vec{P}) = mg(z_A - z_B) = -\Delta E_p$$
 
-Le travail du poids ne dépend que de la dénivellation.
+Le travail du poids ne dépend que de la **dénivellation**, pas du chemin suivi.
+:::
+
+## Méthode experte universelle
+
+:::method[Les 6 étapes]
+Toujours suivre cet ordre pour résoudre un problème d'énergie :
+
+1. **Système étudié** : quel objet ?
+2. **Référentiel** : terrestre, galiléen ?
+3. **Forces appliquées** : lister toutes les forces
+4. **Conservation ou non** : y a-t-il des forces non conservatives qui travaillent ?
+5. **Écriture énergétique** : poser l'équation appropriée
+6. **Vérification physique** : le résultat a-t-il du sens ?
 :::
 
 ## Exemples résolus
 
-### Exemple 1 : Chute libre
+:::example[Chute libre]
+**Énoncé :** Une bille de 100 g tombe de $h = 5$ m. Quelle est sa vitesse à l'arrivée ?
 
-Une bille de 100 g tombe de h = 5 m. Quelle est sa vitesse à l'arrivée ?
+**Résolution :**
+1. Système : la bille. Référentiel : terrestre.
+2. Forces : poids (conservative). Pas de frottements.
+3. L'énergie mécanique se conserve.
+4. Conservation ($z = 0$ au sol) :
+   $$mgh + 0 = 0 + \frac{1}{2}mv^2$$
+5. Simplification et résolution :
+   $$v = \sqrt{2gh} = \sqrt{2 \times 9{,}81 \times 5} = \mathbf{9{,}9\ \text{m/s}}$$
+:::
 
-**Conservation de l'énergie** (z = 0 au sol) :
-$$mgh + 0 = 0 + \frac{1}{2}mv^2$$
+:::example[Pendule simple]
+**Énoncé :** Un pendule de longueur $L = 1$ m est lâché d'un angle $\theta_0 = 60°$. Quelle est sa vitesse au point le plus bas ?
 
-$$v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 5} = 9.9 \text{ m/s}$$
+**Résolution :**
+1. Hauteur initiale par rapport au point bas :
+   $$h = L(1 - \cos\theta_0) = 1 \times (1 - 0{,}5) = 0{,}5\ \text{m}$$
 
-### Exemple 2 : Pendule simple
+2. Conservation de l'énergie :
+   $$mgh = \frac{1}{2}mv^2$$
 
-Un pendule de longueur L = 1 m est lâché d'un angle θ₀ = 60°. Quelle est sa vitesse au point le plus bas ?
+3. Vitesse au point bas :
+   $$v = \sqrt{2gh} = \sqrt{2 \times 9{,}81 \times 0{,}5} = \mathbf{3{,}1\ \text{m/s}}$$
+:::
 
-**Hauteur initiale** : $h = L(1 - \cos\theta_0) = 1 \times (1 - 0.5) = 0.5$ m
+:::example[Glissement avec frottements]
+**Énoncé :** Un bloc de 2 kg glisse sur 3 m avec une force de frottement $f = 4$ N. Vitesse initiale $v_0 = 5$ m/s. Quelle est la vitesse finale ?
 
-**Conservation** : $mgh = \frac{1}{2}mv^2$
+**Résolution :**
+1. Énergie cinétique initiale :
+   $$E_{c,i} = \frac{1}{2} \times 2 \times 5^2 = 25\ \text{J}$$
 
-$$v = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 0.5} = 3.1 \text{ m/s}$$
+2. Travail des frottements (résistant) :
+   $$W_f = -f \times d = -4 \times 3 = -12\ \text{J}$$
 
-### Exemple 3 : Avec frottements
+3. Énergie finale (théorème de l'énergie cinétique) :
+   $$E_{c,f} = E_{c,i} + W_f = 25 - 12 = 13\ \text{J}$$
 
-Un bloc de 2 kg glisse sur 3 m avec une force de frottement f = 4 N. Vitesse initiale v₀ = 5 m/s.
+4. Vitesse finale :
+   $$v = \sqrt{\frac{2E_{c,f}}{m}} = \sqrt{\frac{2 \times 13}{2}} = \mathbf{3{,}6\ \text{m/s}}$$
+:::
 
-**Énergie initiale** : $E_{c,i} = \frac{1}{2} \times 2 \times 5^2 = 25$ J
-
-**Travail des frottements** : $W_f = -f \times d = -4 \times 3 = -12$ J
-
-**Énergie finale** : $E_{c,f} = E_{c,i} + W_f = 25 - 12 = 13$ J
-
-**Vitesse finale** : $v = \sqrt{\frac{2E_{c,f}}{m}} = \sqrt{\frac{2 \times 13}{2}} = 3.6$ m/s
-
-## Erreurs fréquentes
+## Erreurs classiques et comment les éviter
 
 :::warning
-**Erreur 1** : Oublier de choisir l'origine des altitudes
+**Erreur 1 : Appliquer la conservation sans vérifier les forces**
 
-Toujours préciser où z = 0.
+L'énergie mécanique ne se conserve **que si** le système est soumis uniquement à des forces conservatives. Si le mot "frottement" apparaît dans l'énoncé, la conservation ne s'applique **jamais** directement.
 
-**Erreur 2** : Confondre énergie et travail
+**Erreur 2 : Confondre énergie et force**
 
-L'énergie est un état, le travail est un transfert.
+- Une **force** agit → elle provoque un mouvement
+- Une **énergie** mesure une capacité → elle ne "fait rien toute seule"
 
-**Erreur 3** : Appliquer la conservation avec des frottements
+Le poids est une **force**, pas une énergie.
 
-Conservation uniquement si pas de forces non conservatives qui travaillent !
+**Erreur 3 : Penser qu'un objet immobile n'a pas d'énergie**
+
+$E_c$ peut être nulle, mais $E_p$ peut être non nulle. Un objet immobile **en hauteur** possède de l'énergie.
+
+**Erreur 4 : Croire que le choix du niveau de référence change la physique**
+
+Le niveau de référence est arbitraire. Ce qui compte, ce sont les **variations** d'énergie.
+
+**Erreur 5 : Oublier que $E_c$ est toujours positive**
+
+$E_c = \frac{1}{2}mv^2 \geq 0$. La direction de la vitesse n'intervient pas. Ne jamais projeter une énergie sur un axe !
+
+**Erreur 6 : Mélanger approche dynamique et énergétique**
+
+Ce sont deux méthodes **différentes**. Choisir UNE méthode et s'y tenir jusqu'au bout.
+
+**Erreur 7 : Écrire des équations sans expliquer**
+
+Au bac, toujours accompagner une équation d'une phrase de justification :
+"L'énergie mécanique se conserve car..."
 :::
+
+## Règle d'or
+
+Avant toute équation d'énergie, pose toujours ces trois questions :
+1. Quel est le **système** étudié ?
+2. Quelles **forces** agissent sur lui ?
+3. L'énergie mécanique **se conserve-t-elle** ?
+
+Si tu sais répondre à ces trois questions, le calcul devient presque automatique.
 
 ## Mini-résumé
 
-- $E_c = \frac{1}{2}mv^2$
-- $E_{pp} = mgz$
-- $E_m = E_c + E_p$
-- **Conservation** : $E_m = cste$ (sans frottements)
-- **Avec frottements** : $\Delta E_m = W_{nc}$
+| Concept | Formule / Astuce |
+|---------|------------------|
+| **Énergie cinétique** | $E_c = \frac{1}{2}mv^2$ (toujours $\geq 0$) |
+| **Énergie potentielle** | $E_p = mgh$ (origine arbitraire) |
+| **Énergie élastique** | $E_{pe} = \frac{1}{2}kx^2$ |
+| **Énergie mécanique** | $E_m = E_c + E_p$ |
+| **Conservation** | $E_m = \text{cste}$ si forces conservatives uniquement |
+| **Avec frottements** | $\Delta E_m = W_{\text{nc}} < 0$ |
+| **Théorème $E_c$** | $\Delta E_c = \sum W(\vec{F})$ (toujours valable) |
+| **Travail du poids** | $W(\vec{P}) = mg \cdot \Delta z$ |
