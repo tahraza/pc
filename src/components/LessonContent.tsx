@@ -96,9 +96,9 @@ function processContent(content: string): string {
     }
   )
 
-  // Process tables
+  // Process tables (handle tables at end of file without trailing newline)
   processed = processed.replace(
-    /(?:^|\n)((?:\|[^\n]+\|\n)+)/g,
+    /(?:^|\n)((?:\|[^\n]+\|(?:\n|$))+)/g,
     (match, tableContent) => {
       const rows = tableContent.trim().split('\n').filter((row: string) => row.trim())
       if (rows.length < 2) return match
