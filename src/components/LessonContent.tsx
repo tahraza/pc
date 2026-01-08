@@ -9,8 +9,46 @@ interface LessonContentProps {
 
 // Process markdown with KaTeX math rendering
 function processContent(content: string): string {
+  let processed = content
+
+  // Process tables FIRST (before math, because KaTeX output contains newlines)
+  // Ensure content ends with newline for consistent matching
+  const contentForTables = processed.endsWith('\n') ? processed : processed + '\n'
+  processed = contentForTables.replace(
+    /(?:^|\n)((?:\|[^\n]+\|\n)+)/g,
+    (match, tableContent) => {
+      const rows = tableContent.trim().split('\n').filter((row: string) => row.trim())
+      if (rows.length < 2) return match
+
+      // Check if second row is separator (|---|---|)
+      const isSeparator = (row: string) => {
+        const cleaned = row.replace(/[^|:\-\s]/g, '')
+        return /^\|[\s:\-]+(\|[\s:\-]+)+\|$/.test(cleaned) || /^[\s|:\-]+$/.test(cleaned)
+      }
+
+      if (!isSeparator(rows[1])) {
+        return match
+      }
+
+      const parseRow = (row: string): string[] => {
+        return row.split('|').slice(1, -1).map((cell: string) => cell.trim())
+      }
+
+      const headerCells = parseRow(rows[0])
+      const headerHtml = headerCells.map((cell: string) => `<th>${cell}</th>`).join('')
+
+      const bodyRows = rows.slice(2) // Skip header and separator
+      const bodyHtml = bodyRows.map((row: string) => {
+        const cells = parseRow(row)
+        return `<tr>${cells.map((cell: string) => `<td>${cell}</td>`).join('')}</tr>`
+      }).join('')
+
+      return `<div class="table-wrapper"><table class="lesson-table"><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`
+    }
+  )
+
   // Process display math blocks ($$...$$)
-  let processed = content.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
+  processed = processed.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
     try {
       const html = katex.renderToString(math.trim(), {
         displayMode: true,
@@ -93,42 +131,6 @@ function processContent(content: string): string {
     (_, title, content) => {
       const titleHtml = title ? `<strong class="text-success-700">${title}</strong>` : '<strong class="text-success-700">Astuce</strong>'
       return `<div class="tip-box">${titleHtml}<div class="mt-2">${content}</div></div>`
-    }
-  )
-
-  // Process tables
-  // First, ensure content ends with newline for consistent matching
-  const contentForTables = processed.endsWith('\n') ? processed : processed + '\n'
-  processed = contentForTables.replace(
-    /(?:^|\n)((?:\|[^\n]+\|\n)+)/g,
-    (match, tableContent) => {
-      const rows = tableContent.trim().split('\n').filter((row: string) => row.trim())
-      if (rows.length < 2) return match
-
-      // Check if second row is separator (|---|---|)
-      const isSeparator = (row: string) => {
-        const cleaned = row.replace(/[^|:\-\s]/g, '')
-        return /^\|[\s:\-]+(\|[\s:\-]+)+\|$/.test(cleaned) || /^[\s|:\-]+$/.test(cleaned)
-      }
-
-      if (!isSeparator(rows[1])) {
-        return match
-      }
-
-      const parseRow = (row: string): string[] => {
-        return row.split('|').slice(1, -1).map((cell: string) => cell.trim())
-      }
-
-      const headerCells = parseRow(rows[0])
-      const headerHtml = headerCells.map((cell: string) => `<th>${cell}</th>`).join('')
-
-      const bodyRows = rows.slice(2) // Skip header and separator
-      const bodyHtml = bodyRows.map((row: string) => {
-        const cells = parseRow(row)
-        return `<tr>${cells.map((cell: string) => `<td>${cell}</td>`).join('')}</tr>`
-      }).join('')
-
-      return `<div class="table-wrapper"><table class="lesson-table"><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`
     }
   )
 
