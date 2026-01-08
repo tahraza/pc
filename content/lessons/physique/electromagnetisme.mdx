@@ -1,146 +1,257 @@
 ---
 id: "electromagnetisme"
-title: "Électromagnétisme"
+title: "Électromagnétisme : Champs E et B, Force de Lorentz"
 track: "physique"
-level: 4
-prerequisites: ["circuit-rc"]
-tags: ["électromagnétisme", "champ", "force", "induction", "Lorentz"]
-estimatedTime: 55
-chapter: "electricite"
+level: 2
+prerequisites: ["mouvement-newton", "energie-mecanique"]
+tags: ["champ électrique", "champ magnétique", "force de Lorentz", "condensateur", "induction", "Faraday"]
+estimatedTime: 100
+chapter: "mouvement-et-interactions"
 order: 2
 ---
 
-# Électromagnétisme
+# Électromagnétisme : Champs E et B, Force de Lorentz
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Décrire les champs électrique et magnétique
-- Calculer la force de Lorentz
-- Expliquer l'induction électromagnétique
-- Appliquer la loi de Lenz
+- Décrire le mouvement d'une particule chargée dans un **champ électrique uniforme** (accélération linéaire ou parabolique)
+- Décrire le mouvement dans un **champ magnétique uniforme** (force de Lorentz, trajectoire circulaire)
+- Appliquer la deuxième loi de Newton pour établir les équations horaires et la trajectoire
+- Utiliser les aspects énergétiques (théorème de l'énergie cinétique) pour calculer une vitesse
+- Expliquer le principe de l'induction électromagnétique (loi de Faraday, loi de Lenz)
 
-## Intuition et analogie
+## 1. Intuition et Analogies : Le Vent et le Volant
 
-Tu connais les aimants : ils s'attirent ou se repoussent **sans se toucher**. Comment font-ils ? Ils créent autour d'eux un **champ magnétique** — une sorte de "zone d'influence" invisible. Une boussole détecte ce champ : son aiguille s'aligne avec les lignes de champ.
+Pour comprendre comment les champs invisibles agissent sur une particule chargée, utilisons deux images distinctes.
 
-Le **champ électrique**, c'est pareil mais pour les charges électriques. Quand tu frottes un ballon et qu'il attire tes cheveux, le ballon chargé crée un champ électrique qui exerce une force sur les charges de tes cheveux.
+:::tip[Analogie 1 : Le Champ Électrique est comme le "Vent"]
+Imagine une plume (la charge) dans un couloir venteux. Le vent **pousse** la plume dans une direction précise.
 
-L'idée géniale de l'électromagnétisme : ces deux champs sont **liés** !
-- Un courant électrique (charges en mouvement) crée un champ magnétique → c'est le principe des **électroaimants**
-- Un champ magnétique qui varie crée un courant électrique → c'est **l'induction**, le principe des **générateurs** et des **transformateurs**
+- Si la plume est lâchée sans vitesse, elle accélère en **ligne droite**
+- Si elle est lancée de travers, elle est déviée et suit une **parabole** (comme un ballon par le vent)
+- **Le vent travaille** : il donne de la vitesse (de l'énergie) à la plume
 
-La **force de Lorentz** décrit comment une charge en mouvement est déviée par un champ magnétique — c'est ce qui fait tourner les moteurs électriques et ce qui permet aux vieux téléviseurs d'afficher une image.
-
-L'électromagnétisme unifie électricité et magnétisme : deux faces d'une même pièce !
-
-## Champ électrique
-
-:::definition
-**Champ électrique E**
-
-Le **champ électrique** E créé par une charge Q à une distance r est :
-
-$$\vec{E} = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2} \vec{u_r}$$
-
-- ε₀ = 8,85 × 10⁻¹² F/m (permittivité du vide)
-- E s'exprime en V/m ou N/C
+**Image mentale :**
+- Une charge **positive** est comme une bille sur une pente : elle "descend" dans le sens de $\vec{E}$
+- Une charge **négative** est comme une bille qui "remonte" : elle accélère **à l'opposé** de $\vec{E}$
 :::
 
-:::property[Champ uniforme]
-Entre deux plaques parallèles séparées de d et soumises à une tension U :
+:::tip[Analogie 2 : Le Champ Magnétique est comme un "Volant bloqué"]
+Le champ magnétique n'agit que si tu bouges. Il ne te pousse pas pour aller plus vite, il te fait **tourner**.
 
+- Il agit **perpendiculairement** à ton déplacement
+- **Le volant ne travaille pas** : il change la *direction* mais pas la *valeur* de la vitesse
+- On ne gagne pas d'énergie cinétique avec un champ magnétique seul
+
+**Image mentale :**
+Imagine un palet qui glisse sans frottement. Le champ $\vec{B}$ joue le rôle d'une "main invisible" qui pousse **toujours sur le côté** : le palet tourne, mais ne va pas plus vite.
+:::
+
+## 2. Champ Électrique Uniforme : Le Condensateur Plan
+
+### Comment obtenir un champ uniforme ?
+
+:::definition
+**Condensateur plan**
+
+Entre deux armatures planes $P$ (positive) et $N$ (négative) séparées d'une distance $d$ et soumises à une tension $U_{PN}$, on obtient un **champ électrique uniforme** :
+
+- **Direction** : Perpendiculaire aux plaques
+- **Sens** : De la plaque **positive** vers la plaque **négative** (potentiels décroissants)
+- **Valeur** :
 $$E = \frac{U}{d}$$
 
-Le champ est dirigé du + vers le -.
+avec $E$ en V·m⁻¹, $U$ en V, $d$ en m.
 :::
+
+### La Force Électrique
 
 :::property[Force électrique]
-Une charge q placée dans un champ E subit la force :
+Une particule de charge $q$ placée dans un champ $\vec{E}$ subit une force constante :
 
-$$\vec{F} = q\vec{E}$$
+$$\vec{F}_e = q \cdot \vec{E}$$
+
+- Si $q > 0$ (proton, ion positif) : la force est **dans le sens** de $\vec{E}$
+- Si $q < 0$ (électron) : la force est **opposée** à $\vec{E}$
 :::
 
-## Champ magnétique
+:::example[Mini-exercice]
+**Question :** Un condensateur plan a $U = 1000 \text{ V}$ et $d = 0{,}20 \text{ m}$.
+1. Calculer $E$.
+2. Un électron est placé dans ce champ. Dans quel sens est-il accéléré ?
 
-:::definition
-**Champ magnétique B**
-
-Le **champ magnétique** B caractérise l'espace autour d'un aimant ou d'un courant électrique.
-
-- B s'exprime en Tesla (T)
-- Lignes de champ : du pôle Nord vers le pôle Sud
+**Réponse :**
+1. $E = U/d = 1000/0{,}20 = 5000 \text{ V·m}^{-1}$
+2. $\vec{a} = \frac{q}{m}\vec{E}$ : comme $q < 0$, $\vec{a}$ est **opposée** à $\vec{E}$ → l'électron accélère vers la plaque positive.
 :::
 
-:::property[Champ créé par un solénoïde]
-À l'intérieur d'un solénoïde de N spires, longueur L, parcouru par I :
+### Étude Dynamique (2ᵉ Loi de Newton)
 
-$$B = \mu_0 \frac{N}{L} I = \mu_0 n I$$
+Dans le référentiel du laboratoire (supposé galiléen), si on néglige le poids devant la force électrique :
 
-- μ₀ = 4π × 10⁻⁷ T·m/A (perméabilité du vide)
-- n = N/L (nombre de spires par mètre)
+:::method[Accélération dans un champ E]
+$$m \cdot \vec{a} = q \cdot \vec{E} \implies \vec{a} = \frac{q}{m} \vec{E}$$
+
+Le vecteur accélération est **constant**.
+
+**Deux cas selon la vitesse initiale $\vec{v}_0$ :**
+
+| Condition | Type de mouvement | Trajectoire |
+|-----------|-------------------|-------------|
+| $\vec{v}_0$ parallèle à $\vec{E}$ | Rectiligne Uniformément Accéléré | Droite |
+| $\vec{v}_0$ perpendiculaire à $\vec{E}$ | Analogue à la chute libre | **Parabole** |
 :::
 
-## Force de Lorentz
+### Aspect Énergétique : Accélérateur de Particules
+
+:::property[Travail de la force électrique]
+La force électrique est conservative. Le travail entre un point A et un point B est :
+
+$$W_{AB}(\vec{F}_e) = q \cdot U_{AB}$$
+
+D'après le théorème de l'énergie cinétique :
+$$\Delta E_c = E_{c,B} - E_{c,A} = q \cdot U_{AB}$$
+
+C'est le principe des **canons à électrons** et des **accélérateurs linéaires** : on utilise une tension $U$ pour donner de la vitesse aux particules.
+:::
+
+:::example[Accélération d'un électron]
+**Question :** Un électron (masse $m_e = 9{,}11 \times 10^{-31}$ kg, charge $-e$) initialement immobile est accéléré par une tension $U = 1000 \text{ V}$. Quelle est sa vitesse finale ?
+
+**Solution :**
+1. **Système :** Électron. **Référentiel :** Laboratoire.
+2. **Énergie :** $\Delta E_c = |q| \cdot U$ (l'électron gagne de l'énergie)
+3. **Comme $v_i = 0$ :** $\frac{1}{2}m_e v^2 = e \cdot U$
+4. **Calcul :**
+$$v = \sqrt{\frac{2eU}{m_e}} = \sqrt{\frac{2 \times 1{,}6 \times 10^{-19} \times 1000}{9{,}11 \times 10^{-31}}} \approx \mathbf{1{,}87 \times 10^7 \text{ m/s}}$$
+:::
+
+## 3. Champ Magnétique Uniforme : Force de Lorentz
+
+### La Force de Lorentz
 
 :::definition
 **Force de Lorentz**
 
-Une particule de charge q, animée de vitesse v dans un champ magnétique B, subit :
+Une particule de charge $q$ se déplaçant à la vitesse $\vec{v}$ dans un champ magnétique $\vec{B}$ subit la force magnétique :
 
-$$\vec{F} = q\vec{v} \times \vec{B}$$
+$$\vec{f} = q \cdot \vec{v} \wedge \vec{B}$$
 
-La force est perpendiculaire à v et à B.
+- **Direction** : Perpendiculaire au plan formé par $\vec{v}$ et $\vec{B}$
+- **Sens** : Déterminé par la règle de la main droite (trièdre direct)
+- **Valeur** : $f = |q| \cdot v \cdot B \cdot \sin(\alpha)$
+
+Si $\vec{v} \perp \vec{B}$ (cas le plus fréquent) : $f = |q| \cdot v \cdot B$
 :::
 
 :::method[Règle de la main droite]
-Pour trouver le sens de F :
-1. Pouce : sens de v
-2. Index : sens de B
-3. Majeur : sens de F (pour q > 0)
+Pour trouver le sens de $\vec{f}$ quand $q > 0$ :
+1. **Pouce** : sens de $\vec{v}$
+2. **Index** : sens de $\vec{B}$
+3. **Majeur** : sens de $\vec{f}$
 
-Pour q < 0, inverser le sens de F.
+Pour $q < 0$, **inverser** le sens de $\vec{f}$.
 :::
 
-:::property[Caractéristiques de la force de Lorentz]
-- F ⊥ v → la force ne travaille pas (W = 0)
-- F ⊥ v → la vitesse change de direction, pas de norme
-- Dans un champ B uniforme : trajectoire circulaire
+### Propriété Énergétique Fondamentale
+
+:::property[Le champ B ne travaille pas]
+La force est **toujours perpendiculaire** à la vitesse (au déplacement). Par conséquent :
+
+$$W(\vec{f}) = 0$$
+
+**Conséquences :**
+- L'énergie cinétique **ne change pas** : $\Delta E_c = 0$
+- La **valeur** de la vitesse $v$ est **constante**
+- Le mouvement est **uniforme**
+- Le champ $\vec{B}$ **dévie sans accélérer**
 :::
 
-## Mouvement dans un champ magnétique
+### Trajectoire Circulaire
 
-:::property[Rayon de la trajectoire circulaire]
-Pour une particule de masse m, charge q, vitesse v dans B uniforme :
+:::property[Rayon de courbure]
+Puisque la vitesse est constante et la force perpendiculaire (centripète), la trajectoire est un **cercle**.
 
-$$r = \frac{mv}{|q|B}$$
+En appliquant la 2ᵉ loi de Newton avec l'accélération normale $a_n = v^2/R$ :
+
+$$\frac{m v^2}{R} = |q| \cdot v \cdot B$$
+
+On en déduit le rayon :
+$$R = \frac{m \cdot v}{|q| \cdot B}$$
+
+C'est le principe du **cyclotron** et du **spectromètre de masse** : on trie les ions selon leur masse.
 :::
 
-:::property[Période du mouvement]
-$$T = \frac{2\pi m}{|q|B}$$
+:::property[Période cyclotron]
+$$T = \frac{2\pi m}{|q| \cdot B}$$
 
-La période ne dépend pas de la vitesse (principe du cyclotron).
+La période **ne dépend pas de la vitesse** : c'est le principe du cyclotron.
 :::
 
-## Induction électromagnétique
+:::example[Rayon de courbure d'un proton]
+**Question :** Un proton ($q = e$, $m_p = 1{,}67 \times 10^{-27}$ kg) entre à la vitesse $v = 10^6$ m/s dans un champ $B = 0{,}5$ T perpendiculaire à sa vitesse. Calculer le rayon $R$.
+
+**Solution :**
+$$R = \frac{m_p \cdot v}{e \cdot B} = \frac{1{,}67 \times 10^{-27} \times 10^6}{1{,}6 \times 10^{-19} \times 0{,}5} = \mathbf{0{,}021 \text{ m} = 2{,}1 \text{ cm}}$$
+
+Plus le champ $B$ est fort, plus le rayon est petit (virage serré).
+:::
+
+## 4. Comparatif : Champ E vs Champ B
+
+:::method[Tableau comparatif]
+| Critère | Champ Électrique ($\vec{E}$) | Champ Magnétique ($\vec{B}$) |
+|---------|------------------------------|------------------------------|
+| **Force** | $\vec{F} = q\vec{E}$ | $\vec{F} = q\vec{v} \wedge \vec{B}$ |
+| **Condition** | Agit même si la particule est **immobile** | N'agit que si la particule **bouge** ($v \neq 0$) |
+| **Travail** | $W = qU$ (modifie $E_c$) | $W = 0$ (conserve $E_c$) |
+| **Effet** | **Accélère** ou freine | **Dévie** sans accélérer |
+| **Trajectoire** | Parabole (si $v_0 \perp E$) | Cercle (si $v_0 \perp B$) |
+| **Analogie** | Le Vent (poussée) | Le Volant (virage) |
+:::
+
+## 5. Application : Le Spectromètre de Masse
+
+:::example[Spectromètre de masse]
+Un spectromètre de masse utilise les deux champs :
+
+1. **Chambre d'accélération (champ $\vec{E}$)** : Les ions sont accélérés par une tension $U$
+   $$v = \sqrt{\frac{2|q|U}{m}}$$
+
+2. **Chambre de déviation (champ $\vec{B}$)** : Les ions sont déviés en cercle
+   $$R = \frac{mv}{|q|B}$$
+
+En combinant : $R = \frac{1}{B}\sqrt{\frac{2mU}{|q|}}$
+
+**Conclusion** : Plus la masse $m$ est grande, plus le rayon $R$ est grand → on sépare les isotopes !
+:::
+
+## 6. Induction Électromagnétique
+
+L'électromagnétisme unifie électricité et magnétisme : un champ magnétique qui **varie** crée un courant électrique.
+
+### Flux Magnétique
 
 :::definition
 **Flux magnétique Φ**
 
-Le **flux** du champ magnétique B à travers une surface S est :
+Le flux du champ magnétique $\vec{B}$ à travers une surface $S$ est :
 
-$$\Phi = \vec{B} \cdot \vec{S} = BS\cos(\theta)$$
+$$\Phi = \vec{B} \cdot \vec{S} = B \cdot S \cdot \cos(\theta)$$
 
-- Φ s'exprime en Weber (Wb)
-- θ : angle entre B et la normale à S
+- $\Phi$ s'exprime en **Weber (Wb)**
+- $\theta$ : angle entre $\vec{B}$ et la normale à $S$
 :::
+
+### Loi de Faraday
 
 :::property[Loi de Faraday]
 La variation du flux magnétique à travers un circuit induit une force électromotrice (f.é.m.) :
 
 $$e = -\frac{d\Phi}{dt}$$
 
-Le signe moins traduit la loi de Lenz.
+Le signe moins traduit la **loi de Lenz**.
 :::
 
 :::definition
@@ -148,91 +259,97 @@ Le signe moins traduit la loi de Lenz.
 
 Le courant induit crée un champ magnétique qui **s'oppose** à la variation de flux qui lui a donné naissance.
 
-C'est une manifestation de la conservation de l'énergie.
+C'est une manifestation de la **conservation de l'énergie** : il faut fournir de l'énergie pour créer le courant induit.
 :::
 
-## Applications
+### Applications
 
-:::method[Générateur]
+:::method[Le Générateur (Alternateur)]
 Un cadre tournant dans un champ magnétique produit une f.é.m. alternative :
 
 $$e = NBS\omega\sin(\omega t)$$
 
-C'est le principe de l'alternateur.
+C'est le principe de production d'électricité dans les centrales.
 :::
 
-:::method[Transformateur]
+:::method[Le Transformateur]
 Rapport de transformation :
 $$\frac{U_2}{U_1} = \frac{N_2}{N_1}$$
 
-- N₂ > N₁ : transformateur élévateur
-- N₂ < N₁ : transformateur abaisseur
+- $N_2 > N_1$ : transformateur **élévateur**
+- $N_2 < N_1$ : transformateur **abaisseur**
 :::
 
-## Exemples résolus
+:::example[Induction dans une bobine]
+**Question :** Une bobine de $N = 100$ spires, section $S = 10 \text{ cm}^2$, est placée dans un champ $B$ qui passe de 0 à 0,2 T en $\Delta t = 0{,}1$ s. Calculer la f.é.m. induite.
 
-### Exemple 1 : Champ électrique
+**Solution :**
+$$\Delta\Phi = N \cdot B \cdot S = 100 \times 0{,}2 \times 10^{-3} = 0{,}02 \text{ Wb}$$
 
-Deux plaques parallèles distantes de d = 2 cm sont soumises à U = 200 V.
-Calculer E et la force sur un électron.
+$$e = -\frac{\Delta\Phi}{\Delta t} = -\frac{0{,}02}{0{,}1} = \mathbf{-0{,}2 \text{ V}}$$
 
-$$E = \frac{U}{d} = \frac{200}{0,02} = 10^4 \text{ V/m}$$
+La f.é.m. induite est de 0,2 V (le signe indique le sens selon Lenz).
+:::
 
-$$F = |q|E = 1,6 \times 10^{-19} \times 10^4 = 1,6 \times 10^{-15} \text{ N}$$
+## 7. Erreurs Classiques et Comment les Éviter
 
-### Exemple 2 : Force de Lorentz
+:::warning[Erreur 1 : Confondre champ E et tension U]
+**Symptôme** : Écrire $E = U$ (oublier la distance $d$)
 
-Un proton (m = 1,67 × 10⁻²⁷ kg, q = 1,6 × 10⁻¹⁹ C) se déplace à v = 10⁶ m/s perpendiculairement à B = 0,5 T.
+**Correction** : $E = \frac{U}{d}$ (entre plaques planes)
 
-Force : $F = qvB = 1,6 \times 10^{-19} \times 10^6 \times 0,5 = 8 \times 10^{-14}$ N
+**Astuce** : Vérifier les unités → $U$ en V, $E$ en V·m⁻¹ → il manque un "par m" !
+:::
 
-Rayon : $r = \frac{mv}{qB} = \frac{1,67 \times 10^{-27} \times 10^6}{1,6 \times 10^{-19} \times 0,5} = 0,021$ m = 2,1 cm
+:::warning[Erreur 2 : Se tromper de sens à cause du signe de q]
+**Symptôme** : Dire "la force est dans le sens de $\vec{E}$" pour un électron
 
-### Exemple 3 : Induction
+**Correction** : Poser $\vec{F} = q\vec{E}$ et **garder $q$ avec son signe** → la force sur un électron est **opposée** à $\vec{E}$
+:::
 
-Une bobine de N = 100 spires, section S = 10 cm², est placée dans un champ B qui passe de 0 à 0,2 T en Δt = 0,1 s.
+:::warning[Erreur 3 : Oublier que B ne change pas la norme de v]
+**Symptôme** : Chercher une augmentation de vitesse "grâce à $B$"
 
-$$\Delta\Phi = NBS = 100 \times 0,2 \times 10^{-3} = 0,02 \text{ Wb}$$
+**Correction** : Le travail de la force de Lorentz est **nul** → le champ $\vec{B}$ **dévie** mais n'accélère pas
 
-$$e = -\frac{\Delta\Phi}{\Delta t} = -\frac{0,02}{0,1} = -0,2 \text{ V}$$
+**Astuce** : "Chambre de déviation" = indice qu'on dévie, on n'accélère pas
+:::
 
-La f.é.m. induite est de 0,2 V.
+:::warning[Erreur 4 : Confondre vectoriel et scalaire dans la force de Lorentz]
+**Symptôme** : Utiliser $f = qvB$ sans condition
 
-### Exemple 4 : Transformateur
+**Correction** : Écrire d'abord la forme vectorielle $\vec{f} = q\vec{v} \wedge \vec{B}$, puis la norme $f = |q|vB\sin(\theta)$
 
-Un transformateur a N₁ = 500 spires au primaire et N₂ = 50 spires au secondaire.
-Si U₁ = 230 V, quelle est U₂ ?
+La formule simplifiée $f = |q|vB$ n'est valable que si $\vec{v} \perp \vec{B}$
+:::
 
-$$U_2 = U_1 \times \frac{N_2}{N_1} = 230 \times \frac{50}{500} = 23 \text{ V}$$
+:::warning[Erreur 5 : Oublier le signe dans la loi de Faraday]
+**Symptôme** : Écrire $e = \frac{d\Phi}{dt}$ (sans le moins)
 
-C'est un transformateur abaisseur.
+**Correction** : $e = -\frac{d\Phi}{dt}$ → le signe traduit la loi de Lenz
+:::
 
-## Erreurs fréquentes
+:::warning[Erreur 6 : Confondre flux et champ]
+**Symptôme** : Mélanger les unités ou les grandeurs
 
-:::warning
-**Erreur 1** : Oublier que F ⊥ v
-
-La force de Lorentz est toujours perpendiculaire à la vitesse. Elle dévie mais n'accélère pas.
-
-**Erreur 2** : Se tromper dans le produit vectoriel
-
-Utiliser systématiquement la règle de la main droite et vérifier le signe de q.
-
-**Erreur 3** : Confondre flux et champ
-
-Φ = B·S (produit scalaire), c'est une grandeur scalaire en Wb.
-
-**Erreur 4** : Oublier le signe dans la loi de Faraday
-
-e = -dΦ/dt (le signe traduit Lenz).
+**Correction** :
+- **Champ** $B$ en Tesla (T) → grandeur vectorielle
+- **Flux** $\Phi = BS\cos\theta$ en Weber (Wb) → grandeur **scalaire**
 :::
 
 ## Mini-résumé
 
-- **Champ électrique** : E = U/d (uniforme) ; F = qE
-- **Force de Lorentz** : F = qv × B (perpendiculaire à v et B)
-- **Trajectoire circulaire** : r = mv/(qB), T = 2πm/(qB)
-- **Flux magnétique** : Φ = BS·cos(θ)
-- **Loi de Faraday** : e = -dΦ/dt
-- **Loi de Lenz** : le courant induit s'oppose à la cause
-- **Transformateur** : U₂/U₁ = N₂/N₁
+| Concept | Formule / Définition | Astuce |
+|---------|----------------------|--------|
+| **Champ uniforme** | $E = \frac{U}{d}$ | Sens : de + vers − |
+| **Force électrique** | $\vec{F} = q\vec{E}$ | Sens dépend du signe de $q$ |
+| **Accélération** | $\vec{a} = \frac{q}{m}\vec{E}$ | Colinéaire à $\vec{E}$ |
+| **Trajectoire dans E** | Rectiligne ou parabole | Comme la chute libre |
+| **Énergie** | $\Delta E_c = qU$ | Principe de l'accélérateur |
+| **Force de Lorentz** | $\vec{f} = q\vec{v} \wedge \vec{B}$ | $f = \|q\|vB$ si $\vec{v} \perp \vec{B}$ |
+| **Effet de B** | Travail nul | Dévie sans accélérer |
+| **Rayon trajectoire** | $R = \frac{mv}{\|q\|B}$ | Cyclotron, spectromètre |
+| **Période cyclotron** | $T = \frac{2\pi m}{\|q\|B}$ | Indépendante de $v$ |
+| **Flux magnétique** | $\Phi = BS\cos\theta$ | En Weber (Wb) |
+| **Loi de Faraday** | $e = -\frac{d\Phi}{dt}$ | Le − c'est Lenz |
+| **Transformateur** | $\frac{U_2}{U_1} = \frac{N_2}{N_1}$ | Élévateur si $N_2 > N_1$ |
