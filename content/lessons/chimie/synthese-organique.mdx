@@ -1,54 +1,172 @@
 ---
 id: synthese-organique
-title: "Stratégie de synthèse organique"
+title: "Stratégie de Synthèse Organique : De la conception à la purification"
 track: chimie
 chapter: organique
-level: 4
-estimatedTime: 50
+level: 3
+estimatedTime: 90
 prerequisites:
   - chimie-organique
 tags:
   - synthèse
+  - mécanisme
   - rendement
   - protection
   - catalyse
+  - chimie verte
 objectives:
-  - Comprendre les étapes d'une synthèse multi-étapes
+  - Identifier les grandes catégories de réactions (substitution, addition, élimination)
+  - Représenter le mouvement des électrons par des flèches courbes
+  - Distinguer l'optimisation de la vitesse de celle du rendement
+  - Élaborer une stratégie pour des molécules polyfonctionnelles (protection/déprotection)
   - Calculer un rendement de synthèse
-  - Connaître les techniques de protection de groupes
-  - Identifier les critères de chimie verte
 ---
 
-# Stratégie de synthèse organique
+# Stratégie de Synthèse Organique
 
-## Intuition et analogie
+## Objectifs
 
-Fabriquer une molécule complexe, c'est comme suivre une **recette de cuisine** élaborée. Tu pars d'ingrédients simples et, étape par étape, tu construis le plat final. Mais attention : à chaque étape, tu perds un peu de matière (ce qui colle au saladier, ce qui brûle...). C'est le **rendement**.
+À la fin de cette leçon, tu sauras :
+- Identifier les grandes catégories de réactions (substitution, addition, élimination)
+- Représenter le mouvement des électrons (mécanisme réactionnel) par des flèches courbes
+- Distinguer l'optimisation de la **vitesse** (facteurs cinétiques) de l'optimisation du **rendement** (déplacement d'équilibre)
+- Élaborer une stratégie pour des molécules **polyfonctionnelles** (protection/déprotection)
+- Calculer le rendement d'une synthèse multi-étapes
 
-Si chaque étape a un rendement de 80%, après 5 étapes tu n'as plus que 0,8⁵ ≈ 33% de ta quantité théorique ! C'est pour ça que les chimistes cherchent des chemins **courts** avec des rendements **élevés**.
+## 1. Intuition : La Cuisine Moléculaire
 
-Parfois, tu dois **protéger** certaines parties de ta molécule pendant une étape — comme mettre un couvercle sur une casserole pour que rien n'éclabousse dedans. Tu mets un "groupe protecteur" temporaire, tu fais ta réaction, puis tu enlèves la protection.
+La synthèse organique est l'art de construire des molécules complexes (comme des médicaments) à partir de briques simples.
 
-La **chimie verte** pousse cette logique plus loin : non seulement on veut un bon rendement, mais on veut aussi :
-- Peu de déchets (économie d'atomes)
-- Des solvants non toxiques
-- Peu d'énergie consommée
-- Des réactifs renouvelables
+:::tip[Analogie : Le Chef Cuisinier]
+- **Les Réactifs** sont les ingrédients
+- **La Transformation** est la cuisson. Parfois, il faut chauffer pour que ça cuise (facteur cinétique), mais il ne faut pas que l'eau s'évapore totalement (chauffage à reflux)
+- **La Sélectivité** : Si vous voulez cuire une tarte sans brûler la croûte, vous mettez du papier aluminium sur les bords. En chimie, on "protège" une fonction fragile pour qu'elle ne réagisse pas, puis on retire la protection à la fin
+- **Le Rendement** : C'est la différence entre la quantité théorique sur la recette et ce qui reste réellement dans l'assiette après avoir tout cuisiné et transvasé
+:::
 
-C'est comme cuisiner bio, local, et sans gaspillage — mais pour les molécules !
+:::property[Pourquoi le rendement diminue]
+Si chaque étape a un rendement de 80%, après 5 étapes tu n'as plus que $0{,}8^5 \approx 33\%$ de ta quantité théorique ! C'est pour ça que les chimistes cherchent des chemins **courts** avec des rendements **élevés**.
+:::
 
-## Introduction
+## 2. Le Langage : Structure et Groupes Fonctionnels
 
-La synthèse organique consiste à fabriquer des molécules organiques à partir de réactifs plus simples. Une **stratégie de synthèse** planifie les différentes étapes pour obtenir le produit souhaité avec le meilleur rendement possible.
+Avant de transformer les molécules, il faut savoir les lire. On utilise principalement la **formule topologique** où la chaîne carbonée est une ligne brisée et seuls les hétéroatomes (O, N, Cl...) sont explicités.
 
-## Rendement d'une synthèse
+### Les Familles Fonctionnelles
 
-### Définition
+Il est crucial de repérer les groupes caractéristiques pour prédire la réactivité :
 
-<Definition title="Rendement">
+| Famille | Groupe | Caractéristique |
+|---------|--------|-----------------|
+| **Ester** | $R\text{-}COO\text{-}R'$ | Odeur fruitée |
+| **Amine** | $R\text{-}NH_2$ | Basique |
+| **Amide** | $R\text{-}CO\text{-}NH_2$ | Liaison peptidique |
+| **Halogénoalcane** | $R\text{-}X$ | $X = Cl, Br, I$ |
+| **Aldéhyde** | $R\text{-}CHO$ | Carbonyle terminal |
+| **Cétone** | $R\text{-}CO\text{-}R'$ | Carbonyle interne |
+
+### Isomérie de constitution
+
+Deux molécules sont isomères si elles ont la même formule brute mais des enchaînements d'atomes différents :
+1. **Isomérie de chaîne** : Le squelette carboné change (linéaire vs ramifié)
+2. **Isomérie de position** : Le groupe fonctionnel est à un endroit différent
+3. **Isomérie de fonction** : La nature même du groupe change (ex: alcool vs éther)
+
+## 3. Les Catégories de Réactions
+
+On classe les réactions selon la modification structurelle observée entre réactifs et produits.
+
+:::definition
+**Substitution (S)**
+
+Un atome ou un groupe d'atomes est remplacé par un autre.
+- *Schéma général :* $R\text{-}X + Y \rightarrow R\text{-}Y + X$
+- *Exemple :* $CH_3\text{-}Cl + HO^- \rightarrow CH_3\text{-}OH + Cl^-$
+:::
+
+:::definition
+**Addition (A)**
+
+Des atomes viennent se fixer sur une liaison multiple (double ou triple), qui devient une liaison simple. Le squelette devient plus "saturé".
+- *Schéma général :* $A + B \rightarrow C$
+- *Exemple (Hydratation) :* $R\text{-}CH=CH_2 + H_2O \rightarrow R\text{-}CH(OH)\text{-}CH_3$
+:::
+
+:::definition
+**Élimination (E)**
+
+Inverse de l'addition. On retire des atomes d'une molécule, ce qui crée une liaison double.
+- *Schéma général :* $A \rightarrow B + C$
+- *Exemple (Déshydratation) :* $\text{Alcool} \rightarrow \text{Alcène} + H_2O$
+:::
+
+## 4. Le Mécanisme Réactionnel (Aspect Microscopique)
+
+L'équation bilan ne raconte que le début et la fin. Le mécanisme détaille les **étapes élémentaires** (le film de la réaction).
+
+### Les Acteurs : Sites Donneurs et Accepteurs
+
+Les réactions chimiques résultent d'interactions entre charges électriques.
+
+:::property[Site Nucléophile (Donneur)]
+**Riche en électrons** — Il attaque.
+- Rechercher : Une charge négative $(-)$, un doublet non liant (sur O, N, Cl), ou une liaison multiple
+:::
+
+:::property[Site Électrophile (Accepteur)]
+**Pauvre en électrons** — Il subit l'attaque.
+- Rechercher : Une charge positive $(+)$ ou une charge partielle $\delta+$ due à une différence d'électronégativité (ex: le C du groupe $C=O$ ou $C\text{-}Cl$)
+:::
+
+### La Flèche Courbe
+
+Elle modélise le **déplacement d'un doublet d'électrons** lors d'une étape.
+
+:::theorem[Règle d'or de la flèche courbe]
+La flèche part **toujours** du doublet (du site nucléophile) et pointe vers le site électrophile (ou vers l'atome qui récupère la liaison).
+:::
+
+:::example[Réaction amine + carbocation]
+L'azote N possède un doublet non liant (Donneur). Le carbone $R^+$ a une lacune (Accepteur).
+
+La flèche part du doublet du N et va vers le C. Résultat : Formation d'une liaison $N\text{-}C$.
+:::
+
+## 5. Optimisation : Vitesse et Rendement
+
+En industrie comme au labo, on veut produire vite et beaucoup. Il faut distinguer deux leviers distincts.
+
+### Optimiser la Vitesse (Cinétique)
+
+Comment aller plus vite **sans changer** la quantité finale produite ? On joue sur les **facteurs cinétiques** :
+
+1. **Température** : Chauffer augmente l'agitation thermique et la fréquence des chocs efficaces
+   - *Dispositif :* Le **chauffage à reflux** permet de chauffer tout en condensant les vapeurs pour ne pas perdre de matière
+
+2. **Concentration** : Augmenter la concentration des réactifs accélère la réaction
+
+3. **Catalyseur** : Une espèce chimique qui accélère la réaction sans être consommée (elle est régénérée à la fin). Elle offre un chemin réactionnel alternatif plus rapide (baisse de l'énergie d'activation)
+
+:::warning[Le catalyseur n'augmente pas le rendement !]
+Un catalyseur fait atteindre l'équilibre plus vite, mais ne modifie pas la position de cet équilibre.
+:::
+
+### Optimiser le Rendement (Thermodynamique)
+
+Pour une réaction limitée (équilibre), comment déplacer l'équilibre vers les produits ?
+
+1. **Excès de réactif** : Introduire un réactif en large excès (souvent le moins cher) force la consommation de l'autre réactif pour rétablir l'équilibre ($Q_r$ cherche à atteindre $K$)
+
+2. **Élimination d'un produit** : Si l'on retire un produit du milieu (par distillation ou Dean-Stark) au fur et à mesure de sa formation, $Q_r$ reste faible et la réaction ne s'arrête jamais. On déplace l'équilibre vers la droite
+
+## 6. Le Rendement d'une Synthèse
+
+:::definition
+**Rendement**
+
 Le rendement $\eta$ (ou $\rho$) d'une synthèse est le rapport entre la quantité de produit effectivement obtenue et la quantité maximale théorique :
-$$\eta = \frac{n_{obtenu}}{n_{théorique}} \times 100$$
-</Definition>
+$$\eta = \frac{n_{obtenu}}{n_{théorique}} \times 100 = \frac{m_{obtenue}}{m_{théorique}} \times 100$$
+:::
 
 ### Causes d'un rendement inférieur à 100%
 
@@ -56,130 +174,139 @@ $$\eta = \frac{n_{obtenu}}{n_{théorique}} \times 100$$
 - Réactions parasites
 - Pertes lors des manipulations (purification, transferts)
 
-<Formula title="Rendement">
-$$\eta = \frac{m_{obtenue}}{m_{théorique}} \times 100 = \frac{n_{obtenu}}{n_{théorique}} \times 100$$
-</Formula>
-
 ### Rendement global
 
+:::theorem[Rendement d'une synthèse multi-étapes]
 Pour une synthèse en plusieurs étapes :
 $$\eta_{global} = \eta_1 \times \eta_2 \times ... \times \eta_n$$
 
-<Trap title="Rendement global">
-Les rendements se multiplient ! Une synthèse en 5 étapes avec 80% de rendement à chaque étape donne : $(0.8)^5 = 0.33 = 33\%$ de rendement global.
-</Trap>
+Les rendements se **multiplient** !
+:::
 
-## Optimisation d'une synthèse
+## 7. Stratégies pour Molécules Polyfonctionnelles
 
-### Facteurs cinétiques
+Quand une molécule possède plusieurs groupes caractéristiques (ex: un acide aminé a une fonction acide et une fonction amine), il y a un risque que la réaction se fasse au mauvais endroit ou que la molécule réagisse avec elle-même.
 
-Pour accélérer une réaction :
-- Augmenter la **température**
-- Augmenter les **concentrations**
-- Utiliser un **catalyseur**
-- Agiter le milieu réactionnel
+### Sélectivité des réactions
 
-### Facteurs thermodynamiques
+:::property[Chimiosélectivité]
+Capacité à faire réagir préférentiellement **un groupe fonctionnel** plutôt qu'un autre.
+- *Exemple :* $NaBH_4$ réduit les cétones mais ne touche pas aux esters, alors que $LiAlH_4$ réduit les deux.
+:::
 
-Pour déplacer un équilibre :
-- Excès d'un réactif
-- Élimination d'un produit
-- Modification de température ou pression
+:::property[Régiosélectivité]
+Capacité à orienter la réaction vers une **position particulière** de la molécule.
+:::
 
-<Method title="Améliorer un rendement">
-1. Identifier le type de réaction (totale ou équilibrée)
-2. Si équilibrée : déplacer l'équilibre (excès de réactif, éliminer un produit)
-3. Optimiser les conditions : T°, catalyseur, solvant
-4. Réduire les pertes lors de la purification
-</Method>
+:::property[Stéréosélectivité]
+Capacité à former préférentiellement un **stéréoisomère**.
+:::
 
-## Protection de groupes fonctionnels
+### Protection et Déprotection
 
-### Pourquoi protéger ?
+Si aucun réactif sélectif n'existe, on utilise une stratégie en 3 étapes :
 
-Certaines molécules possèdent plusieurs groupes fonctionnels. Pour effectuer une réaction sur un groupe spécifique sans affecter les autres, on **protège** temporairement les groupes non concernés.
+:::method[Stratégie de protection]
+1. **Protection** : On fait réagir la fonction "fragile" (celle qu'on veut garder intacte) avec un **groupe protecteur** pour la bloquer temporairement
+2. **Réaction cible** : On effectue la transformation sur l'autre fonction (la fonction protégée ne réagit pas)
+3. **Déprotection** : On retire le groupe protecteur pour retrouver la fonction initiale
+:::
 
-### Stratégie de protection
-
-1. **Protection** : rendre le groupe inerte par une réaction
-2. **Réaction** : effectuer la transformation souhaitée
-3. **Déprotection** : régénérer le groupe initial
-
-### Exemples
-
+**Exemples de groupes protecteurs :**
 - Protection d'un alcool en éther ou ester
 - Protection d'une amine en amide
 - Protection d'un aldéhyde en acétal
 
-<Definition title="Groupe protecteur">
-Un groupe protecteur est un groupe chimique introduit temporairement pour bloquer la réactivité d'une fonction. Il doit être facilement installé et retiré.
-</Definition>
+## 8. Chimie Verte
 
-## Sélectivité des réactions
+La chimie moderne cherche à réduire son impact environnemental.
 
-### Chimiosélectivité
+:::definition
+**Économie d'atomes**
 
-Capacité à faire réagir préférentiellement un groupe fonctionnel plutôt qu'un autre.
-
-### Régiosélectivité
-
-Capacité à orienter la réaction vers une position particulière de la molécule.
-
-### Stéréosélectivité
-
-Capacité à former préférentiellement un stéréoisomère.
-
-## Chimie verte
-
-La chimie verte vise à réduire l'impact environnemental des synthèses.
-
-### Les 12 principes
-
-Les principaux principes à retenir :
-1. **Économie d'atomes** : maximiser l'incorporation des réactifs dans le produit
-2. **Solvants verts** : éviter les solvants toxiques, privilégier l'eau
-3. **Efficacité énergétique** : réactions à température ambiante si possible
-4. **Catalyse** : préférer les catalyseurs aux réactifs stœchiométriques
-5. **Réduction des déchets** : prévenir plutôt que traiter
-
-### Économie d'atomes
-
-<Definition title="Économie d'atomes">
 L'économie d'atomes mesure la proportion de la masse des réactifs qui se retrouve dans le produit :
 $$EA = \frac{M_{produit}}{\sum M_{réactifs}} \times 100$$
-</Definition>
+:::
 
-Les réactions d'**addition** ont une meilleure économie d'atomes que les réactions de **substitution**.
+:::tip[Principes clés de la chimie verte]
+- **Économie d'atomes** : Maximiser le nombre d'atomes des réactifs qui se retrouvent dans le produit final (moins de déchets)
+- **Sécurité** : Remplacer les solvants et réactifs toxiques
+- **Énergie** : Favoriser les méthodes peu énergivores (catalyse, température modérée)
+- **Réduction des étapes** : Moins d'étapes = moins de déchets et meilleur rendement global
+:::
 
-## Exercice de compréhension
+Les réactions d'**addition** ont une meilleure économie d'atomes que les réactions de **substitution** (car il n'y a pas de sous-produit).
 
-<Exercise id="comp-synth-1">
-On réalise la synthèse de l'aspirine (acide acétylsalicylique, M = 180 g/mol) à partir d'acide salicylique (M = 138 g/mol) et d'anhydride acétique.
+## 9. Exemples Résolus
 
-On part de 5.0 g d'acide salicylique et on obtient 4.2 g d'aspirine.
+:::example[Synthèse de l'aspirine]
+**Données :** On réalise la synthèse de l'aspirine ($M = 180$ g/mol) à partir d'acide salicylique ($M = 138$ g/mol) et d'anhydride acétique. On part de 5,0 g d'acide salicylique et on obtient 4,2 g d'aspirine.
 
-1. Calculer la quantité de matière initiale d'acide salicylique.
-2. Calculer la quantité maximale théorique d'aspirine (réaction équimolaire).
-3. Calculer le rendement de cette synthèse.
+**Calculer le rendement de cette synthèse.**
 
-<Solution>
+**Solution :**
 1. Quantité de matière d'acide salicylique :
-$$n_{AS} = \frac{m}{M} = \frac{5.0}{138} = 0.0362 \text{ mol}$$
+$$n_{AS} = \frac{m}{M} = \frac{5{,}0}{138} = 0{,}0362 \text{ mol}$$
 
-2. La réaction est équimolaire, donc $n_{aspirine, théo} = n_{AS} = 0.0362$ mol
-$$m_{théo} = n \times M = 0.0362 \times 180 = 6.5 \text{ g}$$
+2. La réaction est équimolaire, donc $n_{aspirine, théo} = n_{AS} = 0{,}0362$ mol
+$$m_{théo} = n \times M = 0{,}0362 \times 180 = 6{,}5 \text{ g}$$
 
 3. Rendement :
-$$\eta = \frac{m_{obtenue}}{m_{théorique}} \times 100 = \frac{4.2}{6.5} \times 100 = 65\%$$
-</Solution>
-</Exercise>
+$$\eta = \frac{m_{obtenue}}{m_{théorique}} \times 100 = \frac{4{,}2}{6{,}5} \times 100 = \mathbf{65\%}$$
+:::
 
-## Points clés à retenir
+:::example[Rendement global multi-étapes]
+**Données :** Une synthèse se fait en 4 étapes avec les rendements suivants : 90%, 85%, 75%, 80%.
 
-<Summary>
-- Rendement : $\eta = \frac{n_{obtenu}}{n_{théorique}} \times 100$
-- Rendement global = produit des rendements de chaque étape
-- Protection de groupes : protection → réaction → déprotection
-- Chimie verte : économie d'atomes, catalyse, solvants verts
-- Optimisation : température, catalyseur, déplacement d'équilibre
-</Summary>
+**Calculer le rendement global.**
+
+**Solution :**
+$$\eta_{global} = 0{,}90 \times 0{,}85 \times 0{,}75 \times 0{,}80 = 0{,}459 = \mathbf{46\%}$$
+
+Même avec de bons rendements individuels, le rendement global chute rapidement !
+:::
+
+:::example[Identifier le type de réaction]
+**Classer ces réactions :**
+
+1. $CH_3\text{-}Br + OH^- \rightarrow CH_3\text{-}OH + Br^-$
+2. $CH_2=CH_2 + H_2O \rightarrow CH_3\text{-}CH_2\text{-}OH$
+3. $CH_3\text{-}CH_2\text{-}OH \rightarrow CH_2=CH_2 + H_2O$
+
+**Solution :**
+1. **Substitution** : Br est remplacé par OH
+2. **Addition** : H et OH s'ajoutent sur la double liaison
+3. **Élimination** : H₂O est éliminé, création d'une double liaison
+:::
+
+## 10. Erreurs Classiques
+
+:::warning[Erreur 1 : Confondre catalyseur et excès de réactif]
+- Le **catalyseur** augmente la **vitesse** mais pas le rendement
+- L'**excès de réactif** augmente le **rendement** en déplaçant l'équilibre
+:::
+
+:::warning[Erreur 2 : Sens de la flèche courbe]
+La flèche part **toujours** du doublet d'électrons (−) vers le site (+).
+
+Ne jamais faire partir la flèche d'une charge positive ou d'un atome sans doublet !
+:::
+
+:::warning[Erreur 3 : Oublier que les rendements se multiplient]
+Pour une synthèse multi-étapes, on ne fait pas la moyenne des rendements, on les **multiplie**.
+:::
+
+:::warning[Erreur 4 : Confondre chauffage à reflux et distillation]
+- **Chauffage à reflux** : On chauffe sans perdre de matière (les vapeurs sont condensées et retournent dans le ballon)
+- **Distillation** : On récupère les vapeurs pour séparer les composants
+:::
+
+## Mini-résumé
+
+| Concept | Formule / Règle | Erreur classique à éviter |
+|---------|-----------------|---------------------------|
+| **Rendement** | $\eta = \frac{n_{obtenu}}{n_{théo}} \times 100$ | Oublier de multiplier les rendements |
+| **Flèche courbe** | Part du doublet (−) vers le site (+) | Faire partir du (+) |
+| **Vitesse** | Catalyseur, T°, concentration | Confondre avec le rendement |
+| **Rendement** | Excès de réactif, élimination de produit | Confondre avec la vitesse |
+| **Économie d'atomes** | Addition > Substitution | Oublier les sous-produits |
