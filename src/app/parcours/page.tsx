@@ -129,15 +129,15 @@ export default function ParcoursPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-slate-900 flex items-center justify-center gap-3">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 flex items-center justify-center gap-3">
             <GraduationCap className="h-9 w-9 text-primary-600" />
             Parcours de révision
           </h1>
-          <p className="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="mt-3 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Choisis un parcours adapté à tes objectifs. Chaque parcours propose une progression
             structurée avec des objectifs quotidiens.
           </p>
@@ -145,17 +145,17 @@ export default function ParcoursPage() {
 
         {/* Active path banner */}
         {activePath && (
-          <div className="mb-8 rounded-xl border border-success-200 bg-success-50 p-6">
+          <div className="mb-8 rounded-xl border border-success-200 dark:border-success-800 bg-success-50 dark:bg-success-900/30 p-6">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="font-semibold text-success-900 flex items-center gap-2">
+                <h2 className="font-semibold text-success-900 dark:text-success-100 flex items-center gap-2">
                   <Play className="h-5 w-5" />
                   Parcours en cours
                 </h2>
-                <p className="mt-1 text-success-800">
+                <p className="mt-1 text-success-800 dark:text-success-200">
                   {parcours.find((p) => p.id === activePath.pathId)?.name}
                 </p>
-                <p className="text-sm text-success-700 mt-1">
+                <p className="text-sm text-success-700 dark:text-success-300 mt-1">
                   Jour {activePath.currentDay} • {activePath.completedDays.length} jours complétés
                 </p>
               </div>
@@ -200,18 +200,18 @@ export default function ParcoursPage() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-slate-900">{p.name}</h3>
-                    <p className="mt-1 text-sm text-slate-600">{p.description}</p>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">{p.name}</h3>
+                    <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{p.description}</p>
                   </div>
                 </div>
 
                 {/* Stats */}
                 <div className="mt-4 flex flex-wrap gap-4 text-sm">
-                  <div className="flex items-center gap-1 text-slate-600">
+                  <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
                     <Calendar className="h-4 w-4" />
                     {p.duration}
                   </div>
-                  <div className="flex items-center gap-1 text-slate-600">
+                  <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
                     <Clock className="h-4 w-4" />
                     {p.estimatedDaily}/jour
                   </div>
@@ -233,7 +233,7 @@ export default function ParcoursPage() {
                 {/* Features */}
                 <ul className="mt-4 space-y-2">
                   {p.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
+                    <li key={i} className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                       <CheckCircle className={cn('h-4 w-4', colors.text)} />
                       {feature}
                     </li>
@@ -271,33 +271,33 @@ export default function ParcoursPage() {
         </div>
 
         {/* Info section */}
-        <div className="mt-12 rounded-xl bg-white border border-slate-200 p-8">
-          <h2 className="text-xl font-bold text-slate-900 mb-4">Comment fonctionnent les parcours ?</h2>
+        <div className="mt-12 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Comment fonctionnent les parcours ?</h2>
           <div className="grid gap-6 md:grid-cols-3">
             <div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 text-primary-600 mb-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 mb-3">
                 <span className="font-bold">1</span>
               </div>
-              <h3 className="font-semibold text-slate-900">Objectifs quotidiens</h3>
-              <p className="mt-1 text-sm text-slate-600">
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">Objectifs quotidiens</h3>
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                 Chaque jour, tu as des leçons à revoir, des exercices à faire et des flashcards à réviser.
               </p>
             </div>
             <div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 text-primary-600 mb-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 mb-3">
                 <span className="font-bold">2</span>
               </div>
-              <h3 className="font-semibold text-slate-900">Suivi de progression</h3>
-              <p className="mt-1 text-sm text-slate-600">
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">Suivi de progression</h3>
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                 Ta progression est sauvegardée. Tu peux reprendre où tu en étais à tout moment.
               </p>
             </div>
             <div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 text-primary-600 mb-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 mb-3">
                 <span className="font-bold">3</span>
               </div>
-              <h3 className="font-semibold text-slate-900">Révision espacée</h3>
-              <p className="mt-1 text-sm text-slate-600">
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">Révision espacée</h3>
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                 Le parcours intègre automatiquement des révisions espacées pour ancrer les connaissances.
               </p>
             </div>

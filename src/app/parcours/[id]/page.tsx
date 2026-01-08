@@ -234,10 +234,10 @@ export default function ParcoursDetailPage() {
 
   if (!parcours) {
     return (
-      <div className="min-h-screen bg-slate-50 py-8">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h1 className="text-2xl font-bold text-slate-900">Parcours non trouvé</h1>
-          <p className="mt-2 text-slate-600">Ce parcours n'existe pas.</p>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Parcours non trouvé</h1>
+          <p className="mt-2 text-slate-600 dark:text-slate-400">Ce parcours n'existe pas.</p>
           <Link href="/parcours" className="btn-primary mt-4 inline-block">
             Retour aux parcours
           </Link>
@@ -298,12 +298,12 @@ export default function ParcoursDetailPage() {
   const progress = isActive ? (completedDays.length / parcours.days.length) * 100 : 0
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Back button */}
         <Link
           href="/parcours"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-6"
+          className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Retour aux parcours
@@ -390,7 +390,7 @@ export default function ParcoursDetailPage() {
               <ArrowLeft className="h-4 w-4" />
               Jour précédent
             </button>
-            <span className="text-slate-600">
+            <span className="text-slate-600 dark:text-slate-400">
               Jour actuel : <strong>{currentDay}</strong> / {parcours.days.length}
             </span>
             <button
@@ -409,7 +409,7 @@ export default function ParcoursDetailPage() {
 
         {/* Days list */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-slate-900 mb-4">Programme jour par jour</h2>
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Programme jour par jour</h2>
 
           {parcours.days.map((day) => {
             const isCompleted = completedDays.includes(day.day)
@@ -421,10 +421,11 @@ export default function ParcoursDetailPage() {
               <div
                 key={day.day}
                 className={cn(
-                  'rounded-xl border bg-white p-4 transition-all',
+                  'rounded-xl border bg-white dark:bg-slate-800 p-4 transition-all',
                   isCurrent && `${colors.border} ${colors.light}`,
-                  isCompleted && 'bg-success-50 border-success-200',
-                  isLocked && 'opacity-60'
+                  isCompleted && 'bg-success-50 dark:bg-success-900/30 border-success-200 dark:border-success-800',
+                  isLocked && 'opacity-60',
+                  !isCurrent && !isCompleted && 'border-slate-200 dark:border-slate-700'
                 )}
               >
                 <div className="flex items-start gap-4">
@@ -436,7 +437,7 @@ export default function ParcoursDetailPage() {
                         ? 'bg-success-500 text-white'
                         : isCurrent
                         ? `${colors.bg} text-white`
-                        : 'bg-slate-100 text-slate-600'
+                        : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                     )}
                   >
                     {isCompleted ? <CheckCircle className="h-5 w-5" /> : day.day}
@@ -445,7 +446,7 @@ export default function ParcoursDetailPage() {
                   {/* Day content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-4">
-                      <h3 className="font-semibold text-slate-900">{day.theme}</h3>
+                      <h3 className="font-semibold text-slate-900 dark:text-slate-100">{day.theme}</h3>
                       {/* Action */}
                       {isCurrent && (
                         <button
@@ -464,7 +465,7 @@ export default function ParcoursDetailPage() {
                     </div>
 
                     {/* Summary badges */}
-                    <div className="flex flex-wrap gap-3 mt-1 text-sm text-slate-600">
+                    <div className="flex flex-wrap gap-3 mt-1 text-sm text-slate-600 dark:text-slate-400">
                       {day.lessons.length > 0 && (
                         <span className="flex items-center gap-1">
                           <BookOpen className="h-3.5 w-3.5" />
@@ -490,11 +491,11 @@ export default function ParcoursDetailPage() {
 
                     {/* Detailed links - shown for current or accessible days */}
                     {isAccessible && (day.lessons.length > 0 || day.exercises > 0 || day.flashcards > 0 || day.quiz) && (
-                      <div className="mt-3 pt-3 border-t border-slate-200 space-y-2">
+                      <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700 space-y-2">
                         {/* Lesson links */}
                         {day.lessons.length > 0 && (
                           <div className="flex flex-wrap gap-2">
-                            <span className="text-xs text-slate-500 w-16 flex-shrink-0">Leçons :</span>
+                            <span className="text-xs text-slate-500 dark:text-slate-500 w-16 flex-shrink-0">Leçons :</span>
                             {day.lessons.map((lessonSlug) => (
                               <Link
                                 key={lessonSlug}
@@ -511,7 +512,7 @@ export default function ParcoursDetailPage() {
                         {/* Quiz link */}
                         {day.quiz && day.lessons.length > 0 && (
                           <div className="flex flex-wrap gap-2">
-                            <span className="text-xs text-slate-500 w-16 flex-shrink-0">QCM :</span>
+                            <span className="text-xs text-slate-500 dark:text-slate-500 w-16 flex-shrink-0">QCM :</span>
                             {day.lessons.map((lessonSlug) => (
                               <Link
                                 key={`quiz-${lessonSlug}`}
@@ -528,7 +529,7 @@ export default function ParcoursDetailPage() {
                         {/* Exercises link */}
                         {day.exercises > 0 && (
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="text-xs text-slate-500 w-16 flex-shrink-0">Exercices :</span>
+                            <span className="text-xs text-slate-500 dark:text-slate-500 w-16 flex-shrink-0">Exercices :</span>
                             {day.lessons.length > 0 ? (
                               day.lessons.map((lessonSlug) => (
                                 <Link
@@ -555,7 +556,7 @@ export default function ParcoursDetailPage() {
                         {/* Flashcards link */}
                         {day.flashcards > 0 && (
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="text-xs text-slate-500 w-16 flex-shrink-0">Flashcards :</span>
+                            <span className="text-xs text-slate-500 dark:text-slate-500 w-16 flex-shrink-0">Flashcards :</span>
                             {day.lessons.length > 0 ? (
                               day.lessons.map((lessonSlug) => (
                                 <Link
@@ -589,10 +590,10 @@ export default function ParcoursDetailPage() {
 
         {/* Completion message */}
         {isActive && completedDays.length === parcours.days.length && (
-          <div className="mt-8 rounded-xl bg-success-100 border border-success-200 p-6 text-center">
-            <Trophy className="h-12 w-12 text-success-600 mx-auto mb-3" />
-            <h2 className="text-xl font-bold text-success-900">Parcours terminé !</h2>
-            <p className="mt-2 text-success-700">
+          <div className="mt-8 rounded-xl bg-success-100 dark:bg-success-900/30 border border-success-200 dark:border-success-800 p-6 text-center">
+            <Trophy className="h-12 w-12 text-success-600 dark:text-success-400 mx-auto mb-3" />
+            <h2 className="text-xl font-bold text-success-900 dark:text-success-100">Parcours terminé !</h2>
+            <p className="mt-2 text-success-700 dark:text-success-300">
               Félicitations ! Tu as complété tous les jours de ce parcours.
             </p>
           </div>
