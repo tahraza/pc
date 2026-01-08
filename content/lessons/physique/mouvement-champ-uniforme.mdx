@@ -1,176 +1,329 @@
 ---
 id: "mouvement-champ-uniforme"
-title: "Mouvement dans un champ uniforme"
+title: "Mouvement dans un champ uniforme : Projectiles et Particules Chargées"
 track: "physique"
 level: 3
 prerequisites: ["mouvement-newton"]
-tags: ["champ", "projectile", "parabole", "champ électrique"]
-estimatedTime: 50
+tags: ["champ uniforme", "projectile", "parabole", "champ électrique", "condensateur", "équations horaires", "énergie"]
+estimatedTime: 90
 chapter: "mecanique"
 order: 2
 ---
 
-# Mouvement dans un champ uniforme
+# Mouvement dans un Champ Uniforme
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Décrire le mouvement d'un projectile
-- Établir les équations horaires
-- Déterminer la trajectoire (équation cartésienne)
-- Analyser le mouvement dans un champ électrique
+- Définir un champ uniforme (pesanteur $\vec{g}$, électrique $\vec{E}$) et comprendre que **champ uniforme = accélération constante**
+- Établir les **équations horaires** $x(t)$, $y(t)$ et l'**équation de trajectoire** $y(x)$
+- Démontrer pourquoi la trajectoire est une **parabole**
+- Calculer la **portée** et la **flèche** d'un tir
+- Analyser le mouvement d'une particule chargée dans un champ électrique
+- Exploiter les aspects **énergétiques** (conservation de l'énergie mécanique)
 
-## Intuition et analogie
+## 1. Intuition et Analogies
 
-Lance une balle en l'air avec un angle : elle décrit une belle **courbe en cloche** (parabole) avant de retomber. Pourquoi cette forme si élégante ?
+### Le principe : superposition de deux mouvements
 
+Lance une balle en l'air avec un angle : elle décrit une belle **courbe en cloche** (parabole). Pourquoi cette forme si élégante ?
+
+:::tip[Analogie : Décomposition du mouvement]
 Imagine que tu décomposes le mouvement en deux parties indépendantes :
-- **Horizontalement** : aucune force ne pousse la balle (on néglige l'air), donc elle avance à vitesse constante, comme une voiture sur une route plate
-- **Verticalement** : la gravité tire la balle vers le bas, comme si elle tombait en chute libre
+- **Horizontalement** : aucune force ne pousse la balle (on néglige l'air), donc elle avance à vitesse constante
+- **Verticalement** : la gravité tire la balle vers le bas, comme en chute libre
 
-Le truc génial : ces deux mouvements se superposent ! La balle "tombe" tout en "avançant". Résultat : une parabole.
+Ces deux mouvements se superposent ! La balle "tombe" tout en "avançant". Résultat : une parabole.
 
-Un joueur de basket qui tire utilise intuitivement ce principe : pour atteindre le panier, il faut viser **au-dessus** car la balle va "chuter" pendant son trajet horizontal.
-
-Dans un **champ électrique**, c'est pareil mais avec une force électrique au lieu de la gravité. Un électron entre deux plaques chargées est dévié comme une balle par la pesanteur — c'est le principe des vieux téléviseurs à tube cathodique !
-
-## Mouvement d'un projectile
-
-:::definition
-**Projectile**
-
-Un projectile est un objet lancé avec une vitesse initiale $\vec{v}_0$ et soumis uniquement à son poids (on néglige les frottements).
-
-Le mouvement s'effectue dans le **champ de pesanteur uniforme** $\vec{g}$.
+Un joueur de basket utilise intuitivement ce principe : pour atteindre le panier, il faut viser **au-dessus** car la balle va "chuter" pendant son trajet horizontal.
 :::
 
-## Équations du mouvement
+:::tip[Analogie : Le Moteur de Jeu Vidéo]
+Pour prédire où va atterrir un objet, un moteur physique fait :
+1. **État initial** : Où est l'objet et à quelle vitesse part-il ?
+2. **La Règle** : Quelle force le pousse ? (Pesanteur ou Électricité)
+3. **Le Calcul** : Accélération → Vitesse → Position (deux intégrations)
+:::
 
-:::method[Établissement des équations]
-**Système** : le projectile, masse m
+### L'analogie clé : projectile ↔ particule chargée
+
+| Situation | Projectile | Particule chargée |
+|-----------|------------|-------------------|
+| Champ | Pesanteur $\vec{g}$ | Électrique $\vec{E}$ |
+| Force | $\vec{P} = m\vec{g}$ | $\vec{F} = q\vec{E}$ |
+| Accélération | $\vec{a} = \vec{g}$ | $\vec{a} = \frac{q}{m}\vec{E}$ |
+| Dépend de m ? | Non | Oui |
+
+Dans un **champ électrique**, c'est pareil qu'avec la gravité mais avec une force électrique. Un électron entre deux plaques chargées est dévié comme une balle par la pesanteur — c'est le principe des vieux téléviseurs à tube cathodique !
+
+## 2. Qu'est-ce qu'un champ uniforme ?
+
+:::definition
+**Champ uniforme**
+
+Un champ est **uniforme** s'il a la même direction, le même sens et la même valeur en tout point de l'espace considéré.
+
+**Conséquence fondamentale** : si le champ est uniforme, la force est constante, donc **l'accélération est constante**.
+:::
+
+### Champ de pesanteur uniforme
+
+Près de la surface de la Terre, on modélise $\vec{g}$ comme uniforme :
+$$\vec{g} = -g\vec{j}$$
+(avec l'axe vertical orienté vers le haut, $g \approx 9{,}81$ m·s⁻²)
+
+### Champ électrique uniforme (condensateur plan)
+
+:::property[Champ entre deux plaques]
+Un champ $\vec{E}$ uniforme existe entre deux plaques parallèles P (positive) et N (négative), séparées d'une distance $d$, avec une tension $U_{PN}$ :
+
+$$E = \frac{U_{PN}}{d}$$
+
+- **Unité** : V·m⁻¹ (ou N·C⁻¹)
+- **Sens** : du + vers le − (potentiels décroissants)
+:::
+
+:::example[Mini-exercice]
+Deux plaques distantes de 2,0 cm avec $U = 1000$ V. Calculer E.
+
+**Solution** : $E = \frac{1000}{0{,}020} = 5{,}0 \times 10^4$ V·m⁻¹
+:::
+
+## 3. Cas A : Mouvement d'un projectile (champ de pesanteur)
+
+### Hypothèses (à annoncer au bac)
+
+:::definition
+**Chute libre**
+
+Un projectile est en chute libre si :
+- Les frottements de l'air et la poussée d'Archimède sont négligeables
+- La seule force est le poids : $\vec{P} = m\vec{g}$
+
+Donc par la 2ème loi de Newton : $\vec{a} = \vec{g}$ (constante)
+
+**Note importante** : L'accélération ne dépend pas de la masse ! Une boule de pétanque et une balle de tennis tombent de la même façon dans le vide.
+:::
+
+### Mise en équation
+
+:::method[Établissement des équations horaires]
+**Système** : projectile de masse m
 **Référentiel** : terrestre (galiléen)
 **Repère** : O au point de lancement, Ox horizontal, Oy vertical vers le haut
 
-**PFD** : $m\vec{a} = m\vec{g}$, donc $\vec{a} = \vec{g}$
-
-Projections :
-- $a_x = 0$
-- $a_y = -g$
+**Conditions initiales** à $t = 0$ :
+- Position : $(x_0, y_0)$
+- Vitesse : $\vec{v}_0$ faisant un angle $\alpha$ avec l'horizontale
+  - $v_{0x} = v_0\cos\alpha$
+  - $v_{0y} = v_0\sin\alpha$
 :::
 
 :::property[Équations horaires]
-Avec $\vec{v}_0 = v_0\cos\alpha \vec{u}_x + v_0\sin\alpha \vec{u}_y$ :
+Puisque $\vec{a} = \vec{g}$, avec $a_x = 0$ et $a_y = -g$ :
 
-**Vitesse** :
-- $v_x(t) = v_0\cos\alpha$
-- $v_y(t) = v_0\sin\alpha - gt$
+**Vitesse** (primitive de l'accélération) :
+$$v_x(t) = v_0\cos\alpha \quad \text{(constante)}$$
+$$v_y(t) = -gt + v_0\sin\alpha$$
 
-**Position** :
-- $x(t) = v_0\cos\alpha \times t$
-- $y(t) = v_0\sin\alpha \times t - \frac{1}{2}gt^2$
+**Position** (primitive de la vitesse) :
+$$x(t) = v_0\cos\alpha \cdot t + x_0$$
+$$y(t) = -\frac{1}{2}gt^2 + v_0\sin\alpha \cdot t + y_0$$
+
+Le mouvement horizontal est **uniforme** (MRU), le vertical est **uniformément varié** (MRUV).
 :::
 
-## Trajectoire
+### Équation de la trajectoire
 
-:::property[Équation de la trajectoire]
-En éliminant t entre x(t) et y(t) :
+:::property[Trajectoire parabolique]
+On élimine $t$ en isolant : $t = \frac{x - x_0}{v_0\cos\alpha}$
 
-$$y = \tan\alpha \times x - \frac{g}{2v_0^2\cos^2\alpha} x^2$$
+Puis en substituant dans $y(t)$ :
+
+$$y = -\frac{g}{2v_0^2\cos^2\alpha}(x-x_0)^2 + \tan\alpha \cdot (x-x_0) + y_0$$
+
+Ou sous forme simplifiée (si $x_0 = y_0 = 0$) :
+$$y = \tan\alpha \cdot x - \frac{g}{2v_0^2\cos^2\alpha} x^2$$
 
 C'est l'équation d'une **parabole** à concavité vers le bas.
 :::
 
-:::property[Caractéristiques]
-**Flèche** (altitude maximale) :
-$$H = \frac{v_0^2\sin^2\alpha}{2g}$$
-atteinte au temps $t_H = \frac{v_0\sin\alpha}{g}$
+### Portée et Flèche
 
-**Portée** (distance horizontale) :
-$$P = \frac{v_0^2\sin(2\alpha)}{g}$$
+:::property[Caractéristiques du tir]
+**Flèche** $H$ (altitude maximale) — atteinte quand $v_y = 0$ :
+$$H = y_0 + \frac{v_0^2\sin^2\alpha}{2g}$$
+au temps $t_H = \frac{v_0\sin\alpha}{g}$
 
-La portée est maximale pour α = 45°.
+**Portée** $P$ (distance horizontale au sol) — quand $y = 0$ :
+$$P = \frac{v_0^2\sin(2\alpha)}{g}$$ (si $y_0 = 0$)
+
+La portée est **maximale pour $\alpha = 45°$** car $\sin(2\alpha)$ est maximal pour $2\alpha = 90°$.
 :::
 
-## Mouvement dans un champ électrique
+## 4. Cas B : Particule chargée dans un champ électrique
+
+### Force et accélération
 
 :::definition
-**Champ électrique uniforme**
+**Force électrique**
 
-Un champ électrique $\vec{E}$ uniforme existe entre deux plaques parallèles chargées.
-
-Une particule de charge q subit la force :
+Une particule de charge $q$ dans un champ $\vec{E}$ subit :
 $$\vec{F} = q\vec{E}$$
+
+Si le poids est négligeable (souvent le cas pour des particules subatomiques) :
+$$m\vec{a} = q\vec{E} \implies \vec{a} = \frac{q}{m}\vec{E}$$
 :::
 
-:::property[Équations du mouvement]
-**PFD** : $m\vec{a} = q\vec{E}$ (si on néglige le poids)
+:::warning[Le signe de q est crucial !]
+- Si $q > 0$ : $\vec{a}$ et $\vec{E}$ sont de **même sens**
+- Si $q < 0$ (électron) : $\vec{a}$ et $\vec{E}$ sont de **sens opposés**
 
-$$\vec{a} = \frac{q}{m}\vec{E}$$
-
-Si $\vec{E}$ est selon Oy et la vitesse initiale selon Ox :
-- $a_x = 0$, $v_x = v_0$, $x = v_0 t$
-- $a_y = \frac{qE}{m}$, $v_y = \frac{qE}{m}t$, $y = \frac{1}{2}\frac{qE}{m}t^2$
-
-La trajectoire est aussi une **parabole**.
+Un électron ($q = -e$) dans un champ $\vec{E}$ vers le haut accélère vers le **bas** !
 :::
 
-## Exemples résolus
+:::tip[Différence avec la chute libre]
+Contrairement au projectile, l'accélération dépend ici de la masse $m$ et de la charge $q$.
 
-### Exemple 1 : Tir parabolique
+Un électron ($m \approx 10^{-30}$ kg) sera **beaucoup plus accéléré** qu'un proton ($m \approx 10^{-27}$ kg) pour le même champ.
+:::
 
-Un projectile est lancé avec v₀ = 20 m/s et α = 30°.
+### Trajectoires possibles
+
+:::property[Types de trajectoires]
+- Si $\vec{v}_0$ **parallèle** à $\vec{E}$ : mouvement **rectiligne** uniformément accéléré (ou ralenti)
+- Si $\vec{v}_0$ **perpendiculaire** à $\vec{E}$ : trajectoire **parabolique** (déviation)
+
+Dans le cas perpendiculaire, les équations sont identiques à celles du projectile en remplaçant $g$ par $\frac{|q|E}{m}$.
+:::
+
+## 5. Aspects Énergétiques
+
+L'approche énergétique permet souvent de calculer la vitesse finale sans passer par les équations horaires.
+
+### Forces conservatives
+
+:::property[Énergies potentielles]
+Le poids et la force électrique (dans un champ uniforme) sont des forces **conservatives** :
+
+- **Énergie potentielle de pesanteur** : $E_{pp} = mgy$
+- **Énergie potentielle électrique** : $E_{pe} = qV$ (où $V$ est le potentiel)
+:::
+
+### Conservation de l'énergie mécanique
+
+:::theorem[En l'absence de frottements]
+L'énergie mécanique se conserve :
+$$E_m = E_c + E_p = \text{constante}$$
+
+**Pour un projectile** : $\frac{1}{2}mv^2 + mgy = \text{cte}$
+- Si l'altitude baisse, la vitesse augmente
+
+**Pour une particule chargée** : $\frac{1}{2}mv^2 + qV = \text{cte}$
+:::
+
+### Théorème de l'énergie cinétique
+
+:::property[Calcul de vitesse]
+$$\Delta E_c = W(\vec{F})$$
+$$\frac{1}{2}mv_B^2 - \frac{1}{2}mv_A^2 = q \times U_{AB}$$
+
+**Application** : Un électron accéléré par une tension $U$ depuis le repos atteint :
+$$v = \sqrt{\frac{2eU}{m}}$$
+:::
+
+## 6. Méthode Universelle (5 étapes)
+
+:::method[Résolution type bac]
+**Étape 1** — Définir système et référentiel
+- Système : projectile ou particule
+- Référentiel terrestre supposé galiléen
+
+**Étape 2** — Bilan des forces
+- Pesanteur : poids seul (chute libre)
+- Électrique : force électrique (poids souvent négligeable)
+
+**Étape 3** — Appliquer Newton, obtenir $\vec{a}$
+- $\vec{a} = \vec{g}$ ou $\vec{a} = \frac{q}{m}\vec{E}$
+- Phrase obligatoire : "Le champ est uniforme, donc $\vec{a}$ est constant"
+
+**Étape 4** — Intégrer deux fois
+- $\vec{a}$ constante → $\vec{v}(t)$ affine → $\vec{OM}(t)$ quadratique
+- Ne pas oublier les conditions initiales !
+
+**Étape 5** — Conclure
+- Mouvement plan (une coordonnée reste nulle)
+- Trajectoire parabolique (si $\vec{v}_0$ non colinéaire à $\vec{a}$)
+:::
+
+## 7. Exemples Résolus
+
+:::example[Tir parabolique]
+Un projectile est lancé avec $v_0 = 20$ m/s et $\alpha = 30°$.
 
 **Flèche** :
-$$H = \frac{20^2 \times \sin^2(30°)}{2 \times 9.81} = \frac{400 \times 0.25}{19.62} = 5.1 \text{ m}$$
+$$H = \frac{20^2 \times \sin^2(30°)}{2 \times 9{,}81} = \frac{400 \times 0{,}25}{19{,}62} = 5{,}1 \text{ m}$$
 
 **Portée** :
-$$P = \frac{20^2 \times \sin(60°)}{9.81} = \frac{400 \times 0.866}{9.81} = 35.3 \text{ m}$$
+$$P = \frac{20^2 \times \sin(60°)}{9{,}81} = \frac{400 \times 0{,}866}{9{,}81} = 35{,}3 \text{ m}$$
 
-### Exemple 2 : Temps de vol
+**Temps de vol** (retour au sol) :
+$$t = \frac{2v_0\sin\alpha}{g} = \frac{2 \times 20 \times 0{,}5}{9{,}81} = 2{,}04 \text{ s}$$
+:::
 
-Même projectile. Temps pour atteindre le sol (y = 0) ?
+:::example[Saut à ski]
+Un skieur quitte le tremplin horizontalement ($\alpha = 0$) à $v_0 = 25$ m/s, hauteur $h = 50$ m.
 
-$y(t) = v_0\sin\alpha \times t - \frac{1}{2}gt^2 = 0$
+1. Équations : $x(t) = v_0 t$ et $y(t) = h - \frac{1}{2}gt^2$
+2. Sol atteint quand $y = 0$ : $t = \sqrt{\frac{2h}{g}} = \sqrt{\frac{100}{9{,}8}} \approx 3{,}2$ s
+3. Distance horizontale : $x = 25 \times 3{,}2 = 80$ m
+:::
 
-$t(v_0\sin\alpha - \frac{1}{2}gt) = 0$
-
-t = 0 (départ) ou $t = \frac{2v_0\sin\alpha}{g} = \frac{2 \times 20 \times 0.5}{9.81} = 2.04$ s
-
-### Exemple 3 : Électron dans un champ
-
-Un électron (m = 9,1×10⁻³¹ kg, q = -1,6×10⁻¹⁹ C) entre avec v₀ = 10⁷ m/s dans un champ E = 10⁴ V/m perpendiculaire à sa trajectoire.
+:::example[Électron dans un condensateur]
+Un électron ($m = 9{,}1 \times 10^{-31}$ kg, $q = -1{,}6 \times 10^{-19}$ C) entre à $v_0 = 10^7$ m/s dans un champ $E = 10^4$ V/m perpendiculaire.
 
 **Accélération** :
-$$a = \frac{|q|E}{m} = \frac{1.6 \times 10^{-19} \times 10^4}{9.1 \times 10^{-31}} = 1.76 \times 10^{15} \text{ m/s}^2$$
+$$a = \frac{|q|E}{m} = \frac{1{,}6 \times 10^{-19} \times 10^4}{9{,}1 \times 10^{-31}} = 1{,}76 \times 10^{15} \text{ m·s}^{-2}$$
 
-Si les plaques ont une longueur L = 5 cm :
-- Temps de traversée : $t = \frac{L}{v_0} = \frac{0.05}{10^7} = 5 \times 10^{-9}$ s
-- Déviation : $y = \frac{1}{2}at^2 = \frac{1}{2} \times 1.76 \times 10^{15} \times (5 \times 10^{-9})^2 = 0.022$ m = 2,2 cm
+Si les plaques ont une longueur $L = 5$ cm :
+- Temps de traversée : $t = \frac{L}{v_0} = 5 \times 10^{-9}$ s
+- Déviation : $y = \frac{1}{2}at^2 = 2{,}2$ cm
+:::
 
-## Erreurs fréquentes
+## 8. Erreurs Classiques
 
-:::warning
-**Erreur 1** : Oublier le signe de g
+:::warning[Erreur 1 : Oublier le signe de g]
+Avec l'axe Oy vers le haut : $a_y = -g$ (où $g > 0$).
+:::
 
-Avec l'axe Oy vers le haut, $a_y = -g$ (g > 0).
+:::warning[Erreur 2 : Mal décomposer la vitesse initiale]
+$v_{0x} = v_0\cos\alpha$ et $v_{0y} = v_0\sin\alpha$. Attention à l'angle de référence !
+:::
 
-**Erreur 2** : Mal décomposer la vitesse initiale
+:::warning[Erreur 3 : Confondre E et U]
+$E = U/d$, pas $E = U$. Vérifier les unités : V·m⁻¹ vs V.
+:::
 
-$v_{0x} = v_0\cos\alpha$, $v_{0y} = v_0\sin\alpha$ (attention à l'angle)
+:::warning[Erreur 4 : Oublier le signe de q pour un électron]
+$q = -e$ pour un électron. La force est **opposée** à $\vec{E}$.
+:::
 
-**Erreur 3** : Confondre temps de montée et temps de vol
+:::warning[Erreur 5 : Confondre temps de montée et temps de vol]
+Temps de vol = 2 × temps de montée (pour un lancer depuis le sol revenant au sol).
+:::
 
-Temps de vol = 2 × temps de montée (pour un lancer depuis le sol)
-
-**Erreur 4** : Oublier le signe de q pour un électron
-
-q = -e pour un électron, donc la force est opposée à $\vec{E}$.
+:::warning[Erreur 6 : Croire que la parabole vient de la gravité]
+La parabole vient de la **combinaison** d'un mouvement uniforme (une direction) et d'un mouvement uniformément accéléré (autre direction). C'est vrai aussi pour le champ électrique !
 :::
 
 ## Mini-résumé
 
-- **Projectile** : $\vec{a} = \vec{g}$, trajectoire parabolique
-- $x(t) = v_0\cos\alpha \times t$, $y(t) = v_0\sin\alpha \times t - \frac{1}{2}gt^2$
-- **Flèche** : $H = \frac{v_0^2\sin^2\alpha}{2g}$
-- **Portée** : $P = \frac{v_0^2\sin(2\alpha)}{g}$, max pour α = 45°
-- **Champ électrique** : $\vec{F} = q\vec{E}$, trajectoire parabolique aussi
+| Concept | Formule | À retenir |
+|---------|---------|-----------|
+| Champ uniforme | $\vec{a}$ constant | Hypothèse à énoncer |
+| Projectile | $\vec{a} = \vec{g}$ | Indépendant de m |
+| Particule | $\vec{a} = \frac{q}{m}\vec{E}$ | Dépend de m et q |
+| Champ E | $E = U/d$ | Du + vers le − |
+| Flèche | $H = \frac{v_0^2\sin^2\alpha}{2g}$ | Quand $v_y = 0$ |
+| Portée | $P = \frac{v_0^2\sin(2\alpha)}{g}$ | Max à 45° |
+| Énergie | $\Delta E_c = W(\vec{F})$ | Méthode alternative |
