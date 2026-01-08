@@ -1,199 +1,285 @@
 ---
 id: "acides-bases"
-title: "Transformations acide-base"
+title: "Transformations Acide-Base : De l'intuition à la maîtrise"
 track: "chimie"
 level: 2
 prerequisites: []
-tags: ["acide", "base", "pH", "pKa", "équilibre"]
-estimatedTime: 50
+tags: ["acide", "base", "pH", "pKa", "titrage", "équilibre", "taux d'avancement"]
+estimatedTime: 90
 chapter: "acide-base"
 order: 1
 ---
 
-# Transformations acide-base
+# Transformations Acide-Base
 
 ## Objectifs
 
 À la fin de cette leçon, tu sauras :
-- Identifier les couples acide/base
-- Calculer le pH d'une solution
-- Utiliser le pKa pour prévoir les réactions
-- Exploiter les diagrammes de prédominance
+- Identifier les couples acide/base et les espèces amphotères
+- Calculer le pH et la concentration en ions oxonium
+- Distinguer une transformation totale d'une transformation limitée (équilibrée)
+- Utiliser la constante d'acidité $K_A$ et le $pK_A$ pour caractériser un couple
+- Prévoir l'espèce majoritaire à l'aide d'un diagramme de prédominance
 
-## Intuition et analogie
+## Intuition et analogie : Le "Jeu de la Balle"
 
-Mords dans un **citron** : ton visage se crispe, c'est **acide** ! Touche un savon mouillé : c'est glissant, c'est **basique**. Mais qu'est-ce qui différencie vraiment ces deux sensations ?
+Pour comprendre la chimie acide-base, il faut imaginer un **échange**. Contrairement à l'oxydoréduction qui échange des électrons, les réactions acide-base reposent sur l'échange d'une particule spécifique : le **proton** ($H^+$).
 
-La clé, c'est le **proton H⁺** (un simple noyau d'hydrogène). Un acide, c'est une molécule qui "veut" donner son H⁺ — comme quelqu'un qui a un objet encombrant et cherche à s'en débarrasser. Une base, c'est une molécule qui "veut" récupérer un H⁺ — comme quelqu'un qui collecte ces objets.
+:::tip
+**Analogie : La Balle de Tennis**
 
-Le **pH** mesure combien de H⁺ flottent librement dans la solution. Beaucoup de H⁺ = pH bas = acide. Peu de H⁺ = pH élevé = basique. C'est une échelle **logarithmique** : un pH de 3 est 10 fois plus acide qu'un pH de 4 !
-
-L'eau pure est **neutre** (pH = 7) car elle joue les deux rôles : elle peut donner un H⁺ (acide) ou en capter un (base). C'est l'arbitre du match acide-base !
-
-Quand tu mélanges vinaigre (acide) et bicarbonate (base), ça mousse : les H⁺ du vinaigre sont captés par le bicarbonate, et du CO₂ se dégage. La réaction acide-base, c'est juste un échange de protons entre deux partenaires.
-
-## Définitions
-
-:::definition
-**Acide et base selon Brønsted**
-
-- Un **acide** est une espèce capable de **céder** un proton H⁺
-- Une **base** est une espèce capable de **capter** un proton H⁺
-
-Tout acide AH a une base conjuguée A⁻ :
-$$\text{AH} \rightleftharpoons \text{A}^- + \text{H}^+$$
-
-Le couple acide/base se note AH/A⁻.
+Imagine que le proton $H^+$ est une **balle de tennis**.
+- **L'Acide** est le joueur qui possède la balle et cherche à s'en débarrasser (il veut la **céder**)
+- **La Base** est le joueur qui a les mains libres et cherche à attraper la balle (elle veut la **capter**)
+- **La Réaction** est le moment précis où la balle passe de la main de l'acide à celle de la base
 :::
 
+## Définitions fondamentales (Modèle de Brönsted)
+
+### Acide et Base
+
 :::definition
-**Réaction acide-base**
+**Acide et Base selon Brönsted**
 
-Une réaction acide-base est un transfert de proton de l'acide d'un couple vers la base d'un autre couple.
-
-$$\text{AH}_1 + \text{A}_2^- \rightleftharpoons \text{A}_1^- + \text{AH}_2$$
+Selon la théorie de Brönsted :
+- Un **Acide** est une espèce chimique capable de **céder** un ou plusieurs ions hydrogène $H^+$ (protons)
+  - *Exemple :* L'acide éthanoïque $CH_3COOH$
+- Une **Base** est une espèce chimique capable de **capter** un ou plusieurs ions hydrogène $H^+$
+  - *Exemple :* L'ammoniac $NH_3$
 :::
 
-## Le pH
+### La notion de Couple Acide-Base
+
+:::definition
+**Couple Acide-Base**
+
+Un acide ne cède pas son proton dans le vide ; il devient une base une fois qu'il l'a perdu. Ils forment un duo inséparable appelé **couple acide/base**, noté $HA/A^-$.
+
+La relation s'écrit sous forme de demi-équation :
+
+$$Acide \rightleftharpoons Base + H^+$$
+:::
+
+### Les espèces Amphotères (Ampholytes)
+
+:::definition
+**Espèce Amphotère**
+
+Certaines espèces sont des "caméléons". Elles peuvent jouer les deux rôles selon la situation. L'exemple le plus important est l'**eau** ($H_2O$) :
+- L'eau est une **base** dans le couple $H_3O^+/H_2O$ (elle capte un proton)
+- L'eau est un **acide** dans le couple $H_2O/HO^-$ (elle cède un proton)
+:::
+
+:::example[Identifier les couples d'une espèce amphotère]
+**Question :** L'ion hydrogénocarbonate $HCO_3^-$ est une espèce amphotère. Écrire les deux couples auxquels il appartient.
+
+**Solution :**
+1. En tant qu'**acide**, il cède un proton : $HCO_3^- \rightleftharpoons CO_3^{2-} + H^+$. Le couple est **$HCO_3^- / CO_3^{2-}$**
+2. En tant que **base**, il capte un proton : $HCO_3^- + H^+ \rightleftharpoons (CO_2, H_2O)$. Le couple est **$(CO_2, H_2O) / HCO_3^-$**
+:::
+
+## La Réaction Acide-Base
+
+:::property[Équation générale]
+Une réaction acide-base est un transfert de proton entre l'acide d'un couple 1 ($HA_1$) et la base d'un couple 2 ($A_2^-$) :
+
+$$HA_1 + A_2^- \rightleftharpoons A_1^- + HA_2$$
+:::
+
+:::example[Écrire l'équation d'une réaction]
+**Question :** Écrire l'équation de la réaction entre l'acide méthanoïque $HCOOH$ et l'eau.
+
+**Solution :**
+1. Identifier les réactifs : L'acide est $HCOOH$ (couple $HCOOH/HCOO^-$). La base est l'eau $H_2O$ (couple $H_3O^+/H_2O$)
+2. Écrire le transfert : $HCOOH$ cède un $H^+$ à $H_2O$
+3. Équation bilan : **$HCOOH(aq) + H_2O(l) \rightleftharpoons HCOO^-(aq) + H_3O^+(aq)$**
+:::
+
+## Le pH : Mesurer l'acidité
+
+### Définition
 
 :::definition
 **Définition du pH**
 
-Le pH mesure l'acidité d'une solution aqueuse :
+Le pH (potentiel Hydrogène) mesure la concentration en ions oxonium ($H_3O^+$) dans une solution diluée :
 
-$$\text{pH} = -\log[\text{H}_3\text{O}^+]$$
+$$\text{pH} = -\log \left( \frac{[\text{H}_3\text{O}^+]}{c^0} \right)$$
 
-où $[\text{H}_3\text{O}^+]$ est en mol/L.
+Où $c^0$ est la concentration standard ($1{,}0 \text{ mol} \cdot L^{-1}$).
 
-Inversement : $[\text{H}_3\text{O}^+] = 10^{-\text{pH}}$
+Inversement, pour trouver la concentration :
+
+$$[\text{H}_3\text{O}^+] = c^0 \times 10^{-\text{pH}}$$
 :::
+
+### Échelle de pH (à 25°C)
 
 :::property[Échelle de pH]
-À 25°C :
-- pH < 7 : solution acide
-- pH = 7 : solution neutre
-- pH > 7 : solution basique
+L'autoprotolyse de l'eau ($2H_2O \rightleftharpoons H_3O^+ + HO^-$) définit un produit ionique :
 
-Le produit ionique de l'eau : $K_e = [\text{H}_3\text{O}^+][\text{HO}^-] = 10^{-14}$
+$$K_e = [\text{H}_3\text{O}^+]\cdot[\text{HO}^-] = 10^{-14}$$
+
+- **Milieu Acide** : pH < 7 ($[\text{H}_3\text{O}^+] > [\text{HO}^-]$)
+- **Milieu Neutre** : pH = 7
+- **Milieu Basique** : pH > 7 ($[\text{H}_3\text{O}^+] < [\text{HO}^-]$)
 :::
 
-## Constante d'acidité Ka
+:::tip
+**Analogie : L'échelle de Richter inversée**
+
+Le pH est une échelle logarithmique. Une diminution de **1 unité de pH** signifie que la concentration en ions acides est multipliée par **10**. Une solution à pH 2 est 10 fois plus concentrée en $H_3O^+$ qu'une solution à pH 3, et 100 fois plus qu'à pH 4.
+:::
+
+:::example[Calcul de pH et concentration]
+**Question :**
+a) Quel est le pH d'une solution où $[H_3O^+] = 2{,}5 \times 10^{-2} \text{ mol} \cdot L^{-1}$ ?
+b) Quelle est la concentration en ions oxonium d'une solution de pH 8,5 ?
+
+**Solution :**
+a) $pH = -\log(2{,}5 \times 10^{-2}) \approx \mathbf{1{,}6}$
+b) $[H_3O^+] = 1{,}0 \times 10^{-8,5} \approx \mathbf{3{,}2 \times 10^{-9} \text{ mol} \cdot L^{-1}}$
+:::
+
+## Force des Acides : Forts vs Faibles
+
+Tous les acides ne se valent pas. On utilise le **taux d'avancement final** ($\tau$) pour les distinguer.
+
+### Acide Fort
+
+:::property[Acide Fort]
+Un acide fort réagit **totalement** avec l'eau ($\tau \approx 1$ ou 100%).
+
+- **Équation :** $HA + H_2O \rightarrow A^- + H_3O^+$ (flèche simple)
+- **Calcul :** Le pH se calcule directement par $pH = -\log(C)$ où C est la concentration apportée
+- *Exemples :* Acide chlorhydrique ($HCl$), Acide nitrique ($HNO_3$)
+:::
+
+### Acide Faible
+
+:::property[Acide Faible]
+Un acide faible réagit **partiellement** avec l'eau ($\tau < 1$). Un équilibre chimique s'installe.
+
+- **Équation :** $HA + H_2O \rightleftharpoons A^- + H_3O^+$ (double flèche)
+- **Calcul :** $pH > -\log(C)$ (le pH est moins bas que prévu car peu de $H^+$ sont libérés)
+- *Exemple :* Acide éthanoïque (vinaigre)
+:::
+
+:::example[Vérifier la force d'un acide]
+**Question :** On dissout de l'acide fluorhydrique (HF) à la concentration $C = 1{,}2 \times 10^{-3} \text{ mol} \cdot L^{-1}$. On mesure un pH de 2,9. Est-ce un acide fort ?
+
+**Solution :**
+1. Calculons le pH théorique si l'acide était fort : $pH_{théorique} = -\log(1{,}2 \times 10^{-3}) \approx 2{,}92$
+2. Comparons : Le pH mesuré (2,9) est quasi identique au théorique
+3. Calculons $\tau$ : $[H_3O^+]_{final} = 10^{-2,9} \approx 1{,}26 \times 10^{-3}$
+   $\tau = \frac{x_f}{x_{max}} = \frac{[H_3O^+]}{C} \approx \frac{1{,}26}{1{,}2} \approx 1$
+
+C'est un acide qui se comporte comme un acide fort à cette très faible concentration.
+
+*Contre-exemple :* Pour l'acide éthanoïque à $10^{-2}$ mol/L, le pH est de 3,4. $-\log(C)=2$. Comme $3{,}4 > 2$, c'est un acide faible.
+:::
+
+## La Constante d'acidité ($K_A$)
 
 :::definition
 **Constante d'acidité**
 
-Pour un couple AH/A⁻, la constante d'acidité Ka caractérise la force de l'acide :
+Pour les acides faibles, l'état d'équilibre est caractérisé par une constante qui ne dépend que de la température : le $K_A$.
 
-$$K_a = \frac{[\text{A}^-][\text{H}_3\text{O}^+]}{[\text{AH}]}$$
+$$K_A = \frac{[Base]_{eq} \times [H_3O^+]_{eq}}{[Acide]_{eq}}$$
 
-$$\text{p}K_a = -\log K_a$$
+On utilise le $pK_A$ pour plus de commodité :
+
+$$pK_A = -\log(K_A) \iff K_A = 10^{-pK_A}$$
 :::
 
-:::property[Force des acides]
-- **Acide fort** : réaction totale avec l'eau (pKa < 0)
-  - HCl, HNO₃, H₂SO₄...
-- **Acide faible** : réaction partielle (0 < pKa < 14)
-  - CH₃COOH (pKa = 4,8), NH₄⁺ (pKa = 9,2)...
+:::warning
+**Règle d'or :** Plus le $pK_A$ est **grand**, plus l'acide est **faible** (il se dissocie peu).
 :::
 
-## Diagramme de prédominance
+## Prédominance : Qui gagne le match ?
 
-:::property[Relation pH - pKa]
-$$\text{pH} = \text{p}K_a + \log\frac{[\text{A}^-]}{[\text{AH}]}$$
+Dans une solution, la forme acide ($AH$) et la forme basique ($A^-$) coexistent. Le pH de la solution détermine qui est majoritaire.
 
-- Si pH < pKa : la forme acide AH prédomine
-- Si pH = pKa : [AH] = [A⁻]
-- Si pH > pKa : la forme basique A⁻ prédomine
+:::property[Relation de Henderson-Hasselbalch]
+La relation clé est :
+
+$$\text{pH} = \text{p}K_a + \log\left(\frac{[\text{A}^-]}{[\text{AH}]}\right)$$
 :::
 
 :::method[Diagramme de prédominance]
-Sur un axe de pH :
+Sur un axe de pH, on place le $pK_A$ comme frontière :
 
 | Zone | Condition | Espèce majoritaire |
 |------|-----------|-------------------|
-| Gauche | pH < pKa | **AH** (forme acide) |
-| Centre | pH = pKa | [AH] = [A⁻] |
-| Droite | pH > pKa | **A⁻** (forme basique) |
+| Gauche | pH < pKa | **AH** (forme acide) prédomine |
+| Centre | pH = pKa | [AH] = [A⁻] (égalité) |
+| Droite | pH > pKa | **A⁻** (forme basique) prédomine |
 
-**Représentation visuelle :**
-
-$$\underbrace{\text{AH prédomine}}_{\text{pH} < \text{p}K_a} \xleftarrow{\hspace{1cm}} \text{p}K_a \xrightarrow{\hspace{1cm}} \underbrace{\text{A}^- \text{ prédomine}}_{\text{pH} > \text{p}K_a}$$
-
-À pH = pKa, les deux formes sont en concentrations égales (50% chacune).
+**Règles :**
+1. Si **$\text{pH} < \text{p}K_a$** : Le milieu est acide, l'espèce **Acide (AH)** prédomine ($[AH] > [A^-]$)
+2. Si **$\text{pH} > \text{p}K_a$** : Le milieu est basique, l'espèce **Base ($A^-$)** prédomine ($[A^-] > [AH]$)
+3. Si **$\text{pH} = \text{p}K_a$** : Égalité parfaite, $[\text{AH}] = [\text{A}^-]$
 :::
 
-## Réaction prépondérante
+:::tip
+**Analogie : La Balançoire**
 
-:::method[Prévision de réaction]
-Entre deux couples (AH₁/A₁⁻) de pKa₁ et (AH₂/A₂⁻) de pKa₂ :
-
-La réaction prépondérante est celle où **l'acide le plus fort réagit avec la base la plus forte** :
-- L'acide le plus fort a le pKa le plus petit
-- La base la plus forte a le pKa conjugué le plus grand
-
-Si pKa₁ < pKa₂ : AH₁ + A₂⁻ → A₁⁻ + AH₂
+Imagine une balançoire à bascule. Le pivot central est le $pK_A$.
+- Si le "poids" du pH appuie à gauche (inférieur au pKa), l'Acide est en haut (visible/prédominant)
+- Si le "poids" du pH appuie à droite (supérieur au pKa), la Base l'emporte
 :::
 
-## Exemples résolus
+:::example[Espèce prédominante]
+**Question :** Le couple acide éthanoïque/ion éthanoate a un $pK_A = 4{,}8$. Quelle espèce prédomine dans une solution de pH 6,0 ? Quel est le rapport des concentrations ?
 
-### Exemple 1 : Calcul de pH
+**Solution :**
+1. **Prédominance :** On compare pH et pKa.
+   $6{,}0 > 4{,}8 \Rightarrow \text{pH} > \text{p}K_a$
+   C'est donc la **base (ion éthanoate $CH_3COO^-$)** qui prédomine.
 
-Solution d'acide chlorhydrique HCl à c = 0,01 mol/L.
+2. **Rapport :** $\log\frac{[A^-]}{[AH]} = pH - pK_A = 6{,}0 - 4{,}8 = 1{,}2$
+   Donc $\frac{[A^-]}{[AH]} = 10^{1,2} \approx 16$. Il y a 16 fois plus de base que d'acide.
+:::
 
-HCl est un acide fort (réaction totale) :
-$$[\text{H}_3\text{O}^+] = c = 0.01 = 10^{-2} \text{ mol/L}$$
+## Applications : Solution Tampon
 
-$$\text{pH} = -\log(10^{-2}) = 2$$
+:::definition
+**Solution Tampon**
 
-### Exemple 2 : Concentration en H₃O⁺
+Une solution tampon est une solution dont le **pH varie très peu** lors de l'ajout modéré d'acide, de base, ou lors d'une dilution.
 
-Solution de pH = 4,5.
-
-$$[\text{H}_3\text{O}^+] = 10^{-4.5} = 3.2 \times 10^{-5} \text{ mol/L}$$
-
-### Exemple 3 : pKa et prédominance
-
-Acide acétique CH₃COOH/CH₃COO⁻, pKa = 4,8.
-
-Dans une solution de pH = 6 :
-- pH > pKa donc la forme basique **CH₃COO⁻ prédomine**
-
-Rapport : $\frac{[\text{CH}_3\text{COO}^-]}{[\text{CH}_3\text{COOH}]} = 10^{6-4.8} = 10^{1.2} \approx 16$
-
-### Exemple 4 : Réaction prépondérante
-
-Couples : CH₃COOH/CH₃COO⁻ (pKa = 4,8) et NH₄⁺/NH₃ (pKa = 9,2)
-
-On mélange CH₃COOH et NH₃.
-
-Réaction : CH₃COOH + NH₃ → CH₃COO⁻ + NH₄⁺
-
-(L'acide le plus fort, pKa = 4,8, réagit avec la base la plus forte)
+- **Composition :** Elle contient un mélange équimolaire (ou proche) d'un acide faible et de sa base conjuguée (donc pH $\approx pK_A$)
+- **Exemple vital :** Le sang humain reste à pH 7,4 grâce au tampon bicarbonate ($CO_2,H_2O / HCO_3^-$ de $pK_A \approx 6{,}3$)
+:::
 
 ## Erreurs fréquentes
 
 :::warning
-**Erreur 1** : Confondre pH et pKa
+**Erreur 1 : Confondre pH et pKa**
 
-pH caractérise la solution, pKa caractérise le couple.
+Le pH caractérise **la solution**, le pKa caractérise **le couple**.
 
-**Erreur 2** : Oublier le signe du log
+**Erreur 2 : Oublier le signe du log**
 
-pH = -log[H₃O⁺], pas +log !
+$pH = -\log[H_3O^+]$, pas $+\log$ !
 
-**Erreur 3** : Appliquer les formules des acides forts aux acides faibles
+**Erreur 3 : Appliquer les formules des acides forts aux acides faibles**
 
-Pour un acide faible, [H₃O⁺] ≠ c.
+Pour un acide faible, $[H_3O^+] \neq C$.
 
-**Erreur 4** : Inverser le sens de prédominance
+**Erreur 4 : Inverser le sens de prédominance**
 
-pH < pKa → forme acide prédomine (et non l'inverse).
+$pH < pK_a$ → forme **acide** prédomine (et non l'inverse).
 :::
 
 ## Mini-résumé
 
-- **Acide** : cède H⁺ | **Base** : capte H⁺
-- $\text{pH} = -\log[\text{H}_3\text{O}^+]$
-- $K_a = \frac{[\text{A}^-][\text{H}_3\text{O}^+]}{[\text{AH}]}$
-- pH < pKa : AH prédomine | pH > pKa : A⁻ prédomine
-- Réaction acide fort + base forte → produits
+| Concept | Formule / Astuce |
+|---------|------------------|
+| **pH** | $-\log[H_3O^+]$ |
+| **Concentration** | $[H_3O^+] = 10^{-pH}$ |
+| **Acide Fort** | Réaction totale ($\rightarrow$), pH = $-\log(C)$ |
+| **Acide Faible** | Équilibre ($\rightleftharpoons$), utilise le $K_A$ |
+| **Prédominance** | pH < pKa ⇒ Acide domine |
+| **Relation clé** | $pH = pK_A + \log(\frac{[Base]}{[Acide]})$ |
