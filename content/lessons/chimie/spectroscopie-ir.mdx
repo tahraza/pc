@@ -22,36 +22,65 @@ Un spectre IR trace la **transmittance** $T$ en fonction du **nombre d'onde** $\
 
 ## 1. Intuition et analogies
 
-### 1.1 Analogie "cordes de guitare"
+:::tip[L'idée clé à retenir]
+Chaque liaison chimique vibre à sa propre fréquence, comme chaque instrument a son timbre. L'IR permet d'**écouter** les liaisons d'une molécule et de reconnaître lesquelles sont présentes.
+:::
+
+### 1.1 Analogie "orchestre moléculaire"
 
 :::tip[Analogie musicale]
-Une liaison chimique, c'est comme une **corde de guitare** :
-- **Plus elle est "raide"** (liaison forte, type double liaison) → plus sa fréquence de vibration est élevée
-- **Plus les atomes sont lourds** → plus ça vibre "lentement"
+Imagine une molécule comme un **petit orchestre** où chaque liaison est un instrument :
 
-Les infrarouges "excitent" ces vibrations : ce sont des **modes vibrationnels** (élongations et déformations).
+| Liaison | Instrument | Pourquoi ? |
+|---------|-----------|------------|
+| **O–H** | Violon aigu | Liaison légère (H) → vibration rapide → son aigu (~3300 cm⁻¹) |
+| **C=O** | Violoncelle | Liaison double "tendue" → son caractéristique (~1700 cm⁻¹) |
+| **C–C** | Contrebasse | Liaison simple, atomes lourds → son grave (~1000 cm⁻¹) |
+
+**Règle d'or** :
+- Plus la liaison est **forte** (double, triple) → plus elle vibre **vite** → nombre d'onde **élevé**
+- Plus les atomes sont **légers** (H) → plus ça vibre **vite** → nombre d'onde **élevé**
+
+C'est pourquoi les liaisons **X–H** (O–H, N–H, C–H) sont toujours en haut du spectre (3000-3500 cm⁻¹) !
 :::
 
-### 1.2 Analogie "code-barres"
+### 1.2 Analogie "carte d'identité"
 
-:::tip[Analogie du code-barres]
-Un spectre IR est comme un **code-barres** :
-- La zone des **bandes caractéristiques** (au-dessus de ~1500 cm$^{-1}$) te dit **quelle fonction** est présente
-- La zone **empreinte digitale** est comme un code-barres unique : elle est propre à chaque molécule (utile pour comparer deux échantillons)
+:::tip[Analogie de la carte d'identité]
+Un spectre IR, c'est comme une **carte d'identité** de la molécule :
+
+**Photo d'identité** = Zone des bandes caractéristiques (> 1500 cm⁻¹)
+- Tu reconnais immédiatement la "famille" : alcool, acide, amine...
+- C'est là qu'on regarde en premier !
+
+**Empreinte digitale** = Zone < 1500 cm⁻¹
+- Unique à chaque molécule (même deux isomères ont des empreintes différentes)
+- Utile pour confirmer : "Est-ce bien l'éthanol et pas le méthanol ?"
 :::
 
-### 1.3 Analogie "paysages de vallées"
+### 1.3 Analogie "montagnes inversées"
 
-Sur un spectre de transmittance :
-- Un **creux** (baisse de $T$) = une **absorption** (la molécule "mange" l'IR à cette fréquence)
-- Plus le creux est profond → absorption plus intense
+:::tip[Lire un spectre IR]
+Sur un spectre IR en transmittance, imagine des **montagnes à l'envers** :
+
+- **Vallée profonde** (creux) = la molécule **absorbe beaucoup** à cette fréquence → liaison présente et active
+- **Plateau en haut** = la lumière passe → pas d'absorption → pas cette liaison
+
+**Astuce mnémotechnique** : "Plus c'est **bas**, plus ça **absorbe**"
+
+Pourquoi c'est inversé ? Parce qu'on mesure ce qui **traverse** (transmittance), pas ce qui est absorbé !
+:::
 
 <details>
-<summary>Mini-exercice : comprendre les creux</summary>
+<summary>Mini-exercice : lire un spectre</summary>
 
-**Question** : Sur un spectre IR en transmittance, où trouve-t-on l'information sur les liaisons présentes ?
+**Question** : Sur un spectre IR, tu vois un creux profond vers 1720 cm⁻¹ et un plateau plat vers 3300 cm⁻¹. Que peux-tu dire ?
 
-**Réponse** : Dans les **creux** (minima de transmittance). Un creux profond signifie une absorption intense à ce nombre d'onde, caractéristique d'un type de liaison.
+**Réponse** :
+- Creux à 1720 cm⁻¹ → présence d'un **C=O** (carbonyle)
+- Plateau à 3300 cm⁻¹ → **pas de O–H** d'alcool
+
+→ Ce n'est probablement **pas** un acide carboxylique (qui aurait O–H), mais plutôt un **aldéhyde**, une **cétone** ou un **ester**.
 </details>
 
 ---
