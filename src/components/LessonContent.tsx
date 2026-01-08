@@ -76,8 +76,11 @@ function processContent(content: string): string {
   // Process custom blocks
   // :::definition
   processed = processed.replace(
-    /:::definition\s*\n([\s\S]*?):::/g,
-    '<div class="definition-box"><strong class="text-primary-700">Définition</strong><div class="mt-2">$1</div></div>'
+    /:::definition(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-primary-700 dark:text-primary-300">${title}</strong>` : '<strong class="text-primary-700 dark:text-primary-300">Définition</strong>'
+      return `<div class="definition-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
   )
 
   // :::theorem
