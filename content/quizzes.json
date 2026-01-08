@@ -1769,5 +1769,69 @@
         "difficulty": 2
       }
     ]
+  },
+  {
+    "id": "quiz-ondes-sonores",
+    "lessonId": "ondes-sonores",
+    "type": "post",
+    "title": "Quiz : Ondes Sonores, Intensité et Effet Doppler",
+    "description": "Teste ta compréhension de l'échelle des décibels, de l'atténuation du son et des phénomènes ondulatoires comme l'effet Doppler.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "q-son-1",
+        "question": "Quelle est la relation mathématique définissant le niveau d'intensité sonore L en décibels (dB) ?",
+        "choices": ["L = I / I₀", "L = 10 log(I / I₀)", "L = 10 log(I₀ / I)", "L = 20 log(I / I₀)"],
+        "correct": 1,
+        "explanation": "Le niveau sonore L est défini par L = 10 log(I/I₀) où I est l'intensité de l'onde et I₀ l'intensité de référence (1,0 × 10⁻¹² W·m⁻²).",
+        "tag": "décibel",
+        "difficulty": 1
+      },
+      {
+        "id": "q-son-2",
+        "question": "Si l'intensité sonore d'une source est doublée (par exemple deux trompettes au lieu d'une), comment varie le niveau sonore L ?",
+        "choices": ["Il double également", "Il augmente de 3 dB", "Il augmente de 10 dB", "Il reste constant"],
+        "correct": 1,
+        "explanation": "Doubler l'intensité (2I) revient à ajouter 10 log(2) au niveau sonore initial. Comme log(2) ≈ 0,3, le niveau augmente de 10 × 0,3 = 3 dB.",
+        "tag": "calcul",
+        "difficulty": 2
+      },
+      {
+        "id": "q-son-3",
+        "question": "Lorsqu'une ambulance s'approche d'un observateur immobile, comment est la fréquence du son perçu par rapport à celle de la source ?",
+        "choices": ["Plus basse (son plus grave)", "Plus élevée (son plus aigu)", "Identique", "Nulle"],
+        "correct": 1,
+        "explanation": "C'est l'effet Doppler. Lorsque la source se rapproche, la longueur d'onde apparente diminue, donc la fréquence perçue augmente (son plus aigu).",
+        "tag": "doppler",
+        "difficulty": 1
+      },
+      {
+        "id": "q-son-4",
+        "question": "Quelle est la condition pour obtenir des interférences destructives (silence) en un point M entre deux ondes synchrones ?",
+        "choices": ["Différence de marche δ = k·λ", "Différence de marche δ = (k + 0,5)·λ", "Différence de marche δ = k·λ/4", "Les sources doivent avoir des fréquences différentes"],
+        "correct": 1,
+        "explanation": "Pour des interférences destructives, les ondes doivent arriver en opposition de phase, ce qui correspond à un décalage d'un nombre impair de demi-longueurs d'onde : δ = (k + 1/2)λ.",
+        "tag": "interférences",
+        "difficulty": 2
+      },
+      {
+        "id": "q-son-5",
+        "question": "Dans le cas d'une atténuation géométrique (source ponctuelle isotrope), comment varie le niveau sonore si la distance à la source est doublée ?",
+        "choices": ["Il diminue de 3 dB", "Il diminue de 6 dB", "Il est divisé par 2", "Il diminue de 20 dB"],
+        "correct": 1,
+        "explanation": "L'atténuation géométrique suit la loi -20 log(r₂/r₁). Si la distance double (r₂/r₁ = 2), l'atténuation est -20 log(2) ≈ -6 dB.",
+        "tag": "atténuation",
+        "difficulty": 3
+      },
+      {
+        "id": "q-son-6",
+        "question": "À quelle condition le phénomène de diffraction d'une onde sonore par une ouverture de largeur a est-il marqué ?",
+        "choices": ["Si a est beaucoup plus grand que la longueur d'onde λ (a >> λ)", "Si a est du même ordre de grandeur ou inférieur à λ (a ≈ λ)", "Si la fréquence est très élevée", "Si le milieu est le vide"],
+        "correct": 1,
+        "explanation": "La diffraction est importante lorsque la dimension de l'obstacle ou de l'ouverture est du même ordre de grandeur que la longueur d'onde.",
+        "tag": "diffraction",
+        "difficulty": 2
+      }
+    ]
   }
 ]

@@ -1,0 +1,133 @@
+---
+id: "ondes-sonores"
+title: "Ondes Sonores : Intensité, Atténuation et Effet Doppler"
+track: "physique"
+level: 2
+prerequisites: ["ondes-mecaniques"]
+tags: ["intensité sonore", "décibel", "atténuation", "effet Doppler", "diffraction"]
+estimatedTime: 120
+chapter: "ondes"
+order: 5
+---
+
+# Caractérisation des Phénomènes Ondulatoires : Le Son
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Définir l'intensité sonore $I$ et le niveau d'intensité sonore $L$ (en décibels).
+- Calculer une atténuation (géométrique ou par absorption).
+- Expliquer et calculer le décalage de fréquence dû à l'**effet Doppler**.
+- Comprendre pourquoi deux sons peuvent s'annuler (interférences) ou contourner un obstacle (diffraction).
+
+---
+
+## 1. Nature et Propagation du Son
+
+Le son est une **onde mécanique progressive** qui se propage de proche en proche dans un milieu matériel (air, eau, solide, etc.).
+*   **Transport d'énergie :** L'onde sonore transporte de l'énergie sans transporter de matière.
+*   **Vitesse (Célérité) :** Elle dépend du milieu. Dans l'air, $c \approx 340 \text{ m}\cdot\text{s}^{-1}$.
+
+---
+
+## 2. Intensité et Niveau Sonore : L'échelle logarithmique
+
+L'oreille humaine n'a pas une sensibilité linéaire. Elle est capable de percevoir des sons allant d'un chuchotement à celui d'un avion au décollage (un facteur de $10^{12}$ en énergie !). Pour manipuler ces écarts gigantesques, on utilise une échelle logarithmique.
+
+### A. L'Intensité Sonore ($I$)
+L'intensité sonore est la puissance $P$ (énergie par unité de temps) reçue par unité de surface $S$.
+$$I = \frac{P}{S}$$
+*   **Unité :** Watt par mètre carré ($\text{W}\cdot\text{m}^{-2}$).
+*   **Seuil d'audibilité ($I_0$) :** C'est l'intensité minimale perceptible par l'oreille humaine moyenne à 1000 Hz.
+    $$I_0 = 1,0 \times 10^{-12} \text{ W}\cdot\text{m}^{-2}$$
+
+### B. Le Niveau d'Intensité Sonore ($L$)
+Pour modéliser la sensation auditive, on définit le niveau $L$ (Level) en décibels (dB).
+
+$$L = 10 \cdot \log\left(\frac{I}{I_0}\right)$$
+
+*   $L$ : Niveau sonore en décibels (dB).
+*   $I$ : Intensité de l'onde ($\text{W}\cdot\text{m}^{-2}$).
+*   $\log$ : Logarithme décimal.
+
+**Relation inverse :** Pour retrouver l'intensité à partir des décibels :
+$$I = I_0 \cdot 10^{\frac{L}{10}}$$
+
+### C. Propriété d'additivité (Attention piège !)
+Les intensités s'ajoutent, mais **pas les niveaux sonores**.
+*   Si vous avez deux trompettes identiques jouant ensemble : $I_{total} = I + I = 2I$.
+*   Le niveau sonore devient :
+    $$L_{total} = 10 \cdot \log\left(\frac{2I}{I_0}\right) = 10 \cdot \log(2) + 10 \cdot \log\left(\frac{I}{I_0}\right) \approx \mathbf{L + 3 \text{ dB}}$$
+    **Règle d'or :** Doubler la source sonore ajoute seulement **3 dB** au niveau sonore.
+
+---
+
+## 3. L'Atténuation du Signal
+
+Le niveau sonore diminue lorsque l'on s'éloigne de la source ou lorsqu'un obstacle s'interpose.
+
+### A. Atténuation Géométrique (Propagation libre)
+Si la source est ponctuelle et émet dans toutes les directions (isotrope), l'énergie se répartit sur une sphère de surface $4\pi r^2$ qui grandit avec la distance $r$.
+*   L'intensité $I$ diminue en $1/r^2$ : $I(r) = \frac{P_{source}}{4\pi r^2}$.
+*   **Formule de l'atténuation en dB :**
+    $$L(r) = L_{source} - 20 \cdot \log(r) - 11 \quad (\text{terme correctif lié à } 10\log(4\pi))$$
+    Plus simplement, l'atténuation $A$ entre deux points à distance $r_1$ et $r_2$ est :
+    $$L(r_2) = L(r_1) - 20 \cdot \log\left(\frac{r_2}{r_1}\right)$$
+    *Conséquence : Chaque fois que l'on double la distance, on perd 6 dB.*
+
+### B. Atténuation par Absorption
+Lorsqu'un matériau est placé sur le trajet (mur, double vitrage), une partie de l'énergie est absorbée (transformée en chaleur par vibration des molécules).
+On définit le coefficient d'absorption $\alpha = \frac{I_{absorbée}}{I_{incidente}}$.
+L'atténuation est la différence : $A = L_{incident} - L_{transmis}$.
+
+---
+
+## 4. L'Effet Doppler : Quand la source bouge
+
+L'effet Doppler est la modification de la fréquence perçue ($f_{Reçu}$) par rapport à la fréquence émise ($f_{Emis}$) lorsque la source et le récepteur sont en mouvement l'un par rapport à l'autre.
+
+### A. Analyse Qualitative
+*   **Approche :** Si la source **se rapproche** de l'observateur, les ondes sont "comprimées". La longueur d'onde diminue, donc la fréquence augmente. Le son perçu est plus **aigu** ($f_R > f_E$).
+*   **Éloignement :** Si la source **s'éloigne**, les ondes sont "étirées". La fréquence diminue. Le son perçu est plus **grave** ($f_R < f_E$).
+
+### B. Quantification du décalage
+Pour une source se déplaçant à la vitesse $v$ par rapport à un récepteur fixe (avec $c$ la célérité de l'onde) :
+Le décalage en fréquence (Shift) est donné par la relation :
+$$\Delta f = f_R - f_E$$
+Pour des vitesses $v \ll c$, on utilise souvent la relation simplifiée :
+$$\frac{\Delta f}{f_E} = \frac{v}{c}$$
+
+### C. Applications
+1.  **Radar routier :** Mesure de la vitesse $v$ des voitures grâce au décalage de fréquence de l'onde réfléchie.
+2.  **Astrophysique :** Le "Redshift" (décalage vers le rouge) des étoiles indique qu'elles s'éloignent de la Terre (l'univers est en expansion).
+3.  **Médecine :** Échographie Doppler pour mesurer la vitesse du flux sanguin.
+
+---
+
+## 5. Diffraction et Interférences (Aspect ondulatoire)
+
+Comme la lumière, le son est une onde et subit les phénomènes caractéristiques des ondes.
+
+### A. La Diffraction
+C'est l'éparpillement de l'onde lorsqu'elle rencontre un obstacle ou une ouverture dont la taille $a$ est du même ordre de grandeur que la longueur d'onde $\lambda$ ($a \approx \lambda$ ou $a < \lambda$).
+*   **Conséquence sonore :** Si vous parlez derrière un mur ouvert par une porte, quelqu'un situé sur le côté (dans la zone d'ombre géométrique) vous entendra quand même, car l'onde sonore diffracte à travers l'ouverture de la porte.
+*   **Écart angulaire :** $\theta = \frac{\lambda}{a}$.
+
+### B. Les Interférences
+Lorsque deux ondes sonores de même fréquence se superposent (sources cohérentes), leurs amplitudes s'ajoutent.
+*   **Interférences Constructives :** Les ondes sont en phase (crête sur crête). Le son est renforcé (intensité maximale). Condition : Différence de marche $\delta = k \cdot \lambda$.
+*   **Interférences Destructives :** Les ondes sont en opposition de phase (crête sur creux). Le son est atténué voire annulé (silence). Condition : $\delta = (k + 0,5) \cdot \lambda$.
+
+> **Application : Le Casque à réduction de bruit active**
+> Le casque capte le bruit extérieur et émet artificiellement un son de même fréquence mais en **opposition de phase**. Les deux ondes s'ajoutent et s'annulent (Interférence destructive), créant du silence.
+
+---
+
+## Mini-résumé pour l'examen
+
+| Concept | Formule clé | Unités / Remarque |
+| :--- | :--- | :--- |
+| **Niveau sonore** | $L = 10 \log(I/I_0)$ | $L$ en dB, $I_0 = 10^{-12} W/m^2$ |
+| **Intensité** | $I = I_0 \cdot 10^{L/10}$ | $I$ en $W/m^2$ |
+| **Atténuation géo.** | $-20 \log(r_2/r_1)$ | On perd 6 dB si la distance double. |
+| **Effet Doppler** | $\Delta f \approx f_E \cdot v/c$ | Approche = Aigu ($f \nearrow$). Éloigne = Grave ($f \searrow$). |
+| **Diffraction** | $\theta = \lambda / a$ | Marquée si $a \approx \lambda$ |

@@ -970,5 +970,95 @@
     "tags": ["pile", "capacité", "Faraday"],
     "level": 2,
     "category": "formula"
+  },
+  {
+    "id": "fc-son-1",
+    "lessonId": "ondes-sonores",
+    "front": "Quelle est la définition du niveau d'intensité sonore L ?",
+    "back": "L = 10·log(I/I₀)\n\nAvec L en décibels (dB), I l'intensité sonore (W·m⁻²) et I₀ l'intensité de référence.",
+    "tags": ["physique", "son", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-son-2",
+    "lessonId": "ondes-sonores",
+    "front": "Quelle est la valeur de l'intensité sonore de référence I₀ (seuil d'audibilité) ?",
+    "back": "I₀ = 1,0 × 10⁻¹² W·m⁻²\n\nCela correspond au son le plus faible perceptible par l'oreille humaine à 1000 Hz.",
+    "tags": ["physique", "constante", "son"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-son-3",
+    "lessonId": "ondes-sonores",
+    "front": "Comment calculer l'intensité sonore I si l'on connaît le niveau L en dB ?",
+    "back": "I = I₀·10^(L/10)\n\nC'est la fonction réciproque de la définition du niveau sonore.",
+    "tags": ["physique", "calcul", "maths"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-son-4",
+    "lessonId": "ondes-sonores",
+    "front": "Atténuation géométrique : Comment évolue l'intensité sonore I d'une source ponctuelle en fonction de la distance r ?",
+    "back": "L'intensité I est inversement proportionnelle au carré de la distance.\n\nI ∝ 1/r²\n(L'énergie se répartit sur une sphère de surface 4πr²).",
+    "tags": ["physique", "atténuation", "distance"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-son-5",
+    "lessonId": "ondes-sonores",
+    "front": "De combien diminue le niveau sonore L (en dB) lorsque la distance à la source double ?",
+    "back": "Le niveau sonore diminue de **6 dB**.\n\nL(2r) - L(r) = -20·log(2) ≈ -6 dB.",
+    "tags": ["physique", "décibel", "calcul"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-son-6",
+    "lessonId": "ondes-sonores",
+    "front": "Effet Doppler : Si une source sonore se rapproche de l'observateur, comment évolue la fréquence perçue ?",
+    "back": "La fréquence perçue est **plus élevée** (le son est plus aigu) que la fréquence émise.\n\nf_reçue > f_émise",
+    "tags": ["physique", "doppler", "fréquence"],
+    "level": 1,
+    "category": "concept"
+  },
+  {
+    "id": "fc-son-7",
+    "lessonId": "ondes-sonores",
+    "front": "Quelle est la condition pour observer la diffraction d'une onde sonore par une ouverture de largeur a ?",
+    "back": "La largeur de l'ouverture a doit être du même ordre de grandeur ou inférieure à la longueur d'onde λ.\n\na ≈ λ ou a < λ",
+    "tags": ["physique", "diffraction", "condition"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-son-8",
+    "lessonId": "ondes-sonores",
+    "front": "Formule de l'écart angulaire θ lors de la diffraction par une fente de largeur a.",
+    "back": "θ = λ/a\n\nAvec θ en radians, λ et a en mètres.",
+    "tags": ["physique", "diffraction", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-son-9",
+    "lessonId": "ondes-sonores",
+    "front": "Quelle est la condition sur la différence de marche δ pour obtenir des interférences constructives ?",
+    "back": "δ = k·λ\n\nAvec k un nombre entier. Les ondes arrivent en phase.",
+    "tags": ["physique", "interférences", "condition"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-son-10",
+    "lessonId": "ondes-sonores",
+    "front": "Quelle est la condition sur la différence de marche δ pour obtenir des interférences destructives ?",
+    "back": "δ = (k + 1/2)·λ\n\nAvec k entier. Les ondes arrivent en opposition de phase.",
+    "tags": ["physique", "interférences", "condition"],
+    "level": 3,
+    "category": "formula"
   }
 ]
