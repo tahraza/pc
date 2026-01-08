@@ -3472,5 +3472,166 @@
     ],
     "tags": ["conductimétrie", "courbe", "interprétation"],
     "isComprehension": true
+  },
+  {
+    "id": "ex-trav-1",
+    "lessonId": "travail-force",
+    "title": "Travail d'une force de traction",
+    "difficulty": 1,
+    "statement": "Un enfant tire une luge sur une distance d = 50 m sur un sol horizontal. Il exerce une force constante F = 40 N via une corde faisant un angle α = 30° avec l'horizontale.\n\nCalculer le travail de cette force.",
+    "hints": [
+      "Utilise la formule W = F × d × cos(α).",
+      "Vérifie que la calculatrice est en degrés."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identifier la formule",
+        "content": "Le travail d'une force constante est W = F × d × cos(α).",
+        "explanation": "C'est la définition du produit scalaire."
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "W = 40 × 50 × cos(30°) = 2000 × 0,866 ≈ 1732 J.",
+        "explanation": "Le travail est moteur (positif) car l'angle est inférieur à 90°."
+      }
+    ],
+    "method": "Application directe de la définition",
+    "commonMistakes": ["Oublier le cosinus", "Utiliser un angle en radians sur une calculatrice en degrés"],
+    "tags": ["travail", "calcul"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-trav-2",
+    "lessonId": "travail-force",
+    "title": "Travail du poids sur une piste de ski",
+    "difficulty": 2,
+    "statement": "Un skieur de masse m = 80 kg descend une piste de longueur L = 200 m inclinée de β = 20° par rapport à l'horizontale.\n\nCalculer le travail de son poids lors de la descente.",
+    "hints": [
+      "Le travail du poids dépend de la différence d'altitude h.",
+      "Utilise la trigonométrie pour trouver h à partir de L et β (h = L·sin(β)).",
+      "W = m·g·h (car c'est une descente)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calculer le dénivelé h",
+        "content": "h = z_A - z_B = L × sin(β) = 200 × sin(20°) ≈ 68,4 m.",
+        "explanation": "Dans un triangle rectangle, le côté opposé à l'angle est l'hypoténuse fois le sinus."
+      },
+      {
+        "step": 2,
+        "title": "Calculer le travail",
+        "content": "W(P) = m × g × h = 80 × 9,81 × 68,4 ≈ 53 680 J = 53,7 kJ.",
+        "explanation": "Le travail est moteur (positif) car le skieur descend."
+      }
+    ],
+    "method": "Utilisation de la variation d'altitude",
+    "commonMistakes": ["Utiliser le cosinus au lieu du sinus pour la hauteur", "Se tromper de signe"],
+    "tags": ["poids", "gravité"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-trav-3",
+    "lessonId": "travail-force",
+    "title": "Freinage d'urgence (TEC)",
+    "difficulty": 3,
+    "statement": "Une voiture de masse m = 1000 kg roule à v = 20 m/s. Elle freine jusqu'à l'arrêt complet sur une distance d = 40 m.\n\nCalculer la valeur de la force de frottement f (supposée constante) exercée par les freins.",
+    "hints": [
+      "Applique le Théorème de l'Énergie Cinétique entre l'état initial et final.",
+      "L'état final est l'arrêt (v = 0).",
+      "Le travail des frottements est W = -f·d."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Variation d'énergie cinétique",
+        "content": "ΔEc = Ec_final - Ec_initial = 0 - 0,5 × 1000 × 20² = -200 000 J.",
+        "explanation": "L'énergie cinétique finale est nulle car la voiture s'arrête."
+      },
+      {
+        "step": 2,
+        "title": "Travail des forces",
+        "content": "Seuls les frottements travaillent (Poids et Réaction compensés). W(f) = -f × d.",
+        "explanation": "W(P) = 0 et W(R) = 0 car perpendiculaires au mouvement."
+      },
+      {
+        "step": 3,
+        "title": "Application du TEC",
+        "content": "ΔEc = W(f) ⇒ -200 000 = -f × 40 ⇒ f = 200 000 / 40 = 5000 N.",
+        "explanation": "On isole f."
+      }
+    ],
+    "method": "Théorème de l'énergie cinétique",
+    "commonMistakes": ["Oublier le signe moins dans le travail résistant", "Oublier de mettre la vitesse au carré"],
+    "tags": ["TEC", "freinage"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-trav-4",
+    "lessonId": "travail-force",
+    "title": "Accélération d'un électron",
+    "difficulty": 2,
+    "statement": "Un électron (charge q = -e) est accéléré dans un canon à électrons par une tension U = 1000 V.\n\nQuelle est l'énergie cinétique acquise (en eV et en Joules) ?",
+    "hints": [
+      "Le travail de la force électrique est W = q(Va - Vb).",
+      "Pour un électron accéléré, l'énergie gagnée est e·U.",
+      "1 eV = 1,6 × 10⁻¹⁹ J."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul en électrons-volts (eV)",
+        "content": "L'énergie acquise est Ec = e × U = 1 e × 1000 V = 1000 eV (ou 1 keV).",
+        "explanation": "Par définition, 1 eV est l'énergie acquise par un électron sous 1 Volt."
+      },
+      {
+        "step": 2,
+        "title": "Conversion en Joules",
+        "content": "Ec (J) = 1000 × 1,60 × 10⁻¹⁹ = 1,60 × 10⁻¹⁶ J.",
+        "explanation": "On utilise le facteur de conversion de la charge élémentaire."
+      }
+    ],
+    "method": "Travail électrique",
+    "commonMistakes": ["Confusion entre eV et Joules", "Erreur de puissance de 10"],
+    "tags": ["électricité", "particule"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-trav-5",
+    "lessonId": "travail-force",
+    "title": "Pendule simple",
+    "difficulty": 3,
+    "statement": "Une bille de masse m pendue à un fil de longueur L est lâchée sans vitesse initiale avec un angle θ₀ = 60° par rapport à la verticale.\n\nExprimer sa vitesse v au passage par la position verticale (θ = 0) en fonction de g et L.",
+    "hints": [
+      "La tension du fil ne travaille pas (perpendiculaire). Seul le poids travaille.",
+      "Utilise le TEC ou la conservation de l'énergie mécanique.",
+      "La différence de hauteur est h = L(1 - cos(θ₀))."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calculer la hauteur de chute h",
+        "content": "h = L - L·cos(θ₀) = L(1 - cos(60°)) = L(1 - 0,5) = 0,5 L.",
+        "explanation": "Géométrie simple du pendule."
+      },
+      {
+        "step": 2,
+        "title": "Conservation de l'énergie",
+        "content": "ΔEc = W(P) ⇒ 0,5·m·v² - 0 = m·g·h",
+        "explanation": "L'énergie potentielle perdue est transformée en cinétique."
+      },
+      {
+        "step": 3,
+        "title": "Isoler v",
+        "content": "v² = 2·g·h = 2·g·(0,5 L) = g·L ⇒ v = √(g·L).",
+        "explanation": "La masse se simplifie."
+      }
+    ],
+    "method": "Conservation de l'énergie",
+    "commonMistakes": ["Mauvaise expression de h", "Oublier la racine carrée"],
+    "tags": ["pendule", "littéral"],
+    "isComprehension": true
   }
 ]

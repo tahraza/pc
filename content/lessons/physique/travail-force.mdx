@@ -1,0 +1,444 @@
+---
+id: travail-force
+title: "Travail d'une Force et Théorème de l'Énergie Cinétique"
+track: physique
+chapter: energie
+level: 2
+estimatedTime: 60
+prerequisites:
+  - mouvement-newton
+tags:
+  - travail
+  - énergie
+  - forces conservatives
+  - théorème énergie cinétique
+  - TEC
+order: 11
+---
+
+# Aspects Énergétiques : Le Travail d'une Force
+
+## Intuition et analogies
+
+:::tip[Le travail en physique]
+En physique, le "travail" n'a rien à voir avec ton métier ou tes devoirs ! C'est un **transfert d'énergie** d'un système à un autre via l'action d'une force.
+
+Quand tu pousses une voiture en panne, tu lui "donnes" de l'énergie — c'est le travail de ta force de poussée !
+:::
+
+:::tip[Analogie du caddie de supermarché]
+- Tu pousses **dans le sens du déplacement** → tu "donnes" de l'énergie au caddie : **travail positif**
+- Tu tires **en arrière** (freinage) → tu "retires" de l'énergie : **travail négatif**
+- Tu pousses **sur le côté** alors que le caddie avance droit → tu ne changes pas sa vitesse : **travail nul**
+
+C'est exactement ce que mesure le **produit scalaire** !
+:::
+
+:::tip[Analogie du compte bancaire]
+L'énergie cinétique $E_c$ est comme le **solde d'un compte en banque** :
+- Travail positif → tu **crédites** le compte ($E_c$ augmente)
+- Travail négatif → tu **débites** ($E_c$ diminue)
+
+Le Théorème de l'Énergie Cinétique dit simplement que la variation du solde = somme des crédits et débits !
+:::
+
+:::tip[Analogie de la valise à roulettes]
+Imagine que tu tires une valise avec une corde :
+
+- **Corde horizontale** (dans le sens de la marche) : toute ta force sert à avancer → efficacité maximale
+- **Corde verticale** (vers le haut) : tu soulèves la valise mais tu ne l'aides pas à avancer → travail nul pour le déplacement horizontal
+- **Corde inclinée** : seule une partie de ta force contribue au mouvement
+
+C'est le rôle du **cosinus** dans la formule !
+:::
+
+---
+
+## 1. Définition du Travail d'une Force Constante
+
+:::definition[Travail d'une force]
+Le travail est le **produit scalaire** de la force par le vecteur déplacement. C'est une grandeur scalaire (un nombre, pas un vecteur).
+:::
+
+:::property[Formule du travail]
+Pour une force constante $\vec{F}$ appliquée à un système se déplaçant de A vers B :
+
+$$W_{AB}(\vec{F}) = \vec{F} \cdot \vec{AB} = F \times AB \times \cos(\alpha)$$
+
+- $W$ : Travail en **Joules (J)**
+- $F$ : Norme de la force en Newtons (N)
+- $AB$ : Distance parcourue en mètres (m)
+- $\alpha$ : Angle entre $\vec{F}$ et $\vec{AB}$
+:::
+
+:::example[Mini-exercice 1 : Travail d'une force de traction]
+**Énoncé :** Un enfant tire une luge sur $d = 50~\text{m}$ avec une force $F = 40~\text{N}$. La corde fait un angle $\alpha = 30°$ avec l'horizontale.
+
+**Question :** Calculer le travail de cette force.
+
+<details>
+<summary>**Solution**</summary>
+
+$$W = F \times d \times \cos(\alpha) = 40 \times 50 \times \cos(30°)$$
+$$W = 2000 \times 0{,}866 \approx 1730~\text{J}$$
+
+**Réponse :** $W \approx 1{,}73~\text{kJ}$ (travail moteur)
+</details>
+:::
+
+### Nature du travail
+
+Le signe du travail dépend de l'angle $\alpha$ :
+
+:::property[Travail moteur, résistant ou nul]
+| Situation | Angle | Cosinus | Signe | Effet |
+|:----------|:------|:--------|:------|:------|
+| **Moteur** | $0° \leq \alpha < 90°$ | $> 0$ | $W > 0$ | La force aide le mouvement |
+| **Résistant** | $90° < \alpha \leq 180°$ | $< 0$ | $W < 0$ | La force freine le mouvement |
+| **Nul** | $\alpha = 90°$ | $= 0$ | $W = 0$ | La force ne modifie pas la vitesse |
+:::
+
+:::tip[Analogie du vent]
+- **Vent dans le dos** : travail moteur (il t'aide à avancer)
+- **Vent de face** : travail résistant (il te freine)
+- **Vent latéral** : travail nul pour l'avancement (il te pousse sur le côté)
+:::
+
+:::example[Mini-exercice 2 : Nature du travail]
+**Énoncé :** Pour chaque situation, indiquer si le travail est moteur, résistant ou nul.
+
+1. Le poids d'un skieur qui descend une pente
+2. Les frottements sur une voiture qui avance
+3. La réaction du sol sur un marcheur
+
+<details>
+<summary>**Solution**</summary>
+
+1. **Poids (descente)** : Le poids est dirigé vers le bas, le déplacement a une composante vers le bas → **Travail moteur** (W > 0)
+
+2. **Frottements** : Toujours opposés au mouvement (angle = 180°) → **Travail résistant** (W < 0)
+
+3. **Réaction du sol** : Perpendiculaire au déplacement horizontal → **Travail nul** (W = 0)
+</details>
+:::
+
+---
+
+## 2. Travail des Forces Usuelles
+
+### A. Travail du Poids (Force Conservative)
+
+Le poids $\vec{P} = m\vec{g}$ est une force constante dirigée vers le bas.
+
+:::property[Travail du poids]
+$$W_{AB}(\vec{P}) = m \cdot g \cdot (z_A - z_B) = m \cdot g \cdot h$$
+
+où $h = z_A - z_B$ est la **différence d'altitude** (dénivelé).
+:::
+
+:::tip[Propriété fondamentale]
+Le travail du poids **ne dépend pas du chemin suivi**, mais uniquement des altitudes de départ et d'arrivée !
+
+- Si l'objet **descend** ($z_A > z_B$) : travail **moteur** (+)
+- Si l'objet **monte** ($z_A < z_B$) : travail **résistant** (-)
+:::
+
+:::tip[Analogie de la randonnée]
+Que tu montes au sommet d'une montagne par le sentier en lacets (long) ou par la falaise (tout droit), le gain d'altitude est le même. L'énergie dépensée contre le poids est **identique**.
+
+C'est la définition d'une **force conservative** !
+:::
+
+:::example[Mini-exercice 3 : Travail du poids]
+**Énoncé :** Un skieur de masse $m = 70~\text{kg}$ descend une piste. Le dénivelé est $h = 150~\text{m}$.
+
+**Question :** Calculer le travail du poids.
+
+<details>
+<summary>**Solution**</summary>
+
+Le skieur descend, donc $z_A > z_B$ et $h = z_A - z_B = 150~\text{m}$.
+
+$$W(\vec{P}) = m \cdot g \cdot h = 70 \times 9{,}81 \times 150$$
+$$W(\vec{P}) = 103~005~\text{J} \approx 103~\text{kJ}$$
+
+**Réponse :** $W \approx 103~\text{kJ}$ (travail moteur car descente)
+</details>
+:::
+
+### B. Travail de la Force Électrique (Force Conservative)
+
+Pour une particule de charge $q$ dans un champ électrique uniforme $\vec{E}$ :
+
+:::property[Travail de la force électrique]
+$$W_{AB}(\vec{F}_e) = q \cdot (V_A - V_B) = q \cdot U_{AB}$$
+
+où $U_{AB}$ est la **tension électrique** entre A et B.
+:::
+
+:::tip[Analogie avec le poids]
+Comme le poids, la force électrique est **conservative** : son travail ne dépend que des positions initiale et finale, pas du chemin.
+
+- Pour le poids : $W = m \cdot g \cdot \Delta z$ (différence d'altitude)
+- Pour la force électrique : $W = q \cdot \Delta V$ (différence de potentiel)
+:::
+
+:::example[Mini-exercice 4 : Accélération d'un électron]
+**Énoncé :** Un électron ($q = -e = -1{,}6 \times 10^{-19}~\text{C}$) est accéléré par une tension $U = 500~\text{V}$.
+
+**Question :** Quelle énergie cinétique acquiert-il (en eV et en J) ?
+
+<details>
+<summary>**Solution**</summary>
+
+**En électron-volts :**
+Par définition, 1 eV est l'énergie acquise par un électron sous 1 V.
+$$E_c = e \times U = 1~e \times 500~\text{V} = 500~\text{eV}$$
+
+**En Joules :**
+$$E_c = 500 \times 1{,}6 \times 10^{-19} = 8{,}0 \times 10^{-17}~\text{J}$$
+
+**Réponse :** $E_c = 500~\text{eV} = 8{,}0 \times 10^{-17}~\text{J}$
+</details>
+:::
+
+### C. Travail des Forces de Frottement (Force Non Conservative)
+
+:::property[Travail des frottements]
+Une force de frottement $\vec{f}$ est toujours **opposée au mouvement** (angle = 180°).
+
+$$W_{AB}(\vec{f}) = -f \times AB$$
+
+Ce travail est **toujours négatif** (résistant).
+:::
+
+:::warning[Force non conservative]
+Le travail des frottements **dépend du chemin suivi** : plus le chemin est long, plus on perd d'énergie !
+
+L'énergie est dissipée sous forme de **chaleur**.
+:::
+
+:::tip[Analogie du freinage]
+Quand tu freines à vélo, l'énergie cinétique est transformée en chaleur dans les patins de frein. Tu peux même sentir qu'ils chauffent après une longue descente !
+:::
+
+### D. Forces qui ne travaillent pas
+
+:::property[Travail nul]
+Certaines forces ont **toujours** un travail nul :
+
+- **Réaction normale** du support (perpendiculaire au déplacement)
+- **Force de Lorentz** magnétique ($\vec{f} = q\vec{v} \wedge \vec{B}$, toujours perpendiculaire à $\vec{v}$)
+- **Tension d'un fil** pour un pendule (perpendiculaire à la trajectoire)
+:::
+
+---
+
+## 3. Théorème de l'Énergie Cinétique (TEC)
+
+C'est le lien fondamental entre les **forces** (causes) et la **variation de vitesse** (effet).
+
+:::definition[Énergie cinétique]
+L'énergie cinétique d'un solide en translation est :
+
+$$E_c = \frac{1}{2} m v^2$$
+
+- $E_c$ en Joules (J)
+- $m$ en kg
+- $v$ en m/s
+:::
+
+:::theorem[Théorème de l'Énergie Cinétique]
+Dans un référentiel galiléen, la **variation d'énergie cinétique** d'un système entre deux instants est égale à la **somme des travaux** de toutes les forces extérieures :
+
+$$\Delta E_c = E_c(B) - E_c(A) = \sum W_{AB}(\vec{F}_{ext})$$
+:::
+
+:::tip[Interprétation physique]
+- Si $\sum W > 0$ : l'énergie cinétique **augmente** → le système **accélère**
+- Si $\sum W < 0$ : l'énergie cinétique **diminue** → le système **ralentit**
+- Si $\sum W = 0$ : l'énergie cinétique est **constante** → vitesse constante
+:::
+
+:::method[Comment utiliser le TEC]
+1. **Identifier** les forces qui s'exercent sur le système
+2. **Calculer** le travail de chaque force entre A et B
+3. **Sommer** tous les travaux
+4. **Appliquer** $\Delta E_c = \sum W$ pour trouver l'inconnue
+:::
+
+:::example[Mini-exercice 5 : Freinage d'une voiture]
+**Énoncé :** Une voiture de masse $m = 1200~\text{kg}$ roule à $v_0 = 25~\text{m/s}$ (90 km/h). Elle freine jusqu'à l'arrêt sur une distance $d = 50~\text{m}$.
+
+**Question :** Calculer la force de freinage moyenne.
+
+<details>
+<summary>**Solution**</summary>
+
+**Étape 1 :** Variation d'énergie cinétique
+$$\Delta E_c = E_{c,f} - E_{c,i} = 0 - \frac{1}{2} \times 1200 \times 25^2$$
+$$\Delta E_c = -375~000~\text{J}$$
+
+**Étape 2 :** Travail des forces
+- Poids et réaction normale : travail nul (perpendiculaires au mouvement horizontal)
+- Frottements : $W(\vec{f}) = -f \times d$
+
+**Étape 3 :** Appliquer le TEC
+$$\Delta E_c = W(\vec{f})$$
+$$-375~000 = -f \times 50$$
+$$f = \frac{375~000}{50} = 7500~\text{N}$$
+
+**Réponse :** $f = 7{,}5~\text{kN}$
+</details>
+:::
+
+:::example[Mini-exercice 6 : Pendule simple]
+**Énoncé :** Une bille de masse $m$ est suspendue à un fil de longueur $L$. Elle est lâchée sans vitesse initiale depuis un angle $\theta_0 = 60°$ par rapport à la verticale.
+
+**Question :** Exprimer sa vitesse $v$ au point le plus bas en fonction de $g$ et $L$.
+
+<details>
+<summary>**Solution**</summary>
+
+**Étape 1 :** Calculer la hauteur de chute
+La différence d'altitude entre le point de départ et le point bas est :
+$$h = L - L\cos(\theta_0) = L(1 - \cos(60°)) = L(1 - 0{,}5) = 0{,}5L$$
+
+**Étape 2 :** Bilan des travaux
+- Poids : $W(\vec{P}) = mgh = 0{,}5mgL$ (moteur)
+- Tension du fil : $W(\vec{T}) = 0$ (perpendiculaire au mouvement)
+
+**Étape 3 :** Appliquer le TEC
+$$\Delta E_c = W(\vec{P})$$
+$$\frac{1}{2}mv^2 - 0 = 0{,}5mgL$$
+$$v^2 = gL$$
+$$v = \sqrt{gL}$$
+
+**Réponse :** $v = \sqrt{gL}$ (la masse se simplifie !)
+</details>
+:::
+
+---
+
+## 4. Forces Conservatives et Énergie Mécanique
+
+:::definition[Force conservative]
+Une force est **conservative** si son travail entre deux points A et B est **indépendant du chemin suivi**.
+
+Exemples : poids, force électrique, force de rappel d'un ressort.
+:::
+
+:::definition[Énergie potentielle]
+À toute force conservative, on peut associer une **énergie potentielle** $E_p$ telle que :
+
+$$W_{AB}(\vec{F}_{cons}) = E_p(A) - E_p(B) = -\Delta E_p$$
+
+Le travail est l'**opposé** de la variation d'énergie potentielle.
+:::
+
+:::property[Énergie potentielle de pesanteur]
+$$E_{pp} = mgz$$
+
+où $z$ est l'altitude par rapport à une référence choisie.
+:::
+
+:::property[Conservation de l'énergie mécanique]
+Si seules des forces conservatives travaillent, l'**énergie mécanique** se conserve :
+
+$$E_m = E_c + E_p = \text{constante}$$
+:::
+
+---
+
+## 5. Puissance d'une Force
+
+:::definition[Puissance]
+La **puissance** mesure la rapidité avec laquelle une force transfère de l'énergie (travail par unité de temps) :
+
+$$\mathcal{P} = \frac{W}{\Delta t} = \frac{dW}{dt}$$
+
+- $\mathcal{P}$ en **Watts (W)**
+- $W$ en Joules (J)
+- $\Delta t$ en secondes (s)
+:::
+
+:::property[Puissance instantanée]
+Pour une force constante $\vec{F}$ agissant sur un objet de vitesse $\vec{v}$ :
+
+$$\mathcal{P} = \vec{F} \cdot \vec{v} = F \cdot v \cdot \cos(\alpha)$$
+:::
+
+:::tip[Analogie du robinet]
+La puissance, c'est comme le **débit d'un robinet** :
+- L'**énergie** = quantité d'eau totale
+- La **puissance** = vitesse à laquelle l'eau coule
+
+Même force, mais si tu vas deux fois plus vite, tu transfères l'énergie deux fois plus vite !
+:::
+
+:::example[Mini-exercice 7 : Puissance d'une voiture]
+**Énoncé :** Une voiture roule à vitesse constante $v = 30~\text{m/s}$ (108 km/h). La force de résistance de l'air vaut $f = 500~\text{N}$.
+
+**Question :** Quelle puissance le moteur doit-il fournir pour maintenir cette vitesse ?
+
+<details>
+<summary>**Solution**</summary>
+
+À vitesse constante, la force motrice $F_m$ compense exactement la résistance : $F_m = f = 500~\text{N}$.
+
+$$\mathcal{P} = F_m \cdot v = 500 \times 30 = 15~000~\text{W} = 15~\text{kW}$$
+
+**Réponse :** $\mathcal{P} = 15~\text{kW}$ (environ 20 chevaux)
+</details>
+:::
+
+---
+
+## Mini-résumé pour l'examen
+
+| Force | Formule du Travail | Type |
+|:------|:-------------------|:-----|
+| **Cas général** | $F \cdot AB \cdot \cos(\alpha)$ | — |
+| **Poids** | $m \cdot g \cdot (z_A - z_B)$ | Conservatif |
+| **Force électrique** | $q \cdot U_{AB}$ | Conservatif |
+| **Frottement** | $-f \cdot AB$ | Non conservatif |
+| **Réaction / Lorentz** | $0$ | Nul |
+| **TEC** | $\Delta E_c = \sum W$ | Lien Force-Vitesse |
+| **Puissance** | $\mathcal{P} = F \cdot v \cdot \cos(\alpha)$ | W (J/s) |
+
+:::tip[À retenir absolument]
+1. $W = F \cdot d \cdot \cos(\alpha)$ — le cosinus est crucial !
+2. Travail du poids : $W = mgh$ (ne dépend que du dénivelé)
+3. TEC : $\Delta E_c = \sum W$ (variation = somme des travaux)
+4. Force conservative → travail indépendant du chemin
+5. Travail nul si force ⊥ déplacement
+:::
+
+---
+
+## Erreurs classiques (et comment les éviter)
+
+:::warning[Oublier le cosinus]
+Le travail n'est PAS simplement $F \times d$ !
+Il faut toujours considérer l'angle entre la force et le déplacement.
+:::
+
+:::warning[Se tromper de signe pour le poids]
+- Descente → travail **moteur** (positif)
+- Montée → travail **résistant** (négatif)
+
+Vérifie toujours si l'altitude augmente ou diminue !
+:::
+
+:::warning[Confondre énergie et puissance]
+- **Énergie/Travail** : en Joules (J)
+- **Puissance** : en Watts (W) = J/s
+
+$P = \frac{W}{\Delta t}$ (puissance = travail par unité de temps)
+:::
+
+:::warning[Oublier que la vitesse est au carré dans $E_c$]
+$$E_c = \frac{1}{2}mv^2$$
+
+Doubler la vitesse → quadrupler l'énergie cinétique !
+:::

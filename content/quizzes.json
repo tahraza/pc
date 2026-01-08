@@ -2016,5 +2016,115 @@
         "difficulty": 2
       }
     ]
+  },
+  {
+    "id": "quiz-pre-travail-force",
+    "lessonId": "travail-force",
+    "type": "pre",
+    "title": "Pré-test : Travail d'une Force",
+    "description": "Évalue tes prérequis sur le produit scalaire, les vecteurs et l'énergie",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-trav-1",
+        "question": "Quelle est l'expression mathématique du produit scalaire de deux vecteurs $\\vec{u}$ et $\\vec{v}$ ?",
+        "choices": ["$u \\times v \\times \\sin(\\theta)$", "$u \\times v \\times \\cos(\\theta)$", "$u + v$", "$u \\times v$"],
+        "correct": 1,
+        "explanation": "Le produit scalaire fait intervenir le cosinus de l'angle entre les deux vecteurs.",
+        "tag": "maths",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-trav-2",
+        "question": "Quelle est l'unité de l'énergie (et donc du travail) dans le système international ?",
+        "choices": ["Le Newton (N)", "Le Watt (W)", "Le Joule (J)", "Le Pascal (Pa)"],
+        "correct": 2,
+        "explanation": "Le travail est une forme d'énergie, il s'exprime en Joules (J). Le Watt est une puissance, le Newton une force.",
+        "tag": "unités",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-trav-3",
+        "question": "Si une force est perpendiculaire au déplacement, que vaut $\\cos(\\alpha)$ ?",
+        "choices": ["1", "0", "-1", "0,5"],
+        "correct": 1,
+        "explanation": "Si l'angle est de 90° (perpendiculaire), le cosinus est nul.",
+        "tag": "trigo",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-trav-4",
+        "question": "Quelle est la formule de l'énergie cinétique pour un solide en translation ?",
+        "choices": ["$E_c = m v$", "$E_c = m g z$", "$E_c = \\frac{1}{2} m v^2$", "$E_c = m v^2$"],
+        "correct": 2,
+        "explanation": "C'est la formule classique $E_c = \\frac{1}{2} m v^2$.",
+        "tag": "énergie",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-trav-5",
+        "question": "Comment appelle-t-on une force dont le travail ne dépend pas du chemin suivi ?",
+        "choices": ["Une force forte", "Une force conservative", "Une force dissipative", "Une force constante"],
+        "correct": 1,
+        "explanation": "Une force conservative (comme le poids) conserve l'énergie mécanique ; son travail ne dépend que des points de départ et d'arrivée.",
+        "tag": "définition",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-travail-force",
+    "lessonId": "travail-force",
+    "type": "post",
+    "title": "Post-test : Travail d'une Force et TEC",
+    "description": "Vérifie ta maîtrise du travail, des forces conservatives et du théorème de l'énergie cinétique",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-trav-1",
+        "question": "Un objet descend une pente. Le travail de son poids est :",
+        "choices": ["Moteur (positif)", "Résistant (négatif)", "Nul", "Dépendant de la vitesse"],
+        "correct": 0,
+        "explanation": "Lors d'une descente, le poids aide le mouvement (l'altitude diminue, $z_A > z_B$), le travail est donc moteur (positif).",
+        "tag": "poids",
+        "difficulty": 2
+      },
+      {
+        "id": "post-trav-2",
+        "question": "Quel est le travail de la force de Lorentz $\\vec{f} = q\\vec{v} \\wedge \\vec{B}$ appliquée à une particule chargée ?",
+        "choices": ["Toujours positif", "Toujours nul", "Toujours négatif", "Dépend du champ B"],
+        "correct": 1,
+        "explanation": "La force de Lorentz est toujours perpendiculaire au vecteur vitesse (propriété du produit vectoriel). Son travail est donc nul ($\\cos 90° = 0$).",
+        "tag": "lorentz",
+        "difficulty": 3
+      },
+      {
+        "id": "post-trav-3",
+        "question": "Si la somme des travaux des forces extérieures est négative, comment évolue la vitesse du solide ?",
+        "choices": ["Elle augmente", "Elle diminue", "Elle reste constante", "On ne peut pas savoir"],
+        "correct": 1,
+        "explanation": "D'après le Théorème de l'Énergie Cinétique, $\\Delta E_c = \\sum W$. Si la somme est négative, $E_c$ diminue, donc la vitesse diminue.",
+        "tag": "TEC",
+        "difficulty": 2
+      },
+      {
+        "id": "post-trav-4",
+        "question": "Quelle est l'expression du travail de la force électrique entre deux plaques d'un condensateur ?",
+        "choices": ["$q \\times E$", "$q \\times U_{AB}$", "$\\frac{1}{2} C U^2$", "$- f \\times d$"],
+        "correct": 1,
+        "explanation": "Le travail de la force électrique est $W = q(V_A - V_B) = q U_{AB}$.",
+        "tag": "électricité",
+        "difficulty": 2
+      },
+      {
+        "id": "post-trav-5",
+        "question": "Lorsqu'un skieur remonte une pente avec un téléski à vitesse constante, la variation de son énergie cinétique est :",
+        "choices": ["Positive", "Négative", "Nulle", "Égale au travail du poids"],
+        "correct": 2,
+        "explanation": "Si la vitesse est constante, $v_2 = v_1$, donc $E_{c2} = E_{c1}$, et $\\Delta E_c = 0$.",
+        "tag": "cinétique",
+        "difficulty": 2
+      }
+    ]
   }
 ]
