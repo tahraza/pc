@@ -1285,5 +1285,95 @@
     "tags": ["physique", "énergie", "relation"],
     "level": 3,
     "category": "formula"
+  },
+  {
+    "id": "fc-ir-1",
+    "lessonId": "spectroscopie-ir",
+    "front": "Que représente un spectre IR ?",
+    "back": "Un spectre IR représente la **transmittance T** en fonction du **nombre d'onde σ** (en cm⁻¹).\n\nUn creux = une absorption (la molécule absorbe l'IR à cette fréquence).",
+    "tags": ["chimie", "spectroscopie", "IR"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ir-2",
+    "lessonId": "spectroscopie-ir",
+    "front": "Quelles sont les deux zones principales d'un spectre IR ?",
+    "back": "1. **Zone des groupes fonctionnels** (> 1500 cm⁻¹) : bandes caractéristiques pour identifier les fonctions\n\n2. **Zone empreinte digitale** (< 1500 cm⁻¹) : propre à chaque molécule, utile pour comparer",
+    "tags": ["chimie", "IR", "zones"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ir-3",
+    "lessonId": "spectroscopie-ir",
+    "front": "Position et forme de la bande O–H d'un alcool ?",
+    "back": "**Alcool lié** (pont H) : 3200–3400 cm⁻¹, bande **large** et forte\n\n**Alcool libre** (rare) : 3500–3700 cm⁻¹, bande **fine** et forte",
+    "tags": ["chimie", "IR", "alcool"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ir-4",
+    "lessonId": "spectroscopie-ir",
+    "front": "Comment reconnaître un acide carboxylique en IR ?",
+    "back": "Deux signatures combinées :\n\n1. **O–H très large** : 2500–3200 cm⁻¹\n2. **C=O fort** : 1680–1710 cm⁻¹\n\nLa bande O–H très large est caractéristique de l'acide.",
+    "tags": ["chimie", "IR", "acide"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-ir-5",
+    "lessonId": "spectroscopie-ir",
+    "front": "Position de la bande C=O selon la fonction ?",
+    "back": "**Ester** : 1700–1740 cm⁻¹\n**Aldéhyde/Cétone** : 1650–1730 cm⁻¹\n**Acide carboxylique** : 1680–1710 cm⁻¹\n**Amide** : 1650–1700 cm⁻¹\n\nToujours une bande **forte**.",
+    "tags": ["chimie", "IR", "carbonyle"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ir-6",
+    "lessonId": "spectroscopie-ir",
+    "front": "Comment distinguer une amine primaire d'une amine secondaire en IR ?",
+    "back": "**Amine primaire** (–NH₂) : **2 bandes** vers 3500 et 3410 cm⁻¹\n\n**Amine secondaire** (–NH–) : **1 seule bande** entre 3500–3310 cm⁻¹",
+    "tags": ["chimie", "IR", "amine"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-ir-7",
+    "lessonId": "spectroscopie-ir",
+    "front": "Comment décrire une bande IR ?",
+    "back": "Trois caractéristiques :\n\n1. **Position** (en cm⁻¹)\n2. **Intensité** (faible / moyenne / forte)\n3. **Forme** (large ou fine)",
+    "tags": ["chimie", "IR", "vocabulaire"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ir-8",
+    "lessonId": "spectroscopie-ir",
+    "front": "Piège classique : amide ou amine ?",
+    "back": "Si tu vois une bande forte vers **1650–1700 cm⁻¹**, c'est un **C=O d'amide**, pas une amine !\n\nUne amine n'a **pas de carbonyle**.\n\nLes bandes N–H (3100–3500 cm⁻¹) seules ne suffisent pas à conclure.",
+    "tags": ["chimie", "IR", "piège"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-ir-9",
+    "lessonId": "spectroscopie-ir",
+    "front": "Position des bandes de confirmation C–O ?",
+    "back": "**Ester** : C–O vers 1300–1050 cm⁻¹ (forte)\n**Alcool** : C–O vers 1200–1050 cm⁻¹\n\nCes bandes confirment la fonction après avoir identifié O–H ou C=O.",
+    "tags": ["chimie", "IR", "confirmation"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ir-10",
+    "lessonId": "spectroscopie-ir",
+    "front": "Pourquoi la zone C–H (~3000 cm⁻¹) est peu utile ?",
+    "back": "Cette zone est **peu discriminante** car presque toutes les molécules organiques contiennent des liaisons C–H.\n\n**Réflexe** : Ne jamais conclure uniquement avec C–H → ce n'est pas assez spécifique.",
+    "tags": ["chimie", "IR", "piège"],
+    "level": 2,
+    "category": "trap"
   }
 ]

@@ -2126,5 +2126,115 @@
         "difficulty": 2
       }
     ]
+  },
+  {
+    "id": "quiz-pre-spectroscopie-ir",
+    "lessonId": "spectroscopie-ir",
+    "type": "pre",
+    "title": "Pré-test : Spectroscopie IR",
+    "description": "Évalue tes connaissances préalables sur les liaisons chimiques et les fonctions organiques",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "pre-ir-1",
+        "question": "Quelle liaison est présente dans un alcool ?",
+        "choices": ["C=O", "O–H", "N–H", "C≡N"],
+        "correct": 1,
+        "explanation": "Un alcool contient un groupe hydroxyle –OH, donc une liaison O–H.",
+        "tag": "fonctions",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-ir-2",
+        "question": "Le groupe carbonyle C=O est présent dans :",
+        "choices": ["Les alcools", "Les amines", "Les cétones et aldéhydes", "Les alcènes"],
+        "correct": 2,
+        "explanation": "Le groupe carbonyle C=O est caractéristique des aldéhydes, cétones, acides, esters et amides.",
+        "tag": "fonctions",
+        "difficulty": 1
+      },
+      {
+        "id": "pre-ir-3",
+        "question": "Comment distingue-t-on un acide carboxylique d'un alcool par leur formule ?",
+        "choices": ["L'acide a un N, l'alcool non", "L'acide a un C=O en plus du O–H", "L'alcool a deux O–H", "Ils ont la même formule"],
+        "correct": 1,
+        "explanation": "L'acide carboxylique possède à la fois le groupe C=O et le groupe O–H (dans –COOH), alors que l'alcool n'a que O–H.",
+        "tag": "fonctions",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-ir-4",
+        "question": "Quelle est la différence entre une amine et un amide ?",
+        "choices": ["L'amine a un C=O, l'amide non", "L'amide a un C=O lié à N–H, l'amine non", "Ils sont identiques", "L'amine a un O–H"],
+        "correct": 1,
+        "explanation": "L'amide possède un groupe carbonyle C=O lié au groupe N–H (–CONH₂), l'amine n'a que N–H.",
+        "tag": "fonctions",
+        "difficulty": 2
+      },
+      {
+        "id": "pre-ir-5",
+        "question": "Sur un graphique, qu'est-ce que la transmittance ?",
+        "choices": ["La quantité de lumière absorbée", "La quantité de lumière transmise", "La longueur d'onde", "L'intensité du faisceau incident"],
+        "correct": 1,
+        "explanation": "La transmittance mesure la fraction de lumière qui traverse l'échantillon (ce qui n'est pas absorbé).",
+        "tag": "lecture graphique",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "id": "quiz-post-spectroscopie-ir",
+    "lessonId": "spectroscopie-ir",
+    "type": "post",
+    "title": "Post-test : Spectroscopie IR",
+    "description": "Vérifie ta maîtrise de l'analyse de spectres IR",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "post-ir-1",
+        "question": "Sur un spectre IR en transmittance, une absorption correspond à :",
+        "choices": ["Un pic vers le haut", "Un creux vers le bas", "Une ligne horizontale", "Une zone colorée"],
+        "correct": 1,
+        "explanation": "En transmittance, un creux signifie que moins de lumière est transmise, donc que la molécule absorbe à ce nombre d'onde.",
+        "tag": "lecture",
+        "difficulty": 1
+      },
+      {
+        "id": "post-ir-2",
+        "question": "Une bande O–H très large (2500-3200 cm⁻¹) associée à un C=O vers 1700 cm⁻¹ indique :",
+        "choices": ["Un alcool", "Un ester", "Un acide carboxylique", "Une amine"],
+        "correct": 2,
+        "explanation": "La combinaison O–H très large + C=O est la signature caractéristique d'un acide carboxylique.",
+        "tag": "identification",
+        "difficulty": 2
+      },
+      {
+        "id": "post-ir-3",
+        "question": "Comment distinguer une amine primaire d'un amide primaire en IR ?",
+        "choices": ["Par la position des bandes N–H", "Par la présence ou absence de C=O", "Par la largeur des bandes", "Par la zone empreinte digitale"],
+        "correct": 1,
+        "explanation": "L'amide a un C=O (1650-1700 cm⁻¹) que l'amine n'a pas. C'est la différence clé.",
+        "tag": "piège",
+        "difficulty": 2
+      },
+      {
+        "id": "post-ir-4",
+        "question": "Dans quelle zone se trouvent les bandes caractéristiques utiles pour identifier une fonction ?",
+        "choices": ["En dessous de 1000 cm⁻¹", "Entre 1000 et 1500 cm⁻¹", "Au-dessus de 1500 cm⁻¹", "Uniquement vers 3000 cm⁻¹"],
+        "correct": 2,
+        "explanation": "La zone des groupes fonctionnels (> 1500 cm⁻¹) contient les bandes O–H, N–H, C=O qui permettent l'identification.",
+        "tag": "zones",
+        "difficulty": 2
+      },
+      {
+        "id": "post-ir-5",
+        "question": "Un spectre présente un C=O à 1735 cm⁻¹ et un C–O fort vers 1200 cm⁻¹, sans bande O–H large. C'est :",
+        "choices": ["Un acide carboxylique", "Un aldéhyde", "Un ester", "Un amide"],
+        "correct": 2,
+        "explanation": "C=O à 1735 cm⁻¹ (zone ester) + C–O de confirmation + absence de O–H = ESTER.",
+        "tag": "identification",
+        "difficulty": 3
+      }
+    ]
   }
 ]

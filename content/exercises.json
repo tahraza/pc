@@ -3633,5 +3633,182 @@
     "commonMistakes": ["Mauvaise expression de h", "Oublier la racine carrée"],
     "tags": ["pendule", "littéral"],
     "isComprehension": true
+  },
+  {
+    "id": "ex-ir-1",
+    "lessonId": "spectroscopie-ir",
+    "title": "Identifier un alcool",
+    "difficulty": 1,
+    "statement": "Un spectre IR présente une bande large et forte vers 3350 cm⁻¹, et aucune bande vers 1700 cm⁻¹.\n\nQuelle fonction organique peut-on identifier ? Justifier.",
+    "hints": [
+      "Une bande large vers 3200-3400 cm⁻¹ est caractéristique d'une liaison O–H liée.",
+      "L'absence de bande vers 1700 cm⁻¹ exclut la présence d'un carbonyle C=O."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse de la bande à 3350 cm⁻¹",
+        "content": "La bande large et forte vers 3350 cm⁻¹ correspond à une liaison O–H d'alcool (avec liaisons hydrogène).",
+        "explanation": "La forme large est due aux liaisons hydrogène intermoléculaires."
+      },
+      {
+        "step": 2,
+        "title": "Vérification de l'absence de C=O",
+        "content": "L'absence de bande vers 1700 cm⁻¹ exclut un acide carboxylique (qui aurait O–H ET C=O).",
+        "explanation": "Un acide carboxylique a obligatoirement une bande C=O intense."
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "Il s'agit d'un alcool.",
+        "explanation": "O–H large sans C=O = alcool."
+      }
+    ],
+    "method": "Identification par bandes caractéristiques",
+    "commonMistakes": ["Confondre alcool et acide carboxylique", "Oublier de vérifier l'absence de C=O"],
+    "tags": ["IR", "alcool", "identification"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-ir-2",
+    "lessonId": "spectroscopie-ir",
+    "title": "Acide ou ester ?",
+    "difficulty": 2,
+    "statement": "Deux spectres IR présentent tous deux une bande forte vers 1720 cm⁻¹ (C=O).\n\n- Spectre A : bande très large entre 2500 et 3300 cm⁻¹\n- Spectre B : pas de bande large dans cette région, mais bande forte vers 1200 cm⁻¹\n\nIdentifier chaque composé.",
+    "hints": [
+      "La bande O–H très large (2500-3300 cm⁻¹) est caractéristique des acides carboxyliques.",
+      "La bande C–O vers 1200 cm⁻¹ est une confirmation pour les esters."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse du spectre A",
+        "content": "C=O vers 1720 cm⁻¹ + O–H très large (2500-3300 cm⁻¹) = ACIDE CARBOXYLIQUE.",
+        "explanation": "La combinaison C=O + O–H très large est la signature de l'acide."
+      },
+      {
+        "step": 2,
+        "title": "Analyse du spectre B",
+        "content": "C=O vers 1720 cm⁻¹ + C–O vers 1200 cm⁻¹ + absence de O–H large = ESTER.",
+        "explanation": "La bande C–O confirme l'ester, l'absence de O–H large exclut l'acide."
+      }
+    ],
+    "method": "Croisement des indices",
+    "commonMistakes": ["Confondre les bandes O–H d'alcool et d'acide", "Négliger les bandes de confirmation"],
+    "tags": ["IR", "acide", "ester"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-ir-3",
+    "lessonId": "spectroscopie-ir",
+    "title": "Amine ou amide ?",
+    "difficulty": 2,
+    "statement": "Un spectre IR présente deux bandes vers 3360 et 3180 cm⁻¹, et une bande forte vers 1660 cm⁻¹.\n\nS'agit-il d'une amine primaire ou d'un amide ? Justifier.",
+    "hints": [
+      "Les amines primaires présentent 2 bandes N–H mais PAS de bande C=O.",
+      "Les amides présentent une bande C=O vers 1650-1700 cm⁻¹."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse des bandes N–H",
+        "content": "Les deux bandes vers 3360 et 3180 cm⁻¹ indiquent la présence de liaisons N–H (2 bandes → NH₂).",
+        "explanation": "Deux bandes N–H suggèrent un groupe –NH₂."
+      },
+      {
+        "step": 2,
+        "title": "Analyse de la bande à 1660 cm⁻¹",
+        "content": "La bande forte à 1660 cm⁻¹ correspond à un C=O d'amide (1650-1700 cm⁻¹).",
+        "explanation": "Une amine n'a PAS de carbonyle ! Cette bande exclut l'amine."
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "Il s'agit d'un AMIDE primaire (–CONH₂), pas d'une amine.",
+        "explanation": "La présence du C=O est décisive."
+      }
+    ],
+    "method": "Identification par croisement",
+    "commonMistakes": ["Confondre amine et amide à cause des bandes N–H", "Oublier que les amines n'ont pas de C=O"],
+    "tags": ["IR", "amide", "amine", "piège"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-ir-4",
+    "lessonId": "spectroscopie-ir",
+    "title": "Associer spectres et molécules",
+    "difficulty": 3,
+    "statement": "Trois molécules : propan-1-ol, propanone, acide propanoïque.\nTrois spectres avec les caractéristiques suivantes :\n\n- Spectre X : bande forte à 1715 cm⁻¹, pas de bande large au-dessus de 3000 cm⁻¹\n- Spectre Y : bande large vers 3350 cm⁻¹, pas de bande vers 1700 cm⁻¹\n- Spectre Z : bande forte à 1710 cm⁻¹, bande très large 2500-3200 cm⁻¹\n\nAssocier chaque spectre à la bonne molécule.",
+    "hints": [
+      "Cherche d'abord les signatures uniques : O–H très large pour l'acide.",
+      "L'alcool a O–H large mais PAS de C=O.",
+      "La cétone a C=O mais PAS de O–H."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Spectre Z = Acide propanoïque",
+        "content": "C=O à 1710 cm⁻¹ + O–H très large (2500-3200 cm⁻¹) = acide carboxylique.",
+        "explanation": "Seul l'acide a cette combinaison caractéristique."
+      },
+      {
+        "step": 2,
+        "title": "Spectre Y = Propan-1-ol",
+        "content": "O–H large vers 3350 cm⁻¹ + absence de C=O = alcool.",
+        "explanation": "L'alcool a O–H mais pas de carbonyle."
+      },
+      {
+        "step": 3,
+        "title": "Spectre X = Propanone",
+        "content": "C=O à 1715 cm⁻¹ + absence de O–H = cétone.",
+        "explanation": "Par élimination et car la cétone n'a pas de O–H."
+      }
+    ],
+    "method": "Attribution par élimination",
+    "commonMistakes": ["Confondre acide et alcool (les deux ont O–H)", "Oublier de vérifier l'absence/présence de C=O"],
+    "tags": ["IR", "identification", "association"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-ir-5",
+    "lessonId": "spectroscopie-ir",
+    "title": "Analyse complète d'un spectre",
+    "difficulty": 3,
+    "statement": "Un spectre IR présente les bandes suivantes :\n- Bande forte vers 1735 cm⁻¹\n- Bande forte vers 1180 cm⁻¹\n- Bandes vers 2900-3000 cm⁻¹ (faibles)\n- Pas de bande large vers 3200-3400 cm⁻¹\n\nIdentifier la fonction organique et proposer un exemple de molécule.",
+    "hints": [
+      "La position du C=O (1735 cm⁻¹) est dans la zone des esters (1700-1740 cm⁻¹).",
+      "La bande vers 1180 cm⁻¹ pourrait être une bande C–O de confirmation.",
+      "L'absence de O–H large exclut alcool et acide."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identifier le carbonyle",
+        "content": "La bande forte à 1735 cm⁻¹ indique un C=O. Cette position (1700-1740 cm⁻¹) est typique des ESTERS.",
+        "explanation": "La position précise du C=O aide à distinguer les différentes fonctions carbonylées."
+      },
+      {
+        "step": 2,
+        "title": "Confirmer avec la bande C–O",
+        "content": "La bande forte vers 1180 cm⁻¹ correspond à la liaison C–O de l'ester (1300-1050 cm⁻¹).",
+        "explanation": "Cette bande de confirmation appuie l'hypothèse de l'ester."
+      },
+      {
+        "step": 3,
+        "title": "Vérifier les exclusions",
+        "content": "L'absence de bande O–H large exclut l'acide carboxylique. Les bandes C–H sont peu informatives.",
+        "explanation": "L'absence de O–H confirme qu'il ne s'agit pas d'un acide."
+      },
+      {
+        "step": 4,
+        "title": "Conclusion",
+        "content": "La molécule contient un groupe ESTER. Exemple : éthanoate d'éthyle (CH₃COOCH₂CH₃).",
+        "explanation": "L'éthanoate d'éthyle est un ester courant."
+      }
+    ],
+    "method": "Analyse méthodique",
+    "commonMistakes": ["Ne pas vérifier les bandes de confirmation", "Conclure trop vite avec une seule bande"],
+    "tags": ["IR", "ester", "analyse complète"],
+    "isComprehension": true
   }
 ]

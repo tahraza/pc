@@ -1999,6 +1999,177 @@
         }
       ],
       "finalAnswer": "La vitesse en bas est de **19,8 m/s** (soit environ 71 km/h)."
+    },
+    {
+      "id": "guided-ir-1",
+      "title": "Identifier un alcool par IR",
+      "subject": "chimie",
+      "chapter": "Spectroscopie IR",
+      "difficulty": "facile",
+      "estimatedTime": 10,
+      "description": "Un spectre IR présente une bande large et intense vers 3350 cm⁻¹. Aucune bande n'est visible vers 1700 cm⁻¹.",
+      "question": "Quelle fonction organique peut-on identifier ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Analyser la bande vers 3350 cm⁻¹",
+          "instruction": "À quelle liaison correspond une bande large vers 3200-3400 cm⁻¹ ?",
+          "hint": "Pense aux liaisons X–H. La forme large indique des liaisons hydrogène.",
+          "solution": "Une bande large et forte vers 3200-3400 cm⁻¹ correspond à une liaison **O–H d'alcool** avec liaisons hydrogène intermoléculaires."
+        },
+        {
+          "id": 2,
+          "title": "Vérifier l'absence de C=O",
+          "instruction": "Pourquoi est-il important qu'il n'y ait pas de bande vers 1700 cm⁻¹ ?",
+          "hint": "Si O–H est présent avec C=O, quelle fonction obtient-on ?",
+          "solution": "L'absence de bande vers 1700 cm⁻¹ (C=O) **exclut un acide carboxylique** qui présenterait O–H très large + C=O."
+        },
+        {
+          "id": 3,
+          "title": "Conclure",
+          "instruction": "Quelle est la fonction organique identifiée ?",
+          "solution": "O–H large (3350 cm⁻¹) + absence de C=O → **ALCOOL**"
+        }
+      ],
+      "finalAnswer": "La molécule est un **alcool** (présence d'O–H lié, absence de C=O)."
+    },
+    {
+      "id": "guided-ir-2",
+      "title": "Distinguer acide et ester",
+      "subject": "chimie",
+      "chapter": "Spectroscopie IR",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "Deux spectres IR présentent une bande C=O vers 1720 cm⁻¹. Le spectre A a une bande très large 2500-3300 cm⁻¹. Le spectre B n'a pas cette bande mais présente une bande forte vers 1200 cm⁻¹.",
+      "question": "Identifier chaque composé.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Point commun",
+          "instruction": "Qu'indique la bande vers 1720 cm⁻¹ dans les deux spectres ?",
+          "solution": "Les deux composés ont un groupe **carbonyle C=O** (bande forte vers 1650-1750 cm⁻¹)."
+        },
+        {
+          "id": 2,
+          "title": "Analyser le spectre A",
+          "instruction": "Quelle est la signification de la bande très large entre 2500 et 3300 cm⁻¹ ?",
+          "hint": "Cette bande O–H très étalée est caractéristique d'une seule fonction...",
+          "solution": "La bande O–H **très large** (2500-3300 cm⁻¹) associée au C=O est la signature d'un **acide carboxylique**."
+        },
+        {
+          "id": 3,
+          "title": "Analyser le spectre B",
+          "instruction": "Que confirme la bande vers 1200 cm⁻¹ en l'absence de O–H large ?",
+          "hint": "C'est une bande de confirmation dans la zone 1300-1050 cm⁻¹.",
+          "solution": "La bande forte vers 1200 cm⁻¹ correspond à **C–O d'ester**. L'absence de O–H large exclut l'acide → **ESTER**."
+        }
+      ],
+      "finalAnswer": "Spectre A = **Acide carboxylique** (C=O + O–H très large). Spectre B = **Ester** (C=O + C–O, sans O–H)."
+    },
+    {
+      "id": "guided-ir-3",
+      "title": "Piège : amine ou amide ?",
+      "subject": "chimie",
+      "chapter": "Spectroscopie IR",
+      "difficulty": "moyen",
+      "estimatedTime": 15,
+      "description": "Un spectre IR présente deux bandes vers 3360 et 3180 cm⁻¹, et une bande forte vers 1660 cm⁻¹.",
+      "question": "S'agit-il d'une amine primaire ou d'un amide ?",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Analyser les bandes vers 3360 et 3180 cm⁻¹",
+          "instruction": "À quoi correspondent ces deux bandes ?",
+          "hint": "Deux bandes dans cette zone indiquent un groupe –NH₂.",
+          "solution": "Les deux bandes vers 3360 et 3180 cm⁻¹ correspondent aux liaisons **N–H** d'un groupe –NH₂."
+        },
+        {
+          "id": 2,
+          "title": "Analyser la bande à 1660 cm⁻¹",
+          "instruction": "À quelle liaison correspond une bande forte vers 1650-1700 cm⁻¹ ?",
+          "hint": "C'est la bande la plus diagnostique !",
+          "solution": "La bande forte à 1660 cm⁻¹ correspond à un **C=O d'amide** (1650-1700 cm⁻¹)."
+        },
+        {
+          "id": 3,
+          "title": "Conclure",
+          "instruction": "Une amine a-t-elle un groupe carbonyle ?",
+          "solution": "Non, une amine n'a **pas de C=O**. La présence de C=O exclut l'amine → c'est un **AMIDE primaire** (–CONH₂)."
+        }
+      ],
+      "finalAnswer": "C'est un **amide primaire** (–CONH₂). Le C=O à 1660 cm⁻¹ est décisif : une amine n'a pas de carbonyle !"
+    },
+    {
+      "id": "guided-ir-4",
+      "title": "Associer spectres et molécules",
+      "subject": "chimie",
+      "chapter": "Spectroscopie IR",
+      "difficulty": "difficile",
+      "estimatedTime": 20,
+      "description": "Trois molécules : éthanol, éthanal, acide éthanoïque. Trois spectres :\n- X : C=O à 1720 cm⁻¹, pas de bande large > 3000 cm⁻¹\n- Y : O–H large à 3350 cm⁻¹, pas de C=O\n- Z : C=O à 1710 cm⁻¹, O–H très large 2500-3200 cm⁻¹",
+      "question": "Associer chaque spectre à la bonne molécule.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier le spectre Z",
+          "instruction": "Quelle molécule présente à la fois C=O et O–H très large ?",
+          "hint": "La bande O–H très étalée (2500-3200 cm⁻¹) est caractéristique d'une seule fonction.",
+          "solution": "C=O + O–H très large → **Acide éthanoïque** (seul l'acide a cette combinaison)."
+        },
+        {
+          "id": 2,
+          "title": "Identifier le spectre Y",
+          "instruction": "Quelle molécule a O–H mais pas de C=O ?",
+          "solution": "O–H large sans C=O → **Éthanol** (alcool)."
+        },
+        {
+          "id": 3,
+          "title": "Identifier le spectre X",
+          "instruction": "Il reste une molécule. Vérifie la cohérence.",
+          "hint": "L'éthanal est un aldéhyde (C=O en bout de chaîne).",
+          "solution": "C=O à 1720 cm⁻¹ sans O–H → **Éthanal** (aldéhyde). Par élimination et car l'aldéhyde n'a pas de O–H."
+        }
+      ],
+      "finalAnswer": "X = **Éthanal**, Y = **Éthanol**, Z = **Acide éthanoïque**."
+    },
+    {
+      "id": "guided-ir-5",
+      "title": "Analyse complète d'un ester",
+      "subject": "chimie",
+      "chapter": "Spectroscopie IR",
+      "difficulty": "difficile",
+      "estimatedTime": 20,
+      "description": "Un spectre IR présente : bande forte à 1735 cm⁻¹, bande forte à 1180 cm⁻¹, bandes faibles vers 2900-3000 cm⁻¹, pas de bande large vers 3200-3400 cm⁻¹.",
+      "question": "Identifier la fonction organique et justifier.",
+      "steps": [
+        {
+          "id": 1,
+          "title": "Identifier le carbonyle",
+          "instruction": "À quelle fonction correspond un C=O vers 1735 cm⁻¹ ?",
+          "hint": "Compare avec les positions : ester (1700-1740), aldéhyde/cétone (1650-1730), acide (1680-1710).",
+          "solution": "La position 1735 cm⁻¹ est typique d'un **ester** (1700-1740 cm⁻¹)."
+        },
+        {
+          "id": 2,
+          "title": "Chercher la bande de confirmation",
+          "instruction": "Quelle bande confirme l'hypothèse de l'ester ?",
+          "hint": "Les esters ont une bande C–O caractéristique.",
+          "solution": "La bande forte à 1180 cm⁻¹ correspond à la liaison **C–O de l'ester** (1300-1050 cm⁻¹). C'est une confirmation."
+        },
+        {
+          "id": 3,
+          "title": "Vérifier les exclusions",
+          "instruction": "Pourquoi peut-on exclure un acide carboxylique ?",
+          "solution": "L'**absence de bande O–H large** (3200-3400 cm⁻¹) exclut l'acide carboxylique et l'alcool."
+        },
+        {
+          "id": 4,
+          "title": "Conclure",
+          "instruction": "Quelle est la fonction organique ? Donne un exemple.",
+          "solution": "La molécule est un **ESTER**. Exemple : éthanoate d'éthyle (CH₃COOCH₂CH₃)."
+        }
+      ],
+      "finalAnswer": "C'est un **ester** : C=O à 1735 cm⁻¹ + C–O à 1180 cm⁻¹ + absence d'O–H large."
     }
   ]
 }
