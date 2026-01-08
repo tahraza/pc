@@ -180,6 +180,27 @@
     @apply my-6 rounded-lg border-l-4 border-success-500 bg-success-50 p-4 dark:bg-success-500/20;
   }
 
+  /* Tables */
+  .table-wrapper {
+    @apply my-6 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700;
+  }
+
+  .lesson-table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .lesson-table th {
+    @apply bg-slate-100 px-4 py-3 text-left font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200;
+  }
+
+  .lesson-table td {
+    @apply border-t border-slate-200 px-4 py-3 text-slate-700 dark:border-slate-700 dark:text-slate-300;
+  }
+
+  .lesson-table tbody tr:hover {
+    @apply bg-slate-50 dark:bg-slate-800/50;
+  }
+
   /* Progress bar */
   .progress-bar {
     @apply h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700;

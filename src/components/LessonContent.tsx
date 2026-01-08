@@ -90,6 +90,39 @@ function processContent(content: string): string {
     '<div class="tip-box"><strong class="text-success-700">Astuce</strong><div class="mt-2">$1</div></div>'
   )
 
+  // Process tables
+  processed = processed.replace(
+    /(?:^|\n)((?:\|[^\n]+\|\n)+)/g,
+    (match, tableContent) => {
+      const rows = tableContent.trim().split('\n').filter((row: string) => row.trim())
+      if (rows.length < 2) return match
+
+      // Check if second row is separator (|---|---|)
+      const separatorPattern = /^\|[\s\-:]+\|$/
+      if (!separatorPattern.test(rows[1].trim().replace(/\|[\s\-:]+/g, '|---|'))) {
+        // Not a valid table, check if it looks like a separator row
+        if (!/^[\s|:-]+$/.test(rows[1].replace(/[^|:-]/g, ''))) {
+          return match
+        }
+      }
+
+      const parseRow = (row: string): string[] => {
+        return row.split('|').slice(1, -1).map((cell: string) => cell.trim())
+      }
+
+      const headerCells = parseRow(rows[0])
+      const headerHtml = headerCells.map((cell: string) => `<th>${cell}</th>`).join('')
+
+      const bodyRows = rows.slice(2) // Skip header and separator
+      const bodyHtml = bodyRows.map((row: string) => {
+        const cells = parseRow(row)
+        return `<tr>${cells.map((cell: string) => `<td>${cell}</td>`).join('')}</tr>`
+      }).join('')
+
+      return `<div class="table-wrapper"><table class="lesson-table"><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`
+    }
+  )
+
   // Process basic markdown
   // Headers
   processed = processed.replace(/^### (.*$)/gm, '<h3>$1</h3>')
