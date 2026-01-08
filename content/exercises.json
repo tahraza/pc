@@ -2223,5 +2223,774 @@
       "Confondre élévateur et abaisseur"
     ],
     "tags": ["transformateur", "tension"]
+  },
+  {
+    "id": "ex-ph-calcul-1",
+    "lessonId": "acides-bases",
+    "title": "Calcul du pH d'une solution d'acide chlorhydrique",
+    "difficulty": 1,
+    "statement": "Une solution d'acide chlorhydrique contient une concentration en ions oxonium [H₃O⁺] = 2,5 × 10⁻² mol/L. Calculer son pH.",
+    "hints": [
+      "Le pH est lié à la concentration en ions oxonium.",
+      "Utilise la fonction logarithme décimal.",
+      "La formule est pH = -log([H₃O⁺]/c₀) avec c₀ = 1 mol/L."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Rappel de la formule",
+        "content": "pH = -log([H₃O⁺])",
+        "explanation": "Le pH est défini comme l'opposé du logarithme décimal de la concentration en ions oxonium."
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "pH = -log(2,5 × 10⁻²) ≈ 1,6",
+        "explanation": "Le résultat est cohérent pour une solution acide (pH < 7)."
+      }
+    ],
+    "method": "Application directe de la définition du pH",
+    "commonMistakes": [
+      "Oublier le signe moins dans la formule",
+      "Utiliser le logarithme népérien (ln) au lieu du logarithme décimal (log)"
+    ],
+    "tags": ["acide", "pH", "calcul", "logarithme"]
+  },
+  {
+    "id": "ex-ph-calcul-2",
+    "lessonId": "acides-bases",
+    "title": "Calcul de la concentration en ions oxonium",
+    "difficulty": 1,
+    "statement": "Le pH de la salive est d'environ 6,5. Calculer la concentration en ions oxonium [H₃O⁺] correspondante.",
+    "hints": [
+      "Tu connais le pH et tu cherches la concentration.",
+      "Il faut inverser la formule pH = -log([H₃O⁺]).",
+      "Utilise la fonction puissance de 10 : [H₃O⁺] = 10⁻ᵖᴴ."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule inverse du pH",
+        "content": "[H₃O⁺] = c₀ × 10⁻ᵖᴴ",
+        "explanation": "La concentration en ions oxonium se déduit du pH par la relation inverse du logarithme."
+      },
+      {
+        "step": 2,
+        "title": "Calcul",
+        "content": "[H₃O⁺] = 10⁻⁶'⁵ ≈ 3,2 × 10⁻⁷ mol/L",
+        "explanation": "Un pH de 6,5 indique un milieu légèrement acide (proche de la neutralité)."
+      }
+    ],
+    "method": "Inversion de la formule du pH",
+    "commonMistakes": [
+      "Oublier le signe moins dans l'exposant",
+      "Confondre concentration et quantité de matière"
+    ],
+    "tags": ["pH", "concentration", "ions", "puissance"]
+  },
+  {
+    "id": "ex-couple-acide-base",
+    "lessonId": "acides-bases",
+    "title": "Identification des couples acide-base",
+    "difficulty": 2,
+    "statement": "Parmi les couples suivants, identifier le couple acide-base correct pour l'ammoniac : NH₃/NH₄⁺ ou NH₄⁺/NH₃ ?",
+    "hints": [
+      "Un acide est une espèce capable de céder un proton H⁺.",
+      "Une base est une espèce capable de capter un proton H⁺.",
+      "Le couple s'écrit toujours Acide/Base."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identification des espèces",
+        "content": "L'ion ammonium NH₄⁺ est l'acide et l'ammoniac NH₃ est la base.",
+        "explanation": "L'ion NH₄⁺ peut céder un proton pour donner NH₃ : NH₄⁺ = NH₃ + H⁺"
+      },
+      {
+        "step": 2,
+        "title": "Écriture conventionnelle",
+        "content": "Le couple est NH₄⁺(aq)/NH₃(aq)",
+        "explanation": "Par convention, on écrit toujours l'acide à gauche et sa base conjuguée à droite."
+      }
+    ],
+    "method": "Utilisation de la définition de Brönsted",
+    "commonMistakes": [
+      "Inverser l'ordre acide et base",
+      "Oublier les charges électriques des ions"
+    ],
+    "tags": ["couple", "acide", "base", "Brönsted"]
+  },
+  {
+    "id": "ex-t12-definition",
+    "lessonId": "cinetique",
+    "title": "Temps de demi-réaction",
+    "difficulty": 2,
+    "statement": "Lors d'une réaction chimique, l'avancement final xf vaut 2,0 mmol. Donner la définition du temps de demi-réaction t₁/₂ et calculer la valeur de l'avancement à cet instant.",
+    "hints": [
+      "Le temps de demi-réaction est lié à l'avancement final.",
+      "C'est la durée nécessaire pour atteindre la moitié de l'avancement final.",
+      "Calculer x(t₁/₂) = xf / 2."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Définition",
+        "content": "Le temps de demi-réaction t₁/₂ est la durée au bout de laquelle l'avancement x atteint la moitié de sa valeur finale xf.",
+        "explanation": "C'est une grandeur caractéristique de la cinétique de la réaction."
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'avancement",
+        "content": "x(t₁/₂) = xf / 2 = 2,0 / 2 = 1,0 mmol",
+        "explanation": "À t₁/₂, la moitié du réactif limitant a été consommée ou la moitié du produit final a été formée."
+      }
+    ],
+    "method": "Exploitation de la définition de t₁/₂",
+    "commonMistakes": [
+      "Confondre avancement final et avancement maximal (si la réaction n'est pas totale)",
+      "Penser que la réaction est terminée à 2×t₁/₂"
+    ],
+    "tags": ["cinétique", "temps", "demi-réaction", "avancement"]
+  },
+  {
+    "id": "ex-facteurs-cinetiques",
+    "lessonId": "cinetique",
+    "title": "Facteurs cinétiques",
+    "difficulty": 1,
+    "statement": "Pour accélérer une réaction chimique, on peut modifier certains paramètres. Citer deux facteurs cinétiques principaux.",
+    "hints": [
+      "Pense à ce qui se passe quand on chauffe.",
+      "Pense à la quantité de matière par unité de volume.",
+      "La température et la concentration sont des facteurs clés."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Premier facteur",
+        "content": "La température",
+        "explanation": "Plus la température est élevée, plus la transformation est rapide (agitation thermique accrue)."
+      },
+      {
+        "step": 2,
+        "title": "Second facteur",
+        "content": "La concentration des réactifs",
+        "explanation": "Plus la concentration est élevée, plus la fréquence des chocs efficaces entre molécules augmente."
+      }
+    ],
+    "method": "Restitution de connaissances",
+    "commonMistakes": [
+      "Citer la pression pour des liquides (elle n'influe que sur les gaz)",
+      "Confondre vitesse de réaction et rendement"
+    ],
+    "tags": ["cinétique", "facteurs", "vitesse", "température"]
+  },
+  {
+    "id": "ex-beer-lambert",
+    "lessonId": "titrages",
+    "title": "Loi de Beer-Lambert",
+    "difficulty": 2,
+    "statement": "Une solution colorée a une absorbance A = 0,80. Si on dilue cette solution par deux, quelle sera la nouvelle absorbance A' ?",
+    "hints": [
+      "L'absorbance est proportionnelle à la concentration.",
+      "La loi est A = k × c.",
+      "Si on dilue par 2, la concentration est divisée par 2."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Relation Absorbance-Concentration",
+        "content": "D'après la loi de Beer-Lambert, A est proportionnelle à c (A = k·c)",
+        "explanation": "Pour une longueur d'onde donnée et une cuve donnée, k est constant."
+      },
+      {
+        "step": 2,
+        "title": "Calcul de la nouvelle absorbance",
+        "content": "Si c' = c/2, alors A' = k(c/2) = A/2. Donc A' = 0,80 / 2 = 0,40",
+        "explanation": "L'absorbance varie linéairement avec la concentration tant que la solution n'est pas trop concentrée."
+      }
+    ],
+    "method": "Utilisation de la proportionnalité",
+    "commonMistakes": [
+      "Penser que l'absorbance ne change pas lors d'une dilution",
+      "Multiplier par 2 au lieu de diviser"
+    ],
+    "tags": ["spectrophotométrie", "absorbance", "beer-lambert", "dilution"]
+  },
+  {
+    "id": "ex-kohlrausch",
+    "lessonId": "titrages",
+    "title": "Loi de Kohlrausch",
+    "difficulty": 2,
+    "statement": "Exprimer la conductivité σ d'une solution contenant des ions Na⁺ et Cl⁻ en fonction de leurs concentrations et conductivités molaires ioniques.",
+    "hints": [
+      "La conductivité dépend de la somme des contributions de chaque ion.",
+      "Chaque ion contribue proportionnellement à sa concentration.",
+      "La formule est σ = Σ λᵢ × [Xᵢ]."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identification des ions",
+        "content": "Les ions présents sont Na⁺ et Cl⁻",
+        "explanation": "La conductivité est due à tous les ions présents en solution."
+      },
+      {
+        "step": 2,
+        "title": "Application de la loi",
+        "content": "σ = λ(Na⁺)·[Na⁺] + λ(Cl⁻)·[Cl⁻]",
+        "explanation": "C'est la loi de Kohlrausch : la conductivité est la somme des produits des conductivités molaires ioniques par les concentrations."
+      }
+    ],
+    "method": "Application de formule littérale",
+    "commonMistakes": [
+      "Oublier un des ions présents",
+      "Utiliser les masses molaires au lieu des conductivités molaires"
+    ],
+    "tags": ["conductimétrie", "formule", "kohlrausch", "ions"]
+  },
+  {
+    "id": "ex-equivalence-ph",
+    "lessonId": "titrages",
+    "title": "Repérage de l'équivalence (pH-métrie)",
+    "difficulty": 2,
+    "statement": "Lors d'un titrage pH-métrique, comment repère-t-on graphiquement le volume équivalent Ve sur la courbe pH = f(V) ?",
+    "hints": [
+      "Regarde la variation brutale du pH.",
+      "Il existe une méthode utilisant des droites parallèles.",
+      "Il existe une méthode utilisant la courbe dérivée."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Saut de pH",
+        "content": "L'équivalence correspond au point d'inflexion de la courbe, là où le saut de pH est maximal.",
+        "explanation": "À l'équivalence, les réactifs ont été introduits dans les proportions stœchiométriques."
+      },
+      {
+        "step": 2,
+        "title": "Méthodes graphiques",
+        "content": "On utilise la méthode des tangentes parallèles ou le maximum de la courbe dérivée dpH/dV.",
+        "explanation": "La méthode des tangentes permet de localiser précisément le point d'équivalence E (Ve, pHe)."
+      }
+    ],
+    "method": "Analyse graphique",
+    "commonMistakes": [
+      "Confondre pHe (pH à l'équivalence) et pKa (pH à la demi-équivalence)",
+      "Prendre le début du saut au lieu du point d'inflexion"
+    ],
+    "tags": ["titrage", "pH", "équivalence", "graphique"]
+  },
+  {
+    "id": "ex-isotopes",
+    "lessonId": "radioactivite",
+    "title": "Isotopes",
+    "difficulty": 1,
+    "statement": "Le carbone 12 et le carbone 14 sont des isotopes. Qu'est-ce qui les différencie dans leur composition ?",
+    "hints": [
+      "Les isotopes ont le même symbole chimique.",
+      "Ils ont le même numéro atomique Z.",
+      "Ils n'ont pas le même nombre de masse A."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Points communs",
+        "content": "Ils ont le même nombre de protons Z = 6",
+        "explanation": "C'est ce qui définit l'élément chimique Carbone."
+      },
+      {
+        "step": 2,
+        "title": "Différence",
+        "content": "Ils diffèrent par leur nombre de neutrons N (et donc leur nombre de masse A)",
+        "explanation": "Le ¹⁴C a 8 neutrons (14-6) alors que le ¹²C en a 6 (12-6)."
+      }
+    ],
+    "method": "Comparaison de composition nucléaire",
+    "commonMistakes": [
+      "Dire qu'ils ont un nombre de protons différent",
+      "Confondre nucléons et neutrons"
+    ],
+    "tags": ["noyau", "isotope", "composition", "neutrons"]
+  },
+  {
+    "id": "ex-desintegration-alpha",
+    "lessonId": "radioactivite",
+    "title": "Équation de désintégration Alpha",
+    "difficulty": 2,
+    "statement": "Écrire l'équation de la désintégration alpha du Polonium 210 (Z=84) qui se transforme en Plomb (Pb).",
+    "hints": [
+      "Une particule alpha est un noyau d'hélium ⁴₂He.",
+      "Il faut conserver le nombre de masse A.",
+      "Il faut conserver le nombre de charge Z."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identification de la particule émise",
+        "content": "La particule alpha est un noyau d'hélium, noté ⁴₂He",
+        "explanation": "C'est la définition de la radioactivité alpha."
+      },
+      {
+        "step": 2,
+        "title": "Application des lois de Soddy",
+        "content": "²¹⁰₈₄Po → ²⁰⁶₈₂Pb + ⁴₂He",
+        "explanation": "Conservation de A : 210 = 206 + 4. Conservation de Z : 84 = 82 + 2."
+      }
+    ],
+    "method": "Utilisation des lois de Soddy",
+    "commonMistakes": [
+      "Se tromper dans la soustraction des A et Z",
+      "Oublier d'écrire la particule He"
+    ],
+    "tags": ["radioactivité", "équation", "alpha", "Soddy"]
+  },
+  {
+    "id": "ex-loi-decroissance",
+    "lessonId": "radioactivite",
+    "title": "Loi de décroissance radioactive",
+    "difficulty": 2,
+    "statement": "Donner l'expression du nombre de noyaux restants N(t) en fonction du nombre initial N₀, de la constante radioactive λ et du temps t.",
+    "hints": [
+      "C'est une fonction décroissante.",
+      "La décroissance est exponentielle.",
+      "L'expression contient e (exponentielle)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formulation de la loi",
+        "content": "N(t) = N₀ × e⁻λᵗ",
+        "explanation": "Cette loi décrit l'évolution statistique d'une population de noyaux radioactifs."
+      },
+      {
+        "step": 2,
+        "title": "Définition des termes",
+        "content": "N₀ est le nombre de noyaux à t=0, et λ est la constante radioactive (en s⁻¹)",
+        "explanation": "λ caractérise la probabilité de désintégration par unité de temps."
+      }
+    ],
+    "method": "Restitution de loi physique",
+    "commonMistakes": [
+      "Oublier le signe moins dans l'exponentielle",
+      "Confondre λ et t₁/₂"
+    ],
+    "tags": ["loi", "décroissance", "exponentielle", "radioactivité"]
+  },
+  {
+    "id": "ex-vecteur-vitesse",
+    "lessonId": "mouvement-newton",
+    "title": "Vecteur vitesse et position",
+    "difficulty": 2,
+    "statement": "Le vecteur position d'un point est donné par OM(t) = 2t·i + (3t - 4)·j. Déterminer les coordonnées du vecteur vitesse v(t).",
+    "hints": [
+      "Le vecteur vitesse est la dérivée du vecteur position par rapport au temps.",
+      "Dérive chaque coordonnée séparément.",
+      "vx = dx/dt et vy = dy/dt"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Dérivation de x(t)",
+        "content": "x(t) = 2t, donc vx = dx/dt = 2",
+        "explanation": "La composante selon x de la vitesse est la dérivée temporelle de x(t)."
+      },
+      {
+        "step": 2,
+        "title": "Dérivation de y(t)",
+        "content": "y(t) = 3t - 4, donc vy = dy/dt = 3",
+        "explanation": "La composante selon y de la vitesse est la dérivée temporelle de y(t)."
+      },
+      {
+        "step": 3,
+        "title": "Vecteur vitesse",
+        "content": "v(t) = 2·i + 3·j",
+        "explanation": "Le vecteur vitesse est constant : mouvement rectiligne uniforme."
+      }
+    ],
+    "method": "Dérivation vectorielle",
+    "commonMistakes": [
+      "Dériver par rapport à x au lieu de t",
+      "Oublier les vecteurs unitaires"
+    ],
+    "tags": ["cinématique", "vitesse", "dérivée", "vecteur"]
+  },
+  {
+    "id": "ex-pfd-newton",
+    "lessonId": "mouvement-newton",
+    "title": "Deuxième loi de Newton",
+    "difficulty": 2,
+    "statement": "Un système de masse m constante est soumis à une somme de forces extérieures ΣFext. Quelle relation lie ces forces à l'accélération a du centre de masse ?",
+    "hints": [
+      "C'est la loi fondamentale de la dynamique.",
+      "Elle relie la cause (forces) à l'effet (accélération).",
+      "F = ..."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Énoncé de la loi",
+        "content": "ΣFext = m·a",
+        "explanation": "Dans un référentiel galiléen, la somme vectorielle des forces extérieures est égale au produit de la masse par l'accélération."
+      }
+    ],
+    "method": "Restitution de loi physique",
+    "commonMistakes": [
+      "Oublier les vecteurs",
+      "Oublier la masse m",
+      "Appliquer la loi dans un référentiel non galiléen"
+    ],
+    "tags": ["newton", "loi", "dynamique", "PFD"]
+  },
+  {
+    "id": "ex-chute-libre",
+    "lessonId": "mouvement-newton",
+    "title": "Chute libre",
+    "difficulty": 2,
+    "statement": "Quelles sont les caractéristiques de l'accélération d'un projectile en chute libre (on néglige les frottements de l'air) ?",
+    "hints": [
+      "Fais le bilan des forces.",
+      "Seul le poids s'applique.",
+      "Utilise la 2ème loi de Newton."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Bilan des forces",
+        "content": "Le système n'est soumis qu'à son poids P = m·g",
+        "explanation": "C'est la définition de la chute libre : soumission unique à la pesanteur."
+      },
+      {
+        "step": 2,
+        "title": "Application de la 2ème loi",
+        "content": "m·a = m·g, donc a = g",
+        "explanation": "L'accélération est verticale, dirigée vers le bas et constante (≈ 9,8 m/s²)."
+      }
+    ],
+    "method": "Application de la 2ème loi de Newton",
+    "commonMistakes": [
+      "Dire que l'accélération dépend de la masse",
+      "Oublier que l'accélération est un vecteur"
+    ],
+    "tags": ["chute libre", "accélération", "pesanteur", "g"]
+  },
+  {
+    "id": "ex-kepler-3",
+    "lessonId": "mouvement-champ-uniforme",
+    "title": "Troisième loi de Kepler",
+    "difficulty": 2,
+    "statement": "Donner l'expression de la troisième loi de Kepler pour une planète tournant autour du Soleil (période T, demi-grand axe a).",
+    "hints": [
+      "Elle relie le carré de la période et le cube de la distance.",
+      "Le rapport est constant.",
+      "T² / a³ = ..."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Expression mathématique",
+        "content": "T² / a³ = k (constante)",
+        "explanation": "Le carré de la période de révolution est proportionnel au cube du demi-grand axe de l'orbite."
+      },
+      {
+        "step": 2,
+        "title": "Précision sur la constante",
+        "content": "La constante k ne dépend que de la masse de l'astre attracteur (le Soleil ici)",
+        "explanation": "Pour le Soleil, T²/a³ = 4π²/(G·Mₛ)"
+      }
+    ],
+    "method": "Restitution de loi physique",
+    "commonMistakes": [
+      "Inverser les puissances (T³ / a²)",
+      "Penser que la constante dépend de la masse de la planète"
+    ],
+    "tags": ["kepler", "loi", "orbite", "satellite"]
+  },
+  {
+    "id": "ex-vitesse-satellite",
+    "lessonId": "mouvement-champ-uniforme",
+    "title": "Vitesse d'un satellite en orbite circulaire",
+    "difficulty": 3,
+    "statement": "Exprimer la vitesse v d'un satellite en orbite circulaire de rayon r autour de la Terre (masse Mₜ) en fonction de G, Mₜ et r.",
+    "hints": [
+      "Utilise la 2ème loi de Newton dans le repère de Frenet.",
+      "L'accélération normale est aₙ = v²/r.",
+      "La force gravitationnelle est F = G·Mₜ·m / r²."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Égalité Force-Accélération",
+        "content": "G·Mₜ·m / r² = m·v² / r",
+        "explanation": "La force de gravitation est la force centripète qui maintient le satellite sur son orbite."
+      },
+      {
+        "step": 2,
+        "title": "Isolement de la vitesse",
+        "content": "v² = G·Mₜ / r, donc v = √(G·Mₜ / r)",
+        "explanation": "La vitesse ne dépend pas de la masse m du satellite mais décroît avec l'altitude."
+      }
+    ],
+    "method": "Démonstration dynamique",
+    "commonMistakes": [
+      "Oublier la racine carrée",
+      "Garder la masse du satellite dans l'expression finale"
+    ],
+    "tags": ["satellite", "vitesse", "gravitation", "orbite"]
+  },
+  {
+    "id": "ex-premier-principe",
+    "lessonId": "thermodynamique",
+    "title": "Premier principe de la thermodynamique",
+    "difficulty": 2,
+    "statement": "Énoncer le premier principe de la thermodynamique pour un système fermé au repos macroscopique.",
+    "hints": [
+      "Il relie la variation d'énergie interne aux échanges.",
+      "Les échanges sont le travail et la chaleur.",
+      "ΔU = ..."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Énoncé",
+        "content": "ΔU = W + Q",
+        "explanation": "La variation d'énergie interne ΔU est égale à la somme du travail W et du transfert thermique Q reçus."
+      },
+      {
+        "step": 2,
+        "title": "Convention de signe",
+        "content": "W et Q sont positifs s'ils sont reçus par le système, négatifs s'ils sont cédés",
+        "explanation": "C'est la convention 'banquier' : ce qui rentre est positif."
+      }
+    ],
+    "method": "Restitution de loi physique",
+    "commonMistakes": [
+      "Oublier un des termes (W ou Q)",
+      "Se tromper dans les signes (convention)"
+    ],
+    "tags": ["thermodynamique", "énergie", "premier principe"]
+  },
+  {
+    "id": "ex-energie-interne-gaz",
+    "lessonId": "thermodynamique",
+    "title": "Énergie interne d'un gaz parfait",
+    "difficulty": 2,
+    "statement": "De quelle grandeur macroscopique unique dépend l'énergie interne U d'un gaz parfait ?",
+    "hints": [
+      "Pour un gaz parfait, les interactions entre particules sont négligées.",
+      "L'énergie interne se résume à l'énergie cinétique microscopique.",
+      "Cette agitation est liée à..."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Réponse",
+        "content": "La température T",
+        "explanation": "L'énergie interne d'un gaz parfait ne dépend que de sa température (Loi de Joule)."
+      }
+    ],
+    "method": "Connaissance du modèle du gaz parfait",
+    "commonMistakes": [
+      "Dire qu'elle dépend de la pression ou du volume",
+      "Confondre avec un gaz réel"
+    ],
+    "tags": ["gaz parfait", "énergie interne", "température"]
+  },
+  {
+    "id": "ex-transfert-thermique",
+    "lessonId": "thermodynamique",
+    "title": "Transfert thermique",
+    "difficulty": 2,
+    "statement": "Calculer l'énergie thermique Q nécessaire pour chauffer 200 g d'eau de 20°C à 30°C. (ceau = 4180 J·kg⁻¹·K⁻¹)",
+    "hints": [
+      "La formule fait intervenir la masse, la capacité thermique et la différence de température.",
+      "Q = m·c·ΔT",
+      "Attention à la conversion de la masse en kg."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion",
+        "content": "m = 200 g = 0,2 kg",
+        "explanation": "Les unités doivent être cohérentes avec celles de c (J/kg/K)."
+      },
+      {
+        "step": 2,
+        "title": "Calcul",
+        "content": "Q = 0,2 × 4180 × (30 - 20) = 0,2 × 4180 × 10 = 8360 J",
+        "explanation": "L'énergie thermique est proportionnelle à l'écart de température."
+      }
+    ],
+    "method": "Calcul calorimétrique",
+    "commonMistakes": [
+      "Oublier de convertir la masse en kg",
+      "Utiliser la température en Kelvin sans réaliser que ΔT est le même en °C et K"
+    ],
+    "tags": ["thermique", "chaleur", "calcul", "calorimétrie"]
+  },
+  {
+    "id": "ex-niveau-sonore",
+    "lessonId": "ondes-mecaniques",
+    "title": "Niveau d'intensité sonore",
+    "difficulty": 2,
+    "statement": "Une intensité sonore I = 1,0 × 10⁻⁵ W/m² est mesurée. Calculer le niveau sonore L en décibels (dB). (I₀ = 1,0 × 10⁻¹² W/m²)",
+    "hints": [
+      "Utilise la fonction logarithme décimal.",
+      "La formule est L = 10·log(I/I₀)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la formule",
+        "content": "L = 10·log(10⁻⁵ / 10⁻¹²) = 10·log(10⁷)",
+        "explanation": "Le niveau sonore L permet de comprimer l'échelle des intensités."
+      },
+      {
+        "step": 2,
+        "title": "Calcul final",
+        "content": "L = 10 × 7 = 70 dB",
+        "explanation": "log(10ˣ) = x"
+      }
+    ],
+    "method": "Calcul logarithmique",
+    "commonMistakes": [
+      "Oublier le facteur 10",
+      "Inverser I et I₀ dans le logarithme"
+    ],
+    "tags": ["son", "décibel", "intensité", "logarithme"]
+  },
+  {
+    "id": "ex-angle-diffraction",
+    "lessonId": "diffraction",
+    "title": "Angle de diffraction",
+    "difficulty": 2,
+    "statement": "Donner la relation liant l'angle caractéristique de diffraction θ, la longueur d'onde λ et la largeur de la fente a.",
+    "hints": [
+      "L'angle est proportionnel à la longueur d'onde.",
+      "Il est inversement proportionnel à la taille de l'ouverture.",
+      "θ = ..."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule",
+        "content": "θ = λ / a",
+        "explanation": "Cette relation est valable pour une fente fine, avec θ en radians."
+      }
+    ],
+    "method": "Restitution de formule",
+    "commonMistakes": [
+      "Inverser a et λ (a/λ)",
+      "Penser que la formule donne la largeur de la tache sur l'écran (L)"
+    ],
+    "tags": ["diffraction", "lumière", "formule", "angle"]
+  },
+  {
+    "id": "ex-doppler",
+    "lessonId": "ondes-mecaniques",
+    "title": "Effet Doppler",
+    "difficulty": 2,
+    "statement": "Une source sonore s'approche d'un observateur immobile. La fréquence perçue est-elle plus grande ou plus petite que la fréquence émise ?",
+    "hints": [
+      "Pense au bruit d'une voiture qui s'approche.",
+      "Le son paraît plus aigu.",
+      "Aigu signifie fréquence élevée."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse qualitative",
+        "content": "La fréquence perçue est plus grande (le son est plus aigu)",
+        "explanation": "Les fronts d'onde sont 'comprimés' vers l'avant de la source, réduisant la longueur d'onde et augmentant la fréquence."
+      }
+    ],
+    "method": "Raisonnement qualitatif",
+    "commonMistakes": [
+      "Confondre avec l'intensité sonore (plus fort ≠ plus aigu)",
+      "Penser que la fréquence diminue"
+    ],
+    "tags": ["doppler", "fréquence", "son", "effet"]
+  },
+  {
+    "id": "ex-charge-condensateur",
+    "lessonId": "circuit-rc",
+    "title": "Charge d'un condensateur",
+    "difficulty": 1,
+    "statement": "Quelle est la relation entre la charge q d'un condensateur, sa capacité C et la tension uC à ses bornes ?",
+    "hints": [
+      "La charge est proportionnelle à la tension.",
+      "Le coefficient de proportionnalité est la capacité.",
+      "q = ..."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule",
+        "content": "q = C × uC",
+        "explanation": "C'est la relation fondamentale du condensateur. q en Coulombs, C en Farads, uC en Volts."
+      }
+    ],
+    "method": "Restitution de formule",
+    "commonMistakes": [
+      "Inverser la formule (u = C·q)",
+      "Confondre q (charge) et Q (chaleur)"
+    ],
+    "tags": ["électricité", "condensateur", "charge"]
+  },
+  {
+    "id": "ex-constante-temps",
+    "lessonId": "circuit-rc",
+    "title": "Constante de temps RC",
+    "difficulty": 2,
+    "statement": "Calculer la constante de temps τ d'un circuit RC avec R = 1 kΩ et C = 10 μF.",
+    "hints": [
+      "La formule est τ = R·C.",
+      "Attention aux conversions (kilo et micro)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversions",
+        "content": "R = 1000 Ω, C = 10 × 10⁻⁶ F",
+        "explanation": "Il faut utiliser les unités du système international (Ohm et Farad)."
+      },
+      {
+        "step": 2,
+        "title": "Calcul",
+        "content": "τ = 1000 × 10 × 10⁻⁶ = 0,01 s = 10 ms",
+        "explanation": "La constante de temps donne un ordre de grandeur de la durée de charge/décharge."
+      }
+    ],
+    "method": "Calcul direct",
+    "commonMistakes": [
+      "Oublier de convertir kΩ ou μF",
+      "Confondre τ avec la période"
+    ],
+    "tags": ["électricité", "tau", "calcul", "RC"]
+  },
+  {
+    "id": "ex-ester-famille",
+    "lessonId": "synthese-organique",
+    "title": "Reconnaissance de famille fonctionnelle",
+    "difficulty": 1,
+    "statement": "À quelle famille appartient la molécule CH₃-COO-CH₃ ?",
+    "hints": [
+      "Regarde le groupe fonctionnel -COO-.",
+      "Il y a un groupe carbonyle C=O lié à un oxygène O lié à un carbone.",
+      "C'est souvent l'odeur des fruits."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identification",
+        "content": "C'est un Ester",
+        "explanation": "Le groupe caractéristique est le groupe ester (-COOR), formé lors d'une réaction d'estérification."
+      }
+    ],
+    "method": "Analyse de structure",
+    "commonMistakes": [
+      "Confondre avec acide carboxylique (qui a un H acide)",
+      "Confondre avec cétone ou éther"
+    ],
+    "tags": ["chimie organique", "famille", "ester", "groupe fonctionnel"]
   }
 ]
