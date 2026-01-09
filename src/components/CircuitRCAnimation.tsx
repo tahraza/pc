@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 interface SliderProps {
   label: string
@@ -394,20 +395,20 @@ export function CircuitRCAnimation() {
             {/* Formules */}
             <div className="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
               <h5 className="text-xs font-semibold text-slate-400 mb-2">FORMULES</h5>
-              <div className="space-y-1 text-xs font-mono text-slate-300">
-                <div className="text-yellow-400">τ = R × C</div>
+              <div className="space-y-2 text-xs text-slate-300">
+                <div className="text-yellow-400"><MathInline>{String.raw`\tau = RC`}</MathInline></div>
                 {mode === 'charge' ? (
                   <>
-                    <div className="text-blue-400">uC = E(1 - e^(-t/τ))</div>
-                    <div className="text-green-400">i = (E/R)e^(-t/τ)</div>
+                    <div className="text-blue-400"><MathInline>{String.raw`u_C = E(1 - e^{-t/\tau})`}</MathInline></div>
+                    <div className="text-green-400"><MathInline>{String.raw`i = \frac{E}{R}e^{-t/\tau}`}</MathInline></div>
                   </>
                 ) : (
                   <>
-                    <div className="text-blue-400">uC = E × e^(-t/τ)</div>
-                    <div className="text-green-400">i = -(E/R)e^(-t/τ)</div>
+                    <div className="text-blue-400"><MathInline>{String.raw`u_C = E \cdot e^{-t/\tau}`}</MathInline></div>
+                    <div className="text-green-400"><MathInline>{String.raw`i = -\frac{E}{R}e^{-t/\tau}`}</MathInline></div>
                   </>
                 )}
-                <div className="text-purple-400 mt-1">À t=τ : uC ≈ {mode === 'charge' ? '63%' : '37%'}E</div>
+                <div className="text-purple-400 mt-1">À <MathInline>{String.raw`t=\tau`}</MathInline> : <MathInline>{String.raw`u_C \approx ${mode === 'charge' ? '63' : '37'}\%E`}</MathInline></div>
               </div>
             </div>
 

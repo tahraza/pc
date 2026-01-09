@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 export function CinetiqueChimiqueAnimation() {
   // Paramètres de la réaction
@@ -363,34 +364,34 @@ export function CinetiqueChimiqueAnimation() {
         <div className="grid grid-cols-1 gap-3 text-sm md:grid-cols-2">
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Loi de vitesse :</div>
-            <div className="font-mono text-cyan-400">
-              {order === 0 && 'v = k'}
-              {order === 1 && 'v = k·[A]'}
-              {order === 2 && 'v = k·[A]²'}
+            <div className="text-cyan-400">
+              {order === 0 && <MathInline>{String.raw`v = k`}</MathInline>}
+              {order === 1 && <MathInline>{String.raw`v = k[A]`}</MathInline>}
+              {order === 2 && <MathInline>{String.raw`v = k[A]^2`}</MathInline>}
             </div>
           </div>
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Loi intégrée [A](t) :</div>
-            <div className="font-mono text-emerald-400">
-              {order === 0 && '[A] = [A]₀ - k·t'}
-              {order === 1 && '[A] = [A]₀·e^(-kt)'}
-              {order === 2 && '1/[A] = 1/[A]₀ + k·t'}
+            <div className="text-emerald-400">
+              {order === 0 && <MathInline>{String.raw`[A] = [A]_0 - kt`}</MathInline>}
+              {order === 1 && <MathInline>{String.raw`[A] = [A]_0 \cdot e^{-kt}`}</MathInline>}
+              {order === 2 && <MathInline>{String.raw`\frac{1}{[A]} = \frac{1}{[A]_0} + kt`}</MathInline>}
             </div>
           </div>
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Temps de demi-réaction :</div>
-            <div className="font-mono text-purple-400">
-              {order === 0 && 't½ = [A]₀ / (2k)'}
-              {order === 1 && 't½ = ln(2) / k'}
-              {order === 2 && 't½ = 1 / (k·[A]₀)'}
+            <div className="text-purple-400">
+              {order === 0 && <MathInline>{String.raw`t_{1/2} = \frac{[A]_0}{2k}`}</MathInline>}
+              {order === 1 && <MathInline>{String.raw`t_{1/2} = \frac{\ln(2)}{k}`}</MathInline>}
+              {order === 2 && <MathInline>{String.raw`t_{1/2} = \frac{1}{k[A]_0}`}</MathInline>}
             </div>
           </div>
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Représentation linéaire :</div>
-            <div className="font-mono text-orange-400">
-              {order === 0 && '[A] = f(t) → droite'}
-              {order === 1 && 'ln([A]) = f(t) → droite'}
-              {order === 2 && '1/[A] = f(t) → droite'}
+            <div className="text-orange-400">
+              {order === 0 && <MathInline>{String.raw`[A] = f(t) \rightarrow \text{droite}`}</MathInline>}
+              {order === 1 && <MathInline>{String.raw`\ln([A]) = f(t) \rightarrow \text{droite}`}</MathInline>}
+              {order === 2 && <MathInline>{String.raw`\frac{1}{[A]} = f(t) \rightarrow \text{droite}`}</MathInline>}
             </div>
           </div>
         </div>

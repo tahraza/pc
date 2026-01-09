@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 interface SliderProps {
   label: string

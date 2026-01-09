@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 interface SliderProps {
   label: string
@@ -454,11 +455,11 @@ export function TrajectoireParaboliqueAnimation() {
             {/* Formules */}
             <div className="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
               <h5 className="text-xs font-semibold text-slate-400 mb-2">ÉQUATIONS HORAIRES</h5>
-              <div className="space-y-1 text-xs font-mono text-slate-300">
-                <div>x(t) = v₀cos(α)·t</div>
-                <div>y(t) = -½gt² + v₀sin(α)·t + y₀</div>
-                <div className="text-purple-400 mt-2">H = v₀²sin²(α) / 2g</div>
-                <div className="text-orange-400">P = v₀²sin(2α) / g</div>
+              <div className="space-y-2 text-xs text-slate-300">
+                <div><MathInline>{String.raw`x(t) = v_0\cos(\alpha) \cdot t`}</MathInline></div>
+                <div><MathInline>{String.raw`y(t) = -\frac{1}{2}gt^2 + v_0\sin(\alpha) \cdot t + y_0`}</MathInline></div>
+                <div className="text-purple-400 mt-2"><MathInline>{String.raw`H = \frac{v_0^2\sin^2(\alpha)}{2g}`}</MathInline></div>
+                <div className="text-orange-400"><MathInline>{String.raw`P = \frac{v_0^2\sin(2\alpha)}{g}`}</MathInline></div>
               </div>
             </div>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo, useCallback } from 'react'
+import { MathBlock, MathInline } from './SvgMath'
 
 interface SliderProps {
   label: string
@@ -519,11 +520,11 @@ export function InterferencesAnimation() {
             {/* Formules clés */}
             <div className="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
               <h5 className="text-xs font-semibold text-slate-400 mb-2">FORMULES CLÉS</h5>
-              <div className="space-y-1 text-xs font-mono text-slate-300">
-                <div>δ = a·x / D</div>
-                <div>i = λ·D / a</div>
-                <div className="text-green-400">Constructif : δ = k·λ</div>
-                <div className="text-red-400">Destructif : δ = (k+½)·λ</div>
+              <div className="space-y-2 text-slate-300">
+                <MathInline className="block">{String.raw`\delta = \frac{a \cdot x}{D}`}</MathInline>
+                <MathInline className="block">{String.raw`i = \frac{\lambda \cdot D}{a}`}</MathInline>
+                <div className="text-green-400"><MathInline>{String.raw`\delta = k\lambda`}</MathInline> (constructif)</div>
+                <div className="text-red-400"><MathInline>{String.raw`\delta = (k+\frac{1}{2})\lambda`}</MathInline> (destructif)</div>
               </div>
             </div>
 

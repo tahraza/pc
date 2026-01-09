@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 interface SliderProps {
   label: string
@@ -422,33 +423,33 @@ export function ThermodynamiqueAnimation() {
             {/* Formules */}
             <div className="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
               <h5 className="text-xs font-semibold text-slate-400 mb-2">CARACTÉRISTIQUES</h5>
-              <div className="space-y-1 text-xs text-slate-300">
+              <div className="space-y-2 text-xs text-slate-300">
                 {transformation === 'isotherme' && (
                   <>
-                    <div className="text-blue-400">PV = nRT = cte</div>
-                    <div>W = -nRT ln(V₂/V₁)</div>
-                    <div>ΔU = 0 (gaz parfait)</div>
+                    <div className="text-blue-400"><MathInline>{String.raw`PV = nRT = \text{cte}`}</MathInline></div>
+                    <div><MathInline>{String.raw`W = -nRT\ln\left(\frac{V_2}{V_1}\right)`}</MathInline></div>
+                    <div><MathInline>{String.raw`\Delta U = 0`}</MathInline> (gaz parfait)</div>
                   </>
                 )}
                 {transformation === 'isobare' && (
                   <>
-                    <div className="text-green-400">P = cte</div>
-                    <div>W = -PΔV</div>
-                    <div>Q = nCₚΔT</div>
+                    <div className="text-green-400"><MathInline>{String.raw`P = \text{cte}`}</MathInline></div>
+                    <div><MathInline>{String.raw`W = -P\Delta V`}</MathInline></div>
+                    <div><MathInline>{String.raw`Q = nC_p\Delta T`}</MathInline></div>
                   </>
                 )}
                 {transformation === 'isochore' && (
                   <>
-                    <div className="text-orange-400">V = cte</div>
-                    <div>W = 0</div>
-                    <div>Q = ΔU = nCᵥΔT</div>
+                    <div className="text-orange-400"><MathInline>{String.raw`V = \text{cte}`}</MathInline></div>
+                    <div><MathInline>{String.raw`W = 0`}</MathInline></div>
+                    <div><MathInline>{String.raw`Q = \Delta U = nC_v\Delta T`}</MathInline></div>
                   </>
                 )}
                 {transformation === 'adiabatique' && (
                   <>
-                    <div className="text-purple-400">Q = 0</div>
-                    <div>PV^γ = cte</div>
-                    <div>W = ΔU</div>
+                    <div className="text-purple-400"><MathInline>{String.raw`Q = 0`}</MathInline></div>
+                    <div><MathInline>{String.raw`PV^\gamma = \text{cte}`}</MathInline></div>
+                    <div><MathInline>{String.raw`W = \Delta U`}</MathInline></div>
                   </>
                 )}
               </div>

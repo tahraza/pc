@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 export function EnergieMecaniqueAnimation() {
   // Paramètres du pendule
@@ -375,22 +376,22 @@ export function EnergieMecaniqueAnimation() {
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Énergie potentielle</div>
           <div className="text-lg font-bold text-emerald-400">{energies.Ep.toFixed(3)} J</div>
-          <div className="text-xs text-slate-500">Ep = mgh</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`E_p = mgh`}</MathInline></div>
         </div>
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Énergie cinétique</div>
           <div className="text-lg font-bold text-pink-400">{energies.Ec.toFixed(3)} J</div>
-          <div className="text-xs text-slate-500">Ec = ½mv²</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`E_c = \frac{1}{2}mv^2`}</MathInline></div>
         </div>
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Énergie mécanique</div>
           <div className="text-lg font-bold text-yellow-400">{energies.Em.toFixed(3)} J</div>
-          <div className="text-xs text-slate-500">Em = Ep + Ec</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`E_m = E_p + E_c`}</MathInline></div>
         </div>
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Période T</div>
           <div className="text-lg font-bold text-cyan-400">{period.toFixed(2)} s</div>
-          <div className="text-xs text-slate-500">T ≈ 2π√(L/g)</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`T \approx 2\pi\sqrt{\frac{L}{g}}`}</MathInline></div>
         </div>
       </div>
 
@@ -400,12 +401,12 @@ export function EnergieMecaniqueAnimation() {
         <div className="grid grid-cols-1 gap-3 text-sm md:grid-cols-2">
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Théorème :</div>
-            <div className="font-mono text-yellow-400">Em = Ep + Ec = constante</div>
+            <div className="text-yellow-400"><MathInline>{String.raw`E_m = E_p + E_c = \text{constante}`}</MathInline></div>
             <div className="mt-1 text-xs text-slate-500">(si forces non conservatives nulles)</div>
           </div>
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Variation :</div>
-            <div className="font-mono text-pink-400">ΔEm = W(forces non conservatives)</div>
+            <div className="text-pink-400"><MathInline>{String.raw`\Delta E_m = W(\vec{F}_{nc})`}</MathInline></div>
             <div className="mt-1 text-xs text-slate-500">Avec frottement : Em diminue</div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 interface SliderProps {
   label: string
@@ -369,11 +370,11 @@ export function ElectromagnetismeAnimation() {
             {/* Formules */}
             <div className="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
               <h5 className="text-xs font-semibold text-slate-400 mb-2">FORMULES</h5>
-              <div className="space-y-1 text-xs font-mono text-slate-300">
-                <div>F⃗ = qv⃗ × B⃗</div>
-                <div>F = |q|vB (si v⃗ ⊥ B⃗)</div>
-                <div className="text-green-400">R = mv / (|q|B)</div>
-                <div className="text-yellow-400">T = 2πm / (|q|B)</div>
+              <div className="space-y-2 text-xs text-slate-300">
+                <div><MathInline>{String.raw`\vec{F} = q\vec{v} \times \vec{B}`}</MathInline></div>
+                <div><MathInline>{String.raw`F = |q|vB`}</MathInline> (si <MathInline>{String.raw`\vec{v} \perp \vec{B}`}</MathInline>)</div>
+                <div className="text-green-400"><MathInline>{String.raw`R = \frac{mv}{|q|B}`}</MathInline></div>
+                <div className="text-yellow-400"><MathInline>{String.raw`T = \frac{2\pi m}{|q|B}`}</MathInline></div>
               </div>
             </div>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { MathInline } from './SvgMath'
 
 export function EquilibresChimiquesAnimation() {
   // Concentrations initiales
@@ -332,18 +333,18 @@ export function EquilibresChimiquesAnimation() {
         <div className="grid grid-cols-1 gap-3 text-sm md:grid-cols-2">
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Quotient de réaction :</div>
-            <div className="font-mono text-cyan-400">Qr = [C]^c·[D]^d / ([A]^a·[B]^b)</div>
+            <div className="text-cyan-400"><MathInline>{String.raw`Q_r = \frac{[C]^c \cdot [D]^d}{[A]^a \cdot [B]^b}`}</MathInline></div>
           </div>
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Constante d&apos;équilibre :</div>
-            <div className="font-mono text-purple-400">K = Qr,éq (à l&apos;équilibre)</div>
+            <div className="text-purple-400"><MathInline>{String.raw`K = Q_{r,\text{éq}}`}</MathInline> (à l&apos;équilibre)</div>
           </div>
           <div className="rounded bg-slate-800 p-3 md:col-span-2">
             <div className="mb-1 text-slate-400">Critère d&apos;évolution :</div>
-            <div className="flex flex-wrap gap-4 font-mono">
-              <span className="text-cyan-400">Qr &lt; K → sens direct (1)</span>
-              <span className="text-orange-400">Qr &gt; K → sens inverse (2)</span>
-              <span className="text-purple-400">Qr = K → équilibre</span>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-cyan-400"><MathInline>{String.raw`Q_r < K`}</MathInline> → sens direct</span>
+              <span className="text-orange-400"><MathInline>{String.raw`Q_r > K`}</MathInline> → sens inverse</span>
+              <span className="text-purple-400"><MathInline>{String.raw`Q_r = K`}</MathInline> → équilibre</span>
             </div>
           </div>
         </div>

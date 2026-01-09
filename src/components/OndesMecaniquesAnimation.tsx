@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { MathInline } from './SvgMath'
 
 export function OndesMecaniquesAnimation() {
   // Paramètres de l'onde
@@ -314,22 +315,22 @@ export function OndesMecaniquesAnimation() {
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Période T</div>
           <div className="text-lg font-bold text-cyan-400">{period.toFixed(2)} s</div>
-          <div className="text-xs text-slate-500">T = 1/f</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`T = \frac{1}{f}`}</MathInline></div>
         </div>
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Célérité v</div>
           <div className="text-lg font-bold text-orange-400">{velocity.toFixed(1)} px/s</div>
-          <div className="text-xs text-slate-500">v = λf</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`v = \lambda f`}</MathInline></div>
         </div>
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Nombre d&apos;onde k</div>
           <div className="text-lg font-bold text-purple-400">{(2 * Math.PI / wavelength).toFixed(3)} rad/px</div>
-          <div className="text-xs text-slate-500">k = 2π/λ</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`k = \frac{2\pi}{\lambda}`}</MathInline></div>
         </div>
         <div className="rounded-lg bg-slate-700/50 p-3 text-center">
           <div className="text-xs text-slate-400">Pulsation ω</div>
           <div className="text-lg font-bold text-emerald-400">{(2 * Math.PI * frequency).toFixed(2)} rad/s</div>
-          <div className="text-xs text-slate-500">ω = 2πf</div>
+          <div className="text-xs text-slate-500"><MathInline>{String.raw`\omega = 2\pi f`}</MathInline></div>
         </div>
       </div>
 
@@ -339,22 +340,22 @@ export function OndesMecaniquesAnimation() {
         <div className="grid grid-cols-1 gap-3 text-sm md:grid-cols-2">
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Équation horaire :</div>
-            <div className="font-mono text-cyan-400">y(x,t) = A·sin(kx - ωt + φ)</div>
+            <div className="text-cyan-400"><MathInline>{String.raw`y(x,t) = A \sin(kx - \omega t + \varphi)`}</MathInline></div>
           </div>
           <div className="rounded bg-slate-800 p-3">
             <div className="mb-1 text-slate-400">Relation de dispersion :</div>
-            <div className="font-mono text-orange-400">v = λ·f = ω/k</div>
+            <div className="text-orange-400"><MathInline>{String.raw`v = \lambda f = \frac{\omega}{k}`}</MathInline></div>
           </div>
           {showSecondWave && (
             <div className="rounded bg-slate-800 p-3 md:col-span-2">
-              <div className="mb-1 text-slate-400">Superposition (φ₂ = {phase2.toFixed(1)}π) :</div>
-              <div className="font-mono text-yellow-400">
+              <div className="mb-1 text-slate-400">Superposition (<MathInline>{String.raw`\varphi_2 = ${phase2.toFixed(1)}\pi`}</MathInline>) :</div>
+              <div className="text-yellow-400">
                 {phase2 === 1 ? (
                   <span>Interférences destructives (opposition de phase)</span>
                 ) : phase2 === 0 || phase2 === 2 ? (
                   <span>Interférences constructives (en phase)</span>
                 ) : (
-                  <span>y₁ + y₂ = A·sin(kx - ωt) + A·sin(kx - ωt + {phase2.toFixed(1)}π)</span>
+                  <MathInline>{String.raw`y_1 + y_2 = A\sin(kx - \omega t) + A\sin(kx - \omega t + ${phase2.toFixed(1)}\pi)`}</MathInline>
                 )}
               </div>
             </div>
