@@ -15,7 +15,7 @@
       {
         "step": 1,
         "title": "Conversion de la masse",
-        "content": "m = {{masse}} g = {{masse_kg}} kg",
+        "content": "$m = {{masse}}$ g $= {{masse_kg}}$ kg",
         "explanation": "On convertit en kg pour l'homogénéité des unités",
         "compute": { "masse_kg": "masse / 1000" }
       },
@@ -34,7 +34,7 @@
         "compute": { "v": "Math.sqrt(tension / mu)" }
       }
     ],
-    "finalAnswer": "v = {{v}} m/s",
+    "finalAnswer": "$v = {{v}}$ m/s",
     "method": "Formule: $v = \\sqrt{T/\\mu}$ avec $\\mu = m/L$",
     "hints": [
       "La célérité dépend de la tension et de la masse linéique",
@@ -67,7 +67,7 @@
         "compute": { "lambda": "celerite / frequence" }
       }
     ],
-    "finalAnswer": "λ = {{lambda}} m",
+    "finalAnswer": "$\\lambda = {{lambda}}$ m",
     "method": "Relation fondamentale: $\\lambda = v/f$ ou $v = \\lambda \\times f$",
     "hints": [
       "Utilise la relation fondamentale des ondes",
@@ -99,7 +99,7 @@
         "compute": { "tau": "distance / celerite", "tau_ms": "tau * 1000" }
       }
     ],
-    "finalAnswer": "τ = {{tau_ms}} ms",
+    "finalAnswer": "$\\tau = {{tau_ms}}$ ms",
     "method": "Retard: $\\tau = d/v$",
     "hints": [
       "Le retard est le temps mis par l'onde pour aller de A à B",
@@ -137,7 +137,7 @@
         "compute": { "f_hz": "3e8 / lambda_m", "f_thz": "f_hz / 1e12" }
       }
     ],
-    "finalAnswer": "f = {{f_hz}} Hz ≈ {{f_thz}} THz",
+    "finalAnswer": "$f = {{f_hz}}$ Hz $\\approx {{f_thz}}$ THz",
     "method": "Relation: $c = \\lambda f$ donc $f = c/\\lambda$",
     "hints": [
       "Convertis d'abord λ en mètres",
@@ -178,7 +178,7 @@
         "compute": { "L_m": "2 * lambda_m * D_m / a_m", "L_cm": "L_m * 100" }
       }
     ],
-    "finalAnswer": "L = {{L_cm}} cm",
+    "finalAnswer": "$L = {{L_cm}}$ cm",
     "method": "Largeur tache centrale: $L = 2D\\lambda/a$",
     "hints": [
       "L'angle du premier minimum est θ₁ ≈ λ/a",
@@ -218,7 +218,7 @@
         "compute": { "i_m": "lambda_m * D_m / a_m", "i_mm": "i_m * 1000" }
       }
     ],
-    "finalAnswer": "i = {{i_mm}} mm",
+    "finalAnswer": "$i = {{i_mm}}$ mm",
     "method": "Interfrange: $i = \\lambda D / a$",
     "hints": [
       "L'interfrange dépend de λ, D et a",
@@ -263,7 +263,7 @@
         "compute": { "t95": "3 * tau", "t95_ms": "t95 * 1000" }
       }
     ],
-    "finalAnswer": "τ = {{tau_ms}} ms, t₉₅% = {{t95_ms}} ms",
+    "finalAnswer": "$\\tau = {{tau_ms}}$ ms, $t_{95\\%} = {{t95_ms}}$ ms",
     "method": "Constante de temps: $\\tau = RC$. Charge à 95%: $t \\approx 3\\tau$",
     "hints": [
       "τ = R × C (attention aux unités !)",
@@ -302,7 +302,7 @@
         "compute": { "facteur": "1 - Math.exp(-ratio)", "uC": "E * facteur" }
       }
     ],
-    "finalAnswer": "uC = {{uC}} V",
+    "finalAnswer": "$u_C = {{uC}}$ V",
     "method": "Charge: $u_C(t) = E(1 - e^{-t/\\tau})$",
     "hints": [
       "Loi de charge: uC = E(1 - e^(-t/τ))",
@@ -341,7 +341,7 @@
         "compute": { "N_final": "N0_millions * Math.pow(0.5, n_demivies)" }
       }
     ],
-    "finalAnswer": "N = {{N_final}} millions de noyaux",
+    "finalAnswer": "$N = {{N_final}}$ millions de noyaux",
     "method": "Décroissance: $N(t) = N_0 \\times (1/2)^{t/t_{1/2}}$",
     "hints": [
       "Calcule d'abord combien de demi-vies se sont écoulées",
@@ -386,7 +386,7 @@
         "compute": { "n": "t_ans / demi_vie_ans", "At_GBq": "A0_GBq * Math.pow(0.5, n)" }
       }
     ],
-    "finalAnswer": "A₀ = {{A0_GBq}} GBq, A(t) = {{At_GBq}} GBq",
+    "finalAnswer": "$A_0 = {{A0_GBq}}$ GBq, $A(t) = {{At_GBq}}$ GBq",
     "method": "Activité: $A = \\lambda N$ avec $\\lambda = \\ln 2 / t_{1/2}$",
     "hints": [
       "λ = ln(2) / t₁/₂",
@@ -419,7 +419,7 @@
         "compute": { "t12": "0.693 / k" }
       }
     ],
-    "finalAnswer": "t₁/₂ = {{t12}} s",
+    "finalAnswer": "$t_{1/2} = {{t12}}$ s",
     "method": "Ordre 1: $t_{1/2} = \\ln 2 / k$ (indépendant de C₀)",
     "hints": [
       "Pour l'ordre 1, t₁/₂ = ln(2)/k",
@@ -457,7 +457,7 @@
         "compute": { "facteur": "Math.exp(-exposant)", "C": "C0 * facteur" }
       }
     ],
-    "finalAnswer": "C = {{C}} mol/L",
+    "finalAnswer": "$C = {{C}}$ mol/L",
     "method": "Ordre 1: $C(t) = C_0 e^{-kt}$ ou $\\ln C = \\ln C_0 - kt$",
     "hints": [
       "Loi intégrée ordre 1: C = C₀ × e^(-kt)",
@@ -494,7 +494,7 @@
         "compute": { "pH": "-Math.log10(C)" }
       }
     ],
-    "finalAnswer": "pH = {{pH}}",
+    "finalAnswer": "$pH = {{pH}}$",
     "method": "Acide fort: $[H_3O^+] = C$ donc $pH = -\\log C$",
     "hints": [
       "HCl est un acide fort (totalement dissocié)",
@@ -539,7 +539,7 @@
         "compute": { "pH": "-Math.log10(H3O)" }
       }
     ],
-    "finalAnswer": "pH = {{pH}}",
+    "finalAnswer": "$pH = {{pH}}$",
     "method": "Acide faible: $[H_3O^+] \\approx \\sqrt{K_a \\cdot C}$ donc $pH \\approx \\frac{1}{2}(pK_a - \\log C)$",
     "hints": [
       "Utilise l'approximation [H₃O⁺] ≈ √(Ka × C)",
@@ -584,7 +584,7 @@
         "compute": { "Veq": "Ca * Va / Cb" }
       }
     ],
-    "finalAnswer": "Véq = {{Veq}} mL",
+    "finalAnswer": "$V_{éq} = {{Veq}}$ mL",
     "method": "À l'équivalence: $n_{acide} = n_{base}$ donc $C_a V_a = C_b V_{éq}$",
     "hints": [
       "À l'équivalence, na = nb",
@@ -622,7 +622,7 @@
         "compute": { "Ca": "Cb * Veq / Va" }
       }
     ],
-    "finalAnswer": "Ca = {{Ca}} mol/L",
+    "finalAnswer": "$C_a = {{Ca}}$ mol/L",
     "method": "Titrage: $C_a = C_b V_{éq} / V_a$",
     "hints": [
       "Utilise la relation à l'équivalence",
@@ -669,7 +669,7 @@
         "compute": { "DrH": "somme_produits - somme_reactifs" }
       }
     ],
-    "finalAnswer": "ΔrH° = {{DrH}} kJ/mol",
+    "finalAnswer": "$\\Delta_rH° = {{DrH}}$ kJ/mol",
     "method": "Loi de Hess: $\\Delta_r H° = \\sum \\nu \\Delta_f H°(produits) - \\sum \\nu \\Delta_f H°(réactifs)$",
     "hints": [
       "ΔrH° = Σ(produits) - Σ(réactifs)",
@@ -702,7 +702,7 @@
         "compute": { "v2": "v * v", "Ec": "0.5 * m * v2" }
       }
     ],
-    "finalAnswer": "Ec = {{Ec}} J",
+    "finalAnswer": "$E_c = {{Ec}}$ J",
     "method": "Énergie cinétique: $E_c = \\frac{1}{2}mv^2$",
     "hints": [
       "Ec = ½mv²",
@@ -733,7 +733,7 @@
         "compute": { "Ep": "m * 10 * h" }
       }
     ],
-    "finalAnswer": "Ep = {{Ep}} J",
+    "finalAnswer": "$E_p = {{Ep}}$ J",
     "method": "Énergie potentielle: $E_p = mgh$ (avec h par rapport à la référence)",
     "hints": [
       "Ep = mgh",
@@ -778,7 +778,7 @@
         "compute": { "v": "Math.sqrt(v2)" }
       }
     ],
-    "finalAnswer": "v = {{v}} m/s",
+    "finalAnswer": "$v = {{v}}$ m/s",
     "method": "Conservation: $\\frac{1}{2}mv_0^2 + mgh_0 = \\frac{1}{2}mv^2 + mgh$",
     "hints": [
       "L'énergie mécanique se conserve (pas de frottement)",
@@ -810,7 +810,7 @@
         "compute": { "v2": "v * v", "aN": "v2 / R" }
       }
     ],
-    "finalAnswer": "aN = {{aN}} m/s²",
+    "finalAnswer": "$a_N = {{aN}}$ m/s²",
     "method": "Accélération centripète: $a_N = v^2/R = \\omega^2 R$",
     "hints": [
       "L'accélération est dirigée vers le centre",
@@ -856,7 +856,7 @@
         "compute": { "sens": "Qr < K ? 'Qr < K : le système évolue dans le sens direct (→) pour former plus de produits' : (Qr > K ? 'Qr > K : le système évolue dans le sens inverse (←) pour former plus de réactifs' : 'Qr = K : le système est à l\\'équilibre')" }
       }
     ],
-    "finalAnswer": "Qr = {{Qr}}, évolution {{direction}}",
+    "finalAnswer": "$Q_r = {{Qr}}$, évolution {{direction}}",
     "method": "Si Qr < K → sens direct. Si Qr > K → sens inverse. Si Qr = K → équilibre.",
     "hints": [
       "Qr a la même expression que K mais avec les concentrations actuelles",
@@ -887,7 +887,7 @@
         "compute": { "P": "m * 10" }
       }
     ],
-    "finalAnswer": "P = {{P}} N",
+    "finalAnswer": "$P = {{P}}$ N",
     "method": "Poids: $\\vec{P} = m\\vec{g}$ avec $P = mg$",
     "hints": [
       "P = m × g",
@@ -924,7 +924,7 @@
         "compute": { "a": "F / m" }
       }
     ],
-    "finalAnswer": "a = {{a}} m/s²",
+    "finalAnswer": "$a = {{a}}$ m/s²",
     "method": "PFD: $\\sum \\vec{F} = m\\vec{a}$ donc $a = F/m$",
     "hints": [
       "Applique le PFD: ΣF = ma",
@@ -967,7 +967,7 @@
         "compute": { "v02": "v0 * v0", "xp": "v02 * sin_2alpha / 10" }
       }
     ],
-    "finalAnswer": "Portée = {{xp}} m",
+    "finalAnswer": "Portée $= {{xp}}$ m",
     "method": "Portée: $x_p = v_0^2 \\sin(2\\alpha) / g$",
     "hints": [
       "La portée maximale est obtenue pour α = 45°",
@@ -1006,7 +1006,7 @@
         "compute": { "v0y2": "v0y * v0y", "hmax": "v0y2 / 20" }
       }
     ],
-    "finalAnswer": "hmax = {{hmax}} m",
+    "finalAnswer": "$h_{max} = {{hmax}}$ m",
     "method": "Hauteur max: $h_{max} = v_{0y}^2 / (2g) = v_0^2 \\sin^2(\\alpha) / (2g)$",
     "hints": [
       "Décompose v₀ en composantes",
@@ -1046,7 +1046,7 @@
         "compute": { "F": "q * v * B" }
       }
     ],
-    "finalAnswer": "F = {{F}} N",
+    "finalAnswer": "$F = {{F}}$ N",
     "method": "Force de Lorentz: $\\vec{F} = q\\vec{v} \\times \\vec{B}$, donc $F = |q|vB\\sin(\\theta)$",
     "hints": [
       "F = |q|vB sin(θ)",
@@ -1086,7 +1086,7 @@
         "compute": { "r": "m * v / (e * B)", "r_mm": "r * 1000" }
       }
     ],
-    "finalAnswer": "r = {{r_mm}} mm",
+    "finalAnswer": "$r = {{r_mm}}$ mm",
     "method": "Rayon: $r = mv/(|q|B)$ (équilibre Lorentz/centripète)",
     "hints": [
       "La force de Lorentz joue le rôle de force centripète",
@@ -1125,7 +1125,7 @@
         "compute": { "DV": "Vf - Vi", "W": "-P * DV" }
       }
     ],
-    "finalAnswer": "W = {{W}} J",
+    "finalAnswer": "$W = {{W}}$ J",
     "method": "Travail isobare: $W = -P\\Delta V = -P(V_f - V_i)$",
     "hints": [
       "Transformation isobare: P = constante",
@@ -1163,7 +1163,7 @@
         "compute": { "DU": "W + Q" }
       }
     ],
-    "finalAnswer": "ΔU = {{DU}} J",
+    "finalAnswer": "$\\Delta U = {{DU}}$ J",
     "method": "Premier principe: $\\Delta U = W + Q$",
     "hints": [
       "ΔU = W + Q (convention récepteur)",
@@ -1201,7 +1201,7 @@
         "compute": { "exposant": "I_exp + 12", "L": "10 * exposant" }
       }
     ],
-    "finalAnswer": "L = {{L}} dB",
+    "finalAnswer": "$L = {{L}}$ dB",
     "method": "Niveau sonore: $L = 10 \\log(I/I_0)$ avec $I_0 = 10^{-12}$ W/m²",
     "hints": [
       "L = 10 × log(I/I₀)",
@@ -1232,7 +1232,7 @@
         "compute": { "T": "1 / f", "T_ms": "T * 1000" }
       }
     ],
-    "finalAnswer": "T = {{T_ms}} ms",
+    "finalAnswer": "$T = {{T_ms}}$ ms",
     "method": "Période: $T = 1/f$",
     "hints": [
       "T et f sont inverses l'un de l'autre",
@@ -1264,7 +1264,7 @@
         "compute": { "fn": "n * f1" }
       }
     ],
-    "finalAnswer": "f{{n}} = {{fn}} Hz",
+    "finalAnswer": "$f_{{n}} = {{fn}}$ Hz",
     "method": "Harmonique n: $f_n = n \\times f_1$",
     "hints": [
       "Les harmoniques sont des multiples de f₁",
@@ -1302,7 +1302,7 @@
         "compute": { "W": "F * d * cos_alpha" }
       }
     ],
-    "finalAnswer": "W = {{W}} J",
+    "finalAnswer": "$W = {{W}}$ J",
     "method": "Travail: $W = \\vec{F} \\cdot \\vec{d} = Fd\\cos(\\alpha)$",
     "hints": [
       "W = F × d × cos(α)",
@@ -1335,7 +1335,7 @@
         "compute": { "P": "W / t" }
       }
     ],
-    "finalAnswer": "P = {{P}} W",
+    "finalAnswer": "$P = {{P}}$ W",
     "method": "Puissance: $P = W/t$",
     "hints": [
       "P = W/t",
@@ -1411,7 +1411,7 @@
         "compute": { "fem": "E_plus - E_moins" }
       }
     ],
-    "finalAnswer": "E° = {{fem}} V",
+    "finalAnswer": "$E° = {{fem}}$ V",
     "method": "F.é.m.: $E° = E°_{cathode} - E°_{anode}$",
     "hints": [
       "E° = E°(+) - E°(-)",
@@ -1449,7 +1449,7 @@
         "compute": { "Q": "I * t_s" }
       }
     ],
-    "finalAnswer": "Q = {{Q}} C",
+    "finalAnswer": "$Q = {{Q}}$ C",
     "method": "Quantité d'électricité: $Q = I \\times t$",
     "hints": [
       "Q = I × t",
@@ -1486,7 +1486,7 @@
         "compute": { "lambda_cm": "1 / sigma", "lambda_um": "lambda_cm * 10000" }
       }
     ],
-    "finalAnswer": "λ = {{lambda_um}} µm",
+    "finalAnswer": "$\\lambda = {{lambda_um}}$ µm",
     "method": "Nombre d'onde: $\\sigma = 1/\\lambda$ (σ en cm⁻¹, λ en cm)",
     "hints": [
       "σ = 1/λ",
@@ -1532,7 +1532,7 @@
         "explanation": "K est sans unité car les concentrations sont élevées à des puissances qui s'annulent"
       }
     ],
-    "finalAnswer": "K = {{K}}",
+    "finalAnswer": "$K = {{K}}$",
     "method": "K = [produits]^coef / [réactifs]^coef à l'équilibre",
     "hints": [
       "K ne dépend que des concentrations à l'équilibre",
@@ -1577,14 +1577,14 @@
       {
         "step": 4,
         "title": "Interprétation",
-        "content": "τ = {{tau_pourcent}}%\n{{interpretation}}",
+        "content": "$\\tau = {{tau_pourcent}}\\%$\n{{interpretation}}",
         "compute": {
           "tau_pourcent": "tau * 100",
           "interpretation": "tau < 0.5 ? 'La réaction est peu avancée (équilibre déplacé vers les réactifs)' : 'La réaction est bien avancée (équilibre déplacé vers les produits)'"
         }
       }
     ],
-    "finalAnswer": "τ = {{tau}} soit {{tau_pourcent}}%",
+    "finalAnswer": "$\\tau = {{tau}}$ soit ${{tau_pourcent}}\\%$",
     "method": "τ = xf/xmax où xmax est l'avancement si la réaction était totale",
     "hints": [
       "τ est toujours compris entre 0 et 1",
@@ -1611,7 +1611,7 @@
       {
         "step": 1,
         "title": "Tableau d'avancement",
-        "content": "État initial: [A] = {{C0}}, [B] = 0\nÉtat équilibre: [A] = {{C0}} - x, [B] = x",
+        "content": "État initial: $[A] = {{C0}}$, $[B] = 0$\nÉtat équilibre: $[A] = {{C0}} - x$, $[B] = x$",
         "explanation": "x représente l'avancement volumique (mol/L)"
       },
       {
@@ -1632,7 +1632,7 @@
         "compute": { "A_eq": "C0 - x" }
       }
     ],
-    "finalAnswer": "[A]éq = {{A_eq}} mol/L, [B]éq = {{x}} mol/L",
+    "finalAnswer": "$[A]_{éq} = {{A_eq}}$ mol/L, $[B]_{éq} = {{x}}$ mol/L",
     "method": "Établir le tableau d'avancement, exprimer K en fonction de x, résoudre",
     "hints": [
       "Pose x = avancement volumique",
@@ -1661,22 +1661,22 @@
       {
         "step": 1,
         "title": "Analyse des données",
-        "content": "Quand T augmente ({{T1}}°C → {{T2}}°C), K augmente ({{K1}} → {{K2}})",
+        "content": "Quand $T$ augmente (${{T1}}°C \\rightarrow {{T2}}°C$), $K$ augmente (${{K1}} \\rightarrow {{K2}}$)",
         "explanation": "K augmente signifie que l'équilibre se déplace vers les produits"
       },
       {
         "step": 2,
         "title": "Application de Van't Hoff",
-        "content": "Selon la loi de Van't Hoff:\n- Si K augmente avec T → réaction directe endothermique (ΔrH° > 0)\n- Si K diminue avec T → réaction directe exothermique (ΔrH° < 0)"
+        "content": "Selon la loi de Van't Hoff:\n- Si $K$ augmente avec $T$ → réaction directe endothermique ($\\Delta_rH° > 0$)\n- Si $K$ diminue avec $T$ → réaction directe exothermique ($\\Delta_rH° < 0$)"
       },
       {
         "step": 3,
         "title": "Conclusion",
-        "content": "K augmente de {{K1}} à {{K2}} quand T augmente.\nLa réaction directe A → B est **endothermique**.",
+        "content": "$K$ augmente de ${{K1}}$ à ${{K2}}$ quand $T$ augmente.\nLa réaction directe $A \\rightarrow B$ est **endothermique**.",
         "explanation": "Le système absorbe de la chaleur en formant les produits"
       }
     ],
-    "finalAnswer": "Réaction directe endothermique (ΔrH° > 0)",
+    "finalAnswer": "Réaction directe endothermique ($\\Delta_rH° > 0$)",
     "method": "Si K ↗ quand T ↗ → endothermique. Si K ↘ quand T ↗ → exothermique.",
     "hints": [
       "Une augmentation de température favorise la réaction endothermique",
