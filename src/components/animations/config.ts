@@ -5,6 +5,7 @@ export const animatedLessons = [
   'interferences',
   'electromagnetisme',
   'mouvement-circulaire',
+  'mouvement-champ-uniforme',
   // Ajouter d'autres IDs de leçons avec animations ici
 ] as const
 
