@@ -9,6 +9,7 @@ export const animatedLessons = [
   'circuit-rc',
   'thermodynamique',
   'ondes-mecaniques',
+  'cinetique-chimique',
   // Ajouter d'autres IDs de leçons avec animations ici
 ] as const
 
