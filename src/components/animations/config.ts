@@ -13,6 +13,11 @@ export const animatedLessons = [
   'equilibres-chimiques',
   'energie-mecanique',
   'spectroscopie-ir',
+  'ondes-lumineuses',
+  'ondes-sonores',
+  'thermochimie',
+  'titrages',
+  'acides-bases',
   // Ajouter d'autres IDs de leçons avec animations ici
 ] as const
 

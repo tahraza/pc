@@ -136,6 +136,66 @@ const SpectroscopieIRAnimation = dynamic(
   }
 )
 
+const OndesLumineusesAnimation = dynamic(
+  () => import('@/components/OndesLumineusesAnimation').then(mod => mod.default),
+  {
+    loading: () => (
+      <div className="my-8 rounded-xl bg-slate-800 p-8 text-center text-slate-400">
+        Chargement de l'animation...
+      </div>
+    ),
+    ssr: false
+  }
+)
+
+const OndesSonoresAnimation = dynamic(
+  () => import('@/components/OndesSonoresAnimation').then(mod => mod.default),
+  {
+    loading: () => (
+      <div className="my-8 rounded-xl bg-slate-800 p-8 text-center text-slate-400">
+        Chargement de l'animation...
+      </div>
+    ),
+    ssr: false
+  }
+)
+
+const ThermochimieAnimation = dynamic(
+  () => import('@/components/ThermochimieAnimation').then(mod => mod.default),
+  {
+    loading: () => (
+      <div className="my-8 rounded-xl bg-slate-800 p-8 text-center text-slate-400">
+        Chargement de l'animation...
+      </div>
+    ),
+    ssr: false
+  }
+)
+
+const TitragesAnimation = dynamic(
+  () => import('@/components/TitragesAnimation').then(mod => mod.default),
+  {
+    loading: () => (
+      <div className="my-8 rounded-xl bg-slate-800 p-8 text-center text-slate-400">
+        Chargement de l'animation...
+      </div>
+    ),
+    ssr: false
+  }
+)
+
+const AcidesBasesAnimation = dynamic(
+  () => import('@/components/AcidesBasesAnimation').then(mod => mod.default),
+  {
+    loading: () => (
+      <div className="my-8 rounded-xl bg-slate-800 p-8 text-center text-slate-400">
+        Chargement de l'animation...
+      </div>
+    ),
+    ssr: false
+  }
+)
+
 // Mapping des IDs de leçons vers leurs composants d'animation
 const lessonAnimations: Record<string, ComponentType> = {
   'interferences': InterferencesAnimation,
@@ -149,6 +209,11 @@ const lessonAnimations: Record<string, ComponentType> = {
   'equilibres-chimiques': EquilibresChimiquesAnimation,
   'energie-mecanique': EnergieMecaniqueAnimation,
   'spectroscopie-ir': SpectroscopieIRAnimation,
+  'ondes-lumineuses': OndesLumineusesAnimation,
+  'ondes-sonores': OndesSonoresAnimation,
+  'thermochimie': ThermochimieAnimation,
+  'titrages': TitragesAnimation,
+  'acides-bases': AcidesBasesAnimation,
 }
 
 // Composant wrapper pour afficher l'animation d'une leçon
