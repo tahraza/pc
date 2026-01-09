@@ -18,6 +18,7 @@ import {
   Sun,
   Monitor,
   FileText,
+  Shuffle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SearchModal } from './SearchModal'
@@ -28,6 +29,7 @@ const navigation = [
   { name: 'Leçons', href: '/lecons', icon: BookOpen },
   { name: 'Exercices', href: '/exercices', icon: ClipboardList },
   { name: 'Guidés', href: '/exercices-guides', icon: Lightbulb },
+  { name: 'Aléatoires', href: '/exercices-aleatoires', icon: Shuffle },
   { name: 'Annales', href: '/annales', icon: FileText },
   { name: 'Flashcards', href: '/flashcards', icon: Brain },
   { name: 'Stats', href: '/stats', icon: BarChart3 },

@@ -137,6 +137,60 @@ export interface ExerciseProgress {
 }
 
 // ==========================================
+// Exercices aléatoires (templates)
+// ==========================================
+
+export type VariableType = 'number' | 'integer' | 'choice'
+
+export interface VariableDefinition {
+  type: VariableType
+  min?: number
+  max?: number
+  decimals?: number
+  unit?: string
+  choices?: string[] // Pour type 'choice'
+}
+
+export interface RandomExerciseTemplate {
+  id: string
+  lessonId: string
+  title: string
+  difficulty: DifficultyLevel
+  description: string // Description courte du type d'exercice
+  variables: Record<string, VariableDefinition>
+  statement: string // Template avec {{variable}}
+  solutionSteps: RandomSolutionStep[]
+  finalAnswer: string // Template pour la réponse finale
+  method: string
+  hints: string[]
+  commonMistakes: string[]
+  tags: string[]
+}
+
+export interface RandomSolutionStep {
+  step: number
+  title: string
+  content: string // Template avec {{variable}} et {{computed}}
+  explanation?: string
+  compute?: Record<string, string> // Calculs intermédiaires: nom -> formule JS
+}
+
+export interface GeneratedExercise {
+  templateId: string
+  lessonId: string
+  title: string
+  difficulty: DifficultyLevel
+  values: Record<string, number | string>
+  computed: Record<string, number | string>
+  statement: string
+  solutionSteps: SolutionStep[]
+  finalAnswer: string
+  method: string
+  hints: string[]
+  seed: number // Pour reproduire l'exercice
+}
+
+// ==========================================
 // Flashcards
 // ==========================================
 
