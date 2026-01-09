@@ -1498,5 +1498,194 @@
       "Inverser la formule"
     ],
     "tags": ["IR", "nombre d'onde", "longueur d'onde"]
+  },
+  {
+    "id": "rand-equilibre-K",
+    "lessonId": "equilibres-chimiques",
+    "title": "Calcul de la constante K",
+    "difficulty": 2,
+    "description": "Calculer K à partir des concentrations à l'équilibre",
+    "variables": {
+      "C_A_eq": { "type": "number", "min": 0.02, "max": 0.15, "decimals": 2, "unit": "mol/L" },
+      "C_B_eq": { "type": "number", "min": 0.02, "max": 0.15, "decimals": 2, "unit": "mol/L" },
+      "C_C_eq": { "type": "number", "min": 0.05, "max": 0.3, "decimals": 2, "unit": "mol/L" }
+    },
+    "statement": "Pour la réaction A + B ⇌ 2C, les concentrations à l'équilibre sont:\n[A]éq = {{C_A_eq}} mol/L, [B]éq = {{C_B_eq}} mol/L, [C]éq = {{C_C_eq}} mol/L.\nCalculer la constante d'équilibre K.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Expression de K",
+        "content": "Pour A + B ⇌ 2C, la constante d'équilibre s'écrit:\n$K = \\frac{[C]_{éq}^2}{[A]_{éq}[B]_{éq}}$",
+        "explanation": "Les produits au numérateur, les réactifs au dénominateur, avec les coefficients en exposant"
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "$K = \\frac{({{C_C_eq}})^2}{{{C_A_eq}} \\times {{C_B_eq}}} = \\frac{{{C_C_carre}}}{{{den}}}$",
+        "compute": { "C_C_carre": "C_C_eq * C_C_eq", "den": "C_A_eq * C_B_eq" }
+      },
+      {
+        "step": 3,
+        "title": "Résultat",
+        "content": "$K = {{K}}$",
+        "compute": { "K": "C_C_carre / den" },
+        "explanation": "K est sans unité car les concentrations sont élevées à des puissances qui s'annulent"
+      }
+    ],
+    "finalAnswer": "K = {{K}}",
+    "method": "K = [produits]^coef / [réactifs]^coef à l'équilibre",
+    "hints": [
+      "K ne dépend que des concentrations à l'équilibre",
+      "Le coefficient stœchiométrique devient l'exposant"
+    ],
+    "commonMistakes": [
+      "Oublier de mettre au carré [C]",
+      "Inverser numérateur et dénominateur"
+    ],
+    "tags": ["équilibre", "constante", "K"]
+  },
+  {
+    "id": "rand-equilibre-taux",
+    "lessonId": "equilibres-chimiques",
+    "title": "Taux d'avancement final",
+    "difficulty": 2,
+    "description": "Calculer le taux d'avancement à l'équilibre",
+    "variables": {
+      "n0": { "type": "number", "min": 0.05, "max": 0.2, "decimals": 2, "unit": "mol" },
+      "xf": { "type": "number", "min": 0.01, "max": 0.08, "decimals": 2, "unit": "mol" }
+    },
+    "statement": "Pour la réaction A → B, on part de n₀(A) = {{n0}} mol de A pur.\nÀ l'équilibre, l'avancement est xf = {{xf}} mol.\nCalculer le taux d'avancement final τ.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Définition du taux d'avancement",
+        "content": "Le taux d'avancement final est:\n$\\tau = \\frac{x_f}{x_{max}}$",
+        "explanation": "τ compare l'avancement réel à l'avancement maximal possible"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de xmax",
+        "content": "Si la réaction était totale, tout A serait consommé:\n$x_{max} = n_0(A) = {{n0}}$ mol",
+        "explanation": "Le coefficient de A est 1, donc xmax = n0(A)/1"
+      },
+      {
+        "step": 3,
+        "title": "Calcul du taux",
+        "content": "$\\tau = \\frac{{{xf}}}{{{n0}}} = {{tau}}$",
+        "compute": { "tau": "xf / n0" }
+      },
+      {
+        "step": 4,
+        "title": "Interprétation",
+        "content": "τ = {{tau_pourcent}}%\n{{interpretation}}",
+        "compute": {
+          "tau_pourcent": "tau * 100",
+          "interpretation": "tau < 0.5 ? 'La réaction est peu avancée (équilibre déplacé vers les réactifs)' : 'La réaction est bien avancée (équilibre déplacé vers les produits)'"
+        }
+      }
+    ],
+    "finalAnswer": "τ = {{tau}} soit {{tau_pourcent}}%",
+    "method": "τ = xf/xmax où xmax est l'avancement si la réaction était totale",
+    "hints": [
+      "τ est toujours compris entre 0 et 1",
+      "xmax correspond à la consommation totale du réactif limitant"
+    ],
+    "commonMistakes": [
+      "Confondre xf et xmax",
+      "Oublier que τ est sans unité"
+    ],
+    "tags": ["équilibre", "taux d'avancement", "tau"]
+  },
+  {
+    "id": "rand-equilibre-composition",
+    "lessonId": "equilibres-chimiques",
+    "title": "Composition à l'équilibre",
+    "difficulty": 3,
+    "description": "Déterminer les concentrations à l'équilibre",
+    "variables": {
+      "C0": { "type": "number", "min": 0.1, "max": 0.5, "decimals": 1, "unit": "mol/L" },
+      "K": { "type": "number", "min": 0.1, "max": 0.5, "decimals": 2, "unit": "" }
+    },
+    "statement": "Pour la réaction A ⇌ B de constante K = {{K}}, on introduit A pur à la concentration C₀ = {{C0}} mol/L.\nDéterminer les concentrations [A]éq et [B]éq à l'équilibre.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Tableau d'avancement",
+        "content": "État initial: [A] = {{C0}}, [B] = 0\nÉtat équilibre: [A] = {{C0}} - x, [B] = x",
+        "explanation": "x représente l'avancement volumique (mol/L)"
+      },
+      {
+        "step": 2,
+        "title": "Expression de K",
+        "content": "$K = \\frac{[B]_{éq}}{[A]_{éq}} = \\frac{x}{{{C0}} - x} = {{K}}$"
+      },
+      {
+        "step": 3,
+        "title": "Résolution",
+        "content": "${{K}}({{C0}} - x) = x$\n${{K_C0}} - {{K}}x = x$\n${{K_C0}} = x(1 + {{K}})$\n$x = \\frac{{{K_C0}}}{{{un_plus_K}}} = {{x}}$ mol/L",
+        "compute": { "K_C0": "K * C0", "un_plus_K": "1 + K", "x": "K_C0 / un_plus_K" }
+      },
+      {
+        "step": 4,
+        "title": "Concentrations à l'équilibre",
+        "content": "$[B]_{éq} = x = {{x}}$ mol/L\n$[A]_{éq} = {{C0}} - {{x}} = {{A_eq}}$ mol/L",
+        "compute": { "A_eq": "C0 - x" }
+      }
+    ],
+    "finalAnswer": "[A]éq = {{A_eq}} mol/L, [B]éq = {{x}} mol/L",
+    "method": "Établir le tableau d'avancement, exprimer K en fonction de x, résoudre",
+    "hints": [
+      "Pose x = avancement volumique",
+      "À l'équilibre, K = [B]/[A]"
+    ],
+    "commonMistakes": [
+      "Oublier que [A] diminue de x",
+      "Erreur de signe dans la résolution"
+    ],
+    "tags": ["équilibre", "concentration", "tableau d'avancement"]
+  },
+  {
+    "id": "rand-equilibre-temperature",
+    "lessonId": "equilibres-chimiques",
+    "title": "Influence de la température",
+    "difficulty": 3,
+    "description": "Déterminer le sens de déplacement avec la température",
+    "variables": {
+      "K1": { "type": "number", "min": 1, "max": 10, "decimals": 1, "unit": "" },
+      "K2": { "type": "number", "min": 15, "max": 50, "decimals": 0, "unit": "" },
+      "T1": { "type": "integer", "min": 20, "max": 30, "unit": "°C" },
+      "T2": { "type": "integer", "min": 60, "max": 80, "unit": "°C" }
+    },
+    "statement": "Pour une réaction A ⇌ B, on mesure:\n- K = {{K1}} à T₁ = {{T1}}°C\n- K = {{K2}} à T₂ = {{T2}}°C\nLa réaction directe est-elle exothermique ou endothermique ?",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse des données",
+        "content": "Quand T augmente ({{T1}}°C → {{T2}}°C), K augmente ({{K1}} → {{K2}})",
+        "explanation": "K augmente signifie que l'équilibre se déplace vers les produits"
+      },
+      {
+        "step": 2,
+        "title": "Application de Van't Hoff",
+        "content": "Selon la loi de Van't Hoff:\n- Si K augmente avec T → réaction directe endothermique (ΔrH° > 0)\n- Si K diminue avec T → réaction directe exothermique (ΔrH° < 0)"
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "K augmente de {{K1}} à {{K2}} quand T augmente.\nLa réaction directe A → B est **endothermique**.",
+        "explanation": "Le système absorbe de la chaleur en formant les produits"
+      }
+    ],
+    "finalAnswer": "Réaction directe endothermique (ΔrH° > 0)",
+    "method": "Si K ↗ quand T ↗ → endothermique. Si K ↘ quand T ↗ → exothermique.",
+    "hints": [
+      "Une augmentation de température favorise la réaction endothermique",
+      "Compare l'évolution de K avec celle de T"
+    ],
+    "commonMistakes": [
+      "Confondre endo et exothermique",
+      "Oublier que K dépend de T"
+    ],
+    "tags": ["équilibre", "température", "Van't Hoff", "enthalpie"]
   }
 ]
