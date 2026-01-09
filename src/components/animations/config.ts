@@ -18,6 +18,8 @@ export const animatedLessons = [
   'thermochimie',
   'titrages',
   'acides-bases',
+  'diffraction',
+  'radioactivite',
   // Ajouter d'autres IDs de leçons avec animations ici
 ] as const
 
