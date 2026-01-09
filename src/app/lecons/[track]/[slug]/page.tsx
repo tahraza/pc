@@ -17,6 +17,8 @@ import { getTrackLabel, getTrackColor, getDifficultyLabel, getDifficultyColor, f
 import { LessonContent } from '@/components/LessonContent'
 import { LessonProgress } from '@/components/LessonProgress'
 import { RevisionSchedule } from '@/components/RevisionSchedule'
+import { LessonAnimation } from '@/components/animations'
+import { hasAnimation } from '@/components/animations/config'
 import type { Track } from '@/types'
 
 interface PageProps {
@@ -149,6 +151,13 @@ export default function LessonPage({ params }: PageProps) {
             <div className="card">
               <LessonContent content={lesson.content} />
             </div>
+
+            {/* Interactive animation if available */}
+            {hasAnimation(lesson.id) && (
+              <div className="mt-6">
+                <LessonAnimation lessonId={lesson.id} />
+              </div>
+            )}
 
             {/* Post-quiz CTA */}
             {postQuiz && (
