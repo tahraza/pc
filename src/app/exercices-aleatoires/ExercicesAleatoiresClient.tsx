@@ -9,6 +9,7 @@ import { Shuffle, Filter, ChevronDown, Zap } from 'lucide-react'
 const lessonNames: Record<string, string> = {
   'ondes-mecaniques': 'Ondes mécaniques',
   'ondes-lumineuses': 'Ondes lumineuses',
+  'ondes-sonores': 'Ondes sonores',
   'diffraction': 'Diffraction',
   'interferences': 'Interférences',
   'circuit-rc': 'Circuit RC',
@@ -19,6 +20,14 @@ const lessonNames: Record<string, string> = {
   'thermochimie': 'Thermochimie',
   'energie-mecanique': 'Énergie mécanique',
   'mouvement-circulaire': 'Mouvement circulaire',
+  'mouvement-newton': 'Lois de Newton',
+  'mouvement-champ-uniforme': 'Champ uniforme',
+  'electromagnetisme': 'Électromagnétisme',
+  'thermodynamique': 'Thermodynamique',
+  'travail-force': 'Travail et puissance',
+  'oxydoreduction': 'Oxydoréduction',
+  'piles-electrolyse': 'Piles et électrolyse',
+  'spectroscopie-ir': 'Spectroscopie IR',
   'equilibres-chimiques': 'Équilibres chimiques',
 }
 

@@ -867,5 +867,636 @@
       "Se tromper dans le sens d'évolution"
     ],
     "tags": ["équilibre", "quotient de réaction", "évolution"]
+  },
+  {
+    "id": "rand-newton-poids",
+    "lessonId": "mouvement-newton",
+    "title": "Calcul du poids",
+    "difficulty": 1,
+    "description": "Calculer le poids d'un objet",
+    "variables": {
+      "m": { "type": "number", "min": 0.5, "max": 10.0, "decimals": 1, "unit": "kg" }
+    },
+    "statement": "Un objet a une masse m = {{m}} kg. Calculer son poids P sur Terre. (g = 10 m/s²)",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Application de la formule",
+        "content": "$P = mg = {{m}} \\times 10 = {{P}}$ N",
+        "explanation": "Le poids est la force gravitationnelle exercée par la Terre",
+        "compute": { "P": "m * 10" }
+      }
+    ],
+    "finalAnswer": "P = {{P}} N",
+    "method": "Poids: $\\vec{P} = m\\vec{g}$ avec $P = mg$",
+    "hints": [
+      "P = m × g",
+      "g = 10 m/s² sur Terre"
+    ],
+    "commonMistakes": [
+      "Confondre masse et poids",
+      "Oublier l'unité (Newton)"
+    ],
+    "tags": ["poids", "masse", "Newton"]
+  },
+  {
+    "id": "rand-newton-pfd",
+    "lessonId": "mouvement-newton",
+    "title": "Application du PFD - Accélération",
+    "difficulty": 2,
+    "description": "Calculer l'accélération à partir des forces",
+    "variables": {
+      "m": { "type": "number", "min": 1.0, "max": 5.0, "decimals": 1, "unit": "kg" },
+      "F": { "type": "integer", "min": 5, "max": 30, "unit": "N" }
+    },
+    "statement": "Un objet de masse m = {{m}} kg est soumis à une force horizontale F = {{F}} N. En négligeant les frottements, calculer son accélération a.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Principe Fondamental de la Dynamique",
+        "content": "$\\sum \\vec{F} = m\\vec{a}$ donc $F = ma$",
+        "explanation": "Le PFD relie la somme des forces à l'accélération"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'accélération",
+        "content": "$a = \\frac{F}{m} = \\frac{{{F}}}{{{m}}} = {{a}}$ m/s²",
+        "compute": { "a": "F / m" }
+      }
+    ],
+    "finalAnswer": "a = {{a}} m/s²",
+    "method": "PFD: $\\sum \\vec{F} = m\\vec{a}$ donc $a = F/m$",
+    "hints": [
+      "Applique le PFD: ΣF = ma",
+      "Isole a: a = F/m"
+    ],
+    "commonMistakes": [
+      "Inverser la formule (écrire m/F)",
+      "Oublier de vérifier les unités"
+    ],
+    "tags": ["PFD", "accélération", "Newton"]
+  },
+  {
+    "id": "rand-champ-uniforme-portee",
+    "lessonId": "mouvement-champ-uniforme",
+    "title": "Portée d'un projectile",
+    "difficulty": 3,
+    "description": "Calculer la portée d'un projectile",
+    "variables": {
+      "v0": { "type": "integer", "min": 10, "max": 30, "unit": "m/s" },
+      "alpha": { "type": "integer", "min": 30, "max": 60, "unit": "°" }
+    },
+    "statement": "Un projectile est lancé avec une vitesse initiale v₀ = {{v0}} m/s et un angle α = {{alpha}}° par rapport à l'horizontale. Calculer sa portée (distance horizontale au retour au sol). (g = 10 m/s²)",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule de la portée",
+        "content": "$x_p = \\frac{v_0^2 \\sin(2\\alpha)}{g}$",
+        "explanation": "Cette formule est valable pour un tir depuis le sol"
+      },
+      {
+        "step": 2,
+        "title": "Conversion de l'angle",
+        "content": "$2\\alpha = {{deux_alpha}}°$ et $\\sin({{deux_alpha}}°) = {{sin_2alpha}}$",
+        "compute": { "deux_alpha": "2 * alpha", "alpha_rad": "alpha * 3.14159 / 180", "sin_2alpha": "Math.sin(2 * alpha_rad)" }
+      },
+      {
+        "step": 3,
+        "title": "Calcul de la portée",
+        "content": "$x_p = \\frac{{{v0}}^2 \\times {{sin_2alpha}}}{10} = \\frac{{{v02}} \\times {{sin_2alpha}}}{10} = {{xp}}$ m",
+        "compute": { "v02": "v0 * v0", "xp": "v02 * sin_2alpha / 10" }
+      }
+    ],
+    "finalAnswer": "Portée = {{xp}} m",
+    "method": "Portée: $x_p = v_0^2 \\sin(2\\alpha) / g$",
+    "hints": [
+      "La portée maximale est obtenue pour α = 45°",
+      "Utilise sin(2α) dans la formule",
+      "N'oublie pas de convertir l'angle en radians si nécessaire"
+    ],
+    "commonMistakes": [
+      "Oublier le facteur 2 devant α",
+      "Utiliser sin(α) au lieu de sin(2α)"
+    ],
+    "tags": ["projectile", "portée", "trajectoire"]
+  },
+  {
+    "id": "rand-champ-uniforme-hauteur",
+    "lessonId": "mouvement-champ-uniforme",
+    "title": "Hauteur maximale d'un projectile",
+    "difficulty": 3,
+    "description": "Calculer la hauteur maximale atteinte",
+    "variables": {
+      "v0": { "type": "integer", "min": 15, "max": 35, "unit": "m/s" },
+      "alpha": { "type": "integer", "min": 30, "max": 75, "unit": "°" }
+    },
+    "statement": "Un projectile est lancé avec une vitesse initiale v₀ = {{v0}} m/s et un angle α = {{alpha}}° par rapport à l'horizontale. Calculer la hauteur maximale atteinte. (g = 10 m/s²)",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Composante verticale de la vitesse",
+        "content": "$v_{0y} = v_0 \\sin(\\alpha) = {{v0}} \\times \\sin({{alpha}}°) = {{v0y}}$ m/s",
+        "compute": { "alpha_rad": "alpha * 3.14159 / 180", "v0y": "v0 * Math.sin(alpha_rad)" }
+      },
+      {
+        "step": 2,
+        "title": "Hauteur maximale",
+        "content": "$h_{max} = \\frac{v_{0y}^2}{2g} = \\frac{{{v0y}}^2}{2 \\times 10} = \\frac{{{v0y2}}}{20} = {{hmax}}$ m",
+        "explanation": "Au sommet, la vitesse verticale s'annule",
+        "compute": { "v0y2": "v0y * v0y", "hmax": "v0y2 / 20" }
+      }
+    ],
+    "finalAnswer": "hmax = {{hmax}} m",
+    "method": "Hauteur max: $h_{max} = v_{0y}^2 / (2g) = v_0^2 \\sin^2(\\alpha) / (2g)$",
+    "hints": [
+      "Décompose v₀ en composantes",
+      "v₀y = v₀ × sin(α)",
+      "hmax = v₀y² / (2g)"
+    ],
+    "commonMistakes": [
+      "Utiliser v₀ au lieu de v₀y",
+      "Oublier le facteur 2 au dénominateur"
+    ],
+    "tags": ["projectile", "hauteur", "trajectoire"]
+  },
+  {
+    "id": "rand-electromagnetisme-lorentz",
+    "lessonId": "electromagnetisme",
+    "title": "Force de Lorentz",
+    "difficulty": 3,
+    "description": "Calculer la force magnétique sur une particule",
+    "variables": {
+      "q_nC": { "type": "integer", "min": 1, "max": 10, "unit": "nC" },
+      "v_km_s": { "type": "integer", "min": 100, "max": 500, "unit": "km/s" },
+      "B_mT": { "type": "integer", "min": 10, "max": 100, "unit": "mT" }
+    },
+    "statement": "Une particule de charge q = {{q_nC}} nC se déplace à la vitesse v = {{v_km_s}} km/s perpendiculairement à un champ magnétique B = {{B_mT}} mT. Calculer la norme de la force de Lorentz.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversions",
+        "content": "$q = {{q_nC}} \\times 10^{-9}$ C, $v = {{v_km_s}} \\times 10^{3}$ m/s, $B = {{B_mT}} \\times 10^{-3}$ T",
+        "compute": { "q": "q_nC * 1e-9", "v": "v_km_s * 1e3", "B": "B_mT * 1e-3" }
+      },
+      {
+        "step": 2,
+        "title": "Force de Lorentz",
+        "content": "$F = |q|vB\\sin(90°) = |q|vB = {{q}} \\times {{v}} \\times {{B}} = {{F}}$ N",
+        "explanation": "Comme v ⊥ B, sin(90°) = 1",
+        "compute": { "F": "q * v * B" }
+      }
+    ],
+    "finalAnswer": "F = {{F}} N",
+    "method": "Force de Lorentz: $\\vec{F} = q\\vec{v} \\times \\vec{B}$, donc $F = |q|vB\\sin(\\theta)$",
+    "hints": [
+      "F = |q|vB sin(θ)",
+      "Si v ⊥ B, alors sin(90°) = 1",
+      "Attention aux conversions d'unités"
+    ],
+    "commonMistakes": [
+      "Oublier la valeur absolue de q",
+      "Erreurs de conversion (nC, km/s, mT)"
+    ],
+    "tags": ["Lorentz", "force magnétique", "champ B"]
+  },
+  {
+    "id": "rand-electromagnetisme-rayon",
+    "lessonId": "electromagnetisme",
+    "title": "Rayon de courbure dans un champ magnétique",
+    "difficulty": 3,
+    "description": "Calculer le rayon de la trajectoire circulaire",
+    "variables": {
+      "m_me": { "type": "integer", "min": 1, "max": 5, "unit": "me" },
+      "v_Mm_s": { "type": "integer", "min": 1, "max": 10, "unit": "Mm/s" },
+      "B_mT": { "type": "integer", "min": 1, "max": 10, "unit": "mT" }
+    },
+    "statement": "Un électron (me = 9,1 × 10⁻³¹ kg, |e| = 1,6 × 10⁻¹⁹ C) de masse {{m_me}} me se déplace à v = {{v_Mm_s}} Mm/s dans un champ magnétique B = {{B_mT}} mT. Calculer le rayon de sa trajectoire circulaire.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversions",
+        "content": "$m = {{m_me}} \\times 9,1 \\times 10^{-31}$ kg, $v = {{v_Mm_s}} \\times 10^{6}$ m/s, $B = {{B_mT}} \\times 10^{-3}$ T",
+        "compute": { "m": "m_me * 9.1e-31", "v": "v_Mm_s * 1e6", "B": "B_mT * 1e-3", "e": "1.6e-19" }
+      },
+      {
+        "step": 2,
+        "title": "Rayon de courbure",
+        "content": "$r = \\frac{mv}{|q|B} = \\frac{{{m}} \\times {{v}}}{1,6 \\times 10^{-19} \\times {{B}}} = {{r}}$ m = {{r_mm}} mm",
+        "explanation": "Équilibre entre force de Lorentz et force centripète",
+        "compute": { "r": "m * v / (e * B)", "r_mm": "r * 1000" }
+      }
+    ],
+    "finalAnswer": "r = {{r_mm}} mm",
+    "method": "Rayon: $r = mv/(|q|B)$ (équilibre Lorentz/centripète)",
+    "hints": [
+      "La force de Lorentz joue le rôle de force centripète",
+      "qvB = mv²/r donc r = mv/(qB)"
+    ],
+    "commonMistakes": [
+      "Oublier les conversions d'unités",
+      "Confondre m et q"
+    ],
+    "tags": ["trajectoire", "rayon", "électron"]
+  },
+  {
+    "id": "rand-thermo-travail",
+    "lessonId": "thermodynamique",
+    "title": "Travail des forces de pression",
+    "difficulty": 2,
+    "description": "Calculer le travail lors d'une transformation isobare",
+    "variables": {
+      "P_bar": { "type": "number", "min": 1.0, "max": 5.0, "decimals": 1, "unit": "bar" },
+      "Vi_L": { "type": "number", "min": 1.0, "max": 5.0, "decimals": 1, "unit": "L" },
+      "Vf_L": { "type": "number", "min": 6.0, "max": 15.0, "decimals": 1, "unit": "L" }
+    },
+    "statement": "Un gaz subit une transformation isobare à P = {{P_bar}} bar. Son volume passe de Vi = {{Vi_L}} L à Vf = {{Vf_L}} L. Calculer le travail W reçu par le gaz.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversions",
+        "content": "$P = {{P_bar}} \\times 10^5$ Pa, $V_i = {{Vi_L}} \\times 10^{-3}$ m³, $V_f = {{Vf_L}} \\times 10^{-3}$ m³",
+        "compute": { "P": "P_bar * 1e5", "Vi": "Vi_L * 1e-3", "Vf": "Vf_L * 1e-3" }
+      },
+      {
+        "step": 2,
+        "title": "Travail isobare",
+        "content": "$W = -P(V_f - V_i) = -{{P}} \\times ({{Vf}} - {{Vi}}) = -{{P}} \\times {{DV}} = {{W}}$ J",
+        "explanation": "W < 0 si le gaz se détend (il fournit du travail)",
+        "compute": { "DV": "Vf - Vi", "W": "-P * DV" }
+      }
+    ],
+    "finalAnswer": "W = {{W}} J",
+    "method": "Travail isobare: $W = -P\\Delta V = -P(V_f - V_i)$",
+    "hints": [
+      "Transformation isobare: P = constante",
+      "W = -PΔV (convention thermodynamique)",
+      "W < 0 si détente, W > 0 si compression"
+    ],
+    "commonMistakes": [
+      "Oublier le signe moins",
+      "Erreurs de conversion (bar → Pa, L → m³)"
+    ],
+    "tags": ["travail", "isobare", "gaz"]
+  },
+  {
+    "id": "rand-thermo-premier-principe",
+    "lessonId": "thermodynamique",
+    "title": "Premier principe - Variation d'énergie interne",
+    "difficulty": 3,
+    "description": "Appliquer le premier principe de la thermodynamique",
+    "variables": {
+      "Q": { "type": "integer", "min": 500, "max": 2000, "unit": "J" },
+      "W": { "type": "integer", "min": -800, "max": 800, "unit": "J" }
+    },
+    "statement": "Un système reçoit une quantité de chaleur Q = {{Q}} J et un travail W = {{W}} J. Calculer la variation d'énergie interne ΔU du système.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Premier principe",
+        "content": "$\\Delta U = W + Q$",
+        "explanation": "L'énergie interne varie de la somme du travail et de la chaleur reçus"
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "$\\Delta U = {{W}} + {{Q}} = {{DU}}$ J",
+        "compute": { "DU": "W + Q" }
+      }
+    ],
+    "finalAnswer": "ΔU = {{DU}} J",
+    "method": "Premier principe: $\\Delta U = W + Q$",
+    "hints": [
+      "ΔU = W + Q (convention récepteur)",
+      "Q > 0 si chaleur reçue",
+      "W > 0 si travail reçu"
+    ],
+    "commonMistakes": [
+      "Se tromper de signe pour W ou Q",
+      "Confondre les conventions"
+    ],
+    "tags": ["premier principe", "énergie interne", "chaleur"]
+  },
+  {
+    "id": "rand-ondes-sonores-niveau",
+    "lessonId": "ondes-sonores",
+    "title": "Niveau d'intensité sonore",
+    "difficulty": 2,
+    "description": "Calculer le niveau sonore en décibels",
+    "variables": {
+      "I_exp": { "type": "integer", "min": -8, "max": -2, "unit": "" }
+    },
+    "statement": "Une source sonore produit une intensité I = 10^{{I_exp}} W/m². Calculer le niveau d'intensité sonore L en décibels. (I₀ = 10⁻¹² W/m²)",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule du niveau sonore",
+        "content": "$L = 10 \\log\\left(\\frac{I}{I_0}\\right) = 10 \\log\\left(\\frac{10^{{{I_exp}}}}{10^{-12}}\\right)$",
+        "compute": { "I": "Math.pow(10, I_exp)" }
+      },
+      {
+        "step": 2,
+        "title": "Simplification",
+        "content": "$L = 10 \\log(10^{{{I_exp}} - (-12)}) = 10 \\log(10^{{{exposant}}}) = 10 \\times {{exposant}} = {{L}}$ dB",
+        "explanation": "log(10ⁿ) = n",
+        "compute": { "exposant": "I_exp + 12", "L": "10 * exposant" }
+      }
+    ],
+    "finalAnswer": "L = {{L}} dB",
+    "method": "Niveau sonore: $L = 10 \\log(I/I_0)$ avec $I_0 = 10^{-12}$ W/m²",
+    "hints": [
+      "L = 10 × log(I/I₀)",
+      "I₀ = 10⁻¹² W/m² (seuil d'audibilité)",
+      "log(10ⁿ) = n"
+    ],
+    "commonMistakes": [
+      "Oublier le facteur 10",
+      "Se tromper dans les exposants"
+    ],
+    "tags": ["décibel", "niveau sonore", "intensité"]
+  },
+  {
+    "id": "rand-ondes-sonores-frequence",
+    "lessonId": "ondes-sonores",
+    "title": "Fréquence et période d'un son",
+    "difficulty": 1,
+    "description": "Calculer la période à partir de la fréquence",
+    "variables": {
+      "f": { "type": "integer", "min": 200, "max": 2000, "unit": "Hz" }
+    },
+    "statement": "Un son a une fréquence f = {{f}} Hz. Calculer sa période T.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Relation fréquence-période",
+        "content": "$T = \\frac{1}{f} = \\frac{1}{{{f}}} = {{T}}$ s = {{T_ms}} ms",
+        "compute": { "T": "1 / f", "T_ms": "T * 1000" }
+      }
+    ],
+    "finalAnswer": "T = {{T_ms}} ms",
+    "method": "Période: $T = 1/f$",
+    "hints": [
+      "T et f sont inverses l'un de l'autre",
+      "T = 1/f"
+    ],
+    "commonMistakes": [
+      "Inverser la formule",
+      "Oublier la conversion en ms"
+    ],
+    "tags": ["période", "fréquence", "son"]
+  },
+  {
+    "id": "rand-ondes-sonores-harmoniques",
+    "lessonId": "ondes-sonores",
+    "title": "Fréquences des harmoniques",
+    "difficulty": 2,
+    "description": "Calculer les fréquences des harmoniques",
+    "variables": {
+      "f1": { "type": "integer", "min": 100, "max": 500, "unit": "Hz" },
+      "n": { "type": "integer", "min": 2, "max": 6, "unit": "" }
+    },
+    "statement": "Un son a une fréquence fondamentale f₁ = {{f1}} Hz. Calculer la fréquence de l'harmonique de rang {{n}}.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Fréquence de l'harmonique n",
+        "content": "$f_n = n \\times f_1 = {{n}} \\times {{f1}} = {{fn}}$ Hz",
+        "explanation": "Les harmoniques sont des multiples entiers de la fondamentale",
+        "compute": { "fn": "n * f1" }
+      }
+    ],
+    "finalAnswer": "f{{n}} = {{fn}} Hz",
+    "method": "Harmonique n: $f_n = n \\times f_1$",
+    "hints": [
+      "Les harmoniques sont des multiples de f₁",
+      "fn = n × f₁"
+    ],
+    "commonMistakes": [
+      "Confondre rang et numéro d'harmonique",
+      "Oublier que n commence à 1"
+    ],
+    "tags": ["harmonique", "fondamentale", "spectre"]
+  },
+  {
+    "id": "rand-travail-force",
+    "lessonId": "travail-force",
+    "title": "Travail d'une force constante",
+    "difficulty": 2,
+    "description": "Calculer le travail d'une force",
+    "variables": {
+      "F": { "type": "integer", "min": 10, "max": 100, "unit": "N" },
+      "d": { "type": "number", "min": 1.0, "max": 10.0, "decimals": 1, "unit": "m" },
+      "alpha": { "type": "integer", "min": 0, "max": 60, "unit": "°" }
+    },
+    "statement": "Une force F = {{F}} N est appliquée sur un objet qui se déplace de d = {{d}} m. L'angle entre la force et le déplacement est α = {{alpha}}°. Calculer le travail W de cette force.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule du travail",
+        "content": "$W = F \\times d \\times \\cos(\\alpha) = {{F}} \\times {{d}} \\times \\cos({{alpha}}°)$",
+        "compute": { "alpha_rad": "alpha * 3.14159 / 180", "cos_alpha": "Math.cos(alpha_rad)" }
+      },
+      {
+        "step": 2,
+        "title": "Calcul numérique",
+        "content": "$W = {{F}} \\times {{d}} \\times {{cos_alpha}} = {{W}}$ J",
+        "compute": { "W": "F * d * cos_alpha" }
+      }
+    ],
+    "finalAnswer": "W = {{W}} J",
+    "method": "Travail: $W = \\vec{F} \\cdot \\vec{d} = Fd\\cos(\\alpha)$",
+    "hints": [
+      "W = F × d × cos(α)",
+      "Si α = 0°, W = Fd (force dans le sens du mouvement)",
+      "Si α = 90°, W = 0 (force perpendiculaire)"
+    ],
+    "commonMistakes": [
+      "Oublier le cosinus",
+      "Utiliser sin au lieu de cos"
+    ],
+    "tags": ["travail", "force", "énergie"]
+  },
+  {
+    "id": "rand-travail-puissance",
+    "lessonId": "travail-force",
+    "title": "Puissance moyenne",
+    "difficulty": 2,
+    "description": "Calculer la puissance à partir du travail",
+    "variables": {
+      "W": { "type": "integer", "min": 500, "max": 5000, "unit": "J" },
+      "t": { "type": "integer", "min": 5, "max": 30, "unit": "s" }
+    },
+    "statement": "Un moteur fournit un travail W = {{W}} J en t = {{t}} s. Calculer sa puissance moyenne P.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Définition de la puissance",
+        "content": "$P = \\frac{W}{t} = \\frac{{{W}}}{{{t}}} = {{P}}$ W",
+        "explanation": "La puissance est le travail par unité de temps",
+        "compute": { "P": "W / t" }
+      }
+    ],
+    "finalAnswer": "P = {{P}} W",
+    "method": "Puissance: $P = W/t$",
+    "hints": [
+      "P = W/t",
+      "L'unité est le Watt (W = J/s)"
+    ],
+    "commonMistakes": [
+      "Inverser W et t",
+      "Confondre W (travail) et W (watt)"
+    ],
+    "tags": ["puissance", "travail", "énergie"]
+  },
+  {
+    "id": "rand-oxydoreduction-nombre-electrons",
+    "lessonId": "oxydoreduction",
+    "title": "Nombre d'électrons échangés",
+    "difficulty": 2,
+    "description": "Déterminer le nombre d'électrons dans une demi-équation",
+    "variables": {
+      "n_ox_init": { "type": "integer", "min": 2, "max": 7, "unit": "" },
+      "n_ox_final": { "type": "integer", "min": 0, "max": 3, "unit": "" }
+    },
+    "statement": "Un élément passe du nombre d'oxydation +{{n_ox_init}} au nombre d'oxydation +{{n_ox_final}}. Combien d'électrons sont échangés et s'agit-il d'une oxydation ou d'une réduction ?",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Variation du nombre d'oxydation",
+        "content": "$\\Delta n.o. = {{n_ox_final}} - {{n_ox_init}} = {{delta_no}}$",
+        "compute": { "delta_no": "n_ox_final - n_ox_init" }
+      },
+      {
+        "step": 2,
+        "title": "Nombre d'électrons",
+        "content": "Nombre d'électrons échangés: $|\\Delta n.o.| = {{n_electrons}}$",
+        "compute": { "n_electrons": "Math.abs(delta_no)" }
+      },
+      {
+        "step": 3,
+        "title": "Type de réaction",
+        "content": "{{type_reaction}}",
+        "compute": { "type_reaction": "delta_no < 0 ? 'Δn.o. < 0 : gain d\\'électrons → RÉDUCTION' : 'Δn.o. > 0 : perte d\\'électrons → OXYDATION'" }
+      }
+    ],
+    "finalAnswer": "{{n_electrons}} électrons échangés, c'est une {{reaction}}",
+    "method": "Réduction = gain d'e⁻ (n.o. diminue). Oxydation = perte d'e⁻ (n.o. augmente).",
+    "hints": [
+      "Réduction: gain d'électrons, n.o. diminue",
+      "Oxydation: perte d'électrons, n.o. augmente",
+      "Nombre d'e⁻ = |variation du n.o.|"
+    ],
+    "commonMistakes": [
+      "Confondre oxydation et réduction",
+      "Se tromper dans le sens de variation"
+    ],
+    "tags": ["oxydation", "réduction", "électrons"]
+  },
+  {
+    "id": "rand-piles-fem",
+    "lessonId": "piles-electrolyse",
+    "title": "Force électromotrice d'une pile",
+    "difficulty": 2,
+    "description": "Calculer la f.é.m. d'une pile",
+    "variables": {
+      "E_plus": { "type": "number", "min": 0.5, "max": 1.5, "decimals": 2, "unit": "V" },
+      "E_moins": { "type": "number", "min": -1.0, "max": 0.3, "decimals": 2, "unit": "V" }
+    },
+    "statement": "Une pile est constituée de deux demi-piles de potentiels standard E°₁ = {{E_plus}} V (cathode) et E°₂ = {{E_moins}} V (anode). Calculer la f.é.m. standard E° de la pile.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule de la f.é.m.",
+        "content": "$E° = E°_{cathode} - E°_{anode} = {{E_plus}} - ({{E_moins}}) = {{fem}}$ V",
+        "explanation": "La f.é.m. est la différence des potentiels (cathode - anode)",
+        "compute": { "fem": "E_plus - E_moins" }
+      }
+    ],
+    "finalAnswer": "E° = {{fem}} V",
+    "method": "F.é.m.: $E° = E°_{cathode} - E°_{anode}$",
+    "hints": [
+      "E° = E°(+) - E°(-)",
+      "La cathode a le potentiel le plus élevé",
+      "L'anode a le potentiel le plus faible"
+    ],
+    "commonMistakes": [
+      "Inverser cathode et anode",
+      "Oublier le signe moins"
+    ],
+    "tags": ["pile", "f.é.m.", "potentiel"]
+  },
+  {
+    "id": "rand-piles-quantite-electricite",
+    "lessonId": "piles-electrolyse",
+    "title": "Quantité d'électricité",
+    "difficulty": 2,
+    "description": "Calculer la quantité d'électricité",
+    "variables": {
+      "I": { "type": "number", "min": 0.5, "max": 3.0, "decimals": 1, "unit": "A" },
+      "t_min": { "type": "integer", "min": 10, "max": 60, "unit": "min" }
+    },
+    "statement": "Une électrolyse est réalisée avec un courant I = {{I}} A pendant t = {{t_min}} min. Calculer la quantité d'électricité Q qui a circulé.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion du temps",
+        "content": "$t = {{t_min}} \\times 60 = {{t_s}}$ s",
+        "compute": { "t_s": "t_min * 60" }
+      },
+      {
+        "step": 2,
+        "title": "Quantité d'électricité",
+        "content": "$Q = I \\times t = {{I}} \\times {{t_s}} = {{Q}}$ C",
+        "compute": { "Q": "I * t_s" }
+      }
+    ],
+    "finalAnswer": "Q = {{Q}} C",
+    "method": "Quantité d'électricité: $Q = I \\times t$",
+    "hints": [
+      "Q = I × t",
+      "Convertir le temps en secondes",
+      "Q en Coulombs"
+    ],
+    "commonMistakes": [
+      "Oublier de convertir les minutes en secondes",
+      "Confondre Q et q"
+    ],
+    "tags": ["électrolyse", "quantité d'électricité", "courant"]
+  },
+  {
+    "id": "rand-spectro-ir-nombre-onde",
+    "lessonId": "spectroscopie-ir",
+    "title": "Nombre d'onde et longueur d'onde",
+    "difficulty": 2,
+    "description": "Convertir nombre d'onde en longueur d'onde",
+    "variables": {
+      "sigma": { "type": "integer", "min": 1000, "max": 3500, "unit": "cm⁻¹" }
+    },
+    "statement": "Une bande d'absorption IR apparaît au nombre d'onde σ = {{sigma}} cm⁻¹. Calculer la longueur d'onde λ correspondante en µm.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Relation nombre d'onde - longueur d'onde",
+        "content": "$\\sigma = \\frac{1}{\\lambda}$ donc $\\lambda = \\frac{1}{\\sigma}$",
+        "explanation": "σ en cm⁻¹ donne λ en cm"
+      },
+      {
+        "step": 2,
+        "title": "Calcul",
+        "content": "$\\lambda = \\frac{1}{{{sigma}}}$ cm $= {{lambda_cm}}$ cm $= {{lambda_um}}$ µm",
+        "compute": { "lambda_cm": "1 / sigma", "lambda_um": "lambda_cm * 10000" }
+      }
+    ],
+    "finalAnswer": "λ = {{lambda_um}} µm",
+    "method": "Nombre d'onde: $\\sigma = 1/\\lambda$ (σ en cm⁻¹, λ en cm)",
+    "hints": [
+      "σ = 1/λ",
+      "Si σ en cm⁻¹, alors λ en cm",
+      "1 cm = 10 000 µm"
+    ],
+    "commonMistakes": [
+      "Oublier la conversion cm → µm",
+      "Inverser la formule"
+    ],
+    "tags": ["IR", "nombre d'onde", "longueur d'onde"]
   }
 ]
