@@ -112,6 +112,18 @@ const EquilibresChimiquesAnimation = dynamic(
   }
 )
 
+const EnergieMecaniqueAnimation = dynamic(
+  () => import('@/components/EnergieMecaniqueAnimation').then(mod => ({ default: mod.EnergieMecaniqueAnimation })),
+  {
+    loading: () => (
+      <div className="my-8 rounded-xl bg-slate-800 p-8 text-center text-slate-400">
+        Chargement de l'animation...
+      </div>
+    ),
+    ssr: false
+  }
+)
+
 // Mapping des IDs de leçons vers leurs composants d'animation
 const lessonAnimations: Record<string, ComponentType> = {
   'interferences': InterferencesAnimation,
@@ -123,6 +135,7 @@ const lessonAnimations: Record<string, ComponentType> = {
   'ondes-mecaniques': OndesMecaniquesAnimation,
   'cinetique-chimique': CinetiqueChimiqueAnimation,
   'equilibres-chimiques': EquilibresChimiquesAnimation,
+  'energie-mecanique': EnergieMecaniqueAnimation,
 }
 
 // Composant wrapper pour afficher l'animation d'une leçon

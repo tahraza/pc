@@ -11,6 +11,7 @@ export const animatedLessons = [
   'ondes-mecaniques',
   'cinetique-chimique',
   'equilibres-chimiques',
+  'energie-mecanique',
   // Ajouter d'autres IDs de leçons avec animations ici
 ] as const
 
