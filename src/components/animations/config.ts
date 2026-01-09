@@ -12,6 +12,7 @@ export const animatedLessons = [
   'cinetique-chimique',
   'equilibres-chimiques',
   'energie-mecanique',
+  'spectroscopie-ir',
   // Ajouter d'autres IDs de leçons avec animations ici
 ] as const
 
