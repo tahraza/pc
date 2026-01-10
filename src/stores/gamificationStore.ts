@@ -8,7 +8,7 @@ export interface Badge {
   name: string
   description: string
   icon: string
-  category: 'lessons' | 'exercises' | 'quizzes' | 'streaks' | 'special'
+  category: 'lessons' | 'exercises' | 'quizzes' | 'streaks' | 'special' | 'random'
   requirement: number
   unlockedAt?: Date
 }
@@ -26,6 +26,7 @@ interface DailyActivity {
   lessonsCompleted: number
   exercisesCompleted: number
   quizzesCompleted: number
+  randomExercisesCompleted: number
   pointsEarned: number
 }
 
@@ -60,6 +61,7 @@ interface GamificationState {
   totalExercisesCompleted: number
   totalQuizzesCompleted: number
   totalCorrectAnswers: number
+  totalRandomExercisesCompleted: number
 
   // Migration
   migrationVersion: number
@@ -68,6 +70,7 @@ interface GamificationState {
   addPoints: (points: number, reason: string) => void
   recordLessonCompleted: (lessonId: string) => void
   recordExerciseCompleted: (exerciseId: string, isCorrect: boolean) => void
+  recordRandomExerciseCompleted: () => void
   recordQuizCompleted: (quizId: string, score: number, total: number, bonusPoints?: number) => void
   checkAndUnlockBadges: () => Badge[]
   updateStreak: () => void
@@ -118,6 +121,13 @@ const BADGES: Badge[] = [
   { id: 'points-500', name: 'Demi-millier', description: 'Atteindre 500 points', icon: '💎', category: 'special', requirement: 500 },
   { id: 'points-1000', name: 'Millionnaire', description: 'Atteindre 1000 points', icon: '💰', category: 'special', requirement: 1000 },
   { id: 'points-5000', name: 'Légende', description: 'Atteindre 5000 points', icon: '🏅', category: 'special', requirement: 5000 },
+
+  // Random exercise badges
+  { id: 'random-1', name: 'Découvreur', description: 'Compléter votre premier exercice aléatoire', icon: '🎲', category: 'random', requirement: 1 },
+  { id: 'random-10', name: 'Explorateur', description: 'Compléter 10 exercices aléatoires', icon: '🔀', category: 'random', requirement: 10 },
+  { id: 'random-25', name: 'Aventurier', description: 'Compléter 25 exercices aléatoires', icon: '🎰', category: 'random', requirement: 25 },
+  { id: 'random-50', name: 'Maître du Hasard', description: 'Compléter 50 exercices aléatoires', icon: '🎯', category: 'random', requirement: 50 },
+  { id: 'random-100', name: 'Infatigable', description: 'Compléter 100 exercices aléatoires', icon: '♾️', category: 'random', requirement: 100 },
 ]
 
 // XP required for each level (exponential growth)
@@ -142,6 +152,7 @@ export const useGamificationStore = create<GamificationState>()(
       totalExercisesCompleted: 0,
       totalQuizzesCompleted: 0,
       totalCorrectAnswers: 0,
+      totalRandomExercisesCompleted: 0,
       migrationVersion: 0,
 
       addPoints: (points, reason) => {
@@ -167,7 +178,7 @@ export const useGamificationStore = create<GamificationState>()(
           set((state) => ({
             dailyActivities: [
               ...state.dailyActivities,
-              { date: today, lessonsCompleted: 0, exercisesCompleted: 0, quizzesCompleted: 0, pointsEarned: points }
+              { date: today, lessonsCompleted: 0, exercisesCompleted: 0, quizzesCompleted: 0, randomExercisesCompleted: 0, pointsEarned: points }
             ]
           }))
         }
@@ -236,6 +247,32 @@ export const useGamificationStore = create<GamificationState>()(
         if (isCorrect) {
           useChallengesStore.getState().updateChallengeProgress('exercises', 1)
         }
+
+        get().checkAndUnlockBadges()
+      },
+
+      recordRandomExerciseCompleted: () => {
+        const today = getTodayString()
+
+        set((state) => ({
+          totalRandomExercisesCompleted: state.totalRandomExercisesCompleted + 1
+        }))
+
+        get().updateStreak()
+
+        // Update daily activity
+        const state = get()
+        const todayActivity = state.dailyActivities.find(a => a.date === today)
+        if (todayActivity) {
+          set((state) => ({
+            dailyActivities: state.dailyActivities.map(a =>
+              a.date === today ? { ...a, randomExercisesCompleted: (a.randomExercisesCompleted || 0) + 1 } : a
+            )
+          }))
+        }
+
+        // Update challenges
+        useChallengesStore.getState().updateChallengeProgress('exercises', 1)
 
         get().checkAndUnlockBadges()
       },
@@ -363,6 +400,9 @@ export const useGamificationStore = create<GamificationState>()(
                 const hour = new Date().getHours()
                 shouldUnlock = hour >= 22
               }
+              break
+            case 'random':
+              shouldUnlock = state.totalRandomExercisesCompleted >= badge.requirement
               break
           }
 

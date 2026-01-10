@@ -62,6 +62,7 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
   const [solutionWasViewed, setSolutionWasViewed] = useState(false)
 
   const addPoints = useGamificationStore(state => state.addPoints)
+  const recordRandomExerciseCompleted = useGamificationStore(state => state.recordRandomExerciseCompleted)
 
   // Générer un exercice au montage
   useEffect(() => {
@@ -109,6 +110,7 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
     )
 
     addPoints(points, `Exercice aléatoire: ${exercise.title}`)
+    recordRandomExerciseCompleted()
     setPointsEarned(points)
 
     showRewardNotification({
