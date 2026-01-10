@@ -622,7 +622,7 @@ export default function QCMPage({ params }: PageProps) {
             {/* Action buttons */}
             <div className="mt-8 flex flex-col gap-3">
               <Link
-                href={`/lecons?id=${quiz.lessonId}`}
+                href={`/lecons/${quiz.track || 'physique'}/${quiz.lessonId}`}
                 className="btn-primary flex items-center justify-center gap-2"
               >
                 <BookOpen className="h-5 w-5" />

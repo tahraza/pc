@@ -18,6 +18,7 @@ import {
 import { cn } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
 import { useChallengesStore } from '@/stores/challengesStore'
+import MathText from '@/components/MathText'
 import type { Flashcard, FlashcardResponse } from '@/types'
 
 // Fisher-Yates shuffle
@@ -263,9 +264,9 @@ export default function FlashcardsClient() {
                     {currentFlashcard.category}
                   </span>
                 </div>
-                <p className="text-lg font-medium text-slate-900 dark:text-slate-100">
-                  {currentFlashcard.front}
-                </p>
+                <div className="text-lg font-medium text-slate-900 dark:text-slate-100">
+                  <MathText text={currentFlashcard.front} />
+                </div>
                 <p className="mt-4 text-sm text-slate-400 dark:text-slate-500">
                   Cliquez ou appuyez sur Espace pour retourner
                 </p>
@@ -273,9 +274,9 @@ export default function FlashcardsClient() {
 
               {/* Back */}
               <div className="flashcard-back card flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-purple-50 to-white dark:from-purple-900/30 dark:to-slate-800">
-                <p className="text-lg text-slate-900 dark:text-slate-100">
-                  {currentFlashcard.back}
-                </p>
+                <div className="text-lg text-slate-900 dark:text-slate-100">
+                  <MathText text={currentFlashcard.back} />
+                </div>
               </div>
             </div>
           </div>

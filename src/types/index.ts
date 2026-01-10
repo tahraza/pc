@@ -78,6 +78,7 @@ export interface Quiz {
   description: string
   questions: QuizQuestion[]
   passingScore: number // pourcentage minimum pour valider
+  track?: Track // Track de la leçon associée (ajouté par l'API)
 }
 
 export interface QuizAttempt {

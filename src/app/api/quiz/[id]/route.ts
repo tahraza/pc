@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getQuizById } from '@/lib/content'
+import { getQuizById, getLessonById } from '@/lib/content'
 
 export async function GET(
   request: NextRequest,
@@ -11,5 +11,9 @@ export async function GET(
     return NextResponse.json({ error: 'Quiz not found' }, { status: 404 })
   }
 
-  return NextResponse.json(quiz)
+  // Get the lesson to include the track for proper URL construction
+  const lesson = getLessonById(quiz.lessonId)
+  const track = lesson?.track || 'physique'
+
+  return NextResponse.json({ ...quiz, track })
 }
