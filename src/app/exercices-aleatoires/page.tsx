@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Entraînement infini avec des exercices générés aléatoirement. Les valeurs changent à chaque fois pour maîtriser les méthodes.',
 }
 
-export default function ExercicesAleatoiresPage() {
-  return <ExercicesAleatoiresClient />
+interface PageProps {
+  searchParams: { lesson?: string }
+}
+
+export default function ExercicesAleatoiresPage({ searchParams }: PageProps) {
+  return <ExercicesAleatoiresClient initialLesson={searchParams.lesson} />
 }

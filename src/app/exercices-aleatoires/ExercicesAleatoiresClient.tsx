@@ -47,12 +47,16 @@ const trackColors: Record<string, string> = {
   'equilibres-chimiques': 'bg-teal-600',
 }
 
-export default function ExercicesAleatoiresClient() {
+interface ExercicesAleatoiresClientProps {
+  initialLesson?: string
+}
+
+export default function ExercicesAleatoiresClient({ initialLesson }: ExercicesAleatoiresClientProps) {
   const [templates, setTemplates] = useState<RandomExerciseTemplate[]>([])
-  const [selectedLesson, setSelectedLesson] = useState<string | null>(null)
+  const [selectedLesson, setSelectedLesson] = useState<string | null>(initialLesson || null)
   const [selectedTemplate, setSelectedTemplate] = useState<RandomExerciseTemplate | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showFilters, setShowFilters] = useState(false)
+  const [showFilters, setShowFilters] = useState(!!initialLesson)
   const [completedCount, setCompletedCount] = useState(0)
 
   // Charger les templates

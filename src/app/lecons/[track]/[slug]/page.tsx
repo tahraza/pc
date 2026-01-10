@@ -11,6 +11,7 @@ import {
   Brain,
   ClipboardList,
   ChevronRight,
+  Shuffle,
 } from 'lucide-react'
 import { getLessonBySlug, getAllLessons, getExercisesByLesson, getFlashcardsByLesson, getPreQuiz, getPostQuiz } from '@/lib/content'
 import { getTrackLabel, getTrackColor, getDifficultyLabel, getDifficultyColor, formatDuration } from '@/lib/utils'
@@ -245,6 +246,23 @@ export default function LessonPage({ params }: PageProps) {
                 )}
               </div>
             )}
+
+            {/* Random exercises */}
+            <div className="card">
+              <h3 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-100">
+                <Shuffle className="h-5 w-5 text-purple-600" />
+                Exercices aléatoires
+              </h3>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Entraîne-toi avec des exercices générés aléatoirement sur ce chapitre.
+              </p>
+              <Link
+                href={`/exercices-aleatoires?lesson=${lesson.id}`}
+                className="btn-secondary mt-4 w-full text-center"
+              >
+                S'entraîner
+              </Link>
+            </div>
 
             {/* Related flashcards */}
             {flashcards.length > 0 && (
