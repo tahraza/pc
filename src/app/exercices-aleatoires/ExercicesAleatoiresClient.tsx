@@ -50,14 +50,22 @@ const trackColors: Record<string, string> = {
 
 export default function ExercicesAleatoiresClient() {
   const searchParams = useSearchParams()
-  const initialLesson = searchParams.get('lesson')
+  const lessonParam = searchParams.get('lesson')
 
   const [templates, setTemplates] = useState<RandomExerciseTemplate[]>([])
-  const [selectedLesson, setSelectedLesson] = useState<string | null>(initialLesson)
+  const [selectedLesson, setSelectedLesson] = useState<string | null>(null)
   const [selectedTemplate, setSelectedTemplate] = useState<RandomExerciseTemplate | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showFilters, setShowFilters] = useState(!!initialLesson)
+  const [showFilters, setShowFilters] = useState(false)
   const [completedCount, setCompletedCount] = useState(0)
+
+  // Synchroniser le filtre avec le paramètre URL
+  useEffect(() => {
+    if (lessonParam) {
+      setSelectedLesson(lessonParam)
+      setShowFilters(true)
+    }
+  }, [lessonParam])
 
   // Charger les templates
   useEffect(() => {
