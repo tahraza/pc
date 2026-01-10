@@ -7,10 +7,9 @@ export const metadata: Metadata = {
 }
 
 interface PageProps {
-  searchParams: Promise<{ lesson?: string }>
+  searchParams: { lesson?: string }
 }
 
-export default async function ExercicesAleatoiresPage({ searchParams }: PageProps) {
-  const params = await searchParams
-  return <ExercicesAleatoiresClient initialLesson={params.lesson || null} />
+export default function ExercicesAleatoiresPage({ searchParams }: PageProps) {
+  return <ExercicesAleatoiresClient initialLesson={searchParams.lesson || null} />
 }
