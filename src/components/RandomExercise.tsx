@@ -3,8 +3,48 @@
 import React, { useState, useEffect } from 'react'
 import { RandomExerciseTemplate, GeneratedExercise } from '@/types'
 import { generateExercise } from '@/lib/random-exercise-generator'
-import { RefreshCw, Eye, EyeOff, Lightbulb, CheckCircle } from 'lucide-react'
+import { RefreshCw, Eye, EyeOff, Lightbulb, CheckCircle, Star } from 'lucide-react'
 import MathText from './MathText'
+import { useGamificationStore } from '@/stores/gamificationStore'
+import { showRewardNotification } from './RewardNotification'
+
+// Points de base selon la difficulté
+const BASE_POINTS: Record<number, number> = {
+  1: 10,
+  2: 15,
+  3: 25,
+  4: 35,
+  5: 50
+}
+
+// Calcul des points gagnés
+function calculatePoints(
+  difficulty: number,
+  hintsUsed: number,
+  totalHints: number,
+  solutionViewed: boolean,
+  solvedWithoutHelp: boolean
+): number {
+  let points = BASE_POINTS[difficulty] || 20
+
+  // Bonus si résolu sans voir la solution
+  if (solvedWithoutHelp) {
+    points += 10
+  }
+
+  // Malus si solution vue
+  if (solutionViewed) {
+    points = Math.floor(points * 0.5)
+  }
+
+  // Malus progressif pour les indices utilisés
+  if (hintsUsed > 0 && totalHints > 0) {
+    const hintPenalty = (hintsUsed / totalHints) * 0.3
+    points = Math.floor(points * (1 - hintPenalty))
+  }
+
+  return Math.max(points, 5) // Minimum 5 points
+}
 
 interface RandomExerciseProps {
   template: RandomExerciseTemplate
@@ -18,6 +58,10 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
   const [showSolution, setShowSolution] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
   const [isCompleted, setIsCompleted] = useState(false)
+  const [pointsEarned, setPointsEarned] = useState(0)
+  const [solutionWasViewed, setSolutionWasViewed] = useState(false)
+
+  const addPoints = useGamificationStore(state => state.addPoints)
 
   // Générer un exercice au montage
   useEffect(() => {
@@ -31,6 +75,8 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
     setShowSolution(false)
     setCurrentStep(0)
     setIsCompleted(false)
+    setPointsEarned(0)
+    setSolutionWasViewed(false)
   }
 
   const handleRegenerate = () => {
@@ -47,19 +93,48 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
 
   const handleShowSolution = () => {
     setShowSolution(true)
+    setSolutionWasViewed(true)
     setCurrentStep(0)
+  }
+
+  const awardPoints = (solvedWithoutHelp: boolean) => {
+    if (!exercise || isCompleted) return 0
+
+    const points = calculatePoints(
+      exercise.difficulty,
+      hintsRevealed,
+      exercise.hints.length,
+      solutionWasViewed,
+      solvedWithoutHelp
+    )
+
+    addPoints(points, `Exercice aléatoire: ${exercise.title}`)
+    setPointsEarned(points)
+
+    showRewardNotification({
+      type: 'points',
+      title: 'Exercice complété !',
+      description: solvedWithoutHelp ? 'Résolu sans aide' : 'Continue comme ça !',
+      value: points
+    })
+
+    return points
   }
 
   const handleNextStep = () => {
     if (exercise && currentStep < exercise.solutionSteps.length - 1) {
       setCurrentStep(prev => prev + 1)
     } else {
+      if (!isCompleted) {
+        awardPoints(false)
+      }
       setIsCompleted(true)
       onComplete?.()
     }
   }
 
   const handleComplete = () => {
+    awardPoints(true)
     setIsCompleted(true)
     onComplete?.()
   }
@@ -90,6 +165,12 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
             Niveau {exercise.difficulty}
           </span>
           <h3 className="font-semibold text-white">{exercise.title}</h3>
+          {!isCompleted && (
+            <span className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium bg-yellow-600/20 text-yellow-400">
+              <Star className="w-3 h-3" />
+              {BASE_POINTS[exercise.difficulty] + 10} pts max
+            </span>
+          )}
         </div>
         <button
           onClick={handleRegenerate}
@@ -216,7 +297,15 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
             {/* Réponse finale */}
             {isCompleted && (
               <div className="mt-4 p-4 bg-green-900/30 border border-green-700 rounded-lg">
-                <h5 className="font-medium text-green-400 mb-1">Réponse finale</h5>
+                <div className="flex items-center justify-between mb-2">
+                  <h5 className="font-medium text-green-400">Réponse finale</h5>
+                  {pointsEarned > 0 && (
+                    <span className="flex items-center gap-1 text-yellow-400 font-bold text-sm">
+                      <Star className="w-4 h-4" />
+                      +{pointsEarned} pts
+                    </span>
+                  )}
+                </div>
                 <div className="text-white">
                   <MathText text={exercise.finalAnswer} />
                 </div>
@@ -235,6 +324,12 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
           <div className="p-4 bg-green-900/30 border border-green-700 rounded-lg text-center">
             <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
             <p className="text-green-400 font-medium">Bravo ! Exercice complété</p>
+            {pointsEarned > 0 && (
+              <div className="flex items-center justify-center gap-2 mt-2">
+                <Star className="w-5 h-5 text-yellow-400" />
+                <span className="text-yellow-400 font-bold">+{pointsEarned} points</span>
+              </div>
+            )}
             <button
               onClick={handleRegenerate}
               className="mt-3 px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm font-medium transition-colors"
