@@ -6,9 +6,25 @@
     "difficulty": 2,
     "description": "Calculer la célérité à partir de la tension et masse linéique",
     "variables": {
-      "masse": { "type": "integer", "min": 20, "max": 100, "unit": "g" },
-      "longueur": { "type": "number", "min": 1.5, "max": 4.0, "decimals": 1, "unit": "m" },
-      "tension": { "type": "integer", "min": 30, "max": 120, "unit": "N" }
+      "masse": {
+        "type": "integer",
+        "min": 20,
+        "max": 100,
+        "unit": "g"
+      },
+      "longueur": {
+        "type": "number",
+        "min": 1.5,
+        "max": 4.0,
+        "decimals": 1,
+        "unit": "m"
+      },
+      "tension": {
+        "type": "integer",
+        "min": 30,
+        "max": 120,
+        "unit": "N"
+      }
     },
     "statement": "Une corde de longueur L = {{longueur}} m et de masse m = {{masse}} g est tendue avec une force T = {{tension}} N. Calculer la célérité v de l'onde sur cette corde.",
     "solutionSteps": [
@@ -17,21 +33,27 @@
         "title": "Conversion de la masse",
         "content": "$m = {{masse}}$ g $= {{masse_kg}}$ kg",
         "explanation": "On convertit en kg pour l'homogénéité des unités",
-        "compute": { "masse_kg": "masse / 1000" }
+        "compute": {
+          "masse_kg": "masse / 1000"
+        }
       },
       {
         "step": 2,
         "title": "Calcul de la masse linéique",
         "content": "$\\mu = \\frac{m}{L} = \\frac{{{masse_kg}}}{{{longueur}}} = {{mu}}$ kg/m",
         "explanation": "La masse linéique est la masse par unité de longueur",
-        "compute": { "mu": "masse_kg / longueur" }
+        "compute": {
+          "mu": "masse_kg / longueur"
+        }
       },
       {
         "step": 3,
         "title": "Application de la formule",
         "content": "$v = \\sqrt{\\frac{T}{\\mu}} = \\sqrt{\\frac{{{tension}}}{{{mu}}}} = {{v}}$ m/s",
         "explanation": "La célérité augmente avec la tension et diminue avec la masse linéique",
-        "compute": { "v": "Math.sqrt(tension / mu)" }
+        "compute": {
+          "v": "Math.sqrt(tension / mu)"
+        }
       }
     ],
     "finalAnswer": "$v = {{v}}$ m/s",
@@ -45,7 +67,11 @@
       "Oublier de convertir la masse en kg",
       "Confondre tension T et période T"
     ],
-    "tags": ["onde", "célérité", "corde"]
+    "tags": [
+      "onde",
+      "célérité",
+      "corde"
+    ]
   },
   {
     "id": "rand-ondes-lambda",
@@ -54,8 +80,18 @@
     "difficulty": 2,
     "description": "Calculer la longueur d'onde à partir de v et f",
     "variables": {
-      "frequence": { "type": "integer", "min": 200, "max": 1000, "unit": "Hz" },
-      "celerite": { "type": "integer", "min": 300, "max": 400, "unit": "m/s" }
+      "frequence": {
+        "type": "integer",
+        "min": 200,
+        "max": 1000,
+        "unit": "Hz"
+      },
+      "celerite": {
+        "type": "integer",
+        "min": 300,
+        "max": 400,
+        "unit": "m/s"
+      }
     },
     "statement": "Une onde sonore de fréquence f = {{frequence}} Hz se propage dans l'air à la célérité v = {{celerite}} m/s. Calculer sa longueur d'onde λ.",
     "solutionSteps": [
@@ -64,7 +100,9 @@
         "title": "Application de la relation fondamentale",
         "content": "$\\lambda = \\frac{v}{f} = \\frac{{{celerite}}}{{{frequence}}} = {{lambda}}$ m",
         "explanation": "La longueur d'onde est le rapport de la célérité sur la fréquence",
-        "compute": { "lambda": "celerite / frequence" }
+        "compute": {
+          "lambda": "celerite / frequence"
+        }
       }
     ],
     "finalAnswer": "$\\lambda = {{lambda}}$ m",
@@ -77,7 +115,11 @@
       "Inverser la formule (écrire f/v au lieu de v/f)",
       "Oublier l'unité du résultat"
     ],
-    "tags": ["onde", "longueur d'onde", "fréquence"]
+    "tags": [
+      "onde",
+      "longueur d'onde",
+      "fréquence"
+    ]
   },
   {
     "id": "rand-ondes-retard",
@@ -86,8 +128,19 @@
     "difficulty": 2,
     "description": "Calculer le retard entre deux points",
     "variables": {
-      "distance": { "type": "number", "min": 0.5, "max": 3.0, "decimals": 1, "unit": "m" },
-      "celerite": { "type": "integer", "min": 200, "max": 500, "unit": "m/s" }
+      "distance": {
+        "type": "number",
+        "min": 0.5,
+        "max": 3.0,
+        "decimals": 1,
+        "unit": "m"
+      },
+      "celerite": {
+        "type": "integer",
+        "min": 200,
+        "max": 500,
+        "unit": "m/s"
+      }
     },
     "statement": "Deux capteurs A et B sont distants de d = {{distance}} m. Une onde de célérité v = {{celerite}} m/s passe d'abord par A puis par B. Calculer le retard τ de B par rapport à A.",
     "solutionSteps": [
@@ -96,7 +149,10 @@
         "title": "Calcul du retard",
         "content": "$\\tau = \\frac{d}{v} = \\frac{{{distance}}}{{{celerite}}} = {{tau}}$ s = {{tau_ms}} ms",
         "explanation": "Le retard est le temps mis par l'onde pour parcourir la distance d",
-        "compute": { "tau": "distance / celerite", "tau_ms": "tau * 1000" }
+        "compute": {
+          "tau": "distance / celerite",
+          "tau_ms": "tau * 1000"
+        }
       }
     ],
     "finalAnswer": "$\\tau = {{tau_ms}}$ ms",
@@ -109,7 +165,11 @@
       "Inverser la formule",
       "Mauvaise conversion en millisecondes"
     ],
-    "tags": ["onde", "retard", "propagation"]
+    "tags": [
+      "onde",
+      "retard",
+      "propagation"
+    ]
   },
   {
     "id": "rand-lumiere-frequence",
@@ -118,7 +178,12 @@
     "difficulty": 2,
     "description": "Calculer la fréquence à partir de la longueur d'onde",
     "variables": {
-      "lambda_nm": { "type": "integer", "min": 400, "max": 700, "unit": "nm" }
+      "lambda_nm": {
+        "type": "integer",
+        "min": 400,
+        "max": 700,
+        "unit": "nm"
+      }
     },
     "statement": "Une radiation lumineuse a une longueur d'onde λ = {{lambda_nm}} nm dans le vide. Calculer sa fréquence f. (c = 3,00 × 10⁸ m/s)",
     "solutionSteps": [
@@ -127,14 +192,19 @@
         "title": "Conversion de λ en mètres",
         "content": "$\\lambda = {{lambda_nm}}$ nm $= {{lambda_nm}} \\times 10^{-9}$ m",
         "explanation": "1 nm = 10⁻⁹ m",
-        "compute": { "lambda_m": "lambda_nm * 1e-9" }
+        "compute": {
+          "lambda_m": "lambda_nm * 1e-9"
+        }
       },
       {
         "step": 2,
         "title": "Calcul de la fréquence",
         "content": "$f = \\frac{c}{\\lambda} = \\frac{3,00 \\times 10^8}{{{lambda_nm}} \\times 10^{-9}} = {{f_hz}}$ Hz",
         "explanation": "On utilise c = λf donc f = c/λ",
-        "compute": { "f_hz": "3e8 / lambda_m", "f_thz": "f_hz / 1e12" }
+        "compute": {
+          "f_hz": "3e8 / lambda_m",
+          "f_thz": "f_hz / 1e12"
+        }
       }
     ],
     "finalAnswer": "$f = {{f_hz}}$ Hz $\\approx {{f_thz}}$ THz",
@@ -148,7 +218,11 @@
       "Oublier de convertir nm en m",
       "Erreur sur les puissances de 10"
     ],
-    "tags": ["lumière", "fréquence", "longueur d'onde"]
+    "tags": [
+      "lumière",
+      "fréquence",
+      "longueur d'onde"
+    ]
   },
   {
     "id": "rand-diffraction-tache",
@@ -157,9 +231,26 @@
     "difficulty": 3,
     "description": "Calculer la largeur de la tache centrale",
     "variables": {
-      "lambda_nm": { "type": "integer", "min": 500, "max": 700, "unit": "nm" },
-      "a_mm": { "type": "number", "min": 0.05, "max": 0.2, "decimals": 2, "unit": "mm" },
-      "D_m": { "type": "number", "min": 1.0, "max": 3.0, "decimals": 1, "unit": "m" }
+      "lambda_nm": {
+        "type": "integer",
+        "min": 500,
+        "max": 700,
+        "unit": "nm"
+      },
+      "a_mm": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.2,
+        "decimals": 2,
+        "unit": "mm"
+      },
+      "D_m": {
+        "type": "number",
+        "min": 1.0,
+        "max": 3.0,
+        "decimals": 1,
+        "unit": "m"
+      }
     },
     "statement": "Un faisceau laser de longueur d'onde λ = {{lambda_nm}} nm traverse une fente de largeur a = {{a_mm}} mm. L'écran est placé à D = {{D_m}} m. Calculer la largeur L de la tache centrale de diffraction.",
     "solutionSteps": [
@@ -168,14 +259,20 @@
         "title": "Conversions",
         "content": "$\\lambda = {{lambda_nm}} \\times 10^{-9}$ m, $a = {{a_mm}} \\times 10^{-3}$ m",
         "explanation": "On convertit tout en mètres",
-        "compute": { "lambda_m": "lambda_nm * 1e-9", "a_m": "a_mm * 1e-3" }
+        "compute": {
+          "lambda_m": "lambda_nm * 1e-9",
+          "a_m": "a_mm * 1e-3"
+        }
       },
       {
         "step": 2,
         "title": "Calcul de la largeur",
         "content": "$L = \\frac{2 \\lambda D}{a} = \\frac{2 \\times {{lambda_m}} \\times {{D_m}}}{{{a_m}}} = {{L_m}}$ m = {{L_cm}} cm",
         "explanation": "La tache centrale a une demi-largeur θ ≈ λ/a, donc L = 2Dθ = 2Dλ/a",
-        "compute": { "L_m": "2 * lambda_m * D_m / a_m", "L_cm": "L_m * 100" }
+        "compute": {
+          "L_m": "2 * lambda_m * D_m / a_m",
+          "L_cm": "L_m * 100"
+        }
       }
     ],
     "finalAnswer": "$L = {{L_cm}}$ cm",
@@ -189,7 +286,11 @@
       "Oublier le facteur 2",
       "Erreurs de conversion des unités"
     ],
-    "tags": ["diffraction", "fente", "tache centrale"]
+    "tags": [
+      "diffraction",
+      "fente",
+      "tache centrale"
+    ]
   },
   {
     "id": "rand-interferences-interfrange",
@@ -198,9 +299,26 @@
     "difficulty": 3,
     "description": "Calculer l'interfrange",
     "variables": {
-      "lambda_nm": { "type": "integer", "min": 500, "max": 650, "unit": "nm" },
-      "a_mm": { "type": "number", "min": 0.2, "max": 0.8, "decimals": 1, "unit": "mm" },
-      "D_m": { "type": "number", "min": 1.0, "max": 2.5, "decimals": 1, "unit": "m" }
+      "lambda_nm": {
+        "type": "integer",
+        "min": 500,
+        "max": 650,
+        "unit": "nm"
+      },
+      "a_mm": {
+        "type": "number",
+        "min": 0.2,
+        "max": 0.8,
+        "decimals": 1,
+        "unit": "mm"
+      },
+      "D_m": {
+        "type": "number",
+        "min": 1.0,
+        "max": 2.5,
+        "decimals": 1,
+        "unit": "m"
+      }
     },
     "statement": "Dans une expérience des fentes d'Young, on utilise une lumière de longueur d'onde λ = {{lambda_nm}} nm. Les fentes sont espacées de a = {{a_mm}} mm et l'écran est à D = {{D_m}} m. Calculer l'interfrange i.",
     "solutionSteps": [
@@ -208,14 +326,20 @@
         "step": 1,
         "title": "Conversions",
         "content": "$\\lambda = {{lambda_nm}} \\times 10^{-9}$ m, $a = {{a_mm}} \\times 10^{-3}$ m",
-        "compute": { "lambda_m": "lambda_nm * 1e-9", "a_m": "a_mm * 1e-3" }
+        "compute": {
+          "lambda_m": "lambda_nm * 1e-9",
+          "a_m": "a_mm * 1e-3"
+        }
       },
       {
         "step": 2,
         "title": "Calcul de l'interfrange",
         "content": "$i = \\frac{\\lambda D}{a} = \\frac{{{lambda_m}} \\times {{D_m}}}{{{a_m}}} = {{i_m}}$ m = {{i_mm}} mm",
         "explanation": "L'interfrange est la distance entre deux franges brillantes consécutives",
-        "compute": { "i_m": "lambda_m * D_m / a_m", "i_mm": "i_m * 1000" }
+        "compute": {
+          "i_m": "lambda_m * D_m / a_m",
+          "i_mm": "i_m * 1000"
+        }
       }
     ],
     "finalAnswer": "$i = {{i_mm}}$ mm",
@@ -228,7 +352,11 @@
       "Confondre a (espacement fentes) et largeur des fentes",
       "Erreurs de conversion"
     ],
-    "tags": ["interférences", "Young", "interfrange"]
+    "tags": [
+      "interférences",
+      "Young",
+      "interfrange"
+    ]
   },
   {
     "id": "rand-rc-tau",
@@ -237,8 +365,19 @@
     "difficulty": 2,
     "description": "Calculer τ et le temps de charge à 95%",
     "variables": {
-      "R_kohm": { "type": "number", "min": 1.0, "max": 10.0, "decimals": 1, "unit": "kΩ" },
-      "C_uF": { "type": "integer", "min": 10, "max": 100, "unit": "µF" }
+      "R_kohm": {
+        "type": "number",
+        "min": 1.0,
+        "max": 10.0,
+        "decimals": 1,
+        "unit": "kΩ"
+      },
+      "C_uF": {
+        "type": "integer",
+        "min": 10,
+        "max": 100,
+        "unit": "µF"
+      }
     },
     "statement": "Un circuit RC est constitué d'une résistance R = {{R_kohm}} kΩ et d'un condensateur C = {{C_uF}} µF. Calculer la constante de temps τ et le temps nécessaire pour que le condensateur soit chargé à 95%.",
     "solutionSteps": [
@@ -246,21 +385,30 @@
         "step": 1,
         "title": "Conversions",
         "content": "$R = {{R_kohm}} \\times 10^3$ Ω, $C = {{C_uF}} \\times 10^{-6}$ F",
-        "compute": { "R_ohm": "R_kohm * 1000", "C_F": "C_uF * 1e-6" }
+        "compute": {
+          "R_ohm": "R_kohm * 1000",
+          "C_F": "C_uF * 1e-6"
+        }
       },
       {
         "step": 2,
         "title": "Calcul de τ",
         "content": "$\\tau = RC = {{R_ohm}} \\times {{C_F}} = {{tau}}$ s = {{tau_ms}} ms",
         "explanation": "τ est le temps caractéristique du circuit",
-        "compute": { "tau": "R_ohm * C_F", "tau_ms": "tau * 1000" }
+        "compute": {
+          "tau": "R_ohm * C_F",
+          "tau_ms": "tau * 1000"
+        }
       },
       {
         "step": 3,
         "title": "Temps à 95%",
         "content": "$t_{95\\%} = 3\\tau = 3 \\times {{tau}} = {{t95}}$ s = {{t95_ms}} ms",
         "explanation": "À t = 3τ, le condensateur est chargé à 95% (1 - e⁻³ ≈ 0,95)",
-        "compute": { "t95": "3 * tau", "t95_ms": "t95 * 1000" }
+        "compute": {
+          "t95": "3 * tau",
+          "t95_ms": "t95 * 1000"
+        }
       }
     ],
     "finalAnswer": "$\\tau = {{tau_ms}}$ ms, $t_{95\\%} = {{t95_ms}}$ ms",
@@ -273,7 +421,11 @@
       "Oublier les conversions kΩ → Ω et µF → F",
       "Confondre charge et décharge"
     ],
-    "tags": ["circuit RC", "constante de temps", "condensateur"]
+    "tags": [
+      "circuit RC",
+      "constante de temps",
+      "condensateur"
+    ]
   },
   {
     "id": "rand-rc-tension",
@@ -282,9 +434,24 @@
     "difficulty": 3,
     "description": "Calculer la tension à un instant t",
     "variables": {
-      "E": { "type": "integer", "min": 5, "max": 15, "unit": "V" },
-      "tau_ms": { "type": "integer", "min": 10, "max": 50, "unit": "ms" },
-      "t_ms": { "type": "integer", "min": 20, "max": 100, "unit": "ms" }
+      "E": {
+        "type": "integer",
+        "min": 5,
+        "max": 15,
+        "unit": "V"
+      },
+      "tau_ms": {
+        "type": "integer",
+        "min": 10,
+        "max": 50,
+        "unit": "ms"
+      },
+      "t_ms": {
+        "type": "integer",
+        "min": 20,
+        "max": 100,
+        "unit": "ms"
+      }
     },
     "statement": "Un condensateur initialement déchargé est connecté à une source de tension E = {{E}} V via une résistance. La constante de temps du circuit est τ = {{tau_ms}} ms. Calculer la tension uC aux bornes du condensateur à l'instant t = {{t_ms}} ms.",
     "solutionSteps": [
@@ -292,14 +459,19 @@
         "step": 1,
         "title": "Calcul du rapport t/τ",
         "content": "$\\frac{t}{\\tau} = \\frac{{{t_ms}}}{{{tau_ms}}} = {{ratio}}$",
-        "compute": { "ratio": "t_ms / tau_ms" }
+        "compute": {
+          "ratio": "t_ms / tau_ms"
+        }
       },
       {
         "step": 2,
         "title": "Application de la loi de charge",
         "content": "$u_C = E(1 - e^{-t/\\tau}) = {{E}} \\times (1 - e^{-{{ratio}}}) = {{E}} \\times {{facteur}} = {{uC}}$ V",
         "explanation": "Pendant la charge, uC croît exponentiellement vers E",
-        "compute": { "facteur": "1 - Math.exp(-ratio)", "uC": "E * facteur" }
+        "compute": {
+          "facteur": "1 - Math.exp(-ratio)",
+          "uC": "E * facteur"
+        }
       }
     ],
     "finalAnswer": "$u_C = {{uC}}$ V",
@@ -312,7 +484,11 @@
       "Utiliser la formule de décharge au lieu de charge",
       "Oublier le facteur (1 - ...)"
     ],
-    "tags": ["circuit RC", "charge", "exponentielle"]
+    "tags": [
+      "circuit RC",
+      "charge",
+      "exponentielle"
+    ]
   },
   {
     "id": "rand-radioactivite-N",
@@ -321,9 +497,24 @@
     "difficulty": 2,
     "description": "Calculer le nombre de noyaux restants après un temps t",
     "variables": {
-      "N0_millions": { "type": "integer", "min": 5, "max": 20, "unit": "millions" },
-      "demi_vie_jours": { "type": "integer", "min": 5, "max": 30, "unit": "jours" },
-      "t_jours": { "type": "integer", "min": 10, "max": 60, "unit": "jours" }
+      "N0_millions": {
+        "type": "integer",
+        "min": 5,
+        "max": 20,
+        "unit": "millions"
+      },
+      "demi_vie_jours": {
+        "type": "integer",
+        "min": 5,
+        "max": 30,
+        "unit": "jours"
+      },
+      "t_jours": {
+        "type": "integer",
+        "min": 10,
+        "max": 60,
+        "unit": "jours"
+      }
     },
     "statement": "Un échantillon contient initialement N₀ = {{N0_millions}} millions de noyaux radioactifs. La demi-vie est t₁/₂ = {{demi_vie_jours}} jours. Combien reste-t-il de noyaux après t = {{t_jours}} jours ?",
     "solutionSteps": [
@@ -331,14 +522,18 @@
         "step": 1,
         "title": "Calcul du nombre de demi-vies",
         "content": "$n = \\frac{t}{t_{1/2}} = \\frac{{{t_jours}}}{{{demi_vie_jours}}} = {{n_demivies}}$ demi-vies",
-        "compute": { "n_demivies": "t_jours / demi_vie_jours" }
+        "compute": {
+          "n_demivies": "t_jours / demi_vie_jours"
+        }
       },
       {
         "step": 2,
         "title": "Application de la loi de décroissance",
         "content": "$N(t) = N_0 \\times \\left(\\frac{1}{2}\\right)^n = {{N0_millions}} \\times \\left(\\frac{1}{2}\\right)^{{{n_demivies}}} = {{N_final}}$ millions",
         "explanation": "À chaque demi-vie, le nombre de noyaux est divisé par 2",
-        "compute": { "N_final": "N0_millions * Math.pow(0.5, n_demivies)" }
+        "compute": {
+          "N_final": "N0_millions * Math.pow(0.5, n_demivies)"
+        }
       }
     ],
     "finalAnswer": "$N = {{N_final}}$ millions de noyaux",
@@ -351,7 +546,11 @@
       "Confondre t et t₁/₂",
       "Oublier que c'est une division par 2 à chaque demi-vie"
     ],
-    "tags": ["radioactivité", "décroissance", "demi-vie"]
+    "tags": [
+      "radioactivité",
+      "décroissance",
+      "demi-vie"
+    ]
   },
   {
     "id": "rand-radioactivite-activite",
@@ -360,9 +559,27 @@
     "difficulty": 3,
     "description": "Calculer l'activité initiale et à un instant t",
     "variables": {
-      "N0_e18": { "type": "number", "min": 1.0, "max": 5.0, "decimals": 1, "unit": "×10¹⁸" },
-      "demi_vie_ans": { "type": "number", "min": 2.0, "max": 10.0, "decimals": 1, "unit": "ans" },
-      "t_ans": { "type": "number", "min": 5.0, "max": 20.0, "decimals": 1, "unit": "ans" }
+      "N0_e18": {
+        "type": "number",
+        "min": 1.0,
+        "max": 5.0,
+        "decimals": 1,
+        "unit": "×10¹⁸"
+      },
+      "demi_vie_ans": {
+        "type": "number",
+        "min": 2.0,
+        "max": 10.0,
+        "decimals": 1,
+        "unit": "ans"
+      },
+      "t_ans": {
+        "type": "number",
+        "min": 5.0,
+        "max": 20.0,
+        "decimals": 1,
+        "unit": "ans"
+      }
     },
     "statement": "Un échantillon contient N₀ = {{N0_e18}} × 10¹⁸ noyaux radioactifs de demi-vie t₁/₂ = {{demi_vie_ans}} ans. Calculer l'activité initiale A₀ et l'activité après t = {{t_ans}} ans.",
     "solutionSteps": [
@@ -371,19 +588,29 @@
         "title": "Calcul de la constante radioactive",
         "content": "$\\lambda = \\frac{\\ln 2}{t_{1/2}} = \\frac{0,693}{{{demi_vie_ans}} \\times 3,16 \\times 10^7} = {{lambda}}$ s⁻¹",
         "explanation": "On convertit t₁/₂ en secondes (1 an ≈ 3,16 × 10⁷ s)",
-        "compute": { "demi_vie_s": "demi_vie_ans * 3.16e7", "lambda": "0.693 / demi_vie_s" }
+        "compute": {
+          "demi_vie_s": "demi_vie_ans * 3.16e7",
+          "lambda": "0.693 / demi_vie_s"
+        }
       },
       {
         "step": 2,
         "title": "Activité initiale",
         "content": "$A_0 = \\lambda N_0 = {{lambda}} \\times {{N0_e18}} \\times 10^{18} = {{A0}}$ Bq = {{A0_GBq}} GBq",
-        "compute": { "N0": "N0_e18 * 1e18", "A0": "lambda * N0", "A0_GBq": "A0 / 1e9" }
+        "compute": {
+          "N0": "N0_e18 * 1e18",
+          "A0": "lambda * N0",
+          "A0_GBq": "A0 / 1e9"
+        }
       },
       {
         "step": 3,
         "title": "Activité à t",
         "content": "$A(t) = A_0 \\times \\left(\\frac{1}{2}\\right)^{t/t_{1/2}} = {{A0_GBq}} \\times \\left(\\frac{1}{2}\\right)^{{{t_ans}}/{{demi_vie_ans}}} = {{At_GBq}}$ GBq",
-        "compute": { "n": "t_ans / demi_vie_ans", "At_GBq": "A0_GBq * Math.pow(0.5, n)" }
+        "compute": {
+          "n": "t_ans / demi_vie_ans",
+          "At_GBq": "A0_GBq * Math.pow(0.5, n)"
+        }
       }
     ],
     "finalAnswer": "$A_0 = {{A0_GBq}}$ GBq, $A(t) = {{At_GBq}}$ GBq",
@@ -397,7 +624,11 @@
       "Oublier de convertir les années en secondes",
       "Confondre λ et t₁/₂"
     ],
-    "tags": ["radioactivité", "activité", "Becquerel"]
+    "tags": [
+      "radioactivité",
+      "activité",
+      "Becquerel"
+    ]
   },
   {
     "id": "rand-cinetique-temps",
@@ -406,8 +637,20 @@
     "difficulty": 2,
     "description": "Calculer le temps de demi-réaction",
     "variables": {
-      "C0": { "type": "number", "min": 0.05, "max": 0.2, "decimals": 2, "unit": "mol/L" },
-      "k": { "type": "number", "min": 0.01, "max": 0.1, "decimals": 2, "unit": "s⁻¹" }
+      "C0": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.2,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "k": {
+        "type": "number",
+        "min": 0.01,
+        "max": 0.1,
+        "decimals": 2,
+        "unit": "s⁻¹"
+      }
     },
     "statement": "Une réaction du premier ordre a une constante de vitesse k = {{k}} s⁻¹. La concentration initiale est C₀ = {{C0}} mol/L. Calculer le temps de demi-réaction t₁/₂.",
     "solutionSteps": [
@@ -416,7 +659,9 @@
         "title": "Formule du temps de demi-réaction (ordre 1)",
         "content": "$t_{1/2} = \\frac{\\ln 2}{k} = \\frac{0,693}{{{k}}} = {{t12}}$ s",
         "explanation": "Pour une réaction d'ordre 1, t₁/₂ ne dépend pas de C₀",
-        "compute": { "t12": "0.693 / k" }
+        "compute": {
+          "t12": "0.693 / k"
+        }
       }
     ],
     "finalAnswer": "$t_{1/2} = {{t12}}$ s",
@@ -429,7 +674,11 @@
       "Utiliser C₀ dans le calcul (inutile pour ordre 1)",
       "Confondre avec la formule de l'ordre 2"
     ],
-    "tags": ["cinétique", "ordre 1", "temps de demi-réaction"]
+    "tags": [
+      "cinétique",
+      "ordre 1",
+      "temps de demi-réaction"
+    ]
   },
   {
     "id": "rand-cinetique-concentration",
@@ -438,9 +687,26 @@
     "difficulty": 3,
     "description": "Calculer la concentration à un instant t",
     "variables": {
-      "C0": { "type": "number", "min": 0.1, "max": 0.5, "decimals": 2, "unit": "mol/L" },
-      "k": { "type": "number", "min": 0.005, "max": 0.05, "decimals": 3, "unit": "s⁻¹" },
-      "t": { "type": "integer", "min": 30, "max": 120, "unit": "s" }
+      "C0": {
+        "type": "number",
+        "min": 0.1,
+        "max": 0.5,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "k": {
+        "type": "number",
+        "min": 0.005,
+        "max": 0.05,
+        "decimals": 3,
+        "unit": "s⁻¹"
+      },
+      "t": {
+        "type": "integer",
+        "min": 30,
+        "max": 120,
+        "unit": "s"
+      }
     },
     "statement": "Une réaction du premier ordre a pour constante k = {{k}} s⁻¹. Si la concentration initiale est C₀ = {{C0}} mol/L, quelle est la concentration C après t = {{t}} s ?",
     "solutionSteps": [
@@ -448,13 +714,18 @@
         "step": 1,
         "title": "Loi de vitesse intégrée (ordre 1)",
         "content": "$C(t) = C_0 \\times e^{-kt} = {{C0}} \\times e^{-{{k}} \\times {{t}}}$",
-        "compute": { "exposant": "k * t" }
+        "compute": {
+          "exposant": "k * t"
+        }
       },
       {
         "step": 2,
         "title": "Calcul numérique",
         "content": "$C(t) = {{C0}} \\times e^{-{{exposant}}} = {{C0}} \\times {{facteur}} = {{C}}$ mol/L",
-        "compute": { "facteur": "Math.exp(-exposant)", "C": "C0 * facteur" }
+        "compute": {
+          "facteur": "Math.exp(-exposant)",
+          "C": "C0 * facteur"
+        }
       }
     ],
     "finalAnswer": "$C = {{C}}$ mol/L",
@@ -467,7 +738,11 @@
       "Oublier le signe moins dans l'exponentielle",
       "Confondre avec l'ordre 0 (C = C₀ - kt)"
     ],
-    "tags": ["cinétique", "ordre 1", "concentration"]
+    "tags": [
+      "cinétique",
+      "ordre 1",
+      "concentration"
+    ]
   },
   {
     "id": "rand-ph-acide-fort",
@@ -476,7 +751,13 @@
     "difficulty": 2,
     "description": "Calculer le pH d'une solution d'acide fort",
     "variables": {
-      "C": { "type": "number", "min": 0.001, "max": 0.1, "decimals": 3, "unit": "mol/L" }
+      "C": {
+        "type": "number",
+        "min": 0.001,
+        "max": 0.1,
+        "decimals": 3,
+        "unit": "mol/L"
+      }
     },
     "statement": "Calculer le pH d'une solution d'acide chlorhydrique HCl de concentration C = {{C}} mol/L.",
     "solutionSteps": [
@@ -491,7 +772,9 @@
         "step": 2,
         "title": "Calcul du pH",
         "content": "$pH = -\\log[H_3O^+] = -\\log({{C}}) = {{pH}}$",
-        "compute": { "pH": "-Math.log10(C)" }
+        "compute": {
+          "pH": "-Math.log10(C)"
+        }
       }
     ],
     "finalAnswer": "$pH = {{pH}}$",
@@ -505,7 +788,11 @@
       "Oublier que l'acide fort est totalement dissocié",
       "Confondre avec la formule d'un acide faible"
     ],
-    "tags": ["pH", "acide fort", "HCl"]
+    "tags": [
+      "pH",
+      "acide fort",
+      "HCl"
+    ]
   },
   {
     "id": "rand-ph-acide-faible",
@@ -514,8 +801,20 @@
     "difficulty": 3,
     "description": "Calculer le pH d'une solution d'acide faible",
     "variables": {
-      "C": { "type": "number", "min": 0.01, "max": 0.1, "decimals": 2, "unit": "mol/L" },
-      "pKa": { "type": "number", "min": 3.5, "max": 5.5, "decimals": 1, "unit": "" }
+      "C": {
+        "type": "number",
+        "min": 0.01,
+        "max": 0.1,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "pKa": {
+        "type": "number",
+        "min": 3.5,
+        "max": 5.5,
+        "decimals": 1,
+        "unit": ""
+      }
     },
     "statement": "Calculer le pH d'une solution d'acide éthanoïque (acide acétique) de concentration C = {{C}} mol/L. Le pKa du couple CH₃COOH/CH₃COO⁻ est {{pKa}}.",
     "solutionSteps": [
@@ -523,20 +822,26 @@
         "step": 1,
         "title": "Calcul de Ka",
         "content": "$K_a = 10^{-pK_a} = 10^{-{{pKa}}} = {{Ka}}$",
-        "compute": { "Ka": "Math.pow(10, -pKa)" }
+        "compute": {
+          "Ka": "Math.pow(10, -pKa)"
+        }
       },
       {
         "step": 2,
         "title": "Approximation acide faible",
         "content": "$[H_3O^+] \\approx \\sqrt{K_a \\times C} = \\sqrt{{{Ka}} \\times {{C}}} = {{H3O}}$ mol/L",
         "explanation": "Valable si C >> Ka (acide faiblement dissocié)",
-        "compute": { "H3O": "Math.sqrt(Ka * C)" }
+        "compute": {
+          "H3O": "Math.sqrt(Ka * C)"
+        }
       },
       {
         "step": 3,
         "title": "Calcul du pH",
         "content": "$pH = -\\log[H_3O^+] = -\\log({{H3O}}) = {{pH}}$",
-        "compute": { "pH": "-Math.log10(H3O)" }
+        "compute": {
+          "pH": "-Math.log10(H3O)"
+        }
       }
     ],
     "finalAnswer": "$pH = {{pH}}$",
@@ -550,7 +855,11 @@
       "Utiliser [H₃O⁺] = C (formule de l'acide fort)",
       "Oublier la racine carrée"
     ],
-    "tags": ["pH", "acide faible", "pKa"]
+    "tags": [
+      "pH",
+      "acide faible",
+      "pKa"
+    ]
   },
   {
     "id": "rand-titrage-veq",
@@ -559,9 +868,27 @@
     "difficulty": 2,
     "description": "Calculer le volume équivalent",
     "variables": {
-      "Ca": { "type": "number", "min": 0.05, "max": 0.2, "decimals": 2, "unit": "mol/L" },
-      "Va": { "type": "number", "min": 10.0, "max": 25.0, "decimals": 1, "unit": "mL" },
-      "Cb": { "type": "number", "min": 0.05, "max": 0.15, "decimals": 2, "unit": "mol/L" }
+      "Ca": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.2,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "Va": {
+        "type": "number",
+        "min": 10.0,
+        "max": 25.0,
+        "decimals": 1,
+        "unit": "mL"
+      },
+      "Cb": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.15,
+        "decimals": 2,
+        "unit": "mol/L"
+      }
     },
     "statement": "On titre un volume Va = {{Va}} mL d'acide chlorhydrique de concentration Ca = {{Ca}} mol/L par une solution de soude de concentration Cb = {{Cb}} mol/L. Déterminer le volume équivalent Véq.",
     "solutionSteps": [
@@ -569,7 +896,9 @@
         "step": 1,
         "title": "Quantité de matière d'acide",
         "content": "$n_a = C_a \\times V_a = {{Ca}} \\times {{Va}} \\times 10^{-3} = {{na}}$ mol",
-        "compute": { "na": "Ca * Va / 1000" }
+        "compute": {
+          "na": "Ca * Va / 1000"
+        }
       },
       {
         "step": 2,
@@ -581,7 +910,9 @@
         "step": 3,
         "title": "Volume équivalent",
         "content": "$V_{éq} = \\frac{C_a V_a}{C_b} = \\frac{{{Ca}} \\times {{Va}}}{{{Cb}}} = {{Veq}}$ mL",
-        "compute": { "Veq": "Ca * Va / Cb" }
+        "compute": {
+          "Veq": "Ca * Va / Cb"
+        }
       }
     ],
     "finalAnswer": "$V_{éq} = {{Veq}}$ mL",
@@ -594,7 +925,11 @@
       "Inverser Ca et Cb",
       "Oublier que c'est un rapport de concentrations"
     ],
-    "tags": ["titrage", "équivalence", "acide-base"]
+    "tags": [
+      "titrage",
+      "équivalence",
+      "acide-base"
+    ]
   },
   {
     "id": "rand-titrage-concentration",
@@ -603,9 +938,27 @@
     "difficulty": 2,
     "description": "Déterminer la concentration d'un acide par titrage",
     "variables": {
-      "Va": { "type": "number", "min": 10.0, "max": 20.0, "decimals": 1, "unit": "mL" },
-      "Cb": { "type": "number", "min": 0.05, "max": 0.15, "decimals": 2, "unit": "mol/L" },
-      "Veq": { "type": "number", "min": 12.0, "max": 25.0, "decimals": 1, "unit": "mL" }
+      "Va": {
+        "type": "number",
+        "min": 10.0,
+        "max": 20.0,
+        "decimals": 1,
+        "unit": "mL"
+      },
+      "Cb": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.15,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "Veq": {
+        "type": "number",
+        "min": 12.0,
+        "max": 25.0,
+        "decimals": 1,
+        "unit": "mL"
+      }
     },
     "statement": "On titre Va = {{Va}} mL d'une solution d'acide chlorhydrique de concentration inconnue Ca par une solution de soude de concentration Cb = {{Cb}} mol/L. L'équivalence est atteinte pour Véq = {{Veq}} mL. Déterminer Ca.",
     "solutionSteps": [
@@ -619,7 +972,9 @@
         "step": 2,
         "title": "Calcul de Ca",
         "content": "$C_a = \\frac{C_b V_{éq}}{V_a} = \\frac{{{Cb}} \\times {{Veq}}}{{{Va}}} = {{Ca}}$ mol/L",
-        "compute": { "Ca": "Cb * Veq / Va" }
+        "compute": {
+          "Ca": "Cb * Veq / Va"
+        }
       }
     ],
     "finalAnswer": "$C_a = {{Ca}}$ mol/L",
@@ -632,7 +987,11 @@
       "Inverser Va et Véq",
       "Oublier que le volume équivalent est celui de la base versée"
     ],
-    "tags": ["titrage", "concentration", "dosage"]
+    "tags": [
+      "titrage",
+      "concentration",
+      "dosage"
+    ]
   },
   {
     "id": "rand-thermochimie-enthalpie",
@@ -641,12 +1000,42 @@
     "difficulty": 3,
     "description": "Calculer l'enthalpie de réaction à partir des enthalpies de formation",
     "variables": {
-      "Hf_produit1": { "type": "integer", "min": -400, "max": -100, "unit": "kJ/mol" },
-      "Hf_produit2": { "type": "integer", "min": -300, "max": -50, "unit": "kJ/mol" },
-      "Hf_reactif1": { "type": "integer", "min": -200, "max": 0, "unit": "kJ/mol" },
-      "coef_p1": { "type": "integer", "min": 1, "max": 2, "unit": "" },
-      "coef_p2": { "type": "integer", "min": 1, "max": 3, "unit": "" },
-      "coef_r1": { "type": "integer", "min": 1, "max": 2, "unit": "" }
+      "Hf_produit1": {
+        "type": "integer",
+        "min": -400,
+        "max": -100,
+        "unit": "kJ/mol"
+      },
+      "Hf_produit2": {
+        "type": "integer",
+        "min": -300,
+        "max": -50,
+        "unit": "kJ/mol"
+      },
+      "Hf_reactif1": {
+        "type": "integer",
+        "min": -200,
+        "max": 0,
+        "unit": "kJ/mol"
+      },
+      "coef_p1": {
+        "type": "integer",
+        "min": 1,
+        "max": 2,
+        "unit": ""
+      },
+      "coef_p2": {
+        "type": "integer",
+        "min": 1,
+        "max": 3,
+        "unit": ""
+      },
+      "coef_r1": {
+        "type": "integer",
+        "min": 1,
+        "max": 2,
+        "unit": ""
+      }
     },
     "statement": "Calculer l'enthalpie standard de réaction ΔrH° sachant que:\n- ΔfH°(produit 1) = {{Hf_produit1}} kJ/mol (coefficient {{coef_p1}})\n- ΔfH°(produit 2) = {{Hf_produit2}} kJ/mol (coefficient {{coef_p2}})\n- ΔfH°(réactif 1) = {{Hf_reactif1}} kJ/mol (coefficient {{coef_r1}})\n- Le réactif 2 est un corps simple (ΔfH° = 0)",
     "solutionSteps": [
@@ -660,13 +1049,18 @@
         "step": 2,
         "title": "Application numérique",
         "content": "$\\Delta_r H° = [{{coef_p1}} \\times ({{Hf_produit1}}) + {{coef_p2}} \\times ({{Hf_produit2}})] - [{{coef_r1}} \\times ({{Hf_reactif1}}) + 0]$",
-        "compute": { "somme_produits": "coef_p1 * Hf_produit1 + coef_p2 * Hf_produit2", "somme_reactifs": "coef_r1 * Hf_reactif1" }
+        "compute": {
+          "somme_produits": "coef_p1 * Hf_produit1 + coef_p2 * Hf_produit2",
+          "somme_reactifs": "coef_r1 * Hf_reactif1"
+        }
       },
       {
         "step": 3,
         "title": "Résultat",
         "content": "$\\Delta_r H° = {{somme_produits}} - ({{somme_reactifs}}) = {{DrH}}$ kJ/mol",
-        "compute": { "DrH": "somme_produits - somme_reactifs" }
+        "compute": {
+          "DrH": "somme_produits - somme_reactifs"
+        }
       }
     ],
     "finalAnswer": "$\\Delta_rH° = {{DrH}}$ kJ/mol",
@@ -681,7 +1075,11 @@
       "Inverser produits et réactifs",
       "Oublier que ΔfH°(corps simple) = 0"
     ],
-    "tags": ["enthalpie", "Hess", "thermochimie"]
+    "tags": [
+      "enthalpie",
+      "Hess",
+      "thermochimie"
+    ]
   },
   {
     "id": "rand-energie-cinetique",
@@ -690,8 +1088,20 @@
     "difficulty": 2,
     "description": "Calculer l'énergie cinétique d'un objet",
     "variables": {
-      "m": { "type": "number", "min": 0.5, "max": 5.0, "decimals": 1, "unit": "kg" },
-      "v": { "type": "number", "min": 2.0, "max": 15.0, "decimals": 1, "unit": "m/s" }
+      "m": {
+        "type": "number",
+        "min": 0.5,
+        "max": 5.0,
+        "decimals": 1,
+        "unit": "kg"
+      },
+      "v": {
+        "type": "number",
+        "min": 2.0,
+        "max": 15.0,
+        "decimals": 1,
+        "unit": "m/s"
+      }
     },
     "statement": "Un objet de masse m = {{m}} kg se déplace à la vitesse v = {{v}} m/s. Calculer son énergie cinétique Ec.",
     "solutionSteps": [
@@ -699,7 +1109,10 @@
         "step": 1,
         "title": "Application de la formule",
         "content": "$E_c = \\frac{1}{2} m v^2 = \\frac{1}{2} \\times {{m}} \\times {{v}}^2 = \\frac{1}{2} \\times {{m}} \\times {{v2}} = {{Ec}}$ J",
-        "compute": { "v2": "v * v", "Ec": "0.5 * m * v2" }
+        "compute": {
+          "v2": "v * v",
+          "Ec": "0.5 * m * v2"
+        }
       }
     ],
     "finalAnswer": "$E_c = {{Ec}}$ J",
@@ -712,7 +1125,11 @@
       "Oublier le facteur ½",
       "Oublier de mettre v au carré"
     ],
-    "tags": ["énergie", "cinétique", "mécanique"]
+    "tags": [
+      "énergie",
+      "cinétique",
+      "mécanique"
+    ]
   },
   {
     "id": "rand-energie-potentielle",
@@ -721,8 +1138,20 @@
     "difficulty": 2,
     "description": "Calculer l'énergie potentielle de pesanteur",
     "variables": {
-      "m": { "type": "number", "min": 0.2, "max": 3.0, "decimals": 1, "unit": "kg" },
-      "h": { "type": "number", "min": 1.0, "max": 10.0, "decimals": 1, "unit": "m" }
+      "m": {
+        "type": "number",
+        "min": 0.2,
+        "max": 3.0,
+        "decimals": 1,
+        "unit": "kg"
+      },
+      "h": {
+        "type": "number",
+        "min": 1.0,
+        "max": 10.0,
+        "decimals": 1,
+        "unit": "m"
+      }
     },
     "statement": "Un objet de masse m = {{m}} kg est situé à une hauteur h = {{h}} m au-dessus du sol (référence). Calculer son énergie potentielle de pesanteur Ep. (g = 10 m/s²)",
     "solutionSteps": [
@@ -730,7 +1159,9 @@
         "step": 1,
         "title": "Application de la formule",
         "content": "$E_p = mgh = {{m}} \\times 10 \\times {{h}} = {{Ep}}$ J",
-        "compute": { "Ep": "m * 10 * h" }
+        "compute": {
+          "Ep": "m * 10 * h"
+        }
       }
     ],
     "finalAnswer": "$E_p = {{Ep}}$ J",
@@ -744,7 +1175,11 @@
       "Oublier de définir la référence",
       "Utiliser une mauvaise valeur de g"
     ],
-    "tags": ["énergie", "potentielle", "pesanteur"]
+    "tags": [
+      "énergie",
+      "potentielle",
+      "pesanteur"
+    ]
   },
   {
     "id": "rand-energie-conservation",
@@ -753,9 +1188,27 @@
     "difficulty": 3,
     "description": "Calculer la vitesse par conservation de l'énergie",
     "variables": {
-      "m": { "type": "number", "min": 0.5, "max": 2.0, "decimals": 1, "unit": "kg" },
-      "h": { "type": "number", "min": 2.0, "max": 8.0, "decimals": 1, "unit": "m" },
-      "v0": { "type": "number", "min": 0, "max": 3.0, "decimals": 1, "unit": "m/s" }
+      "m": {
+        "type": "number",
+        "min": 0.5,
+        "max": 2.0,
+        "decimals": 1,
+        "unit": "kg"
+      },
+      "h": {
+        "type": "number",
+        "min": 2.0,
+        "max": 8.0,
+        "decimals": 1,
+        "unit": "m"
+      },
+      "v0": {
+        "type": "number",
+        "min": 0,
+        "max": 3.0,
+        "decimals": 1,
+        "unit": "m/s"
+      }
     },
     "statement": "Une bille de masse m = {{m}} kg est lâchée d'une hauteur h = {{h}} m avec une vitesse initiale v₀ = {{v0}} m/s. En négligeant les frottements, calculer sa vitesse v au sol. (g = 10 m/s²)",
     "solutionSteps": [
@@ -769,13 +1222,19 @@
         "step": 2,
         "title": "Simplification",
         "content": "$v^2 = v_0^2 + 2gh = {{v0}}^2 + 2 \\times 10 \\times {{h}} = {{v02}} + {{deux_gh}} = {{v2}}$",
-        "compute": { "v02": "v0 * v0", "deux_gh": "2 * 10 * h", "v2": "v02 + deux_gh" }
+        "compute": {
+          "v02": "v0 * v0",
+          "deux_gh": "2 * 10 * h",
+          "v2": "v02 + deux_gh"
+        }
       },
       {
         "step": 3,
         "title": "Vitesse finale",
         "content": "$v = \\sqrt{{{v2}}} = {{v}}$ m/s",
-        "compute": { "v": "Math.sqrt(v2)" }
+        "compute": {
+          "v": "Math.sqrt(v2)"
+        }
       }
     ],
     "finalAnswer": "$v = {{v}}$ m/s",
@@ -789,7 +1248,11 @@
       "Oublier l'énergie cinétique initiale si v₀ ≠ 0",
       "Oublier la racine carrée à la fin"
     ],
-    "tags": ["énergie", "conservation", "chute"]
+    "tags": [
+      "énergie",
+      "conservation",
+      "chute"
+    ]
   },
   {
     "id": "rand-mouvement-circulaire-acceleration",
@@ -798,8 +1261,20 @@
     "difficulty": 2,
     "description": "Calculer l'accélération centripète",
     "variables": {
-      "v": { "type": "number", "min": 5.0, "max": 20.0, "decimals": 1, "unit": "m/s" },
-      "R": { "type": "number", "min": 2.0, "max": 10.0, "decimals": 1, "unit": "m" }
+      "v": {
+        "type": "number",
+        "min": 5.0,
+        "max": 20.0,
+        "decimals": 1,
+        "unit": "m/s"
+      },
+      "R": {
+        "type": "number",
+        "min": 2.0,
+        "max": 10.0,
+        "decimals": 1,
+        "unit": "m"
+      }
     },
     "statement": "Un mobile décrit un cercle de rayon R = {{R}} m à la vitesse constante v = {{v}} m/s. Calculer la norme de son accélération centripète aN.",
     "solutionSteps": [
@@ -807,7 +1282,10 @@
         "step": 1,
         "title": "Formule de l'accélération centripète",
         "content": "$a_N = \\frac{v^2}{R} = \\frac{{{v}}^2}{{{R}}} = \\frac{{{v2}}}{{{R}}} = {{aN}}$ m/s²",
-        "compute": { "v2": "v * v", "aN": "v2 / R" }
+        "compute": {
+          "v2": "v * v",
+          "aN": "v2 / R"
+        }
       }
     ],
     "finalAnswer": "$a_N = {{aN}}$ m/s²",
@@ -820,7 +1298,11 @@
       "Confondre avec la vitesse angulaire ω",
       "Oublier que c'est v² et non v"
     ],
-    "tags": ["mouvement circulaire", "accélération", "centripète"]
+    "tags": [
+      "mouvement circulaire",
+      "accélération",
+      "centripète"
+    ]
   },
   {
     "id": "rand-equilibre-Qr",
@@ -829,11 +1311,41 @@
     "difficulty": 3,
     "description": "Calculer Qr et déterminer le sens d'évolution",
     "variables": {
-      "C_A": { "type": "number", "min": 0.05, "max": 0.2, "decimals": 2, "unit": "mol/L" },
-      "C_B": { "type": "number", "min": 0.05, "max": 0.2, "decimals": 2, "unit": "mol/L" },
-      "C_C": { "type": "number", "min": 0.01, "max": 0.1, "decimals": 2, "unit": "mol/L" },
-      "C_D": { "type": "number", "min": 0.01, "max": 0.1, "decimals": 2, "unit": "mol/L" },
-      "K": { "type": "number", "min": 0.1, "max": 10, "decimals": 1, "unit": "" }
+      "C_A": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.2,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "C_B": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.2,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "C_C": {
+        "type": "number",
+        "min": 0.01,
+        "max": 0.1,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "C_D": {
+        "type": "number",
+        "min": 0.01,
+        "max": 0.1,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "K": {
+        "type": "number",
+        "min": 0.1,
+        "max": 10,
+        "decimals": 1,
+        "unit": ""
+      }
     },
     "statement": "Pour la réaction A + B ⇌ C + D de constante K = {{K}}, on a initialement:\n[A] = {{C_A}} mol/L, [B] = {{C_B}} mol/L, [C] = {{C_C}} mol/L, [D] = {{C_D}} mol/L.\nCalculer Qr et déterminer le sens d'évolution.",
     "solutionSteps": [
@@ -841,19 +1353,27 @@
         "step": 1,
         "title": "Calcul du quotient de réaction",
         "content": "$Q_r = \\frac{[C][D]}{[A][B]} = \\frac{{{C_C}} \\times {{C_D}}}{{{C_A}} \\times {{C_B}}} = \\frac{{{num}}}{{{den}}} = {{Qr}}$",
-        "compute": { "num": "C_C * C_D", "den": "C_A * C_B", "Qr": "num / den" }
+        "compute": {
+          "num": "C_C * C_D",
+          "den": "C_A * C_B",
+          "Qr": "num / den"
+        }
       },
       {
         "step": 2,
         "title": "Comparaison avec K",
         "content": "$Q_r = {{Qr}}$ et $K = {{K}}$, donc $Q_r {{comparaison}} K$",
-        "compute": { "comparaison": "Qr < K ? '<' : (Qr > K ? '>' : '=')" }
+        "compute": {
+          "comparaison": "Qr < K ? '<' : (Qr > K ? '>' : '=')"
+        }
       },
       {
         "step": 3,
         "title": "Sens d'évolution",
         "content": "{{sens}}",
-        "compute": { "sens": "Qr < K ? 'Qr < K : le système évolue dans le sens direct (→) pour former plus de produits' : (Qr > K ? 'Qr > K : le système évolue dans le sens inverse (←) pour former plus de réactifs' : 'Qr = K : le système est à l\\'équilibre')" }
+        "compute": {
+          "sens": "Qr < K ? 'Qr < K : le système évolue dans le sens direct (→) pour former plus de produits' : (Qr > K ? 'Qr > K : le système évolue dans le sens inverse (←) pour former plus de réactifs' : 'Qr = K : le système est à l\\'équilibre')"
+        }
       }
     ],
     "finalAnswer": "$Q_r = {{Qr}}$, évolution {{direction}}",
@@ -866,7 +1386,11 @@
       "Inverser numérateur et dénominateur",
       "Se tromper dans le sens d'évolution"
     ],
-    "tags": ["équilibre", "quotient de réaction", "évolution"]
+    "tags": [
+      "équilibre",
+      "quotient de réaction",
+      "évolution"
+    ]
   },
   {
     "id": "rand-newton-poids",
@@ -875,7 +1399,13 @@
     "difficulty": 1,
     "description": "Calculer le poids d'un objet",
     "variables": {
-      "m": { "type": "number", "min": 0.5, "max": 10.0, "decimals": 1, "unit": "kg" }
+      "m": {
+        "type": "number",
+        "min": 0.5,
+        "max": 10.0,
+        "decimals": 1,
+        "unit": "kg"
+      }
     },
     "statement": "Un objet a une masse m = {{m}} kg. Calculer son poids P sur Terre. (g = 10 m/s²)",
     "solutionSteps": [
@@ -884,7 +1414,9 @@
         "title": "Application de la formule",
         "content": "$P = mg = {{m}} \\times 10 = {{P}}$ N",
         "explanation": "Le poids est la force gravitationnelle exercée par la Terre",
-        "compute": { "P": "m * 10" }
+        "compute": {
+          "P": "m * 10"
+        }
       }
     ],
     "finalAnswer": "$P = {{P}}$ N",
@@ -897,7 +1429,11 @@
       "Confondre masse et poids",
       "Oublier l'unité (Newton)"
     ],
-    "tags": ["poids", "masse", "Newton"]
+    "tags": [
+      "poids",
+      "masse",
+      "Newton"
+    ]
   },
   {
     "id": "rand-newton-pfd",
@@ -906,8 +1442,19 @@
     "difficulty": 2,
     "description": "Calculer l'accélération à partir des forces",
     "variables": {
-      "m": { "type": "number", "min": 1.0, "max": 5.0, "decimals": 1, "unit": "kg" },
-      "F": { "type": "integer", "min": 5, "max": 30, "unit": "N" }
+      "m": {
+        "type": "number",
+        "min": 1.0,
+        "max": 5.0,
+        "decimals": 1,
+        "unit": "kg"
+      },
+      "F": {
+        "type": "integer",
+        "min": 5,
+        "max": 30,
+        "unit": "N"
+      }
     },
     "statement": "Un objet de masse m = {{m}} kg est soumis à une force horizontale F = {{F}} N. En négligeant les frottements, calculer son accélération a.",
     "solutionSteps": [
@@ -921,7 +1468,9 @@
         "step": 2,
         "title": "Calcul de l'accélération",
         "content": "$a = \\frac{F}{m} = \\frac{{{F}}}{{{m}}} = {{a}}$ m/s²",
-        "compute": { "a": "F / m" }
+        "compute": {
+          "a": "F / m"
+        }
       }
     ],
     "finalAnswer": "$a = {{a}}$ m/s²",
@@ -934,7 +1483,11 @@
       "Inverser la formule (écrire m/F)",
       "Oublier de vérifier les unités"
     ],
-    "tags": ["PFD", "accélération", "Newton"]
+    "tags": [
+      "PFD",
+      "accélération",
+      "Newton"
+    ]
   },
   {
     "id": "rand-champ-uniforme-portee",
@@ -943,8 +1496,18 @@
     "difficulty": 3,
     "description": "Calculer la portée d'un projectile",
     "variables": {
-      "v0": { "type": "integer", "min": 10, "max": 30, "unit": "m/s" },
-      "alpha": { "type": "integer", "min": 30, "max": 60, "unit": "°" }
+      "v0": {
+        "type": "integer",
+        "min": 10,
+        "max": 30,
+        "unit": "m/s"
+      },
+      "alpha": {
+        "type": "integer",
+        "min": 30,
+        "max": 60,
+        "unit": "°"
+      }
     },
     "statement": "Un projectile est lancé avec une vitesse initiale v₀ = {{v0}} m/s et un angle α = {{alpha}}° par rapport à l'horizontale. Calculer sa portée (distance horizontale au retour au sol). (g = 10 m/s²)",
     "solutionSteps": [
@@ -958,13 +1521,20 @@
         "step": 2,
         "title": "Conversion de l'angle",
         "content": "$2\\alpha = {{deux_alpha}}°$ et $\\sin({{deux_alpha}}°) = {{sin_2alpha}}$",
-        "compute": { "deux_alpha": "2 * alpha", "alpha_rad": "alpha * 3.14159 / 180", "sin_2alpha": "Math.sin(2 * alpha_rad)" }
+        "compute": {
+          "deux_alpha": "2 * alpha",
+          "alpha_rad": "alpha * 3.14159 / 180",
+          "sin_2alpha": "Math.sin(2 * alpha_rad)"
+        }
       },
       {
         "step": 3,
         "title": "Calcul de la portée",
         "content": "$x_p = \\frac{{{v0}}^2 \\times {{sin_2alpha}}}{10} = \\frac{{{v02}} \\times {{sin_2alpha}}}{10} = {{xp}}$ m",
-        "compute": { "v02": "v0 * v0", "xp": "v02 * sin_2alpha / 10" }
+        "compute": {
+          "v02": "v0 * v0",
+          "xp": "v02 * sin_2alpha / 10"
+        }
       }
     ],
     "finalAnswer": "Portée $= {{xp}}$ m",
@@ -978,7 +1548,11 @@
       "Oublier le facteur 2 devant α",
       "Utiliser sin(α) au lieu de sin(2α)"
     ],
-    "tags": ["projectile", "portée", "trajectoire"]
+    "tags": [
+      "projectile",
+      "portée",
+      "trajectoire"
+    ]
   },
   {
     "id": "rand-champ-uniforme-hauteur",
@@ -987,8 +1561,18 @@
     "difficulty": 3,
     "description": "Calculer la hauteur maximale atteinte",
     "variables": {
-      "v0": { "type": "integer", "min": 15, "max": 35, "unit": "m/s" },
-      "alpha": { "type": "integer", "min": 30, "max": 75, "unit": "°" }
+      "v0": {
+        "type": "integer",
+        "min": 15,
+        "max": 35,
+        "unit": "m/s"
+      },
+      "alpha": {
+        "type": "integer",
+        "min": 30,
+        "max": 75,
+        "unit": "°"
+      }
     },
     "statement": "Un projectile est lancé avec une vitesse initiale v₀ = {{v0}} m/s et un angle α = {{alpha}}° par rapport à l'horizontale. Calculer la hauteur maximale atteinte. (g = 10 m/s²)",
     "solutionSteps": [
@@ -996,14 +1580,20 @@
         "step": 1,
         "title": "Composante verticale de la vitesse",
         "content": "$v_{0y} = v_0 \\sin(\\alpha) = {{v0}} \\times \\sin({{alpha}}°) = {{v0y}}$ m/s",
-        "compute": { "alpha_rad": "alpha * 3.14159 / 180", "v0y": "v0 * Math.sin(alpha_rad)" }
+        "compute": {
+          "alpha_rad": "alpha * 3.14159 / 180",
+          "v0y": "v0 * Math.sin(alpha_rad)"
+        }
       },
       {
         "step": 2,
         "title": "Hauteur maximale",
         "content": "$h_{max} = \\frac{v_{0y}^2}{2g} = \\frac{{{v0y}}^2}{2 \\times 10} = \\frac{{{v0y2}}}{20} = {{hmax}}$ m",
         "explanation": "Au sommet, la vitesse verticale s'annule",
-        "compute": { "v0y2": "v0y * v0y", "hmax": "v0y2 / 20" }
+        "compute": {
+          "v0y2": "v0y * v0y",
+          "hmax": "v0y2 / 20"
+        }
       }
     ],
     "finalAnswer": "$h_{max} = {{hmax}}$ m",
@@ -1017,7 +1607,11 @@
       "Utiliser v₀ au lieu de v₀y",
       "Oublier le facteur 2 au dénominateur"
     ],
-    "tags": ["projectile", "hauteur", "trajectoire"]
+    "tags": [
+      "projectile",
+      "hauteur",
+      "trajectoire"
+    ]
   },
   {
     "id": "rand-electromagnetisme-lorentz",
@@ -1026,9 +1620,24 @@
     "difficulty": 3,
     "description": "Calculer la force magnétique sur une particule",
     "variables": {
-      "q_nC": { "type": "integer", "min": 1, "max": 10, "unit": "nC" },
-      "v_km_s": { "type": "integer", "min": 100, "max": 500, "unit": "km/s" },
-      "B_mT": { "type": "integer", "min": 10, "max": 100, "unit": "mT" }
+      "q_nC": {
+        "type": "integer",
+        "min": 1,
+        "max": 10,
+        "unit": "nC"
+      },
+      "v_km_s": {
+        "type": "integer",
+        "min": 100,
+        "max": 500,
+        "unit": "km/s"
+      },
+      "B_mT": {
+        "type": "integer",
+        "min": 10,
+        "max": 100,
+        "unit": "mT"
+      }
     },
     "statement": "Une particule de charge q = {{q_nC}} nC se déplace à la vitesse v = {{v_km_s}} km/s perpendiculairement à un champ magnétique B = {{B_mT}} mT. Calculer la norme de la force de Lorentz.",
     "solutionSteps": [
@@ -1036,14 +1645,20 @@
         "step": 1,
         "title": "Conversions",
         "content": "$q = {{q_nC}} \\times 10^{-9}$ C, $v = {{v_km_s}} \\times 10^{3}$ m/s, $B = {{B_mT}} \\times 10^{-3}$ T",
-        "compute": { "q": "q_nC * 1e-9", "v": "v_km_s * 1e3", "B": "B_mT * 1e-3" }
+        "compute": {
+          "q": "q_nC * 1e-9",
+          "v": "v_km_s * 1e3",
+          "B": "B_mT * 1e-3"
+        }
       },
       {
         "step": 2,
         "title": "Force de Lorentz",
         "content": "$F = |q|vB\\sin(90°) = |q|vB = {{q}} \\times {{v}} \\times {{B}} = {{F}}$ N",
         "explanation": "Comme v ⊥ B, sin(90°) = 1",
-        "compute": { "F": "q * v * B" }
+        "compute": {
+          "F": "q * v * B"
+        }
       }
     ],
     "finalAnswer": "$F = {{F}}$ N",
@@ -1057,7 +1672,11 @@
       "Oublier la valeur absolue de q",
       "Erreurs de conversion (nC, km/s, mT)"
     ],
-    "tags": ["Lorentz", "force magnétique", "champ B"]
+    "tags": [
+      "Lorentz",
+      "force magnétique",
+      "champ B"
+    ]
   },
   {
     "id": "rand-electromagnetisme-rayon",
@@ -1066,9 +1685,24 @@
     "difficulty": 3,
     "description": "Calculer le rayon de la trajectoire circulaire",
     "variables": {
-      "m_me": { "type": "integer", "min": 1, "max": 5, "unit": "me" },
-      "v_Mm_s": { "type": "integer", "min": 1, "max": 10, "unit": "Mm/s" },
-      "B_mT": { "type": "integer", "min": 1, "max": 10, "unit": "mT" }
+      "m_me": {
+        "type": "integer",
+        "min": 1,
+        "max": 5,
+        "unit": "me"
+      },
+      "v_Mm_s": {
+        "type": "integer",
+        "min": 1,
+        "max": 10,
+        "unit": "Mm/s"
+      },
+      "B_mT": {
+        "type": "integer",
+        "min": 1,
+        "max": 10,
+        "unit": "mT"
+      }
     },
     "statement": "Un électron (me = 9,1 × 10⁻³¹ kg, |e| = 1,6 × 10⁻¹⁹ C) de masse {{m_me}} me se déplace à v = {{v_Mm_s}} Mm/s dans un champ magnétique B = {{B_mT}} mT. Calculer le rayon de sa trajectoire circulaire.",
     "solutionSteps": [
@@ -1076,14 +1710,22 @@
         "step": 1,
         "title": "Conversions",
         "content": "$m = {{m_me}} \\times 9,1 \\times 10^{-31}$ kg, $v = {{v_Mm_s}} \\times 10^{6}$ m/s, $B = {{B_mT}} \\times 10^{-3}$ T",
-        "compute": { "m": "m_me * 9.1e-31", "v": "v_Mm_s * 1e6", "B": "B_mT * 1e-3", "e": "1.6e-19" }
+        "compute": {
+          "m": "m_me * 9.1e-31",
+          "v": "v_Mm_s * 1e6",
+          "B": "B_mT * 1e-3",
+          "e": "1.6e-19"
+        }
       },
       {
         "step": 2,
         "title": "Rayon de courbure",
         "content": "$r = \\frac{mv}{|q|B} = \\frac{{{m}} \\times {{v}}}{1,6 \\times 10^{-19} \\times {{B}}} = {{r}}$ m = {{r_mm}} mm",
         "explanation": "Équilibre entre force de Lorentz et force centripète",
-        "compute": { "r": "m * v / (e * B)", "r_mm": "r * 1000" }
+        "compute": {
+          "r": "m * v / (e * B)",
+          "r_mm": "r * 1000"
+        }
       }
     ],
     "finalAnswer": "$r = {{r_mm}}$ mm",
@@ -1096,7 +1738,11 @@
       "Oublier les conversions d'unités",
       "Confondre m et q"
     ],
-    "tags": ["trajectoire", "rayon", "électron"]
+    "tags": [
+      "trajectoire",
+      "rayon",
+      "électron"
+    ]
   },
   {
     "id": "rand-thermo-travail",
@@ -1105,9 +1751,27 @@
     "difficulty": 2,
     "description": "Calculer le travail lors d'une transformation isobare",
     "variables": {
-      "P_bar": { "type": "number", "min": 1.0, "max": 5.0, "decimals": 1, "unit": "bar" },
-      "Vi_L": { "type": "number", "min": 1.0, "max": 5.0, "decimals": 1, "unit": "L" },
-      "Vf_L": { "type": "number", "min": 6.0, "max": 15.0, "decimals": 1, "unit": "L" }
+      "P_bar": {
+        "type": "number",
+        "min": 1.0,
+        "max": 5.0,
+        "decimals": 1,
+        "unit": "bar"
+      },
+      "Vi_L": {
+        "type": "number",
+        "min": 1.0,
+        "max": 5.0,
+        "decimals": 1,
+        "unit": "L"
+      },
+      "Vf_L": {
+        "type": "number",
+        "min": 6.0,
+        "max": 15.0,
+        "decimals": 1,
+        "unit": "L"
+      }
     },
     "statement": "Un gaz subit une transformation isobare à P = {{P_bar}} bar. Son volume passe de Vi = {{Vi_L}} L à Vf = {{Vf_L}} L. Calculer le travail W reçu par le gaz.",
     "solutionSteps": [
@@ -1115,14 +1779,21 @@
         "step": 1,
         "title": "Conversions",
         "content": "$P = {{P_bar}} \\times 10^5$ Pa, $V_i = {{Vi_L}} \\times 10^{-3}$ m³, $V_f = {{Vf_L}} \\times 10^{-3}$ m³",
-        "compute": { "P": "P_bar * 1e5", "Vi": "Vi_L * 1e-3", "Vf": "Vf_L * 1e-3" }
+        "compute": {
+          "P": "P_bar * 1e5",
+          "Vi": "Vi_L * 1e-3",
+          "Vf": "Vf_L * 1e-3"
+        }
       },
       {
         "step": 2,
         "title": "Travail isobare",
         "content": "$W = -P(V_f - V_i) = -{{P}} \\times ({{Vf}} - {{Vi}}) = -{{P}} \\times {{DV}} = {{W}}$ J",
         "explanation": "W < 0 si le gaz se détend (il fournit du travail)",
-        "compute": { "DV": "Vf - Vi", "W": "-P * DV" }
+        "compute": {
+          "DV": "Vf - Vi",
+          "W": "-P * DV"
+        }
       }
     ],
     "finalAnswer": "$W = {{W}}$ J",
@@ -1136,7 +1807,11 @@
       "Oublier le signe moins",
       "Erreurs de conversion (bar → Pa, L → m³)"
     ],
-    "tags": ["travail", "isobare", "gaz"]
+    "tags": [
+      "travail",
+      "isobare",
+      "gaz"
+    ]
   },
   {
     "id": "rand-thermo-premier-principe",
@@ -1145,8 +1820,18 @@
     "difficulty": 3,
     "description": "Appliquer le premier principe de la thermodynamique",
     "variables": {
-      "Q": { "type": "integer", "min": 500, "max": 2000, "unit": "J" },
-      "W": { "type": "integer", "min": -800, "max": 800, "unit": "J" }
+      "Q": {
+        "type": "integer",
+        "min": 500,
+        "max": 2000,
+        "unit": "J"
+      },
+      "W": {
+        "type": "integer",
+        "min": -800,
+        "max": 800,
+        "unit": "J"
+      }
     },
     "statement": "Un système reçoit une quantité de chaleur Q = {{Q}} J et un travail W = {{W}} J. Calculer la variation d'énergie interne ΔU du système.",
     "solutionSteps": [
@@ -1160,7 +1845,9 @@
         "step": 2,
         "title": "Application numérique",
         "content": "$\\Delta U = {{W}} + {{Q}} = {{DU}}$ J",
-        "compute": { "DU": "W + Q" }
+        "compute": {
+          "DU": "W + Q"
+        }
       }
     ],
     "finalAnswer": "$\\Delta U = {{DU}}$ J",
@@ -1174,7 +1861,11 @@
       "Se tromper de signe pour W ou Q",
       "Confondre les conventions"
     ],
-    "tags": ["premier principe", "énergie interne", "chaleur"]
+    "tags": [
+      "premier principe",
+      "énergie interne",
+      "chaleur"
+    ]
   },
   {
     "id": "rand-ondes-sonores-niveau",
@@ -1183,7 +1874,12 @@
     "difficulty": 2,
     "description": "Calculer le niveau sonore en décibels",
     "variables": {
-      "I_exp": { "type": "integer", "min": -8, "max": -2, "unit": "" }
+      "I_exp": {
+        "type": "integer",
+        "min": -8,
+        "max": -2,
+        "unit": ""
+      }
     },
     "statement": "Une source sonore produit une intensité I = 10^{{I_exp}} W/m². Calculer le niveau d'intensité sonore L en décibels. (I₀ = 10⁻¹² W/m²)",
     "solutionSteps": [
@@ -1191,14 +1887,19 @@
         "step": 1,
         "title": "Formule du niveau sonore",
         "content": "$L = 10 \\log\\left(\\frac{I}{I_0}\\right) = 10 \\log\\left(\\frac{10^{{{I_exp}}}}{10^{-12}}\\right)$",
-        "compute": { "I": "Math.pow(10, I_exp)" }
+        "compute": {
+          "I": "Math.pow(10, I_exp)"
+        }
       },
       {
         "step": 2,
         "title": "Simplification",
         "content": "$L = 10 \\log(10^{{{I_exp}} - (-12)}) = 10 \\log(10^{{{exposant}}}) = 10 \\times {{exposant}} = {{L}}$ dB",
         "explanation": "log(10ⁿ) = n",
-        "compute": { "exposant": "I_exp + 12", "L": "10 * exposant" }
+        "compute": {
+          "exposant": "I_exp + 12",
+          "L": "10 * exposant"
+        }
       }
     ],
     "finalAnswer": "$L = {{L}}$ dB",
@@ -1212,7 +1913,11 @@
       "Oublier le facteur 10",
       "Se tromper dans les exposants"
     ],
-    "tags": ["décibel", "niveau sonore", "intensité"]
+    "tags": [
+      "décibel",
+      "niveau sonore",
+      "intensité"
+    ]
   },
   {
     "id": "rand-ondes-sonores-frequence",
@@ -1221,7 +1926,12 @@
     "difficulty": 1,
     "description": "Calculer la période à partir de la fréquence",
     "variables": {
-      "f": { "type": "integer", "min": 200, "max": 2000, "unit": "Hz" }
+      "f": {
+        "type": "integer",
+        "min": 200,
+        "max": 2000,
+        "unit": "Hz"
+      }
     },
     "statement": "Un son a une fréquence f = {{f}} Hz. Calculer sa période T.",
     "solutionSteps": [
@@ -1229,7 +1939,10 @@
         "step": 1,
         "title": "Relation fréquence-période",
         "content": "$T = \\frac{1}{f} = \\frac{1}{{{f}}} = {{T}}$ s = {{T_ms}} ms",
-        "compute": { "T": "1 / f", "T_ms": "T * 1000" }
+        "compute": {
+          "T": "1 / f",
+          "T_ms": "T * 1000"
+        }
       }
     ],
     "finalAnswer": "$T = {{T_ms}}$ ms",
@@ -1242,7 +1955,11 @@
       "Inverser la formule",
       "Oublier la conversion en ms"
     ],
-    "tags": ["période", "fréquence", "son"]
+    "tags": [
+      "période",
+      "fréquence",
+      "son"
+    ]
   },
   {
     "id": "rand-ondes-sonores-harmoniques",
@@ -1251,8 +1968,18 @@
     "difficulty": 2,
     "description": "Calculer les fréquences des harmoniques",
     "variables": {
-      "f1": { "type": "integer", "min": 100, "max": 500, "unit": "Hz" },
-      "n": { "type": "integer", "min": 2, "max": 6, "unit": "" }
+      "f1": {
+        "type": "integer",
+        "min": 100,
+        "max": 500,
+        "unit": "Hz"
+      },
+      "n": {
+        "type": "integer",
+        "min": 2,
+        "max": 6,
+        "unit": ""
+      }
     },
     "statement": "Un son a une fréquence fondamentale f₁ = {{f1}} Hz. Calculer la fréquence de l'harmonique de rang {{n}}.",
     "solutionSteps": [
@@ -1261,7 +1988,9 @@
         "title": "Fréquence de l'harmonique n",
         "content": "$f_n = n \\times f_1 = {{n}} \\times {{f1}} = {{fn}}$ Hz",
         "explanation": "Les harmoniques sont des multiples entiers de la fondamentale",
-        "compute": { "fn": "n * f1" }
+        "compute": {
+          "fn": "n * f1"
+        }
       }
     ],
     "finalAnswer": "$f_{{n}} = {{fn}}$ Hz",
@@ -1274,7 +2003,11 @@
       "Confondre rang et numéro d'harmonique",
       "Oublier que n commence à 1"
     ],
-    "tags": ["harmonique", "fondamentale", "spectre"]
+    "tags": [
+      "harmonique",
+      "fondamentale",
+      "spectre"
+    ]
   },
   {
     "id": "rand-travail-force",
@@ -1283,9 +2016,25 @@
     "difficulty": 2,
     "description": "Calculer le travail d'une force",
     "variables": {
-      "F": { "type": "integer", "min": 10, "max": 100, "unit": "N" },
-      "d": { "type": "number", "min": 1.0, "max": 10.0, "decimals": 1, "unit": "m" },
-      "alpha": { "type": "integer", "min": 0, "max": 60, "unit": "°" }
+      "F": {
+        "type": "integer",
+        "min": 10,
+        "max": 100,
+        "unit": "N"
+      },
+      "d": {
+        "type": "number",
+        "min": 1.0,
+        "max": 10.0,
+        "decimals": 1,
+        "unit": "m"
+      },
+      "alpha": {
+        "type": "integer",
+        "min": 0,
+        "max": 60,
+        "unit": "°"
+      }
     },
     "statement": "Une force F = {{F}} N est appliquée sur un objet qui se déplace de d = {{d}} m. L'angle entre la force et le déplacement est α = {{alpha}}°. Calculer le travail W de cette force.",
     "solutionSteps": [
@@ -1293,13 +2042,18 @@
         "step": 1,
         "title": "Formule du travail",
         "content": "$W = F \\times d \\times \\cos(\\alpha) = {{F}} \\times {{d}} \\times \\cos({{alpha}}°)$",
-        "compute": { "alpha_rad": "alpha * 3.14159 / 180", "cos_alpha": "Math.cos(alpha_rad)" }
+        "compute": {
+          "alpha_rad": "alpha * 3.14159 / 180",
+          "cos_alpha": "Math.cos(alpha_rad)"
+        }
       },
       {
         "step": 2,
         "title": "Calcul numérique",
         "content": "$W = {{F}} \\times {{d}} \\times {{cos_alpha}} = {{W}}$ J",
-        "compute": { "W": "F * d * cos_alpha" }
+        "compute": {
+          "W": "F * d * cos_alpha"
+        }
       }
     ],
     "finalAnswer": "$W = {{W}}$ J",
@@ -1313,7 +2067,11 @@
       "Oublier le cosinus",
       "Utiliser sin au lieu de cos"
     ],
-    "tags": ["travail", "force", "énergie"]
+    "tags": [
+      "travail",
+      "force",
+      "énergie"
+    ]
   },
   {
     "id": "rand-travail-puissance",
@@ -1322,8 +2080,18 @@
     "difficulty": 2,
     "description": "Calculer la puissance à partir du travail",
     "variables": {
-      "W": { "type": "integer", "min": 500, "max": 5000, "unit": "J" },
-      "t": { "type": "integer", "min": 5, "max": 30, "unit": "s" }
+      "W": {
+        "type": "integer",
+        "min": 500,
+        "max": 5000,
+        "unit": "J"
+      },
+      "t": {
+        "type": "integer",
+        "min": 5,
+        "max": 30,
+        "unit": "s"
+      }
     },
     "statement": "Un moteur fournit un travail W = {{W}} J en t = {{t}} s. Calculer sa puissance moyenne P.",
     "solutionSteps": [
@@ -1332,7 +2100,9 @@
         "title": "Définition de la puissance",
         "content": "$P = \\frac{W}{t} = \\frac{{{W}}}{{{t}}} = {{P}}$ W",
         "explanation": "La puissance est le travail par unité de temps",
-        "compute": { "P": "W / t" }
+        "compute": {
+          "P": "W / t"
+        }
       }
     ],
     "finalAnswer": "$P = {{P}}$ W",
@@ -1345,7 +2115,11 @@
       "Inverser W et t",
       "Confondre W (travail) et W (watt)"
     ],
-    "tags": ["puissance", "travail", "énergie"]
+    "tags": [
+      "puissance",
+      "travail",
+      "énergie"
+    ]
   },
   {
     "id": "rand-oxydoreduction-nombre-electrons",
@@ -1354,8 +2128,18 @@
     "difficulty": 2,
     "description": "Déterminer le nombre d'électrons dans une demi-équation",
     "variables": {
-      "n_ox_init": { "type": "integer", "min": 2, "max": 7, "unit": "" },
-      "n_ox_final": { "type": "integer", "min": 0, "max": 3, "unit": "" }
+      "n_ox_init": {
+        "type": "integer",
+        "min": 2,
+        "max": 7,
+        "unit": ""
+      },
+      "n_ox_final": {
+        "type": "integer",
+        "min": 0,
+        "max": 3,
+        "unit": ""
+      }
     },
     "statement": "Un élément passe du nombre d'oxydation +{{n_ox_init}} au nombre d'oxydation +{{n_ox_final}}. Combien d'électrons sont échangés et s'agit-il d'une oxydation ou d'une réduction ?",
     "solutionSteps": [
@@ -1363,19 +2147,25 @@
         "step": 1,
         "title": "Variation du nombre d'oxydation",
         "content": "$\\Delta n.o. = {{n_ox_final}} - {{n_ox_init}} = {{delta_no}}$",
-        "compute": { "delta_no": "n_ox_final - n_ox_init" }
+        "compute": {
+          "delta_no": "n_ox_final - n_ox_init"
+        }
       },
       {
         "step": 2,
         "title": "Nombre d'électrons",
         "content": "Nombre d'électrons échangés: $|\\Delta n.o.| = {{n_electrons}}$",
-        "compute": { "n_electrons": "Math.abs(delta_no)" }
+        "compute": {
+          "n_electrons": "Math.abs(delta_no)"
+        }
       },
       {
         "step": 3,
         "title": "Type de réaction",
         "content": "{{type_reaction}}",
-        "compute": { "type_reaction": "delta_no < 0 ? 'Δn.o. < 0 : gain d\\'électrons → RÉDUCTION' : 'Δn.o. > 0 : perte d\\'électrons → OXYDATION'" }
+        "compute": {
+          "type_reaction": "delta_no < 0 ? 'Δn.o. < 0 : gain d\\'électrons → RÉDUCTION' : 'Δn.o. > 0 : perte d\\'électrons → OXYDATION'"
+        }
       }
     ],
     "finalAnswer": "{{n_electrons}} électrons échangés, c'est une {{reaction}}",
@@ -1389,7 +2179,11 @@
       "Confondre oxydation et réduction",
       "Se tromper dans le sens de variation"
     ],
-    "tags": ["oxydation", "réduction", "électrons"]
+    "tags": [
+      "oxydation",
+      "réduction",
+      "électrons"
+    ]
   },
   {
     "id": "rand-piles-fem",
@@ -1398,8 +2192,20 @@
     "difficulty": 2,
     "description": "Calculer la f.é.m. d'une pile",
     "variables": {
-      "E_plus": { "type": "number", "min": 0.5, "max": 1.5, "decimals": 2, "unit": "V" },
-      "E_moins": { "type": "number", "min": -1.0, "max": 0.3, "decimals": 2, "unit": "V" }
+      "E_plus": {
+        "type": "number",
+        "min": 0.5,
+        "max": 1.5,
+        "decimals": 2,
+        "unit": "V"
+      },
+      "E_moins": {
+        "type": "number",
+        "min": -1.0,
+        "max": 0.3,
+        "decimals": 2,
+        "unit": "V"
+      }
     },
     "statement": "Une pile est constituée de deux demi-piles de potentiels standard E°₁ = {{E_plus}} V (cathode) et E°₂ = {{E_moins}} V (anode). Calculer la f.é.m. standard E° de la pile.",
     "solutionSteps": [
@@ -1408,7 +2214,9 @@
         "title": "Formule de la f.é.m.",
         "content": "$E° = E°_{cathode} - E°_{anode} = {{E_plus}} - ({{E_moins}}) = {{fem}}$ V",
         "explanation": "La f.é.m. est la différence des potentiels (cathode - anode)",
-        "compute": { "fem": "E_plus - E_moins" }
+        "compute": {
+          "fem": "E_plus - E_moins"
+        }
       }
     ],
     "finalAnswer": "$E° = {{fem}}$ V",
@@ -1422,7 +2230,11 @@
       "Inverser cathode et anode",
       "Oublier le signe moins"
     ],
-    "tags": ["pile", "f.é.m.", "potentiel"]
+    "tags": [
+      "pile",
+      "f.é.m.",
+      "potentiel"
+    ]
   },
   {
     "id": "rand-piles-quantite-electricite",
@@ -1431,8 +2243,19 @@
     "difficulty": 2,
     "description": "Calculer la quantité d'électricité",
     "variables": {
-      "I": { "type": "number", "min": 0.5, "max": 3.0, "decimals": 1, "unit": "A" },
-      "t_min": { "type": "integer", "min": 10, "max": 60, "unit": "min" }
+      "I": {
+        "type": "number",
+        "min": 0.5,
+        "max": 3.0,
+        "decimals": 1,
+        "unit": "A"
+      },
+      "t_min": {
+        "type": "integer",
+        "min": 10,
+        "max": 60,
+        "unit": "min"
+      }
     },
     "statement": "Une électrolyse est réalisée avec un courant I = {{I}} A pendant t = {{t_min}} min. Calculer la quantité d'électricité Q qui a circulé.",
     "solutionSteps": [
@@ -1440,13 +2263,17 @@
         "step": 1,
         "title": "Conversion du temps",
         "content": "$t = {{t_min}} \\times 60 = {{t_s}}$ s",
-        "compute": { "t_s": "t_min * 60" }
+        "compute": {
+          "t_s": "t_min * 60"
+        }
       },
       {
         "step": 2,
         "title": "Quantité d'électricité",
         "content": "$Q = I \\times t = {{I}} \\times {{t_s}} = {{Q}}$ C",
-        "compute": { "Q": "I * t_s" }
+        "compute": {
+          "Q": "I * t_s"
+        }
       }
     ],
     "finalAnswer": "$Q = {{Q}}$ C",
@@ -1460,7 +2287,11 @@
       "Oublier de convertir les minutes en secondes",
       "Confondre Q et q"
     ],
-    "tags": ["électrolyse", "quantité d'électricité", "courant"]
+    "tags": [
+      "électrolyse",
+      "quantité d'électricité",
+      "courant"
+    ]
   },
   {
     "id": "rand-spectro-ir-nombre-onde",
@@ -1469,7 +2300,12 @@
     "difficulty": 2,
     "description": "Convertir nombre d'onde en longueur d'onde",
     "variables": {
-      "sigma": { "type": "integer", "min": 1000, "max": 3500, "unit": "cm⁻¹" }
+      "sigma": {
+        "type": "integer",
+        "min": 1000,
+        "max": 3500,
+        "unit": "cm⁻¹"
+      }
     },
     "statement": "Une bande d'absorption IR apparaît au nombre d'onde σ = {{sigma}} cm⁻¹. Calculer la longueur d'onde λ correspondante en µm.",
     "solutionSteps": [
@@ -1483,7 +2319,10 @@
         "step": 2,
         "title": "Calcul",
         "content": "$\\lambda = \\frac{1}{{{sigma}}}$ cm $= {{lambda_cm}}$ cm $= {{lambda_um}}$ µm",
-        "compute": { "lambda_cm": "1 / sigma", "lambda_um": "lambda_cm * 10000" }
+        "compute": {
+          "lambda_cm": "1 / sigma",
+          "lambda_um": "lambda_cm * 10000"
+        }
       }
     ],
     "finalAnswer": "$\\lambda = {{lambda_um}}$ µm",
@@ -1497,7 +2336,11 @@
       "Oublier la conversion cm → µm",
       "Inverser la formule"
     ],
-    "tags": ["IR", "nombre d'onde", "longueur d'onde"]
+    "tags": [
+      "IR",
+      "nombre d'onde",
+      "longueur d'onde"
+    ]
   },
   {
     "id": "rand-equilibre-K",
@@ -1506,9 +2349,27 @@
     "difficulty": 2,
     "description": "Calculer K à partir des concentrations à l'équilibre",
     "variables": {
-      "C_A_eq": { "type": "number", "min": 0.02, "max": 0.15, "decimals": 2, "unit": "mol/L" },
-      "C_B_eq": { "type": "number", "min": 0.02, "max": 0.15, "decimals": 2, "unit": "mol/L" },
-      "C_C_eq": { "type": "number", "min": 0.05, "max": 0.3, "decimals": 2, "unit": "mol/L" }
+      "C_A_eq": {
+        "type": "number",
+        "min": 0.02,
+        "max": 0.15,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "C_B_eq": {
+        "type": "number",
+        "min": 0.02,
+        "max": 0.15,
+        "decimals": 2,
+        "unit": "mol/L"
+      },
+      "C_C_eq": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.3,
+        "decimals": 2,
+        "unit": "mol/L"
+      }
     },
     "statement": "Pour la réaction A + B ⇌ 2C, les concentrations à l'équilibre sont:\n[A]éq = {{C_A_eq}} mol/L, [B]éq = {{C_B_eq}} mol/L, [C]éq = {{C_C_eq}} mol/L.\nCalculer la constante d'équilibre K.",
     "solutionSteps": [
@@ -1522,13 +2383,18 @@
         "step": 2,
         "title": "Application numérique",
         "content": "$K = \\frac{({{C_C_eq}})^2}{{{C_A_eq}} \\times {{C_B_eq}}} = \\frac{{{C_C_carre}}}{{{den}}}$",
-        "compute": { "C_C_carre": "C_C_eq * C_C_eq", "den": "C_A_eq * C_B_eq" }
+        "compute": {
+          "C_C_carre": "C_C_eq * C_C_eq",
+          "den": "C_A_eq * C_B_eq"
+        }
       },
       {
         "step": 3,
         "title": "Résultat",
         "content": "$K = {{K}}$",
-        "compute": { "K": "C_C_carre / den" },
+        "compute": {
+          "K": "C_C_carre / den"
+        },
         "explanation": "K est sans unité car les concentrations sont élevées à des puissances qui s'annulent"
       }
     ],
@@ -1542,7 +2408,11 @@
       "Oublier de mettre au carré [C]",
       "Inverser numérateur et dénominateur"
     ],
-    "tags": ["équilibre", "constante", "K"]
+    "tags": [
+      "équilibre",
+      "constante",
+      "K"
+    ]
   },
   {
     "id": "rand-equilibre-taux",
@@ -1551,8 +2421,20 @@
     "difficulty": 2,
     "description": "Calculer le taux d'avancement à l'équilibre",
     "variables": {
-      "n0": { "type": "number", "min": 0.05, "max": 0.2, "decimals": 2, "unit": "mol" },
-      "xf": { "type": "number", "min": 0.01, "max": 0.08, "decimals": 2, "unit": "mol" }
+      "n0": {
+        "type": "number",
+        "min": 0.05,
+        "max": 0.2,
+        "decimals": 2,
+        "unit": "mol"
+      },
+      "xf": {
+        "type": "number",
+        "min": 0.01,
+        "max": 0.08,
+        "decimals": 2,
+        "unit": "mol"
+      }
     },
     "statement": "Pour la réaction A → B, on part de n₀(A) = {{n0}} mol de A pur.\nÀ l'équilibre, l'avancement est xf = {{xf}} mol.\nCalculer le taux d'avancement final τ.",
     "solutionSteps": [
@@ -1572,7 +2454,9 @@
         "step": 3,
         "title": "Calcul du taux",
         "content": "$\\tau = \\frac{{{xf}}}{{{n0}}} = {{tau}}$",
-        "compute": { "tau": "xf / n0" }
+        "compute": {
+          "tau": "xf / n0"
+        }
       },
       {
         "step": 4,
@@ -1594,7 +2478,11 @@
       "Confondre xf et xmax",
       "Oublier que τ est sans unité"
     ],
-    "tags": ["équilibre", "taux d'avancement", "tau"]
+    "tags": [
+      "équilibre",
+      "taux d'avancement",
+      "tau"
+    ]
   },
   {
     "id": "rand-equilibre-composition",
@@ -1603,8 +2491,20 @@
     "difficulty": 3,
     "description": "Déterminer les concentrations à l'équilibre",
     "variables": {
-      "C0": { "type": "number", "min": 0.1, "max": 0.5, "decimals": 1, "unit": "mol/L" },
-      "K": { "type": "number", "min": 0.1, "max": 0.5, "decimals": 2, "unit": "" }
+      "C0": {
+        "type": "number",
+        "min": 0.1,
+        "max": 0.5,
+        "decimals": 1,
+        "unit": "mol/L"
+      },
+      "K": {
+        "type": "number",
+        "min": 0.1,
+        "max": 0.5,
+        "decimals": 2,
+        "unit": ""
+      }
     },
     "statement": "Pour la réaction A ⇌ B de constante K = {{K}}, on introduit A pur à la concentration C₀ = {{C0}} mol/L.\nDéterminer les concentrations [A]éq et [B]éq à l'équilibre.",
     "solutionSteps": [
@@ -1623,13 +2523,19 @@
         "step": 3,
         "title": "Résolution",
         "content": "${{K}}({{C0}} - x) = x$\n${{K_C0}} - {{K}}x = x$\n${{K_C0}} = x(1 + {{K}})$\n$x = \\frac{{{K_C0}}}{{{un_plus_K}}} = {{x}}$ mol/L",
-        "compute": { "K_C0": "K * C0", "un_plus_K": "1 + K", "x": "K_C0 / un_plus_K" }
+        "compute": {
+          "K_C0": "K * C0",
+          "un_plus_K": "1 + K",
+          "x": "K_C0 / un_plus_K"
+        }
       },
       {
         "step": 4,
         "title": "Concentrations à l'équilibre",
         "content": "$[B]_{éq} = x = {{x}}$ mol/L\n$[A]_{éq} = {{C0}} - {{x}} = {{A_eq}}$ mol/L",
-        "compute": { "A_eq": "C0 - x" }
+        "compute": {
+          "A_eq": "C0 - x"
+        }
       }
     ],
     "finalAnswer": "$[A]_{éq} = {{A_eq}}$ mol/L, $[B]_{éq} = {{x}}$ mol/L",
@@ -1642,7 +2548,11 @@
       "Oublier que [A] diminue de x",
       "Erreur de signe dans la résolution"
     ],
-    "tags": ["équilibre", "concentration", "tableau d'avancement"]
+    "tags": [
+      "équilibre",
+      "concentration",
+      "tableau d'avancement"
+    ]
   },
   {
     "id": "rand-equilibre-temperature",
@@ -1651,10 +2561,32 @@
     "difficulty": 3,
     "description": "Déterminer le sens de déplacement avec la température",
     "variables": {
-      "K1": { "type": "number", "min": 1, "max": 10, "decimals": 1, "unit": "" },
-      "K2": { "type": "number", "min": 15, "max": 50, "decimals": 0, "unit": "" },
-      "T1": { "type": "integer", "min": 20, "max": 30, "unit": "°C" },
-      "T2": { "type": "integer", "min": 60, "max": 80, "unit": "°C" }
+      "K1": {
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "decimals": 1,
+        "unit": ""
+      },
+      "K2": {
+        "type": "number",
+        "min": 15,
+        "max": 50,
+        "decimals": 0,
+        "unit": ""
+      },
+      "T1": {
+        "type": "integer",
+        "min": 20,
+        "max": 30,
+        "unit": "°C"
+      },
+      "T2": {
+        "type": "integer",
+        "min": 60,
+        "max": 80,
+        "unit": "°C"
+      }
     },
     "statement": "Pour une réaction A ⇌ B, on mesure:\n- K = {{K1}} à T₁ = {{T1}}°C\n- K = {{K2}} à T₂ = {{T2}}°C\nLa réaction directe est-elle exothermique ou endothermique ?",
     "solutionSteps": [
@@ -1686,6 +2618,977 @@
       "Confondre endo et exothermique",
       "Oublier que K dépend de T"
     ],
-    "tags": ["équilibre", "température", "Van't Hoff", "enthalpie"]
+    "tags": [
+      "équilibre",
+      "température",
+      "Van't Hoff",
+      "enthalpie"
+    ]
+  },
+  {
+    "id": "rand-diffraction-angle",
+    "lessonId": "diffraction",
+    "title": "Angle de diffraction",
+    "difficulty": 2,
+    "description": "Calculer l'angle du premier minimum de diffraction",
+    "variables": {
+      "lambda_nm": {
+        "type": "integer",
+        "min": 450,
+        "max": 700,
+        "unit": "nm"
+      },
+      "a_um": {
+        "type": "integer",
+        "min": 50,
+        "max": 200,
+        "unit": "µm"
+      }
+    },
+    "statement": "Un faisceau laser de longueur d'onde λ = {{lambda_nm}} nm traverse une fente de largeur a = {{a_um}} µm. Calculer l'angle θ₁ correspondant au premier minimum de diffraction.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Condition du premier minimum",
+        "content": "Le premier minimum de diffraction est obtenu pour $\\sin(\\theta_1) = \\frac{\\lambda}{a}$",
+        "explanation": "C'est la condition d'interférence destructive pour le premier ordre"
+      },
+      {
+        "step": 2,
+        "title": "Conversions",
+        "content": "$\\lambda = {{lambda_nm}} \\times 10^{-9}$ m = {{lambda_m}} m\n$a = {{a_um}} \\times 10^{-6}$ m = {{a_m}} m",
+        "compute": {
+          "lambda_m": "lambda_nm * 1e-9",
+          "a_m": "a_um * 1e-6"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Calcul de l'angle",
+        "content": "$\\sin(\\theta_1) = \\frac{{{lambda_m}}}{{{a_m}}} = {{sin_theta}}$\n$\\theta_1 = \\arcsin({{sin_theta}}) = {{theta_rad}}$ rad = {{theta_deg}}°",
+        "compute": {
+          "sin_theta": "lambda_m / a_m",
+          "theta_rad": "Math.asin(sin_theta)",
+          "theta_deg": "theta_rad * 180 / Math.PI"
+        }
+      }
+    ],
+    "finalAnswer": "$\\theta_1 = {{theta_deg}}°$",
+    "method": "Premier minimum: $\\sin(\\theta_1) = \\lambda/a$",
+    "hints": [
+      "Le premier minimum correspond à sin(θ) = λ/a",
+      "Convertir toutes les grandeurs en SI"
+    ],
+    "commonMistakes": [
+      "Confondre minimum et maximum",
+      "Oublier les conversions d'unités"
+    ],
+    "tags": [
+      "diffraction",
+      "angle",
+      "fente"
+    ]
+  },
+  {
+    "id": "rand-diffraction-resolution",
+    "lessonId": "diffraction",
+    "title": "Pouvoir de résolution",
+    "difficulty": 4,
+    "description": "Appliquer le critère de Rayleigh",
+    "variables": {
+      "lambda_nm": {
+        "type": "integer",
+        "min": 500,
+        "max": 600,
+        "unit": "nm"
+      },
+      "D_mm": {
+        "type": "number",
+        "min": 2,
+        "max": 10,
+        "decimals": 0,
+        "unit": "mm"
+      },
+      "L_m": {
+        "type": "integer",
+        "min": 100,
+        "max": 500,
+        "unit": "m"
+      }
+    },
+    "statement": "Un télescope de diamètre D = {{D_mm}} mm observe avec une lumière de λ = {{lambda_nm}} nm. Quelle est la distance minimale d entre deux étoiles situées à L = {{L_m}} m pour qu'elles soient distinguables (critère de Rayleigh) ?",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Critère de Rayleigh",
+        "content": "Angle limite de résolution: $\\theta_{min} = 1.22 \\frac{\\lambda}{D}$",
+        "explanation": "Deux sources sont résolues si leur séparation angulaire > θmin"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de θmin",
+        "content": "$\\theta_{min} = 1.22 \\times \\frac{{{lambda_nm}} \\times 10^{-9}}{{{D_mm}} \\times 10^{-3}} = {{theta_min}}$ rad",
+        "compute": {
+          "lambda_m": "lambda_nm * 1e-9",
+          "D_m": "D_mm * 1e-3",
+          "theta_min": "1.22 * lambda_m / D_m"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Distance minimale",
+        "content": "$d = L \\times \\theta_{min} = {{L_m}} \\times {{theta_min}} = {{d_m}}$ m = {{d_cm}} cm",
+        "compute": {
+          "d_m": "L_m * theta_min",
+          "d_cm": "d_m * 100"
+        }
+      }
+    ],
+    "finalAnswer": "$d = {{d_cm}}$ cm",
+    "method": "Rayleigh: $\\theta_{min} = 1.22\\lambda/D$ puis $d = L \\times \\theta_{min}$",
+    "hints": [
+      "Le critère de Rayleigh donne l'angle minimum de résolution",
+      "Pour de petits angles: d ≈ L × θ"
+    ],
+    "commonMistakes": [
+      "Oublier le facteur 1.22",
+      "Confondre diamètre et rayon"
+    ],
+    "tags": [
+      "diffraction",
+      "Rayleigh",
+      "résolution",
+      "optique"
+    ]
+  },
+  {
+    "id": "rand-interferences-ordre",
+    "lessonId": "interferences",
+    "title": "Position d'une frange brillante",
+    "difficulty": 3,
+    "description": "Calculer la position d'une frange d'ordre p",
+    "variables": {
+      "lambda_nm": {
+        "type": "integer",
+        "min": 500,
+        "max": 650,
+        "unit": "nm"
+      },
+      "a_mm": {
+        "type": "number",
+        "min": 0.3,
+        "max": 0.6,
+        "decimals": 1,
+        "unit": "mm"
+      },
+      "D_m": {
+        "type": "number",
+        "min": 1.5,
+        "max": 2.5,
+        "decimals": 1,
+        "unit": "m"
+      },
+      "p": {
+        "type": "integer",
+        "min": 3,
+        "max": 8,
+        "unit": ""
+      }
+    },
+    "statement": "Dans une expérience d'interférences (fentes d'Young), λ = {{lambda_nm}} nm, a = {{a_mm}} mm (écart entre fentes), D = {{D_m}} m. Calculer la position x de la frange brillante d'ordre p = {{p}}.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Position d'une frange brillante",
+        "content": "Une frange brillante d'ordre $p$ est située à $x_p = p \\times i$ où $i = \\frac{\\lambda D}{a}$",
+        "explanation": "i est l'interfrange"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'interfrange",
+        "content": "$i = \\frac{{{lambda_nm}} \\times 10^{-9} \\times {{D_m}}}{{{a_mm}} \\times 10^{-3}} = {{i_m}}$ m = {{i_mm}} mm",
+        "compute": {
+          "lambda_m": "lambda_nm * 1e-9",
+          "a_m": "a_mm * 1e-3",
+          "i_m": "lambda_m * D_m / a_m",
+          "i_mm": "i_m * 1000"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Position de la frange d'ordre p",
+        "content": "$x_{{{p}}} = {{p}} \\times {{i_mm}} = {{x_mm}}$ mm = {{x_cm}} cm",
+        "compute": {
+          "x_mm": "p * i_mm",
+          "x_cm": "x_mm / 10"
+        }
+      }
+    ],
+    "finalAnswer": "$x_{{{p}}} = {{x_cm}}$ cm",
+    "method": "Position frange brillante d'ordre p: $x_p = p \\times i = p \\times \\frac{\\lambda D}{a}$",
+    "hints": [
+      "D'abord calculer l'interfrange i",
+      "La frange d'ordre p est à la distance p × i du centre"
+    ],
+    "commonMistakes": [
+      "Confondre frange brillante et sombre",
+      "Oublier que p = 0 correspond à la frange centrale"
+    ],
+    "tags": [
+      "interférences",
+      "Young",
+      "frange",
+      "ordre"
+    ]
+  },
+  {
+    "id": "rand-interferences-sombre",
+    "lessonId": "interferences",
+    "title": "Position d'une frange sombre",
+    "difficulty": 3,
+    "description": "Calculer la position d'une frange sombre",
+    "variables": {
+      "lambda_nm": {
+        "type": "integer",
+        "min": 480,
+        "max": 620,
+        "unit": "nm"
+      },
+      "a_mm": {
+        "type": "number",
+        "min": 0.4,
+        "max": 0.8,
+        "decimals": 1,
+        "unit": "mm"
+      },
+      "D_m": {
+        "type": "number",
+        "min": 1.0,
+        "max": 2.0,
+        "decimals": 1,
+        "unit": "m"
+      },
+      "k": {
+        "type": "integer",
+        "min": 1,
+        "max": 5,
+        "unit": ""
+      }
+    },
+    "statement": "Fentes d'Young: λ = {{lambda_nm}} nm, a = {{a_mm}} mm, D = {{D_m}} m. Calculer la position de la {{k}}ᵉ frange sombre (à partir du centre).",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Position d'une frange sombre",
+        "content": "La kᵉ frange sombre est à $x_k = (k - \\frac{1}{2}) \\times i$ où $i = \\frac{\\lambda D}{a}$",
+        "explanation": "Les franges sombres sont à mi-chemin entre les franges brillantes"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'interfrange",
+        "content": "$i = \\frac{{{lambda_nm}} \\times 10^{-9} \\times {{D_m}}}{{{a_mm}} \\times 10^{-3}} = {{i_mm}}$ mm",
+        "compute": {
+          "lambda_m": "lambda_nm * 1e-9",
+          "a_m": "a_mm * 1e-3",
+          "i_m": "lambda_m * D_m / a_m",
+          "i_mm": "i_m * 1000"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Position de la frange sombre",
+        "content": "$x_{{{k}}} = ({{k}} - 0.5) \\times {{i_mm}} = {{coef}} \\times {{i_mm}} = {{x_mm}}$ mm",
+        "compute": {
+          "coef": "k - 0.5",
+          "x_mm": "coef * i_mm"
+        }
+      }
+    ],
+    "finalAnswer": "$x_{{{k}}} = {{x_mm}}$ mm",
+    "method": "Position frange sombre: $x_k = (k - \\frac{1}{2}) \\times i$",
+    "hints": [
+      "Les franges sombres sont entre les franges brillantes",
+      "La 1ère frange sombre est à i/2 du centre"
+    ],
+    "commonMistakes": [
+      "Utiliser k au lieu de (k - 1/2)",
+      "Confondre avec la position des franges brillantes"
+    ],
+    "tags": [
+      "interférences",
+      "Young",
+      "frange sombre"
+    ]
+  },
+  {
+    "id": "rand-interferences-difference-marche",
+    "lessonId": "interferences",
+    "title": "Différence de marche et interférences",
+    "difficulty": 3,
+    "description": "Calculer la différence de marche et déterminer le type d'interférence",
+    "variables": {
+      "lambda_nm": {
+        "type": "integer",
+        "min": 500,
+        "max": 600,
+        "unit": "nm"
+      },
+      "delta_nm": {
+        "type": "integer",
+        "min": 800,
+        "max": 1800,
+        "unit": "nm"
+      }
+    },
+    "statement": "Deux ondes lumineuses de longueur d'onde λ = {{lambda_nm}} nm interfèrent avec une différence de marche δ = {{delta_nm}} nm. L'interférence est-elle constructive ou destructive ?",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du rapport δ/λ",
+        "content": "$\\frac{\\delta}{\\lambda} = \\frac{{{delta_nm}}}{{{lambda_nm}}} = {{ratio}}$",
+        "compute": {
+          "ratio": "delta_nm / lambda_nm"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Analyse du résultat",
+        "content": "$\\frac{\\delta}{\\lambda} = {{ratio}}$\n\nSi $\\frac{\\delta}{\\lambda} = k$ (entier) → interférence constructive\nSi $\\frac{\\delta}{\\lambda} = k + 0.5$ → interférence destructive",
+        "compute": {
+          "ratio_arrondi": "Math.round(ratio)",
+          "ecart": "Math.abs(ratio - ratio_arrondi)"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "{{ratio}} est proche de {{ratio_arrondi}} (écart = {{ecart}})\n→ Interférence {{type_interference}}",
+        "compute": {
+          "type_interference": "ecart < 0.25 ? 'constructive' : (ecart > 0.35 ? 'destructive' : 'partiellement constructive')"
+        }
+      }
+    ],
+    "finalAnswer": "Interférence {{type_interference}} (δ/λ ≈ {{ratio}})",
+    "method": "δ/λ entier → constructive, δ/λ = k+0.5 → destructive",
+    "hints": [
+      "Calculer δ/λ",
+      "Si le résultat est proche d'un entier → constructive"
+    ],
+    "commonMistakes": [
+      "Oublier que c'est le rapport δ/λ qui compte",
+      "Confondre constructive et destructive"
+    ],
+    "tags": [
+      "interférences",
+      "différence de marche",
+      "constructive",
+      "destructive"
+    ]
+  },
+  {
+    "id": "rand-rc-charge",
+    "lessonId": "circuit-rc",
+    "title": "Charge d'un condensateur",
+    "difficulty": 3,
+    "description": "Calculer la tension aux bornes d'un condensateur en charge",
+    "variables": {
+      "E": {
+        "type": "integer",
+        "min": 6,
+        "max": 12,
+        "unit": "V"
+      },
+      "R_kohm": {
+        "type": "integer",
+        "min": 5,
+        "max": 20,
+        "unit": "kΩ"
+      },
+      "C_uF": {
+        "type": "integer",
+        "min": 10,
+        "max": 100,
+        "unit": "µF"
+      },
+      "t_ms": {
+        "type": "integer",
+        "min": 50,
+        "max": 200,
+        "unit": "ms"
+      }
+    },
+    "statement": "Un condensateur C = {{C_uF}} µF initialement déchargé est branché à un générateur E = {{E}} V via une résistance R = {{R_kohm}} kΩ. Calculer la tension uC aux bornes du condensateur à t = {{t_ms}} ms.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Constante de temps",
+        "content": "$\\tau = RC = {{R_kohm}} \\times 10^3 \\times {{C_uF}} \\times 10^{-6} = {{tau_s}}$ s = {{tau_ms}} ms",
+        "compute": {
+          "R": "R_kohm * 1000",
+          "C": "C_uF * 1e-6",
+          "tau_s": "R * C",
+          "tau_ms": "tau_s * 1000"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Rapport t/τ",
+        "content": "$\\frac{t}{\\tau} = \\frac{{{t_ms}}}{{{tau_ms}}} = {{t_sur_tau}}$",
+        "compute": {
+          "t_s": "t_ms / 1000",
+          "t_sur_tau": "t_s / tau_s"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Tension uC(t)",
+        "content": "$u_C(t) = E(1 - e^{-t/\\tau}) = {{E}} \\times (1 - e^{-{{t_sur_tau}}})$\n$u_C = {{E}} \\times (1 - {{exp_val}}) = {{E}} \\times {{facteur}} = {{uC}}$ V",
+        "compute": {
+          "exp_val": "Math.exp(-t_sur_tau)",
+          "facteur": "1 - exp_val",
+          "uC": "E * facteur"
+        }
+      }
+    ],
+    "finalAnswer": "$u_C({{t_ms}} \\text{ ms}) = {{uC}}$ V",
+    "method": "Charge: $u_C(t) = E(1 - e^{-t/\\tau})$ avec $\\tau = RC$",
+    "hints": [
+      "D'abord calculer τ = RC",
+      "Utiliser la formule de charge du condensateur"
+    ],
+    "commonMistakes": [
+      "Confondre charge et décharge",
+      "Erreur sur les unités de τ"
+    ],
+    "tags": [
+      "RC",
+      "charge",
+      "condensateur",
+      "exponentielle"
+    ]
+  },
+  {
+    "id": "rand-rc-decharge",
+    "lessonId": "circuit-rc",
+    "title": "Décharge d'un condensateur",
+    "difficulty": 3,
+    "description": "Calculer la tension lors de la décharge",
+    "variables": {
+      "U0": {
+        "type": "integer",
+        "min": 8,
+        "max": 15,
+        "unit": "V"
+      },
+      "R_kohm": {
+        "type": "integer",
+        "min": 10,
+        "max": 50,
+        "unit": "kΩ"
+      },
+      "C_uF": {
+        "type": "integer",
+        "min": 20,
+        "max": 100,
+        "unit": "µF"
+      },
+      "n_tau": {
+        "type": "integer",
+        "min": 1,
+        "max": 4,
+        "unit": "τ"
+      }
+    },
+    "statement": "Un condensateur C = {{C_uF}} µF chargé à U₀ = {{U0}} V se décharge dans une résistance R = {{R_kohm}} kΩ. Calculer la tension uC après t = {{n_tau}}τ.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Constante de temps",
+        "content": "$\\tau = RC = {{R_kohm}} \\times 10^3 \\times {{C_uF}} \\times 10^{-6} = {{tau_s}}$ s = {{tau_ms}} ms",
+        "compute": {
+          "R": "R_kohm * 1000",
+          "C": "C_uF * 1e-6",
+          "tau_s": "R * C",
+          "tau_ms": "tau_s * 1000"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Tension après n×τ",
+        "content": "$u_C(t) = U_0 \\times e^{-t/\\tau}$\n\nPour $t = {{n_tau}}\\tau$:\n$u_C = {{U0}} \\times e^{-{{n_tau}}} = {{U0}} \\times {{exp_val}} = {{uC}}$ V",
+        "compute": {
+          "exp_val": "Math.exp(-n_tau)",
+          "uC": "U0 * exp_val"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Pourcentage restant",
+        "content": "La tension représente ${{pourcent}}$% de la tension initiale",
+        "compute": {
+          "pourcent": "exp_val * 100"
+        }
+      }
+    ],
+    "finalAnswer": "$u_C({{n_tau}}\\tau) = {{uC}}$ V (soit {{pourcent}}% de $U_0$)",
+    "method": "Décharge: $u_C(t) = U_0 e^{-t/\\tau}$. Après nτ: $u_C = U_0 e^{-n}$",
+    "hints": [
+      "Pour la décharge, la tension décroît exponentiellement",
+      "e⁻¹ ≈ 0.37, e⁻² ≈ 0.14, e⁻³ ≈ 0.05"
+    ],
+    "commonMistakes": [
+      "Utiliser la formule de charge au lieu de décharge",
+      "Oublier que e⁻¹ ≈ 0.37"
+    ],
+    "tags": [
+      "RC",
+      "décharge",
+      "condensateur",
+      "exponentielle"
+    ]
+  },
+  {
+    "id": "rand-rc-temps-demi",
+    "lessonId": "circuit-rc",
+    "title": "Temps de demi-charge",
+    "difficulty": 3,
+    "description": "Calculer le temps pour atteindre la moitié de la tension finale",
+    "variables": {
+      "R_kohm": {
+        "type": "integer",
+        "min": 5,
+        "max": 30,
+        "unit": "kΩ"
+      },
+      "C_uF": {
+        "type": "integer",
+        "min": 10,
+        "max": 80,
+        "unit": "µF"
+      }
+    },
+    "statement": "Un circuit RC avec R = {{R_kohm}} kΩ et C = {{C_uF}} µF. Calculer le temps t₁/₂ nécessaire pour que le condensateur atteigne la moitié de sa charge maximale.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Constante de temps",
+        "content": "$\\tau = RC = {{R_kohm}} \\times 10^3 \\times {{C_uF}} \\times 10^{-6} = {{tau_ms}}$ ms",
+        "compute": {
+          "R": "R_kohm * 1000",
+          "C": "C_uF * 1e-6",
+          "tau_s": "R * C",
+          "tau_ms": "tau_s * 1000"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Condition de demi-charge",
+        "content": "$u_C = \\frac{E}{2}$ donc $E(1 - e^{-t/\\tau}) = \\frac{E}{2}$\n$1 - e^{-t/\\tau} = 0.5$\n$e^{-t/\\tau} = 0.5$",
+        "explanation": "On cherche quand la tension vaut la moitié de E"
+      },
+      {
+        "step": 3,
+        "title": "Résolution",
+        "content": "$-\\frac{t}{\\tau} = \\ln(0.5) = -\\ln(2)$\n$t_{1/2} = \\tau \\ln(2) = {{tau_ms}} \\times 0.693 = {{t_demi_ms}}$ ms",
+        "compute": {
+          "ln2": "Math.log(2)",
+          "t_demi_s": "tau_s * ln2",
+          "t_demi_ms": "t_demi_s * 1000"
+        }
+      }
+    ],
+    "finalAnswer": "$t_{1/2} = {{t_demi_ms}}$ ms $\\approx 0.693 \\tau$",
+    "method": "Temps de demi-charge: $t_{1/2} = \\tau \\ln(2) \\approx 0.693\\tau$",
+    "hints": [
+      "À t₁/₂, uC = E/2",
+      "ln(2) ≈ 0.693"
+    ],
+    "commonMistakes": [
+      "Confondre avec τ",
+      "Oublier le ln(2)"
+    ],
+    "tags": [
+      "RC",
+      "demi-charge",
+      "logarithme"
+    ]
+  },
+  {
+    "id": "rand-ph-acide-fort",
+    "lessonId": "acides-bases",
+    "title": "pH d'un acide fort",
+    "difficulty": 2,
+    "description": "Calculer le pH d'une solution d'acide fort",
+    "variables": {
+      "C_mmol": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+        "decimals": 0,
+        "unit": "mmol/L"
+      }
+    },
+    "statement": "Calculer le pH d'une solution d'acide chlorhydrique HCl de concentration C = {{C_mmol}} mmol/L.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Concentration en mol/L",
+        "content": "$C = {{C_mmol}}$ mmol/L $= {{C_mol}}$ mol/L",
+        "compute": {
+          "C_mol": "C_mmol / 1000"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Acide fort totalement dissocié",
+        "content": "HCl → H⁺ + Cl⁻\nDonc $[H^+] = C = {{C_mol}}$ mol/L",
+        "explanation": "Un acide fort est totalement dissocié dans l'eau"
+      },
+      {
+        "step": 3,
+        "title": "Calcul du pH",
+        "content": "$pH = -\\log[H^+] = -\\log({{C_mol}}) = {{pH}}$",
+        "compute": {
+          "pH": "-Math.log10(C_mol)"
+        }
+      }
+    ],
+    "finalAnswer": "$pH = {{pH}}$",
+    "method": "Acide fort: $[H^+] = C$ donc $pH = -\\log(C)$",
+    "hints": [
+      "Un acide fort est totalement dissocié",
+      "[H⁺] = C pour un monoacide fort"
+    ],
+    "commonMistakes": [
+      "Oublier que l'acide est totalement dissocié",
+      "Erreur de signe dans le log"
+    ],
+    "tags": [
+      "pH",
+      "acide fort",
+      "HCl"
+    ]
+  },
+  {
+    "id": "rand-ph-base-forte",
+    "lessonId": "acides-bases",
+    "title": "pH d'une base forte",
+    "difficulty": 2,
+    "description": "Calculer le pH d'une solution de base forte",
+    "variables": {
+      "C_mmol": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+        "decimals": 0,
+        "unit": "mmol/L"
+      }
+    },
+    "statement": "Calculer le pH d'une solution de soude NaOH de concentration C = {{C_mmol}} mmol/L à 25°C.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Concentration en mol/L",
+        "content": "$C = {{C_mmol}}$ mmol/L $= {{C_mol}}$ mol/L",
+        "compute": {
+          "C_mol": "C_mmol / 1000"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Base forte totalement dissociée",
+        "content": "NaOH → Na⁺ + OH⁻\nDonc $[OH^-] = C = {{C_mol}}$ mol/L",
+        "explanation": "Une base forte est totalement dissociée"
+      },
+      {
+        "step": 3,
+        "title": "Calcul du pOH puis pH",
+        "content": "$pOH = -\\log[OH^-] = -\\log({{C_mol}}) = {{pOH}}$\n$pH = 14 - pOH = 14 - {{pOH}} = {{pH}}$",
+        "compute": {
+          "pOH": "-Math.log10(C_mol)",
+          "pH": "14 - pOH"
+        }
+      }
+    ],
+    "finalAnswer": "$pH = {{pH}}$",
+    "method": "Base forte: $[OH^-] = C$, $pOH = -\\log(C)$, $pH = 14 - pOH$",
+    "hints": [
+      "Une base forte donne [OH⁻] = C",
+      "À 25°C: pH + pOH = 14"
+    ],
+    "commonMistakes": [
+      "Calculer -log(C) et croire que c'est le pH",
+      "Oublier la relation pH + pOH = 14"
+    ],
+    "tags": [
+      "pH",
+      "base forte",
+      "NaOH",
+      "pOH"
+    ]
+  },
+  {
+    "id": "rand-ph-dilution",
+    "lessonId": "acides-bases",
+    "title": "Dilution et pH",
+    "difficulty": 3,
+    "description": "Calculer le pH après dilution",
+    "variables": {
+      "pH_initial": {
+        "type": "number",
+        "min": 1,
+        "max": 3,
+        "decimals": 1,
+        "unit": ""
+      },
+      "facteur": {
+        "type": "integer",
+        "min": 10,
+        "max": 100,
+        "unit": ""
+      }
+    },
+    "statement": "Une solution d'acide fort a un pH initial de {{pH_initial}}. On la dilue {{facteur}} fois. Quel est le nouveau pH ?",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Concentration initiale",
+        "content": "$[H^+]_i = 10^{-pH_i} = 10^{-{{pH_initial}}} = {{H_initial}}$ mol/L",
+        "compute": {
+          "H_initial": "Math.pow(10, -pH_initial)"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Concentration après dilution",
+        "content": "$[H^+]_f = \\frac{[H^+]_i}{{{facteur}}} = \\frac{{{H_initial}}}{{{facteur}}} = {{H_final}}$ mol/L",
+        "compute": {
+          "H_final": "H_initial / facteur"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Nouveau pH",
+        "content": "$pH_f = -\\log({{H_final}}) = {{pH_final}}$\n\nOu directement: $pH_f = pH_i + \\log({{facteur}}) = {{pH_initial}} + {{log_facteur}} = {{pH_final}}$",
+        "compute": {
+          "log_facteur": "Math.log10(facteur)",
+          "pH_final": "pH_initial + log_facteur"
+        }
+      }
+    ],
+    "finalAnswer": "$pH_f = {{pH_final}}$",
+    "method": "Dilution par F: $pH_f = pH_i + \\log(F)$",
+    "hints": [
+      "Diluer F fois divise [H⁺] par F",
+      "Raccourci: pHf = pHi + log(F)"
+    ],
+    "commonMistakes": [
+      "Soustraire log(F) au lieu d'ajouter",
+      "Oublier que le pH augmente lors d'une dilution d'acide"
+    ],
+    "tags": [
+      "pH",
+      "dilution",
+      "acide",
+      "logarithme"
+    ]
+  },
+  {
+    "id": "rand-cinetique-ordre1",
+    "lessonId": "cinetique",
+    "title": "Temps de demi-réaction (ordre 1)",
+    "difficulty": 3,
+    "description": "Calculer le temps de demi-réaction pour une réaction d'ordre 1",
+    "variables": {
+      "k_inv_min": {
+        "type": "number",
+        "min": 0.01,
+        "max": 0.1,
+        "decimals": 2,
+        "unit": "min⁻¹"
+      }
+    },
+    "statement": "Une réaction d'ordre 1 a une constante de vitesse k = {{k_inv_min}} min⁻¹. Calculer le temps de demi-réaction t₁/₂.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formule du temps de demi-réaction",
+        "content": "Pour une réaction d'ordre 1:\n$t_{1/2} = \\frac{\\ln(2)}{k}$",
+        "explanation": "Cette formule est indépendante de la concentration initiale"
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "$t_{1/2} = \\frac{\\ln(2)}{{{k_inv_min}}} = \\frac{0.693}{{{k_inv_min}}} = {{t_demi}}$ min",
+        "compute": {
+          "ln2": "Math.log(2)",
+          "t_demi": "ln2 / k_inv_min"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Conversion en secondes",
+        "content": "$t_{1/2} = {{t_demi}}$ min = {{t_demi_s}} s",
+        "compute": {
+          "t_demi_s": "t_demi * 60"
+        }
+      }
+    ],
+    "finalAnswer": "$t_{1/2} = {{t_demi}}$ min",
+    "method": "Ordre 1: $t_{1/2} = \\frac{\\ln(2)}{k} \\approx \\frac{0.693}{k}$",
+    "hints": [
+      "Pour l'ordre 1, t₁/₂ ne dépend que de k",
+      "ln(2) ≈ 0.693"
+    ],
+    "commonMistakes": [
+      "Confondre avec la formule de l'ordre 2",
+      "Oublier que t₁/₂ est indépendant de [A]₀ pour l'ordre 1"
+    ],
+    "tags": [
+      "cinétique",
+      "ordre 1",
+      "temps de demi-réaction"
+    ]
+  },
+  {
+    "id": "rand-cinetique-concentration",
+    "lessonId": "cinetique",
+    "title": "Concentration à l'instant t (ordre 1)",
+    "difficulty": 3,
+    "description": "Calculer la concentration restante après un temps t",
+    "variables": {
+      "C0_mmol": {
+        "type": "number",
+        "min": 10,
+        "max": 50,
+        "decimals": 0,
+        "unit": "mmol/L"
+      },
+      "k_inv_min": {
+        "type": "number",
+        "min": 0.02,
+        "max": 0.08,
+        "decimals": 2,
+        "unit": "min⁻¹"
+      },
+      "t_min": {
+        "type": "integer",
+        "min": 10,
+        "max": 60,
+        "unit": "min"
+      }
+    },
+    "statement": "Une réaction d'ordre 1 a une constante k = {{k_inv_min}} min⁻¹. La concentration initiale est C₀ = {{C0_mmol}} mmol/L. Calculer la concentration C(t) après t = {{t_min}} min.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Loi cinétique d'ordre 1",
+        "content": "$[A](t) = [A]_0 \\times e^{-kt}$",
+        "explanation": "La concentration décroît exponentiellement"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de kt",
+        "content": "$kt = {{k_inv_min}} \\times {{t_min}} = {{kt}}$",
+        "compute": {
+          "kt": "k_inv_min * t_min"
+        }
+      },
+      {
+        "step": 3,
+        "title": "Concentration à t",
+        "content": "$C(t) = {{C0_mmol}} \\times e^{-{{kt}}} = {{C0_mmol}} \\times {{exp_val}} = {{C_t}}$ mmol/L",
+        "compute": {
+          "exp_val": "Math.exp(-kt)",
+          "C_t": "C0_mmol * exp_val"
+        }
+      }
+    ],
+    "finalAnswer": "$C({{t_min}} \\text{ min}) = {{C_t}}$ mmol/L",
+    "method": "Ordre 1: $[A](t) = [A]_0 e^{-kt}$",
+    "hints": [
+      "La concentration suit une décroissance exponentielle",
+      "Calculer d'abord le produit kt"
+    ],
+    "commonMistakes": [
+      "Oublier le signe négatif dans l'exponentielle",
+      "Confondre avec une loi d'ordre 0 ou 2"
+    ],
+    "tags": [
+      "cinétique",
+      "ordre 1",
+      "concentration",
+      "exponentielle"
+    ]
+  },
+  {
+    "id": "rand-cinetique-vitesse",
+    "lessonId": "cinetique",
+    "title": "Vitesse de réaction",
+    "difficulty": 2,
+    "description": "Calculer la vitesse instantanée de réaction",
+    "variables": {
+      "k": {
+        "type": "number",
+        "min": 0.01,
+        "max": 0.05,
+        "decimals": 2,
+        "unit": "L·mol⁻¹·s⁻¹"
+      },
+      "CA_mmol": {
+        "type": "integer",
+        "min": 20,
+        "max": 100,
+        "unit": "mmol/L"
+      },
+      "CB_mmol": {
+        "type": "integer",
+        "min": 30,
+        "max": 80,
+        "unit": "mmol/L"
+      }
+    },
+    "statement": "Pour la réaction A + B → Produits, la loi de vitesse est v = k[A][B] avec k = {{k}} L·mol⁻¹·s⁻¹. Calculer v quand [A] = {{CA_mmol}} mmol/L et [B] = {{CB_mmol}} mmol/L.",
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversions en mol/L",
+        "content": "$[A] = {{CA_mmol}}$ mmol/L $= {{CA_mol}}$ mol/L\n$[B] = {{CB_mmol}}$ mmol/L $= {{CB_mol}}$ mol/L",
+        "compute": {
+          "CA_mol": "CA_mmol / 1000",
+          "CB_mol": "CB_mmol / 1000"
+        }
+      },
+      {
+        "step": 2,
+        "title": "Application de la loi de vitesse",
+        "content": "$v = k[A][B] = {{k}} \\times {{CA_mol}} \\times {{CB_mol}}$",
+        "explanation": "La vitesse est proportionnelle au produit des concentrations"
+      },
+      {
+        "step": 3,
+        "title": "Calcul numérique",
+        "content": "$v = {{k}} \\times {{CA_mol}} \\times {{CB_mol}} = {{v}}$ mol·L⁻¹·s⁻¹",
+        "compute": {
+          "v": "k * CA_mol * CB_mol"
+        }
+      }
+    ],
+    "finalAnswer": "$v = {{v}}$ mol·L⁻¹·s⁻¹",
+    "method": "Loi de vitesse: $v = k[A]^a[B]^b$",
+    "hints": [
+      "Convertir les concentrations en mol/L",
+      "Appliquer la loi de vitesse donnée"
+    ],
+    "commonMistakes": [
+      "Oublier de convertir mmol en mol",
+      "Se tromper dans les unités de k"
+    ],
+    "tags": [
+      "cinétique",
+      "vitesse",
+      "loi de vitesse",
+      "ordre 2"
+    ]
   }
 ]
