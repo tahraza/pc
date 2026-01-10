@@ -17,7 +17,6 @@ import {
   Sun,
   Monitor,
   FileText,
-  HelpCircle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SearchModal } from './SearchModal'
@@ -28,7 +27,6 @@ const navigation = [
   { name: 'Leçons', href: '/lecons', icon: BookOpen },
   { name: 'Exercices', href: '/exercices', icon: ClipboardList },
   { name: 'Guidés', href: '/exercices-guides', icon: Lightbulb },
-  { name: 'Conceptuel', href: '/questions-conceptuelles', icon: HelpCircle },
   { name: 'Annales', href: '/annales', icon: FileText },
   { name: 'Flashcards', href: '/flashcards', icon: Brain },
   { name: 'Stats', href: '/stats', icon: BarChart3 },

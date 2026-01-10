@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ClipboardList, Tag, ChevronRight, Filter, Shuffle, AlertTriangle } from 'lucide-react'
+import { ClipboardList, Tag, ChevronRight, Filter, Shuffle, AlertTriangle, HelpCircle } from 'lucide-react'
 import { getDifficultyLabel, getDifficultyColor } from '@/lib/utils'
 import MathText from '@/components/MathText'
 
@@ -138,6 +138,13 @@ export default function ExercisesClient() {
               >
                 <AlertTriangle className="h-4 w-4" />
                 <span className="hidden sm:inline">Trouver l'erreur</span>
+              </Link>
+              <Link
+                href="/questions-conceptuelles"
+                className="flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors"
+              >
+                <HelpCircle className="h-4 w-4" />
+                <span className="hidden sm:inline">Conceptuel</span>
               </Link>
             </div>
           </div>
