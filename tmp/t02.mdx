@@ -1,0 +1,307 @@
+---
+id: "thermodynamique-expert"
+title: "Thermodynamique : gaz parfait, premier principe et transferts d’énergie"
+track: "physique"
+level: 2
+prerequisites: ["Travail d'une force", "Énergie et puissance", "Notions sur les gaz (pression, température)", "Équations différentielles (bases)"]
+tags: ["thermodynamique", "gaz parfait", "premier principe", "énergie interne", "transferts thermiques", "bilan radiatif", "loi de Newton"]
+estimatedTime: 110
+chapter: "energie-conversions-transferts"
+order: 4
+---
+
+# Thermodynamique
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Définir un système thermodynamique (isolé, fermé) et distinguer **énergie interne** et **énergie mécanique**.
+- Utiliser correctement les **conventions de signe** pour $Q$ (chaleur) et $W$ (travail).
+- Appliquer le **premier principe** : $\Delta U = Q + W$.
+- Exploiter le modèle du **gaz parfait** : $pV = nRT$ et les transformations (isochore, isobare, isotherme, adiabatique).
+- Relier température et énergie interne (gaz parfait, systèmes incompressibles).
+- Décrire et quantifier les **transferts thermiques** (conduction, convection, rayonnement), flux $\Phi$ et résistance thermique $R_{th}$.
+- Résoudre des bilans énergétiques (mur isolant, refroidissement, Terre-atmosphère).
+
+## 1. Intuition et analogies : “tenir la compta” de l’énergie
+
+### 1.1 L’idée centrale : un livre de comptes
+En thermodynamique, on ne “voit” pas les particules. On suit donc une grandeur globale : l’**énergie**.
+- **$U$ (énergie interne)** : “la richesse microscopique” du système (agitation + interactions).
+- **$Q$ (chaleur)** : un **transfert** d’énergie “désordonné” (lié à un écart de température).
+- **$W$ (travail)** : un **transfert** d’énergie “organisé” (par une force macroscopique, souvent les forces de pression).
+
+> **Analogie : le compte bancaire**
+> - $U$ = ton solde.
+> - $Q$ = un virement automatique déclenché par une différence de température (ça ne dépend pas “du chemin” de ton système).
+> - $W$ = un paiement lié à une action mécanique (piston, compression…).
+>
+> On retient : **$Q$ et $W$ ne sont pas des “énergies stockées”** dans le système. Ce sont des *modes d’échange*.
+
+### 1.2 Deux confusions fréquentes (à casser dès maintenant)
+- **Chaleur $\neq$ température** : la température mesure un état, la chaleur est un transfert.
+- **“Un système reçoit de la chaleur”** = “$Q>0$ selon la convention choisie”. Attention : on doit toujours vérifier la convention du cours / sujet (on fixe une fois, puis on applique partout).
+
+:::tip[Mini-question]
+Pourquoi dit-on que $U$ est une *fonction d’état* alors que $Q$ et $W$ ne le sont pas ?
+:::
+
+**Correction (idée)** : un état (pression, volume, température…) définit $U$ ; pour aller de l’état initial à l’état final, $\Delta U$ est unique. En revanche, la répartition entre $Q$ et $W$ dépend du chemin de transformation (ex : compression lente/isotherme vs compression adiabatique).
+
+## 2. Système thermodynamique et énergie interne
+
+### 2.1 Système isolé / fermé (et pourquoi c’est important)
+- **Système isolé** : n’échange ni matière ni énergie (idéalisation).
+- **Système fermé** : pas d’échange de matière, mais échanges d’énergie possibles (chaleur, travail).
+
+En pratique, au lycée on étudie souvent des situations où l’énergie mécanique macroscopique est négligeable (système au repos, champs externes négligeables), ce qui conduit à un bilan centré sur $U$.
+
+### 2.2 Énergie totale et séparation “macro / micro”
+On sépare :
+- $E_m$ : énergie mécanique (macro) ;
+- $U$ : énergie interne (micro).
+
+Dans la plupart des exercices “thermo” du chapitre, on prend **$E_m \approx 0$** : alors une variation d’énergie totale se traduit par une variation d’énergie interne.
+
+## 3. Premier principe de la thermodynamique (le bilan fondamental)
+
+### 3.1 L’énoncé (avec la convention utilisée ici)
+On utilise la convention “**positif si le système reçoit de l’énergie**” pour $Q$ et $W$ :
+$$\Delta U = Q + W$$
+
+- $\Delta U = U_f - U_i$ (J)
+- $Q$ : énergie thermique reçue/cédée (J)
+- $W$ : travail reçu/cédé (J)
+
+:::warning[Point clé : le signe du travail des forces de pression]
+En compression, l’extérieur “pousse” sur le gaz : le système **reçoit** du travail (souvent $W>0$).
+En détente, le système “pousse” sur l’extérieur : il **cède** du travail (souvent $W<0$).
+Vérifie toujours la convention du sujet.
+:::
+
+### 3.2 Travail des forces de pression (cas simple)
+Si la pression extérieure est constante (modèle usuel au lycée), le travail échangé lors d’une variation de volume $\Delta V$ est :
+$$W = -P\,\Delta V$$
+- Si $\Delta V < 0$ (compression) alors $W>0$.
+- Si $\Delta V > 0$ (détente) alors $W<0$.
+
+:::tip[Mini-exercice express]
+Un gaz subit une compression à pression constante $P=1{,}0\times10^5\ \text{Pa}$ : $V$ passe de $5{,}0\ \text{m}^3$ à $3{,}0\ \text{m}^3$. Calculer $W$.
+:::
+**Correction** : $\Delta V = 3{,}0-5{,}0=-2{,}0\ \text{m}^3$ donc $W=-P\Delta V = -10^5\times(-2{,}0)=+2{,}0\times10^5\ \text{J}$.
+
+### 3.3 Travail et chaleur “élémentaires” (idée avancée)
+On peut écrire sous forme infinitésimale : $dU = \delta Q + \delta W$.
+Le symbole $\delta$ rappelle que $Q$ et $W$ dépendent du chemin de transformation.
+
+## 4. Modèle du gaz parfait : équation d’état et transformations
+
+### 4.1 Quand peut-on l’utiliser ?
+Le modèle du gaz parfait s’applique bien quand le gaz est **suffisamment dilué** (pression faible, interactions négligeables).
+
+### 4.2 Équation d’état
+$$pV = nRT$$
+avec $R = 8{,}314\ \text{J·mol}^{-1}\text{·K}^{-1}$.
+
+:::tip[Réflexe]
+Toujours convertir la température en kelvins : $T(\text{K}) = \theta(°\text{C}) + 273$.
+Mais **une variation** $\Delta T$ est identique en K et en °C.
+:::
+
+### 4.3 Transformations usuelles (lecture “Clapeyron”)
+Sur un diagramme $(V,P)$ :
+- **isobare** : $P$ constant → segment horizontal ;
+- **isochore** : $V$ constant → segment vertical ;
+- **isotherme** : $T$ constant → hyperbole (loi de Mariotte) ;
+- **adiabatique** : $Q=0$.
+
+#### (a) Isochore : $V$ constant
+Alors $\Delta V=0$ donc $W=0$ et le premier principe donne :
+$$\Delta U = Q$$
+
+#### (b) Isotherme (gaz parfait)
+Pour un gaz parfait, $U$ dépend uniquement de $T$. Donc si $T$ est constant :
+$$\Delta U = 0 \quad \Rightarrow \quad Q = -W$$
+L’énergie reçue par travail est exactement “ressortie” en chaleur (ou inversement).
+
+#### (c) Adiabatique : $Q=0$
+Alors :
+$$\Delta U = W$$
+Toute variation d’énergie interne provient du travail.
+
+:::tip[Mini-question]
+Pourquoi la détente de Joule-Gay Lussac (enceinte rigide calorifugée + vide) conduit-elle à $\Delta U=0$ ?
+:::
+**Correction (idée)** : paroi rigide → pas de travail de pression global ($W=0$) ; calorifugée → pas d’échange thermique ($Q=0$) ; donc $\Delta U=0$. Pour un gaz parfait, cela implique $\Delta T=0$.
+
+### 4.4 Énergie interne d’un gaz parfait (niveau “expert” mais utile)
+Pour un gaz parfait **monoatomique** :
+$$U(T) = \frac{3}{2} N k_B T$$
+Donc $U$ ne dépend que de $T$ : dès que tu sais si $T$ augmente/diminue, tu sais le signe de $\Delta U$.
+
+## 5. Capacité thermique : “combien d’énergie pour changer $T$ ?”
+
+### 5.1 Définition
+La capacité thermique $C$ d’un système traduit la chaleur nécessaire pour augmenter sa température :
+$$C = \frac{dQ}{dT}\quad (\text{J·K}^{-1})$$
+
+### 5.2 Système incompressible (phases condensées)
+Pour un système incompressible, le volume est constant : $\Delta V=0$ donc $W=0$.
+Le premier principe devient :
+$$\Delta U = Q$$
+Si $C$ est constant :
+$$Q = C\,\Delta T \quad \Rightarrow \quad \Delta U = C\,\Delta T$$
+
+> **Intuition**
+> - Plus $C$ est grand, plus le système est “difficile à chauffer” : il faut beaucoup d’énergie pour augmenter $T$.
+
+:::tip[Mini-exercice]
+Un système incompressible a $C=500\ \text{J·K}^{-1}$ et passe de $20°\text{C}$ à $-15°\text{C}$. Calculer $Q$ (convention : $Q>0$ si le système reçoit).
+:::
+**Correction** : $\Delta T = -15-20=-35\ \text{K}$. Donc $Q=C\Delta T = 500\times(-35)=-1{,}75\times10^4\ \text{J}$. Le signe négatif signifie que le système **cède** de l’énergie thermique.
+
+## 6. Transferts thermiques : comment l’énergie “circule” ?
+
+### 6.1 Trois modes
+- **Conduction** : contact, transfert “de proche en proche” sans déplacement de matière.
+- **Convection** : transfert dans les fluides avec déplacement de matière.
+- **Rayonnement** : transfert par ondes électromagnétiques, possible dans le vide.
+
+> **Analogie microscopique**
+> La conduction, c’est comme une “onde de bousculades” : les particules les plus agitées transmettent leur agitation aux moins agitées, jusqu’à l’équilibre.
+
+:::tip[Exemple concret]
+Eau qui chauffe dans une casserole : conduction plaque→casserole puis casserole→eau au contact ; convection dans l’eau (boucles de circulation) ; rayonnement possible (ex. Soleil, flamme).
+:::
+
+### 6.2 Flux thermique : une “puissance” de chaleur
+Le flux thermique $\Phi$ (ou $\Phi_Q$) est la quantité de chaleur transférée par unité de temps :
+$$\Phi = \frac{dQ}{dt} \quad \text{(W)}$$
+En régime permanent : $\Phi = \frac{Q}{\Delta t}$.
+
+### 6.3 Résistance thermique et loi de Fourier (modèle 1D)
+Pour une paroi plane (surface $S$, épaisseur $L$) entre deux faces à $T_1$ et $T_2$ :
+$$\Phi = \frac{T_1 - T_2}{R_{th}}$$
+avec
+$$R_{th} = \frac{L}{\lambda S}$$
+où $\lambda$ est la conductivité thermique (W·m$^{-1}$·K$^{-1}$).
+
+> **Analogie électrique**
+> - $\Delta T$ joue le rôle de $\Delta V$,
+> - $\Phi$ joue le rôle du courant $I$,
+> - $R_{th}$ joue le rôle de la résistance $R$.
+>
+> Donc : $\Delta T = R_{th}\,\Phi$ comme $\Delta V = R\,I$.
+
+:::tip[Mini-exercice]
+Une paroi a une résistance thermique $R_{th}=2{,}0\ \text{K·W}^{-1}$, avec $T_1=293\ \text{K}$ et $T_2=273\ \text{K}$. Calculer $\Phi$ (sens conventionnel de $T_1$ vers $T_2$).
+:::
+**Correction** : $\Phi = (T_1-T_2)/R_{th} = (20)/2{,}0 = 10\ \text{W}$.
+
+## 7. Refroidissement / chauffage : loi phénoménologique de Newton
+
+Quand un système incompressible échange de la chaleur avec un thermostat (milieu à température constante $T_{th}$), on modélise souvent :
+$$\frac{dT}{dt} = -\alpha\,(T - T_{th})$$
+Solution :
+$$T(t) = T_{th} + (T_0 - T_{th})\,e^{-\alpha t}$$
+
+> **Intuition**
+> Le terme $(T-T_{th})$ est “l’écart qui pousse le transfert”. Plus l’écart est grand, plus la vitesse de refroidissement/chauffage est grande.
+
+:::tip[Mini-exercice]
+Un objet passe de $20°\text{C}$ vers un thermostat à $40°\text{C}$. Que vaut la température finale quand $t\to\infty$ ?
+:::
+**Correction** : $T(\infty)=T_{th}=40°\text{C}$.
+
+## 8. Bilan radiatif Terre–atmosphère : un bilan d’énergie “à l’échelle planète”
+
+### 8.1 Idée : “entrées = sorties” en régime stationnaire
+La Terre-atmosphère reçoit principalement l’énergie du Soleil (rayonnement). Une partie est réfléchie (albédo), une partie absorbée, puis la Terre réémet en infrarouge. L’atmosphère absorbe/réémet : **effet de serre**.
+
+En régime global stable, le bilan radiatif peut être nul : flux reçu = flux sortant, ce qui stabilise la température moyenne.
+
+### 8.2 Stefan–Boltzmann (corps noir)
+La puissance radiative surfacique émise par un corps noir :
+$$\phi = \sigma T^4$$
+avec $\sigma \approx 5{,}67\times10^{-8}\ \text{W·m}^{-2}\text{·K}^{-4}$.
+
+:::tip[Mini-exercice guidé]
+Si la surface terrestre émet un flux $\phi=390\ \text{W·m}^{-2}$, estimer $T$ (en K), puis en °C.
+:::
+**Correction (méthode)** : $T = \left(\frac{\phi}{\sigma}\right)^{1/4}$.
+On trouve environ $T\approx 288\ \text{K}$ soit $15°\text{C}$.
+
+## 9. Erreurs classiques (et comment les éviter)
+
+### 9.1 Signe de $Q$ et $W$ (l’erreur n°1)
+**Symptôme** : tu trouves un $\Delta U$ incohérent avec “ça chauffe / ça refroidit”.
+
+**Check-list anti-bug**
+1. Écris la convention choisie : “positif si le système reçoit…”.
+2. Déduis le signe de $\Delta V$ puis celui de $W=-P\Delta V$.
+3. Déduis le signe de $Q$ avec le sens du transfert (chaud → froid).
+4. Seulement ensuite, applique $\Delta U = Q + W$.
+
+### 9.2 Mélanger “température” et “énergie thermique”
+**Symptôme** : tu écris “l’objet a reçu de la température”.
+
+**Remède** : phrase correcte = “l’objet a reçu de l’énergie thermique ($Q>0$) et sa température a augmenté”.
+
+### 9.3 Oublier les unités (Pa, m³, K)
+- Le travail $W$ se calcule en joules : $P$ en pascals et $\Delta V$ en m³.
+- En radiation, $\phi$ est en W·m$^{-2}$.
+- Pour $pV=nRT$, attention : $V$ en m³, $T$ en K.
+
+### 9.4 Utiliser °C dans $pV=nRT$ (interdit)
+**Règle** : dans une équation d’état, *température absolue* → kelvins.
+
+### 9.5 Confondre “adiabatique” et “isotherme”
+- Adiabatique : $Q=0$ (pas d’échange thermique).
+- Isotherme : $T$ constant (peut échanger de la chaleur pour maintenir $T$).
+
+## 10. Exercices intégrés (avec corrigés)
+
+### Exercice A — Étude énergétique d’un système (travail vs chaleur)
+Un système fermé subit deux transformations :
+1) $T$ constant, $P=1{,}0\times10^5$ Pa, $V$ passe de $5{,}0$ à $3{,}0$ m³.  
+2) $V$ constant, $T$ passe de $20°\text{C}$ à $-15°\text{C}$, $C=500$ J·K$^{-1}$.
+
+1. Calculer $\Delta U$ pour chaque transformation.
+2. Dire si le système gagne ou perd de l’énergie.
+
+**Correction**
+1) Transformation 1 : $\Delta T=0 \Rightarrow Q=0$.  
+$W=-P\Delta V=+2{,}0\times10^5$ J donc $\Delta U=2{,}0\times10^5$ J. Le système **gagne** de l’énergie interne.  
+2) Transformation 2 : $\Delta V=0 \Rightarrow W=0$.  
+$Q=C\Delta T=500\times(-35)=-1{,}75\times10^4$ J donc $\Delta U=-1{,}75\times10^4$ J. Le système **perd** de l’énergie interne.
+
+### Exercice B — Mur isolant : calcul d’un flux thermique
+Une paroi de résistance thermique globale $R_{th}=0{,}12\ \text{K·W}^{-1}$ sépare un intérieur à $20°\text{C}$ d’un extérieur à $-2°\text{C}$ (régime permanent).  
+1) Calculer $\Phi$. 2) Interpréter le signe.
+
+**Correction**
+$\Delta T = 20-(-2)=22\ \text{K}$, donc $\Phi = \Delta T / R_{th} = 22/0{,}12 \approx 183\ \text{W}$.  
+Le flux est dirigé du chaud vers le froid : l’intérieur perd de l’énergie.
+
+### Exercice C — Gaz parfait isochore (niveau “bac+” mais faisable)
+Un gaz parfait monoatomique, à volume constant, subit une augmentation de température $\Delta T$.
+1) Comment varie $P$ ? 2) Exprimer $Q$ et $\Delta U$.
+
+**Correction (idées)**
+Isochore : $V$ constant → $P \propto T$, donc $\Delta P/P = \Delta T/T$.  
+Comme $W=0$, premier principe : $\Delta U = Q$.  
+Pour un gaz monoatomique : $C_V = \frac{3}{2}nR$ donc $Q=C_V\Delta T$ et $\Delta U=\frac{3}{2}nR\Delta T$.
+
+## 11. Ce qu’il faut retenir (checklist “Bac”)
+- Premier principe : $\Delta U = Q + W$ (avec conventions cohérentes).
+- Travail de pression (cas simple) : $W=-P\Delta V$.
+- Gaz parfait : $pV=nRT$ (T en K).
+- Isochore : $W=0$ ; adiabatique : $Q=0$ ; isotherme (gaz parfait) : $\Delta U=0$ donc $Q=-W$.
+- Transferts : conduction / convection / rayonnement ; flux $\Phi = dQ/dt$ ; $\Phi = \Delta T/R_{th}$ ; $R_{th}=L/(\lambda S)$.
+- Loi de Newton : $dT/dt=-\alpha(T-T_{th})$ → décroissance exponentielle vers $T_{th}$.
+- Bilan radiatif Terre : entrée solaire / réflexion (albédo) / réémission IR ; Stefan–Boltzmann $\phi=\sigma T^4$.
+
+---
+
+## Références (manuels fournis)
+- *Physique-Chimie Terminale générale spécialité – Prépabac* (chapitre “Conversations et transferts d’énergie”, bilans et transfert thermique).
+- *Spé Physique-Chimie Terminale* (chapitre “Conversions et transferts d’énergie” : premier principe, capacité thermique, transferts, exercices).

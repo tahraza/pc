@@ -1,0 +1,272 @@
+[
+  {
+    "id": "fc-acide-base-1",
+    "lessonId": "transformations-acide-base",
+    "front": "Qu'est-ce qu'un acide selon Brønsted ?",
+    "back": "C'est une espèce chimique capable de céder un ou plusieurs protons H+.\n\nExemple : AH = A⁻ + H⁺",
+    "tags": ["chimie", "acide", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-acide-base-2",
+    "lessonId": "transformations-acide-base",
+    "front": "Quelle est la définition du pH d'une solution ?",
+    "back": "pH = -log([H₃O⁺]/c₀)\n\nAvec c₀ = 1 mol/L (concentration standard).",
+    "tags": ["chimie", "pH", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-base-3",
+    "lessonId": "force-acides-bases",
+    "front": "Quelle est la relation entre le pH, le pKa et les concentrations pour un couple AH/A⁻ ?",
+    "back": "pH = pKa + log([A⁻]/[AH])\n\nC'est la relation d'Henderson-Hasselbalch.",
+    "tags": ["chimie", "pKa", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-acide-base-4",
+    "lessonId": "force-acides-bases",
+    "front": "Qu'est-ce qu'une solution tampon ?",
+    "back": "C'est une solution dont le pH varie peu par addition d'une petite quantité d'acide, de base ou par dilution modérée.",
+    "tags": ["chimie", "tampon", "définition"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-cinetique-1",
+    "lessonId": "suivi-temporel",
+    "front": "Quels sont les deux principaux facteurs cinétiques ?",
+    "back": "1. La température\n2. La concentration initiale des réactifs\n\nIls permettent de modifier la vitesse d'une réaction.",
+    "tags": ["chimie", "cinétique", "vitesse"],
+    "level": 1,
+    "category": "concept"
+  },
+  {
+    "id": "fc-cinetique-2",
+    "lessonId": "suivi-temporel",
+    "front": "Définition du temps de demi-réaction (t1/2)",
+    "back": "C'est la durée au bout de laquelle l'avancement x de la réaction atteint la moitié de sa valeur finale xf.\n\nx(t1/2) = xf / 2",
+    "tags": ["chimie", "cinétique", "demi-vie"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-cinetique-3",
+    "lessonId": "suivi-temporel",
+    "front": "Qu'est-ce qu'un catalyseur ?",
+    "back": "Une espèce chimique qui accélère une réaction sans modifier l'état final du système. Il est consommé puis régénéré (il n'apparaît pas dans l'équation bilan).",
+    "tags": ["chimie", "catalyseur", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-nucleaire-1",
+    "lessonId": "transformations-nucleaires",
+    "front": "Qu'est-ce qu'un isotope ?",
+    "back": "Ce sont des noyaux possédant le même nombre de protons (Z) mais un nombre de neutrons (N) différent (donc un nombre de masse A différent).",
+    "tags": ["physique", "noyau", "isotope"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-nucleaire-2",
+    "lessonId": "transformations-nucleaires",
+    "front": "Quelle est la loi de décroissance radioactive ?",
+    "back": "N(t) = N₀.e^(-λt)\n\nN(t) : nombre de noyaux restants\nN₀ : nombre initial\nλ : constante radioactive (s⁻¹)",
+    "tags": ["physique", "radioactivité", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-meca-1",
+    "lessonId": "lois-newton",
+    "front": "Énoncé de la 2ème loi de Newton (principe fondamental)",
+    "back": "Dans un référentiel galiléen, la somme vectorielle des forces extérieures appliquées à un système est égale au produit de sa masse par le vecteur accélération de son centre de masse.\n\n∑F_ext = m.a",
+    "tags": ["physique", "newton", "loi"],
+    "level": 2,
+    "category": "law"
+  },
+  {
+    "id": "fc-meca-2",
+    "lessonId": "mouvement-satellites",
+    "front": "Quelle est la 3ème loi de Kepler (loi des périodes) ?",
+    "back": "Le carré de la période de révolution est proportionnel au cube du demi-grand axe de l'orbite.\n\nT² / a³ = constante\n(Pour le Soleil : 4π² / G.Ms)",
+    "tags": ["physique", "kepler", "loi"],
+    "level": 2,
+    "category": "law"
+  },
+  {
+    "id": "fc-meca-3",
+    "lessonId": "mouvement-satellites",
+    "front": "Expression de l'accélération dans le repère de Frenet pour un mouvement circulaire",
+    "back": "a = (dv/dt).T + (v²/R).N\n\nSi le mouvement est uniforme (v=cste), alors a = (v²/R).N (accélération centripète).",
+    "tags": ["physique", "frenet", "accélération"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermo-1",
+    "lessonId": "premier-principe",
+    "front": "Énoncé du 1er principe de la thermodynamique pour un système fermé au repos",
+    "back": "ΔU = W + Q\n\nΔU : variation d'énergie interne\nW : travail échangé\nQ : transfert thermique échangé",
+    "tags": ["physique", "thermodynamique", "loi"],
+    "level": 2,
+    "category": "law"
+  },
+  {
+    "id": "fc-thermo-2",
+    "lessonId": "premier-principe",
+    "front": "Variation d'énergie interne pour un système incompressible (solide/liquide)",
+    "back": "ΔU = m.c.ΔT\n\nm : masse (kg)\nc : capacité thermique massique (J.kg⁻¹.K⁻¹)\nΔT : variation de température (K ou °C)",
+    "tags": ["physique", "thermodynamique", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-thermo-3",
+    "lessonId": "premier-principe",
+    "front": "Expression du flux thermique Φ à travers une paroi",
+    "back": "Φ = Q / Δt = (Tc - Tf) / Rth\n\nΦ : flux (W)\nRth : résistance thermique (K.W⁻¹)",
+    "tags": ["physique", "flux", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ondes-1",
+    "lessonId": "phenomenes-ondulatoires",
+    "front": "Condition pour observer le phénomène de diffraction",
+    "back": "La diffraction est observable lorsque la taille de l'ouverture ou de l'obstacle 'a' est du même ordre de grandeur ou inférieure à la longueur d'onde λ.\n\na ≤ λ (ou proche)",
+    "tags": ["physique", "diffraction", "condition"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-ondes-2",
+    "lessonId": "phenomenes-ondulatoires",
+    "front": "Formule du niveau d'intensité sonore L",
+    "back": "L = 10.log(I / I₀)\n\nL : niveau sonore (dB)\nI : intensité sonore (W.m⁻²)\nI₀ : intensité de référence (1,0 × 10⁻¹² W.m⁻²)",
+    "tags": ["physique", "son", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ondes-3",
+    "lessonId": "phenomenes-ondulatoires",
+    "front": "Expression de l'interfrange i (Interférences)",
+    "back": "i = (λ . D) / a\n\nλ : longueur d'onde\nD : distance fentes-écran\na : distance entre les fentes",
+    "tags": ["physique", "interférences", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-elec-1",
+    "lessonId": "systeme-electrique",
+    "front": "Relation charge-tension pour un condensateur",
+    "back": "q(t) = C . uC(t)\n\nq : charge (C)\nC : capacité (F)\nuC : tension (V)",
+    "tags": ["physique", "électricité", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-elec-2",
+    "lessonId": "systeme-electrique",
+    "front": "Constante de temps τ d'un circuit RC",
+    "back": "τ = R . C\n\nτ s'exprime en secondes (s).",
+    "tags": ["physique", "électricité", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-elec-3",
+    "lessonId": "systeme-electrique",
+    "front": "Équation différentielle de la charge d'un condensateur (circuit RC)",
+    "back": "uC + RC.(duC/dt) = E\n\n(D'après la loi des mailles E = uR + uC et uR = Ri = RC.duC/dt)",
+    "tags": ["physique", "électricité", "équation"],
+    "level": 3,
+    "category": "method"
+  },
+  {
+    "id": "fc-orga-1",
+    "lessonId": "synthese-organique",
+    "front": "Qu'est-ce qu'une molécule isomère de constitution ?",
+    "back": "Ce sont des molécules ayant la même formule brute mais des enchaînements d'atomes (formules semi-développées) différents.",
+    "tags": ["chimie", "organique", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-orga-2",
+    "lessonId": "synthese-organique",
+    "front": "Rôle du chauffage à reflux",
+    "back": "Il permet d'accélérer la réaction (facteur cinétique température) sans perte de matière (les vapeurs sont condensées et retombent dans le ballon).",
+    "tags": ["chimie", "montage", "technique"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-orga-3",
+    "lessonId": "synthese-organique",
+    "front": "Définition du rendement d'une synthèse",
+    "back": "η = n_exp / n_max\n\nn_exp : quantité de matière réellement obtenue\nn_max : quantité maximale théorique (si réaction totale)",
+    "tags": ["chimie", "rendement", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-analyse-1",
+    "lessonId": "methodes-physiques",
+    "front": "Loi de Beer-Lambert (Absorbance)",
+    "back": "A = k . C\n\nL'absorbance A est proportionnelle à la concentration C de l'espèce colorée (pour des solutions diluées).",
+    "tags": ["chimie", "spectrophotométrie", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-analyse-2",
+    "lessonId": "methodes-physiques",
+    "front": "Loi de Kohlrausch (Conductivité)",
+    "back": "σ = ∑ λi . [Xi]\n\nLa conductivité σ est la somme des contributions de chaque ion (conductivité molaire ionique λ fois concentration).",
+    "tags": ["chimie", "conductimétrie", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-fluides-1",
+    "lessonId": "mecanique-fluides",
+    "front": "Relation de la Poussée d'Archimède",
+    "back": "Π = ρ_fluide . V_immergé . g\n\nForce verticale dirigée vers le haut, égale au poids du volume de fluide déplacé.",
+    "tags": ["physique", "fluides", "force"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-fluides-2",
+    "lessonId": "mecanique-fluides",
+    "front": "Relation de Bernoulli (conservation de l'énergie)",
+    "back": "½.ρ.v² + ρ.g.z + p = constante\n\nRelie la vitesse, l'altitude et la pression d'un fluide en écoulement permanent.",
+    "tags": ["physique", "fluides", "loi"],
+    "level": 3,
+    "category": "law"
+  },
+  {
+    "id": "fc-redox-1",
+    "lessonId": "evolution-spontanee",
+    "front": "Critère d'évolution spontanée d'un système chimique",
+    "back": "Si Qr,i < K : évolution sens direct (→)\nSi Qr,i > K : évolution sens inverse (←)\nSi Qr,i = K : équilibre",
+    "tags": ["chimie", "équilibre", "critère"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-redox-2",
+    "lessonId": "piles-electrolyse",
+    "front": "Formule de la capacité Q d'une pile",
+    "back": "Q = I . Δt = n(e⁻) . F\n\nQ en Coulombs (C)\nn(e⁻) : quantité de matière d'électrons échangés\nF : constante de Faraday (96500 C/mol)",
+    "tags": ["chimie", "pile", "formule"],
+    "level": 2,
+    "category": "formula"
+  }
+]

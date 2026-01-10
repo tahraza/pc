@@ -1,0 +1,176 @@
+---
+id: "radioactivite-expert"
+title: "Radioactivité et Décroissance : De l'instabilité du noyau à la loi temporelle"
+track: "physique"
+level: 2
+prerequisites: ["Structure de l'atome", "Fonction exponentielle", "Logarithme népérien", "Équations différentielles"]
+tags: ["nucléaire", "isotopes", "alpha", "beta", "gamma", "demi-vie", "activité"]
+estimatedTime: 120
+chapter: "transformations-nucleaires"
+order: 1
+---
+
+# Radioactivité et Décroissance Radioactive
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Expliquer les causes de l'instabilité nucléaire à l'aide du diagramme $(N, Z)$.
+- Écrire et équilibrer les équations de désintégration ($\alpha, \beta^-, \beta^+, \gamma$) en respectant les lois de conservation.
+- Établir la loi de décroissance radioactive par la résolution de l'équation différentielle.
+- Relier l'activité $A$, le nombre de noyaux $N$, la constante $\lambda$ et la demi-vie $t_{1/2}$.
+- Appliquer ces notions à la datation et à la médecine nucléaire.
+
+---
+
+## 1. Intuition et Analogie : Le Pop-Corn
+
+La radioactivité est un phénomène **aléatoire**, **spontané** et **inéluctable** qui concerne le noyau des atomes [1, 2].
+
+> **Analogie : Le Maïs à Pop-Corn**
+> Imaginez des grains de maïs dans une machine à pop-corn en marche.
+> *   **Le Noyau Instable :** C'est le grain de maïs. Il contient trop d'énergie ou est mal structuré.
+> *   **La Désintégration :** C'est le moment où le grain éclate ("Pop !"). Il se transforme (change de forme) et libère de l'énergie (chaleur/bruit).
+> *   **Le Caractère Aléatoire :** Il est impossible de prédire *quand* un grain précis va éclater. Ce pourrait être dans 1 seconde ou dans 10 minutes.
+> *   **La Loi Statistique :** Par contre, sur un grand nombre de grains (des milliards), on sait parfaitement prévoir combien auront éclaté au bout de 2 minutes. C'est la loi de décroissance radioactive.
+
+---
+
+## 2. Stabilité et Instabilité du Noyau
+
+### A. Composition et Isotopes
+Le noyau d'un atome est représenté par le symbole $^A_Z X$ où :
+*   $Z$ est le **numéro atomique** (nombre de protons).
+*   $A$ est le **nombre de masse** (nombre de nucléons = protons + neutrons).
+*   Le nombre de neutrons est $N = A - Z$ [3, 4].
+
+Des **isotopes** sont des noyaux ayant le même nombre de protons $Z$ (donc le même élément chimique) mais un nombre de neutrons $N$ différent [5, 6].
+*   *Exemple :* Le Carbone 12 ($^{12}_6C$, stable) et le Carbone 14 ($^{14}_6C$, radioactif) sont des isotopes.
+
+### B. La Vallée de Stabilité : Le Diagramme $(N, Z)$
+Pour être stable, un noyau doit respecter un équilibre précis entre les forces attractives (interaction forte entre nucléons) et répulsives (électrostatique entre protons). On visualise cela sur le diagramme de Segré ou diagramme $(N, Z)$ [6, 7] :
+
+1.  **La Vallée de Stabilité :** C'est la zone où se trouvent les noyaux stables.
+    *   Pour $Z < 20$, les noyaux stables sont sur la bissectrice $N=Z$.
+    *   Pour $Z > 20$, la vallée s'incurve : il faut plus de neutrons que de protons pour compenser la répulsion électrique ($N > Z$) [7].
+2.  **L'Instabilité :** Les noyaux situés en dehors de cette vallée sont instables (radioactifs). Ils vont chercher à rejoindre la vallée en changeant leur composition via la désintégration.
+
+---
+
+## 3. Les Mécanismes de Désintégration
+
+Lors d'une désintégration, un noyau père $X$ se transforme en un noyau fils $Y$ en émettant une particule $P$ et parfois un rayonnement gamma.
+**Lois de conservation (Soddy) :** Il y a conservation du nombre de charge $Z$ et du nombre de masse $A$ [8, 9].
+$$A_{père} = A_{fils} + A_{particule}$$
+$$Z_{père} = Z_{fils} + Z_{particule}$$
+
+### A. Radioactivité $\alpha$ (Alpha)
+*   **Cause :** Le noyau est **trop lourd** (généralement $Z > 83$). Il doit perdre de la masse pour se stabiliser [7].
+*   **Mécanisme :** Éjection d'un **noyau d'Hélium** (aussi appelé particule $\alpha$).
+*   **Équation :**
+    $$^A_Z X \rightarrow ^{A-4}_{Z-2} Y + ^4_2 He$$
+*   *Exemple :* Désintégration de l'Uranium 238 [9, 10].
+    $$^{238}_{92} U \rightarrow ^{234}_{90} Th + ^4_2 He$$
+
+### B. Radioactivité $\beta^-$ (Bêta moins)
+*   **Cause :** Le noyau a un **excès de neutrons** (il est au-dessus de la vallée de stabilité) [7, 11].
+*   **Mécanisme :** Un neutron se transforme en proton. Un électron (particule $\beta^-$) est éjecté du noyau (ainsi qu'une antiparticule, l'antineutrino $\bar{\nu}$, souvent omise au lycée).
+*   **Équation :**
+    $$^A_Z X \rightarrow ^A_{Z+1} Y + ^0_{-1} e$$
+*   *Exemple :* Le Carbone 14 [10, 11].
+    $$^{14}_{6} C \rightarrow ^{14}_{7} N + ^0_{-1} e$$
+
+### C. Radioactivité $\beta^+$ (Bêta plus)
+*   **Cause :** Le noyau a un **excès de protons** (il est en dessous de la vallée de stabilité) [7, 11].
+*   **Mécanisme :** Un proton se transforme en neutron. Un positon (anti-électron, particule $\beta^+$) est éjecté (ainsi qu'un neutrino $\nu$).
+*   **Équation :**
+    $$^A_Z X \rightarrow ^A_{Z-1} Y + ^0_{+1} e$$
+*   *Exemple :* Le Fluor 18 (utilisé en imagerie médicale) [10, 12].
+    $$^{18}_{9} F \rightarrow ^{18}_{8} O + ^0_{+1} e$$
+
+### D. Radioactivité $\gamma$ (Gamma)
+*   **Cause :** Après une désintégration $\alpha$ ou $\beta$, le noyau fils est souvent dans un état excité (noté $Y^*$). Il possède un surplus d'énergie [12, 13].
+*   **Mécanisme :** Le noyau libère cette énergie sous forme d'un rayonnement électromagnétique de très haute fréquence (photon $\gamma$). C'est une désexcitation.
+*   **Équation :**
+    $$^A_Z Y^* \rightarrow ^A_Z Y + \gamma$$
+
+---
+
+## 4. Évolution Temporelle : La Loi de Décroissance
+
+Bien que le phénomène soit aléatoire pour un seul noyau, l'évolution d'une population macroscopique de noyaux suit une loi mathématique précise.
+
+### A. L'Activité ($A$)
+L'activité représente le nombre de désintégrations par seconde. Elle est proportionnelle au nombre de noyaux $N(t)$ présents à l'instant $t$.
+$$A(t) = -\frac{dN(t)}{dt} = \lambda \cdot N(t)$$
+*   **Unités :** $A$ en **Becquerels (Bq)** (1 Bq = 1 désintégration/s), $\lambda$ en $s^{-1}$ [14, 15].
+*   $\lambda$ (lambda) est la **constante radioactive**, spécifique à chaque isotope. Elle représente la probabilité de désintégration par seconde [14, 16].
+
+### B. L'Équation Différentielle et sa Solution
+La variation du nombre de noyaux est donnée par $dN = - \lambda N dt$.
+On obtient l'équation différentielle du premier ordre :
+$$\frac{dN(t)}{dt} + \lambda \cdot N(t) = 0$$
+
+La solution mathématique est une exponentielle décroissante [17, 18] :
+$$N(t) = N_0 \cdot e^{-\lambda t}$$
+
+Comme l'activité est proportionnelle à $N$ ($A = \lambda N$), elle suit la même loi :
+$$A(t) = A_0 \cdot e^{-\lambda t}$$
+
+### C. Demi-vie ($t_{1/2}$) et Constante de temps ($\tau$)
+
+1.  **La demi-vie ($t_{1/2}$) :** C'est la durée nécessaire pour que la moitié des noyaux initialement présents se soient désintégrés.
+    *   À $t = t_{1/2}$, $N(t_{1/2}) = \frac{N_0}{2}$.
+    *   Démonstration :
+        $N_0 e^{-\lambda t_{1/2}} = \frac{N_0}{2} \implies e^{-\lambda t_{1/2}} = \frac{1}{2}$
+        $\ln(e^{-\lambda t_{1/2}}) = \ln(1/2) \implies -\lambda t_{1/2} = -\ln(2)$
+    *   **Relation fondamentale [19, 20] :**
+        $$t_{1/2} = \frac{\ln(2)}{\lambda}$$
+
+2.  **La constante de temps ($\tau$) :** C'est l'inverse de la constante radioactive ($\tau = 1/\lambda$).
+    *   À $t = \tau$, il reste $e^{-1} \approx 37\%$ des noyaux initiaux (63% se sont désintégrés).
+    *   C'est l'abscisse de l'intersection entre la tangente à l'origine et l'axe des temps [18, 21].
+
+---
+
+## 5. Applications Concrètes
+
+### A. La Datation (Exemple du Carbone 14)
+Le C-14 est produit dans la haute atmosphère et absorbé par les organismes vivants. Tant qu'ils sont vivants, le ratio $^{14}C / ^{12}C$ est constant. À leur mort, le C-14 n'est plus renouvelé et décroît.
+*   En mesurant l'activité résiduelle $A(t)$ d'un échantillon et en connaissant l'activité initiale $A_0$ (celle d'un organisme vivant actuel), on retrouve le temps écoulé depuis la mort (l'âge) [22, 23].
+    $$t = -\frac{1}{\lambda} \ln\left(\frac{A(t)}{A_0}\right) = \frac{t_{1/2}}{\ln(2)} \ln\left(\frac{A_0}{A(t)}\right)$$
+
+### B. Médecine Nucléaire
+*   **Scintigraphie (Diagnostic) :** On injecte un traceur émetteur $\gamma$ (ex: Technétium 99, $t_{1/2}=6h$). Une caméra détecte les rayons gamma sortant du corps pour visualiser le fonctionnement d'un organe [24].
+*   **Radiothérapie (Traitement) :** On utilise des rayonnements ionisants (ex: Yttrium 90, émetteur $\beta^-$) pour détruire les cellules cancéreuses [23, 25].
+
+---
+
+## 6. Exemple Résolu : Calcul d'activité
+
+> **Énoncé :** On dispose d'un échantillon de $1,0 \text{ mg}$ de Radium 226 ($^{226}_{88}Ra$). Sa demi-vie est $t_{1/2} = 1600 \text{ ans}$. Calculer son activité.
+> Données : $M_{Ra} = 226 \text{ g/mol}$, $N_A = 6,02 \times 10^{23} \text{ mol}^{-1}$.
+
+**Résolution :**
+1.  **Calculer le nombre de noyaux $N$ :**
+    $n = \frac{m}{M} = \frac{1,0 \times 10^{-3}}{226} \approx 4,42 \times 10^{-6} \text{ mol}$.
+    $N = n \times N_A = 4,42 \times 10^{-6} \times 6,02 \times 10^{23} \approx 2,66 \times 10^{18} \text{ noyaux}$ [26].
+2.  **Calculer $\lambda$ (en $s^{-1}$) :**
+    Convertir $t_{1/2}$ en secondes : $t_{1/2} = 1600 \times 365,25 \times 24 \times 3600 \approx 5,05 \times 10^{10} \text{ s}$.
+    $\lambda = \frac{\ln(2)}{t_{1/2}} = \frac{0,693}{5,05 \times 10^{10}} \approx 1,37 \times 10^{-11} \text{ s}^{-1}$ [27].
+3.  **Calculer l'activité $A$ :**
+    $A = \lambda \times N = (1,37 \times 10^{-11}) \times (2,66 \times 10^{18}) \approx 3,7 \times 10^7 \text{ Bq}$ [27].
+    *(Note historique : Cette valeur, $3,7 \times 10^{10}$ Bq pour 1g, définissait l'ancienne unité "Curie" [28]).*
+
+---
+
+## Mini-résumé pour retenir l'essentiel
+
+| Concept | Formule / Définition | Astuce |
+| :--- | :--- | :--- |
+| **Isotopes** | Même $Z$, différents $A$ (différents $N$). | Même élément, masse différente. |
+| **Alpha ($\alpha$)** | Émission d'hélium $^4_2 He$. | Pour les noyaux très lourds. |
+| **Bêta moins ($\beta^-$)** | Émission d'électron $^0_{-1} e$. | Trop de neutrons ($n \rightarrow p$). |
+| **Bêta plus ($\beta^+$)** | Émission de positon $^0_{+1} e$. | Trop de protons ($p \rightarrow n$). |
+| **Loi de décroissance** | $N(t) = N_0 e^{-\lambda t}$ | Décroissance exponentielle. |
+| **Demi-vie ($t_{1/2}$)** | $t_{1/2} = \frac{\ln 2}{\lambda}$ | Temps pour diviser $N$ par 2. |
+| **Activité ($A$)** | $A = \lambda N$ (en Bq). | Vitesse de désintégration. |

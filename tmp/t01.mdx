@@ -1,0 +1,148 @@
+---
+id: "thermodynamique-expert"
+title: "Thermodynamique : Énergie, Chaleur et Température"
+track: "physique"
+level: 2
+prerequisites: ["Quantité de matière", "Puissance et Énergie", "Dérivées"]
+tags: ["énergie interne", "premier principe", "gaz parfait", "flux thermique", "loi de Newton", "albédo"]
+estimatedTime: 90
+chapter: "énergie-conversions-et-transferts"
+order: 3
+---
+
+# L'Énergie : Conversions et Transferts
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Utiliser le modèle du gaz parfait et l'équation d'état $PV=nRT$.
+- Appliquer le Premier Principe de la thermodynamique ($\Delta U = W + Q$) pour faire un bilan d'énergie.
+- Calculer la variation d'énergie interne d'un système incompressible ($\Delta U = C \cdot \Delta T$).
+- Distinguer les trois modes de transfert thermique et utiliser la loi de Newton.
+- Comprendre le bilan radiatif de la Terre (albédo, effet de serre).
+
+## 1. Intuition et Analogie : Le Compte en Banque Énergétique
+
+La thermodynamique étudie les échanges d'énergie. Pour comprendre l'énergie interne et le premier principe, imaginez un **compte en banque**.
+
+> **Analogie : Le Solde Bancaire**
+> *   **L'Énergie Interne ($U$)** est le **solde** de votre compte. C'est la richesse totale stockée à l'intérieur du système.
+> *   **La Variation ($\Delta U$)** est la différence entre le solde final et le solde initial.
+> *   Pour changer ce solde, il n'y a que deux moyens d'échanger avec l'extérieur :
+>     1.  **Le Travail ($W$)** : C'est l'argent gagné par un effort (salaire) ou perdu par une dépense active. En physique, c'est lié au mouvement (piston qui pousse).
+>     2.  **Le Transfert Thermique ($Q$)** : C'est l'argent reçu en cadeau ou volé, sans mouvement macroscopique. C'est la **chaleur**.
+>
+> **Bilan :** Votre richesse varie selon ce que vous gagnez moins ce que vous perdez : $\Delta U = W + Q$.
+
+## 2. Le Modèle du Gaz Parfait
+
+### Description Microscopique et Macroscopique
+Un gaz est constitué de particules (atomes ou molécules) en mouvement incessant et désordonné.
+*   **Modèle du gaz parfait :** On considère que les particules sont ponctuelles (volume propre nul) et sans interaction entre elles (pas d'attraction ni répulsion), sauf lors des chocs [1], [2], [3].
+
+### L'Équation d'État
+C'est la relation qui lie les variables d'état (Pression, Volume, Température, Quantité de matière) d'un gaz parfait [4], [5], [6] :
+
+$$P \times V = n \times R \times T$$
+
+*   **$P$** : Pression en **Pascals (Pa)** (Attention : $1 \text{ bar} = 10^5 \text{ Pa}$).
+*   **$V$** : Volume en **mètres cubes ($m^3$)** (Attention : $1 \text{ L} = 10^{-3} \text{ m}^3$).
+*   **$n$** : Quantité de matière en **moles (mol)**.
+*   **$R$** : Constante des gaz parfaits ($8,314 \text{ J}\cdot\text{mol}^{-1}\cdot\text{K}^{-1}$).
+*   **$T$** : Température absolue en **Kelvins (K)**.
+    *   Conversion : $T(\text{K}) = \theta(°\text{C}) + 273,15$ [4], [2].
+
+> **Exemple Résolu : Quantité de matière dans un ballon**
+> **Question :** Un ballon de volume $V = 7,0 \text{ L}$ est rempli d'air à $25\text{°C}$ sous une pression $P = 1020 \text{ hPa}$. Calculer la quantité de matière $n$ d'air (gaz parfait).
+>
+> **Solution :**
+> 1.  **Conversions :**
+>     *   $V = 7,0 \times 10^{-3} \text{ m}^3$.
+>     *   $P = 1020 \text{ hPa} = 1020 \times 100 \text{ Pa} = 1,02 \times 10^5 \text{ Pa}$.
+>     *   $T = 25 + 273,15 = 298,15 \text{ K}$.
+> 2.  **Formule :** On isole $n$ dans $PV=nRT \Rightarrow n = \frac{PV}{RT}$.
+> 3.  **Calcul :** $n = \frac{1,02 \times 10^5 \times 7,0 \times 10^{-3}}{8,31 \times 298,15} \approx \mathbf{0,29 \text{ mol}}$. [7]
+
+## 3. Le Premier Principe de la Thermodynamique
+
+### Énergie Interne ($U$)
+L'énergie interne $U$ d'un système est la somme de toutes les énergies microscopiques (énergie cinétique d'agitation des molécules + énergies potentielles d'interaction) [8], [9].
+*   Pour un **gaz parfait**, $U$ ne dépend que de la température $T$ [10].
+
+### Énoncé du Principe
+La variation d'énergie interne $\Delta U$ d'un système fermé (qui n'échange pas de matière) entre deux états est égale à la somme des énergies échangées avec l'extérieur sous forme de travail $W$ et de transfert thermique $Q$ [11], [12], [13].
+
+$$\Delta U = W + Q$$
+
+*   **Convention de signe :**
+    *   Énergie **reçue** par le système : $W > 0$ ou $Q > 0$ (Le solde augmente).
+    *   Énergie **cédée** par le système : $W < 0$ ou $Q < 0$ (Le solde diminue) [11].
+
+### Cas des Systèmes Incompressibles (Liquides et Solides)
+Pour un solide ou un liquide, le volume varie très peu, donc le travail des forces de pression est nul ($W \approx 0$). La variation d'énergie interne ne dépend que du transfert thermique et de la variation de température [14], [15] :
+
+$$\Delta U = Q = C \times \Delta T = m \times c \times (T_f - T_i)$$
+
+*   **$C$** : Capacité thermique du système en $\text{J}\cdot\text{K}^{-1}$.
+*   **$c$** : Capacité thermique **massique** en $\text{J}\cdot\text{kg}^{-1}\cdot\text{K}^{-1}$.
+*   **$m$** : Masse du système en kg.
+
+> **Exemple Résolu : Mélange thermique (Café au lait)**
+> **Question :** On mélange $120\text{ g}$ de café à $75\text{°C}$ ($c_{café} = 4,2 \text{ J}\cdot\text{g}^{-1}\cdot\text{K}^{-1}$) avec $200\text{ g}$ de lait à $60\text{°C}$ ($c_{lait} = 3,8 \text{ J}\cdot\text{g}^{-1}\cdot\text{K}^{-1}$) dans un bol isolant. Quelle est la température finale $T_f$ ? [16]
+>
+> **Solution :**
+> 1.  **Système isolé :** Pas d'échange avec l'extérieur ($Q_{total} = 0$). Donc la somme des chaleurs échangées en interne est nulle : $Q_{café} + Q_{lait} = 0$.
+> 2.  **Expression :** $m_C \cdot c_C \cdot (T_f - T_C) + m_L \cdot c_L \cdot (T_f - T_L) = 0$.
+> 3.  **Résolution :** On isole $T_f$.
+>     $T_f \cdot (m_C c_C + m_L c_L) = m_C c_C T_C + m_L c_L T_L$
+>     $T_f = \frac{120 \times 4,2 \times 75 + 200 \times 3,8 \times 60}{120 \times 4,2 + 200 \times 3,8}$
+> 4.  **Calcul :** $T_f = \frac{37800 + 45600}{504 + 760} = \frac{83400}{1264} \approx \mathbf{66\text{°C}}$. [17]
+
+## 4. Les Transferts Thermiques
+
+Il existe trois modes de transfert de l'énergie thermique (chaleur) [18], [19], [20] :
+1.  **Conduction :** Transfert de proche en proche sans déplacement de matière (ex: une cuillère dans une tasse chaude).
+2.  **Convection :** Transfert avec déplacement de matière fluide (ex: l'air chaud qui monte au-dessus d'un radiateur).
+3.  **Rayonnement :** Transfert par ondes électromagnétiques, possible même dans le vide (ex: le Soleil).
+
+### Flux Thermique ($\Phi$) et Résistance Thermique ($R_{th}$)
+Le flux thermique $\Phi$ (phi) est la puissance thermique, c'est-à-dire la vitesse à laquelle la chaleur traverse une paroi. Il s'exprime en **Watts (W)** [21], [22].
+
+$$\Phi = \frac{Q}{\Delta t} = \frac{T_{chaud} - T_{froid}}{R_{th}}$$
+
+*   **$R_{th}$** est la résistance thermique de la paroi ($\text{K}\cdot\text{W}^{-1}$). Plus $R_{th}$ est grand, plus le matériau isole (le flux est faible).
+*   La résistance dépend de la conductivité $\lambda$, de l'épaisseur $e$ et de la surface $S$ : $R_{th} = \frac{e}{\lambda \cdot S}$ [23], [24].
+
+### Loi phénoménologique de Newton
+Lorsqu'un corps chaud refroidit au contact d'un fluide extérieur (thermostat), l'évolution de sa température $T(t)$ dépend de la différence de température avec l'extérieur [25], [26], [27] :
+
+$$\frac{dT}{dt} = -k \cdot (T(t) - T_{ext})$$
+ou en termes de flux : $\Phi = h \cdot S \cdot (T(t) - T_{ext})$.
+
+La solution est une fonction exponentielle : la température rejoint doucement celle de l'extérieur.
+
+> **Exemple Résolu : Flux à travers une vitre**
+> **Question :** Une vitre de surface $S=2,0 \text{ m}^2$, d'épaisseur $e=3,0 \text{ mm}$ a une conductivité $\lambda = 1,0 \text{ W}\cdot\text{m}^{-1}\cdot\text{K}^{-1}$. Il fait $20\text{°C}$ dedans et $5\text{°C}$ dehors. Calculer le flux thermique $\Phi$.
+>
+> **Solution :**
+> 1.  **Résistance thermique :** $R_{th} = \frac{e}{\lambda \cdot S} = \frac{0,003}{1,0 \times 2,0} = 1,5 \times 10^{-3} \text{ K}\cdot\text{W}^{-1}$. (Attention conversion mm en m !)
+> 2.  **Flux :** $\Phi = \frac{T_{int} - T_{ext}}{R_{th}} = \frac{20 - 5}{1,5 \times 10^{-3}} = \frac{15}{0,0015} = \mathbf{10\,000 \text{ W}}$.
+> *Note : C'est une valeur énorme, le verre simple isole très mal (d'où le double vitrage).*
+
+## 5. Bilan Radiatif Terrestre
+
+La température de la Terre résulte d'un équilibre entre l'énergie reçue du Soleil et l'énergie réémise vers l'espace [28], [29].
+
+1.  **Loi de Stefan-Boltzmann :** Tout corps chaud émet une puissance radiative surfacique proportionnelle à la puissance 4 de sa température : $P_{surf} = \sigma \cdot T^4$ [30], [31].
+2.  **L'Albédo ($A$) :** C'est la proportion de puissance solaire réfléchie par la Terre (environ 0,30 ou 30%). Cette énergie est renvoyée dans l'espace et ne chauffe pas la Terre [32], [33].
+3.  **L'Effet de Serre :** L'atmosphère laisse passer le rayonnement solaire (visible) mais absorbe le rayonnement infrarouge réémis par le sol. Cela piège l'énergie et augmente la température de surface (de -18°C théorique à +15°C réel) [34], [35].
+
+## Mini-résumé pour retenir l'essentiel
+
+| Concept | Formule / Astuce |
+| :--- | :--- |
+| **Gaz Parfait** | $P \cdot V = n \cdot R \cdot T$ (Unités : Pa, $m^3$, mol, K) |
+| **Énergie Interne** | $\Delta U = W + Q$ (1er Principe) |
+| **Système Incompressible** | $\Delta U = m \cdot c \cdot \Delta T$ |
+| **Flux Thermique** | $\Phi = \frac{\Delta T}{R_{th}}$ (Analogie avec élec : $I = U/R$) |
+| **Résistance Thermique** | $R_{th} = \frac{e}{\lambda \cdot S}$ |
+| **Température K** | $T(\text{K}) = T(\text{°C}) + 273,15$ |

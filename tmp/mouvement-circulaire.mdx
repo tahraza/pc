@@ -1,0 +1,273 @@
+---
+id: "mouvement-circulaire"
+title: "Mouvement circulaire : MCU, repère de Frenet, accélération centripète et forces"
+track: "physique"
+level: 2
+prerequisites: ["Vecteurs", "Cinématique (v, a)", "Lois de Newton", "Énergie cinétique"]
+tags: ["mouvement circulaire", "MCU", "accélération centripète", "Frenet", "satellite", "virage"]
+estimatedTime: 170
+chapter: "mouvement-et-interactions"
+order: 4
+---
+
+# Mouvement circulaire
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- reconnaître un **mouvement circulaire**, distinguer **uniforme / non uniforme** ;
+- utiliser le **repère de Frenet** \((\vec t,\vec n)\) pour décrire \( \vec v \) et \( \vec a \) ; fileciteturn27file8L29-L38
+- comprendre et exploiter l’accélération **centripète** : \(a_n=\dfrac{v^2}{R}\) ; fileciteturn27file5L64-L69
+- relier mouvement circulaire et **forces** grâce à \( \sum \vec F = m\vec a \) (cas voiture/satellite) ; fileciteturn27file6L51-L64
+- éviter les **erreurs classiques** (sens des vecteurs, “force centripète”, unités, etc.).
+
+---
+
+## 0) Intuition & analogies : pourquoi “tourner” n’est pas “aller tout droit”
+
+### 0.1 L’analogie de la pierre au bout d’une ficelle (inertie)
+- La pierre “voudrait” partir **tout droit** (inertie).
+- La ficelle la **tire vers le centre** : c’est ce qui “force” la trajectoire à rester circulaire.
+
+Si tu coupes la ficelle → la pierre part **tangentiellement** (dans la direction de la vitesse instantanée).
+
+### 0.2 L’analogie du rond-point (route glissante)
+Sur un rond-point, si l’adhérence est trop faible :
+- la voiture ne “tourne” plus,
+- elle continue quasiment **tout droit**.
+
+➡️ Pour tourner, il faut une interaction (frottement pneu/route) qui fournisse une force vers le centre.
+
+### 0.3 Analogie “GPS / Terre” : tu tournes sans t’en rendre compte
+Un point “immobile” sur Terre (ex : Strasbourg) est immobile dans le référentiel terrestre mais décrit un cercle (mouvement circulaire) dans un référentiel géocentrique : les exercices de cinématique le font travailler explicitement (rotation de la Terre). fileciteturn27file1L8-L14
+
+---
+
+## 1) Définition et idée clé : « vitesse constante » ≠ « accélération nulle »
+
+### 1.1 Mouvement circulaire
+La trajectoire est un **cercle** de rayon \(R\), centre \(O\).
+
+### 1.2 Mouvement circulaire uniforme (MCU)
+MCU = trajectoire circulaire + **valeur de la vitesse constante**. fileciteturn27file4L11-L18
+
+⚠️ Mais le vecteur vitesse **change de direction** :
+- il reste tangent au cercle,
+- donc il varie → l’accélération n’est pas nulle.
+
+Le corrigé insiste : « FAUX : le véhicule subit une accélération centripète due à la variation de direction du vecteur vitesse ». fileciteturn27file1L55-L57
+
+#### Mini-question 1
+Une voiture à vitesse **constante** sur un rond-point est-elle accélérée ?
+
+**Correction**  
+Oui : la norme de \( \vec v \) est constante, mais sa direction change → accélération centripète. fileciteturn27file1L55-L57
+
+---
+
+## 2) Le bon “outil mental” : le repère de Frenet \((\vec t,\vec n)\)
+
+### 2.1 Pourquoi le repère cartésien devient pénible ?
+En cartésien, décrire la direction de la vitesse qui tourne demande des trigonométries permanentes.
+
+Pour un mouvement circulaire, il est “plus judicieux d’adopter le repère de Frenet”. fileciteturn27file2L64-L72
+
+### 2.2 Définition (à savoir redire au bac)
+- \(\vec t\) : vecteur unitaire **tangent** à la trajectoire, orienté dans le sens du mouvement ; fileciteturn27file8L31-L35  
+- \(\vec n\) : vecteur unitaire **normal** (centripète), perpendiculaire à \(\vec t\) et orienté vers l’intérieur (vers le centre). fileciteturn27file8L35-L38
+
+> **Analogie** : \(\vec t\) = “où je vais maintenant”, \(\vec n\) = “vers où je tourne”.
+
+---
+
+## 3) Vitesse en mouvement circulaire
+
+### 3.1 Direction du vecteur vitesse
+En MCU, le vecteur vitesse est **tangent** à la trajectoire :  
+\[
+\vec v = v\,\vec t
+\]
+et sa valeur \(v\) est constante. fileciteturn27file5L46-L52
+
+### 3.2 Lien période / fréquence / vitesse
+- Période \(T\) : temps pour faire un tour
+- Fréquence \(f\) : nombre de tours par seconde, \(f=\dfrac{1}{T}\)
+- Distance d’un tour : \(2\pi R\)
+
+Donc :
+\[
+v=\frac{2\pi R}{T}=2\pi R f
+\]
+
+### 3.3 Vitesse angulaire
+La vitesse angulaire \(\omega\) (rad·s\(^{-1}\)) est reliée à \(T\) :
+\[
+\omega=\frac{2\pi}{T}
+\]
+Les exercices demandent explicitement de calculer \(\omega\) à partir de la période. fileciteturn27file1L1-L6
+
+Et on obtient la relation fondamentale :
+\[
+v=R\omega
+\]
+demandée/montrée dans les exercices “MCU en coordonnées polaires”. fileciteturn27file1L41-L48
+
+#### Mini-exercice 2 (flash)
+Un point décrit un cercle de rayon \(R=0{,}50\ \text{m}\) à la fréquence \(f=2{,}0\ \text{Hz}\).  
+Calculer \(T\), \(\omega\), puis \(v\).
+
+**Correction**
+- \(T=\dfrac{1}{f}=0{,}50\ \text{s}\)
+- \(\omega=\dfrac{2\pi}{T}=4\pi\ \text{rad·s}^{-1}\)
+- \(v=R\omega=0{,}50\times 4\pi =2\pi \approx 6{,}28\ \text{m·s}^{-1}\) (en cohérence avec \(v=2\pi R f\)).
+
+---
+
+## 4) Accélération : centripète (normale) et tangentielle
+
+### 4.1 Décomposition dans Frenet
+L’expression générale dans Frenet (utile surtout si la vitesse varie) :
+\[
+\vec a = \underbrace{\frac{dv}{dt}\,\vec t}_{\text{accélération tangentielle } \vec a_t} + \underbrace{\frac{v^2}{R}\,\vec n}_{\text{accélération normale (centripète) } \vec a_n}
+\]
+fileciteturn27file8L42-L58
+
+- \(\vec a_t\) change la **valeur** de la vitesse
+- \(\vec a_n\) change la **direction** de la vitesse
+
+### 4.2 Cas MCU (le plus fréquent en Terminale)
+En MCU, \(v\) est constante ⇒ \(\dfrac{dv}{dt}=0\). fileciteturn27file12L1-L6  
+Donc :
+\[
+\vec a = \frac{v^2}{R}\,\vec n
+\]
+et elle est **centripète** (vers le centre). fileciteturn27file5L64-L69
+
+Le Prépabac formule exactement : « accélération centripète, dirigée vers le centre, de valeur constante : \(a = \dfrac{v^2}{R}\) ». fileciteturn27file0L1-L6
+
+#### Mini-question 3
+En MCU, \(\vec v\) et \(\vec a\) sont-ils parallèles ?
+
+**Correction**  
+Non : \(\vec v\) est tangentielle (\(\vec t\)) et \(\vec a\) est normale (\(\vec n\)), donc perpendiculaires. fileciteturn27file8L31-L38 fileciteturn27file11L43-L50
+
+---
+
+## 5) D’où vient la “force centripète” ? (et le gros piège)
+
+### 5.1 “Force centripète” : ce n’est pas une force nouvelle
+C’est un **rôle** : la force (ou la résultante des forces) qui pointe vers le centre.
+
+➡️ Ce sont des forces “réelles” (tension, frottement, gravitation, etc.) qui, ensemble, donnent une résultante dirigée selon \(\vec n\).
+
+### 5.2 Application de Newton (version bac)
+Dans un référentiel galiléen :
+\[
+\sum \vec F = m\vec a
+\]
+Pour un mouvement circulaire :
+\[
+\sum F_{\text{radiales}} = m\frac{v^2}{R}
+\]
+
+---
+
+## 6) Cas bac incontournable : satellite en orbite circulaire
+
+Le Prépabac propose une méthode complète “mouvement circulaire dans un champ de gravitation”. fileciteturn27file6L51-L64
+
+### 6.1 Force gravitationnelle = force centripète
+Le satellite subit une force gravitationnelle dirigée vers l’astre : son accélération est donc toujours dirigée vers le centre. fileciteturn27file6L12-L24
+
+Si c’est la seule force :
+\[
+\frac{mv^2}{r}=\frac{GMm}{r^2}
+\Rightarrow v=\sqrt{\frac{GM}{r}}
+\]
+Le résultat \(v=\sqrt{\dfrac{GM}{r}}\) est explicitement obtenu dans la solution. fileciteturn27file10L16-L22
+
+### 6.2 Mouvement uniforme (argument simple)
+Dans Frenet : \(\vec a = \dfrac{dv}{dt}\vec t + \dfrac{v^2}{r}\vec n\). fileciteturn27file7L36-L45  
+Or la gravitation est radiale (selon \(\vec n\)) : en comparant, on déduit \(\dfrac{dv}{dt}=0\) → \(v\) constante → mouvement uniforme. fileciteturn27file7L68-L73
+
+#### Exercice 1 (type bac, guidé)
+Un satellite de masse \(m\) tourne sur une orbite circulaire de rayon \(r\) autour d’un astre de masse \(M\).  
+1) Montrer que l’accélération est centripète.  
+2) En déduire \(v\).  
+3) En déduire \(T\).
+
+**Correction (plan attendu)**
+1) Utiliser gravitation + Newton → accélération dirigée vers le centre → centripète. fileciteturn27file6L67-L77  
+2) Égaliser \(m v^2/r = GMm/r^2\) → \(v=\sqrt{GM/r}\). fileciteturn27file10L16-L22  
+3) \(v=2\pi r/T\) → \(T=2\pi r/v\) et on retrouve une forme compatible Kepler. fileciteturn27file10L19-L27
+
+---
+
+## 7) Cas “vie quotidienne” : virage et adhérence (frottement)
+
+### 7.1 Formule utile
+Pour tourner à vitesse \(v\) sur un virage de rayon \(R\), il faut :
+\[
+F_{\text{rad}} = m\frac{v^2}{R}
+\]
+
+### 7.2 Lecture physique (analogie)
+- \(v\) double → \(v^2\) quadruple : c’est pourquoi “un peu plus vite” peut devenir “beaucoup trop vite”.
+- \(R\) petit (virage serré) → effort requis plus grand.
+
+#### Exercice 2 (raisonnement, sans chiffres)
+Pourquoi on ralentit avant un virage serré ?
+
+**Correction**
+Parce que la force centripète nécessaire vaut \(m v^2/R\) : si \(R\) diminue, il faut diminuer \(v\) pour que le frottement disponible suffise.
+
+---
+
+## 8) Mouvement circulaire non uniforme (pour aller plus loin, utile en problèmes)
+Si la vitesse varie :
+- il existe une accélération **tangentielle** \(a_t=\dfrac{dv}{dt}\) (le long de \(\vec t\)) fileciteturn27file8L45-L52
+- et une accélération **normale** \(a_n=\dfrac{v^2}{R}\) (vers le centre) fileciteturn27file8L53-L58
+
+Les exercices sur pendule illustrent justement l’idée “circulaire accéléré” et la séparation des composantes (normale/tangentielle). fileciteturn27file3L39-L57
+
+---
+
+## 9) Erreurs classiques (et comment les éviter)
+
+### ❌ Erreur 1 — “Si v est constante alors a=0”
+Faux : en MCU la direction de \(\vec v\) change → accélération centripète. fileciteturn27file1L55-L57  
+✅ Astuce : “accélération = variation du **vecteur** vitesse, pas seulement de sa norme”.
+
+### ❌ Erreur 2 — Dessiner \(\vec v\) vers le centre
+✅ \(\vec v\) est **tangentielle** (\(\vec t\)). fileciteturn27file8L31-L35
+
+### ❌ Erreur 3 — Dire “la force centripète s’ajoute aux forces”
+✅ Non : “centripète” décrit la **résultante radiale** des forces.
+
+### ❌ Erreur 4 — Oublier \(v^2\) (écrire \(v/R\))
+✅ Contrôle unités :  
+- \(v^2/R\) → (m²·s⁻²)/m = m·s⁻² (bonne unité d’accélération)  
+- \(v/R\) → s⁻¹ (pas une accélération).
+
+### ❌ Erreur 5 — Confondre \(f\), \(T\), \(\omega\)
+✅ Check rapide : \(\omega\) est en **rad·s⁻¹**, \(f\) en **Hz**, \(T\) en **s**. Les exercices demandent souvent de passer de l’un à l’autre. fileciteturn27file1L1-L6
+
+---
+
+## 10) Mini-résumé (formules à connaître)
+
+### Vitesse / périodicité
+- \(f=\dfrac{1}{T}\)
+- \(\omega=\dfrac{2\pi}{T}=2\pi f\) fileciteturn27file1L1-L6
+- \(v=\dfrac{2\pi R}{T}=2\pi R f=R\omega\) fileciteturn27file1L41-L48
+
+### Accélérations (repère de Frenet)
+- \(\vec a=\dfrac{dv}{dt}\vec t+\dfrac{v^2}{R}\vec n\) fileciteturn27file8L42-L58
+- MCU : \(\dfrac{dv}{dt}=0\) donc \(\vec a=\dfrac{v^2}{R}\vec n\) (centripète) fileciteturn27file0L1-L6
+
+### Dynamique
+- \(\sum \vec F = m\vec a\)
+- Radial : \(\sum F_{\text{rad}}=m\dfrac{v^2}{R}\)
+
+### Satellite (orbite circulaire)
+- \(v=\sqrt{\dfrac{GM}{r}}\) fileciteturn27file10L16-L22
+- \(T=\dfrac{2\pi r}{v}\) fileciteturn27file10L19-L27

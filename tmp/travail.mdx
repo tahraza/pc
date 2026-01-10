@@ -1,0 +1,694 @@
+---
+id: "travail-force-expert"
+title: "Travail d'une Force et Théorème de l'Énergie Cinétique"
+track: "physique"
+level: 2
+prerequisites: ["Produit scalaire", "Vecteurs", "Cinématique"]
+tags: ["travail", "énergie", "forces conservatives", "théorème énergie cinétique"]
+estimatedTime: 120
+chapter: "mouvement-et-interactions"
+order: 11
+---
+
+# Aspects Énergétiques : Le Travail d'une Force
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Calculer le travail d'une force constante (poids, force électrique, frottement).
+- Distinguer une force conservative d'une force non conservative.
+- Appliquer le **Théorème de l'Énergie Cinétique (TEC)**.
+- Comprendre pourquoi certaines forces "travaillent" et d'autres non.
+
+---
+
+## 1. Définition du Travail d'une Force constante
+
+En physique, le "travail" ne désigne pas un effort mental ou un métier, mais un **transfert d'énergie** d'un système à un autre via l'action d'une force,.
+
+### A. Formule générale
+Pour une force constante $\vec{F}$ appliquée à un système se déplaçant d'un point A vers un point B (vecteur déplacement $\vec{AB}$), le travail $W_{AB}(\vec{F})$ est le produit scalaire des deux vecteurs :
+
+$$W_{AB}(\vec{F}) = \vec{F} \cdot \vec{AB} = F \times AB \times \cos(\alpha)$$
+
+*   $W$ : Travail en Joules (J).
+*   $F$ : Norme de la force en Newtons (N).
+*   $AB$ : Distance parcourue en mètres (m).
+*   $\alpha$ : Angle entre le vecteur force $\vec{F}$ et le vecteur déplacement $\vec{AB}$.
+
+> **Analogie de la valise :** Imaginez que vous tirez une valise à roulettes.
+> *   Si vous tirez la poignée horizontalement (dans le sens de la marche), toute votre force sert à avancer : l'efficacité est maximale ($\alpha = 0$, $\cos(0)=1$).
+> *   Si vous tirez la poignée vers le haut à la verticale, vous soulevez la valise mais vous ne l'aidez pas à avancer horizontalement : le travail est nul ($\alpha = 90°$, $\cos(90)=0$).
+> *   Si vous tirez avec un angle, seule une partie de votre force contribue au mouvement.
+
+### B. Nature du travail
+Le signe du travail dépend de l'angle $\alpha$ :
+1.  **Travail Moteur ($W > 0$) :** L'angle est aigu ($0 \leq \alpha < 90°$). La force aide le mouvement (ex: le moteur d'une voiture, le vent dans le dos).
+2.  **Travail Résistant ($W < 0$) :** L'angle est obtus ($90° < \alpha \leq 180°$). La force s'oppose au mouvement (ex: frottements, freins).
+3.  **Travail Nul ($W = 0$) :** L'angle est droit ($\alpha = 90°$). La force ne modifie pas la vitesse (ex: la réaction normale du support, ou la force de Lorentz dans un champ magnétique,).
+
+---
+
+## 2. Travail des Forces Usuelles
+
+### A. Le Travail du Poids (Force Conservative)
+Le poids $\vec{P} = m\vec{g}$ est une force constante (sur de courtes distances).
+$$W_{AB}(\vec{P}) = \vec{P} \cdot \vec{AB} = m \cdot g \cdot (z_A - z_B)$$
+
+*   **Propriété fondamentale :** Le travail du poids ne dépend pas du chemin suivi, mais uniquement de la différence d'altitude ($z_A - z_B$),.
+    *   Si l'objet descend ($z_A > z_B$), le poids aide : travail moteur (+).
+    *   Si l'objet monte ($z_A < z_B$), le poids freine : travail résistant (-).
+
+> **Analogie de la randonnée :** Que vous montiez au sommet d'une montagne par le sentier en lacet (long) ou par la falaise (tout droit), le gain d'altitude est le même. L'énergie potentielle gagnée (et donc le travail du poids contre vous) est identique. C'est la définition d'une force **conservative**.
+
+### B. Le Travail de la Force Électrique (Force Conservative)
+Pour une particule de charge $q$ se déplaçant dans un champ électrique uniforme $\vec{E}$ :
+$$W_{AB}(\vec{F}_e) = q \vec{E} \cdot \vec{AB} = q (V_A - V_B) = q U_{AB}$$
+*   $U_{AB}$ est la tension électrique entre A et B,.
+*   Comme le poids, ce travail ne dépend pas du chemin suivi.
+
+### C. Le Travail des Forces de Frottement (Force Non Conservative)
+Une force de frottement $\vec{f}$ (supposée constante) est toujours opposée au vecteur vitesse. L'angle est donc toujours de 180° ($\cos(180) = -1$).
+$$W_{AB}(\vec{f}) = - f \times AB$$
+*   Ce travail est toujours **négatif** (résistant). Il dissipe de l'énergie mécanique sous forme de chaleur. Il dépend du chemin suivi (plus le chemin est long, plus on perd d'énergie),.
+
+---
+
+## 3. Théorème de l'Énergie Cinétique (TEC)
+
+C'est le lien entre les forces (causes) et la variation de vitesse (effet).
+
+**Énoncé :**
+Dans un référentiel galiléen, la variation de l'énergie cinétique d'un système solide entre deux instants (ou deux points A et B) est égale à la somme des travaux de toutes les forces extérieures appliquées au système,.
+
+$$\Delta E_c = E_c(B) - E_c(A) = \sum W_{AB}(\vec{F}_{ext})$$
+
+Avec $E_c = \frac{1}{2} m v^2$.
+
+*   Si la somme des travaux est positive, l'énergie cinétique augmente (le système accélère).
+*   Si la somme des travaux est négative, l'énergie cinétique diminue (le système ralentit).
+
+---
+
+## Mini-résumé pour l'examen
+
+| Force | Formule du Travail | Type |
+| :--- | :--- | :--- |
+| **Cas général** | $F \cdot AB \cdot \cos(\alpha)$ | / |
+| **Poids** | $m \cdot g \cdot (z_A - z_B)$ | Conservatif |
+| **Force élec.** | $q \cdot U_{AB}$ | Conservatif |
+| **Frottement** | $- f \cdot AB$ | Non conservatif (Résistant) |
+| **Lorentz / Réaction** | $0$ | Nul (ne travaille pas) |
+| **Théorème (TEC)** | $\Delta E_c = \sum W$ | Lien Force-Vitesse |
+
+
+--------------------------------------------------------------------------------
+Quiz Diagnostique (Pré-requis)
+
+{
+  "diagnostic": [
+    {
+      "id": "diag-trav-1",
+      "question": "Quelle est l'expression mathématique du produit scalaire de deux vecteurs $\\vec{u}$ et $\\vec{v}$ ?",
+      "choices": [
+        "$u \\times v \\times \\sin(\\vec{u}, \\vec{v})$",
+        "$u \\times v \\times \\cos(\\vec{u}, \\vec{v})$",
+        "$u + v$",
+        "$u \\times v$"
+      ],
+      "correct": 1,
+      "explanation": "Le produit scalaire fait intervenir le cosinus de l'angle entre les deux vecteurs.",
+      "tag": "maths",
+      "difficulty": 1
+    },
+    {
+      "id": "diag-trav-2",
+      "question": "Quelle est l'unité de l'énergie (et donc du travail) dans le système international ?",
+      "choices": [
+        "Le Newton (N)",
+        "Le Watt (W)",
+        "Le Joule (J)",
+        "Le Pascal (Pa)"
+      ],
+      "correct": 2,
+      "explanation": "Le travail est une forme d'énergie, il s'exprime en Joules (J). Le Watt est une puissance, le Newton une force.",
+      "tag": "unités",
+      "difficulty": 1
+    },
+    {
+      "id": "diag-trav-3",
+      "question": "Si une force est perpendiculaire au déplacement, que vaut $\\cos(\\alpha)$ ?",
+      "choices": [
+        "1",
+        "0",
+        "-1",
+        "0,5"
+      ],
+      "correct": 1,
+      "explanation": "Si l'angle est de 90° (perpendiculaire), le cosinus est nul.",
+      "tag": "trigo",
+      "difficulty": 1
+    },
+    {
+      "id": "diag-trav-4",
+      "question": "Quelle est la formule de l'énergie cinétique pour un solide en translation ?",
+      "choices": [
+        "$E_c = m v$",
+        "$E_c = m g z$",
+        "$E_c = \\frac{1}{2} m v^2$",
+        "$E_c = m v^2$"
+      ],
+      "correct": 2,
+      "explanation": "C'est la formule classique $E_c = \\frac{1}{2} m v^2$.",
+      "tag": "énergie",
+      "difficulty": 1
+    },
+    {
+      "id": "diag-trav-5",
+      "question": "Comment appelle-t-on une force dont le travail ne dépend pas du chemin suivi ?",
+      "choices": [
+        "Une force forte",
+        "Une force conservative",
+        "Une force dissipative",
+        "Une force constante"
+      ],
+      "correct": 1,
+      "explanation": "Une force conservative (comme le poids) conserve l'énergie mécanique ; son travail ne dépend que des points de départ et d'arrivée.",
+      "tag": "définition",
+      "difficulty": 2
+    }
+  ]
+}
+
+
+--------------------------------------------------------------------------------
+Quiz de Validation (Post-leçon)
+
+{
+  "validation": [
+    {
+      "id": "val-trav-1",
+      "question": "Un objet descend une pente. Le travail de son poids est :",
+      "choices": [
+        "Moteur (positif)",
+        "Résistant (négatif)",
+        "Nul",
+        "Dépendant de la vitesse"
+      ],
+      "correct": 0,
+      "explanation": "Lors d'une descente, le poids aide le mouvement (l'altitude diminue, $z_A > z_B$), le travail est donc moteur (positif).",
+      "tag": "poids",
+      "difficulty": 2
+    },
+    {
+      "id": "val-trav-2",
+      "question": "Quel est le travail de la force de Lorentz $\\vec{f} = q\\vec{v} \\wedge \\vec{B}$ appliquée à une particule chargée ?",
+      "choices": [
+        "Toujours positif",
+        "Toujours nul",
+        "Toujours négatif",
+        "Dépend du champ B"
+      ],
+      "correct": 1,
+      "explanation": "La force de Lorentz est toujours perpendiculaire au vecteur vitesse (propriété du produit vectoriel). Son travail est donc nul ($\\cos 90^{\\circ} = 0$).",
+      "tag": "lorentz",
+      "difficulty": 3
+    },
+    {
+      "id": "val-trav-3",
+      "question": "Si la somme des travaux des forces extérieures est négative, comment évolue la vitesse du solide ?",
+      "choices": [
+        "Elle augmente",
+        "Elle diminue",
+        "Elle reste constante",
+        "On ne peut pas savoir"
+      ],
+      "correct": 1,
+      "explanation": "D'après le Théorème de l'Énergie Cinétique, $\\Delta E_c = \\sum W$. Si la somme est négative, $E_c$ diminue, donc la vitesse diminue.",
+      "tag": "TEC",
+      "difficulty": 2
+    },
+    {
+      "id": "val-trav-4",
+      "question": "Quelle est l'expression du travail de la force électrique entre deux plaques d'un condensateur ?",
+      "choices": [
+        "$q \\times E$",
+        "$q \\times U_{AB}$",
+        "$\\frac{1}{2} C U^2$",
+        "$- f \\times d$"
+      ],
+      "correct": 1,
+      "explanation": "Le travail de la force électrique est $W = q(V_A - V_B) = q U_{AB}$.",
+      "tag": "électricité",
+      "difficulty": 2
+    },
+    {
+      "id": "val-trav-5",
+      "question": "Lorsqu'un skieur remonte une pente avec un téléski à vitesse constante, la variation de son énergie cinétique est :",
+      "choices": [
+        "Positive",
+        "Négative",
+        "Nulle",
+        "Égale au travail du poids"
+      ],
+      "correct": 2,
+      "explanation": "Si la vitesse est constante, $v_2 = v_1$, donc $E_{c2} = E_{c1}$, et $\\Delta E_c = 0$.",
+      "tag": "cinétique",
+      "difficulty": 2
+    }
+  ]
+}
+
+
+--------------------------------------------------------------------------------
+Flashcards
+
+[
+  {
+    "id": "fc-trav-1",
+    "lessonId": "travail-force-expert",
+    "front": "Formule générale du travail d'une force constante $\\vec{F}$ sur un déplacement $\\vec{AB}$",
+    "back": "$W_{AB}(\\vec{F}) = \\vec{F} \\cdot \\vec{AB} = F \\times AB \\times \\cos(\\alpha)$\n\nAvec $\\alpha$ l'angle entre $\\vec{F}$ et $\\vec{AB}$.",
+    "tags": ["physique", "travail", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trav-2",
+    "lessonId": "travail-force-expert",
+    "front": "Expression du travail du poids $\\vec{P}$ entre A et B",
+    "back": "$W_{AB}(\\vec{P}) = m \\cdot g \\cdot (z_A - z_B)$\n\nIl ne dépend que de la variation d'altitude.",
+    "tags": ["physique", "poids", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trav-3",
+    "lessonId": "travail-force-expert",
+    "front": "Expression du travail de la force électrique $\\vec{F}_e$ entre A et B",
+    "back": "$W_{AB}(\\vec{F}_e) = q \\cdot U_{AB}$\n\nAvec $U_{AB} = V_A - V_B$.",
+    "tags": ["physique", "électricité", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trav-4",
+    "lessonId": "travail-force-expert",
+    "front": "Expression du travail d'une force de frottement constant $\\vec{f}$",
+    "back": "$W_{AB}(\\vec{f}) = - f \\cdot AB$\n\nC'est un travail toujours résistant (négatif).",
+    "tags": ["physique", "frottement", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trav-5",
+    "lessonId": "travail-force-expert",
+    "front": "Condition pour qu'un travail soit NUL",
+    "back": "Le travail est nul si la force est **perpendiculaire** au déplacement ($\\alpha = 90^{\\circ}$).\nEx: Réaction normale du support, force de Lorentz.",
+    "tags": ["physique", "concept"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-trav-6",
+    "lessonId": "travail-force-expert",
+    "front": "Définition d'une force conservative",
+    "back": "Une force est conservative si son travail entre deux points A et B est **indépendant du chemin suivi** (ex: Poids, Force électrique).",
+    "tags": ["physique", "définition"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-trav-7",
+    "lessonId": "travail-force-expert",
+    "front": "Théorème de l'Énergie Cinétique (TEC)",
+    "back": "$\\Delta E_c = E_c(B) - E_c(A) = \\sum W_{AB}(\\vec{F}_{ext})$\n\nLa variation d'énergie cinétique est égale à la somme des travaux des forces.",
+    "tags": ["physique", "loi", "théorème"],
+    "level": 3,
+    "category": "law"
+  },
+  {
+    "id": "fc-trav-8",
+    "lessonId": "travail-force-expert",
+    "front": "Définition Travail Moteur vs Résistant",
+    "back": "**Moteur** : $W > 0$ (La force aide le mouvement, angle aigu).\n**Résistant** : $W < 0$ (La force s'oppose, angle obtus).",
+    "tags": ["physique", "vocabulaire"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-trav-9",
+    "lessonId": "travail-force-expert",
+    "front": "Travail de la force de Lorentz magnétique",
+    "back": "**Nul**.\nCar la force est toujours orthogonale au vecteur vitesse.",
+    "tags": ["physique", "magnétisme"],
+    "level": 3,
+    "category": "concept"
+  },
+  {
+    "id": "fc-trav-10",
+    "lessonId": "travail-force-expert",
+    "front": "Relation entre Travail et Énergie Potentielle (Force conservative)",
+    "back": "$W_{AB}(\\vec{F}_{cons}) = - \\Delta E_p = E_p(A) - E_p(B)$\n\nLe travail est l'opposé de la variation d'énergie potentielle.",
+    "tags": ["physique", "énergie", "relation"],
+    "level": 3,
+    "category": "formula"
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Exercices d'application
+
+[
+  {
+    "id": "ex-trav-1",
+    "lessonId": "travail-force-expert",
+    "title": "Travail d'une force de traction",
+    "difficulty": 1,
+    "statement": "Un enfant tire une luge sur une distance d = 50 m sur un sol horizontal. Il exerce une force constante F = 40 N via une corde faisant un angle α = 30° avec l'horizontale. Calculer le travail de cette force.",
+    "hints": [
+      "Utilise la formule W = F . d . cos(α).",
+      "Vérifie que la calculatrice est en degrés."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identifier la formule",
+        "content": "Le travail d'une force constante est W = F × d × cos(α).",
+        "explanation": "C'est la définition du produit scalaire."
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "W = 40 × 50 × cos(30°) = 2000 × 0,866 ≈ 1732 J.",
+        "explanation": "Le travail est moteur (positif) car l'angle est inférieur à 90°."
+      }
+    ],
+    "method": "Application directe de la définition",
+    "commonMistakes": ["Oublier le cosinus", "Utiliser un angle en radians sur une calculatrice en degrés"],
+    "tags": ["travail", "calcul"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-trav-2",
+    "lessonId": "travail-force-expert",
+    "title": "Travail du poids sur une piste de ski",
+    "difficulty": 2,
+    "statement": "Un skieur de masse m = 80 kg descend une piste de longueur L = 200 m inclinée de β = 20° par rapport à l'horizontale. Calculer le travail de son poids lors de la descente.",
+    "hints": [
+      "Le travail du poids dépend de la différence d'altitude h.",
+      "Utilise la trigonométrie pour trouver h à partir de L et β (h = L.sin(β)).",
+      "W = m.g.h (car c'est une descente)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calculer le dénivelé h",
+        "content": "h = z_A - z_B = L × sin(β) = 200 × sin(20°) ≈ 68,4 m.",
+        "explanation": "Dans un triangle rectangle, le côté opposé à l'angle est l'hypoténuse fois le sinus."
+      },
+      {
+        "step": 2,
+        "title": "Calculer le travail",
+        "content": "W(P) = m × g × h = 80 × 9,81 × 68,4 ≈ 53 680 J = 53,7 kJ.",
+        "explanation": "Le travail est moteur (positif) car le skieur descend."
+      }
+    ],
+    "method": "Utilisation de la variation d'altitude",
+    "commonMistakes": ["Utiliser le cosinus au lieu du sinus pour la hauteur", "Se tromper de signe"],
+    "tags": ["poids", "gravité"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-trav-3",
+    "lessonId": "travail-force-expert",
+    "title": "Freinage d'urgence (TEC)",
+    "difficulty": 3,
+    "statement": "Une voiture de masse m = 1000 kg roule à v = 20 m/s. Elle freine jusqu'à l'arrêt complet sur une distance d = 40 m. Calculer la valeur de la force de frottement f (supposée constante) exercée par les freins.",
+    "hints": [
+      "Applique le Théorème de l'Énergie Cinétique entre l'état initial et final.",
+      "L'état final est l'arrêt (v=0).",
+      "Le travail des frottements est W = -f.d."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Variation d'énergie cinétique",
+        "content": "ΔEc = Ec_final - Ec_initial = 0 - 0,5 × 1000 × 20² = - 200 000 J.",
+        "explanation": "L'énergie cinétique finale est nulle car la voiture s'arrête."
+      },
+      {
+        "step": 2,
+        "title": "Travail des forces",
+        "content": "Seuls les frottements travaillent (Poids et Réaction compensés). W(f) = - f × d.",
+        "explanation": "W(P)=0 et W(R)=0 car perpendiculaires au mouvement."
+      },
+      {
+        "step": 3,
+        "title": "Application du TEC",
+        "content": "ΔEc = W(f) => - 200 000 = - f × 40 => f = 200 000 / 40 = 5000 N.",
+        "explanation": "On isole f."
+      }
+    ],
+    "method": "Théorème de l'énergie cinétique",
+    "commonMistakes": ["Oublier le signe moins dans le travail résistant", "Oublier de mettre la vitesse au carré"],
+    "tags": ["TEC", "freinage"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-trav-4",
+    "lessonId": "travail-force-expert",
+    "title": "Accélération d'un électron",
+    "difficulty": 2,
+    "statement": "Un électron (charge q = -e) est accéléré dans un canon à électrons par une tension U = 1000 V. Quelle est l'énergie cinétique acquise (en eV et en Joules) ?",
+    "hints": [
+      "Le travail de la force électrique est W = q(Va - Vb).",
+      "Pour un électron accéléré, l'énergie gagnée est e.U.",
+      "1 eV = 1,6 x 10^-19 J."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul en électrons-volts (eV)",
+        "content": "L'énergie acquise est Ec = e × U = 1 e × 1000 V = 1000 eV (ou 1 keV).",
+        "explanation": "Par définition, 1 eV est l'énergie acquise par un électron sous 1 Volt."
+      },
+      {
+        "step": 2,
+        "title": "Conversion en Joules",
+        "content": "Ec (J) = 1000 × 1,60 × 10^-19 = 1,60 × 10^-16 J.",
+        "explanation": "On utilise le facteur de conversion de la charge élémentaire."
+      }
+    ],
+    "method": "Travail électrique",
+    "commonMistakes": ["Confusion entre eV et Joules", "Erreur de puissance de 10"],
+    "tags": ["électricité", "particule"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-trav-5",
+    "lessonId": "travail-force-expert",
+    "title": "Pendule simple",
+    "difficulty": 3,
+    "statement": "Une bille de masse m pendue à un fil de longueur L est lâchée sans vitesse initiale avec un angle θ0 = 60° par rapport à la verticale. Exprimer sa vitesse v au passage par la position verticale (θ = 0) en fonction de g et L.",
+    "hints": [
+      "La tension du fil ne travaille pas (perpendiculaire). Seul le poids travaille.",
+      "Utilise le TEC ou la conservation de l'énergie mécanique.",
+      "La différence de hauteur est h = L(1 - cos(θ0))."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calculer la hauteur de chute h",
+        "content": "h = L - L.cos(θ0) = L(1 - cos(60°)) = L(1 - 0,5) = 0,5 L.",
+        "explanation": "Géométrie simple du pendule."
+      },
+      {
+        "step": 2,
+        "title": "Conservation de l'énergie",
+        "content": "ΔEc = W(P) => 0,5.m.v² - 0 = m.g.h",
+        "explanation": "L'énergie potentielle perdue est transformée en cinétique."
+      },
+      {
+        "step": 3,
+        "title": "Isoler v",
+        "content": "v² = 2.g.h = 2.g.(0,5 L) = g.L => v = √(g.L).",
+        "explanation": "La masse se simplifie."
+      }
+    ],
+    "method": "Conservation de l'énergie",
+    "commonMistakes": ["Mauvaise expression de h", "Oublier la racine carrée"],
+    "tags": ["pendule", "littéral"],
+    "isComprehension": true
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Exercices Guidés
+
+[
+  {
+    "id": "guided-trav-1",
+    "title": "Tirer une caisse (Travail constant)",
+    "subject": "physique",
+    "chapter": "Aspects énergétiques",
+    "difficulty": "facile",
+    "estimatedTime": 10,
+    "description": "Un ouvrier tire une caisse sur 10 mètres avec une force F=100N inclinée de 60° par rapport au sol.",
+    "question": "Calculer le travail fourni par l'ouvrier.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Identifier la formule",
+        "instruction": "Quelle formule permet de calculer le travail d'une force constante ?",
+        "hint": "C'est un produit scalaire.",
+        "solution": "$W = F \\times d \\times \\cos(\\alpha)$"
+      },
+      {
+        "id": 2,
+        "title": "Application numérique",
+        "instruction": "Remplace par les valeurs : F=100, d=10, alpha=60°.",
+        "hint": "cos(60°) = 0,5.",
+        "solution": "$W = 100 \\times 10 \\times 0,5 = 500 \\text{ J}$"
+      }
+    ],
+    "finalAnswer": "Le travail est de **500 Joules**."
+  },
+  {
+    "id": "guided-trav-2",
+    "title": "Chute d'une pomme (Travail du poids)",
+    "subject": "physique",
+    "chapter": "Aspects énergétiques",
+    "difficulty": "facile",
+    "estimatedTime": 10,
+    "description": "Une pomme de 100 g tombe d'un arbre de 3 m de haut.",
+    "question": "Quel est le travail de son poids jusqu'au sol ?",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Convertir la masse",
+        "instruction": "Convertis la masse en kg.",
+        "solution": "$m = 0,1 \\text{ kg}$"
+      },
+      {
+        "id": 2,
+        "title": "Formule du travail du poids",
+        "instruction": "La pomme descend. Le travail est-il positif ou négatif ?",
+        "hint": "Le poids aide le mouvement.",
+        "solution": "Positif (Moteur). $W = m \\cdot g \\cdot h$"
+      },
+      {
+        "id": 3,
+        "title": "Calcul",
+        "instruction": "Calcule avec g = 9,81 m/s².",
+        "solution": "$W = 0,1 \\times 9,81 \\times 3 = 2,943 \\text{ J}$"
+      }
+    ],
+    "finalAnswer": "Le travail du poids est d'environ **2,94 J**."
+  },
+  {
+    "id": "guided-trav-3",
+    "title": "Freinage d'un camion (Travail résistant)",
+    "subject": "physique",
+    "chapter": "Aspects énergétiques",
+    "difficulty": "moyen",
+    "estimatedTime": 15,
+    "description": "Un camion subit une force de frottement f = 5000 N opposée à son mouvement sur 200 m.",
+    "question": "Calculer le travail de cette force.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Analyser l'angle",
+        "instruction": "Quel est l'angle entre la force de frottement et le déplacement ?",
+        "hint": "La force est opposée au mouvement.",
+        "solution": "L'angle est de 180° ($\\pi$ radians)."
+      },
+      {
+        "id": 2,
+        "title": "Calculer le cosinus",
+        "instruction": "Que vaut cos(180°) ?",
+        "solution": "-1"
+      },
+      {
+        "id": 3,
+        "title": "Calcul final",
+        "instruction": "Applique $W = f \\times d \\times \\cos(180)$.",
+        "solution": "$W = 5000 \\times 200 \\times (-1) = - 1 000 000 \\text{ J}$"
+      }
+    ],
+    "finalAnswer": "Le travail est résistant et vaut **-1,0 MJ** (Mégajoule)."
+  },
+  {
+    "id": "guided-trav-4",
+    "title": "Vitesse d'un électron (Théorème Ec)",
+    "subject": "physique",
+    "chapter": "Aspects énergétiques",
+    "difficulty": "difficile",
+    "estimatedTime": 20,
+    "description": "Un électron initialement immobile est accéléré par une tension U = 100 V.",
+    "question": "Quelle est sa vitesse finale ?",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Travail de la force électrique",
+        "instruction": "Calcule le travail reçu W = e.U (avec e = 1,6e-19 C).",
+        "solution": "$W = 1,6 \\times 10^{-19} \\times 100 = 1,6 \\times 10^{-17} \\text{ J}$"
+      },
+      {
+        "id": 2,
+        "title": "Théorème de l'énergie cinétique",
+        "instruction": "Relie le travail à la variation d'énergie cinétique.",
+        "hint": "$\\Delta E_c = E_{c,finale} - 0 = W$.",
+        "solution": "$\\frac{1}{2} m v^2 = W$"
+      },
+      {
+        "id": 3,
+        "title": "Isoler la vitesse",
+        "instruction": "Exprime v en fonction de W et m.",
+        "solution": "$v = \\sqrt{\\frac{2W}{m}}$"
+      },
+      {
+        "id": 4,
+        "title": "Calcul final",
+        "instruction": "Calcule v avec m = 9,11e-31 kg.",
+        "solution": "$v = \\sqrt{\\frac{2 \\times 1,6 \\cdot 10^{-17}}{9,11 \\cdot 10^{-31}}} \\approx 5,9 \\times 10^6 \\text{ m/s}$"
+      }
+    ],
+    "finalAnswer": "La vitesse est d'environ **$5,9 \\times 10^6$ m/s**."
+  },
+  {
+    "id": "guided-trav-5",
+    "title": "Montagnes Russes (Conservation Em)",
+    "subject": "physique",
+    "chapter": "Aspects énergétiques",
+    "difficulty": "difficile",
+    "estimatedTime": 20,
+    "description": "Un wagon part du sommet (h=20m) sans vitesse initiale. On néglige les frottements.",
+    "question": "Quelle est sa vitesse au point le plus bas (h=0) ?",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Bilan des forces",
+        "instruction": "Quelles forces s'exercent ? Sont-elles conservatives ?",
+        "solution": "Le poids (conservatif) et la réaction du support (travail nul). Il n'y a pas de frottement."
+      },
+      {
+        "id": 2,
+        "title": "Conservation de l'énergie mécanique",
+        "instruction": "Écris l'égalité entre l'énergie mécanique au sommet et en bas.",
+        "hint": "$E_m = E_c + E_{pp}$",
+        "solution": "$E_{c,haut} + E_{pp,haut} = E_{c,bas} + E_{pp,bas}$\n$0 + m g h = \\frac{1}{2} m v^2 + 0$"
+      },
+      {
+        "id": 3,
+        "title": "Résolution",
+        "instruction": "Isole v et calcule.",
+        "hint": "$v = \\sqrt{2gh}$",
+        "solution": "$v = \\sqrt{2 \\times 9,81 \\times 20} = \\sqrt{392,4} \\approx 19,8 \\text{ m/s}$"
+      }
+    ],
+    "finalAnswer": "La vitesse en bas est de **19,8 m/s** (soit environ 71 km/h)."
+  }
+]
+

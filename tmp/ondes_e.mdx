@@ -1,0 +1,191 @@
+[
+  {
+    "id": "ex-son-1",
+    "lessonId": "ondes-sonores-expert",
+    "title": "Niveau d'intensité sonore et additivité",
+    "difficulty": 2,
+    "statement": "Dans un atelier, une machine produit un bruit d'intensité sonore I = 1,0 x 10^-4 W.m^-2. 1. Calculer le niveau d'intensité sonore L correspondant. 2. Si une deuxième machine identique est mise en marche, quel sera le nouveau niveau sonore total ?",
+    "hints": [
+      "Le niveau sonore L dépend du logarithme du rapport I/I0.",
+      "I0 = 1,0 x 10^-12 W.m^-2 (seuil d'audibilité).",
+      "Attention : ce sont les intensités I qui s'additionnent, pas les décibels."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du niveau sonore d'une machine",
+        "content": "L = 10 log(I / I0) = 10 log(10^-4 / 10^-12) = 10 log(10^8) = 80 dB.",
+        "explanation": "On applique la définition du niveau d'intensité sonore L exprimé en décibels (dB) [1]."
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'intensité totale",
+        "content": "Itot = I + I = 2I = 2,0 x 10^-4 W.m^-2.",
+        "explanation": "L'intensité sonore est une grandeur additive, contrairement au niveau sonore [2]."
+      },
+      {
+        "step": 3,
+        "title": "Calcul du niveau sonore total",
+        "content": "Ltot = 10 log(2I / I0) = L + 10 log(2) ≈ 80 + 3 = 83 dB.",
+        "explanation": "Doubler l'intensité sonore revient à augmenter le niveau sonore de 3 dB [3]."
+      }
+    ],
+    "method": "Utilisation de l'échelle logarithmique",
+    "commonMistakes": [
+      "Additionner les décibels directement (80 + 80 = 160 dB est faux)",
+      "Oublier l'intensité de référence I0"
+    ],
+    "tags": ["son", "décibel", "intensité", "calcul"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-son-2",
+    "lessonId": "ondes-sonores-expert",
+    "title": "Atténuation géométrique du son",
+    "difficulty": 2,
+    "statement": "Lors d'un concert en plein air, le niveau sonore mesuré à une distance r1 = 10 m des enceintes est L1 = 100 dB. En supposant la source ponctuelle et omnidirectionnelle (et sans absorption par l'air), quel sera le niveau sonore L2 à une distance r2 = 100 m ?",
+    "hints": [
+      "L'énergie se répartit sur une surface qui grandit avec le carré de la distance.",
+      "Il existe une formule reliant la variation de niveau sonore au rapport des distances.",
+      "L2 = L1 - 20 log(r2/r1)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Rappel de la loi d'atténuation",
+        "content": "L'atténuation géométrique A est donnée par A = L1 - L2 = 20 log(r2/r1).",
+        "explanation": "L'intensité sonore I diminue en 1/r², ce qui se traduit par un terme en -20 log(r) pour le niveau sonore [4]."
+      },
+      {
+        "step": 2,
+        "title": "Application numérique",
+        "content": "A = 20 log(100/10) = 20 log(10) = 20 dB. Donc L2 = 100 - 20 = 80 dB.",
+        "explanation": "Multiplier la distance par 10 entraîne une diminution du niveau sonore de 20 dB [5]."
+      }
+    ],
+    "method": "Calcul d'atténuation géométrique",
+    "commonMistakes": [
+      "Utiliser la formule en 10 log(...) au lieu de 20 log(...) pour les distances",
+      "Penser que le niveau sonore diminue linéairement avec la distance"
+    ],
+    "tags": ["son", "atténuation", "distance"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-son-3",
+    "lessonId": "ondes-sonores-expert",
+    "title": "Effet Doppler : Véhicule en approche",
+    "difficulty": 3,
+    "statement": "Une ambulance, dont la sirène émet un son de fréquence fE = 800 Hz, se rapproche d'un piéton immobile à une vitesse v = 25 m/s. La célérité du son dans l'air est c = 340 m/s. Calculer la fréquence fR perçue par le piéton.",
+    "hints": [
+      "La source se rapproche, le son perçu doit être plus aigu (fréquence plus élevée).",
+      "Utilise la relation fR = fE x [c / (c - v)].",
+      "Attention aux unités, tout doit être en m/s et Hz."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse qualitative",
+        "content": "La source se rapproche du récepteur, donc la fréquence perçue fR sera supérieure à fE.",
+        "explanation": "L'effet Doppler provoque une compression des fronts d'onde vers l'avant du véhicule [6]."
+      },
+      {
+        "step": 2,
+        "title": "Application de la formule Doppler",
+        "content": "fR = fE * (c / (c - v)) = 800 * (340 / (340 - 25))",
+        "explanation": "La formule pour une source se rapprochant d'un observateur fixe a un dénominateur (c - v) [7]."
+      },
+      {
+        "step": 3,
+        "title": "Calcul final",
+        "content": "fR = 800 * (340 / 315) ≈ 863 Hz.",
+        "explanation": "On obtient bien une fréquence plus élevée que 800 Hz, correspondant à un son plus aigu."
+      }
+    ],
+    "method": "Application de la formule de l'effet Doppler",
+    "commonMistakes": [
+      "Se tromper de signe au dénominateur (utiliser c+v au lieu de c-v pour un rapprochement)",
+      "Inverser fR et fE"
+    ],
+    "tags": ["doppler", "fréquence", "calcul", "vitesse"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-son-4",
+    "lessonId": "ondes-sonores-expert",
+    "title": "Interférences sonores destructives",
+    "difficulty": 3,
+    "statement": "Deux haut-parleurs S1 et S2 émettent en phase un son de fréquence f = 680 Hz. La célérité du son est c = 340 m/s. Un point M est situé à d1 = 4,00 m de S1 et d2 = 4,25 m de S2. L'amplitude sonore en M est-elle maximale ou minimale ?",
+    "hints": [
+      "Calcule d'abord la longueur d'onde λ = c/f.",
+      "Calcule la différence de marche δ = |d2 - d1|.",
+      "Compare δ à la longueur d'onde (entier ou demi-entier ?)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de la longueur d'onde",
+        "content": "λ = c / f = 340 / 680 = 0,50 m.",
+        "explanation": "La longueur d'onde est la distance parcourue par l'onde pendant une période [8]."
+      },
+      {
+        "step": 2,
+        "title": "Calcul de la différence de marche",
+        "content": "δ = |d2 - d1| = |4,25 - 4,00| = 0,25 m.",
+        "explanation": "La différence de marche représente le décalage de distance parcourue par les deux ondes [9]."
+      },
+      {
+        "step": 3,
+        "title": "Condition d'interférence",
+        "content": "On calcule le rapport δ / λ = 0,25 / 0,50 = 0,5 = 1/2. Donc δ = (0 + 1/2)λ.",
+        "explanation": "La différence de marche est un multiple impair de la demi-longueur d'onde. Les interférences sont donc destructives (amplitude minimale) [10]."
+      }
+    ],
+    "method": "Comparaison différence de marche et longueur d'onde",
+    "commonMistakes": [
+      "Oublier de calculer la longueur d'onde",
+      "Confondre la condition constructive (kλ) et destructive ((k+0.5)λ)"
+    ],
+    "tags": ["interférences", "différence de marche", "son"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-son-5",
+    "lessonId": "ondes-sonores-expert",
+    "title": "Diffraction d'une onde sonore",
+    "difficulty": 2,
+    "statement": "Une onde sonore de fréquence f = 1000 Hz (c = 340 m/s) arrive devant une porte ouverte de largeur a = 80 cm. Le phénomène de diffraction sera-t-il marqué ?",
+    "hints": [
+      "Calcule la longueur d'onde du son.",
+      "La diffraction est notable si la taille de l'ouverture est du même ordre de grandeur que la longueur d'onde.",
+      "Compare 'a' et 'λ'."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de la longueur d'onde",
+        "content": "λ = c / f = 340 / 1000 = 0,34 m = 34 cm.",
+        "explanation": "C'est la dimension caractéristique de l'onde."
+      },
+      {
+        "step": 2,
+        "title": "Comparaison avec l'ouverture",
+        "content": "L'ouverture a = 80 cm est du même ordre de grandeur que λ (34 cm).",
+        "explanation": "La condition a ≈ λ (ou du moins du même ordre de grandeur) est respectée [11]."
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "Oui, le phénomène de diffraction sera marqué. Le son s'étalera après avoir traversé la porte.",
+        "explanation": "L'onde ne se propage pas uniquement en ligne droite après l'ouverture mais s'éparpille dans la pièce."
+      }
+    ],
+    "method": "Comparaison dimensionnelle",
+    "commonMistakes": [
+      "Comparer directement la fréquence à la largeur (unités incohérentes)",
+      "Penser que la diffraction n'existe que pour la lumière"
+    ],
+    "tags": ["diffraction", "longueur d'onde", "condition"],
+    "isComprehension": true
+  }
+]

@@ -1,0 +1,358 @@
+---
+id: "equilibres-chimiques-expert"
+title: "Équilibres chimiques : quotient de réaction, constante K et sens d’évolution"
+track: "chimie"
+level: 2
+prerequisites: ["Tableau d'avancement", "Concentrations (mol·L⁻¹)", "Acide-base (bases)", "Logarithmes (Maths)"]
+tags: ["équilibre chimique", "quotient de réaction", "constante d'équilibre", "Qr", "K(T)", "Ka", "pKa", "sens d'évolution", "taux d'avancement"]
+estimatedTime: 110
+chapter: "constitution-et-transformations-de-la-matiere"
+order: 6
+---
+
+# Équilibres chimiques
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Expliquer **l’équilibre dynamique** (réaction directe et inverse simultanées).
+- Écrire et calculer le **quotient de réaction** $Q_r$ en tenant compte des **solides** et du **solvant**.
+- Relier l’état d’équilibre à la **constante d’équilibre** $K(T)$ (dépend **uniquement** de la température).
+- Utiliser le **critère d’évolution spontanée** ($Q_{r,i}$ comparé à $K$) pour prévoir le **sens d’évolution**.
+- Relier équilibre et **réactions acide–base** via $K_A$ et $pK_A$.
+- Éviter les **erreurs classiques** (exposants stœchiométriques, espèces à ne pas mettre dans $Q_r$, confusion $Q_r$ / $K$, etc.).
+
+---
+
+## 1. Intuition et analogies : pourquoi un équilibre « bouge » alors qu’il « ne change plus » ?
+
+### 1.1 L’équilibre dynamique (analogie du rond-point)
+Imagine un rond-point avec deux sorties opposées : **A→B** (sens direct) et **B→A** (sens inverse).
+
+- Au début, beaucoup de voitures prennent la sortie A→B : le flux direct domine.
+- Petit à petit, il y a plus de voitures côté B, donc le flux B→A augmente.
+- À l’équilibre, **les deux flux sont égaux** : il y a toujours des voitures qui bougent, mais **le nombre de voitures de chaque côté reste constant**.
+
+C’est exactement l’idée d’**équilibre dynamique** : à l’échelle microscopique, les deux sens continuent à se produire « en même temps » et à la même vitesse. (C’est ce que traduit la **double flèche**.)
+
+### 1.2 Pourquoi $Q_r$ est un « thermomètre de position »
+Autre analogie : pense à $Q_r$ comme à une **boussole** qui indique *où se situe* le système entre « plutôt réactifs » et « plutôt produits ».
+
+- Si $Q_r$ est **trop petit**, le système « manque » de produits : il évolue vers la droite (sens direct).
+- Si $Q_r$ est **trop grand**, le système « a trop » de produits : il revient vers la gauche (sens inverse).
+- À l’équilibre, $Q_r$ atteint la valeur « cible » : **$K(T)$**.
+
+---
+
+## 2. Transformation totale vs non totale : la notion de taux d’avancement
+
+On distingue deux situations :
+
+- **Transformation totale** : elle évolue jusqu’à épuisement du réactif limitant.
+- **Transformation non totale (limitée)** : à l’état final, **réactifs et produits coexistent**.
+
+Le livre rappelle le **taux d’avancement final** :
+\[
+\tau_f = \frac{x_f}{x_{max}}
+\]
+- Si $\tau_f = 1$ : transformation totale.
+- Si $\tau_f < 1$ : transformation limitée (équilibre).
+
+> 💡 Idée utile : $K(T)$ dépend de la réaction (et de $T$), mais **$\tau_f$ dépend aussi de la composition initiale**.
+
+---
+
+## 3. Le quotient de réaction $Q_r$ : définition, écriture, pièges
+
+### 3.1 Définition générale
+Pour une transformation modélisée par :
+\[
+\alpha A + \beta B \rightleftharpoons \gamma C + \delta D
+\]
+Le quotient de réaction s’écrit (en terminale, on assimile l’activité à la concentration en mol·L⁻¹) :
+\[
+Q_r = \frac{[C]^\gamma [D]^\delta}{[A]^\alpha [B]^\beta}
+\]
+
+### 3.2 Espèces à NE PAS mettre dans $Q_r$ (hyper important)
+- **Un solide pur** : activité = 1 → **n’apparaît pas** dans $Q_r$.
+- **Le solvant (souvent l’eau liquide)** : activité = 1 → **n’apparaît pas** dans $Q_r$.
+
+> ✅ Exemple « type solubilité » :  
+> $\text{CaSO}_4(s) \rightleftharpoons \text{Ca}^{2+}(aq) + \text{SO}_4^{2-}(aq)$  
+> \[
+> Q_r = [\text{Ca}^{2+}]\,[\text{SO}_4^{2-}]
+> \]
+> (le solide $\text{CaSO}_4(s)$ ne figure pas dans l’expression)
+
+### 3.3 Mini-exercice intégré (corrigé)
+**Exercice 1 — Écrire $Q_r$ correctement**
+
+1) $\text{MgCl}_2(s) \rightleftharpoons \text{Mg}^{2+}(aq) + 2\,\text{Cl}^-(aq)$  
+2) $\text{H}_2\text{O}(\ell) + \text{H}_2\text{O}(\ell) \rightleftharpoons \text{H}_3\text{O}^+(aq) + \text{HO}^-(aq)$
+
+**Corrigé :**
+
+1) Le solide n’apparaît pas :  
+\[
+Q_r = [\text{Mg}^{2+}]\,[\text{Cl}^-]^2
+\]
+
+2) L’eau liquide n’apparaît pas :  
+\[
+Q_r = [\text{H}_3\text{O}^+]\,[\text{HO}^-]
+\]
+
+---
+
+## 4. L’état d’équilibre et la constante $K(T)$
+
+### 4.1 Définition
+À l’**état d’équilibre**, le quotient de réaction prend une valeur particulière, appelée **constante d’équilibre** :
+\[
+Q_{r,eq} = K(T)
+\]
+
+### 4.2 Point clé : de quoi dépend $K$ ?
+Pour **une équation de réaction donnée**, on retient :
+- **$K$ ne dépend que de la température**.
+- $K$ ne dépend **pas** des concentrations initiales (si $T$ est fixée).
+
+> ✅ C’est cohérent avec l’idée : $K$ décrit « où se place l’équilibre » *pour cette réaction* à *cette température*.
+
+### 4.3 Lecture qualitative de $K$
+- Si **$K \gg 1$** : équilibre très « à droite » → produits favorisés.
+- Si **$K \ll 1$** : équilibre « à gauche » → réactifs favorisés.
+- Si **$K \approx 1$** : réactifs et produits comparables.
+
+---
+
+## 5. Critère d’évolution spontanée : comparer $Q_{r,i}$ et $K$
+
+Quand le système est **hors équilibre** et que toutes les espèces (réactifs + produits) sont présentes au départ, on compare :
+
+- Si $Q_{r,i} < K$ : évolution spontanée **dans le sens direct** (vers la droite).
+- Si $Q_{r,i} > K$ : évolution spontanée **dans le sens inverse** (vers la gauche).
+- Si $Q_{r,i} = K$ : le système est **déjà à l’équilibre**.
+
+### Mini-exercice intégré (corrigé)
+**Exercice 2 — Sens d’évolution à partir de $Q_{r,i}$**
+
+On considère l’équilibre (complexation) :
+\[
+\text{Ag}^+(aq) + 2\,\text{NH}_3(aq) \rightleftharpoons \text{Ag(NH}_3)_2^+(aq)
+\]
+Donnée : $K = 8{,}13\times 10^3$.
+
+On prépare un volume $V=250\ \text{mL}$ avec :
+- $n(\text{Ag}^+) = 5{,}00\times 10^{-3}\ \text{mol}$
+- $n(\text{NH}_3) = 2{,}00\times 10^{-3}\ \text{mol}$
+- $n(\text{Ag(NH}_3)_2^+) = 4{,}00\times 10^{-2}\ \text{mol}$
+
+**Question :** prévoir le sens d’évolution.
+
+**Corrigé :**
+1) On calcule les concentrations initiales : $[X]=n/V$ avec $V=0{,}250\ \text{L}$.
+- $[\text{Ag}^+]_i = 5{,}00\times 10^{-3}/0{,}250 = 2{,}0\times 10^{-2}$
+- $[\text{NH}_3]_i = 2{,}00\times 10^{-3}/0{,}250 = 8{,}0\times 10^{-3}$
+- $[\text{Ag(NH}_3)_2^+]_i = 4{,}00\times 10^{-2}/0{,}250 = 1{,}6\times 10^{-1}$
+
+2) Expression :
+\[
+Q_{r,i} = \frac{[\text{Ag(NH}_3)_2^+]}{[\text{Ag}^+][\text{NH}_3]^2}
+\]
+
+3) Numériquement :
+\[
+Q_{r,i} = \frac{1{,}6\times 10^{-1}}{(2{,}0\times 10^{-2})\,(8{,}0\times 10^{-3})^2}
+= \frac{1{,}6\times 10^{-1}}{2{,}0\times 10^{-2}\times 6{,}4\times 10^{-5}}
+= \frac{1{,}6\times 10^{-1}}{1{,}28\times 10^{-6}}
+\approx 1{,}25\times 10^{5}
+\]
+
+4) Comparaison : $Q_{r,i} \approx 1{,}25\times 10^5 > K = 8{,}13\times 10^3$  
+Donc le système évolue spontanément **dans le sens inverse** (vers la gauche) : le complexe se dissocie partiellement.
+
+> 🧠 Interprétation intuitive : on a « beaucoup trop » de produit au départ → il revient vers les réactifs.
+
+---
+
+## 6. Équilibre et acide–base : $K_A$ et $pK_A$
+
+### 6.1 $K_A$ est une constante d’équilibre
+Pour un couple acide/base $\text{AH}/\text{A}^-$, la dissociation dans l’eau est :
+\[
+\text{AH}(aq) + \text{H}_2\text{O}(\ell) \rightleftharpoons \text{A}^-(aq) + \text{H}_3\text{O}^+(aq)
+\]
+La constante associée est :
+\[
+K_A = \frac{[\text{A}^-]_{eq}[\text{H}_3\text{O}^+]_{eq}}{[\text{AH}]_{eq}}
+\]
+À température fixée, **$K_A$ dépend uniquement de $T$** (comme toute constante d’équilibre).
+
+On définit :
+\[
+pK_A = -\log(K_A)
+\]
+Plus $pK_A$ est petit → acide plus « fort » (dissociation plus avancée).
+
+### 6.2 Mini-exercice intégré (corrigé) : relier pH et avancement
+On a une solution d’un acide faible $\text{HInd}$ (indicateur) :
+\[
+\text{HInd}(aq) + \text{H}_2\text{O}(\ell) \rightleftharpoons \text{Ind}^-(aq) + \text{H}_3\text{O}^+(aq)
+\]
+Volume $V=0{,}100\ \text{L}$ et pH final $=4{,}2$.
+
+**Question :** trouver $x_f$ (avancement final).
+
+**Corrigé :**
+1) $[\text{H}_3\text{O}^+]_f = 10^{-pH} = 10^{-4{,}2} \approx 6{,}3\times 10^{-5}\ \text{mol·L}^{-1}$.
+2) Or $n(\text{H}_3\text{O}^+)_f = x_f$, donc :
+\[
+x_f = [\text{H}_3\text{O}^+]_f \times V
+\approx 6{,}3\times 10^{-5} \times 0{,}100
+= 6{,}3\times 10^{-6}\ \text{mol}
+\]
+Ici la réaction est **limitée** (acide faible), donc $\tau_f < 1$.
+
+---
+
+## 7. Méthode complète : déterminer un état d’équilibre (niveau « expert guidé »)
+
+### 7.1 Étapes standard
+1) **Écrire l’équation** et les espèces à considérer (attention aux solides / solvants).
+2) **Tableau d’avancement** (avec $x$).
+3) **Exprimer $Q_r$** en fonction de $x$ (souvent via les concentrations).
+4) À l’équilibre : **$Q_r(x_f)=K(T)$**.
+5) Résoudre (souvent une équation du type « polynôme » ou approximation si $K$ énorme/petit).
+6) Vérifier la cohérence : $x_f$ doit être entre 0 et $x_{max}$ ; toutes les quantités de matière finales doivent être positives.
+
+### 7.2 Exemple guidé : réaction très favorisée (lecture de $K$)
+Considérons :
+\[
+\text{CH}_3\text{COOH}(aq) + \text{NH}_3(aq) \rightleftharpoons \text{CH}_3\text{COO}^-(aq) + \text{NH}_4^+(aq)
+\]
+Donnée à 25°C : $K \approx 2{,}5\times 10^{10}$.
+
+**Interprétation immédiate :**
+- $K$ est gigantesque → l’équilibre est très à droite.
+- Donc, sauf si un des réactifs est quasi absent, la réaction directe domine fortement et le retour est très limité.
+
+> ✅ C’est typiquement le genre d’info qui te fait gagner du temps : tu sais déjà « où va le système ».
+
+---
+
+## 8. Erreurs classiques (et comment les éviter)
+
+### Erreur 1 — Oublier les exposants stœchiométriques
+**Symptôme :** tu écris $Q_r = [\text{Cl}^-]$ au lieu de $[\text{Cl}^-]^2$.
+
+✅ **Antidote :** recopie l’équation et surligne les coefficients : ils deviennent les **exposants**.
+
+---
+
+### Erreur 2 — Mettre un solide (ou l’eau liquide) dans $Q_r$
+**Symptôme :** tu écris $Q_r = \frac{[\text{Ca}^{2+}][\text{SO}_4^{2-}]}{[\text{CaSO}_4]}$.
+
+✅ **Antidote :** réflexe « activité = 1 » :
+- solide pur → 1 → **pas dans $Q_r$**
+- solvant pur → 1 → **pas dans $Q_r$**
+
+---
+
+### Erreur 3 — Confondre $Q_r$ et $K$
+- $Q_r$ : dépend de l’**état instantané** (donc des concentrations à l’instant considéré).
+- $K(T)$ : dépend de la **réaction** et de la **température** (c’est une propriété du système à $T$ fixée).
+
+✅ **Antidote :** phrase à mémoriser :  
+> « $Q_r$ bouge, $K$ ne bouge pas (si $T$ ne change pas). »
+
+---
+
+### Erreur 4 — Oublier la condition d’application du critère ($Q_{r,i}$ vs $K$)
+Le critère est simple mais il suppose en général que **réactifs et produits sont présents** au départ.
+
+✅ **Antidote :**
+- Si un produit est absent au départ, souvent $Q_{r,i}=0$ → le sens direct est évident.
+- Si un réactif est absent, $Q_{r,i}$ est « infini » → le sens inverse est évident.
+- Sinon, tu calcules proprement $Q_{r,i}$.
+
+---
+
+### Erreur 5 — Mélanger quantités de matière et concentrations
+**Symptôme :** tu mets des $n$ (en mol) directement dans $Q_r$ alors qu’il faut des **concentrations** (ou activités).
+
+✅ **Antidote :**
+- Si tout est en solution dans le même volume $V$ : tu peux convertir $n \to [X]=n/V$.
+- Si le volume change (dilution, mélange) → attention, recalcule **les concentrations**.
+
+---
+
+### Erreur 6 — Résoudre $Q_r(x_f)=K$ sans contrôler la faisabilité
+**Symptôme :** tu trouves $x_f > x_{max}$ ou une concentration négative.
+
+✅ **Antidote :** contrôle systématique :
+- $0 \le x_f \le x_{max}$
+- toutes les quantités finales positives
+- ordre de grandeur cohérent avec $K$ (très grand/petit)
+
+---
+
+## Mini-résumé pour retenir l’essentiel
+
+| Idée | À retenir |
+| --- | --- |
+| Équilibre dynamique | vitesses directe = inverse, mais concentrations constantes |
+| Quotient de réaction | $Q_r=\frac{[C]^\gamma[D]^\delta}{[A]^\alpha[B]^\beta}$ |
+| À l’équilibre | $Q_{r,eq}=K(T)$ |
+| Dépendance de $K$ | dépend **uniquement** de $T$ (pour une équation donnée) |
+| Sens d’évolution | comparer $Q_{r,i}$ à $K$ |
+| Pièges | solides/solvant absents, exposants, confusion $Q_r$ / $K$ |
+
+---
+
+## Exercices d’entraînement (avec corrigés)
+
+### Exercice A — Écrire $Q_r$ (révision)
+1) $2\,\text{Fe}^{3+}(aq)+2\,\text{S}_2\text{O}_3^{2-}(aq) \rightleftharpoons 2\,\text{Fe}^{2+}(aq)+\text{S}_4\text{O}_6^{2-}(aq)$  
+2) $\text{HCOOH}(\ell)+\text{CH}_3\text{OH}(\ell) \rightleftharpoons \text{C}_2\text{H}_4\text{O}_2(\ell)+\text{H}_2\text{O}(\ell)$
+
+**Corrigé :**
+1) \[
+Q_r=\frac{[\text{Fe}^{2+}]^2[\text{S}_4\text{O}_6^{2-}]}{[\text{Fe}^{3+}]^2[\text{S}_2\text{O}_3^{2-}]^2}
+\]
+
+2) Ici toutes les espèces sont liquides pures (solvant/phase pure) → activités ≈ 1 →  
+\[
+Q_r \approx 1
+\]
+Ce point est surtout conceptuel : dans les exercices « terminale », on traite souvent plutôt des équilibres en solution.
+
+---
+
+### Exercice B — Décider du sens d’évolution (application directe)
+Équilibre :
+\[
+\text{A}(aq)+\text{B}(aq)\rightleftharpoons \text{C}(aq)
+\]
+À $T$ donnée, $K=50$. On mesure à l’instant initial : $[A]=0{,}20$, $[B]=0{,}10$, $[C]=2{,}0$ (mol·L⁻¹).
+
+**Question :** sens d’évolution ?
+
+**Corrigé :**
+\[
+Q_{r,i}=\frac{[C]}{[A][B]}=\frac{2{,}0}{0{,}20\times 0{,}10}=\frac{2{,}0}{0{,}020}=100
+\]
+Or $Q_{r,i}=100>K=50$ → évolution **dans le sens inverse** (vers les réactifs).
+
+---
+
+### Exercice C — Vrai/Faux piégeux (corrigé)
+1) « À l’équilibre, les réactions s’arrêtent. »  
+2) « Si on multiplie toutes les concentrations initiales par 2, alors $K$ double. »  
+3) « Un solide pur n’apparaît pas dans $Q_r$. »
+
+**Corrigé :**
+1) Faux : équilibre **dynamique** (les deux sens continuent).  
+2) Faux : $K$ dépend uniquement de $T$ (pas des concentrations initiales).  
+3) Vrai.
+

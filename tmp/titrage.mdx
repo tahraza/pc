@@ -1,0 +1,698 @@
+---
+id: "dosages-physico-chimiques-expert"
+title: "Dosages et Titrages : Méthodes Physiques et Chimiques"
+track: "chimie"
+level: 2
+prerequisites: ["Quantité de matière", "Réactions d'oxydoréduction", "Réactions acide-base", "Conductivité"]
+tags: ["titrage", "beer-lambert", "kohlrausch", "équivalence", "spectrophotométrie"]
+estimatedTime: 120
+chapter: "analyse-chimique"
+order: 5
+---
+
+# Analyse d'un système chimique : Dosages et Titrages
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Distinguer un dosage par étalonnage (méthode physique non destructive) d'un titrage (méthode chimique destructive) [1, 2].
+- Utiliser la loi de **Beer-Lambert** (Absorbance) et la loi de **Kohlrausch** (Conductivité) [3, 4].
+- Définir et repérer l'**équivalence** d'un titrage (pH-métrique, conductimétrique, colorimétrique) [5, 6].
+- Exploiter une courbe de titrage pour déterminer une concentration inconnue.
+
+---
+
+## 1. Les Méthodes Physiques (Dosage par Étalonnage)
+
+Ces méthodes sont **non destructives** : elles ne modifient pas la solution analysée. Elles consistent à mesurer une grandeur physique ($X$) proportionnelle à la concentration ($C$) de l'espèce chimique : $X = k \times C$ [7, 8].
+
+### A. La Spectrophotométrie (Loi de Beer-Lambert)
+Si une solution est colorée (ou absorbe dans l'UV), elle absorbe une partie de la lumière qui la traverse. On mesure l'**absorbance $A$** (sans unité) à une longueur d'onde spécifique $\lambda_{max}$.
+
+**Loi de Beer-Lambert :**
+$$A = k \times C = \epsilon \cdot \ell \cdot C$$
+*   $A$ : Absorbance (sans unité).
+*   $\epsilon$ : Coefficient d'extinction molaire ($L\cdot mol^{-1}\cdot cm^{-1}$).
+*   $\ell$ : Largeur de la cuve (cm).
+*   $C$ : Concentration ($mol\cdot L^{-1}$).
+
+> **Analogie des lunettes de soleil :** Imaginez que vous superposez des paires de lunettes de soleil. Plus il y a de paires (plus la concentration est élevée) ou plus les verres sont épais ($\ell$), moins la lumière passe (l'absorbance est forte).
+
+**Condition de validité :** Cette loi n'est valable que pour des solutions diluées ($C < 10^{-2} mol\cdot L^{-1}$ environ) [9].
+
+### B. La Conductimétrie (Loi de Kohlrausch)
+Si la solution contient des ions, elle conduit le courant électrique. On mesure la **conductivité $\sigma$** (en Siemens par mètre, $S\cdot m^{-1}$).
+
+**Loi de Kohlrausch :**
+La conductivité est la somme des contributions de tous les ions présents dans la solution.
+$$\sigma = \sum \lambda_i \cdot [X_i]$$
+*   $\lambda_i$ : Conductivité molaire ionique de l'ion $i$ ($S\cdot m^2\cdot mol^{-1}$).
+*   $[X_i]$ : Concentration de l'ion $i$ ($mol\cdot m^{-3}$). **Attention à l'unité : $m^3$ !**
+
+> **Analogie de l'autoroute :** Les ions sont comme des voitures transportant des charges électriques. La conductivité ($\sigma$) est le flux de trafic total. Les petits ions rapides (comme $H^+$) sont des motos (grand $\lambda$), les gros ions lents sont des camions. Le trafic total dépend du nombre de véhicules ($C$) et de leur vitesse ($\lambda$).
+
+### C. Méthode par étalonnage
+Pour trouver une concentration inconnue $C_{inc}$ :
+1.  Préparer une gamme de solutions de concentrations connues (étalons).
+2.  Mesurer la grandeur physique ($A$ ou $\sigma$) pour chaque étalon.
+3.  Tracer la **droite d'étalonnage** ($A=f(C)$ ou $\sigma=f(C)$).
+4.  Mesurer la grandeur de la solution inconnue et reporter sur la droite [7, 10].
+
+---
+
+## 2. Les Méthodes Chimiques (Titrages)
+
+Le titrage est une méthode **destructive** et rapide. On fait réagir l'espèce à doser (titrée, concentration inconnue) avec une espèce réactive (titrante, concentration connue) [6, 11].
+
+### A. Caractéristiques de la réaction de titrage
+Pour être utilisée, la réaction doit être :
+1.  **Totale** (quantitative) : le réactif limitant est entièrement consommé.
+2.  **Rapide** : l'état final est atteint quasi-instantanément.
+3.  **Unique** : pas de réactions parasites [12, 13].
+
+### B. L'Équivalence
+C'est le moment clé du titrage.
+**Définition :** À l'équivalence, les réactifs (titré et titrant) ont été introduits dans les proportions stœchiométriques. Il y a changement de réactif limitant [14, 15].
+
+Pour une réaction : $a \cdot A_{titré} + b \cdot B_{titrant} \rightarrow Produits$
+À l'équivalence :
+$$\frac{n_A(\text{initial})}{a} = \frac{n_B(\text{versé à l'équivalence})}{b}$$
+
+Soit, avec les concentrations :
+$$\frac{C_A \times V_A}{a} = \frac{C_B \times V_E}{b}$$
+
+> **Analogie du sandwich :** Vous faites des sandwichs avec 1 tranche de jambon (Titré A) et 2 tranches de pain (Titrant B). L'équation est $1A + 2B \rightarrow Sandwich$.
+> Si vous avez 5 tranches de jambon sur la table, combien de pain faut-il apporter pour qu'il ne reste *ni* jambon *ni* pain ? Il faut 10 tranches. Ce moment précis où vous avez apporté exactement ce qu'il faut est l'équivalence.
+
+### C. Repérage de l'équivalence ($V_E$)
+
+1.  **Titrage colorimétrique :** On utilise un indicateur coloré dont la zone de virage contient le pH à l'équivalence [16, 17]. Le changement de couleur signale $V_E$.
+2.  **Titrage pH-métrique :** On suit l'évolution du pH. L'équivalence correspond au saut de pH (point d'inflexion).
+    *   *Méthode :* Tracer des tangentes parallèles ou utiliser la dérivée $dpH/dV$ (le pic indique $V_E$) [5, 18, 19].
+3.  **Titrage conductimétrique :** On suit $\sigma$. La courbe est constituée de deux segments de droite. L'intersection (rupture de pente) donne $V_E$.
+    *   *Interprétation :* La variation de pente s'explique par le remplacement d'ions dans la solution. Par exemple, si on remplace des ions $H_3O^+$ (très conducteurs) par des ions $Na^+$ (moins conducteurs), la conductivité baisse avant l'équivalence [20, 21].
+
+---
+
+## Mini-résumé pour l'examen
+
+| Méthode | Formule Clé | Condition / Remarque |
+| :--- | :--- | :--- |
+| **Beer-Lambert** | $A = k \cdot C$ | Solutions colorées, diluées. |
+| **Kohlrausch** | $\sigma = \sum \lambda_i [X_i]$ | Solutions ioniques. Conc. en **$mol/m^3$**. |
+| **Équivalence** | $\frac{C_A V_A}{a} = \frac{C_B V_E}{b}$ | Changement de réactif limitant. |
+| **pH-métrie** | Saut de pH | Méthode des tangentes ou dérivée. |
+| **Conductimétrie** | Rupture de pente | Intersection de deux droites. |
+
+
+--------------------------------------------------------------------------------
+Quiz Diagnostique (Pré-requis)
+
+[
+  {
+    "id": "diag-chimie-1",
+    "question": "Quelle grandeur mesure-t-on avec un spectrophotomètre ?",
+    "choices": [
+      "La conductivité (σ)",
+      "L'absorbance (A)",
+      "Le pH",
+      "La pression (P)"
+    ],
+    "correct": 1,
+    "explanation": "Le spectrophotomètre mesure l'absorbance A, qui quantifie la capacité d'une solution à absorber la lumière.",
+    "tag": "spectrophotométrie",
+    "difficulty": 1
+  },
+  {
+    "id": "diag-chimie-2",
+    "question": "Quelle est l'unité de la concentration dans la loi de Kohlrausch (conductivité) ?",
+    "choices": [
+      "mol/L",
+      "mol/m³",
+      "g/L",
+      "mol"
+    ],
+    "correct": 1,
+    "explanation": "Attention piège ! Dans la formule σ = Σ λi·[Xi] (unités SI), la concentration doit être en mol/m³. (1 mol/L = 1000 mol/m³).",
+    "tag": "unités",
+    "difficulty": 2
+  },
+  {
+    "id": "diag-chimie-3",
+    "question": "Comment qualifie-t-on une méthode d'analyse qui détruit l'échantillon ?",
+    "choices": [
+      "Une méthode physique",
+      "Une méthode chimique (titrage)",
+      "Une méthode par étalonnage",
+      "Une méthode spectroscopique"
+    ],
+    "correct": 1,
+    "explanation": "Le titrage est une méthode chimique destructive car l'espèce dosée réagit et est transformée.",
+    "tag": "méthode",
+    "difficulty": 1
+  },
+  {
+    "id": "diag-chimie-4",
+    "question": "Que signifie l'équivalence lors d'un titrage ?",
+    "choices": [
+      "Le pH est égal à 7",
+      "La concentration du réactif titré est égale à celle du titrant",
+      "Les réactifs ont été introduits dans les proportions stœchiométriques",
+      "La moitié du réactif titré a été consommée"
+    ],
+    "correct": 2,
+    "explanation": "L'équivalence est définie par le mélange stœchiométrique des réactifs. Le pH n'est pas forcément 7 (sauf acide fort/base forte).",
+    "tag": "équivalence",
+    "difficulty": 2
+  },
+  {
+    "id": "diag-chimie-5",
+    "question": "Dans une réaction de titrage aA + bB -> cC, quelle relation est vraie à l'équivalence ?",
+    "choices": [
+      "nA = nB",
+      "nA / a = nB / b",
+      "CA × VA = CB × VE",
+      "nA × a = nB × b"
+    ],
+    "correct": 1,
+    "explanation": "La relation d'équivalence prend en compte les coefficients stœchiométriques : n(titré)/a = n(versé)/b.",
+    "tag": "calcul",
+    "difficulty": 2
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Quiz de Validation (Post-leçon)
+
+[
+  {
+    "id": "val-chimie-1",
+    "question": "Sur une courbe de titrage pH-métrique, comment repère-t-on le volume équivalent VE ?",
+    "choices": [
+      "Au point où le pH = 0",
+      "Au point d'inflexion (saut de pH) où la dérivée dpH/dV est maximale",
+      "Au point où le pH ne varie plus",
+      "Au début du titrage"
+    ],
+    "correct": 1,
+    "explanation": "Le volume équivalent correspond au saut de pH, là où la variation du pH est la plus brutale (pic de la dérivée).",
+    "tag": "pH-métrie",
+    "difficulty": 2
+  },
+  {
+    "id": "val-chimie-2",
+    "question": "Pourquoi ajoute-t-on de l'eau distillée (dilution) lors d'un titrage conductimétrique ?",
+    "choices": [
+      "Pour changer le volume équivalent",
+      "Pour négliger les variations de volume et considérer les droites comme linéaires",
+      "Pour augmenter la conductivité",
+      "Pour changer l'équivalence"
+    ],
+    "correct": 1,
+    "explanation": "L'ajout d'eau permet de négliger l'effet de dilution dû à l'ajout du titrant, ce qui rend les portions de courbe affines (des droites).",
+    "tag": "conductimétrie",
+    "difficulty": 3
+  },
+  {
+    "id": "val-chimie-3",
+    "question": "Quelle condition doit remplir un indicateur coloré pour un titrage pH-métrique ?",
+    "choices": [
+      "Sa zone de virage doit contenir le pH initial",
+      "Sa zone de virage doit contenir le pH à l'équivalence (pHE)",
+      "Il doit changer de couleur à pH 7",
+      "Il doit être de la même couleur que la solution"
+    ],
+    "correct": 1,
+    "explanation": "Pour repérer l'équivalence, l'indicateur doit changer de couleur (virer) exactement au moment du saut de pH, donc sa zone de virage doit englober pHE.",
+    "tag": "indicateur",
+    "difficulty": 2
+  },
+  {
+    "id": "val-chimie-4",
+    "question": "Lors du titrage d'un acide fort par une base forte, comment évolue la conductivité avant l'équivalence ?",
+    "choices": [
+      "Elle augmente",
+      "Elle diminue",
+      "Elle reste constante",
+      "Elle est nulle"
+    ],
+    "correct": 1,
+    "explanation": "Avant l'équivalence, on consomme des ions H3O+ (très conducteurs) qui sont remplacés par des cations Na+ (moins conducteurs). La conductivité globale diminue.",
+    "tag": "interprétation",
+    "difficulty": 3
+  },
+  {
+    "id": "val-chimie-5",
+    "question": "Si l'on dose de l'eau de Javel diluée, le titrage est une méthode :",
+    "choices": [
+      "Physique et non destructive",
+      "Chimique et destructive",
+      "Nucléaire",
+      "Biologique"
+    ],
+    "correct": 1,
+    "explanation": "Un titrage implique une réaction chimique qui consomme l'espèce étudiée, c'est donc une méthode chimique destructive.",
+    "tag": "définition",
+    "difficulty": 1
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Flashcards
+
+[
+  {
+    "id": "fc-dos-1",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Loi de Beer-Lambert (Formule)",
+    "back": "$$A = k \\times C$$\n\n$A$ : Absorbance (sans unité)\n$C$ : Concentration ($mol/L$)\n$k$ : Coefficient de proportionnalité ($L/mol$)",
+    "tags": ["physique", "absorbance"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-dos-2",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Loi de Kohlrausch (Formule)",
+    "back": "$$\\sigma = \\sum \\lambda_i \\times [X_i]$$\n\n$\\sigma$ : Conductivité ($S/m$)\n$\\lambda_i$ : Conductivité molaire ionique\n$[X_i]$ : Concentration en **$mol/m^3$**",
+    "tags": ["physique", "conductivité"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-dos-3",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Définition de l'équivalence d'un titrage",
+    "back": "État du système où les réactifs (titré et titrant) ont été introduits dans les proportions stœchiométriques. Il y a changement de réactif limitant.",
+    "tags": ["chimie", "titrage", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-dos-4",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Relation à l'équivalence pour la réaction : $aA + bB \\rightarrow cC$",
+    "back": "$$\\frac{n_{A,initial}}{a} = \\frac{n_{B,équivalence}}{b}$$\n\nAvec $n_A$ la quantité de titré et $n_B$ la quantité de titrant versé.",
+    "tags": ["chimie", "calcul"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-dos-5",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Comment repérer l'équivalence sur un titrage pH-métrique ?",
+    "back": "Par le saut de pH.\n- Méthode des tangentes parallèles.\n- Méthode de la dérivée ($V_E$ est au maximum de $dpH/dV$).",
+    "tags": ["chimie", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-dos-6",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Comment repérer l'équivalence sur un titrage conductimétrique ?",
+    "back": "Par la rupture de pente de la courbe $\\sigma = f(V_{versé})$.\nL'équivalence est à l'intersection des deux segments de droite.",
+    "tags": ["chimie", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-dos-7",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Caractéristiques d'une réaction de titrage",
+    "back": "La réaction doit être :\n1. Totale\n2. Rapide\n3. Unique",
+    "tags": ["chimie", "propriété"],
+    "level": 1,
+    "category": "concept"
+  },
+  {
+    "id": "fc-dos-8",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Différence entre Dosage et Titrage",
+    "back": "**Dosage** : Détermination d'une quantité de matière ou concentration (terme général).\n**Titrage** : Méthode chimique de dosage utilisant une réaction chimique.",
+    "tags": ["chimie", "vocabulaire"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-dos-9",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Choix de l'indicateur coloré",
+    "back": "L'indicateur coloré adapté est celui dont la **zone de virage** (changement de couleur) contient le pH à l'équivalence ($pH_E$).",
+    "tags": ["chimie", "indicateur"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-dos-10",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "front": "Conversion $mol/L$ vers $mol/m^3$",
+    "back": "$$1 \\text{ mol}/L = 1000 \\text{ mol}/m^3$$\n\n(Indispensable pour la loi de Kohlrausch).",
+    "tags": ["maths", "conversion"],
+    "level": 1,
+    "category": "tool"
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Exercices
+
+[
+  {
+    "id": "ex-dosage-1",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "title": "Application de la loi de Beer-Lambert",
+    "difficulty": 1,
+    "statement": "Une solution de permanganate de potassium a une absorbance A = 0,80 à 530 nm. Le coefficient d'extinction molaire est ε = 2200 L.mol⁻¹.cm⁻¹. La cuve fait 1 cm de largeur.",
+    "hints": [
+      "Utilise la formule A = ε . l . C",
+      "Vérifie les unités."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Poser la formule",
+        "content": "A = ε x l x C  =>  C = A / (ε x l)",
+        "explanation": "On isole la concentration C."
+      },
+      {
+        "step": 2,
+        "title": "Calcul",
+        "content": "C = 0,80 / (2200 x 1) = 3,64 x 10⁻⁴ mol/L",
+        "explanation": "Application numérique directe."
+      }
+    ],
+    "method": "Application directe de Beer-Lambert",
+    "commonMistakes": ["Erreur de calcul mental sur les puissances de 10"],
+    "tags": ["spectro", "calcul"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-dosage-2",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "title": "Loi de Kohlrausch : Calcul de conductivité",
+    "difficulty": 2,
+    "statement": "Une solution de chlorure de sodium (Na+ + Cl-) a une concentration C = 5,0 x 10⁻³ mol/L. Les conductivités molaires ioniques sont λ(Na+) = 5,0 mS.m².mol⁻¹ et λ(Cl-) = 7,6 mS.m².mol⁻¹.",
+    "hints": [
+      "Attention à l'unité de concentration ! Il faut convertir mol/L en mol/m³.",
+      "σ = λ(Na+)[Na+] + λ(Cl-)[Cl-]",
+      "1 mS = 10⁻³ S"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Conversion de la concentration",
+        "content": "C = 5,0 x 10⁻³ mol/L = 5,0 mol/m³",
+        "explanation": "Pour passer de mol/L à mol/m³, on multiplie par 1000."
+      },
+      {
+        "step": 2,
+        "title": "Calcul de la conductivité",
+        "content": "σ = (5,0 + 7,6) x 10⁻³ x 5,0 = 12,6 x 10⁻³ x 5,0 = 0,063 S/m",
+        "explanation": "On somme les lambda (en S.m².mol⁻¹) et on multiplie par la concentration (en mol/m³)."
+      }
+    ],
+    "method": "Utilisation de la loi de Kohlrausch avec conversion d'unités",
+    "commonMistakes": ["Oublier de convertir mol/L en mol/m³", "Oublier de convertir mS en S"],
+    "tags": ["conductivité", "unités"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-dosage-3",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "title": "Relation d'équivalence (Titrage)",
+    "difficulty": 2,
+    "statement": "On titre 20,0 mL d'une solution de diiode I₂ (concentration C₁) par du thiosulfate de sodium (2Na⁺ + S₂O₃²⁻) de concentration C₂ = 0,10 mol/L. L'équation est : I₂ + 2 S₂O₃²⁻ -> 2 I⁻ + S₄O₆²⁻. Le volume équivalent est V_E = 14,0 mL. Calculer C₁.",
+    "hints": [
+      "Ecris la relation à l'équivalence en tenant compte des coefficients stœchiométriques (1 et 2).",
+      "n(I₂) / 1 = n(S₂O₃²⁻) / 2"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Relation à l'équivalence",
+        "content": "n(I₂)_initial / 1 = n(S₂O₃²⁻)_versé / 2",
+        "explanation": "Les réactifs sont introduits dans les proportions stœchiométriques."
+      },
+      {
+        "step": 2,
+        "title": "Remplacement par les concentrations",
+        "content": "C₁ x V₁ = (C₂ x V_E) / 2",
+        "explanation": "On remplace n par C x V."
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "C₁ = (C₂ x V_E) / (2 x V₁) = (0,10 x 14,0) / (2 x 20,0) = 0,035 mol/L",
+        "explanation": "Attention au facteur 2 provenant de l'équation."
+      }
+    ],
+    "method": "Exploitation de l'équivalence d'un titrage",
+    "commonMistakes": ["Oublier le coefficient stœchiométrique 2", "Inverser C1 et C2"],
+    "tags": ["titrage", "calcul"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-dosage-4",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "title": "Interprétation d'une courbe de titrage pH-métrique",
+    "difficulty": 1,
+    "statement": "On dose un acide par une base. La courbe pH = f(V) montre un saut de pH. Le pH au demi-équivalence (V = VE/2) vaut 4,8. Que peut-on dire sur l'acide ?",
+    "hints": [
+      "A la demi-équivalence, pH = pKa pour un acide faible.",
+      "Regarde la valeur 4,8."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Propriété de la demi-équivalence",
+        "content": "Pour un acide faible, à V = VE/2, pH = pKa.",
+        "explanation": "C'est une propriété caractéristique des couples acide faible/base faible."
+      },
+      {
+        "step": 2,
+        "title": "Identification",
+        "content": "Le pKa est de 4,8. C'est le pKa du couple CH₃COOH/CH₃COO⁻ (acide éthanoïque).",
+        "explanation": "L'acide dosé est un acide faible, probablement l'acide éthanoïque."
+      }
+    ],
+    "method": "Analyse de courbe pH-métrique",
+    "commonMistakes": ["Confondre pH à l'équivalence et à la demi-équivalence"],
+    "tags": ["pH", "pKa"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-dosage-5",
+    "lessonId": "dosages-physico-chimiques-expert",
+    "title": "Allure de courbe conductimétrique",
+    "difficulty": 3,
+    "statement": "On titre une solution d'acide chlorhydrique (H₃O⁺ + Cl⁻) par de la soude (Na⁺ + HO⁻). Prévoir l'allure de la courbe de conductivité σ = f(V). Données : λ(H₃O⁺) > λ(HO⁻) > λ(Cl⁻) ≈ λ(Na⁺).",
+    "hints": [
+      "Avant l'équivalence : H₃O⁺ disparait, Na⁺ apparait.",
+      "Après l'équivalence : Na⁺ et HO⁻ s'accumulent.",
+      "Compare les conductivités molaires."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Avant l'équivalence",
+        "content": "On remplace H₃O⁺ (très conducteur) par Na⁺ (peu conducteur). La conductivité diminue fortement.",
+        "explanation": "La pente est négative."
+      },
+      {
+        "step": 2,
+        "title": "Après l'équivalence",
+        "content": "On ajoute des ions Na⁺ et HO⁻ (conducteur) sans réaction. La conductivité augmente.",
+        "explanation": "La pente est positive."
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "La courbe a une forme en V.",
+        "explanation": "Décroissance puis croissance."
+      }
+    ],
+    "method": "Analyse qualitative par comparaison des λ",
+    "commonMistakes": ["Oublier les ions spectateurs", "Ne pas connaître l'ordre de grandeur des λ (H+ et OH- conduisent très bien)"],
+    "tags": ["conductimétrie", "courbe"],
+    "isComprehension": true
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Exercices Guidés
+
+[
+  {
+    "id": "guided-dosage-1",
+    "title": "Dosage par étalonnage (Spectrophotométrie)",
+    "subject": "chimie",
+    "chapter": "Analyse d'un système chimique",
+    "difficulty": "moyen",
+    "estimatedTime": 20,
+    "description": "On veut déterminer la concentration d'une solution de diiode. On réalise une gamme étalon et on mesure l'absorbance.",
+    "question": "Déterminer la concentration de la solution inconnue sachant que son absorbance est A = 0,90 et que la droite d'étalonnage a pour équation A = 420 x C (avec C en mol/L).",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Identifier la méthode",
+        "instruction": "Quelle loi physique relie l'absorbance et la concentration ?",
+        "hint": "C'est une loi de proportionnalité.",
+        "solution": "C'est la loi de **Beer-Lambert** : $A = k \\times C$."
+      },
+      {
+        "id": 2,
+        "title": "Identifier les données",
+        "instruction": "Quelles sont les valeurs de A et de k données dans l'énoncé ?",
+        "hint": "Regarde l'équation de la droite.",
+        "solution": "L'absorbance mesurée est $A = 0,90$. Le coefficient directeur est $k = 420$ L/mol."
+      },
+      {
+        "id": 3,
+        "title": "Calculer la concentration",
+        "instruction": "Inverse la formule pour trouver C.",
+        "hint": "$C = A / k$.",
+        "solution": "$$C = \\frac{A}{k} = \\frac{0,90}{420} \\approx 2,1 \\times 10^{-3} \\text{ mol/L}$$"
+      }
+    ],
+    "finalAnswer": "La concentration est de **2,1 mmol/L**."
+  },
+  {
+    "id": "guided-dosage-2",
+    "title": "Repérage de l'équivalence (Conductimétrie)",
+    "subject": "chimie",
+    "chapter": "Analyse d'un système chimique",
+    "difficulty": "facile",
+    "estimatedTime": 15,
+    "description": "On titre une solution de chlorure de sodium par du nitrate d'argent. On obtient une courbe de conductivité en forme de V renversé (augmente un peu, puis augmente beaucoup).",
+    "question": "Comment déterminer le volume équivalent Ve graphiquement ?",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Analyser la courbe",
+        "instruction": "Combien de parties distinctes observes-tu sur la courbe ?",
+        "hint": "La pente change à un moment précis.",
+        "solution": "On observe deux portions de droite avec des pentes différentes."
+      },
+      {
+        "id": 2,
+        "title": "Méthode géométrique",
+        "instruction": "Que faut-il tracer pour trouver Ve ?",
+        "hint": "Il faut prolonger les segments.",
+        "solution": "Il faut tracer les deux droites moyennes passant par les points expérimentaux de chaque partie."
+      },
+      {
+        "id": 3,
+        "title": "Lecture",
+        "instruction": "Où se lit le volume équivalent ?",
+        "solution": "Le volume équivalent $V_E$ est l'abscisse du **point d'intersection** des deux droites."
+      }
+    ],
+    "finalAnswer": "Le volume équivalent se lit à l'**intersection des deux segments de droite**."
+  },
+  {
+    "id": "guided-dosage-3",
+    "title": "Calcul de concentration après titrage (Dilution)",
+    "subject": "chimie",
+    "chapter": "Analyse d'un système chimique",
+    "difficulty": "difficile",
+    "estimatedTime": 25,
+    "description": "On titre 10,0 mL de vinaigre dilué 10 fois par de la soude (0,10 mol/L). Le volume équivalent est 13,0 mL. On cherche la concentration du vinaigre commercial.",
+    "question": "Calculer la concentration C0 du vinaigre commercial.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Équation de réaction",
+        "instruction": "Écris la réaction entre l'acide éthanoïque et la soude.",
+        "solution": "$$CH_3COOH + HO^- \\rightarrow CH_3COO^- + H_2O$$"
+      },
+      {
+        "id": 2,
+        "title": "Relation à l'équivalence",
+        "instruction": "Quelle relation lie les quantités de matière à l'équivalence ?",
+        "hint": "C'est du 1 pour 1.",
+        "solution": "$n_{acide, dilué} = n_{base, versée}$ soit $C_{dilué} \\times V_{prise} = C_B \\times V_E$."
+      },
+      {
+        "id": 3,
+        "title": "Calcul de C_dilué",
+        "instruction": "Calcule la concentration de la solution diluée.",
+        "solution": "$$C_{dilué} = \\frac{C_B \\times V_E}{V_{prise}} = \\frac{0,10 \\times 13,0}{10,0} = 0,13 \\text{ mol/L}$$"
+      },
+      {
+        "id": 4,
+        "title": "Remonter à la solution mère",
+        "instruction": "Tiens compte du facteur de dilution (10).",
+        "solution": "$$C_0 = 10 \\times C_{dilué} = 1,3 \\text{ mol/L}$$"
+      }
+    ],
+    "finalAnswer": "La concentration du vinaigre commercial est **1,3 mol/L**."
+  },
+  {
+    "id": "guided-dosage-4",
+    "title": "Détermination d'une quantité de gaz (Loi des gaz parfaits)",
+    "subject": "chimie",
+    "chapter": "Analyse d'un système chimique",
+    "difficulty": "moyen",
+    "estimatedTime": 15,
+    "description": "On recueille 240 mL de gaz dihydrogène à 20°C et 1013 hPa.",
+    "question": "Calculer la quantité de matière n correspondante.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Loi des gaz parfaits",
+        "instruction": "Quelle formule utiliser ?",
+        "solution": "$$P \\times V = n \\times R \\times T$$"
+      },
+      {
+        "id": 2,
+        "title": "Conversion des unités",
+        "instruction": "Convertis V en m³, P en Pa et T en K.",
+        "hint": "1 mL = 10^-6 m³, °C + 273 = K.",
+        "solution": "- V = 240 mL = $240 \\times 10^{-6} m^3$\n- P = 1013 hPa = $101300 Pa$\n- T = 20 + 273 = $293 K$"
+      },
+      {
+        "id": 3,
+        "title": "Calcul",
+        "instruction": "Isole n et calcule.",
+        "solution": "$$n = \\frac{P \\times V}{R \\times T} = \\frac{101300 \\times 240 \\cdot 10^{-6}}{8,31 \\times 293} \\approx 1,0 \\times 10^{-2} \\text{ mol}$$"
+      }
+    ],
+    "finalAnswer": "Il y a **0,010 mol** de gaz."
+  },
+  {
+    "id": "guided-dosage-5",
+    "title": "Relation stœchiométrique Redox",
+    "subject": "chimie",
+    "chapter": "Analyse d'un système chimique",
+    "difficulty": "difficile",
+    "estimatedTime": 25,
+    "description": "On dose du fer (II) par du permanganate (MnO4-). L'équation est : MnO4- + 5Fe2+ + 8H+ -> Mn2+ + 5Fe3+ + 4H2O.",
+    "question": "Établir la relation entre les concentrations à l'équivalence.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Repérer les coefficients",
+        "instruction": "Quels sont les coefficients devant le réactif titrant (MnO4-) et titré (Fe2+) ?",
+        "solution": "MnO4- : 1\nFe2+ : 5"
+      },
+      {
+        "id": 2,
+        "title": "Relation générale",
+        "instruction": "Écris l'égalité des quantités de matière divisées par les coefficients.",
+        "hint": "n(titré)/a = n(titrant)/b.",
+        "solution": "$$\\frac{n(Fe^{2+})}{5} = \\frac{n(MnO_4^-)}{1}$$"
+      },
+      {
+        "id": 3,
+        "title": "Développement",
+        "instruction": "Remplace n par C x V.",
+        "solution": "$$\\frac{C_{Fe} \\times V_{Fe}}{5} = C_{Mn} \\times V_E$$\nSoit $C_{Fe} = \\frac{5 \\times C_{Mn} \\times V_E}{V_{Fe}}$"
+      }
+    ],
+    "finalAnswer": "**$C_{Fe} = 5 \\times C_{Mn} \\times V_E / V_{Fe}$** (Attention au facteur 5 !)"
+  }
+]
+

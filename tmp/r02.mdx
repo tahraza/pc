@@ -1,0 +1,322 @@
+---
+id: "radioactivite-decroissance-expert"
+title: "Radioactivité et décroissance radioactive"
+track: "physique"
+level: 2
+prerequisites: ["Noyau (A, Z, N)", "Exponentielle et logarithme népérien", "Unités (s, Bq)"]
+tags: ["radioactivité", "désintégration", "loi de décroissance", "demi-vie", "activité", "datation carbone 14", "radioprotection"]
+estimatedTime: 110
+chapter: "constitution-et-transformation-de-la-matiere"
+order: 6
+---
+
+# Radioactivité et décroissance radioactive
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Expliquer ce qu’est une **désintégration radioactive** et écrire une **équation nucléaire** en appliquant les conservations.
+- Distinguer **α, β−, β+ et γ** (particule émise + effet sur $A$ et $Z$).
+- Utiliser la **loi de décroissance** : $N(t)=N_0 e^{-\lambda t}$ et $A(t)=A_0 e^{-\lambda t}$.
+- Relier **demi-vie** et constante radioactive : $t_{1/2}=\dfrac{\ln 2}{\lambda}$ et comprendre la **constante de temps** $\tau=\dfrac{1}{\lambda}$.
+- Résoudre des exercices type bac : **activité**, **nombre de noyaux**, **datation au carbone 14**, et repérer les **erreurs classiques**.
+
+---
+
+## 1. Intuition et analogies : “du popcorn qui éclate tout seul”
+
+### 1.1 L’idée clé : le hasard au niveau d’un noyau, la régularité au niveau d’une foule
+Un **noyau radioactif** est **instable** : il peut se transformer spontanément en un **noyau fils** en émettant une particule (α, β, …). À l’échelle d’un noyau isolé, c’est **imprévisible** : impossible de dire *quand* il se désintégrera.
+
+> **Analogie : le popcorn**
+> Imagine 10 000 grains de maïs dans une casserole chaude.
+> - Tu ne peux pas prédire *quel* grain éclate à la seconde près.
+> - Mais tu constates une loi globale : le nombre de grains “encore non éclatés” diminue **régulièrement**, et la courbe ressemble à une **exponentielle**.
+
+La radioactivité fonctionne pareil : hasard microscopique, loi statistique macroscopique.
+
+### 1.2 “Demi-vie” = temps où la foule est divisée par 2 (pas où “tout disparaît”)
+La **demi-vie** $t_{1/2}$, c’est le temps au bout duquel il reste **la moitié** des noyaux radioactifs :
+$$N(t_{1/2})=\frac{N_0}{2}.$$
+
+> **Analogie : bougies qui s’éteignent**
+> Si tu as 100 bougies identiques qui s’éteignent aléatoirement, après une “demi-vie”, il en reste 50, après deux demi-vies 25, etc.
+
+---
+
+## 2. Désintégration radioactive : écriture et conservations
+
+### 2.1 Forme générale et lois de conservation
+Une désintégration radioactive se modélise par une équation nucléaire :
+$$^{A_1}_{Z_1}X \;\rightarrow\; ^{A_2}_{Z_2}Y \; + \; ^{A_3}_{Z_3}Q.$$
+
+Deux lois **incontournables** :
+- **Conservation du nombre de nucléons** : $A_1 = A_2 + A_3$
+- **Conservation de la charge** : $Z_1 = Z_2 + Z_3$
+
+> ⚠️ Réflexe à avoir : *si ton équation ne conserve pas $A$ et $Z$, elle est fausse.*
+
+#### Mini-question (flash)
+**Q1.** Dans une réaction nucléaire, quel(s) nombre(s) est/sont conservé(s) ?
+- a) $A$ seulement
+- b) $Z$ seulement
+- c) $A$ et $Z$
+
+**Correction.** c) **$A$ et $Z$**.
+
+---
+
+## 3. Les types de radioactivité : α, β−, β+, γ
+
+### 3.1 Radioactivité α
+- Particule émise : **noyau d’hélium** $^{4}_{2}\text{He}$ (2 protons + 2 neutrons).
+- Effet :
+  - $A$ diminue de 4
+  - $Z$ diminue de 2
+
+Forme :
+$$^{A}_{Z}X \rightarrow\; ^{A-4}_{Z-2}Y \; +\; ^{4}_{2}\text{He}.$$
+
+**Exemple.** $^{238}_{92}\text{U} \rightarrow\; ^{234}_{90}\text{Th} + ^{4}_{2}\text{He}$.
+
+#### Mini-exercice 1 (méthode “A et Z”)
+**Le polonium $^{210}_{84}\text{Po}$ émet une particule α. Trouver le noyau fils.**
+
+**Correction.**  
+α enlève 4 nucléons et 2 charges :
+- $A_f = 210-4 = 206$
+- $Z_f = 84-2 = 82$ donc **Pb**.  
+Donc : $^{210}_{84}\text{Po} \rightarrow\; ^{206}_{82}\text{Pb} + ^{4}_{2}\text{He}$.
+
+---
+
+### 3.2 Radioactivité β− (excès de neutrons)
+- Particule émise : **électron** $^{0}_{-1}e$ (souvent noté $e^-$).
+- Interprétation nucléaire : un **neutron** se transforme en **proton**.
+- Effet :
+  - $A$ **inchangé**
+  - $Z$ **augmente de 1**
+
+Forme :
+$$^{A}_{Z}X \rightarrow\; ^{A}_{Z+1}Y \; +\; ^{0}_{-1}e.$$
+
+**Exemple-type.** $^{60}_{27}\text{Co} \rightarrow\; ^{60}_{28}\text{Ni} + ^{0}_{-1}e$.
+
+#### Mini-exercice 2
+**Le carbone 14 est émetteur β−. Écrire l’équation de désintégration.**
+
+**Correction.**  
+$A=14$ constant, $Z$ passe de 6 à 7 :
+$$^{14}_{6}\text{C} \rightarrow\; ^{14}_{7}\text{N} + ^{0}_{-1}e.$$
+
+---
+
+### 3.3 Radioactivité β+ (excès de protons)
+- Particule émise : **positon** $^{0}_{+1}e$ (souvent noté $e^+$).
+- Interprétation : un **proton** se transforme en **neutron**.
+- Effet :
+  - $A$ **inchangé**
+  - $Z$ **diminue de 1**
+
+Forme :
+$$^{A}_{Z}X \rightarrow\; ^{A}_{Z-1}Y \; +\; ^{0}_{+1}e.$$
+
+---
+
+### 3.4 Désexcitation γ
+- Particule émise : **photon γ** (rayonnement électromagnétique très énergétique)
+- Effet : $A$ et $Z$ **inchangés**
+- C’est souvent “en plus” après α/β si le noyau fils est excité :
+$$^{A}_{Z}Y^* \rightarrow\; ^{A}_{Z}Y + \gamma.$$
+
+---
+
+## 4. Loi de décroissance radioactive (le cœur du chapitre)
+
+### 4.1 L’équation différentielle
+À l’échelle macroscopique, le nombre $N(t)$ de noyaux radioactifs **diminue proportionnellement** à $N$ :
+$$\frac{dN}{dt} = -\lambda N.$$
+
+- $\lambda$ est la **constante radioactive** (en $\text{s}^{-1}$), caractéristique de l’isotope.
+- Le signe **−** traduit la diminution.
+
+### 4.2 La solution : une exponentielle décroissante
+La solution est :
+$$N(t)=N_0 e^{-\lambda t}.$$
+
+Même forme pour l’activité :
+$$A(t)=A_0 e^{-\lambda t}.$$
+
+> **Intuition** : plus il reste de noyaux, plus il y a de “candidats” à se désintégrer par seconde → la décroissance est rapide au début, plus lente ensuite.
+
+#### Mini-question (vraie compréhension)
+**Q2.** Pourquoi la courbe n’est-elle pas une droite décroissante ?  
+**Correction.** Parce que le “rythme” des désintégrations dépend du nombre de noyaux restants : quand $N$ diminue, la vitesse $|dN/dt|=\lambda N$ diminue aussi.
+
+---
+
+## 5. Activité radioactive : ce que mesure un compteur Geiger
+
+### 5.1 Définition
+L’activité $A(t)$ est le **nombre de désintégrations par seconde** :
+$$A(t)= -\frac{dN}{dt}.$$
+Unité : **becquerel (Bq)**, avec **1 Bq = 1 désintégration/s**.
+
+En combinant avec $\dfrac{dN}{dt}=-\lambda N$ :
+$$A(t)=\lambda N(t).$$
+
+> **Analogie : compteur de clics**
+> - $N$ = nombre de “bombes à retardement” encore actives.
+> - $A$ = nombre de “clics” par seconde (désintégrations) que tu entends.
+
+### 5.2 Exercice guidé : activité initiale et après une durée
+Un échantillon contient $N_0 = 5{,}0\times 10^{32}$ noyaux d’un isotope de constante $\lambda=8{,}6\times 10^{-7}\,\text{s}^{-1}$.
+
+1) Calculer $A_0$.  
+2) Calculer $A$ après 1 an.
+
+**Correction.**
+1) $A_0=\lambda N_0 = 8{,}6\times 10^{-7}\times 5{,}0\times 10^{32} = 4{,}3\times 10^{26}\,\text{Bq}$.  
+2) $A(t)=A_0 e^{-\lambda t}$. Avec $t=365{,}25\times 24\times 3600\,\text{s}$ :
+$$A(1\,an) \approx 7{,}0\times 10^{14}\,\text{Bq}.$$
+
+---
+
+## 6. Demi-vie $t_{1/2}$ et constante de temps $\tau$
+
+### 6.1 Demi-vie
+Par définition :
+$$N(t_{1/2})=\frac{N_0}{2} \Rightarrow \frac{1}{2}=e^{-\lambda t_{1/2}} \Rightarrow t_{1/2}=\frac{\ln 2}{\lambda}.$$
+
+### 6.2 Constante de temps
+On définit :
+$$\tau=\frac{1}{\lambda}.$$
+À $t=\tau$ :
+$$\frac{N(\tau)}{N_0}=e^{-1}\approx 0{,}37.$$
+Donc **63 % des noyaux se sont désintégrés** au bout de $\tau$.
+
+Lien utile :
+$$\tau = \frac{t_{1/2}}{\ln 2} \approx 1{,}44\, t_{1/2}.$$
+
+#### Mini-exercice 3 (très bac)
+**Un isotope a $t_{1/2}=8,1$ jours. Estimer $\tau$.**
+
+**Correction.** $\tau\approx 1{,}44\,t_{1/2} \approx 1{,}44\times 8{,}1 \approx 11{,}7$ jours.
+
+---
+
+## 7. Datation au carbone 14 : une application “parfaite” de l’exponentielle
+
+### 7.1 Principe
+Dans un organisme vivant, l’apport de carbone maintient la proportion en $^{14}\text{C}$ quasi constante. Après la mort :
+- plus d’apport,
+- le $^{14}\text{C}$ décroît selon $N(t)=N_0 e^{-\lambda t}$.
+
+On peut travailler au choix :
+- avec le **nombre de noyaux** $N$,
+- ou avec l’**activité** $A=\lambda N$ (souvent plus pratique car mesurable).
+
+### 7.2 Exercice 4 (rapport isotopique, type “sujet guidé”)
+On définit le rapport $r(t)=\dfrac{N(^{14}\text{C})}{N(^{12}\text{C})}$.  
+Pour un organisme vivant, $r_0=10^{-12}$. Après la mort, on mesure $r(t)=0{,}65\,r_0$.  
+Le $^{14}\text{C}$ a une demi-vie $t_{1/2}=5530$ ans.
+
+**Question : déterminer l’âge de la momie.**
+
+**Correction (méthode super propre).**
+Comme $^{12}\text{C}$ reste constant, $r(t)$ décroît comme $N(^{14}\text{C})$ :
+$$r(t)=r_0 e^{-\lambda t}.$$
+Donc $0{,}65 = e^{-\lambda t} \Rightarrow t = -\frac{\ln(0{,}65)}{\lambda}.$$
+Or $\lambda = \dfrac{\ln 2}{t_{1/2}}$ donc
+$$t = -\frac{\ln(0{,}65)}{\ln 2}\,t_{1/2} \approx 3{,}4\times 10^3\,\text{ans}.$$
+
+---
+
+### 7.3 Exercice 5 (datation par activité mesurée)
+Un morceau de bois de masse $m=450\,\text{g}$ a une activité mesurée de $495$ désintégrations/min.  
+Données :
+- $\lambda(^{14}\text{C}) = 3{,}93\times 10^{-12}\,\text{s}^{-1}$.
+- Activité du $^{14}\text{C}$ pour $10\,\text{g}$ de bois vivant : $0{,}25\,\text{Bq}$.
+
+**Question : déterminer l’âge du morceau de bois.**
+
+**Correction (avec les conversions qui font gagner des points).**
+1) Conversion en Bq :  
+$495$ désintégrations/min $\Rightarrow A = \dfrac{495}{60} = 8{,}25\,\text{Bq}$ (pour 450 g).
+
+2) Activité initiale pour 450 g vivant :  
+Si $10\,\text{g}\rightarrow 0{,}25\,\text{Bq}$, alors $450\,\text{g}\rightarrow A_0 = 450\times \dfrac{0{,}25}{10} = 11{,}3\,\text{Bq}$.
+
+3) Loi : $A(t)=A_0 e^{-\lambda t}$  
+$$t = -\frac{1}{\lambda}\ln\left(\frac{A}{A_0}\right)
+= -\frac{1}{3{,}93\times 10^{-12}}\ln\left(\frac{8{,}25}{11{,}3}\right)
+\approx 2{,}535\times 10^3\,\text{ans}.$$
+
+Donc l’âge est **≈ 2535 ans**.
+
+---
+
+## 8. Radioprotection et applications : comprendre “ce qui est dangereux” et “ce qui est utile”
+- Plus l’activité est grande, plus il y a de désintégrations par seconde → plus l’exposition potentielle est élevée.
+- Les **γ** sont **très pénétrants** (blindage par matériaux denses), contrairement à **α** et **β** (plus facilement arrêtés), mais α peut être très dangereux **si inhalé/ingéré** (irradiation interne).
+
+Applications classiques :
+- **Médecine** : imagerie (traceurs, scintigraphie γ), radiothérapie.
+- **Archéologie / géologie** : datations (C14, autres couples).
+- **Industrie** : contrôles non destructifs.
+
+---
+
+## 9. Erreurs classiques (et comment les éviter)
+
+### Erreur 1 — Oublier de convertir le temps en secondes
+- Si $\lambda$ est en $\text{s}^{-1}$, **t doit être en secondes**.
+- **Astuce** : écris toujours l’unité *à chaque ligne* de calcul.
+
+### Erreur 2 — Confondre $N(t)$ et $A(t)$
+- $N$ = nombre de noyaux (sans unité).
+- $A$ = désintégrations par seconde (Bq).
+- Lien : $A=\lambda N$.
+
+**Astuce** : si tu as un compteur Geiger → tu mesures **A**, pas **N**.
+
+### Erreur 3 — Signe du logarithme (âge négatif…)
+Dans $A(t)=A_0 e^{-\lambda t}$, on a toujours $A<A_0$ donc $\ln(A/A_0)$ est **négatif**.
+- Si tu écris $t = \frac{1}{\lambda}\ln\left(\frac{A}{A_0}\right)$ → tu obtiens **t négatif** (faux).
+- La bonne forme :  
+$$t = -\frac{1}{\lambda}\ln\left(\frac{A}{A_0}\right).$$
+
+### Erreur 4 — Dire que “la demi-vie dépend de la quantité”
+Non. $t_{1/2}$ dépend **uniquement** de l’isotope (donc de $\lambda$).
+
+### Erreur 5 — Se tromper sur l’effet de β− et β+
+- β− : $Z \to Z+1$
+- β+ : $Z \to Z-1$
+Et $A$ ne change pas.
+
+**Astuce** : “moins” (β−) = électron négatif émis → le noyau devient plus positif → $Z$ augmente.
+
+---
+
+## 10. Entraînement express (3 questions type bac)
+
+### Q1. Vrai/Faux
+« Au bout de la constante de temps $\tau$, il reste 63 % des noyaux radioactifs. »  
+**Correction : Faux.** Il reste $e^{-1}\approx 37\%$, donc **63 % se sont désintégrés**.
+
+### Q2. Demi-vies successives
+Au bout de 4 demi-vies, quelle fraction de $N_0$ reste-t-il ?  
+**Correction :** $N=\dfrac{N_0}{2^4}=\dfrac{N_0}{16}$.
+
+### Q3. Équation nucléaire
+Le phosphore 30 est émetteur β+. Quel est le noyau fils ?  
+**Correction :** β+ : $A$ constant, $Z$ diminue de 1.  
+Le phosphore a $Z=15$ donc $Z_f=14$ : c’est le silicium.  
+Donc $^{30}_{15}\text{P}\rightarrow\;^{30}_{14}\text{Si}+^{0}_{+1}e$.
+
+---
+
+## Références (manuels fournis)
+Cette leçon s’appuie sur les rappels de cours et exercices/corrigés des manuels fournis :
+- Désintégrations α/β/γ + lois de conservation ($A$, $Z$), exemples d’équations nucléaires.
+- Loi de décroissance, relation $t_{1/2}$–$\lambda$, constante de temps $\tau$, et activité $A=\lambda N$.
+- Exercices de datation au carbone 14 (rapport $r(t)$ et activité mesurée) et corrigés.

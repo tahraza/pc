@@ -1,0 +1,224 @@
+---
+id: "piles-et-electrolyse"
+title: "Piles et électrolyse : oxydo‑réduction, sens spontané/forcé, bilan quantitatif (loi de Faraday)"
+track: "chimie"
+level: 2
+prerequisites: ["Réactions d'oxydo-réduction", "Quotient de réaction Qr et constante K", "Courant électrique (Q=IΔt)"]
+tags: ["pile", "électrolyse", "oxydoréduction", "anode", "cathode", "Faraday", "capacité", "récepteur", "générateur"]
+estimatedTime: 170
+chapter: "transformations-et-energie"
+order: 6
+---
+
+# Piles et électrolyse
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- expliquer la différence entre **transfert direct** et **transfert indirect** d’électrons et l’intérêt d’une pile ; fileciteturn16file2L13-L16
+- identifier **anode/cathode** et le **sens de circulation des électrons** et du courant dans une pile ; fileciteturn16file11L14-L18
+- distinguer **pile (évolution spontanée, générateur)** et **électrolyse (évolution forcée, récepteur)**, et comprendre pourquoi les polarités (+/−) ne coïncident pas ; fileciteturn16file12L4-L10 fileciteturn16file12L36-L39
+- relier la partie électrique et la partie chimique par la **loi de Faraday** : \(Q = n(e^-)\,F = I\Delta t\) ; fileciteturn16file0L27-L35 fileciteturn16file10L40-L42
+- résoudre des exercices bac : écrire les demi‑équations, l’équation globale, calculer masses/quantités formées, capacité, durée. fileciteturn16file4L33-L38 fileciteturn16file1L21-L24
+
+---
+
+## 0) Intuition & analogies : “spontané” vs “forcé”
+
+### Analogie 1 — La pente et la pompe
+- Une réaction **spontanée** ressemble à une bille qui **descend une pente** : elle évolue “toute seule” dans le sens thermodynamiquement favorable (on l’exploite dans une **pile**). fileciteturn16file12L20-L22  
+- Une réaction **forcée** ressemble à remonter la bille avec une **pompe** : il faut fournir de l’énergie électrique avec un générateur (c’est l’**électrolyse**). fileciteturn16file12L4-L6
+
+### Analogie 2 — Un même système, deux “modes”
+Le mémo visuel dit qu’un système électrochimique peut fonctionner :
+- en **générateur** (pile) : \(Q_r\) évolue pour tendre vers \(K\) ; fileciteturn16file6L56-L59  
+- en **récepteur** (électrolyse) : \(Q_r\) évolue en s’éloignant de \(K\). fileciteturn16file10L34-L35
+
+---
+
+## 1) Rappels d’oxydo‑réduction indispensables (pour ne pas se perdre)
+
+### 1.1 Demi‑équation d’un couple
+Pour un couple \(\text{Ox}/\text{Red}\) :
+- réduction : \(\text{Ox} + n e^- \to \text{Red}\)
+- oxydation : \(\text{Red} \to \text{Ox} + n e^-\) fileciteturn16file2L3-L6
+
+### 1.2 Transfert direct vs indirect d’électrons
+- **Direct** : on met en contact \(\text{Red}_1\) et \(\text{Ox}_2\) → réaction spontanée, souvent avec dégagement de chaleur ; fileciteturn16file2L6-L12  
+- **Indirect** : on sépare les couples et on impose un passage d’électrons dans un circuit extérieur → on récupère de l’énergie **électrique** : c’est le principe d’une **pile**. fileciteturn16file2L13-L16
+
+---
+
+## 2) La pile : générateur électrochimique (évolution spontanée)
+
+### 2.1 Définition et rôle du pont salin
+Une pile associe deux demi‑piles reliées par une jonction (pont salin ou membrane) qui assure la circulation des ions et maintient l’électroneutralité. fileciteturn16file2L27-L36 fileciteturn16file11L12-L13
+
+> Pourquoi ne pas tout mélanger dans un bécher ?  
+Parce que cela provoquerait un **transfert direct** d’électrons : on perd le courant utile. Le pont salin impose un circuit extérieur aux électrons. fileciteturn16file4L42-L49
+
+### 2.2 Anode / cathode et polarités dans une pile
+Dans une **pile** :
+- **anode** : lieu de l’oxydation ; les électrons y sont produits ; c’est le pôle (−) ; fileciteturn16file11L14-L17  
+- **cathode** : lieu de la réduction ; c’est le pôle (+) ; fileciteturn16file11L14-L18  
+- les électrons circulent (circuit externe) de l’anode vers la cathode ; le courant électrique est en sens inverse. fileciteturn16file11L16-L18
+
+### 2.3 Exemple canonique : pile Daniell (Zn/Cu)
+Écriture symbolique :  
+\((-)\ \text{Zn(s)}/\text{Zn}^{2+}(aq)\ //\ \text{Cu}^{2+}(aq)/\text{Cu(s)}\ (+)\). fileciteturn16file11L21-L24
+
+- à l’anode : \(\text{Zn} \to \text{Zn}^{2+} + 2e^-\) (oxydation) ; fileciteturn16file11L51-L53  
+- à la cathode : \(\text{Cu}^{2+} + 2e^- \to \text{Cu}\) (réduction). fileciteturn16file11L51-L52  
+Réaction globale : \(\text{Zn(s)} + \text{Cu}^{2+}(aq) \to \text{Zn}^{2+}(aq) + \text{Cu(s)}\). fileciteturn16file11L53-L56
+
+#### Mini‑question (sens des électrons)
+Dans une pile Daniell, d’où partent les électrons ?
+
+**Correction**  
+De l’anode (Zn, pôle −) vers la cathode (Cu, pôle +). fileciteturn16file11L16-L18
+
+---
+
+## 3) Quantité d’électricité, électrons et chimie : la loi de Faraday
+
+### 3.1 Lien fondamental
+Pour une durée \(\Delta t\) :
+- \(Q = I\Delta t\) (charge transportée) ; fileciteturn16file0L15-L19  
+- \(Q = n(e^-)\,F\) avec \(F\approx 9{,}65\times 10^4\ \text{C·mol}^{-1}\). fileciteturn16file0L27-L31 fileciteturn16file6L41-L46
+
+Donc :
+\[
+n(e^-) = \frac{Q}{F} = \frac{I\Delta t}{F}
+\] fileciteturn16file0L31-L35
+
+### 3.2 Traduction “chimique”
+Une demi‑équation indique combien d’électrons correspondent à 1 mole d’espèce formée/consommée.
+
+Exemple (oxydation du bromure) :  
+\(2\ \text{Br}^- \to \text{Br}_2 + 2e^-\). fileciteturn16file1L34-L35  
+Donc : \(n(e^-)=2\,n(\text{Br}_2)\). fileciteturn16file1L40-L43
+
+---
+
+## 4) L’électrolyse : évolution forcée (récepteur)
+
+### 4.1 Définition
+Une électrolyse est une transformation d’oxydo‑réduction **forcée par un générateur** : le système évolue dans le sens inverse de celui qui serait spontané. fileciteturn16file12L4-L6
+
+### 4.2 Anode / cathode : mêmes définitions, polarités différentes !
+Définitions **toujours vraies** :
+- anode = oxydation ; cathode = réduction. fileciteturn16file6L16-L17
+
+Mais en électrolyse :
+- la **cathode** est reliée au pôle (−) du générateur ; fileciteturn16file12L7-L9  
+- l’**anode** est reliée au pôle (+). fileciteturn16file12L9-L10  
+Le manuel insiste : les polarités (+/−) ne sont plus celles d’une pile. fileciteturn16file12L36-L39
+
+### Mini‑question (piège classique)
+En électrolyse, la cathode est‑elle la borne + ?
+
+**Correction**  
+Non. La cathode est le siège de la réduction **mais elle est reliée au pôle (−)** du générateur. fileciteturn16file12L7-L10
+
+---
+
+## 5) Exercices intégrés (avec corrigés détaillés)
+
+## Exercice A — Électrolyse CuBr2 : masse de Br2 formée (type bac)
+Données (intensité constante) : \(I=12\ \text{mA}\), durée \(15\ \text{min}\). Couples : \(\text{Br}_2/\text{Br}^-\) et \(\text{Cu}^{2+}/\text{Cu}\). fileciteturn16file1L13-L23
+
+1) Écrire l’équation globale.  
+2) Calculer la charge \(Q\).  
+3) En déduire la masse de dibrome formée.
+
+### Correction (méthode manuelle)
+1) Demi‑équations :  
+- \(2\text{Br}^- \rightleftarrows \text{Br}_2 + 2e^-\)  
+- \(\text{Cu}^{2+}+2e^- \rightleftarrows \text{Cu}\) fileciteturn16file1L33-L36  
+Somme : \(2\text{Br}^- + \text{Cu}^{2+} \rightleftarrows \text{Br}_2 + \text{Cu}\). fileciteturn16file1L36-L39
+
+2) \(Q = I\Delta t = 12\times10^{-3}\times(15\times60)=11\ \text{C}\). fileciteturn16file1L39-L40
+
+3) \(n(e^-)=Q/F\), et \(n(e^-)=2n(\text{Br}_2)\) donc  
+\[
+n(\text{Br}_2)=\frac{Q}{2F}
+\]
+Le corrigé donne \(n(\text{Br}_2)\approx 5{,}6\times10^{-5}\ \text{mol}\) puis \(m\approx 8{,}9\ \text{mg}\). fileciteturn16file1L40-L52
+
+---
+
+## Exercice B — Pile Daniell : sens du courant et des ions (raisonnement)
+Dans une pile Daniell en fonctionnement :
+- l’oxydation du zinc libère des électrons ; ces électrons vont vers la borne + où ils permettent la réduction des ions cuivre ; fileciteturn16file0L8-L12  
+- le pont salin assure l’électroneutralité par migration d’ions (ex : K+ vers la cathode, Cl− vers l’anode selon le modèle présenté). fileciteturn16file0L11-L13
+
+**Question**  
+1) Quel est le sens des électrons ?  
+2) Quel est le sens du courant électrique dans le circuit extérieur ?
+
+**Correction**
+1) électrons : anode → cathode. fileciteturn16file11L16-L18  
+2) courant : sens inverse des électrons (pôle + vers pôle −). fileciteturn16file11L18-L18
+
+---
+
+## Exercice C — Capacité d’une pile et durée max
+La capacité d’une pile est la charge maximale qu’elle peut fournir avant “usure” :
+\[
+Q_{\max}=I\,\Delta t_{\max}
+\]
+exprimée en A·h. fileciteturn16file0L40-L41
+
+**Question**  
+Une pile débite \(I=0{,}20\ \text{A}\) pendant \(3{,}0\ \text{h}\). Calculer sa capacité (en A·h) puis en coulombs.
+
+**Correction**
+- Capacité : \(C = I\Delta t = 0{,}20\times3{,}0 = 0{,}60\ \text{A·h}\). fileciteturn16file0L40-L41  
+- Conversion : \(1\ \text{h}=3600\ \text{s}\) donc \(Q=0{,}20\times(3{,}0\times3600)=2160\ \text{C}\).
+
+---
+
+## Exercice D — Électrolyse de l’eau : protocole et identification des gaz
+Le manuel propose un protocole complet (matériel + étapes) avec électrolyte (acide sulfurique) et tests de reconnaissance des gaz : “détonation” pour H2 et “bûchette incandescente se ravive” pour O2. fileciteturn16file9L6-L51
+
+**Questions**
+1) Quel rôle joue l’acide sulfurique ?  
+2) Quel gaz se forme à la cathode ? et à l’anode ?  
+3) Quels tests permettent de les identifier ?
+
+**Correction**
+1) Il rend l’eau conductrice (apporte des ions). (C’est l’électrolyte du protocole.) fileciteturn16file9L19-L25  
+2) Cathode = réduction → H2 ; anode = oxydation → O2 (indiqué par “tube 1, lieu de la réduction” pour H2 et “tube 2, lieu de l’oxydation” pour O2). fileciteturn16file9L36-L41  
+3) H2 : petite détonation à la flamme ; O2 : bûchette incandescente ravivée. fileciteturn16file9L42-L51
+
+---
+
+## 6) Erreurs classiques (et comment les éviter)
+
+### ❌ Erreur 1 — Confondre anode/cathode avec (+/−) dans tous les cas
+**À retenir**
+- anode = oxydation ; cathode = réduction (toujours). fileciteturn16file6L16-L17  
+- mais les polarités diffèrent : en électrolyse, la cathode est reliée au (−) et l’anode au (+). fileciteturn16file12L7-L10 fileciteturn16file12L36-L39  
+
+**Astuce bac**
+Écris d’abord “oxydation ici / réduction là”, puis seulement ensuite les signes.
+
+### ❌ Erreur 2 — Oublier le pont salin (ou son rôle)
+Sans pont salin/membrane, on ne ferme pas correctement le circuit ionique et on perd l’électroneutralité ; le manuel le justifie explicitement. fileciteturn16file11L12-L13 fileciteturn16file0L11-L14
+
+### ❌ Erreur 3 — Mauvaise stœchiométrie “électrons ↔ espèce formée”
+Toujours lire la demi‑équation : par exemple, \(\text{Br}_2\) correspond à **2 électrons**. fileciteturn16file1L40-L43  
+Une ligne de raisonnement sûre :
+1) \(Q=I\Delta t\) ; 2) \(n(e^-)=Q/F\) ; 3) lien avec la demi‑équation.
+
+### ❌ Erreur 4 — Confusion de symboles (E, e, e−)
+Le manuel alerte explicitement : attention à ne pas confondre la tension/force électromotrice \(E\), la charge élémentaire \(e\) et l’électron \(e^-\). fileciteturn16file10L25-L27
+
+---
+
+## 7) Fiche ultra‑synthèse
+
+- **Pile** : évolution spontanée, générateur ; électrons : anode(−) → cathode(+). fileciteturn16file11L16-L18  
+- **Électrolyse** : évolution forcée par générateur ; cathode au (−), anode au (+). fileciteturn16file12L7-L10  
+- **Loi de Faraday** : \(Q=I\Delta t = n(e^-)F\), avec \(F\approx 96500\ \text{C·mol}^{-1}\). fileciteturn16file6L41-L46  
+- **Méthode quantitative** : demi‑équations → équation globale → \(Q\) → \(n(e^-)\) → \(n\) espèce → masse/volume.
+

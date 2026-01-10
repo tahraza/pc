@@ -1,0 +1,256 @@
+---
+id: "dosage-physico-chimique"
+title: "Dosages physico-chimiques : pH-métrie, conductimétrie et étalonnage (UV‑visible / σ)"
+track: "chimie"
+level: 2
+prerequisites: ["Quantité de matière", "Réactions acide-base", "Stœchiométrie", "Ions en solution"]
+tags: ["dosage", "titrage", "pH-métrie", "conductimétrie", "Beer-Lambert", "Kohlrausch", "étalonnage"]
+estimatedTime: 180
+chapter: "analyse-chimique"
+order: 6
+---
+
+import Box from '@site/src/components/Box';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Dosages physico-chimiques : pH-métrie, conductimétrie et étalonnage
+
+> **Idée directrice** : au lieu d’“attendre un changement de couleur”, on suit **une grandeur physique mesurable** (pH, conductivité, absorbance…) reliée à la composition du milieu.  
+> On repère ensuite **un moment-clé** : l’**équivalence** (mélange stœchiométrique). fileciteturn28file1L1-L7
+
+---
+
+## 0) Intuition & analogies (pour comprendre sans formules)
+
+### 0.1 Analogie “tableau de bord”
+Pendant un dosage, tu ne vois pas directement les quantités de matière.  
+Comme en voiture, tu regardes un **indicateur** :
+
+- **pH** : “jauge acide/base” (lié à \([H_3O^+]\) via \(pH=-\log[H_3O^+]\)) fileciteturn28file7L55-L56  
+- **conductivité σ** : “densité d’ions conducteurs” (plus il y a d’ions mobiles, plus ça conduit) fileciteturn28file1L41-L46  
+- **absorbance A** : “combien la solution mange la lumière” (colorée → absorbe davantage). Beer‑Lambert : \(A=k\,c\). fileciteturn28file3L14-L20
+
+### 0.2 Analogie “jeu de chaises” (équivalence)
+Imagine une réaction 1:1 (acide + base).  
+À l’équivalence, **il y a exactement autant** de « joueurs base » que de « chaises acide » : tout est occupé, rien ne reste.  
+C’est exactement la définition : **mélange stœchiométrique** et réactifs consommés. fileciteturn28file1L1-L7
+
+---
+
+## 1) Vocabulaire commun à tous les dosages (indispensable)
+
+### 1.1 Dosage / titrage
+On veut déterminer la concentration inconnue \(C_A\) d’une solution **à titrer** (volume prélevé \(V_A\)).  
+On verse progressivement une solution **titrante** (concentration connue \(C_B\)), volume ajouté \(V_B\).
+
+### 1.2 Réaction support : conditions
+On suppose une réaction **quantitative** (rapide, totale, unique). C’est explicitement rappelé pour le titrage pH‑métrique acide‑base. fileciteturn28file12L16-L23
+
+### 1.3 Équivalence (LE moment clé)
+À l’équivalence, les réactifs ont réagi selon les proportions stœchiométriques. fileciteturn28file1L1-L7
+
+Exemple 1:1 (acide éthanoïque + hydroxyde) :
+\[
+n(\mathrm{CH_3COOH})_i = n(\mathrm{HO^-})_E
+\Rightarrow C_A V_A = C_B V_E
+\]
+La relation est utilisée telle quelle dans un sujet guidé. fileciteturn28file9L34-L37
+
+---
+
+## 2) Titrage pH‑métrique (suivi pH = f(V))
+
+### 2.1 Principe expérimental
+On mesure le pH **à chaque ajout** de solution titrante, et on trace \(pH=f(V)\). fileciteturn28file12L20-L27
+
+### 2.2 Repérer l’équivalence : “saut de pH”
+L’équivalence se repère par une **brusque variation de pH** (saut de pH). fileciteturn28file12L25-L27
+
+Deux méthodes recommandées :
+
+#### (A) Méthode des tangentes
+On trace une tangente avant le saut (\(T_1\)), puis une tangente parallèle après le saut (\(T_2\)) et on construit la médiatrice pour obtenir \(V_E\). fileciteturn28file12L29-L36
+
+#### (B) Méthode de la courbe dérivée
+On trace \(\dfrac{dpH}{dV}\) : l’équivalence correspond à l’**extremum** (maximum) de la courbe dérivée. fileciteturn28file6L1-L8
+
+<Box type="info" title="Pourquoi la dérivée marche ? (intuition)">
+La dérivée mesure “à quel point ça monte vite”.  
+Au saut de pH, ça monte **le plus vite** : la pente est maximale → la dérivée a un maximum.
+</Box>
+
+---
+
+## 3) Titrage conductimétrique (suivi σ = f(V))
+
+### 3.1 Quand l’utiliser ?
+Un titrage conductimétrique est adapté quand la réaction fait intervenir des **ions**. fileciteturn28file1L40-L42
+
+### 3.2 D’où vient la conductivité ?
+En solution diluée, la conductivité est la somme des contributions des ions (loi de Kohlrausch, forme générale). fileciteturn28file1L43-L50  
+\[
+\sigma = \sum_i \lambda_i [X_i]
+\]
+(avec \(\lambda_i\) conductivité molaire ionique). fileciteturn28file2L1-L16
+
+### 3.3 Repérer l’équivalence : segments de droites
+Si la dilution due à l’ajout de titrant est négligeable (\(V_{titrant\ ajouté} \ll V_{titré}+V_{eau}\)), la courbe \(\sigma=f(V)\) est constituée de **segments de droites** : leur intersection donne \(V_E\). fileciteturn28file2L28-L33 fileciteturn28file11L3-L8
+
+### 3.4 Intuition : “qui disparaît / qui apparaît ?”
+Pour expliquer l’allure, on fait l’inventaire des ions présents **avant et après** l’équivalence et on compare leurs \(\lambda\). C’est exactement le conseil méthode. fileciteturn28file11L40-L44
+
+#### Exemple classique : HCl titré par NaOH
+Réaction : \(H_3O^+ + HO^- \rightarrow 2H_2O\). fileciteturn28file11L21-L25  
+Avant l’équivalence : \(H_3O^+\) (très conducteur) diminue, \(Na^+\) (moins conducteur) augmente → \(\sigma\) **diminue**. fileciteturn28file11L46-L56  
+Après l’équivalence : excès de \(HO^-\) + \(Na^+\) → \(\sigma\) **augmente**. fileciteturn28file5L46-L49
+
+---
+
+## 4) Dosage par étalonnage (conductimétrique ou spectrophotométrique)
+
+> Ici, on ne suit pas une réaction pendant un versement : on compare une mesure à une **droite d’étalonnage**.
+
+### 4.1 Étalonnage spectrophotométrique (UV‑visible)
+- On mesure l’**absorbance** \(A\) (sans unité). fileciteturn28file4L5-L8
+- À faibles concentrations : Beer‑Lambert : \(A = k\,c\). fileciteturn28file4L9-L13
+On construit la droite \(A=f(c)\), puis on lit \(c\) pour une absorbance mesurée. fileciteturn28file4L59-L65
+
+### 4.2 Étalonnage conductimétrique
+Même logique avec \(\sigma\) : en solution diluée, \(\sigma\) est proportionnelle à la concentration (droite \(\sigma=f(c)\)). fileciteturn28file3L43-L51 fileciteturn28file4L59-L66
+
+<Box type="success" title="Analogie : règle graduée">
+La droite d’étalonnage, c’est comme une **règle** :  
+tu mesures A (ou σ), puis tu “convertis” en concentration en te reportant sur la droite.
+</Box>
+
+---
+
+## 5) Exercices intégrés (avec corrigés)
+
+### Exercice 1 — pH‑métrie : acide éthanoïque dosé par la soude (type bac)
+On dose \(V_A = 20{,}0\,mL\) d’acide éthanoïque par une solution de NaOH de concentration \(C_B = 4{,}0\times 10^{-2}\,mol\,L^{-1}\).  
+La courbe (et sa dérivée) donne \(V_E = 10{,}0\,mL\) par les deux méthodes (tangentes et dérivée). fileciteturn28file9L20-L29
+
+1) Écrire la réaction support.  
+2) Déterminer \(C_A\).
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé détaillé">
+1) Réaction : \(\mathrm{CH_3COOH(aq) + HO^-(aq) \rightarrow CH_3COO^-(aq) + H_2O(\ell)}\). fileciteturn28file6L55-L60
+
+2) À l’équivalence (1:1) : \(C_A V_A = C_B V_E\). fileciteturn28file9L34-L37  
+\[
+C_A = \frac{C_B V_E}{V_A}
+= \frac{(4{,}0\times 10^{-2})\times 10{,}0}{20{,}0}
+= 2{,}0\times 10^{-2}\,mol\,L^{-1}
+\]
+  </TabItem>
+  <TabItem value="pieges" label="Pièges">
+- oublier de convertir mL en L (ici ça se simplifie si tu gardes des mL des deux côtés)  
+- confondre \(V_A\) (prélevé) et \(V_E\) (équivalent)  
+- utiliser une relation d’équivalence sans tenir compte des coefficients stœchiométriques
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 2 — Conductimétrie : HCl dosé par NaOH (interprétation de courbe)
+On suit \(\sigma\) lors du titrage \(H_3O^+ + HO^- \rightarrow 2H_2O\). fileciteturn28file11L21-L25
+
+1) Justifier l’allure : décroissance puis croissance.  
+2) Comment déterminer \(V_E\) ?
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé">
+1) Avant l’équivalence, \(H_3O^+\) (très grande conductivité molaire) disparaît et est “remplacé” par \(Na^+\) (beaucoup plus faible) → \(\sigma\) diminue. fileciteturn28file11L46-L56  
+Après l’équivalence, \(HO^-\) arrive en excès + \(Na^+\) continue d’augmenter → \(\sigma\) augmente. fileciteturn28file5L46-L49
+
+2) La courbe \(\sigma=f(V)\) est faite de segments de droites ; \(V_E\) est à l’intersection. fileciteturn28file2L28-L33
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 3 — Courbe conductimétrique “à deux équivalences” (raisonnement ions)
+On suit \(\sigma\) lors d’un titrage où deux réactions successives se produisent (double équivalence).  
+Expliquer pourquoi on observe **deux ruptures de pente**.
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé (idée)">
+Deux ruptures car on change deux fois de réactif limitant : on observe alors deux équivalences (le corrigé explique qu’« on s’attend à deux équivalences » et relie les pentes aux ions consommés/apportés). fileciteturn28file8L6-L16  
+Méthode : faire l’inventaire des ions avant / entre / après les équivalences et comparer leurs \(\lambda\). fileciteturn28file11L40-L44
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 4 — Étalonnage UV‑visible (Beer‑Lambert)
+On a une droite d’étalonnage \(A=k\,c\) (faibles concentrations). fileciteturn28file4L9-L13  
+On mesure pour une solution inconnue : \(A=0{,}42\).  
+La droite d’étalonnage donne \(k=1{,}5\times 10^3\,L\,mol^{-1}\).
+
+Déterminer \(c\).
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé">
+\[
+c = \frac{A}{k} = \frac{0{,}42}{1{,}5\times 10^3}
+= 2{,}8\times 10^{-4}\,mol\,L^{-1}
+\]
+Rappel : Beer‑Lambert exprime la proportionnalité \(A\propto c\). fileciteturn28file3L14-L20
+  </TabItem>
+</Tabs>
+
+---
+
+## 6) Erreurs classiques (et comment les éviter)
+
+### 6.1 Confondre “équivalence” et “milieu neutre”
+Équivalence = proportions stœchiométriques, **pas forcément pH = 7** (ex : acide faible/base forte).  
+✅ Réflexe : toujours raisonner sur la réaction, pas sur l’intuition du pH.
+
+### 6.2 En pH‑métrie : lire “à l’œil” sans méthode
+✅ Utiliser :
+- tangentes (géométrique) fileciteturn28file12L29-L36
+- dérivée (maximum) fileciteturn28file6L1-L8
+
+### 6.3 En conductimétrie : oublier les ions spectateurs
+Le conseil méthode insiste : inventorier **tous** les ions présents et comparer leurs \(\lambda\). fileciteturn28file11L40-L44  
+✅ Toujours écrire la solution sous forme ionique (titré + titrant).
+
+### 6.4 Oublier la condition de “solution diluée” (Kohlrausch / Beer‑Lambert)
+Les relations linéaires \(\sigma\propto c\) et \(A\propto c\) sont justifiées dans le cadre “solution diluée / faibles concentrations”. fileciteturn28file1L43-L46 fileciteturn28file3L17-L20  
+✅ Si la courbe n’est pas une droite, suspecter : trop concentré, réaction parasite, appareil mal étalonné.
+
+### 6.5 Se tromper de grandeur mesurée : conductance vs conductivité
+La conductance \(G\) dépend de la cellule ; la conductivité \(\sigma\) se définit avec la géométrie (écart \(l\), surface \(S\)). fileciteturn28file4L29-L46  
+✅ En exercices, on te donne souvent directement \(\sigma\) (plus simple).
+
+---
+
+## 7) Mini‑résumé (formules à connaître)
+
+### Équivalence / stœchiométrie
+- À l’équivalence : mélange stœchiométrique, réactifs consommés. fileciteturn28file1L1-L7  
+- Cas 1:1 : \(C_A V_A = C_B V_E\). fileciteturn28file9L34-L37
+
+### pH‑métrie
+- Saut de pH repère l’équivalence. fileciteturn28file12L25-L27  
+- Méthode dérivée : \(V_E\) au maximum de \(dpH/dV\). fileciteturn28file6L1-L8
+
+### Conductimétrie
+- Kohlrausch (solution diluée) : \(\sigma=\sum_i \lambda_i[X_i]\). fileciteturn28file1L43-L50  
+- \(\sigma=f(V)\) ≈ segments de droites, intersection → \(V_E\). fileciteturn28file2L28-L33
+
+### Étalonnage
+- Beer‑Lambert : \(A=k\,c\) (faibles concentrations). fileciteturn28file3L17-L20  
+- Droites d’étalonnage : \(A=f(c)\), \(\sigma=f(c)\). fileciteturn28file4L59-L66
+
+---
+
+<Box type="success" title="Ce que tu dois savoir faire au bac">
+1) Repérer \(V_E\) proprement (tangentes/dérivée ou intersection).  
+2) Écrire la relation d’équivalence avec les bons coefficients.  
+3) Expliquer qualitativement une courbe (ions qui apparaissent/disparaissent, \(\lambda\)). fileciteturn28file11L40-L44
+</Box>

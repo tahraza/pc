@@ -1,0 +1,342 @@
+---
+id: "ondes-sonores"
+title: "Ondes sonores : comprendre, calculer, éviter les pièges"
+sidebar_label: "Ondes sonores"
+description: "Cours complet Terminale Spécialité : grandeurs, dB, atténuation, interférences, Doppler. Avec analogies, mini-exercices corrigés et erreurs classiques."
+---
+
+import React from "react";
+
+# Ondes sonores : intuition + méthode (niveau expert, mais guidé)
+
+## 0) Intuition & analogies (pour “voir” le son)
+
+### Le son n’est pas une “chose” qui voyage : c’est une **perturbation**
+Imagine une **file de dominos** : chaque domino ne traverse pas la pièce, mais l’information “je tombe” se propage.  
+👉 Pour le son, c’est pareil : **les molécules d’air oscillent autour de leur position**, et la perturbation avance.
+
+### Compression / dilatation : le “ressort” invisible
+Une onde sonore ressemble à une **compression qui se déplace** dans un ressort (type slinky) :  
+- zone de **compression** → pression un peu plus grande ;  
+- zone de **rarefaction** → pression un peu plus faible.  
+C’est une onde **longitudinale** (vibration // direction de propagation).
+
+### Pourquoi on parle autant de “fréquence” ?
+Pense à un **clignotant** : plus il clignote vite, plus sa fréquence est élevée.  
+Pour le son : plus la fréquence est grande → **son plus aigu** (la hauteur).  
+Et l’amplitude (variation de pression) joue plutôt sur le **volume**.
+
+---
+
+## 1) Définir une onde sonore (et ce qu’elle transporte)
+
+**Onde sonore** : onde mécanique progressive qui correspond à la propagation d’une perturbation de pression dans un milieu matériel.  
+➡️ **Le son a besoin d’un milieu** (air, eau, solide) : pas de son dans le vide.
+
+**Ce qui se propage :**
+- de l’**énergie** ;
+- de l’**information** (ex. musique, parole) ;  
+et **pas de matière** de façon globale.
+
+---
+
+## 2) Grandeurs essentielles (les 4 que tu dois maîtriser)
+
+### 2.1 Période et fréquence
+- Période : $T$ (en s) → durée d’une oscillation.
+- Fréquence : $f$ (en Hz) → nombre d’oscillations par seconde.
+
+\$\$
+f = \frac{1}{T}
+\$\$
+
+✅ **Interprétation** :  
+- $f$ augmente → son plus aigu.  
+- $T$ augmente → son plus grave.
+
+---
+
+### 2.2 Longueur d’onde
+La longueur d’onde $\lambda$ est la distance parcourue par l’onde pendant **une période**.
+
+\$\$
+\lambda = v\,T
+\$\$
+
+---
+
+### 2.3 Célérité (vitesse de propagation)
+La célérité du son dépend du **milieu** (et de la température pour l’air).
+
+\$\$
+v = \lambda f
+\$\$
+
+📌 **Ordres de grandeur à connaître**
+- air (≈ 20 °C) : $v \approx 340\ \text{m·s}^{-1}$  
+- eau : $\sim 1500\ \text{m·s}^{-1}$  
+- acier : quelques $10^3\ \text{m·s}^{-1}$
+
+> **Piège classique** : ce n’est pas parce que le son est “plus fort” qu’il va plus vite.  
+> **C’est le milieu qui fixe la célérité**, pas l’intensité.
+
+---
+
+## 3) “Fort” vs “aigu” : ne pas confondre
+
+- **Aigu / grave** → fréquence $f$  
+- **Fort / faible** → amplitude (variation de pression) → intensité sonore $I$ et niveau $L$
+
+Analogie utile :
+- La fréquence, c’est comme la **vitesse de rotation** d’une perceuse (aigu).  
+- L’amplitude, c’est comme la **force** avec laquelle tu appuies (fort).
+
+---
+
+## 4) Intensité sonore et niveau en décibels (le cœur du chapitre)
+
+### 4.1 Intensité sonore $I$
+L’intensité sonore est une puissance surfacique :
+
+\$\$
+I = \frac{P}{S}
+\$\$
+
+- $I$ en $\text{W·m}^{-2}$
+- $P$ : puissance acoustique (W)
+- $S$ : surface traversée (m²)
+
+---
+
+### 4.2 Niveau d’intensité sonore $L$ (en dB)
+On utilise les décibels car notre oreille répond **de façon logarithmique** :  
+doubler l’intensité ne “double” pas la sensation.
+
+\$\$
+L = 10\,\log_{10}\left(\frac{I}{I_0}\right)
+\$\$
+
+avec $I_0 = 1,0\times 10^{-12}\ \text{W·m}^{-2}$ (seuil d’audibilité autour de 1 kHz).
+
+#### Inverser la formule (indispensable)
+\$\$
+I = I_0\,10^{L/10}
+\$\$
+
+✅ **Mini-exercice 1 (corrigé)**  
+Un son a un niveau $L = 80\ \text{dB}$. Calculer $I$.
+
+**Correction :**  
+\$\$
+I = 10^{-12}\times 10^{80/10}
+= 10^{-12}\times 10^{8}
+= 10^{-4}\ \text{W·m}^{-2}
+\$\$
+
+---
+
+### 4.3 Variations rapides : règles d’or en dB
+
+#### +10 dB → intensité ×10
+Car $L$ augmente de 10 → $10^{(L/10)}$ est multiplié par 10.
+
+#### +3 dB → intensité ×2 (approx.)
+Car $10\log_{10}(2) \approx 3$.
+
+✅ **Mini-exercice 2 (corrigé)**  
+Tu passes de 70 dB à 76 dB. Par combien est multipliée l’intensité ?
+
+**Correction :**  
++6 dB ≈ +3 dB +3 dB → intensité ×2 ×2 = ×4.
+
+---
+
+## 5) Atténuation géométrique : pourquoi le son “tombe” avec la distance
+
+### 5.1 L’idée
+Imagine une lampe : plus tu t’éloignes, la lumière se répartit sur une surface plus grande.  
+Pour une source sonore isotrope, l’énergie se répartit sur une sphère de rayon $r$ :
+
+\$\$
+S = 4\pi r^2
+\quad\Rightarrow\quad
+I(r)=\frac{P}{4\pi r^2}
+\$\$
+
+Donc $I \propto \frac{1}{r^2}$.
+
+---
+
+### 5.2 Effet sur le niveau (en dB)
+Quand $r$ est multiplié par 2 :
+
+- Intensité divisée par 4 → variation en dB :
+\$\$
+\Delta L = 10\log_{10}(1/4) \approx -6\ \text{dB}
+\$\$
+
+📌 **Règle pratique** :  
+**si tu doubles la distance → environ −6 dB** (en champ libre).
+
+✅ **Mini-exercice 3 (corrigé)**  
+Une enceinte donne 90 dB à 1 m. Estimer le niveau à 4 m (champ libre).
+
+**Correction :**  
+1 m → 2 m : −6 dB, puis 2 m → 4 m : −6 dB.  
+Donc $L(4\text{ m}) \approx 90 - 12 = 78\ \text{dB}$.
+
+---
+
+## 6) Interférences sonores (bonus très utile)
+
+### 6.1 Condition “cachée” : cohérence
+Pour observer des interférences stables, les deux sources doivent être **cohérentes** :  
+même fréquence et déphasage constant (souvent obtenu en les alimentant par le même générateur).
+
+### 6.2 Différence de marche et résultats
+Soit $\delta$ la différence de marche.
+
+- **constructive** : $\delta = k\lambda$
+- **destructive** : $\delta = \left(k+\frac{1}{2}\right)\lambda$
+
+✅ **Mini-exercice 4 (corrigé)**  
+Deux haut-parleurs émettent à $f=680\ \text{Hz}$ dans l’air ($v=340\ \text{m·s}^{-1}$).  
+En un point M, $\delta = 0{,}25\ \text{m}$. Interférence ?
+
+**Correction :**  
+\$\$
+\lambda = \frac{v}{f} = \frac{340}{680} = 0{,}50\ \text{m}
+\$\$
+\$\$
+\delta = 0{,}25 = \frac{\lambda}{2}
+\Rightarrow \text{destructive}
+\$\$
+
+---
+
+## 7) Effet Doppler sonore (le son qui “monte” et “descend”)
+
+### 7.1 Intuition
+Sirène d’ambulance :
+- elle **approche** → les fronts d’onde se “serrent” → $\lambda$ diminue → $f$ augmente → son plus aigu.
+- elle **s’éloigne** → fronts “s’écartent” → $\lambda$ augmente → $f$ diminue → son plus grave.
+
+### 7.2 Forme simple à connaître (source en mouvement, observateur fixe)
+\$\$
+f_{\text{obs}} = \frac{c}{c \mp v_s}\, f_{\text{source}}
+\$\$
+
+- signe − si la source se rapproche (fréquence augmente),
+- signe + si elle s’éloigne.
+
+> Au niveau Terminale, on te demande surtout d’interpréter correctement le sens de variation, et parfois une application numérique simple.
+
+---
+
+## 8) Méthode “type bac” : comment résoudre 90% des exercices
+
+### Étape A — Identifie ce qu’on te donne
+- $f$ ? $T$ ? $\lambda$ ? $v$ ?  
+- ou bien $I$ et/ou $L$ ?
+
+### Étape B — Choisis la bonne relation
+- onde : $v=\lambda f$, $f=1/T$
+- décibels : $L = 10\log(I/I_0)$
+- atténuation : $I \propto 1/r^2$ (ou −6 dB quand ×2 sur r)
+
+### Étape C — Unités (obligatoire)
+- m, s, Hz, W·m⁻²  
+- dB sans unité (c’est un rapport logarithmique)
+
+---
+
+## 9) Erreurs classiques (et comment les éviter)
+
+### Erreur 1 — Confondre **Hz** et **dB**
+- Hz : fréquence → aigu/grave  
+- dB : niveau → fort/faible  
+✅ Astuce : “Hz = hauteur”, “dB = décibels = volume”.
+
+### Erreur 2 — Oublier le **log10**
+Beaucoup écrivent $L=10\,(I/I_0)$ au lieu de $10\log(\cdot)$.  
+✅ Réflexe : dès que tu vois “dB”, tu penses **logarithme**.
+
+### Erreur 3 — Mauvaise inversion de la formule
+\$\$
+L = 10\log(I/I_0) \Rightarrow I = I_0\,10^{L/10}
+\$\$
+✅ Astuce : le 10 “descend” dans l’exposant.
+
+### Erreur 4 — “Quand ça double, ça fait −3 dB”
+Non (en champ libre) : doubler la distance → intensité ÷4 → **−6 dB**.  
+✅ Astuce : “2 → 4 → 6” : ×2 sur distance → ÷4 sur I → −6 dB.
+
+### Erreur 5 — Mélanger $\lambda$ et $f$ lors du Doppler
+Si la source se rapproche : **$\lambda$ diminue, $f$ augmente** (car $v$ ~ constant).  
+✅ Astuce : garde $v=\lambda f$ en tête.
+
+---
+
+## 10) Quiz minute (avec corrigé)
+
+1) Le son se propage-t-il dans le vide ?  
+2) Si $f$ double dans le même milieu, que devient $\lambda$ ?  
+3) Un passage de 60 dB à 70 dB multiplie l’intensité par combien ?  
+4) En champ libre, si on passe de 2 m à 8 m, variation approximative du niveau ?  
+5) Différence de marche $\delta = 2\lambda$ : constructive ou destructive ?
+
+### Corrigé
+1) Non, c’est une onde **mécanique**.  
+2) $\lambda$ est divisée par 2 (car $v=\lambda f$).  
+3) +10 dB → intensité ×10.  
+4) 2→4 : −6 dB ; 4→8 : −6 dB → total −12 dB.  
+5) constructive (multiple entier de $\lambda$).
+
+---
+
+## 11) Exercices (type manuel) — corrigés guidés
+
+### Exercice A — Retrouver une intensité à partir d’un niveau
+Un son a $L = 75\ \text{dB}$. Calculer $I$.
+
+**Corrigé :**
+\$\$
+I = 10^{-12}\times 10^{7,5}
+= 10^{-12}\times (10^{7}\times 10^{0,5})
+\approx 10^{-12}\times (10^{7}\times 3{,}16)
+\approx 3{,}16\times 10^{-5}\ \text{W·m}^{-2}
+\$\$
+
+---
+
+### Exercice B — Comparaison de deux sons
+Deux sons ont des niveaux 60 dB et 66 dB.  
+Quel son a la plus grande intensité ? Et par quel facteur ?
+
+**Corrigé :**  
+Différence = 6 dB ≈ ×4 sur l’intensité.  
+Le son à 66 dB est environ **4 fois** plus intense.
+
+---
+
+### Exercice C — Interférences (bonus)
+Deux sources cohérentes émettent à $f=1{,}0\ \text{kHz}$ dans l’air ($v=340\ \text{m·s}^{-1}$).  
+En un point, $\delta = 0{,}17\ \text{m}$. Type d’interférence ?
+
+**Corrigé :**
+\$\$
+\lambda = \frac{340}{1000}=0{,}34\ \text{m}
+\quad\Rightarrow\quad
+\delta = 0{,}17 = \frac{\lambda}{2}
+\Rightarrow \text{destructive}
+\$\$
+
+---
+
+## À retenir (les 6 lignes qui font gagner des points)
+- $f=1/T$ et $v=\lambda f$  
+- dB → **log10** : $L = 10\log(I/I_0)$  
+- inversion : $I = I_0 10^{L/10}$  
+- champ libre : $I\propto 1/r^2$ ; ×2 distance → −6 dB  
+- constructive : $\delta=k\lambda$ ; destructive : $\delta=(k+1/2)\lambda$  
+- Doppler : approche → $f$ augmente ; éloignement → $f$ diminue

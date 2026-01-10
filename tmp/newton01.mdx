@@ -1,0 +1,150 @@
+
+--------------------------------------------------------------------------------
+
+---
+id: "mecanique-newton"
+title: "Mouvement et Forces : La Mécanique de Newton"
+track: "physique"
+level: 2
+prerequisites: ["Vecteurs", "Dérivées"]
+tags: ["cinématique", "dynamique", "newton", "accélération", "frenet"]
+estimatedTime: 90
+chapter: "mouvement-et-interactions"
+order: 1
+---
+
+# Mouvement et Forces : Les Lois de Newton
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Définir et calculer les vecteurs vitesse et accélération à partir du vecteur position.
+- Utiliser le repère de Frenet pour les mouvements circulaires.
+- Énoncer et appliquer les trois lois de Newton.
+- Résoudre un problème de dynamique en suivant la méthode rigoureuse (système, référentiel, bilan des forces).
+
+## 1. Cinématique : Décrire le mouvement
+
+Avant d'expliquer *pourquoi* ça bouge (dynamique), il faut savoir décrire *comment* ça bouge (cinématique).
+
+### A. Les Vecteurs du Mouvement
+Dans un référentiel donné, la position d'un point M est repérée par le vecteur position $\vec{OM}(t)$.
+
+1.  **Vecteur Vitesse ($\vec{v}$) :** C'est la variation de la position par rapport au temps. Mathématiquement, c'est la **dérivée** du vecteur position.
+    $$\vec{v}(t) = \frac{d\vec{OM}}{dt}$$
+    *   *Caractéristiques :* Il est toujours **tangent à la trajectoire** et dans le sens du mouvement [1], [2].
+
+2.  **Vecteur Accélération ($\vec{a}$) :** C'est la variation de la vitesse par rapport au temps. C'est la **dérivée** du vecteur vitesse (et donc la dérivée seconde de la position).
+    $$\vec{a}(t) = \frac{d\vec{v}}{dt} = \frac{d^2\vec{OM}}{dt^2}$$
+    *   *Sens physique :* L'accélération ne dit pas si on va vite, mais si la vitesse *change* (en valeur ou en direction) [3], [4].
+
+> **Analogie : La Voiture et le Compteur**
+> *   **La Position :** C'est votre GPS ("Je suis à 10 km de Paris").
+> *   **La Vitesse :** C'est l'aiguille du compteur ("Je roule à 130 km/h vers le Nord").
+> *   **L'Accélération :** C'est ce que vous ressentez dans le dos.
+>     *   Si vous appuyez sur l'accélérateur, vous êtes plaqué au siège ($\vec{a}$ vers l'avant).
+>     *   Si vous freinez, vous êtes projeté vers le pare-brise ($\vec{a}$ vers l'arrière).
+>     *   **Attention :** Si vous tournez le volant *même à vitesse constante*, vous êtes déporté sur le côté. Il y a donc aussi une accélération (normale) dès que la direction change [5], [6].
+
+### B. Le Repère de Frenet (Pour les mouvements courbes)
+Pour les mouvements circulaires, le repère cartésien $(O, \vec{i}, \vec{j})$ n'est pas pratique. On utilise le **repère de Frenet**, mobile et lié au point M [7], [8].
+Il est constitué de deux vecteurs unitaires :
+*   $\vec{t}$ (tangentiel) : Tangent à la trajectoire, sens du mouvement.
+*   $\vec{n}$ (normal) : Perpendiculaire à $\vec{t}$, dirigé vers le centre de courbure.
+
+L'accélération s'écrit alors :
+$$\vec{a} = a_t \cdot \vec{t} + a_n \cdot \vec{n} = \frac{dv}{dt} \cdot \vec{t} + \frac{v^2}{R} \cdot \vec{n}$$
+
+*   **$a_t = \frac{dv}{dt}$** : Accélération tangentielle (liée à la variation de la *valeur* de la vitesse).
+*   **$a_n = \frac{v^2}{R}$** : Accélération normale (liée à la variation de la *direction*, courbure de rayon R) [5], [9].
+
+> **Exemple Résolu : Mouvement Circulaire Uniforme (MCU)**
+> Si le mouvement est circulaire (rayon $R$) et uniforme (vitesse $v$ constante) :
+> *   Comme $v$ est constante, $\frac{dv}{dt} = 0 \Rightarrow$ pas d'accélération tangentielle.
+> *   L'accélération est purement **normale (centripète)** : $\vec{a} = \frac{v^2}{R}\vec{n}$.
+> *   Le vecteur accélération est toujours dirigé vers le centre du cercle [10], [11].
+
+## 2. Dynamique : Les Lois de Newton
+
+Isaac Newton a établi le lien entre les forces (les causes) et le mouvement (les conséquences). Ces lois ne sont valables que dans un **référentiel Galiléen** (ex: référentiel terrestre pour les expériences courtes, géocentrique pour les satellites, héliocentrique pour les planètes) [12], [13].
+
+### 1ère Loi : Principe d'Inertie
+Si la somme des forces extérieures est nulle ($\sum \vec{F}_{ext} = \vec{0}$), alors le centre de masse du système est soit **immobile**, soit en **Mouvement Rectiligne Uniforme (MRU)**.
+$$\sum \vec{F}_{ext} = \vec{0} \iff \vec{v}_G = \vec{constante}$$
+*   *Inversement :* Si le mouvement n'est pas rectiligne uniforme, c'est que les forces ne se compensent pas [13], [14].
+
+### 2ème Loi : Principe Fondamental de la Dynamique
+C'est la loi centrale de la mécanique. Dans un référentiel galiléen, la somme des forces extérieures est égale au produit de la masse par l'accélération du centre de masse.
+$$\sum \vec{F}_{ext} = m \cdot \vec{a}_G$$
+*   $\vec{F}$ en Newtons (N).
+*   $m$ en kilogrammes (kg).
+*   $\vec{a}$ en mètres par seconde carrée ($m\cdot s^{-2}$) [15], [16], [17].
+
+> **Analogie : Le Caddie de Supermarché**
+> Imaginez un caddie (le système de masse $m$).
+> *   **La Force ($\vec{F}$)** : C'est vous qui poussez.
+> *   **L'Accélération ($\vec{a}$)** : C'est à quel point la vitesse du caddie change vite.
+> *   **La Masse ($m$ ou Inertie)** : C'est la résistance du caddie.
+>     *   Si le caddie est vide ($m$ petit), une petite poussée suffit pour qu'il parte vite ($\vec{a}$ grand).
+>     *   Si le caddie est plein de packs d'eau ($m$ grand), pour la même poussée, il accélère à peine ($\vec{a}$ petit).
+>     *   C'est l'équation $\vec{a} = \frac{\vec{F}}{m}$.
+
+### 3ème Loi : Principe des actions réciproques
+Si un corps A exerce une force sur B ($\vec{F}_{A/B}$), alors B exerce simultanément une force sur A ($\vec{F}_{B/A}$) de même valeur, même direction, mais de **sens opposé**.
+$$\vec{F}_{A/B} = - \vec{F}_{B/A}$$
+*   C'est vrai que les corps soient immobiles ou en mouvement [15], [18].
+*   *Exemple :* La propulsion. La fusée pousse les gaz vers le bas, les gaz poussent la fusée vers le haut.
+
+## 3. Méthode : Résoudre un problème de mécanique
+
+Pour réussir un exercice, il faut suivre une démarche rigoureuse en 5 étapes [19], [20] :
+
+1.  **Système :** Définir l'objet étudié (ex: {le ballon}). On le modélise par son centre de masse G.
+2.  **Référentiel :** Le choisir (souvent Terrestre) et préciser "supposé galiléen".
+3.  **Bilan des Forces :** Lister les forces extérieures et les dessiner sommairement.
+    *   Poids $\vec{P} = m\vec{g}$ (vertical, vers le bas).
+    *   Réaction $\vec{R}$ (perpendiculaire au support s'il n'y a pas de frottement).
+    *   Frottements $\vec{f}$, Tension $\vec{T}$, Poussée d'Archimède, etc.
+4.  **2ème Loi de Newton :** Écrire la relation vectorielle $\vec{P} + \vec{R} + \dots = m\vec{a}$.
+5.  **Projection :** Projeter cette égalité sur les axes $(Ox)$ et $(Oy)$ pour obtenir des équations scalaires et trouver l'accélération, puis intégrer pour avoir la vitesse et la position.
+
+## 4. Exemples Résolus
+
+### Exemple 1 : Calcul de l'accélération à partir des équations horaires
+**Énoncé :** Les équations paramétriques d'un point M sont $x(t) = 2t^2 + 3$ et $y(t) = 5t - 1$ (unités SI). Calculer la valeur de l'accélération [21].
+
+**Solution :**
+1.  **Vecteur Position :** $\vec{OM} = (2t^2 + 3)\vec{i} + (5t - 1)\vec{j}$.
+2.  **Vecteur Vitesse ($\vec{v} = d\vec{OM}/dt$) :**
+    *   $v_x = \frac{d(2t^2+3)}{dt} = 4t$
+    *   $v_y = \frac{d(5t-1)}{dt} = 5$
+3.  **Vecteur Accélération ($\vec{a} = d\vec{v}/dt$) :**
+    *   $a_x = \frac{d(4t)}{dt} = 4$
+    *   $a_y = \frac{d(5)}{dt} = 0$
+4.  **Valeur (Norme) :** $a = \sqrt{a_x^2 + a_y^2} = \sqrt{4^2 + 0^2} = 4 \text{ m}\cdot\text{s}^{-2}$.
+
+### Exemple 2 : Voiture sur un plan horizontal (Application de la 2e loi)
+**Énoncé :** Une voiture jouet de masse $m=5,0 \text{ kg}$ avance sur un sol horizontal. Elle subit une force motrice $\vec{F}$ de 34 N, des frottements $\vec{f}$ de 20 N opposés au mouvement. Son poids est $P=50 \text{ N}$ et la réaction du sol $R=50 \text{ N}$. Calculer l'accélération [22].
+
+**Solution :**
+1.  **Système :** {Voiture}, Référentiel : Terrestre galiléen.
+2.  **Bilan des forces :** $\vec{P}$ (bas), $\vec{R}$ (haut), $\vec{F}$ (avant), $\vec{f}$ (arrière).
+3.  **2ème Loi :** $\vec{P} + \vec{R} + \vec{F} + \vec{f} = m\vec{a}$.
+4.  **Projection sur l'axe horizontal (Ox) :**
+    *   $P_x = 0$ et $R_x = 0$ (forces verticales).
+    *   $F_x = +F = 34$ (sens du mouvement).
+    *   $f_x = -f = -20$ (sens opposé).
+    *   Relation : $F - f = m \cdot a_x$.
+5.  **Calcul :**
+    $a_x = \frac{F - f}{m} = \frac{34 - 20}{5,0} = \frac{14}{5,0} = 2,8 \text{ m}\cdot\text{s}^{-2}$.
+
+## Mini-résumé pour retenir l'essentiel
+
+| Concept | Formule / Définition | Astuce |
+| :--- | :--- | :--- |
+| **Vitesse** | $\vec{v} = \frac{d\vec{OM}}{dt}$ | Dérivée de la position. |
+| **Accélération** | $\vec{a} = \frac{d\vec{v}}{dt}$ | Dérivée de la vitesse. |
+| **Frenet (Cercle)** | $\vec{a} = \frac{dv}{dt}\vec{t} + \frac{v^2}{R}\vec{n}$ | $a_t$ change la vitesse, $a_n$ fait tourner. |
+| **2ème Loi Newton** | $\sum \vec{F}_{ext} = m\vec{a}$ | Cause ($\vec{F}$) = Conséquence ($m\vec{a}$). |
+| **Chute libre** | Seul le poids $\vec{P}$ agit. | $\vec{a} = \vec{g}$ (ne dépend pas de la masse). |
+
+

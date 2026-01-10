@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { RandomExerciseTemplate } from '@/types'
 import { RandomExercise } from '@/components/RandomExercise'
 import { Shuffle, Filter, ChevronDown, Zap } from 'lucide-react'
@@ -47,13 +48,12 @@ const trackColors: Record<string, string> = {
   'equilibres-chimiques': 'bg-teal-600',
 }
 
-interface ExercicesAleatoiresClientProps {
-  initialLesson?: string
-}
+export default function ExercicesAleatoiresClient() {
+  const searchParams = useSearchParams()
+  const initialLesson = searchParams.get('lesson')
 
-export default function ExercicesAleatoiresClient({ initialLesson }: ExercicesAleatoiresClientProps) {
   const [templates, setTemplates] = useState<RandomExerciseTemplate[]>([])
-  const [selectedLesson, setSelectedLesson] = useState<string | null>(initialLesson || null)
+  const [selectedLesson, setSelectedLesson] = useState<string | null>(initialLesson)
   const [selectedTemplate, setSelectedTemplate] = useState<RandomExerciseTemplate | null>(null)
   const [loading, setLoading] = useState(true)
   const [showFilters, setShowFilters] = useState(!!initialLesson)

@@ -1,0 +1,408 @@
+---
+id: "thermochimie-expert"
+title: "Thermochimie (Terminale Spé) : chaleur, bilans d’énergie et calorimétrie"
+sidebar_label: "Thermochimie"
+description: "Comprendre et appliquer les bilans d’énergie (Q, W, ΔU), la capacité thermique, la calorimétrie et la chaleur latente, avec analogies, pièges classiques et exercices corrigés."
+tags: ["terminale", "spécialité", "physique", "thermochimie", "thermodynamique", "calorimétrie"]
+---
+
+import Box from '@site/src/components/Box';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Thermochimie : chaleur, bilans d’énergie et calorimétrie
+
+> **Idée directrice** : en thermochimie (au lycée), on suit **où va l’énergie** :  
+> - soit elle **chauffe/refroidit** (variation de température),  
+> - soit elle sert à un **changement d’état** (fusion, vaporisation…),  
+> - soit elle passe en **travail mécanique** (compression/détente),  
+> en respectant un **bilan**.
+
+---
+
+## 0) Objectifs (ce que tu dois savoir faire)
+
+À la fin de la leçon, tu sais :
+- Utiliser correctement la convention de signe pour **Q** (chaleur) et **W** (travail) et écrire un **bilan énergétique**.
+- Relier un échange thermique à une variation de température : **Q = C·ΔT** (ou **Q = m·c·ΔT**).
+- Résoudre des exercices de **calorimétrie** (mélanges, capacité thermique du calorimètre).
+- Traiter un **changement d’état** avec une **chaleur latente**.
+- Exploiter **une puissance** : **P = ΔE/Δt**, et passer de l’énergie à une durée de chauffage.
+- Éviter les **erreurs classiques** (unités, signes, oubli du calorimètre, oubli de la glace à réchauffer jusqu’à 0 °C, etc.).
+
+---
+
+## 1) Intuition & analogies (pour “sentir” l’énergie)
+
+### 1.1 L’analogie du “compte bancaire d’énergie”
+Imagine que le système (eau, gaz, métal…) a un **compte** : son **énergie interne U**.
+- **ΔU > 0** : le compte se remplit (le système gagne de l’énergie).
+- **ΔU < 0** : le compte se vide (le système perd de l’énergie).
+
+Mais attention : **Q** (chaleur) et **W** (travail) ne sont **pas** des “stocks”. Ce sont des **échanges** (des “virements”) qui dépendent du chemin suivi.
+
+### 1.2 Deux “tuyaux” pour transférer l’énergie
+Un système fermé peut échanger de l’énergie :
+- par **travail W** (souvent si le **volume varie**),
+- par **transfert thermique Q** (si il y a une différence de température).
+
+C’est exactement l’esprit du **premier principe** : *ce que le système gagne en interne vient de ce qu’il reçoit en travail et/ou en chaleur.*
+
+---
+
+## 2) Système, frontière, convention de signe (le piège n°1)
+
+### 2.1 Choisir son système
+Le **système** doit être annoncé clairement :
+- « l’eau seule »,  
+- « eau + calorimètre »,  
+- « gaz dans le cylindre », etc.
+
+La **frontière** décide de ce qui est “extérieur”.
+
+### 2.2 Convention de signe (à connaître par cœur)
+On adopte la convention :
+- **Q > 0** si le système **reçoit** de l’énergie thermique ; **Q < 0** s’il en **cède**.
+- **W > 0** si le système **reçoit** du travail ; **W < 0** s’il **fournit** du travail.
+
+> Astuce : pense “reçoit = +”.
+
+---
+
+## 3) Premier principe de la thermodynamique (cœur du cours)
+
+Pour un **système fermé** (pas d’échange de matière) :
+\$
+\Delta U = W + Q
+\$
+
+- **ΔU** : variation d’énergie interne (J),
+- **W** : travail échangé (J),
+- **Q** : énergie thermique échangée (J).
+
+> **Cas ultra fréquent** : phases condensées (liquides/solides) et calorimétrie  
+> Souvent on a **ΔV = 0** ⇒ **W = 0** ⇒ **ΔU = Q**.  
+> C’est pour ça qu’en calorimétrie on écrit directement des bilans en **Q**.
+
+---
+
+## 4) Capacité thermique et échauffement (Q = C·ΔT)
+
+### 4.1 Définitions
+- **Capacité thermique** d’un système :  
+\$
+C = \frac{Q}{\Delta T}
+\$
+(avec C en J·K⁻¹)
+
+- **Capacité thermique massique** (du matériau) :  
+\$
+Q = m\,c\,\Delta T
+\$
+avec  
+m en kg (ou g si tu gardes c en J·g⁻¹·K⁻¹), c en J·kg⁻¹·K⁻¹.
+
+### 4.2 Point-clef : ΔT est identique en °C ou en K
+\$
+\Delta T = T_f - T_i = t_f - t_i
+\$
+
+---
+
+## 5) Calorimétrie : mélanges et “C_cal” (très classique bac)
+
+### 5.1 Le principe d’un calorimètre
+Un calorimètre est conçu pour que les échanges avec l’extérieur soient **négligeables** :
+- **Q_ext ≈ 0**
+- souvent **W_ext ≈ 0**
+
+Donc on peut écrire :  
+\$
+\Delta U_{syst} = 0
+\$
+c’est-à-dire : **la somme des Q internes vaut 0**.
+
+### 5.2 Méthode-type “mélange de deux eaux + calorimètre”
+1) Système = **(eau froide + eau chaude + calorimètre)**  
+2) Hypothèses : pas d’échange avec l’extérieur, pas de travail.
+3) Écrire :  
+\$
+Q_{chaud} + Q_{froid} + Q_{cal} = 0
+\$
+avec  
+- \$Q_{eau} = m c (T_f - T_i)\$  
+- \$Q_{cal} = C_{cal}(T_f - T_{cal,i})\$ (souvent \$T_{cal,i}=T_{froid,i}\$)
+
+---
+
+## 6) Changement d’état : chaleur latente (fusion, vaporisation…)
+
+Quand un corps change d’état à température (quasi) constante, l’énergie sert à **casser/réorganiser** les liaisons :
+\$
+Q = m\,L
+\$
+- L : chaleur latente (J·kg⁻¹)
+
+**Attention** : un problème “glaçon dans l’eau” combine souvent :
+1) réchauffer la glace de -2 °C à 0 °C : \$Q_1 = m c_{glace}(0-(-2))\$
+2) fondre : \$Q_2 = m L_f\$
+3) réchauffer l’eau fondue de 0 °C à T_f : \$Q_3 = m c_{eau}(T_f-0)\$
+
+---
+
+## 7) Puissance et durée de chauffage (micro-ondes, chauffage, etc.)
+
+### 7.1 Relation puissance-énergie
+\$
+P = \frac{\Delta E}{\Delta t}
+\quad\Rightarrow\quad
+\Delta t = \frac{\Delta E}{P}
+\$
+
+Si on chauffe un volume d’eau V (en L) :
+- masse \$m = \rho V\$ (avec \$\rho\$ en kg·L⁻¹)
+- énergie nécessaire (si pas de changement d’état) : \$\Delta E = m c (T_f-T_i)\$
+
+Donc :
+\$
+\Delta t = \frac{\rho V c (T_f-T_i)}{P}
+\$
+
+---
+
+## 8) Exercices intégrés (avec corrigés)
+
+<Box type="info" title="Conseil méthode (universel)">
+Avant de calculer, écris toujours : **système**, **hypothèses**, **bilan**, puis seulement les **formules**.
+</Box>
+
+### Exercice 1 — Capacité thermique d’un calorimètre (mélange d’eaux)
+On met dans un calorimètre (capacité thermique \$C_{cal}\$) :
+- \$m_1 = 200\,g\$ d’eau à \$T_a = 12{,}1\,^{\circ}C\$
+Puis on verse :
+- \$m_2 = 120\,g\$ d’eau chaude à \$T_c = 70{,}0\,^{\circ}C\$
+Température finale : \$T_f = 29{,}2\,^{\circ}C\$  
+Donnée : \$c_{eau}=4{,}18\,J\,g^{-1}\,K^{-1}\$.
+
+**Question :** déterminer \$C_{cal}\$.
+
+<Tabs>
+  <TabItem value="solution" label="Corrigé détaillé">
+Système : eau froide + eau chaude + calorimètre.  
+Hypothèses : pas d’échange avec l’extérieur, pas de travail ⇒ somme des Q = 0.
+
+\$
+Q_{chaud} + Q_{froid} + Q_{cal} = 0
+\$
+
+- Eau chaude : \$Q_{chaud}=m_2 c (T_f-T_c)\$ (négatif car \$T_f<T_c\$)
+- Eau froide : \$Q_{froid}=m_1 c (T_f-T_a)\$ (positif)
+- Calorimètre : \$Q_{cal}=C_{cal}(T_f-T_a)\$ (il part à la même température que l’eau froide)
+
+Donc :
+\$
+m_2 c (T_f-T_c) + m_1 c (T_f-T_a) + C_{cal}(T_f-T_a)=0
+\$
+
+\$
+C_{cal} = -\frac{m_2 c (T_f-T_c) + m_1 c (T_f-T_a)}{(T_f-T_a)}
+\$
+
+Application numérique :
+- \$T_f-T_c=29{,}2-70{,}0=-40{,}8\$
+- \$T_f-T_a=29{,}2-12{,}1=17{,}1\$
+
+\$
+C_{cal} \approx 361\,J\,K^{-1}
+\$
+
+  </TabItem>
+  <TabItem value="check" label="Auto-vérification">
+- \$C_{cal}\$ doit être **positif** ✅  
+- Si le calorimètre est “lourd”, \$T_f\$ serait **plus bas** (il “absorbe” de l’énergie) : cohérent ✅
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 2 — Durée de chauffage au micro-ondes
+On chauffe \$V=200\,mL\$ d’eau de \$20\,^{\circ}C\$ à \$80\,^{\circ}C\$ avec un micro-ondes de puissance \$P=800\,W\$.  
+Données : \$\rho=1{,}0\,kg\,L^{-1}\$, \$c_{eau}=4180\,J\,kg^{-1}\,K^{-1}\$.
+
+**Question :** estimer la durée de chauffage.
+
+<Tabs>
+  <TabItem value="solution" label="Corrigé">
+Volume : \$0{,}200\,L\$ ⇒ masse \$m=\rho V = 1{,}0\times 0{,}200=0{,}200\,kg\$  
+Variation : \$\Delta T = 80-20=60\,K\$
+
+Énergie :
+\$
+\Delta E = mc\Delta T = 0{,}2\times 4180\times 60 \approx 5,0\times 10^4\,J
+\$
+
+Durée :
+\$
+\Delta t = \frac{\Delta E}{P} \approx \frac{5,0\times 10^4}{800} \approx 63\,s
+\$
+
+(En pratique c’est souvent un peu plus, car il y a des pertes et le rendement n’est pas parfait.)
+  </TabItem>
+  <TabItem value="pieges" label="Pièges classiques">
+- Oublier de convertir **mL → L** puis en **kg** ❌  
+- Utiliser \$c\$ en J/g/K avec m en kg ❌  
+- Confondre énergie et puissance : **P ≠ E** ❌
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 3 — Chaleur latente de fusion (glaçon dans l’eau)
+Dans un calorimètre (capacité thermique \$C_{calo}=80\,J\,K^{-1}\$) contenant \$100\,mL\$ d’eau à \$30\,^{\circ}C\$, on introduit un glaçon :
+- masse \$m_g = 30\,g\$,
+- température \$-2{,}0\,^{\circ}C\$,
+Température finale : \$7{,}7\,^{\circ}C\$.
+
+Données :  
+- \$c_{eau}=4{,}19\,J\,g^{-1}\,K^{-1}\$  
+- \$c_{glace}=2{,}1\,J\,g^{-1}\,K^{-1}\$
+
+**Question :** déterminer \$L_f\$ (chaleur latente de fusion de l’eau).
+
+<Tabs>
+  <TabItem value="methode" label="Méthode (à recopier)">
+1) **Qui perd ?** l’eau + calorimètre refroidissent ⇒ ils **cèdent** de l’énergie.  
+2) **Qui gagne ?** le glaçon :  
+   - se réchauffe à 0 °C,  
+   - fond (L_f),  
+   - puis l’eau fondue se réchauffe à 7,7 °C.  
+3) Écrire **Q_perdu + Q_gagné = 0**.
+  </TabItem>
+
+  <TabItem value="solution" label="Corrigé (calcul)">
+**(A) Énergie cédée par l’eau + calorimètre**
+
+- Eau initiale : \$m_e=100\,g\$ (car 100 mL d’eau ≈ 100 g)  
+\$
+Q_{eau} = m_e c_{eau}(T_f-T_i)=100\times 4{,}19\times(7{,}7-30)
+\approx -9340\,J
+\$
+
+- Calorimètre (même variation de T que l’eau initiale) :
+\$
+Q_{calo}=C_{calo}(T_f-T_i)=80\times(7{,}7-30)\approx -1780\,J
+\$
+
+Total cédé :
+\$
+Q_{cédé}\approx -11120\,J
+\$
+
+**(B) Énergie reçue par le glaçon**
+
+1) Réchauffer la glace de -2 à 0 :
+\$
+Q_1=m_g c_{glace}(0-(-2))=30\times 2{,}1\times 2=126\,J
+\$
+
+2) Fusion :
+\$
+Q_2=m_g L_f
+\$
+
+3) Réchauffer l’eau fondue de 0 à 7,7 :
+\$
+Q_3=m_g c_{eau}(7{,}7-0)=30\times 4{,}19\times 7{,}7\approx 968\,J
+\$
+
+Donc énergie reçue :
+\$
+Q_{reçu}=Q_1+Q_2+Q_3 \approx (126+968)+30L_f
+\$
+
+**Bilan** : \$Q_{cédé}+Q_{reçu}=0\$ :
+\$
+-11120 + 1094 + 30L_f = 0
+\Rightarrow 30L_f \approx 10026
+\Rightarrow L_f \approx 334\,J\,g^{-1} = 3,34\times 10^5\,J\,kg^{-1}
+\$
+
+Valeur cohérente (ordre de grandeur attendu pour l’eau).
+  </TabItem>
+
+  <TabItem value="pieges" label="Erreurs classiques à éviter">
+- **Oublier** de réchauffer la glace de -2 à 0 °C (le terme \$Q_1\$) ❌  
+- **Oublier** la capacité thermique du calorimètre (\$Q_{calo}\$) ❌  
+- Mettre \$m\$ en kg alors que \$c\$ est en J/g/K ❌  
+- Dire “température constante donc Q=0” : faux ! pendant un changement d’état, **T constante mais Q non nul** ❌
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 4 — Travail de pression (gaz, compression/détente)
+Un gaz à pression constante \$P\$ subit une variation de volume \$\Delta V = V_f - V_i\$.  
+**Question :** exprimer le travail reçu par le gaz et discuter son signe.
+
+<Tabs>
+  <TabItem value="solution" label="Corrigé">
+À pression constante :
+\$
+W = -P\,\Delta V
+\$
+
+- Si le gaz **se comprime** : \$\Delta V<0\Rightarrow W>0\$ ⇒ le système **reçoit** du travail.  
+- Si le gaz **se détend** : \$\Delta V>0\Rightarrow W<0\$ ⇒ le système **fournit** du travail.
+  </TabItem>
+</Tabs>
+
+---
+
+## 9) Erreurs classiques (et comment les éviter)
+
+### 9.1 “Je mélange les unités”
+**Symptôme** : tu obtiens 0,063 s au lieu de 63 s, ou 3,3×10² J/kg au lieu de 3,3×10⁵ J/kg.  
+**Antidote** :
+- Choisir **un système cohérent** :
+  - soit tout en **kg** et J/kg/K,
+  - soit tout en **g** et J/g/K.
+- Toujours écrire les unités à chaque ligne (au moins jusqu’au résultat final).
+
+### 9.2 “Je me trompe de signe”
+**Symptôme** : une capacité thermique négative, ou un bilan impossible.  
+**Antidote** :
+- Écrire d’abord : “qui se réchauffe ? qui se refroidit ?”
+- Utiliser \$Q = m c (T_f - T_i)\$ : le signe vient tout seul.
+
+### 9.3 “J’oublie un acteur”
+Exemples typiques :
+- oublier \$Q_{cal}\$ (le calorimètre “absorbe” souvent beaucoup),
+- oublier de réchauffer la glace jusqu’à 0 °C avant la fusion,
+- oublier de réchauffer l’eau fondue ensuite (si \$T_f>0\$).
+
+**Antidote** : faire une **checklist** :
+- phases présentes ? (glace + eau)
+- changements d’état ?
+- calorimètre ?
+- pertes (si l’énoncé le suggère) ?
+
+### 9.4 “Je confonds température et énergie”
+- Température = **indicateur**, pas une énergie.
+- Pendant un changement d’état : T constante mais Q ≠ 0.
+
+---
+
+## 10) Mini-fiche de révision (à apprendre)
+
+- **Premier principe** : \$\Delta U = W + Q\$ (système fermé).  
+- **Échauffement** : \$Q = C\Delta T = m c \Delta T\$.  
+- **Changement d’état** : \$Q = mL\$.  
+- **Puissance** : \$P=\Delta E/\Delta t\$ ⇒ \$\Delta t=\Delta E/P\$.  
+- **Travail de pression** : \$W=-P\Delta V\$.  
+- **Calorimétrie** : dans un calorimètre (quasi isolé), **somme des Q = 0**.
+
+---
+
+<Box type="success" title="Ce que tu gagnes si tu maîtrises ça">
+Tu peux traiter *beaucoup* de sujets bac : moteurs/transformations, calorimétrie, changements d’état, rendement énergétique, chauffage domestique, micro-ondes, etc.
+</Box>

@@ -1,0 +1,206 @@
+---
+id: "spectroscopie-ir"
+title: "Spectroscopie IR : identifier les fonctions organiques (bandes caractéristiques + empreinte)"
+track: "chimie"
+level: 2
+prerequisites: ["Fonctions organiques (alcool, acide, amine, amide, ester…)", "Liaisons chimiques", "Lecture de graphiques"]
+tags: ["IR", "spectroscopie infrarouge", "bandes caractéristiques", "empreinte digitale", "identification", "organique"]
+estimatedTime: 160
+chapter: "analyse-chimique"
+order: 7
+---
+
+import Box from '@site/src/components/Box';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Spectroscopie IR : l’outil n°1 pour reconnaître une fonction organique
+
+> **Idée directrice** : une molécule absorbe des infrarouges qui **mettent en vibration ses liaisons**. Chaque type de liaison “sonne” à des nombres d’onde caractéristiques → on identifie des **groupes fonctionnels**. fileciteturn30file1L1-L11  
+> Un spectre IR trace la **transmittance** \(T\) en fonction du **nombre d’onde** \(\sigma\) (en cm\(^{-1}\)). fileciteturn30file1L4-L11
+
+---
+
+## 0) Intuition & analogies (pour vraiment comprendre)
+
+### 0.1 Analogie “cordes de guitare”
+Une liaison chimique, c’est comme une corde :
+- **plus elle est “raide”** (liaison forte, type double liaison), plus sa fréquence de vibration est élevée,
+- **plus les atomes sont lourds**, plus ça vibre “lentement”.
+
+Les infrarouges “excitent” ces vibrations : ce sont des modes vibrationnels (élongations et déformations). fileciteturn30file4L22-L24
+
+### 0.2 Analogie “barcode” (code-barres)
+- La zone des **bandes caractéristiques** (en gros au-dessus de ~1500 cm\(^{-1}\)) te dit **quelle fonction** est présente.
+- La zone **empreinte digitale** (fingerprint) est comme un code-barres : elle est propre à la molécule (utile pour comparer deux échantillons). fileciteturn30file4L24-L27
+
+### 0.3 Analogie “spectre = paysages de vallées”
+Sur un spectre de transmittance :
+- un **creux** (baisse de T) = une **absorption** (la molécule “mange” l’IR à cette fréquence)
+- plus le creux est profond → absorption plus intense.
+
+---
+
+## 1) Le vocabulaire IR (à maîtriser)
+
+### 1.1 Domaine IR et ce qu’on mesure
+- Les molécules organiques absorbent des IR (longueurs d’onde de l’ordre de quelques micromètres), ce qui modifie leur état vibratoire. fileciteturn30file1L1-L4  
+- Le spectre IR représente \(T\) en fonction du nombre d’onde \(\sigma\). fileciteturn30file1L4-L11
+
+### 1.2 Nombre d’onde \(\sigma\)
+Le nombre d’onde est une manière “pratique” d’exprimer la fréquence en spectroscopie (en cm\(^{-1}\)). fileciteturn30file1L4-L9  
+À retenir qualitativement :  
+- **grand \(\sigma\)** → vibrations plus énergétiques (souvent liaisons X–H)  
+- **petit \(\sigma\)** → vibrations moins énergétiques (empreinte, liaisons simples, etc.)
+
+### 1.3 Comment on décrit une bande
+Les bandes se décrivent par :
+- **position** (cm\(^{-1}\)),
+- **intensité** (faible/moyenne/forte),
+- **forme** (large ou fine). fileciteturn30file1L12-L15
+
+---
+
+## 2) Les deux zones d’un spectre IR (à exploiter comme un pro)
+
+Dans un spectre IR, on distingue :
+1) **Zone des groupes fonctionnels** : celle qu’on exploite en Terminale. fileciteturn30file4L24-L27  
+2) **Zone d’empreinte digitale** : utile surtout pour comparer. fileciteturn30file4L24-L27
+
+<Box type="info" title="Stratégie bac">
+Tu ne fais pas une “analyse complète” : tu cherches 2–3 bandes très diagnostiques (O–H, C=O, N–H…) puis tu confirmes avec une bande secondaire (C–O, C–N…).
+</Box>
+
+---
+
+## 3) Table des bandes indispensables (Terminale)
+
+Les tableaux fournis dans tes documents donnent les bandes les plus utiles.
+
+### 3.1 Bandes X–H (haut du spectre)
+- **O–H alcool libre** : 3500–3700 cm\(^{-1}\), forte et fine fileciteturn30file0L38-L41  
+- **O–H alcool lié (pont H)** : 3200–3400 cm\(^{-1}\), forte et large fileciteturn30file0L40-L42  
+- **O–H acide carboxylique** : 2500–3200 cm\(^{-1}\), très large fileciteturn30file0L41-L42 fileciteturn30file8L3-L4  
+- **N–H amine** : ~3100–3500 cm\(^{-1}\), moyenne fileciteturn30file5L18-L19  
+- **Amine primaire** : 2 bandes autour de 3500 et 3410 cm\(^{-1}\) fileciteturn30file8L5-L10  
+- **Amine secondaire** : 1 bande entre 3500–3310 cm\(^{-1}\) fileciteturn30file8L10-L11
+
+### 3.2 Bande carbonyle C=O (la plus “diagnostique”)
+- **Ester** : 1700–1740 cm\(^{-1}\), forte fileciteturn30file5L20-L21  
+- **Aldéhyde / cétone** : 1650–1730 cm\(^{-1}\), forte fileciteturn30file5L21-L22  
+- **Acide carboxylique (C=O)** : 1680–1710 cm\(^{-1}\), forte fileciteturn30file5L22-L23  
+- **Amide (C=O)** : 1650–1700 cm\(^{-1}\), forte fileciteturn30file8L49-L50  
+
+> Exemple d’ordre de grandeur rappelé : une bande vers **1700 cm\(^{-1}\)** signe souvent un **C=O**. fileciteturn30file3L16-L19
+
+### 3.3 Bandes “confirmation”
+- **C–O (esters)** : 1300–1050 cm\(^{-1}\), fortes fileciteturn30file8L62-L63  
+- **C–O (alcools)** : selon primaire/secondaire/tertiaire autour de 1200–1050 cm\(^{-1}\) fileciteturn30file8L64-L66  
+- **C–N amines** : 1360–1020 cm\(^{-1}\) (selon aliphatiques/aromatiques) fileciteturn30file8L57-L61
+
+---
+
+## 4) Méthode bac : identifier une fonction à partir d’un spectre
+
+### Étape 1 — Chercher les “grosses signatures”
+1) Y a‑t‑il un **O–H** ? (large ? très large ?)  
+2) Y a‑t‑il un **C=O** (vers 1650–1750) ?  
+3) Y a‑t‑il un **N–H** (1 ou 2 bandes) ?
+
+### Étape 2 — Croiser les indices
+- **Acide carboxylique** : C=O + O–H **très large** (2500–3300) fileciteturn30file8L3-L4  
+- **Alcool** : O–H large (3200–3400) et pas de C=O fileciteturn30file0L40-L42  
+- **Ester** : C=O (1700–1740) + C–O fort (1300–1050) fileciteturn30file5L20-L21 fileciteturn30file8L62-L63  
+- **Amide** : C=O (1650–1700) + N–H (souvent large) fileciteturn30file8L49-L50 fileciteturn30file8L11-L18  
+
+### Étape 3 — Utiliser l’empreinte digitale
+Si deux candidats ont les mêmes fonctions, l’empreinte digitale permet de les départager (comparaison à un spectre de référence). fileciteturn30file4L24-L27
+
+---
+
+## 5) Exemples et exercices intégrés (avec corrigés)
+
+### Exercice 1 — “Amide ou amine ?” (piège classique)
+On observe une bande intense à **1650 cm\(^{-1}\)** et des bandes autour de 3363 et 3192 cm\(^{-1}\).  
+Peut‑on conclure à une amine ?
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé">
+Non. La bande à **1650 cm\(^{-1}\)** correspond à un **C=O d’amide** (1650–1700 cm\(^{-1}\), bande intense). fileciteturn30file3L62-L67 fileciteturn30file3L79-L82  
+Les deux bandes (3363 et 3192 cm\(^{-1}\)) correspondent à des liaisons **N–H d’un amide non substitué** (–CONH\(_2\)). fileciteturn30file3L83-L84
+  </TabItem>
+  <TabItem value="astuce" label="Astuce">
+**Réflexe** : si tu vois un pic fort vers 1650–1750 → pense d’abord “C=O”.  
+Une amine n’a pas de carbonyle.
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 2 — “Alcool ou cétone ?” (à partir d’un seul détail)
+Un spectre ne présente **pas** de bande carbonyle vers 1700 cm\(^{-1}\), mais montre une bande **large** vers 3350 cm\(^{-1}\).
+
+Quel composé est le plus probable : butan‑2‑ol ou butanone ?
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé">
+Le **butan‑2‑ol**. L’absence de bande C=O (≈1700 pour cétone) exclut une cétone, et la bande large vers 3350 cm\(^{-1}\) est typique d’un **O–H lié (alcool)**. fileciteturn30file6L13-L15 fileciteturn30file0L40-L42
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 3 — Associer 3 spectres à 3 molécules (méthode complète)
+On a 3 spectres :
+- A : une bande O–H liée vers 3300 cm\(^{-1}\)
+- B : une bande C=O d’aldéhyde vers 1730 cm\(^{-1}\)
+- C : une bande O–H + une bande C=C vers 1620 cm\(^{-1}\)
+
+Associer : éthanol, butanal, pent‑4‑èn‑2‑ol.
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé (raisonnement)">
+- Spectre A : éthanol (O–H lié ~3300) fileciteturn30file6L17-L18  
+- Spectre B : butanal (C=O aldéhyde ~1730) fileciteturn30file6L18-L19  
+- Spectre C : pent‑4‑èn‑2‑ol (O–H + C=C ~1620) fileciteturn30file6L19-L20
+  </TabItem>
+</Tabs>
+
+---
+
+## 6) Erreurs classiques (et comment les éviter)
+
+### 6.1 Lire “à l’envers” (transmittance vs absorbance)
+En IR on lit souvent la **transmittance** : un creux = absorption. fileciteturn30file1L4-L11  
+✅ Réflexe : “plus c’est bas, plus ça absorbe”.
+
+### 6.2 Confondre alcool et acide carboxylique (piège n°1)
+- alcool : O–H large 3200–3400  
+- acide : O–H **très large** 2500–3300 + C=O ~1700 fileciteturn30file8L3-L4 fileciteturn30file5L22-L23  
+✅ Réflexe : chercher **les deux signatures** de l’acide : O–H très large + C=O.
+
+### 6.3 Oublier que “C=O” se décline (ester / cétone / acide / amide)
+Tous donnent une bande forte dans la zone ~1650–1750, mais pas au même endroit. fileciteturn30file5L20-L23  
+✅ Réflexe : utiliser une bande de confirmation (C–O des esters, N–H des amides).
+
+### 6.4 Sur-interpréter la zone C–H ~3000
+Les documents rappellent que la zone autour de 3000 peut être complexe (moins utile seule). fileciteturn30file6L38-L40  
+✅ Réflexe : ne jamais conclure seulement avec “C–H” → c’est rarement discriminant.
+
+---
+
+## 7) Mini-résumé (ce que tu dois reconnaître vite)
+
+- **Spectre IR** : \(T\) en fonction de \(\sigma\) (cm\(^{-1}\)) fileciteturn30file1L4-L11  
+- **Bandes = vibrations** ; analyser **position + intensité + forme** fileciteturn30file1L12-L15  
+- Deux zones : **groupes fonctionnels** + **empreinte digitale** fileciteturn30file4L24-L27  
+
+### Bandes phares
+- Alcool O–H : 3200–3400 (large) ; libre : 3500–3700 (fine) fileciteturn30file0L40-L41  
+- Acide O–H : 2500–3300 (très large) + C=O ~1700 fileciteturn30file8L3-L4 fileciteturn30file5L22-L23  
+- Carbonyle C=O : 1650–1750 (fort) ; ester 1700–1740 fileciteturn30file5L20-L22  
+- N–H : amine ~3100–3500 ; primaire = 2 bandes, secondaire = 1 fileciteturn30file8L5-L11  
+
+<Box type="success" title="Compétence bac">
+Être capable, à partir d’un spectre IR, de **proposer** (ou éliminer) une fonction, et d’argumenter en citant 2 bandes caractéristiques, comme dans les corrigés d’exercices. fileciteturn30file6L13-L20
+</Box>

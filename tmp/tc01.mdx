@@ -1,0 +1,166 @@
+---
+id: "aspects-energetiques-chimie"
+title: "Thermochimie : La Réaction Chimique comme Source d'Énergie"
+track: "chimie"
+level: 2
+prerequisites: ["Mole et masse molaire", "Transformations chimiques"]
+tags: ["combustion", "exothermique", "pouvoir calorifique", "calorimétrie", "énergie molaire"]
+estimatedTime: 90
+chapter: "l-énergie-conversions-et-transferts"
+order: 12
+---
+
+# Aspects Énergétiques : Combustions et Calorimétrie
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Distinguer une transformation **exothermique** d'une transformation **endothermique**.
+- Écrire l'équation d'une réaction de **combustion** complète.
+- Calculer l'énergie libérée par une réaction en utilisant le **Pouvoir Calorifique (PC)** ou l'énergie molaire de réaction.
+- Exploiter une expérience de **calorimétrie** pour mesurer une énergie.
+- Comprendre l'origine microscopique de cette énergie (rupture et formation de liaisons).
+
+---
+
+## 1. Intuition et Analogie : Le Ressort Chimique
+
+Pourquoi brûler du bois chauffe-t-il ? D'où vient cette énergie ?
+
+> **Analogie : Le Piège à Souris**
+> Imaginez une molécule de combustible (essence, bois) comme un **piège à souris tendu** (ressort comprimé).
+> *   L'énergie est déjà là, stockée dans les liaisons des atomes (énergie potentielle microscopique). C'est de l'énergie chimique.
+> *   L'étincelle est le déclencheur qui fait "sauter" le piège.
+> *   La réaction chimique est la détente brutale du ressort : l'énergie potentielle stockée est libérée vers l'extérieur sous forme d'agitation (chaleur).
+>
+> En thermochimie, on ne crée pas l'énergie, on la libère d'une "prison" chimique pour la transférer à l'extérieur.
+
+---
+
+## 2. La Nature Énergétique des Réactions
+
+Lors d'une transformation chimique, le système échange de l'énergie thermique ($Q$) avec l'extérieur. Selon le sens de cet échange, on classe les réactions en deux catégories.
+
+### A. Réaction Exothermique (La plus courante)
+Le système **perd** de l'énergie thermique vers l'extérieur.
+*   **Signe :** $Q < 0$ (du point de vue du système chimique).
+*   **Effet observable :** La température du milieu extérieur augmente (ça chauffe).
+*   *Exemples :* Combustions, réactions acide-base violentes, respiration cellulaire[1].
+
+### B. Réaction Endothermique
+Le système **reçoit** (absorbe) de l'énergie thermique de l'extérieur.
+*   **Signe :** $Q > 0$.
+*   **Effet observable :** La température du milieu extérieur diminue (ça refroidit) ou bien il faut chauffer continuellement pour que la réaction se produise.
+*   *Exemples :* Fonte d'un glaçon (changement d'état physique), cuisson d'un aliment, certaines dissolutions de sels.
+
+---
+
+## 3. L'Archétype : La Réaction de Combustion
+
+C'est la réaction thermochimique de référence pour la production d'énergie.
+
+### A. Définition et Équation
+Une combustion est une réaction d'oxydoréduction rapide entre un **combustible** (ce qui brûle, ex: propane) et un **comburant** (ce qui fait brûler, généralement le dioxygène $O_2$)[2],[3].
+
+Pour une **combustion complète** d'un alcane ou d'un alcool, les seuls produits sont le dioxyde de carbone ($CO_2$) et l'eau ($H_2O$)[4].
+
+> **Exemple : Combustion du Propane ($C_3H_8$)**
+> $$C_3H_8 (g) + 5 O_2 (g) \rightarrow 3 CO_2 (g) + 4 H_2O (g)$$
+> *Note : Il faut toujours équilibrer l'équation pour respecter la conservation des éléments (C, H, puis O).*
+
+### B. Pourquoi ça chauffe ? (Approche microscopique)
+Une réaction chimique se déroule en deux temps énergétiques :
+1.  **Briser les liaisons** des réactifs : Cela **coûte** de l'énergie (il faut "casser" les molécules de propane et d'O2).
+2.  **Former les liaisons** des produits : Cela **libère** de l'énergie (formation du CO2 et H2O).
+
+Dans une combustion, l'énergie libérée par la formation des liaisons fortes de $CO_2$ et $H_2O$ est bien supérieure à l'énergie dépensée pour casser les réactifs. Le bilan est donc une libération nette d'énergie.
+
+---
+
+## 4. Quantifier l'Énergie Libérée
+
+Comment calculer l'énergie $E$ (ou la chaleur $Q$) fournie par la combustion d'une certaine quantité de matière ?
+
+### A. L'Énergie Molaire de Réaction ($\Delta_r H$ ou $E_m$)
+C'est l'énergie libérée par la combustion d'**une mole** de combustible.
+*   Unité : Joule par mole ($J \cdot mol^{-1}$).
+*   Formule :
+    $$Q = n \times E_{molaire}$$
+    *   $n$ : quantité de matière de combustible (mol).
+
+### B. Le Pouvoir Calorifique ($PC$)
+Dans l'industrie et la vie courante (facture de gaz), on utilise plutôt le **Pouvoir Calorifique** (aussi noté PCI pour Pouvoir Calorifique Inférieur). C'est l'énergie libérée par la combustion d'**un kilogramme** de combustible[2].
+
+*   Unité : $J \cdot kg^{-1}$ ou souvent $kWh \cdot kg^{-1}$.
+*   Formule :
+    $$E_{libérée} = m_{combustible} \times PC$$
+
+:::tip[Conversion utile]
+Les sujets de bac utilisent souvent le $kWh$.
+$$1 \text{ kWh} = 3,6 \times 10^6 \text{ Joules}$$
+:::
+
+---
+
+## 5. La Calorimétrie : Mesurer l'Énergie
+
+Pour mesurer expérimentalement l'énergie libérée par une réaction, on utilise un **calorimètre** (un récipient isolé thermiquement, comme un thermos)[5],[6].
+
+### Le Principe
+On réalise la réaction (ou on plonge un objet chaud) dans une masse d'eau connue à l'intérieur du calorimètre. On considère que le système est **isolé** : toute la chaleur perdue par la réaction est gagnée par l'eau et le calorimètre[7],[8].
+
+$$Q_{système} = 0 \implies Q_{réaction} + Q_{eau} + Q_{calorimètre} = 0$$
+
+### Les Formules clés
+1.  **Chaleur gagnée par l'eau :**
+    $$Q_{eau} = m_{eau} \times c_{eau} \times (T_{finale} - T_{initiale})$$
+    *   $c_{eau} \approx 4180 \ J \cdot kg^{-1} \cdot K^{-1}$ (capacité thermique massique)[9].
+2.  **Chaleur gagnée par le calorimètre :**
+    $$Q_{calo} = C_{calo} \times (T_{finale} - T_{initiale})$$
+    *   $C_{calo}$ est la capacité thermique du vase ($J \cdot K^{-1}$)[6].
+
+---
+
+## 6. Exemples Résolus
+
+> **Exemple 1 : Chauffage au Propane (Calcul via le PC)**
+> **Données :** On brûle une masse $m = 10 \text{ kg}$ de propane ($C_3H_8$) pour chauffer un local. Le pouvoir calorifique du propane est $PC = 13,7 \text{ kWh}\cdot\text{kg}^{-1}$[2].
+>
+> **Question :** Quelle est l'énergie totale libérée en Joules ?
+>
+> **Solution :**
+> 1.  **Calcul en kWh :**
+>     $E = m \times PC = 10 \times 13,7 = 137 \text{ kWh}$.
+> 2.  **Conversion en Joules :**
+>     $E_{Joule} = 137 \times 3,6 \times 10^6 = 4,93 \times 10^8 \text{ J}$.
+> 3.  **Lien avec la quantité de matière :**
+>     La masse molaire du propane est $M(C_3H_8) = 3 \times 12 + 8 \times 1 = 44 \text{ g/mol}$.
+>     Nombre de moles : $n = \frac{10000}{44} \approx 227 \text{ mol}$[4].
+
+> **Exemple 2 : Expérience de Calorimétrie**
+> **Contexte :** On plonge un bloc de métal chaud (cuivre) dans de l'eau froide contenue dans un calorimètre.
+> *   $m_{eau} = 150 \text{ g}$, $T_{eau,i} = 15,3 \text{ °C}$.
+> *   $m_{cuivre} = ?, \ T_{cuivre,i} = 100 \text{ °C}$ (eau bouillante).
+> *   $T_{finale} = 18 \text{ °C}$.
+>
+> **Objectif :** Trouver l'énergie cédée par le cuivre.
+>
+> **Raisonnement :**
+> 1.  Le système est isolé : L'énergie perdue par le cuivre = L'énergie gagnée par l'eau (on néglige le calorimètre pour simplifier ici).
+> 2.  **Calcul de l'énergie gagnée par l'eau ($Q_{eau}$) :**
+>     $Q_{eau} = m_{eau} \cdot c_{eau} \cdot (T_f - T_i)$
+>     $Q_{eau} = 0,150 \times 4180 \times (18 - 15,3)$
+>     $Q_{eau} = 0,150 \times 4180 \times 2,7 \approx 1693 \text{ J}$.
+> 3.  **Conclusion :** Le cuivre a cédé $Q_{cuivre} = -1693 \text{ J}$. Le signe "moins" confirme que c'est une perte d'énergie (exothermique du point de vue du métal)[10].
+
+## Mini-résumé pour retenir l'essentiel
+
+| Concept | Formule / Définition | Unité type |
+| :--- | :--- | :--- |
+| **Exothermique** | Libère de l'énergie ($Q < 0$ pour le réactif) | Joules (J) |
+| **Endothermique** | Absorbe de l'énergie ($Q > 0$) | Joules (J) |
+| **Combustion** | Combustible + $O_2 \rightarrow CO_2 + H_2O$ | - |
+| **Pouvoir Calorifique** | Énergie par kg de combustible | $J/kg$ ou $kWh/kg$ |
+| **Énergie libérée** | $E = m \times PC$ | Joules (J) |
+| **Calorimétrie** | $Q_{gagné} + Q_{perdu} = 0$ (Système isolé) | - |
+| **Chaleur (Eau)** | $Q = m \cdot c \cdot \Delta T$ | $c_{eau} = 4180 J \cdot kg^{-1} \cdot K^{-1}$ |
+

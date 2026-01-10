@@ -1,0 +1,260 @@
+---
+id: "interference-lumineuse"
+title: "Interférences lumineuses : expérience de Young, différence de marche, interfrange"
+track: "physique"
+level: 2
+prerequisites: ["Ondes mécaniques progressives", "Diffraction", "Trigonométrie (petits angles)"]
+tags: ["interférences", "Young", "différence de marche", "cohérence", "interfrange", "lame mince"]
+estimatedTime: 150
+chapter: "ondes-et-signaux"
+order: 3
+---
+
+# Interférences lumineuses
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- expliquer **ce qui interfère** (superposition d’ondes) et dans quelles conditions ;
+- définir **cohérence**, **différence de marche** $\delta$ et **conditions** constructive/destructive ;
+- exploiter l’expérience des **fentes (ou trous) d’Young** pour relier $\delta$, $\lambda$, $D$, $a$ (ou $b$) et l’**interfrange** $i$ ;
+- résoudre des exercices (mesure de $\lambda$, identification d’un laser, raisonnement sur une **lame mince**).
+
+---
+
+## 0. Intuition et analogies (avant les formules)
+
+### 0.1 Superposition : « additionner ou soustraire »
+Quand deux ondes se superposent, elles peuvent **additionner** ou **soustraire** leurs amplitudes : on obtient une tache brillante ou sombre (lumière), ou bien crête/creux/plat (surface de l’eau). fileciteturn8file1L10-L13
+
+**Analogie rapide :**
+- Deux personnes qui poussent une porte **dans le même sens** → effet renforcé (constructif).
+- Deux personnes qui poussent **en sens opposé** → effet affaibli voire annulé (destructif).
+
+### 0.2 Pourquoi voit-on des franges ?
+Avec deux fentes fines, on s’attendrait à un éclairement uniforme… mais on observe une alternance régulière de bandes sombres et brillantes : les **franges d’interférences**. fileciteturn8file1L21-L23
+
+**Idée clé :**
+la lumière issue des deux fentes arrive au même point avec un **décalage** (chemins différents) : parfois en phase → brillant ; parfois en opposition → sombre. fileciteturn8file1L37-L42
+
+---
+
+## 1. Condition indispensable : la cohérence
+
+### 1.1 Définition (à connaître)
+Deux ondes doivent être **cohérentes** pour pouvoir interférer. fileciteturn8file7L7-L10  
+Dans le manuel : elles sont cohérentes si elles sont sinusoïdales, ont la **même fréquence** et un **déphasage constant** dans le temps. fileciteturn8file7L25-L30
+
+### 1.2 Pourquoi, en pratique, on part d’une source unique ?
+On crée deux sources secondaires (les deux fentes/ trous) à partir d’une **même source** : on garantit alors qu’elles sont synchrones et en phase au départ (conditions de cohérence). fileciteturn8file4L8-L16
+
+#### Mini-question (guidée)
+Pourquoi deux ampoules ordinaires ne donnent-elles pas facilement des interférences stables ?
+
+**Correction (idée)**
+Parce que le déphasage entre leurs émissions n’est pas constant : elles ne sont pas cohérentes (contrairement à un laser + double fente).
+
+---
+
+## 2. Expérience des fentes (ou trous) d’Young : le modèle de base
+
+### 2.1 Dispositif et observation
+Une source monochromatique (souvent un laser) éclaire deux fentes fines ; sur l’écran, on observe des franges sombres et brillantes : **interférences lumineuses**. fileciteturn8file1L13-L23
+
+### 2.2 Définitions utiles
+- **Interfrange** $i$ : distance entre deux franges brillantes (ou sombres) successives. fileciteturn8file1L24-L26
+- **Différence de marche** $\delta$ : différence des distances parcourues par les deux ondes jusqu’au point d’observation $M$ :
+\[
+\delta = S_1M - S_2M
+\]
+fileciteturn8file1L37-L40
+
+---
+
+## 3. Constructif / destructif : les conditions à automatiser
+
+### 3.1 Interférences constructives (frange brillante)
+\[
+\delta = k\lambda \quad (k\in \mathbb{Z})
+\]
+fileciteturn8file1L40-L41
+
+### 3.2 Interférences destructives (frange sombre)
+\[
+\delta = (2k+1)\frac{\lambda}{2} \quad (k\in \mathbb{Z})
+\]
+fileciteturn8file1L40-L42
+
+### Mini-exercice 1 (flash)
+Si $\delta = 3{,}5\,\lambda$, observe-t-on une frange brillante ou sombre ?
+
+**Correction**
+$3{,}5\lambda = (2\times 1 + 1)\dfrac{\lambda}{2} + 3\lambda$ : c’est un multiple impair de $\lambda/2$ → **destructive**.
+
+---
+
+## 4. Approximation de Young : relier $\delta$ à la position sur l’écran
+
+### 4.1 Expression pratique de la différence de marche
+Dans le modèle des trous/fentes d’Young, on montre (petits angles) que la différence de marche est proportionnelle à la position $x$ sur l’écran :
+\[
+\delta = \frac{b\,x}{D}
+\]
+où :
+- $b$ = écartement des deux trous/fentes,
+- $D$ = distance fentes–écran,
+- $x$ = abscisse du point $M$ sur l’écran. fileciteturn8file0L19-L23
+
+> Remarque de vocabulaire : certains documents notent l’écartement **a** au lieu de **b**. Dans Prépabac, l’interfrange est écrite avec $a$ : fileciteturn8file1L24-L29
+
+---
+
+## 5. Interfrange : formule, sens, exploitation
+
+### 5.1 Formule de l’interfrange
+La distance entre deux franges brillantes consécutives (ou deux franges sombres consécutives) est :
+\[
+i=\frac{\lambda D}{b}
+\]
+fileciteturn8file0L22-L31
+
+Dans Prépabac (même idée, notation $a$ pour l’écartement) :
+\[
+i=\frac{\lambda D}{a}
+\]
+fileciteturn8file1L24-L29
+
+### 5.2 Lecture physique (très important)
+- Si $D$ augmente → les franges s’écartent (i augmente).
+- Si l’écartement $b$ (ou $a$) augmente → les franges se resserrent (i diminue).
+- Si la longueur d’onde $\lambda$ augmente (rouge > vert) → i augmente.
+
+### Mini-exercice 2 (laser rouge vs vert)
+Pourquoi un laser rouge donne-t-il en général un interfrange plus grand qu’un laser vert ?
+
+**Correction**
+Parce que $\lambda_{\text{rouge}} > \lambda_{\text{vert}}$ donc $i=\lambda D/b$ est plus grand.
+
+---
+
+## 6. Exercices intégrés (avec corrigés) — inspirés des manuels
+
+### Exercice 3 (type bac) : déterminer $\lambda$ avec l’interfrange
+Données : écartement $a = 200\,\mu\text{m}$, distance $D = 40{,}0\,\text{cm}$, interfrange mesuré $i = 0{,}875\,\text{mm}$.  
+1) Rappeler la formule de l’interfrange.  
+2) Exprimer $\lambda$ puis calculer sa valeur en mètres.
+
+**Correction (méthode Prépabac)**
+1) $i=\dfrac{\lambda D}{a}$. fileciteturn8file7L55-L56  
+2) $\lambda = \dfrac{i\,a}{D}$ (isoler $\lambda$ comme dans la méthode). fileciteturn8file7L57-L61  
+Conversions : $a=200\times10^{-6}\,\text{m}$, $D=0{,}400\,\text{m}$, $i=0{,}875\times10^{-3}\,\text{m}$.  
+Donc
+\[
+\lambda=\frac{0{,}875\times10^{-3}\times 200\times10^{-6}}{0{,}400}
+\approx 4{,}38\times10^{-7}\,\text{m}
+\]
+soit $\lambda \approx 438\,\text{nm}$ (dans le bleu).
+
+---
+
+### Exercice 4 (guidé) : constructive ou destructive à partir de $\delta$
+Au point $M$, on mesure une différence de marche $\delta=3{,}2\,\mu\text{m}$, avec un laser rouge de $\lambda=635\,\text{nm}$.  
+Montrer que l’interférence est constructive.
+
+**Correction**
+On calcule l’ordre $k=\delta/\lambda$ :
+\[
+k=\frac{3{,}2\times10^{-6}}{635\times10^{-9}}\approx 5
+\]
+Donc $\delta = k\lambda$ avec $k$ entier → **constructive**. Cette démarche est exactement celle du corrigé. fileciteturn8file14L24-L33
+
+---
+
+### Exercice 5 (expert) : angle, petits angles, et δ(y)
+Dans le corrigé Ellipses, on établit une chaîne classique :
+- $\tan\theta \approx \theta = \dfrac{y_M}{D}$ (petits angles),
+- $\delta \approx \dfrac{e\,y_M}{D}$ (avec $e$ l’écartement des fentes),
+- et on retrouve $i$ puis $\lambda = \dfrac{e\,i}{D}$. fileciteturn8file5L24-L35 fileciteturn8file5L41-L50
+
+**Question**
+Explique, en une phrase, ce que signifie « petits angles » ici, et pourquoi on l’utilise.
+
+**Correction**
+Quand $\theta$ est petit (en radians), $\tan\theta \approx \theta$, ce qui simplifie la géométrie et permet de relier linéairement $\delta$ à $y_M$ (donc à la position des franges). fileciteturn8file2L12-L16
+
+---
+
+## 7. Interférences dans la nature : l’exemple des lames minces (couleurs)
+
+Certains plumages (ex : colibris) présentent des couleurs non pigmentaires : elles proviennent d’interférences dans des couches fines transparentes, avec des rayons réfléchis multiples. fileciteturn8file8L9-L18
+
+### 7.1 Modèle “lame mince”
+Une lamelle d’épaisseur $e$ et d’indice $n(\lambda)$ peut conduire à une différence de marche :
+\[
+\delta = 2\,n\,e\,\cos(r) + \frac{\lambda}{2}
+\]
+(avec une réflexion introduisant un déphasage équivalent à $\lambda/2$ dans ce modèle). fileciteturn8file8L26-L30
+
+#### Mini-question (expert)
+Pourquoi la couleur peut-elle changer avec l’angle d’observation ?
+
+**Correction**
+Parce que $\delta$ dépend de $\cos(r)$ donc de l’angle (via Snell-Descartes) : la condition constructive dépend alors de l’incidence/observation, ce qui explique des couleurs « changeantes ». fileciteturn8file14L39-L41
+
+---
+
+## 8. Erreurs classiques (et comment les éviter)
+
+### ❌ Erreur 1 : confondre “cohérentes” et “même longueur d’onde”
+**Pourquoi c’est faux**
+Deux ondes peuvent avoir la même fréquence sans avoir un déphasage constant.
+
+**À faire**
+Toujours citer la condition complète : même fréquence + déphasage constant. fileciteturn8file7L25-L30
+
+---
+
+### ❌ Erreur 2 : oublier les unités (nm, µm, mm, cm…)
+**Symptôme**
+Tu trouves une longueur d’onde de l’ordre du mètre.
+
+**À faire**
+Convertir systématiquement en mètres : le manuel insiste sur ces conversions (µm, mm, cm). fileciteturn8file2L17-L18
+
+---
+
+### ❌ Erreur 3 : intervertir $a/b$ et $D$ dans l’interfrange
+**À faire**
+Retenir la structure :  
+- $i$ **proportionnel** à $D$ et à $\lambda$  
+- $i$ **inversement proportionnel** à l’écartement des fentes. fileciteturn8file1L24-L29
+
+**Test rapide**
+Si tu doubles $D$, $i$ doit doubler. Si ton résultat ne suit pas cette logique, tu as inversé.
+
+---
+
+### ❌ Erreur 4 : confusion sur la condition destructive
+**À faire**
+Retenir : destructive = multiple **impair** de $\lambda/2$. fileciteturn8file0L38-L41
+
+---
+
+## 9. Méthode type bac (check-list)
+
+1) Identifier le dispositif (Young / lame mince).  
+2) Vérifier la cohérence (source unique → OK). fileciteturn8file4L8-L16  
+3) Écrire la différence de marche $\delta$. fileciteturn8file1L37-L40  
+4) Choisir condition constructive ou destructive. fileciteturn8file1L40-L42  
+5) Relier à la géométrie ($\delta = bx/D$) et/ou à l’interfrange ($i=\lambda D/b$). fileciteturn8file0L19-L31  
+6) Convertir, calculer, puis faire un contrôle d’ordre de grandeur.
+
+---
+
+## 10. À retenir (ultra-synthèse)
+
+- Interférence = superposition : ondes s’additionnent ou se soustraient. fileciteturn8file1L10-L13  
+- Cohérence : même fréquence + déphasage constant. fileciteturn8file7L25-L30  
+- Différence de marche : $\delta = S_1M - S_2M$. fileciteturn8file1L37-L40  
+- Constructive : $\delta = k\lambda$ ; destructive : $\delta = (2k+1)\lambda/2$. fileciteturn8file1L40-L42  
+- Interfrange : $i=\lambda D/a$ (ou $i=\lambda D/b$ selon notations). fileciteturn8file1L24-L29 fileciteturn8file0L22-L31  
+- Lames minces : $\delta = 2ne\cos(r) + \lambda/2$ (modèle). fileciteturn8file8L26-L30

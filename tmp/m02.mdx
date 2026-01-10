@@ -1,0 +1,231 @@
+---
+id: "mouvement-champ-uniforme"
+title: "Mouvement dans un champ uniforme : projectile (g) et particule chargée (E)"
+track: "physique"
+level: 2
+prerequisites: ["Vecteurs", "Cinématique (x(t), v(t), a(t))", "Lois de Newton", "Énergie cinétique", "Tension électrique"]
+tags: ["champ uniforme", "chute libre", "tir parabolique", "champ électrique", "condensateur", "équations horaires"]
+estimatedTime: 160
+chapter: "mouvement-et-interactions"
+order: 5
+---
+
+# Mouvement dans un champ uniforme
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- définir un **champ uniforme** (pesanteur $\vec g$ / champ électrique $\vec E$) et ce que cela implique : **accélération constante** ;
+- établir les **équations horaires** $\{x(t),y(t)\}$, puis l’**équation de trajectoire** $y(x)$ ;
+- expliquer pourquoi ces mouvements sont **plans** et pourquoi la trajectoire est souvent une **parabole** ;
+- exploiter des résultats utiles (portée, flèche, conditions de déviation) ;
+- résoudre des exercices type bac : projectile et particule chargée entre plaques.
+
+---
+
+## 0. Intuition et analogies : “un champ uniforme = une accélération constante”
+
+### 0.1 Le mot “champ” : une règle locale
+Un champ (de pesanteur ou électrique) donne, en chaque point de l’espace, une “règle” qui dit :
+- **quelle force** agirait sur un objet placé là.
+
+Si le champ est **uniforme**, cette règle est la même partout :
+- même direction, même sens, même valeur.
+
+Dans l’aide-mémoire, la fiche récapitule exactement l’idée “mouvement dans un champ” et associe à chaque cas une accélération constante et une trajectoire parabolique. fileciteturn9file0L7-L23
+
+### 0.2 Analogie clé : projectile (g) ↔ particule (E)
+Les manuels insistent sur l’analogie :
+- projectile dans un champ de pesanteur uniforme → accélération $\vec a = \vec g$ (constante)
+- particule chargée dans un champ électrique uniforme → accélération $\vec a = \dfrac{q}{m}\vec E$ (constante si $\vec E$ uniforme)
+
+Et ils précisent que le **signe de la charge** oriente le mouvement. fileciteturn9file3L49-L62
+
+---
+
+## 1. Qu’est-ce qu’un champ uniforme ?
+
+### 1.1 Champ de pesanteur uniforme (proche de la Terre)
+Dans l’étude du projectile, le champ est modélisé uniforme :
+\[
+\vec g = -g\,\vec j
+\]
+(axe vertical orienté vers le haut). fileciteturn9file12L83-L90
+
+**Conséquence :** l’accélération du centre de masse est constante et confondue avec $\vec g$ en chute libre. fileciteturn9file2L55-L58
+
+### 1.2 Champ électrique uniforme (condensateur plan)
+Un champ électrique uniforme peut être obtenu entre deux plaques planes $P$ (positive) et $N$ (négative), séparées d’une distance $d$, avec une tension $U_{PN}$. fileciteturn9file3L5-L16
+
+- $\vec E$ est orthogonal aux plaques et orienté de $P$ vers $N$ (potentiels décroissants). fileciteturn9file3L11-L13
+- Sa valeur est :
+\[
+E=\frac{U_{PN}}{d}
+\]
+fileciteturn9file3L14-L16
+
+#### Mini-exercice 1 (flash : champ E)
+Deux plaques sont distantes de $0{,}20\ \text{m}$ et on applique $U_{PN}=1000\ \text{V}$.
+1) Calculer $E$ ; 2) donner l’orientation de $\vec E$.
+
+**Correction**  
+1) $E=1000/0{,}20=5000\ \text{V·m}^{-1}$ (valeur attendue dans le QCM). fileciteturn9file6L15-L20  
+2) $\vec E$ va de la plaque positive $P$ vers la plaque négative $N$. fileciteturn9file3L11-L13
+
+---
+
+## 2. Cas A : projectile en chute libre dans un champ de pesanteur uniforme
+
+### 2.1 Hypothèses (à annoncer au bac)
+On considère la chute libre si :
+- frottements de l’air et poussée d’Archimède négligeables,
+- seule force : le poids $\vec P = m\vec g$,
+donc $\sum\vec F = m\vec a \Rightarrow \vec a = \vec g$ (constante). fileciteturn9file12L85-L90
+
+### 2.2 Conditions initiales et composantes de la vitesse
+On lance à $t=0$ avec une vitesse $\vec v_0$ faisant un angle $\alpha$ avec l’horizontale :
+\[
+v_{0x}=v_0\cos\alpha,\qquad v_{0y}=v_0\sin\alpha
+\]
+La fiche méthode du Prépabac détaille ce point. fileciteturn9file10L51-L56
+
+### 2.3 Équations horaires (résultat à savoir refaire)
+Comme $\vec a = -g\vec j$ :
+- en $x$ : $a_x=0$ ⇒ $v_x$ constant ⇒ $x(t)$ affine ;
+- en $y$ : $a_y=-g$ ⇒ $v_y$ décroît linéairement ⇒ $y(t)$ quadratique.
+
+Le manuel insiste : la vitesse horizontale est constante et le mouvement est plan. fileciteturn9file2L59-L63
+
+Formes usuelles (avec $x_0,y_0$ positions initiales) :
+\[
+x(t)=x_0+v_0\cos\alpha\;t
+\]
+\[
+y(t)=y_0+v_0\sin\alpha\;t-\frac12 gt^2
+\]
+
+### 2.4 Équation de la trajectoire : pourquoi c’est une parabole ?
+On élimine $t$ :
+\[
+t=\frac{x-x_0}{v_0\cos\alpha}
+\]
+puis on remplace dans $y(t)$ : la fiche solution obtient une relation du type
+\[
+y = -\frac{g}{2v_0^2\cos^2\alpha}x^2+\tan(\alpha)\,x+\text{constante}
+\]
+et conclut : **trajectoire parabolique**. fileciteturn9file1L35-L54
+
+### Mini-exercice 2 (type bac : équations → parabole)
+Un projectile est lancé à $v_0=7{,}3\ \text{m·s}^{-1}$ sous $\alpha=52^\circ$, avec $g=9{,}8\ \text{m·s}^{-2}$.  
+1) Écrire $x(t)$ et $y(t)$ ; 2) éliminer $t$ et conclure sur la nature de la trajectoire.
+
+**Correction (structure attendue)**
+- écrire $x(t)=v_0\cos\alpha\;t$ et $y(t)= -\frac12 gt^2 + v_0\sin\alpha\;t$ (si $x_0=y_0=0$) ;
+- éliminer $t$ et obtenir une équation quadratique en $x$ ; le manuel donne un exemple numérique et conclut “parabole”. fileciteturn9file1L35-L54 fileciteturn9file10L30-L33
+
+### 2.5 Portée et flèche (résultats utiles)
+Dans la méthode Ellipses, on donne des expressions directes :
+- portée (cas simple sans hauteur initiale) : \( p = \dfrac{v_0^2\sin 2\alpha}{g} \)
+- flèche (hauteur max au-dessus de $y_0$) : \( H = y_0 + \dfrac{v_0^2\sin^2\alpha}{2g} \)
+fileciteturn9file11L25-L45
+
+**Interprétation**
+- $\sin(2\alpha)$ est maximal pour $\alpha=45^\circ$ ⇒ portée maximale à $45^\circ$ (dans ce modèle idéal).
+
+---
+
+## 3. Cas B : particule chargée dans un champ électrique uniforme
+
+### 3.1 Forces et accélération
+Une particule de charge $q$ subit une force électrique :
+\[
+\vec F = q\vec E
+\]
+fileciteturn9file3L26-L28
+
+Dans beaucoup de situations, le poids est négligeable devant $\vec F$ (ordre de grandeur charge/masse). fileciteturn9file3L28-L33
+
+Avec la 2e loi de Newton :
+\[
+\vec a = \frac{q}{m}\vec E
+\]
+constante si $\vec E$ uniforme. fileciteturn9file3L35-L41
+
+### 3.2 Sens du mouvement : rôle du signe de q
+Le manuel insiste :
+- si $q>0$, $\vec a$ et $\vec E$ sont de même sens ;
+- si $q<0$ (électron), elles sont de sens opposés. fileciteturn9file3L44-L47
+
+#### Mini-question (guidée)
+Un électron dans un champ $\vec E$ vers le haut : accélère-t-il vers le haut ou vers le bas ?
+
+**Correction**  
+Vers le bas, car $q<0$ ⇒ $\vec a$ opposée à $\vec E$. fileciteturn9file3L44-L47
+
+### 3.3 Trajectoires possibles : rectiligne ou parabolique
+Le Prépabac donne le résultat à connaître :
+- si $\vec v_0$ et $\vec E$ sont colinéaires → mouvement rectiligne uniformément accéléré ou ralenti (selon le sens de $\vec E$ et le signe de $q$) ;
+- sinon → mouvement **parabolique** (particule déviée). fileciteturn9file3L53-L62
+
+### Exercice 3 (type bac : équations et trajectoire dans E)
+Une particule de charge $q>0$ est lancée à $t=0$ avec une vitesse $\vec v_0$ dans un champ uniforme $\vec E = -E\,\vec j$.  
+1) Donner $\vec a$ ; 2) écrire $x(t)$ et $y(t)$ ; 3) montrer que la trajectoire est parabolique.
+
+**Correction (plan attendu du manuel)**
+- $\vec a = \dfrac{q}{m}\vec E = -\dfrac{qE}{m}\vec j$ ; fileciteturn9file7L78-L83  
+- primitives : $v_x$ constant et $v_y$ affine ; $x(t)$ affine et $y(t)$ quadratique ;  
+- élimination de $t$ ⇒ relation quadratique $y(x)$ ⇒ parabole (même méthode que pour le projectile). Le manuel guide explicitement : “trajectoire = relation entre x et y en éliminant le temps”. fileciteturn9file7L93-L96
+
+---
+
+## 4. Méthode universelle (à appliquer aux deux champs)
+
+### Étape 1 — Choisir le système et le référentiel
+- Système : projectile / particule.
+- Référentiel terrestre supposé galiléen (énoncé l’indique souvent). fileciteturn9file7L35-L43
+
+### Étape 2 — Lister les forces
+- champ de pesanteur : poids seul en chute libre. fileciteturn9file12L85-L90  
+- champ électrique : force électrique (souvent poids négligeable). fileciteturn9file3L28-L33
+
+### Étape 3 — Appliquer Newton et obtenir l’accélération
+- $\vec a = \vec g$ ou $\vec a=\dfrac{q}{m}\vec E$.
+
+### Étape 4 — Intégrer (une fois pour v, une fois pour position)
+- accélération constante ⇒ vitesses affines ⇒ positions quadratiques.
+
+### Étape 5 — Conclure “mouvement plan” + “parabole”
+- mouvement plan car une coordonnée (souvent $z$) reste nulle : le manuel rappelle que $v_z=0$ donc mouvement dans un plan vertical. fileciteturn9file2L58-L62  
+- trajectoire parabolique dès que la vitesse initiale n’est pas colinéaire à l’accélération.
+
+---
+
+## 5. Erreurs classiques (et comment les éviter) — version “anti-bac”
+
+### ❌ Erreur 1 : oublier de dire “champ uniforme ⇒ accélération constante”
+**Symptôme :** tu écris directement $x(t)$ sans justifier.  
+✅ **À faire :** phrase obligatoire : “Le champ est uniforme, donc $\vec a$ est constant”.
+
+### ❌ Erreur 2 : confondre $E$ et $U$
+**Symptôme :** $E=U$.  
+✅ **À faire :** entre plaques : $E=U/d$ et contrôler les unités (V vs V·m$^{-1}$). fileciteturn9file3L14-L16
+
+### ❌ Erreur 3 : se tromper de sens pour une charge négative
+✅ **À faire :** garder $q$ avec son signe dans $\vec a=\dfrac{q}{m}\vec E$. fileciteturn9file3L44-L47
+
+### ❌ Erreur 4 : croire que la parabole “vient de la gravité”
+✅ **À faire :** la parabole vient de :
+- une direction à mouvement uniforme (accélération nulle),
+- une direction à mouvement uniformément accéléré. fileciteturn9file2L59-L63
+
+### ❌ Erreur 5 : oublier les conditions initiales ($x_0,y_0$)
+✅ **À faire :** toujours écrire d’abord $x(0)=x_0$, $y(0)=y_0$, puis intégrer.
+
+---
+
+## 6. Mini-résumé (à apprendre)
+
+- Champ uniforme ⇒ accélération constante :
+  - projectile : $\vec a=\vec g$ fileciteturn9file0L21-L23  
+  - particule : $\vec a=\dfrac{q}{m}\vec E$ fileciteturn9file0L35-L39
+- Mouvement plan + trajectoire souvent **parabolique** (si $\vec v_0$ non colinéaire). fileciteturn9file0L21-L23 fileciteturn9file3L53-L62
+- Champ électrique entre plaques : $E=\dfrac{U}{d}$ et sens de $+$ vers $-$. fileciteturn9file3L11-L16

@@ -1,0 +1,613 @@
+---
+id: "mouvement-circulaire-expert"
+title: "Mouvement Circulaire : Cinématique et Dynamique (Newton & Kepler)"
+track: "physique"
+level: 2
+prerequisites: ["Vecteurs", "Dérivées", "Lois de Newton"]
+tags: ["cinématique", "frenet", "satellites", "kepler", "accélération"]
+estimatedTime: 120
+chapter: "mouvement-et-interactions"
+order: 10
+---
+
+# Mouvement Circulaire et Satellites
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Décrire un mouvement circulaire à l'aide du **repère de Frenet**.
+- Distinguer l'accélération tangentielle (liée à la variation de vitesse) de l'accélération normale (liée à la courbure).
+- Appliquer la **2ème loi de Newton** pour démontrer la vitesse et la période d'un satellite.
+- Retrouver et utiliser la **3ème loi de Kepler**.
+
+---
+
+## 1. Description Cinématique : Le Repère de Frenet
+
+Pour étudier un mouvement curviligne, le repère cartésien fixe $(O, \vec{i}, \vec{j})$ est souvent malcommode car les coordonnées $x(t)$ et $y(t)$ changent constamment. On préfère utiliser un repère mobile attaché au point $M$, appelé **repère de Frenet** $(M, \vec{t}, \vec{n})$.
+
+### A. Les vecteurs unitaires
+*   **Le vecteur tangentiel $\vec{t}$ :** Il est tangent à la trajectoire au point $M$ et orienté dans le sens du mouvement [1].
+    *   *Analogie :* C'est la direction de vos phares quand vous conduisez une voiture dans un virage.
+*   **Le vecteur normal $\vec{n}$ :** Il est orthogonal à $\vec{t}$ et dirigé vers le **centre de courbure** de la trajectoire (l'intérieur du virage) [1].
+    *   *Analogie :* C'est la direction de la force qui vous plaque contre la portière (force centrifuge ressentie) ou la direction vers laquelle vous tournez le volant.
+
+### B. Vitesse et Accélération
+1.  **Vecteur Vitesse :** Par définition, la vitesse est toujours tangente à la trajectoire.
+    $$\vec{v} = v \cdot \vec{t}$$
+    où $v$ est la valeur de la vitesse (norme) [1].
+
+2.  **Vecteur Accélération :** C'est ici que réside la subtilité. L'accélération a deux composantes [2], [3] :
+    $$\vec{a} = \frac{dv}{dt} \cdot \vec{t} + \frac{v^2}{R} \cdot \vec{n}$$
+
+    *   **Accélération tangentielle ($a_t = \frac{dv}{dt}$) :** Elle mesure la variation de la *valeur* de la vitesse.
+        *   Si vous appuyez sur l'accélérateur ou le frein, vous modifiez $a_t$.
+    *   **Accélération normale ($a_n = \frac{v^2}{R}$) :** Elle mesure le changement de *direction* du vecteur vitesse.
+        *   Même si vous roulez à vitesse constante dans un rond-point, cette accélération n'est pas nulle (sinon vous iriez tout droit !). Elle est proportionnelle au carré de la vitesse et inversement proportionnelle au rayon $R$.
+
+---
+
+## 2. Le Cas du Mouvement Circulaire Uniforme (MCU)
+
+C'est le cas le plus fréquent dans les exercices (satellites, planètes).
+
+### A. Définition
+Un mouvement est circulaire uniforme si :
+1.  La trajectoire est un cercle de rayon $R$.
+2.  La valeur de la vitesse $v$ est **constante** [4].
+
+### B. Conséquences sur l'accélération
+Si $v = \text{cste}$, alors la dérivée $\frac{dv}{dt} = 0$. L'accélération tangentielle disparaît.
+Il ne reste que l'accélération normale :
+$$\vec{a} = \frac{v^2}{R} \cdot \vec{n}$$
+**Conclusion fondamentale :** Dans un mouvement circulaire uniforme, le vecteur accélération est **centripète** (dirigé vers le centre du cercle) et de valeur constante $a = v^2/R$ [5], [6].
+
+> **Analogie de la fronde :** Si vous faites tourner une pierre au bout d'une corde, la tension de la corde tire la pierre vers votre main (le centre). C'est cette force qui crée l'accélération centripète nécessaire pour empêcher la pierre de partir tout droit.
+
+---
+
+## 3. Dynamique : Application aux Satellites et Planètes
+
+Comment déterminer la vitesse d'un satellite ? On utilise la **2ème loi de Newton**.
+
+### A. Le système et les forces
+*   **Système :** Satellite de masse $m$.
+*   **Référentiel :** Géocentrique (supposé galiléen).
+*   **Bilan des forces :** Seule la force d'attraction gravitationnelle exercée par la Terre (masse $M_T$) s'applique (on néglige les frottements).
+    $$\vec{F}_{T/S} = - G \frac{M_T \cdot m}{r^2} \vec{u} = G \frac{M_T \cdot m}{r^2} \vec{n}$$
+    (avec $\vec{n}$ dirigé vers le centre de la Terre, comme la force) [7].
+
+### B. Démonstration de la vitesse orbitale
+1.  **Newton :** $\sum \vec{F} = m \cdot \vec{a} \implies G \frac{M_T \cdot m}{r^2} \vec{n} = m \cdot \vec{a}$.
+2.  **Simplification :** On divise par $m$. $\vec{a} = \frac{GM_T}{r^2} \vec{n}$.
+3.  **Identification (Frenet) :** Comme le mouvement est circulaire, $\vec{a} = \frac{v^2}{r} \vec{n}$.
+4.  **Égalité :** $\frac{v^2}{r} = \frac{GM_T}{r^2} \implies v^2 = \frac{GM_T}{r}$.
+
+$$\text{Vitesse orbitale : } v = \sqrt{\frac{G \cdot M_{astre}}{r}}$$
+
+*Notez que la vitesse ne dépend pas de la masse du satellite, mais uniquement de l'altitude (via $r$) et de la masse de l'astre attracteur.*
+
+---
+
+## 4. Les Lois de Kepler
+
+Elles régissent le mouvement des planètes et satellites.
+
+1.  **Loi des orbites :** Les orbites sont des ellipses dont le Soleil (ou l'astre attracteur) occupe l'un des foyers [7], [8]. *(Pour le Bac, on approxime souvent par des cercles).*
+2.  **Loi des aires :** Le segment reliant l'astre au satellite balaie des aires égales en des temps égaux.
+    *   *Conséquence :* La vitesse est plus grande quand le satellite est proche de l'astre (périhélie) et plus faible quand il est loin (aphélie) [7].
+3.  **Loi des périodes :** Le carré de la période de révolution $T$ est proportionnel au cube du demi-grand axe $a$ (ou rayon $r$).
+    $$\frac{T^2}{r^3} = k = \text{constante}$$
+
+### Démonstration de la 3ème loi (cas circulaire)
+On sait que $v = \sqrt{GM/r}$ et que la période $T$ est le temps pour faire un tour ($2\pi r$) : $T = \frac{2\pi r}{v}$.
+En remplaçant $v$ :
+$$T = \frac{2\pi r}{\sqrt{GM/r}} = 2\pi \sqrt{\frac{r^3}{GM}}$$
+En élevant au carré :
+$$T^2 = \frac{4\pi^2}{GM} r^3 \iff \frac{T^2}{r^3} = \frac{4\pi^2}{G \cdot M}$$
+C'est la démonstration classique exigée au Bac [9], [10].
+
+---
+
+## Mini-résumé pour l'examen
+
+| Grandeur | Formule (Mvt Circulaire Uniforme) | Unités |
+| :--- | :--- | :--- |
+| **Accélération** | $a = a_n = \frac{v^2}{R}$ | $m \cdot s^{-2}$ |
+| **Vitesse satellite** | $v = \sqrt{\frac{GM}{r}}$ | $m \cdot s^{-1}$ |
+| **Période $T$** | $T = \frac{2\pi r}{v}$ | $s$ |
+| **3ème Loi Kepler** | $\frac{T^2}{r^3} = \frac{4\pi^2}{GM}$ | $T$ en $s$, $r$ en $m$ |
+| **Géostationnaire** | $T = 24h$ (86164s), plan équatorial | Fixe / Terre |
+
+
+--------------------------------------------------------------------------------
+Quiz de compréhension
+
+{
+  "id": "quiz-meca-circulaire-expert",
+  "lessonId": "mouvement-circulaire-expert",
+  "type": "post",
+  "title": "Quiz : Mouvements Circulaires et Satellites",
+  "description": "Teste ta maîtrise du repère de Frenet, des lois de Newton et de Kepler.",
+  "passingScore": 70,
+  "questions": [
+    {
+      "id": "q-circ-1",
+      "question": "Dans le repère de Frenet, comment s'écrit le vecteur accélération pour un mouvement circulaire uniforme ?",
+      "choices": [
+        "$\\vec{a} = \\frac{dv}{dt}\\vec{t}$",
+        "$\\vec{a} = \\frac{v^2}{R}\\vec{n}$",
+        "$\\vec{a} = \\frac{dv}{dt}\\vec{t} + \\frac{v^2}{R}\\vec{n}$",
+        "$\\vec{a} = 0$"
+      ],
+      "correct": 1,
+      "explanation": "Pour un mouvement uniforme, la vitesse est constante, donc dv/dt = 0. Il ne reste que la composante normale (centripète) : v²/R portée par n.",
+      "tag": "frenet",
+      "difficulty": 2
+    },
+    {
+      "id": "q-circ-2",
+      "question": "Si un satellite double son altitude (r devient plus grand), comment évolue sa vitesse orbitale v ?",
+      "choices": [
+        "Elle augmente",
+        "Elle diminue",
+        "Elle reste constante",
+        "Elle dépend de la masse du satellite"
+      ],
+      "correct": 1,
+      "explanation": "D'après $v = \\sqrt{GM/r}$, si le rayon de l'orbite r augmente, la vitesse v diminue.",
+      "tag": "satellite",
+      "difficulty": 2
+    },
+    {
+      "id": "q-circ-3",
+      "question": "Quelle est l'expression correcte de la 3ème loi de Kepler pour une orbite circulaire ?",
+      "choices": [
+        "$T^2 / r^3 = 4\\pi^2 / (GM)$",
+        "$T^3 / r^2 = GM / (4\\pi^2)$",
+        "$T^2 \\times r^3 = k$",
+        "$T / r = constant$"
+      ],
+      "correct": 0,
+      "explanation": "Le carré de la période est proportionnel au cube du rayon : $T^2/r^3 = cte$.",
+      "tag": "kepler",
+      "difficulty": 2
+    }
+  ]
+}
+
+
+--------------------------------------------------------------------------------
+Flashcards
+
+[
+  {
+    "id": "fc-circ-1",
+    "lessonId": "mouvement-circulaire-expert",
+    "front": "Expression du vecteur accélération dans le repère de Frenet (cas général)",
+    "back": "$\\vec{a} = \\frac{dv}{dt}\\vec{t} + \\frac{v^2}{R}\\vec{n}$\n\nComposante tangentielle (variation de vitesse) + Composante normale (courbure).",
+    "tags": ["physique", "frenet", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-circ-2",
+    "lessonId": "mouvement-circulaire-expert",
+    "front": "Caractéristique du vecteur accélération pour un Mouvement Circulaire Uniforme (MCU)",
+    "back": "L'accélération est purement **centripète** (normale).\n\n$\\vec{a} = \\frac{v^2}{R}\\vec{n}$",
+    "tags": ["physique", "mcu", "accélération"],
+    "level": 2,
+    "category": "concept"
+  },
+  {
+    "id": "fc-circ-3",
+    "lessonId": "mouvement-circulaire-expert",
+    "front": "Formule de la vitesse d'un satellite en orbite circulaire",
+    "back": "$v = \\sqrt{\\frac{G \\cdot M}{r}}$\n\n$M$ est la masse de l'astre attracteur.",
+    "tags": ["physique", "satellite", "vitesse"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-circ-4",
+    "lessonId": "mouvement-circulaire-expert",
+    "front": "Expression de la 3ème loi de Kepler (Loi des périodes)",
+    "back": "$\\frac{T^2}{a^3} = \\frac{4\\pi^2}{G \\cdot M} = \\text{constante}$\n\n(Avec $a=r$ pour un cercle).",
+    "tags": ["physique", "kepler", "loi"],
+    "level": 3,
+    "category": "law"
+  },
+  {
+    "id": "fc-circ-5",
+    "lessonId": "mouvement-circulaire-expert",
+    "front": "Définition d'un satellite géostationnaire",
+    "back": "Satellite qui reste fixe par rapport à un point de la Terre.\nConditions : Orbite circulaire dans le plan équatorial, période T = 24h (jour sidéral), rotation dans le même sens que la Terre.",
+    "tags": ["physique", "satellite", "définition"],
+    "level": 2,
+    "category": "definition"
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Exercices d'application
+
+[
+  {
+    "id": "ex-circ-1",
+    "lessonId": "mouvement-circulaire-expert",
+    "title": "Identification du mouvement (Roue de Falkirk)",
+    "difficulty": 2,
+    "statement": "On étudie le mouvement d'un godet de la Roue de Falkirk. La trajectoire est un cercle de rayon R = 12 m et la vitesse est constante v = 0,11 m/s. 1. Donner les caractéristiques du vecteur accélération. 2. Calculer sa valeur.",
+    "hints": [
+      "Le mouvement est circulaire et uniforme.",
+      "Dans ce cas, l'accélération tangentielle est nulle.",
+      "L'accélération est normale (centripète)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyse du mouvement",
+        "content": "La trajectoire est circulaire et la vitesse est constante. C'est un Mouvement Circulaire Uniforme (MCU).",
+        "explanation": "Dans un MCU, dv/dt = 0."
+      },
+      {
+        "step": 2,
+        "title": "Vecteur accélération",
+        "content": "Le vecteur accélération est centripète (dirigé vers le centre). Sa valeur est a = v²/R.",
+        "explanation": "Seule la composante normale de Frenet existe."
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "a = (0,11)² / 12 ≈ 1,0 x 10^-3 m/s².",
+        "explanation": "Application numérique directe."
+      }
+    ],
+    "method": "Utilisation des propriétés du MCU",
+    "commonMistakes": [
+      "Penser que l'accélération est nulle car la vitesse est constante (erreur classique)",
+      "Oublier le carré sur la vitesse"
+    ],
+    "tags": ["cinématique", "falkirk", "accélération"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-circ-2",
+    "lessonId": "mouvement-circulaire-expert",
+    "title": "Vitesse du satellite SPOT",
+    "difficulty": 2,
+    "statement": "Le satellite SPOT gravite sur une orbite circulaire à l'altitude h = 832 km. Calculer sa vitesse orbitale. (Rt = 6371 km, Mt = 5,97x10^24 kg, G = 6,67x10^-11 SI).",
+    "hints": [
+      "Le rayon de l'orbite est r = Rt + h.",
+      "Utilise la formule de la vitesse orbitale v = √(GM/r).",
+      "Attention aux unités (tout en mètres)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du rayon orbital",
+        "content": "r = Rt + h = 6371 + 832 = 7203 km = 7,203 x 10^6 m.",
+        "explanation": "Il faut ajouter l'altitude au rayon terrestre et convertir en mètres."
+      },
+      {
+        "step": 2,
+        "title": "Application de la formule",
+        "content": "v = √[(6,67x10^-11 * 5,97x10^24) / (7,203x10^6)]",
+        "explanation": "La force gravitationnelle joue le rôle de force centripète."
+      },
+      {
+        "step": 3,
+        "title": "Résultat",
+        "content": "v ≈ 7436 m/s ≈ 7,44 km/s.",
+        "explanation": "C'est une vitesse typique pour un satellite en orbite basse."
+      }
+    ],
+    "method": "Application de la formule de vitesse orbitale",
+    "commonMistakes": [
+      "Utiliser h au lieu de (Rt + h)",
+      "Oublier de convertir les km en m"
+    ],
+    "tags": ["gravitation", "satellite", "vitesse"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-circ-3",
+    "lessonId": "mouvement-circulaire-expert",
+    "title": "Période de Vénus (Kepler)",
+    "difficulty": 3,
+    "statement": "L'orbite de Vénus est quasi-circulaire de rayon r = 108 millions de km. Calculer sa période de révolution T. (M_Soleil = 2,0 x 10^30 kg).",
+    "hints": [
+      "Utilise la 3ème loi de Kepler : T²/r³ = 4π²/GM.",
+      "Isole T dans l'équation.",
+      "r doit être en mètres."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Expression de T",
+        "content": "T = 2π * √(r³ / GM)",
+        "explanation": "On part de T²/r³ = 4π²/GM et on prend la racine carrée."
+      },
+      {
+        "step": 2,
+        "title": "Conversion",
+        "content": "r = 108 x 10^6 km = 1,08 x 10^11 m.",
+        "explanation": "Conversion indispensable pour utiliser G en unités SI."
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "T = 2π * √[(1,08x10^11)³ / (6,67x10^-11 * 2,0x10^30)] ≈ 1,94 x 10^7 s.",
+        "explanation": "Cela correspond à environ 225 jours terrestres."
+      }
+    ],
+    "method": "Utilisation de la 3ème loi de Kepler",
+    "commonMistakes": [
+      "Erreur d'isolation de T",
+      "Erreur de puissance sur r (r au cube)"
+    ],
+    "tags": ["kepler", "vénus", "période"],
+    "isComprehension": false
+  }
+]
+
+
+--------------------------------------------------------------------------------
+Exercices Guidés
+
+[
+  {
+    "id": "guided-meca-circ-1",
+    "title": "Déterminer l'altitude d'un satellite géostationnaire",
+    "subject": "physique",
+    "chapter": "Mouvement des satellites",
+    "difficulty": "difficile",
+    "estimatedTime": 25,
+    "description": "On cherche à retrouver l'altitude h d'un satellite géostationnaire (T = 24h).",
+    "question": "Calculer l'altitude h sachant que $R_T = 6371$ km et $M_T = 5,97 \\times 10^{24}$ kg.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Écrire la 3ème loi de Kepler",
+        "instruction": "Donne la relation entre T, r (rayon orbital), G et M.",
+        "hint": "Le rapport $T^2/r^3$ est constant.",
+        "solution": "$$\\frac{T^2}{r^3} = \\frac{4\\pi^2}{G M_T}$$"
+      },
+      {
+        "id": 2,
+        "title": "Isoler le rayon orbital r",
+        "instruction": "Exprime $r$ en fonction des autres variables.",
+        "hint": "$r^3 = ...$ puis prends la racine cubique.",
+        "solution": "$$r^3 = \\frac{G M_T T^2}{4\\pi^2} \\implies r = \\sqrt[11]{\\frac{G M_T T^2}{4\\pi^2}}$$"
+      },
+      {
+        "id": 3,
+        "title": "Calculer r",
+        "instruction": "Effectue le calcul numérique. Attention à convertir T en secondes (86164 s pour le jour sidéral exact, ou 86400 s pour 24h).",
+        "hint": "G = $6,67 \\times 10^{-11}$.",
+        "solution": "Avec T = 86164 s (jour sidéral) :\n$$r \\approx \\sqrt[11]{\\frac{6,67\\cdot 10^{-11} \\times 5,97\\cdot 10^{24} \\times 86164^2}{4\\pi^2}} \\approx 4,22 \\times 10^7 \\text{ m}$$ soit 42 200 km."
+      },
+      {
+        "id": 4,
+        "title": "Déduire l'altitude h",
+        "instruction": "Le rayon orbital est la distance Centre Terre - Satellite. Trouve l'altitude par rapport au sol.",
+        "hint": "$r = R_T + h$.",
+        "solution": "$$h = r - R_T = 42200 - 6371 \\approx 35800 \\text{ km}$$"
+      }
+    ],
+    "finalAnswer": "L'altitude d'un satellite géostationnaire est d'environ **36 000 km**."
+  },
+  {
+    "id": "guided-meca-circ-2",
+    "title": "Accélération dans le repère de Frenet",
+    "subject": "physique",
+    "chapter": "Description d'un mouvement",
+    "difficulty": "moyen",
+    "estimatedTime": 15,
+    "description": "Une voiture prend un virage circulaire de rayon R = 50 m. Sa vitesse diminue : elle passe de 20 m/s à 10 m/s en 2 secondes de manière uniforme.",
+    "question": "Déterminer la valeur de l'accélération normale et tangentielle à l'instant où $v = 15$ m/s.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Calculer l'accélération tangentielle",
+        "instruction": "L'accélération tangentielle $a_t$ est liée à la variation de la valeur de la vitesse.",
+        "hint": "$a_t = \\frac{\\Delta v}{\\Delta t}$. Attention au signe (freinage).",
+        "solution": "$$a_t = \\frac{10 - 20}{2} = -5 \\text{ m/s}^2$$\n(Elle est dirigée en sens opposé au mouvement)."
+      },
+      {
+        "id": 2,
+        "title": "Calculer l'accélération normale",
+        "instruction": "L'accélération normale $a_n$ dépend de la vitesse à l'instant t et du rayon.",
+        "hint": "$a_n = v^2 / R$.",
+        "solution": "À l'instant où $v = 15$ m/s :\n$$a_n = \\frac{15^2}{50} = \\frac{225}{50} = 4,5 \\text{ m/s}^2$$"
+      },
+      {
+        "id": 3,
+        "title": "Vecteur Accélération total",
+        "instruction": "Donne l'expression vectorielle dans le repère de Frenet.",
+        "solution": "$$\\vec{a} = -5 \\vec{t} + 4,5 \\vec{n}$$"
+      }
+    ],
+    "finalAnswer": "Accélération tangentielle : **-5 m/s²**, Accélération normale : **4,5 m/s²**."
+  },
+  {
+    "id": "guided-meca-circ-3",
+    "title": "Masse de Mars (Phobos)",
+    "subject": "physique",
+    "chapter": "Mouvement dans un champ de gravitation",
+    "difficulty": "difficile",
+    "estimatedTime": 20,
+    "description": "Phobos est un satellite de Mars. Il orbite à une distance $r = 9,38 \\times 10^6$ m du centre de Mars avec une période $T = 7$ h $39$ min.",
+    "question": "Déterminer la masse de Mars $M_M$.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Convertir la période",
+        "instruction": "Convertis la période en secondes.",
+        "hint": "1h = 3600s, 1min = 60s.",
+        "solution": "$$T = 7 \\times 3600 + 39 \\times 60 = 25200 + 2340 = 27540 \\text{ s}$$"
+      },
+      {
+        "id": 2,
+        "title": "Utiliser la 3ème loi de Kepler",
+        "instruction": "Isole la masse M dans la formule $T^2/r^3 = 4\\pi^2 / (GM)$.",
+        "hint": "Produit en croix.",
+        "solution": "$$M_M = \\frac{4\\pi^2 r^3}{G T^2}$$"
+      },
+      {
+        "id": 3,
+        "title": "Calcul final",
+        "instruction": "Remplace par les valeurs numériques ($G = 6,67 \\times 10^{-11}$).",
+        "solution": "$$M_M = \\frac{4\\pi^2 \\times (9,38\\cdot 10^6)^3}{6,67\\cdot 10^{-11} \\times (27540)^2} \\approx 6,4 \\times 10^{23} \\text{ kg}$$"
+      }
+    ],
+    "finalAnswer": "La masse de Mars est d'environ **$6,4 \\times 10^{23}$ kg**."
+  }
+]
+
+{
+  "diagnostic": [
+    {
+      "id": "diag-circ-1",
+      "question": "Lors d'un mouvement curviligne quelconque, comment est orienté le vecteur vitesse par rapport à la trajectoire ?",
+      "choices": [
+        "Perpendiculaire à la trajectoire",
+        "Tangent à la trajectoire",
+        "Dirigé vers le centre de courbure",
+        "Il n'a pas de direction définie"
+      ],
+      "correct": 1,
+      "explanation": "Le vecteur vitesse est toujours tangent à la trajectoire au point considéré et orienté dans le sens du mouvement.",
+      "tag": "vecteur vitesse",
+      "difficulty": 1
+    },
+    {
+      "id": "diag-circ-2",
+      "question": "Que signifie le terme \"uniforme\" dans l'expression \"Mouvement Circulaire Uniforme\" ?",
+      "choices": [
+        "Que la trajectoire est un cercle parfait",
+        "Que le vecteur vitesse est constant",
+        "Que la valeur de la vitesse (norme) est constante",
+        "Que l'accélération est nulle"
+      ],
+      "correct": 2,
+      "explanation": "Uniforme signifie que la valeur de la vitesse v (en m/s) ne change pas. Attention, le vecteur vitesse, lui, change de direction.",
+      "tag": "définition",
+      "difficulty": 1
+    },
+    {
+      "id": "diag-circ-3",
+      "question": "Quelle est l'unité de la période de révolution T dans le système international ?",
+      "choices": [
+        "Le Hertz (Hz)",
+        "La seconde (s)",
+        "Le mètre par seconde (m/s)",
+        "Le tour par minute (tr/min)"
+      ],
+      "correct": 1,
+      "explanation": "La période est une durée, elle s'exprime donc en secondes (s) dans le système international.",
+      "tag": "unités",
+      "difficulty": 1
+    },
+    {
+      "id": "diag-circ-4",
+      "question": "Si vous faites tourner une pierre attachée à une ficelle, quelle force ressentez-vous dans votre main ?",
+      "choices": [
+        "Une force qui pousse la pierre vers l'extérieur",
+        "Une force qui tire votre main vers la pierre",
+        "Aucune force",
+        "Une force verticale uniquement"
+      ],
+      "correct": 1,
+      "explanation": "C'est la tension du fil. Pour maintenir la pierre sur sa trajectoire circulaire, le fil doit exercer une force vers le centre (centripète), et par réaction, la pierre tire sur le fil.",
+      "tag": "intuition",
+      "difficulty": 2
+    },
+    {
+      "id": "diag-circ-5",
+      "question": "Quelle est la relation mathématique entre la fréquence f et la période T ?",
+      "choices": [
+        "f = T",
+        "f = 1 / T",
+        "f = T x 2π",
+        "f = T²"
+      ],
+      "correct": 1,
+      "explanation": "La fréquence (en Hz) est l'inverse de la période (en s) : f = 1/T.",
+      "tag": "formule",
+      "difficulty": 1
+    }
+  ],
+  "validation": [
+    {
+      "id": "val-circ-1",
+      "question": "Dans le repère de Frenet (M, t, n), quelle est l'expression du vecteur accélération pour un mouvement circulaire uniforme ?",
+      "choices": [
+        "a = (dv/dt).t",
+        "a = (v²/R).n",
+        "a = (dv/dt).t + (v²/R).n",
+        "a = 0"
+      ],
+      "correct": 1,
+      "explanation": "Si le mouvement est uniforme, v est constant donc dv/dt = 0. Il ne reste que l'accélération normale (centripète) : a = (v²/R).n.",
+      "tag": "frenet",
+      "difficulty": 2
+    },
+    {
+      "id": "val-circ-2",
+      "question": "Quelle est l'expression de la vitesse v d'un satellite en orbite circulaire autour de la Terre (masse M_T) à une distance r du centre ?",
+      "choices": [
+        "v = √(GM_T / r)",
+        "v = GM_T / r",
+        "v = √(r / GM_T)",
+        "v = r² / GM_T"
+      ],
+      "correct": 0,
+      "explanation": "C'est la formule classique dérivée de la 2ème loi de Newton : v = racine(G.M / r).",
+      "tag": "satellite",
+      "difficulty": 2
+    },
+    {
+      "id": "val-circ-3",
+      "question": "D'après la 3ème loi de Kepler pour une orbite circulaire, à quoi est égal le rapport T²/r³ ?",
+      "choices": [
+        "v² / G",
+        "4π² / (G.M)",
+        "G.M / 4π²",
+        "Une valeur qui dépend de la masse du satellite"
+      ],
+      "correct": 1,
+      "explanation": "T²/r³ est une constante qui ne dépend que de l'astre attracteur de masse M : 4π²/(G.M).",
+      "tag": "kepler",
+      "difficulty": 3
+    },
+    {
+      "id": "val-circ-4",
+      "question": "Si un satellite géostationnaire orbite à 36 000 km d'altitude, quelle est sa période de révolution ?",
+      "choices": [
+        "Environ 90 minutes",
+        "Environ 24 heures",
+        "365 jours",
+        "Cela dépend de sa masse"
+      ],
+      "correct": 1,
+      "explanation": "Un satellite géostationnaire tourne à la même vitesse angulaire que la Terre pour rester fixe au-dessus d'un point. Sa période est donc d'un jour sidéral (environ 24h).",
+      "tag": "géostationnaire",
+      "difficulty": 1
+    },
+    {
+      "id": "val-circ-5",
+      "question": "Comment évolue la vitesse d'un satellite si le rayon de son orbite augmente ?",
+      "choices": [
+        "Elle augmente",
+        "Elle diminue",
+        "Elle reste constante",
+        "Elle s'annule"
+      ],
+      "correct": 1,
+      "explanation": "D'après v = √(GM/r), si r augmente (le dénominateur), alors la vitesse v diminue. Plus on est loin, moins on tourne vite.",
+      "tag": "concept",
+      "difficulty": 2
+    }
+  ]
+}

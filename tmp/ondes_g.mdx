@@ -1,0 +1,171 @@
+[
+  {
+    "id": "guided-son-1",
+    "title": "Calcul du niveau d'intensité sonore",
+    "subject": "physique",
+    "chapter": "Ondes et signaux",
+    "difficulty": "facile",
+    "estimatedTime": 10,
+    "description": "Une enceinte produit un son d'intensité $I = 1,0 \\times 10^{-5} \\text{ W}\\cdot\\text{m}^{-2}$. Le seuil d'audibilité est $I_0 = 1,0 \\times 10^{-12} \\text{ W}\\cdot\\text{m}^{-2}$.",
+    "question": "Calculer le niveau d'intensité sonore $L$ en décibels.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Rappeler la définition du niveau sonore",
+        "instruction": "Quelle est la relation mathématique liant $L$, $I$ et $I_0$ ?",
+        "hint": "C'est une échelle logarithmique (log décimal).",
+        "solution": "La définition est : $$L = 10 \\cdot \\log\\left(\\frac{I}{I_0}\\right)$$"
+      },
+      {
+        "id": 2,
+        "title": "Application numérique",
+        "instruction": "Remplace les valeurs et calcule le résultat.",
+        "hint": "Calcule d'abord le rapport $I/I_0$, puis prends son logarithme.",
+        "solution": "$$\\frac{I}{I_0} = \\frac{10^{-5}}{10^{-12}} = 10^7$$ \n$$L = 10 \\cdot \\log(10^7) = 10 \\cdot 7 = 70 \\text{ dB}$$"
+      }
+    ],
+    "finalAnswer": "Le niveau sonore est de **70 dB**."
+  },
+  {
+    "id": "guided-son-2",
+    "title": "Additivité des intensités sonores",
+    "subject": "physique",
+    "chapter": "Ondes et signaux",
+    "difficulty": "moyen",
+    "estimatedTime": 15,
+    "description": "Une machine produit un bruit de niveau $L_1 = 80$ dB. On allume une deuxième machine identique produisant le même bruit.",
+    "question": "Quel est le niveau sonore total $L_{tot}$ perçu ?",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Comprendre l'additivité",
+        "instruction": "Peut-on additionner directement les décibels (80 + 80) ?",
+        "hint": "Ce sont les intensités $I$ qui s'additionnent, pas les niveaux $L$.",
+        "solution": "Non, on ne peut pas sommer les niveaux sonores. Il faut sommer les intensités : $I_{tot} = I_1 + I_1 = 2 I_1$."
+      },
+      {
+        "id": 2,
+        "title": "Relation entre doublement de I et variation de L",
+        "instruction": "Exprime $L_{tot}$ en fonction de $L_1$ en utilisant les propriétés du logarithme.",
+        "hint": "$\\log(a \\cdot b) = \\log(a) + \\log(b)$ et $\\log(2) \\approx 0,3$.",
+        "solution": "$$L_{tot} = 10 \\log\\left(\\frac{2I_1}{I_0}\\right) = 10 \\log(2) + 10 \\log\\left(\\frac{I_1}{I_0}\\right)$$\n$$L_{tot} \\approx 3 + L_1$$"
+      },
+      {
+        "id": 3,
+        "title": "Calcul final",
+        "instruction": "Calcule la nouvelle valeur.",
+        "hint": "Ajoute 3 dB au niveau initial.",
+        "solution": "$$L_{tot} = 80 + 3 = 83 \\text{ dB}$$"
+      }
+    ],
+    "finalAnswer": "Le niveau sonore total est de **83 dB**."
+  },
+  {
+    "id": "guided-son-3",
+    "title": "Atténuation géométrique",
+    "subject": "physique",
+    "chapter": "Ondes et signaux",
+    "difficulty": "moyen",
+    "estimatedTime": 20,
+    "description": "Un haut-parleur (source ponctuelle isotrope) émet un son. À une distance $d_1 = 2$ m, le niveau sonore est $L_1 = 100$ dB.",
+    "question": "Calculer le niveau sonore $L_2$ à une distance $d_2 = 20$ m.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Principe de l'atténuation géométrique",
+        "instruction": "Comment varie l'intensité sonore $I$ en fonction de la distance $d$ ?",
+        "hint": "L'énergie se répartit sur une sphère de surface $4\\pi d^2$.",
+        "solution": "L'intensité sonore est inversement proportionnelle au carré de la distance : $$I \\propto \\frac{1}{d^2}$$"
+      },
+      {
+        "id": 2,
+        "title": "Formule de l'atténuation en décibels",
+        "instruction": "Quelle est la relation entre la variation du niveau sonore et le rapport des distances ?",
+        "hint": "Elle fait intervenir $-20 \\log(...)$.",
+        "solution": "$$L_2 = L_1 - 20 \\cdot \\log\\left(\\frac{d_2}{d_1}\\right)$$"
+      },
+      {
+        "id": 3,
+        "title": "Application numérique",
+        "instruction": "Calcule la valeur finale.",
+        "hint": "$d_2 / d_1 = 10$ et $\\log(10) = 1$.",
+        "solution": "$$L_2 = 100 - 20 \\cdot \\log\\left(\\frac{20}{2}\\right) = 100 - 20 \\cdot \\log(10)$$\n$$L_2 = 100 - 20 = 80 \\text{ dB}$$"
+      }
+    ],
+    "finalAnswer": "Le niveau sonore à 20 mètres est de **80 dB**."
+  },
+  {
+    "id": "guided-son-4",
+    "title": "Effet Doppler (Calcul de vitesse)",
+    "subject": "physique",
+    "chapter": "Ondes et signaux",
+    "difficulty": "difficile",
+    "estimatedTime": 25,
+    "description": "Une voiture de course émet un son de fréquence $f_E = 400$ Hz. Un observateur fixe entend une fréquence $f_R = 450$ Hz lorsque la voiture s'approche. (Célérité du son $c = 340$ m/s).",
+    "question": "Déterminer la vitesse $v$ de la voiture.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Analyser la situation",
+        "instruction": "La voiture se rapproche. La fréquence reçue est-elle cohérente ?",
+        "hint": "Approche = son plus aigu = fréquence plus élevée.",
+        "solution": "Oui, $f_R > f_E$ (450 > 400), ce qui correspond bien à une source qui s'approche (les fronts d'ondes sont comprimés)."
+      },
+      {
+        "id": 2,
+        "title": "Formule de l'effet Doppler",
+        "instruction": "Quelle est la relation liant les fréquences et la vitesse pour une source en approche ?",
+        "hint": "Le dénominateur doit être plus petit que le numérateur pour que le résultat augmente.",
+        "solution": "$$f_R = f_E \\cdot \\frac{c}{c - v}$$"
+      },
+      {
+        "id": 3,
+        "title": "Isoler la vitesse v",
+        "instruction": "Retourne la formule pour exprimer $v$ en fonction des autres variables.",
+        "hint": "Commence par écrire $c - v = f_E \\cdot c / f_R$.",
+        "solution": "$$c - v = c \\cdot \\frac{f_E}{f_R} \\implies v = c - c \\cdot \\frac{f_E}{f_R} = c \\cdot \\left(1 - \\frac{f_E}{f_R}\\right)$$"
+      },
+      {
+        "id": 4,
+        "title": "Calcul final",
+        "instruction": "Fais l'application numérique.",
+        "solution": "$$v = 340 \\cdot \\left(1 - \\frac{400}{450}\\right) = 340 \\cdot \\left(1 - 0,889\\right) \\approx 37,8 \\text{ m/s}$$"
+      }
+    ],
+    "finalAnswer": "La vitesse de la voiture est d'environ **37,8 m/s** (soit 136 km/h)."
+  },
+  {
+    "id": "guided-son-5",
+    "title": "Interférences de deux ondes sonores",
+    "subject": "physique",
+    "chapter": "Ondes et signaux",
+    "difficulty": "difficile",
+    "estimatedTime": 25,
+    "description": "Deux haut-parleurs émettent en phase un son de fréquence $f = 1000$ Hz ($c = 340$ m/s). Un point M est situé à $d_1 = 3,00$ m du premier et $d_2 = 3,17$ m du second.",
+    "question": "Le son est-il maximal ou minimal au point M ?",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Calculer la longueur d'onde",
+        "instruction": "Détermine la longueur d'onde $\\lambda$ du son.",
+        "hint": "$\\lambda = c / f$.",
+        "solution": "$$\\lambda = \\frac{340}{1000} = 0,34 \\text{ m}$$"
+      },
+      {
+        "id": 2,
+        "title": "Calculer la différence de marche",
+        "instruction": "Calcule l'écart de distance $\\delta$ entre les deux sources.",
+        "hint": "$\\delta = |d_2 - d_1|$.",
+        "solution": "$$\\delta = |3,17 - 3,00| = 0,17 \\text{ m}$$"
+      },
+      {
+        "id": 3,
+        "title": "Comparer delta et lambda",
+        "instruction": "Quel est le rapport entre $\\delta$ et $\\lambda$ ? Conclus sur la nature des interférences.",
+        "hint": "Regarde si $\\delta$ est un multiple entier ou demi-entier de $\\lambda$.",
+        "solution": "$$\\frac{\\delta}{\\lambda} = \\frac{0,17}{0,34} = 0,5 = \\frac{1}{2}$$\nLa différence de marche est un multiple demi-entier de la longueur d'onde ($\\delta = \\lambda/2$). Les ondes arrivent en opposition de phase."
+      }
+    ],
+    "finalAnswer": "Les interférences sont **destructives**, l'intensité sonore est donc **minimale** (théoriquement nulle)."
+  }
+]

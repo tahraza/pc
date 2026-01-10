@@ -1,0 +1,138 @@
+---
+id: "ondes-mecaniques-progressives"
+title: "Les Ondes Mécaniques : Propagation et Périodicité"
+track: "physique"
+level: 2
+prerequisites: ["Cinématique", "Logarithme (pour le niveau sonore)"]
+tags: ["onde", "célérité", "longueur d'onde", "période", "son", "décibel"]
+estimatedTime: 90
+chapter: "ondes-et-signaux"
+order: 1
+---
+
+# Les Ondes Mécaniques Progressives
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Définir une onde mécanique progressive et le concept de retard.
+- Relier la périodicité temporelle ($T, f$) et spatiale ($\lambda$).
+- Calculer une célérité ($v$) ou une longueur d'onde ($\lambda$).
+- Manipuler les notions d'intensité sonore ($I$) et de niveau sonore ($L$).
+- Calculer une atténuation géométrique ou par absorption.
+
+## 1. Intuition et Analogie : La "Ola" du Stade
+
+Pour comprendre une onde mécanique, il faut dissocier le **mouvement de la matière** du **mouvement de l'énergie**.
+
+> **Analogie : La Ola (Vague humaine)**
+> Imaginez des spectateurs dans un stade faisant une "Ola".
+> *   **Le milieu :** Ce sont les spectateurs. Ils se lèvent et s'assoient sur place (mouvement vertical). Ils ne se déplacent pas le long des tribunes.
+> *   **L'onde :** C'est la forme de la vague qui parcourt le stade (déplacement horizontal).
+> *   **Ce qui voyage :** Ce n'est pas la matière (les gens), c'est une information ou une énergie.
+
+## 2. Définitions Fondamentales
+
+### L'Onde Mécanique Progressive
+C'est la propagation d'une perturbation (une déformation) dans un milieu matériel (solide, liquide, gaz), de proche en proche.
+*   **Propriété clé :** Il y a transport d'**énergie** sans transport de **matière** [1], [2], [3].
+*   *Exemple :* Le son, une vague sur l'eau, une onde le long d'une corde.
+
+### Célérité ($v$ ou $c$)
+On utilise le terme "célérité" plutôt que "vitesse" pour distinguer le déplacement de l'onde du mouvement de l'objet lui-même.
+$$v = \frac{d}{\Delta t}$$
+*   $v$ : célérité en $m\cdot s^{-1}$.
+*   $d$ : distance parcourue en mètres ($m$).
+*   $\Delta t$ : durée du parcours en secondes ($s$).
+
+### Le Retard ($\tau$)
+Une onde arrive en un point $B$ après être passée par un point $A$ avec un décalage temporel appelé retard $\tau$ (tau).
+$$\tau = \frac{AB}{v}$$
+
+## 3. Les Ondes Périodiques : La Double Périodicité
+
+Une onde est dite périodique si la source impose une perturbation qui se répète identique à elle-même à intervalles de temps réguliers.
+
+### Périodicité Temporelle ($T$)
+C'est la plus petite durée au bout de laquelle un point du milieu retrouve le même état vibratoire.
+*   **Période $T$** (en secondes, s).
+*   **Fréquence $f$ (ou $\nu$)** : Nombre de répétitions par seconde (en Hertz, Hz).
+    $$f = \frac{1}{T}$$
+
+### Périodicité Spatiale ($\lambda$)
+C'est la plus petite distance séparant deux points du milieu qui vibrent exactement en phase (ils font la même chose en même temps). Cette distance s'appelle la **longueur d'onde** $\lambda$ (lambda).
+
+### La Relation Fondamentale
+La longueur d'onde est la distance parcourue par l'onde pendant une période temporelle $T$. [4], [5] :
+$$\lambda = v \times T = \frac{v}{f}$$
+
+*   $\lambda$ : en mètres ($m$).
+*   $v$ : célérité en $m\cdot s^{-1}$.
+*   $T$ : période en secondes ($s$).
+
+> **Analogie : Le Train**
+> Imaginez un train composé de wagons identiques de longueur $\lambda$.
+> *   Si vous restez au bord de la voie, un wagon entier passe devant vous en une durée $T$.
+> *   La vitesse du train est donc bien $v = \frac{\text{longueur du wagon}}{\text{durée de passage}} = \frac{\lambda}{T}$.
+
+## 4. Cas Particulier : Les Ondes Sonores
+
+Le son est une onde mécanique progressive qui se propage grâce aux chocs entre les molécules (compression/dilatation) [1]. Il ne se propage pas dans le vide.
+
+### Intensité et Niveau Sonore
+L'oreille humaine n'est pas sensible linéairement à l'énergie reçue. On distingue donc deux grandeurs :
+
+1.  **L'Intensité Sonore ($I$)** : C'est la puissance reçue par unité de surface. Elle s'exprime en Watt par mètre carré ($W \cdot m^{-2}$) [1], [6].
+2.  **Le Niveau d'Intensité Sonore ($L$)** : Il modélise la sensation auditive (échelle logarithmique). Il s'exprime en décibels ($dB$).
+
+$$L = 10 \cdot \log\left(\frac{I}{I_0}\right)$$
+
+*   $I_0 = 1,0 \times 10^{-12} \ W \cdot m^{-2}$ est le seuil d'audibilité humaine [7], [8].
+*   *Note mathématique :* Pour retrouver l'intensité à partir du niveau : $I = I_0 \cdot 10^{L/10}$ [9].
+
+### L'Atténuation
+Le son diminue lorsqu'on s'éloigne de la source. Il existe deux types d'atténuation [10], [11] :
+*   **Atténuation géométrique :** L'énergie se répartit sur une sphère de plus en plus grande (surface $4\pi r^2$). L'intensité diminue en $1/r^2$.
+    $$I(r) = \frac{P_{source}}{4\pi r^2}$$
+*   **Atténuation par absorption :** Le milieu (l'air, un mur) absorbe une partie de l'énergie (dissipation thermique) [12].
+
+## 5. Exemples Résolus
+
+> **Exemple 1 : Calcul de longueur d'onde**
+> **Question :** Une onde ultrasonore de fréquence $f = 40 \text{ kHz}$ se propage dans l'air à la vitesse $v = 340 \text{ m}\cdot\text{s}^{-1}$. Quelle est sa longueur d'onde ?
+>
+> **Solution :**
+> 1.  Conversion : $f = 40 \text{ kHz} = 40 \times 10^3 \text{ Hz}$.
+> 2.  Formule : $\lambda = \frac{v}{f}$. [13]
+> 3.  Calcul : $\lambda = \frac{340}{40 \times 10^3} = 8,5 \times 10^{-3} \text{ m}$.
+> 4.  Résultat : $\lambda = 8,5 \text{ mm}$.
+
+> **Exemple 2 : Calcul du niveau sonore**
+> **Question :** Un musicien produit un son d'intensité $I = 1,0 \times 10^{-4} \text{ W}\cdot\text{m}^{-2}$. Quel est le niveau sonore en décibels ? (Donnée : $I_0 = 1,0 \times 10^{-12} \text{ W}\cdot\text{m}^{-2}$).
+>
+> **Solution :**
+> 1.  Formule : $L = 10 \cdot \log\left(\frac{I}{I_0}\right)$. [9]
+> 2.  Application : $L = 10 \cdot \log\left(\frac{1,0 \times 10^{-4}}{1,0 \times 10^{-12}}\right)$.
+> 3.  Propriété log : $\frac{10^{-4}}{10^{-12}} = 10^8$ et $\log(10^8) = 8$.
+> 4.  Calcul : $L = 10 \times 8 = 80 \text{ dB}$.
+
+> **Exemple 3 : Addition de sons**
+> **Question :** Deux machines produisent chacune un niveau de 80 dB. Le niveau total est-il de 160 dB ?
+>
+> **Solution :**
+> **Non !** Les niveaux $L$ (dB) ne s'additionnent pas, ce sont les intensités $I$ qui s'ajoutent [14], [15].
+> 1.  On calcule $I$ pour une machine : $I = I_0 \cdot 10^{80/10} = I_0 \cdot 10^8$.
+> 2.  Intensité totale : $I_{tot} = I + I = 2 \cdot I = 2 \cdot 10^8 \cdot I_0$.
+> 3.  Nouveau niveau : $L_{tot} = 10 \cdot \log\left(\frac{2 \cdot 10^8 \cdot I_0}{I_0}\right) = 10 \cdot \log(2 \cdot 10^8)$.
+> 4.  $L_{tot} = 10 \cdot (\log(2) + 8) \approx 10 \cdot (0,3 + 8) = 83 \text{ dB}$.
+> *Astuce : Doubler l'intensité sonore ajoute toujours 3 dB.*
+
+## Mini-résumé pour retenir l'essentiel
+
+| Concept | Formule / Définition | Astuce / Unité |
+| :--- | :--- | :--- |
+| **Onde** | Transport d'énergie sans matière | $v$ en $m/s$ |
+| **Retard** | $\tau = d/v$ | Temps de parcours |
+| **Relation clé** | $\lambda = v \times T = v/f$ | $\lambda$ (m), $f$ (Hz) |
+| **Niveau sonore** | $L = 10 \log(I/I_0)$ | $L$ en dB (sans dimension phys.) |
+| **Intensité** | $I = I_0 \cdot 10^{L/10}$ | $I$ en $W/m^2$ |
+| **Atténuation** | Géométrique (distance) ou Absorption | +3 dB $\Leftrightarrow$ Intensité $\times 2$ |

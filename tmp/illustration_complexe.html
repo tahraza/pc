@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Animation interactive – Nombres complexes (SVG)</title>
+  <style>
+    :root {
+      --bg: #0e0f14;
+      --panel: #141722;
+      --grid: rgba(255,255,255,.10);
+      --axis: rgba(255,255,255,.45);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --blue: #4aa3ff;
+      --yellow: #ffd166;
+      --red: #ff5c7a;
+      --green: #52e3b6;
+    }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 20% 20%, #151a2b 0%, var(--bg) 60%);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 16px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; width: 100%; }
+    .top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 980px) {
+      .top { grid-template-columns: 2fr 1fr; align-items: start; }
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      overflow: hidden;
+    }
+    .card h1 {
+      font-size: 16px;
+      margin: 0;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      color: var(--text);
+      letter-spacing: .2px;
+    }
+    .panel {
+      padding: 12px 14px;
+      background: rgba(0,0,0,.08);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .row label { color: var(--muted); font-size: 12px; }
+    input[type="range"] { width: 100%; }
+    .btns {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;
+    }
+    button {
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+    button:hover { background: rgba(255,255,255,.10); }
+    .small { font-size: 12px; color: var(--muted); line-height: 1.45; }
+    .kv {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,.92);
+      background: rgba(0,0,0,.20);
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      margin: 10px 0 0;
+      white-space: pre-wrap;
+    }
+    .legend {
+      display: flex; gap: 14px; flex-wrap: wrap; padding: 10px 14px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap top">
+    <div class="card">
+      <h1>Plan complexe — z = a + ib et multiplication par w = ρe^{iθ} (rotation + zoom)</h1>
+      <svg id="svg" viewBox="0 0 900 560" width="100%" height="auto" style="display:block;background:transparent">
+        <defs>
+          <marker id="arrowBlue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 Z" fill="var(--blue)"></path>
+          </marker>
+          <marker id="arrowYellow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 Z" fill="var(--yellow)"></path>
+          </marker>
+          <marker id="arrowAxis" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="rgba(255,255,255,.45)"></path>
+          </marker>
+        </defs>
+
+        <!-- Grid group -->
+        <g id="grid"></g>
+
+        <!-- Axes -->
+        <g id="axes">
+          <line id="xAxis" x1="80" y1="280" x2="840" y2="280" stroke="rgba(255,255,255,.45)" stroke-width="2" marker-end="url(#arrowAxis)"/>
+          <line id="yAxis" x1="460" y1="520" x2="460" y2="40" stroke="rgba(255,255,255,.45)" stroke-width="2" marker-end="url(#arrowAxis)"/>
+          <text x="845" y="270" fill="rgba(255,255,255,.70)" font-size="14">Re</text>
+          <text x="470" y="45" fill="rgba(255,255,255,.70)" font-size="14">Im</text>
+        </g>
+
+        <!-- Origin -->
+        <circle cx="460" cy="280" r="4" fill="rgba(255,255,255,.70)"></circle>
+
+        <!-- Angle arc -->
+        <path id="angleArc" fill="none" stroke="var(--yellow)" stroke-width="3" opacity="0.95"></path>
+        <text id="thetaLabel" x="0" y="0" fill="var(--yellow)" font-size="14"></text>
+
+        <!-- Vector z -->
+        <line id="vecZ" x1="460" y1="280" x2="460" y2="280"
+              stroke="var(--blue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+        <circle id="dotZ" cx="460" cy="280" r="7" fill="var(--blue)"></circle>
+        <text id="labelZ" x="0" y="0" fill="rgba(255,255,255,.92)" font-size="14"></text>
+
+        <!-- Vector z' = w*z -->
+        <line id="vecZp" x1="460" y1="280" x2="460" y2="280"
+              stroke="var(--yellow)" stroke-width="4" marker-end="url(#arrowYellow)" opacity="0.95"/>
+        <circle id="dotZp" cx="460" cy="280" r="7" fill="var(--yellow)" opacity="0.95"></circle>
+        <text id="labelZp" x="0" y="0" fill="rgba(255,255,255,.92)" font-size="14"></text>
+
+        <!-- Modulus circle (for z) -->
+        <circle id="modCircle" cx="460" cy="280" r="0" fill="none" stroke="rgba(82,227,182,.60)" stroke-width="2" stroke-dasharray="6 6"></circle>
+        <text id="modLabel" x="0" y="0" fill="rgba(82,227,182,.95)" font-size="14"></text>
+
+        <!-- Info corner -->
+        <g transform="translate(20,20)">
+          <rect x="0" y="0" width="310" height="108" rx="12" fill="rgba(0,0,0,.25)" stroke="rgba(255,255,255,.10)"/>
+          <text id="info1" x="14" y="28" fill="rgba(255,255,255,.92)" font-size="14"></text>
+          <text id="info2" x="14" y="52" fill="rgba(255,255,255,.80)" font-size="13"></text>
+          <text id="info3" x="14" y="76" fill="rgba(255,255,255,.80)" font-size="13"></text>
+          <text id="info4" x="14" y="100" fill="rgba(255,255,255,.80)" font-size="13"></text>
+        </g>
+      </svg>
+
+      <div class="legend">
+        <div><span class="dot" style="background:var(--blue)"></span>Vecteur <b>z</b></div>
+        <div><span class="dot" style="background:var(--yellow)"></span>Vecteur <b>z' = w·z</b></div>
+        <div><span class="dot" style="background:var(--green)"></span>Cercle de module <b>|z|</b></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>Contrôles</h1>
+      <div class="panel">
+        <div class="row">
+          <label for="a">a (partie réelle de z)</label>
+          <output id="oa">1.50</output>
+        </div>
+        <input id="a" type="range" min="-4" max="4" step="0.01" value="1.5"/>
+
+        <div class="row">
+          <label for="b">b (partie imaginaire de z)</label>
+          <output id="ob">1.20</output>
+        </div>
+        <input id="b" type="range" min="-4" max="4" step="0.01" value="1.2"/>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,.10);margin:12px 0;">
+
+        <div class="row">
+          <label for="rho">ρ (zoom de w)</label>
+          <output id="orho">1.00</output>
+        </div>
+        <input id="rho" type="range" min="0" max="2.5" step="0.01" value="1.0"/>
+
+        <div class="row">
+          <label for="theta">θ (rotation de w en degrés)</label>
+          <output id="otheta">30</output>
+        </div>
+        <input id="theta" type="range" min="-180" max="180" step="1" value="30"/>
+
+        <div class="btns">
+          <button id="toggle">▶︎ Animer θ</button>
+          <button id="reset">↺ Reset</button>
+          <button id="random">🎲 Aléatoire</button>
+        </div>
+
+        <div class="small" style="margin-top:10px">
+          <b>Interprétation :</b> multiplier par <code>w = ρe^{iθ}</code> revient à
+          <b>tourner</b> de θ et <b>agrandir/rétrécir</b> par ρ.
+        </div>
+
+        <div id="kv" class="kv"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ----- Helpers (math + SVG) -----
+    const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+    const rad = (deg) => deg * Math.PI / 180;
+    const deg = (rad) => rad * 180 / Math.PI;
+    const fmt = (x, n=2) => (Math.abs(x) < 1e-10 ? 0 : x).toFixed(n);
+
+    // SVG coordinate system: map complex plane (-5..5) to pixels
+    const svg = document.getElementById("svg");
+    const gridG = document.getElementById("grid");
+
+    const W = 900, H = 560;
+    const cx = 460, cy = 280;   // origin pixel
+    const unit = 70;            // pixels per 1 unit
+
+    function pX(x) { return cx + x * unit; }
+    function pY(y) { return cy - y * unit; } // y up
+
+    // Build grid
+    function buildGrid() {
+      const lines = [];
+      const min = -5, max = 5;
+
+      // Minor lines (0.5)
+      for (let i = min*2; i <= max*2; i++) {
+        const v = i / 2;
+        const x = pX(v), y = pY(v);
+        const isInt = Number.isInteger(v);
+        const stroke = isInt ? "rgba(255,255,255,.12)" : "rgba(255,255,255,.06)";
+        const w = isInt ? 1.5 : 1;
+
+        // vertical
+        lines.push(`<line x1="${x}" y1="40" x2="${x}" y2="520" stroke="${stroke}" stroke-width="${w}"/>`);
+        // horizontal
+        lines.push(`<line x1="80" y1="${y}" x2="840" y2="${y}" stroke="${stroke}" stroke-width="${w}"/>`);
+
+        // Labels for integers (skip 0)
+        if (isInt && v !== 0) {
+          lines.push(`<text x="${x+4}" y="${cy+16}" fill="rgba(255,255,255,.45)" font-size="12">${v}</text>`);
+          lines.push(`<text x="${cx+6}" y="${y-6}" fill="rgba(255,255,255,.45)" font-size="12">${v}i</text>`);
+        }
+      }
+      gridG.innerHTML = lines.join("\n");
+    }
+    buildGrid();
+
+    // ----- Elements -----
+    const el = {
+      a: document.getElementById("a"),
+      b: document.getElementById("b"),
+      rho: document.getElementById("rho"),
+      theta: document.getElementById("theta"),
+      oa: document.getElementById("oa"),
+      ob: document.getElementById("ob"),
+      orho: document.getElementById("orho"),
+      otheta: document.getElementById("otheta"),
+      toggle: document.getElementById("toggle"),
+      reset: document.getElementById("reset"),
+      random: document.getElementById("random"),
+      vecZ: document.getElementById("vecZ"),
+      dotZ: document.getElementById("dotZ"),
+      labelZ: document.getElementById("labelZ"),
+      vecZp: document.getElementById("vecZp"),
+      dotZp: document.getElementById("dotZp"),
+      labelZp: document.getElementById("labelZp"),
+      modCircle: document.getElementById("modCircle"),
+      modLabel: document.getElementById("modLabel"),
+      angleArc: document.getElementById("angleArc"),
+      thetaLabel: document.getElementById("thetaLabel"),
+      info1: document.getElementById("info1"),
+      info2: document.getElementById("info2"),
+      info3: document.getElementById("info3"),
+      info4: document.getElementById("info4"),
+      kv: document.getElementById("kv"),
+    };
+
+    // Compute multiplication w*z
+    function mulComplex(a,b, rho, thetaDeg) {
+      // z = a + ib
+      // w = rho * (cosθ + i sinθ)
+      const t = rad(thetaDeg);
+      const c = Math.cos(t), s = Math.sin(t);
+      // w*z = rho*( (a+ib)(c+is) )
+      // = rho*( (ac - bs) + i(as + bc) )
+      return {
+        re: rho*(a*c - b*s),
+        im: rho*(a*s + b*c)
+      };
+    }
+
+    // Build an arc path from 0 to angle on a circle of radius rPx
+    function arcPath(angleRad, rPx) {
+      // draw from angle 0 to angleRad (counterclockwise positive)
+      const a0 = 0;
+      const a1 = angleRad;
+      const large = Math.abs(a1 - a0) > Math.PI ? 1 : 0;
+      const sweep = a1 >= a0 ? 1 : 0; // 1 = CCW in SVG? Actually sweep=1 means positive-angle direction in SVG y-down.
+      // Because our SVG y is down, the usual sweep is flipped. We'll handle by negating angle.
+      const a1svg = -a1;
+      const x0 = cx + rPx*Math.cos(0);
+      const y0 = cy + rPx*Math.sin(0);
+      const x1 = cx + rPx*Math.cos(a1svg);
+      const y1 = cy + rPx*Math.sin(a1svg);
+      return `M ${x0} ${y0} A ${rPx} ${rPx} 0 ${large} ${a1>=0 ? 0 : 1} ${x1} ${y1}`;
+    }
+
+    function update() {
+      const a = parseFloat(el.a.value);
+      const b = parseFloat(el.b.value);
+      const rho = parseFloat(el.rho.value);
+      const thetaDeg = parseFloat(el.theta.value);
+
+      el.oa.textContent = fmt(a,2);
+      el.ob.textContent = fmt(b,2);
+      el.orho.textContent = fmt(rho,2);
+      el.otheta.textContent = String(thetaDeg);
+
+      // z
+      const zx = pX(a), zy = pY(b);
+      el.vecZ.setAttribute("x2", zx);
+      el.vecZ.setAttribute("y2", zy);
+      el.dotZ.setAttribute("cx", zx);
+      el.dotZ.setAttribute("cy", zy);
+
+      const zMod = Math.hypot(a,b);
+      const zArg = Math.atan2(b,a); // radians
+
+      el.labelZ.setAttribute("x", zx + 10);
+      el.labelZ.setAttribute("y", zy - 10);
+      el.labelZ.textContent = `z`;
+
+      // modulus circle
+      const r = zMod * unit;
+      el.modCircle.setAttribute("r", r);
+      el.modLabel.setAttribute("x", cx + r + 10);
+      el.modLabel.setAttribute("y", cy - 6);
+      el.modLabel.textContent = `|z| = ${fmt(zMod,2)}`;
+
+      // z' = w*z
+      const zp = mulComplex(a,b,rho,thetaDeg);
+      const zpx = pX(zp.re), zpy = pY(zp.im);
+      el.vecZp.setAttribute("x2", zpx);
+      el.vecZp.setAttribute("y2", zpy);
+      el.dotZp.setAttribute("cx", zpx);
+      el.dotZp.setAttribute("cy", zpy);
+      el.labelZp.setAttribute("x", zpx + 10);
+      el.labelZp.setAttribute("y", zpy - 10);
+      el.labelZp.textContent = `z'`;
+
+      const zpMod = Math.hypot(zp.re, zp.im);
+      const zpArg = Math.atan2(zp.im, zp.re);
+
+      // Angle arc: show arg(z) from positive real axis to z
+      const arcR = clamp(0.9 * unit, 40, 90);
+      el.angleArc.setAttribute("d", arcPath(zArg, arcR));
+      // label near middle of arc
+      const mid = -zArg/2; // svg angle
+      el.thetaLabel.setAttribute("x", cx + (arcR+18)*Math.cos(mid));
+      el.thetaLabel.setAttribute("y", cy + (arcR+18)*Math.sin(mid));
+      el.thetaLabel.textContent = `arg(z) = ${fmt(deg(zArg),1)}°`;
+
+      // Info box
+      el.info1.textContent = `z = ${fmt(a,2)} + ${fmt(b,2)}i`;
+      el.info2.textContent = `|z| = ${fmt(zMod,2)}   arg(z) = ${fmt(deg(zArg),1)}°`;
+      el.info3.textContent = `w = ρe^{iθ} : ρ=${fmt(rho,2)}  θ=${thetaDeg}°`;
+      el.info4.textContent = `z' = w·z = ${fmt(zp.re,2)} + ${fmt(zp.im,2)}i`;
+
+      // Pretty formulas
+      const t = rad(thetaDeg);
+      const c = Math.cos(t), s = Math.sin(t);
+      el.kv.textContent =
+`Multiplication :
+w = ρ(cosθ + i sinθ)
+
+z' = w·z
+   = ρ((a+ib)(cosθ + i sinθ))
+   = ρ((a cosθ - b sinθ) + i(a sinθ + b cosθ))
+
+Ici :
+cosθ = ${fmt(c,3)}   sinθ = ${fmt(s,3)}
+
+Effets :
+|z'| = ρ|z|   et   arg(z') = arg(z) + θ (mod 2π)`;
+    }
+
+    // Animate theta
+    let anim = false;
+    let raf = null;
+
+    function tick() {
+      if (!anim) return;
+      let th = parseFloat(el.theta.value);
+      th += 0.8; // degrees per frame-ish
+      if (th > 180) th = -180;
+      el.theta.value = th;
+      update();
+      raf = requestAnimationFrame(tick);
+    }
+
+    el.toggle.addEventListener("click", () => {
+      anim = !anim;
+      el.toggle.textContent = anim ? "⏸︎ Stop" : "▶︎ Animer θ";
+      if (anim) tick();
+      else if (raf) cancelAnimationFrame(raf);
+    });
+
+    el.reset.addEventListener("click", () => {
+      el.a.value = 1.5;
+      el.b.value = 1.2;
+      el.rho.value = 1.0;
+      el.theta.value = 30;
+      anim = false;
+      el.toggle.textContent = "▶︎ Animer θ";
+      if (raf) cancelAnimationFrame(raf);
+      update();
+    });
+
+    el.random.addEventListener("click", () => {
+      const rand = (min,max,step=0.01) => {
+        const v = min + Math.random()*(max-min);
+        return Math.round(v/step)*step;
+      };
+      el.a.value = rand(-3.5,3.5,0.01);
+      el.b.value = rand(-3.5,3.5,0.01);
+      el.rho.value = rand(0,2.2,0.01);
+      el.theta.value = Math.round(rand(-180,180,1));
+      update();
+    });
+
+    ["a","b","rho","theta"].forEach(id => {
+      document.getElementById(id).addEventListener("input", update);
+    });
+
+    // Initial draw
+    update();
+  </script>
+</body>
+</html>

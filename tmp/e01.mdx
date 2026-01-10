@@ -1,0 +1,129 @@
+---
+id: "electromagnetisme-particules"
+title: "Mouvement des particules chargées : Champs E et B"
+track: "physique"
+level: 2
+prerequisites: ["Lois de Newton", "Vecteurs", "Produit vectoriel (notion)"]
+tags: ["champ électrique", "champ magnétique", "lorentz", "condensateur", "accélérateur"]
+estimatedTime: 90
+chapter: "mouvement-et-interactions"
+order: 2
+---
+
+# Mouvement dans un Champ Électrique ou Magnétique
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Décrire le mouvement d'une particule chargée dans un **champ électrique uniforme** (accélération linéaire ou parabolique).
+- Décrire le mouvement dans un **champ magnétique uniforme** (force de Lorentz, trajectoire circulaire).
+- Appliquer la deuxième loi de Newton pour établir les équations horaires et la trajectoire.
+- Utiliser les aspects énergétiques (théorème de l'énergie cinétique) pour calculer une vitesse.
+
+---
+
+## 1. Intuition et Analogie : Le Vent et le Volant
+
+Pour comprendre comment les champs invisibles agissent sur une particule chargée (comme un électron ou un ion), utilisons deux images distinctes :
+
+> **Analogie 1 : Le Champ Électrique ($\vec{E}$) est comme le "Vent"**
+> Imaginez une plume (la charge) dans un couloir venteux. Le vent **pousse** la plume dans une direction précise.
+> *   Si la plume est lâchée sans vitesse, elle accélère en ligne droite.
+> *   Si elle est lancée de travers, elle est déviée (comme un ballon par le vent) et suit une courbe (parabole).
+> *   **Le vent travaille :** il donne de la vitesse (de l'énergie) à la plume.
+
+> **Analogie 2 : Le Champ Magnétique ($\vec{B}$) est comme un "Volant bloqué"**
+> Le champ magnétique n'agit que si vous bougez. Il ne vous pousse pas pour aller plus vite, il vous fait **tourner**.
+> *   Il agit perpendiculairement à votre déplacement.
+> *   **Le volant ne travaille pas :** il change la *direction* mais pas la *valeur* de la vitesse. On ne gagne pas d'énergie cinétique avec un champ magnétique seul.
+
+---
+
+## 2. Mouvement dans un Champ Électrique Uniforme ($\vec{E}$)
+
+### A. Le Dispositif : Le Condensateur Plan
+Un champ électrique uniforme règne entre deux plaques métalliques planes et parallèles séparées d'une distance $d$, soumises à une tension $U$.
+*   **Valeur :** $E = \frac{U}{d}$ (en $V \cdot m^{-1}$).
+*   **Direction :** Perpendiculaire aux plaques.
+*   **Sens :** Des potentiels décroissants (de la plaque $+$ vers la plaque $-$)[1][2].
+
+### B. La Force Électrique
+Une particule de charge $q$ subit une force $\vec{F}_e$ constante[2] :
+$$\vec{F}_e = q \cdot \vec{E}$$
+*   Si $q > 0$ (proton), la force est dans le sens de $\vec{E}$.
+*   Si $q < 0$ (électron), la force est opposée à $\vec{E}$[3].
+
+### C. Étude Dynamique (2e Loi de Newton)
+Dans le référentiel du laboratoire (supposé galiléen), si on néglige le poids devant la force électrique :
+$$m \cdot \vec{a} = q \cdot \vec{E} \implies \vec{a} = \frac{q}{m} \vec{E}$$
+Le vecteur accélération est constant.
+*   **Si vitesse initiale $\vec{v}_0$ parallèle à $\vec{E}$ :** Mouvement Rectiligne Uniformément Accéléré (MRUA)[4].
+*   **Si vitesse initiale $\vec{v}_0$ perpendiculaire à $\vec{E}$ :** La trajectoire est une **parabole**, analogue à la chute libre d'un projectile[4][5].
+
+### D. Aspect Énergétique (Accélérateur de particules)
+La force électrique est conservative. Le travail de la force électrique entre un point A et un point B est :
+$$W_{AB}(\vec{F}_e) = q \cdot U_{AB}$$
+D'après le théorème de l'énergie cinétique ($\Delta E_c = W$) :
+$$\Delta E_c = E_{c,B} - E_{c,A} = q \cdot U_{AB}$$
+C'est le principe des **canons à électrons** ou des accélérateurs linéaires : on utilise une tension $U$ pour donner de la vitesse aux particules[6][7][8].
+
+---
+
+## 3. Mouvement dans un Champ Magnétique Uniforme ($\vec{B}$)
+
+### A. La Force de Lorentz
+Une particule de charge $q$ se déplaçant à la vitesse $\vec{v}$ dans un champ magnétique $\vec{B}$ subit la force magnétique (dite de Lorentz)[9] :
+$$\vec{f} = q \vec{v} \wedge \vec{B}$$
+*   **Direction :** Perpendiculaire au plan formé par $\vec{v}$ et $\vec{B}$.
+*   **Sens :** Déterminé par la règle de la main droite (ou du trièdre direct) appliquée au vecteur $q\vec{v}$[9].
+*   **Valeur :** $f = |q| \cdot v \cdot B \cdot \sin(\alpha)$. Si $\vec{v} \perp \vec{B}$, alors $f = |q|vB$.
+
+### B. Propriété énergétique fondamentale
+La force est toujours perpendiculaire à la vitesse (au déplacement). Par conséquent, **son travail est nul**[9][10] :
+$$W(\vec{f}) = 0$$
+**Conséquence :** L'énergie cinétique ne change pas ($\Delta E_c = 0$). La valeur de la vitesse $v$ est **constante**. Le mouvement est **uniforme**[11][10].
+
+### C. Trajectoire Circulaire
+Puisque la vitesse est constante et la force perpendiculaire (centripète), l'accélération est purement normale. Dans le repère de Frenet :
+$$a = a_n = \frac{v^2}{R}$$
+D'après la 2e loi de Newton ($ma = |q|vB$) :
+$$\frac{m v^2}{R} = |q|vB$$
+On en déduit le rayon de la trajectoire circulaire[12] :
+$$R = \frac{m \cdot v}{|q| \cdot B}$$
+C'est le principe utilisé dans les **cyclotrons** ou les spectromètres de masse pour trier les ions selon leur masse[13].
+
+---
+
+## 4. Comparatif et Résumé
+
+| Critère | Champ Électrique ($\vec{E}$) | Champ Magnétique ($\vec{B}$) |
+| :--- | :--- | :--- |
+| **Force** | $\vec{F} = q\vec{E}$ | $\vec{F} = q\vec{v} \wedge \vec{B}$ |
+| **Condition** | Agit même si la particule est immobile | N'agit que si la particule bouge ($v \neq 0$) |
+| **Travail** | $W = qU$ (Modifie l'énergie cinétique) | $W = 0$ (Conserve l'énergie cinétique) |
+| **Effet** | Accélère ou freine la particule | Courbe la trajectoire (sans accélérer) |
+| **Trajectoire type** | Parabole (si $v_0 \perp E$) | Cercle (si $v_0 \perp B$) |
+| **Analogie** | Le Vent (Poussée) | Le Volant (Virage) |
+
+---
+
+## 5. Exemples Résolus
+
+> **Exemple 1 : Accélération d'un électron (Champ E)**
+> **Question :** Un électron (masse $m_e$, charge $-e$) initialement immobile est accéléré par une tension $U = 1000 \text{ V}$. Quelle est sa vitesse finale ?
+>
+> **Solution :**
+> 1.  **Système :** Électron. **Référentiel :** Labo.
+> 2.  **Énergie :** $\Delta E_c = W(\vec{F})$.
+>     $E_{c,f} - E_{c,i} = |q|U$. Comme $v_i = 0$, $E_{c,f} = eU$.
+> 3.  **Calcul :** $\frac{1}{2}m_e v^2 = eU \implies v = \sqrt{\frac{2eU}{m_e}}$.
+> 4.  **Application :** $v = \sqrt{\frac{2 \times 1,6 \cdot 10^{-19} \times 1000}{9,11 \cdot 10^{-31}}} \approx 1,87 \cdot 10^7 \text{ m/s}$[6][14][8].
+
+> **Exemple 2 : Rayon de courbure (Champ B)**
+> **Question :** Un proton ($q=e$, masse $m_p$) entre à la vitesse $v$ dans un champ magnétique uniforme $B$ perpendiculaire à sa vitesse. Exprimer son rayon $R$.
+>
+> **Solution :**
+> 1.  **Newton :** La somme des forces est la force de Lorentz $\vec{f} = q\vec{v} \wedge \vec{B}$.
+> 2.  **Accélération :** Normale $a_n = v^2/R$.
+> 3.  **Relation :** $m_p \frac{v^2}{R} = e v B$.
+> 4.  **Résultat :** $R = \frac{m_p v}{eB}$. Plus le champ $B$ est fort, plus le rayon est petit (le virage est serré)[12].
+

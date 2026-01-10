@@ -1,0 +1,170 @@
+---
+id: "mouvement-champ-uniforme-expert"
+title: "Mouvement dans un champ uniforme : Projectiles et Particules"
+track: "physique"
+level: 2
+prerequisites: ["Lois de Newton", "Vecteurs", "Primitives et Intégrales", "Trigonométrie"]
+tags: ["mécanique", "chute libre", "champ électrique", "parabole", "équations horaires", "énergie"]
+estimatedTime: 120
+chapter: "mouvement-et-interactions"
+order: 3
+---
+
+# Mouvement dans un Champ Uniforme
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Définir un champ uniforme (pesanteur $\vec{g}$, électrique $\vec{E}$).
+- Appliquer la 2ème loi de Newton pour établir les équations horaires ($x(t), y(t)$) et l'équation de la trajectoire.
+- Démontrer que la trajectoire est une parabole (ou une droite).
+- Calculer la portée et la flèche d'un tir.
+- Analyser les aspects énergétiques (conservation de l'énergie mécanique, travail de la force électrique).
+
+---
+
+## 1. Intuition et Méthodologie
+
+Le mouvement dans un champ uniforme est l'application directe de la 2ème loi de Newton : $\sum \vec{F} = m\vec{a}$.
+Comme le champ est uniforme, la force est constante. Si la force est constante, l'accélération est constante.
+
+> **Analogie : Le Moteur de Jeu Vidéo**
+> Imaginez un moteur physique de jeu vidéo. Pour prédire où va atterrir un objet, l'ordinateur fait le calcul suivant :
+> 1.  **État initial (Le Lancer) :** Où est l'objet et à quelle vitesse part-il ? (Conditions initiales).
+> 2.  **La Règle (La Loi) :** Quelle force le pousse ? (Pesanteur ou Électricité).
+> 3.  **Le Calcul (L'Intégration) :** Si je connais l'accélération, je calcule la vitesse. Si je connais la vitesse, je calcule la position.
+
+### La Méthode en 4 étapes
+Pour réussir tout exercice de ce type, il faut suivre un protocole rigoureux [1] :
+1.  **Système :** Définir l'objet (masse $m$, charge $q$, centre $G$).
+2.  **Référentiel :** Choisir un référentiel galiléen (ex: terrestre ou laboratoire).
+3.  **Bilan des forces :** Identifier les forces (Poids $\vec{P}$ ou Force électrique $\vec{F}_e$).
+4.  **Résolution :** Appliquer la 2ème loi, projeter sur les axes, et intégrer deux fois par rapport au temps.
+
+---
+
+## 2. Cas 1 : Mouvement dans le champ de pesanteur uniforme ($\vec{g}$)
+C'est le modèle de la **chute libre** (on néglige les frottements de l'air et la poussée d'Archimède) [2], [3].
+
+### A. Mise en équation
+*   **Système :** Projectile de masse $m$.
+*   **Force :** Poids $\vec{P} = m\vec{g}$.
+*   **2ème Loi de Newton :** $m\vec{a} = m\vec{g} \implies \vec{a} = \vec{g}$.
+    *   *Note cruciale :* L'accélération ne dépend pas de la masse de l'objet. Une boule de pétanque et une balle de tennis tombent de la même façon dans le vide [4], [5].
+
+**Projection dans un repère $(O, x, y)$ :**
+On suppose $\vec{g}$ vertical vers le bas.
+$$
+\vec{a} \begin{cases} a_x = 0 \\ a_y = -g \end{cases}
+$$
+
+### B. Descente vers la position (Intégrations successives)
+On part de l'accélération pour trouver la vitesse $\vec{v}(t)$, puis la position $\vec{OM}(t)$. On utilise les **Conditions Initiales (C.I.)** à $t=0$ : le projectile est lancé de $O(0, y_0)$ avec une vitesse $v_0$ faisant un angle $\alpha$ avec l'horizontale [2], [6], [7].
+
+**1. Vitesse (Primitive de l'accélération) :**
+$$
+\vec{v}(t) \begin{cases} v_x(t) = v_0 \cdot \cos(\alpha) \quad (\text{Mouvement uniforme horizontal}) \\ v_y(t) = -g \cdot t + v_0 \cdot \sin(\alpha) \quad (\text{Mouvement uniformément varié vertical}) \end{cases}
+$$
+
+**2. Position (Primitive de la vitesse) :**
+$$
+\vec{OM}(t) \begin{cases} x(t) = (v_0 \cdot \cos\alpha) \cdot t + x_0 \\ y(t) = -\frac{1}{2}g \cdot t^2 + (v_0 \cdot \sin\alpha) \cdot t + y_0 \end{cases}
+$$
+*(En supposant $x_0=0$ pour simplifier)* [8], [9], [10].
+
+### C. L'Équation de la Trajectoire
+Pour savoir "quel dessin" fait le projectile, on élimine le temps $t$.
+1.  On isole $t$ dans l'équation de $x$ : $t = \frac{x}{v_0 \cos\alpha}$.
+2.  On remplace $t$ dans l'équation de $y$ [11], [10], [12].
+
+**Résultat (Équation d'une parabole) :**
+$$y(x) = -\frac{1}{2} \cdot g \cdot \left( \frac{x}{v_0 \cos\alpha} \right)^2 + (\tan\alpha) \cdot x + y_0$$
+
+### D. Portée et Flèche
+*   **La Flèche ($H$) :** Altitude maximale atteinte.
+    *   *Condition :* La vitesse verticale s'annule ($v_y = 0$).
+    *   *Formule :* $H = \frac{v_0^2 \sin^2\alpha}{2g} + y_0$ [13].
+*   **La Portée ($P$) :** Distance horizontale maximale (point de chute au sol).
+    *   *Condition :* L'altitude revient à zéro ($y=0$).
+    *   *Formule (si $y_0=0$) :* $P = \frac{v_0^2 \sin(2\alpha)}{g}$. La portée est maximale pour $\alpha = 45^\circ$ [14], [15].
+
+---
+
+## 3. Cas 2 : Mouvement dans un champ électrique uniforme ($\vec{E}$)
+C'est le principe des accélérateurs de particules, des tubes cathodiques ou des oscilloscopes anciens [16], [17], [18].
+
+### A. Le Dispositif : Condensateur Plan
+Un champ $\vec{E}$ uniforme règne entre deux plaques planes parallèles séparées de $d$ et soumises à une tension $U_{AB}$.
+*   Valeur du champ : $E = \frac{U_{AB}}{d}$ (en V/m) [19], [20], [21].
+*   Sens : Des potentiels décroissants (du + vers le -).
+
+### B. Mise en équation
+*   **Système :** Particule de charge $q$ et de masse $m$ (ex: électron $q=-e$).
+*   **Forces :** Force électrique $\vec{F}_e = q\vec{E}$. Le poids $\vec{P}$ est généralement **négligeable** devant $\vec{F}_e$ pour des particules atomiques [19], [22], [23].
+*   **2ème Loi de Newton :**
+    $$m\vec{a} = q\vec{E} \implies \vec{a} = \frac{q}{m}\vec{E}$$
+
+:::tip[Différence Clé]
+Contrairement à la chute libre, ici l'accélération dépend de la masse $m$ et de la charge $q$. Un électron sera beaucoup plus accéléré qu'un proton (car $m_{electron} \ll m_{proton}$) [24], [25].
+:::
+
+### C. Trajectoire
+Si la vitesse initiale $\vec{v}_0$ est perpendiculaire au champ $\vec{E}$ (ex: électron entrant horizontalement, champ vertical) :
+*   L'équation ressemble à celle de la chute libre.
+*   **Accélération verticale :** $a_y = \frac{qE}{m}$.
+*   **Trajectoire :** Parabole d'équation $y(x) = \frac{qE}{2mv_0^2}x^2$ (si entrée à l'origine) [26], [27], [28].
+
+Si la vitesse initiale est parallèle au champ $\vec{E}$, la trajectoire est une **droite** (mouvement rectiligne uniformément accéléré) [29], [30].
+
+---
+
+## 4. Aspects Énergétiques
+
+L'étude énergétique permet souvent de calculer la vitesse finale sans passer par les équations horaires (plus rapide).
+
+### A. Forces conservatives
+Le poids $\vec{P}$ et la force électrique $\vec{F}_e$ (dans un champ uniforme) sont des forces conservatives. Cela signifie que leur travail ne dépend pas du chemin suivi [31], [32].
+*   Énergie potentielle de pesanteur : $E_{pp} = mgy$.
+*   Énergie potentielle électrique : $E_{pe} = qV$ (où $V$ est le potentiel électrique) [33].
+
+### B. Conservation de l'Énergie Mécanique
+En l'absence de frottements (vide), l'énergie mécanique se conserve [34], [30], [35].
+$$E_m = E_c + E_p = \text{constante}$$
+
+*   **Pour un projectile (chute libre) :** $\frac{1}{2}mv^2 + mgy = \text{cte}$. Si l'altitude baisse, la vitesse augmente [36].
+*   **Pour une particule chargée :** $\Delta E_c + \Delta E_{pe} = 0$.
+
+### C. Théorème de l'Énergie Cinétique
+C'est l'outil le plus utilisé pour calculer la vitesse de sortie d'un accélérateur linéaire.
+$$\Delta E_c = W_{AB}(\vec{F})$$
+$$\frac{1}{2}mv_B^2 - \frac{1}{2}mv_A^2 = q \times U_{AB}$$
+*   Si un électron ($q=-e$) est accéléré par une tension $U$, sa vitesse finale (si départ arrêté) est $v = \sqrt{\frac{2eU}{m}}$ [37], [38].
+
+---
+
+## 5. Exemples Résolus (Comparatif)
+
+| Situation | Chute libre (Balle) | Déviation électrique (Électron) |
+| :--- | :--- | :--- |
+| **Force** | $\vec{P} = m\vec{g}$ (verticale) | $\vec{F} = q\vec{E}$ (verticale ou autre) |
+| **Accélération** | $\vec{a} = \vec{g}$ | $\vec{a} = \frac{q}{m}\vec{E}$ |
+| **Vitesse horiz.** | Constante ($v_0 \cos\alpha$) | Constante ($v_0$) |
+| **Trajectoire** | Parabole concave vers le bas (si tiré vers le haut) | Parabole (courbure selon signe de $q$) |
+| **Énergie** | $E_c$ augmente si $z$ diminue | $E_c$ augmente si le travail est moteur |
+
+> **Exemple de résolution - Le saut à ski (Chute libre)**
+> Un skieur quitte le tremplin à $v_0=25 m/s$ horizontalement ($\alpha=0$). Hauteur $h=50m$. Où touche-t-il le sol ?
+> 1.  **Éq. horaires :** $x(t) = v_0 t$ et $y(t) = -\frac{1}{2}gt^2 + h$.
+> 2.  **Sol :** On cherche $x$ quand $y=0$.
+> 3.  **Résolution :** $0 = -0.5gt^2 + h \implies t = \sqrt{2h/g}$.
+> 4.  **Calcul :** $t = \sqrt{100/9.8} \approx 3.2s$.
+> 5.  **Impact :** $x = 25 \times 3.2 = 80m$.
+
+## Mini-résumé pour retenir l'essentiel
+
+| Concept | Formule Clé |
+| :--- | :--- |
+| **2e Loi Newton** | $\sum \vec{F} = m\vec{a}$ |
+| **Champ Élec.** | $E = U/d$ et $F = qE$ |
+| **Intégration** | $\vec{a} \xrightarrow{\int} \vec{v} \xrightarrow{\int} \vec{OM}$ |
+| **Flèche (hauteur)** | $v_y = 0$ au sommet |
+| **Énergie** | $\Delta E_c = \sum W(\vec{F})$ |

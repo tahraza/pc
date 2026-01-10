@@ -1,0 +1,151 @@
+---
+id: "interferences-lumineuses-expert"
+title: "Interférences Lumineuses : Quand la lumière s'additionne ou s'annule"
+track: "physique"
+level: 2
+prerequisites: ["Ondes périodiques", "Diffraction", "Trigonométrie"]
+tags: ["interférences", "Young", "différence de marche", "interfrange", "cohérence"]
+estimatedTime: 90
+chapter: "ondes-et-signaux"
+order: 3
+---
+
+# Les Interférences Lumineuses
+
+## Objectifs
+À la fin de cette leçon, tu sauras :
+- Expliquer le phénomène d'interférence (conditions de cohérence).
+- Distinguer physiquement et mathématiquement les **interférences constructives** et **destructives**.
+- Schématiser l'expérience des **fentes d'Young**.
+- Démontrer et utiliser la relation de la différence de marche $\delta = \frac{a \cdot x}{D}$.
+- Calculer l'interfrange $i = \frac{\lambda \cdot D}{a}$.
+
+---
+
+## 1. Intuition et Analogie : Le Paradoxe "Lumière + Lumière = Noir"
+
+L'intuition nous dit que si on éclaire un mur avec deux lampes, ce sera deux fois plus lumineux. Pourtant, à l'échelle ondulatoire, ce n'est pas toujours vrai.
+
+> **Analogie : Les Vagues sur l'eau**
+> Imaginez deux cailloux jetés simultanément dans une mare calme. Ils créent des ronds dans l'eau.
+> *   À certains endroits, une bosse rencontre une bosse : cela fait une **vague deux fois plus haute** (l'eau s'agite beaucoup).
+> *   À d'autres endroits, une bosse d'une source rencontre un creux de l'autre : les deux s'annulent, **l'eau reste plate** (calme plat).
+>
+> En optique, c'est pareil :
+> *   **Zone brillante :** Les ondes s'ajoutent (bosse + bosse).
+> *   **Zone sombre :** Les ondes s'annulent (bosse + creux). C'est le cœur du phénomène d'interférence, [1], [2].
+
+---
+
+## 2. Conditions d'Observation : La Cohérence
+
+On ne peut pas obtenir d'interférences avec deux ampoules distinctes (comme les phares d'une voiture), car elles émettent la lumière de façon désordonnée.
+
+Pour observer des interférences stables, il faut deux sources **cohérentes**, [3] :
+1.  Elles doivent avoir la **même fréquence** (donc la même longueur d'onde $\lambda$).
+2.  Leur déphasage doit être **constant** au cours du temps.
+
+**L'astuce technique (Fentes d'Young) :**
+Pour garantir cela, on utilise une **source unique** (un laser) que l'on divise en deux faisceaux secondaires à l'aide de deux fentes fines (appelées fentes d'Young, notées $S_1$ et $S_2$). Ainsi, les deux ondes sont parfaitement synchronisées, [1], [4].
+
+---
+
+## 3. Explication Physique Approfondie : Le "Retard"
+
+Pourquoi observe-t-on des raies brillantes et sombres ? Tout dépend du chemin parcouru par la lumière.
+
+### La Différence de Marche ($\delta$)
+La lumière part des fentes $S_1$ et $S_2$ pour arriver sur un écran en un point $M$.
+*   Si $M$ est pile au centre (en face des fentes), il est à la même distance de $S_1$ et $S_2$. Les ondes arrivent en même temps.
+*   Si $M$ est décalé vers le haut, l'onde venant de la fente du bas ($S_2$) doit parcourir plus de distance que celle du haut ($S_1$).
+
+Ce surplus de distance s'appelle la **différence de marche**, notée $\delta$ (delta), [5], [6] :
+$$\delta = S_2M - S_1M$$
+*(Note : dans l'air, la différence de marche est quasi égale à la différence de chemin optique, [7]).*
+
+### Constructif vs Destructif : La règle du jeu
+L'état (lumineux ou sombre) au point $M$ dépend de combien de "vagues" entières (longueurs d'onde) tiennent dans ce retard $\delta$.
+
+| Type d'Interférence | Physique | Condition Mathématique | Résultat Visuel |
+| :--- | :--- | :--- | :--- |
+| **Constructive** | Les ondes arrivent **en phase** (bosse sur bosse). Le retard est un nombre entier de longueurs d'onde. | $\delta = k \cdot \lambda$ <br>*(avec $k$ un entier relatif : 0, 1, -1...)* | **Frange Brillante** (Maximum d'intensité) [5] |
+| **Destructive** | Les ondes arrivent en **opposition de phase** (bosse sur creux). Le retard est un nombre "et demi" de longueurs d'onde. | $\delta = (k + \frac{1}{2}) \cdot \lambda$ <br>*(ex: $0,5\lambda$, $1,5\lambda$...)* | **Frange Sombre** (Extinction / Noir) [3] |
+
+---
+
+## 4. Étude Géométrique et Mathématique
+
+Posons le cadre de l'expérience classique des trous d'Young.
+
+*   $a$ (ou $b$) : distance entre les deux fentes $S_1$ et $S_2$ [8], [9].
+*   $D$ : distance entre les fentes et l'écran.
+*   $x$ (ou $y$) : position du point $M$ sur l'écran par rapport au centre.
+*   Condition usuelle : $D \gg a$.
+
+### A. Expression approchée de la différence de marche
+Dans l'approximation des petits angles (car $D$ est très grand devant $x$ et $a$), on démontre géométriquement que la différence de marche est proportionnelle à la position $x$, [10], [11] :
+
+$$\delta = \frac{a \cdot x}{D}$$
+
+> **Interprétation :** Plus on s'éloigne du centre de l'écran ($x$ augmente), plus le décalage ($\delta$) entre les deux ondes augmente linéairement.
+
+### B. Position des franges brillantes
+Les franges brillantes apparaissent quand $\delta = k \cdot \lambda$.
+En remplaçant $\delta$, on obtient :
+$$\frac{a \cdot x_k}{D} = k \cdot \lambda \quad \iff \quad x_k = \frac{k \cdot \lambda \cdot D}{a}$$
+*   Pour $k=0$, $x=0$ (Frange centrale brillante).
+*   Pour $k=1$, $x = \frac{\lambda D}{a}$ (1ère frange brillante), etc.
+
+### C. L'Interfrange ($i$)
+L'interfrange est la distance séparant deux franges brillantes (ou sombres) consécutives, [12], [13].
+On la calcule en faisant la différence entre la position $x_{k+1}$ et $x_k$ :
+$$i = x_{k+1} - x_k = \frac{(k+1)\lambda D}{a} - \frac{k \lambda D}{a}$$
+
+On obtient la formule fondamentale à connaître par cœur, [8], [13] :
+$$i = \frac{\lambda \cdot D}{a}$$
+
+*   $i$ : interfrange (m)
+*   $\lambda$ : longueur d'onde (m)
+*   $D$ : distance fentes-écran (m)
+*   $a$ : écartement des fentes (m)
+
+---
+
+## 5. Exemples Résolus
+
+> **Exemple 1 : Calcul d'interfrange**
+> **Énoncé :** Un laser rouge ($\lambda = 633 \text{ nm}$) éclaire deux fentes séparées de $a = 200 \text{ µm}$. L'écran est à $D = 3,0 \text{ m}$. Calculer l'interfrange $i$.
+>
+> **Solution :**
+> 1.  **Conversions :**
+>     $\lambda = 633 \times 10^{-9} \text{ m}$
+>     $a = 200 \times 10^{-6} \text{ m}$
+>     $D = 3,0 \text{ m}$
+> 2.  **Formule :** $i = \frac{\lambda \cdot D}{a}$ [14], [10].
+> 3.  **Calcul :**
+>     $i = \frac{633 \times 10^{-9} \times 3,0}{200 \times 10^{-6}}$
+>     $i = \frac{1899 \times 10^{-9}}{2 \times 10^{-4}} \approx 9,5 \times 10^{-3} \text{ m}$
+> 4.  **Résultat :** $i = 9,5 \text{ mm}$.
+
+> **Exemple 2 : Nature d'une interférence (Brillante ou Sombre ?)**
+> **Énoncé :** Avec le même laser rouge ($\lambda = 633 \text{ nm}$), on considère un point $M$ où la différence de marche vaut $\delta = 3,2 \text{ µm}$. L'interférence est-elle constructive ?
+>
+> **Solution :**
+> 1.  Il faut vérifier si $\delta$ est un multiple entier de $\lambda$. On calcule le ratio $\frac{\delta}{\lambda}$.
+> 2.  $\frac{\delta}{\lambda} = \frac{3,2 \times 10^{-6}}{633 \times 10^{-9}} = \frac{3200}{633} \approx 5,05$.
+> 3.  **Analyse :** Le résultat est très proche de 5 (entier). Si on considère les incertitudes de mesure (comme dans l'exercice source [15]), on peut dire que $\delta \approx 5 \lambda$.
+> 4.  **Conclusion :** Comme $\delta$ est un multiple entier de $\lambda$ ($k=5$), l'interférence est **constructive** (frange brillante) [15].
+
+---
+
+## Mini-résumé pour retenir l'essentiel
+
+| Concept | Formule / Condition | Astuce mnémotechnique |
+| :--- | :--- | :--- |
+| **Cohérence** | Même fréquence, déphasage constant. | Une seule source divisée en deux. |
+| **Différence de marche** | $\delta = S_2M - S_1M \approx \frac{a \cdot x}{D}$ | Le "retard" d'une onde sur l'autre. |
+| **Constructive** (Brillant) | $\delta = k \cdot \lambda$ | Les ondes sont "en phase" (synchro). |
+| **Destructive** (Sombre) | $\delta = (k + 0,5) \cdot \lambda$ | Les ondes sont décalées d'un demi-pas. |
+| **Interfrange** | $i = \frac{\lambda \cdot D}{a}$ | **D** et **$\lambda$** sont au numérateur (plus c'est loin/rouge, plus c'est large). |
+
+

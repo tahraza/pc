@@ -1,0 +1,354 @@
+---
+id: "travail-force"
+title: "Travail d’une force : produit scalaire, forces conservatives et théorème de l’énergie cinétique"
+track: "physique"
+level: 2
+prerequisites: ["Vecteurs", "Cinématique", "Lois de Newton", "Énergie mécanique"]
+tags: ["travail", "énergie", "produit scalaire", "TEC", "forces conservatives", "puissance"]
+estimatedTime: 180
+chapter: "energie-et-mouvement"
+order: 3
+---
+
+import Box from '@site/src/components/Box';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Travail d’une force : comprendre, calculer, éviter les pièges
+
+> **Idée directrice** : le *travail* mesure **combien une force “pousse dans le sens du mouvement”**.  
+> C’est le pont entre **forces** et **énergies** : la variation d’énergie cinétique est égale au travail des forces extérieures (théorème de l’énergie cinétique). fileciteturn29file2L5-L12
+
+---
+
+## 0) Intuition & analogies (pour “sentir” le travail)
+
+### 0.1 Analogie “pousser un caddie”
+- Tu pousses **dans le sens du déplacement** → tu “donnes” de l’énergie au caddie : **travail positif**.
+- Tu tires **en arrière** (freinage) → tu “retire” de l’énergie : **travail négatif**.
+- Tu pousses **sur le côté** alors que le caddie avance droit → tu ne changes pas sa vitesse : **travail nul** (force perpendiculaire au déplacement).
+
+> **Traduction mathématique** : c’est exactement le rôle du **produit scalaire**.
+
+### 0.2 Analogie “compte bancaire d’énergie”
+L’énergie cinétique \(E_c\) est comme le solde d’un compte :
+- travail positif → tu crédites le compte (\(E_c\) augmente),
+- travail négatif → tu débites (\(E_c\) diminue).
+
+Le théorème de l’énergie cinétique formalise cela : la variation de \(E_c\) est due au travail des forces. fileciteturn29file2L5-L12
+
+---
+
+## 1) Définition : travail d’une force constante (cas bac incontournable)
+
+### 1.1 Formule (force constante sur un trajet rectiligne AB)
+Le travail d’une force constante \(\vec F\) sur le déplacement \(\overrightarrow{AB}\) est :
+\[
+W_{A\to B}(\vec F)=\vec F\cdot \overrightarrow{AB}=F\,AB\,\cos\theta
+\]
+où \(\theta\) est l’angle entre \(\vec F\) et \(\overrightarrow{AB}\). fileciteturn29file9L4-L14
+
+<Box type="info" title="Lecture physique (très importante)">
+\(\cos\theta\) sélectionne la **partie utile** de la force, celle **dans la direction du déplacement** :
+\[
+F_{\parallel}=F\cos\theta \quad\Rightarrow\quad W = F_{\parallel}\,AB
+\]
+</Box>
+
+### 1.2 Signe du travail (savoir expliquer)
+- Si \(0^\circ\le \theta<90^\circ\) : \(\cos\theta>0\) → **travail positif** (force “motrice”).
+- Si \(\theta=90^\circ\) : \(\cos\theta=0\) → **travail nul** (force perpendiculaire).
+- Si \(90^\circ<\theta\le 180^\circ\) : \(\cos\theta<0\) → **travail négatif** (force “résistante”).
+
+#### Mini-question 1 (diagnostic)
+Un objet se déplace horizontalement. Le poids \(\vec P\) réalise-t-il un travail ?
+
+**Réponse**
+Si le déplacement est horizontal, \(\vec P\) est vertical donc \(\theta=90^\circ\) ⇒ **travail nul**.
+
+---
+
+## 2) Travaux “à connaître par cœur” : poids, force électrique, frottements
+
+### 2.1 Travail du poids (force conservative)
+Quand un système passe d’une altitude \(z_A\) à \(z_B\) :
+\[
+W_{A\to B}(\vec P)=mg\,(z_A-z_B)
+\]
+Le travail du poids **ne dépend pas du chemin suivi** : c’est l’idée clé d’une force conservative. fileciteturn29file0L130-L138
+
+Lien énergie potentielle de pesanteur :
+\[
+W_{A\to B}(\vec P)=-\Delta E_{pp}
+\]
+fileciteturn29file0L134-L137
+
+> **Intuition** : c’est la différence d’altitude qui compte, pas la route (escalier, rampe, toboggan…).
+
+---
+
+### 2.2 Travail de la force électrique (force conservative)
+Pour une charge \(q\) entre deux points A et B :
+\[
+W_{A\to B}(\vec F)=q\,U_{AB}=q\,(V_A-V_B)
+\]
+fileciteturn29file3L38-L46
+
+Et comme pour le poids :
+\[
+W_{A\to B}(\vec F)=-\Delta E_{pe}
+\]
+fileciteturn29file1L2-L7
+
+---
+
+### 2.3 Travail des frottements (force non conservative)
+Les frottements “dissipent” l’énergie mécanique : \(\Delta E_m\) est négative. fileciteturn29file2L47-L50  
+Cas fréquent : frottement de valeur constante \(f\) sur une longueur \(l\) :
+\[
+\Delta E_m = -f\,l
+\]
+fileciteturn29file2L48-L53
+
+> **Analogie** : un frottement, c’est un “impôt” : une partie de l’énergie mécanique se transforme en chaleur.
+
+---
+
+## 3) Théorème de l’énergie cinétique (TEC) : le pont forces ↔ énergie
+
+### 3.1 Énoncé
+Toute variation de l’énergie cinétique d’un système est due au travail des forces extérieures. fileciteturn29file2L5-L12  
+Pour un déplacement de A vers B :
+\[
+\Delta E_c = E_{c,B}-E_{c,A}= \sum W_{A\to B}(\vec F_{ext})
+\]
+Et avec \(E_c=\frac12 mv^2\) :
+\[
+\frac12 m v_B^2 - \frac12 m v_A^2=\sum W_{A\to B}(\vec F_{ext})
+\]
+fileciteturn29file2L9-L12
+
+<Box type="success" title="Pourquoi c’est puissant ?">
+Tu peux résoudre des problèmes **sans passer par Newton** (pas besoin de temps), uniquement avec les énergies et les travaux.
+</Box>
+
+---
+
+## 4) Forces conservatives et énergie mécanique
+
+### 4.1 Définition utile
+Une force est **conservative** si son travail ne dépend pas du chemin suivi, et peut être relié à une énergie potentielle (poids, force électrique). fileciteturn29file0L134-L138 fileciteturn29file1L2-L7
+
+### 4.2 Conservation de l’énergie mécanique (cas “sans frottements”)
+Si seules des forces conservatives travaillent, alors :
+\[
+\Delta E_m = \Delta(E_c+E_p)=0
+\]
+Les chapitres d’aspects énergétiques le mettent en œuvre : \(\Delta E_c=W(\vec P)=-\Delta E_{pp}\) donc \(\Delta E_m=0\). fileciteturn29file1L13-L17
+
+---
+
+## 5) Puissance d’une force (bonus très utile)
+La puissance traduit “à quelle vitesse” une force fournit de l’énergie :
+\[
+\mathcal P = \frac{dW}{dt}
+\]
+Cas simple (force constante et vitesse \(\vec v\)) :
+\[
+\mathcal P = \vec F\cdot \vec v
+\]
+> **Intuition** : même force, mais si tu vas deux fois plus vite, tu transfères l’énergie deux fois plus vite.
+
+---
+
+## 6) Exercices intégrés (avec corrigés)
+
+<Box type="info" title="Méthode universelle (à appliquer à chaque exercice)">
+1) Identifier le déplacement et dessiner \(\vec F\) et \(\overrightarrow{AB}\).  
+2) Trouver \(\theta\) (ou mieux : la composante parallèle).  
+3) Calculer \(W\).  
+4) Si besoin, appliquer TEC : \(\Delta E_c=\sum W\). fileciteturn29file2L5-L12
+</Box>
+
+---
+
+### Exercice 1 — Travail d’une force constante (produit scalaire)
+Une force \(\vec F\) de norme \(F=50\,\text{N}\) agit sur un objet qui se déplace de \(AB=6{,}0\,\text{m}\).  
+L’angle entre \(\vec F\) et le déplacement vaut \(\theta=60^\circ\).
+
+1) Calculer le travail \(W\).  
+2) Interpréter le signe.
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé">
+Formule :
+\[
+W = F\,AB\,\cos\theta
+\]
+fileciteturn29file9L8-L14
+
+Calcul :
+\[
+W = 50\times 6{,}0\times \cos 60^\circ = 50\times 6{,}0\times 0{,}5 = 150\,\text{J}
+\]
+
+Signe : positif → la force a une composante dans le sens du mouvement (force “motrice”).
+  </TabItem>
+  <TabItem value="pieges" label="Pièges">
+- confondre \(\cos 60^\circ\) et \(\sin 60^\circ\)  
+- oublier que \(AB\) doit être en mètres (sinon J faux)
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 2 — Travail du poids : rampe vs chute verticale (même résultat !)
+Un objet de masse \(m=2{,}0\,\text{kg}\) descend d’une hauteur \(h=5{,}0\,\text{m}\).  
+Comparer le travail du poids si l’objet :
+- (a) tombe verticalement  
+- (b) descend une rampe
+
+**Correction attendue** : même résultat, car le travail du poids dépend seulement de \(z_A-z_B\). fileciteturn29file0L130-L138
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé">
+\[
+W(\vec P)=mg(z_A-z_B)=mgh
+\]
+fileciteturn29file0L130-L134
+
+\[
+W=2{,}0\times 9{,}81\times 5{,}0 \approx 98\,\text{J}
+\]
+Même valeur dans (a) et (b) : **chemin différent, même altitude**.
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 3 — TEC : vitesse après une descente sans frottements
+Un objet part du repos en A et descend de \(h=2{,}0\,\text{m}\) sans frottements (seul le poids travaille).  
+Trouver sa vitesse en bas.
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé (TEC)">
+TEC :
+\[
+\Delta E_c = W(\vec P)
+\]
+fileciteturn29file1L13-L15
+
+\[
+\frac12 mv^2 - 0 = mgh \Rightarrow v=\sqrt{2gh}
+\]
+Application :
+\[
+v=\sqrt{2\times 9{,}81\times 2{,}0}\approx 6{,}3\,\text{m·s}^{-1}
+\]
+  </TabItem>
+</Tabs>
+
+---
+
+### Exercice 4 — Force électrique : du travail à la vitesse (type sujet guidé)
+Dans un champ électrique uniforme, le travail d’une force constante s’écrit \(W=\vec F\cdot \overrightarrow{AB}\) fileciteturn29file9L4-L14 et on peut obtenir \(W=qU\). fileciteturn29file9L16-L20  
+On considère une particule de charge \(q\) accélérée entre deux points où la tension vaut \(U\).  
+Montrer que :
+\[
+\frac12 m v_B^2 - \frac12 m v_A^2 = qU
+\]
+puis en déduire \(v_B\) si \(v_A\simeq 0\).
+
+<Tabs>
+  <TabItem value="corrige" label="Corrigé">
+Par TEC :
+\[
+\Delta E_c = W(\vec F)
+\]
+fileciteturn29file2L5-L12
+
+Or le travail de la force électrique peut s’écrire \(W=qU\). fileciteturn29file9L16-L20  
+Donc :
+\[
+\frac12 m v_B^2 - \frac12 m v_A^2 = qU
+\]
+Si \(v_A\simeq 0\) :
+\[
+v_B=\sqrt{\frac{2qU}{m}}
+\]
+(Exactement la forme utilisée en résolution guidée.) fileciteturn29file9L21-L29
+  </TabItem>
+</Tabs>
+
+---
+
+## 7) Erreurs classiques (et comment les éviter)
+
+### 7.1 Confondre “force grande” et “travail grand”
+Le travail dépend aussi :
+- du déplacement \(AB\),
+- de l’angle \(\theta\) (via \(\cos\theta\)). fileciteturn29file9L8-L14  
+✅ Réflexe : “quelle part de la force est dans le sens du mouvement ?”
+
+### 7.2 Oublier que le travail est une grandeur *algébrique*
+- travail négatif ≠ “travail impossible”
+- travail négatif = force qui retire de l’énergie cinétique (freinage, frottement).
+
+### 7.3 Dire “le poids travaille toujours”
+Faux : si déplacement horizontal → travail du poids nul.  
+✅ Réflexe : regarder l’angle (souvent \(90^\circ\)).
+
+### 7.4 Mélanger conservation d’énergie mécanique et TEC
+- TEC : toujours vrai (si tu comptes **toutes** les forces extérieures). fileciteturn29file2L5-L12
+- Conservation \(E_m\) : seulement si forces conservatives **et** pas de dissipation. fileciteturn29file2L47-L50  
+✅ Réflexe : “y a‑t‑il des frottements / forces non conservatives ?”
+
+### 7.5 Unités
+- Travail / énergie : **joule (J)**  
+- \(1\,\text{J} = 1\,\text{N·m}\)  
+✅ Toujours convertir en SI : N, m, kg, s.
+
+---
+
+## 8) Mini‑résumé (formules à connaître)
+
+- Travail force constante :
+\[
+W_{A\to B}(\vec F)=\vec F\cdot \overrightarrow{AB}=F\,AB\cos\theta
+\]
+fileciteturn29file9L8-L14
+
+- Travail du poids :
+\[
+W(\vec P)=mg(z_A-z_B)=-\Delta E_{pp}
+\]
+fileciteturn29file0L130-L137
+
+- Travail force électrique :
+\[
+W(\vec F)=qU_{AB}=q(V_A-V_B)=-\Delta E_{pe}
+\]
+fileciteturn29file3L38-L46 fileciteturn29file1L2-L7
+
+- Théorème de l’énergie cinétique (TEC) :
+\[
+\Delta E_c = \sum W(\vec F_{ext})
+\]
+fileciteturn29file2L5-L12
+
+- Frottements (cas simple) :
+\[
+\Delta E_m = -f\,l
+\]
+fileciteturn29file2L48-L53
+
+- Puissance (utile) :
+\[
+\mathcal P=\frac{dW}{dt}\quad\text{et}\quad \mathcal P=\vec F\cdot \vec v
+\]
+
+<Box type="success" title="À maîtriser pour le bac">
+1) Savoir décider du signe d’un travail.  
+2) Savoir appliquer TEC pour trouver une vitesse sans passer par le temps. fileciteturn29file2L5-L12  
+3) Savoir reconnaître forces conservatives (poids, force électrique) et non conservatives (frottements). fileciteturn29file0L134-L138 fileciteturn29file2L47-L50
+</Box>

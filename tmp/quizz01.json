@@ -1,0 +1,158 @@
+[
+  {
+    "id": "quiz-acide-base-force",
+    "lessonId": "transformations-acide-base",
+    "type": "post",
+    "title": "Quiz : Force des acides et des bases",
+    "description": "Teste ta compréhension des concepts de pH, pKa et des réactions acide-base selon les définitions de Brønsted.",
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": "q-ab-1",
+        "question": "Quelle est la définition du pH d'une solution en fonction de la concentration en ions oxonium [H3O+] ?",
+        "choices": [
+          "pH = log([H3O+])",
+          "pH = -log([H3O+]/c0)",
+          "pH = 10^(-[H3O+])",
+          "pH = -ln([H3O+])"
+        ],
+        "correct": 1,
+        "explanation": "Le pH est défini par la relation pH = -log([H3O+]/c0) où c0 est la concentration standard de 1 mol/L.",
+        "tag": "pH",
+        "difficulty": 1
+      },
+      {
+        "id": "q-ab-2",
+        "question": "Comment définit-on un acide selon Brønsted ?",
+        "choices": [
+          "Une espèce capable de capter un proton H+",
+          "Une espèce capable de céder un proton H+",
+          "Une espèce capable de céder un électron",
+          "Une espèce contenant un groupe OH"
+        ],
+        "correct": 1,
+        "explanation": "Selon Brønsted, un acide est une espèce chimique capable de céder un ou plusieurs protons H+.",
+        "tag": "définition",
+        "difficulty": 1
+      },
+      {
+        "id": "q-ab-3",
+        "question": "Quelle relation lie le pH au pKa pour un couple acide/base AH/A- ?",
+        "choices": [
+          "pH = pKa + log([AH]/[A-])",
+          "pH = pKa - log([A-]/[AH])",
+          "pH = pKa + log([A-]/[AH])",
+          "pH = -log(Ka)"
+        ],
+        "correct": 2,
+        "explanation": "La relation d'Henderson-Hasselbalch relie le pH et le pKa : pH = pKa + log([Base]/[Acide]).",
+        "tag": "pKa",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "id": "quiz-meca-newton-kepler",
+    "lessonId": "mouvement-et-interactions",
+    "type": "post",
+    "title": "Quiz : Lois de Newton et de Kepler",
+    "description": "Vérifie tes connaissances sur la dynamique, les lois de Newton et le mouvement des satellites.",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "q-meca-1",
+        "question": "Dans un référentiel galiléen, à quoi est égale la somme des forces extérieures appliquées à un système de masse constante ?",
+        "choices": [
+          "Au vecteur vitesse (v)",
+          "Au produit de la masse par le vecteur vitesse (m.v)",
+          "Au produit de la masse par le vecteur accélération (m.a)",
+          "À zéro"
+        ],
+        "correct": 2,
+        "explanation": "C'est la deuxième loi de Newton : la somme des forces extérieures est égale à la dérivée de la quantité de mouvement, soit m.a si la masse est constante.",
+        "tag": "Newton",
+        "difficulty": 1
+      },
+      {
+        "id": "q-meca-2",
+        "question": "Quelle est l'expression de la 3ème loi de Kepler pour une planète tournant autour du Soleil (Période T, demi-grand axe a) ?",
+        "choices": [
+          "T² / a³ = constante",
+          "T³ / a² = constante",
+          "T / a = constante",
+          "a³ / T² = constante"
+        ],
+        "correct": 0,
+        "explanation": "La troisième loi de Kepler stipule que le carré de la période de révolution est proportionnel au cube du demi-grand axe de l'orbite (T² / a³ = k).",
+        "tag": "Kepler",
+        "difficulty": 2
+      },
+      {
+        "id": "q-meca-3",
+        "question": "Dans le cas d'un mouvement circulaire uniforme d'un satellite, comment est le vecteur accélération ?",
+        "choices": [
+          "Nul",
+          "Tangent à la trajectoire",
+          "Normal et dirigé vers le centre attracteur (centripète)",
+          "Constant en direction et en norme"
+        ],
+        "correct": 2,
+        "explanation": "Pour un mouvement circulaire uniforme, l'accélération est portée par le vecteur normal n du repère de Frenet et vaut v²/r.",
+        "tag": "accélération",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "id": "quiz-nucleaire-radioactivite",
+    "lessonId": "transformations-nucleaires",
+    "type": "post",
+    "title": "Quiz : Radioactivité et décroissance",
+    "description": "Test sur les types de désintégration, les isotopes et la loi de décroissance radioactive.",
+    "passingScore": 60,
+    "questions": [
+      {
+        "id": "q-rad-1",
+        "question": "Qu'est-ce qu'une particule Alpha (α) ?",
+        "choices": [
+          "Un électron",
+          "Un proton seul",
+          "Un noyau d'Hélium (2 protons, 2 neutrons)",
+          "Un photon"
+        ],
+        "correct": 2,
+        "explanation": "La radioactivité alpha correspond à l'émission d'un noyau d'hélium 4 (particule alpha) par un noyau lourd instable.",
+        "tag": "alpha",
+        "difficulty": 1
+      },
+      {
+        "id": "q-rad-2",
+        "question": "Quelle est la relation entre la demi-vie (t1/2) et la constante radioactive (λ) ?",
+        "choices": [
+          "t1/2 = λ / ln(2)",
+          "t1/2 = ln(2) / λ",
+          "t1/2 = 1 / λ",
+          "t1/2 = λ x ln(2)"
+        ],
+        "correct": 1,
+        "explanation": "La demi-vie est liée à la constante radioactive par la relation t1/2 = ln(2) / λ.",
+        "tag": "demi-vie",
+        "difficulty": 2
+      },
+      {
+        "id": "q-rad-3",
+        "question": "Quelle est la loi mathématique de l'évolution du nombre de noyaux N(t) ?",
+        "choices": [
+          "N(t) = N0 - λt",
+          "N(t) = N0 / (2t)",
+          "N(t) = N0 . exp(-λt)",
+          "N(t) = N0 . exp(λt)"
+        ],
+        "correct": 2,
+        "explanation": "C'est la loi de décroissance radioactive : le nombre de noyaux diminue exponentiellement au cours du temps.",
+        "tag": "décroissance",
+        "difficulty": 2
+      }
+    ]
+  }
+]
