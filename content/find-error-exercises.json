@@ -1,0 +1,333 @@
+[
+  {
+    "id": "err-ondes-1",
+    "lessonId": "ondes-mecaniques",
+    "title": "Calcul de longueur d'onde",
+    "difficulty": 2,
+    "problem": "Une onde sonore de fréquence f = 440 Hz se propage dans l'air à la célérité v = 340 m/s. Calculer la longueur d'onde.",
+    "wrongSolution": {
+      "steps": [
+        "On utilise la relation v = λ × f",
+        "Donc λ = v × f = 340 × 440 = 149 600 m"
+      ],
+      "finalAnswer": "λ = 149 600 m"
+    },
+    "error": {
+      "location": "Étape 2",
+      "description": "Erreur de formule : la formule correcte est λ = v/f et non λ = v × f",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "On utilise la relation v = λ × f",
+        "Donc λ = v / f = 340 / 440 = 0.77 m"
+      ],
+      "finalAnswer": "λ = 0.77 m ≈ 77 cm"
+    },
+    "hint": "Vérifiez les unités : λ doit être en mètres, pas en centaines de kilomètres !"
+  },
+  {
+    "id": "err-ondes-2",
+    "lessonId": "ondes-mecaniques",
+    "title": "Retard d'une onde",
+    "difficulty": 2,
+    "problem": "Deux points A et B sont séparés de d = 1.5 m sur une corde. L'onde se propage à v = 3 m/s. Quel est le retard de B par rapport à A ?",
+    "wrongSolution": {
+      "steps": [
+        "Le retard est τ = d × v",
+        "τ = 1.5 × 3 = 4.5 s"
+      ],
+      "finalAnswer": "τ = 4.5 s"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "La formule du retard est τ = d/v (temps = distance/vitesse) et non τ = d × v",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "Le retard est τ = d / v",
+        "τ = 1.5 / 3 = 0.5 s"
+      ],
+      "finalAnswer": "τ = 0.5 s"
+    },
+    "hint": "Pensez aux unités : un retard est un temps, pas un (mètre × m/s)"
+  },
+  {
+    "id": "err-diffraction-1",
+    "lessonId": "diffraction",
+    "title": "Largeur de tache centrale",
+    "difficulty": 3,
+    "problem": "Un laser de λ = 633 nm passe par une fente de largeur a = 0.1 mm. L'écran est à D = 2 m. Calculer la largeur de la tache centrale.",
+    "wrongSolution": {
+      "steps": [
+        "Largeur L = λD/a",
+        "L = (633 × 10⁻⁹ × 2) / (0.1 × 10⁻³)",
+        "L = 1.266 × 10⁻⁵ / 10⁻⁴ = 0.127 m = 12.7 cm"
+      ],
+      "finalAnswer": "L = 12.7 cm"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "La largeur de la tache CENTRALE est L = 2λD/a (facteur 2 oublié). La formule λD/a donne la demi-largeur.",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "Largeur L = 2λD/a",
+        "L = 2 × (633 × 10⁻⁹ × 2) / (0.1 × 10⁻³)",
+        "L = 2.532 × 10⁻⁵ / 10⁻⁴ = 0.253 m = 25.3 cm"
+      ],
+      "finalAnswer": "L = 25.3 cm"
+    },
+    "hint": "La tache centrale s'étend de -θ₁ à +θ₁, soit une largeur totale de 2×Dθ₁"
+  },
+  {
+    "id": "err-rc-1",
+    "lessonId": "circuit-rc",
+    "title": "Constante de temps",
+    "difficulty": 2,
+    "problem": "R = 10 kΩ et C = 100 μF. Calculer la constante de temps τ.",
+    "wrongSolution": {
+      "steps": [
+        "τ = RC",
+        "τ = 10 000 × 100 = 1 000 000 s"
+      ],
+      "finalAnswer": "τ = 1 000 000 s ≈ 11.6 jours"
+    },
+    "error": {
+      "location": "Étape 2",
+      "description": "Erreur d'unité : 100 μF = 100 × 10⁻⁶ F, pas 100 F. Il faut convertir les micro-farads en farads.",
+      "type": "conversion"
+    },
+    "correctSolution": {
+      "steps": [
+        "τ = RC",
+        "τ = 10 000 × 100 × 10⁻⁶ = 1 s"
+      ],
+      "finalAnswer": "τ = 1 s"
+    },
+    "hint": "Vérifiez toujours les préfixes : k = 10³, μ = 10⁻⁶"
+  },
+  {
+    "id": "err-rc-2",
+    "lessonId": "circuit-rc",
+    "title": "Tension après 3τ",
+    "difficulty": 2,
+    "problem": "Un condensateur se charge depuis E = 10 V. Quelle est la tension après t = 3τ ?",
+    "wrongSolution": {
+      "steps": [
+        "uC(t) = E × e^(-t/τ)",
+        "uC(3τ) = 10 × e⁻³ = 10 × 0.05 = 0.5 V"
+      ],
+      "finalAnswer": "uC = 0.5 V"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "Erreur de formule : pour la CHARGE, uC(t) = E(1 - e^(-t/τ)). La formule uC = E×e^(-t/τ) est pour la DÉCHARGE.",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "uC(t) = E × (1 - e^(-t/τ))",
+        "uC(3τ) = 10 × (1 - e⁻³) = 10 × (1 - 0.05) = 10 × 0.95 = 9.5 V"
+      ],
+      "finalAnswer": "uC = 9.5 V"
+    },
+    "hint": "Charge : la tension monte. Décharge : la tension descend. Quelle formule donne le bon comportement ?"
+  },
+  {
+    "id": "err-ph-1",
+    "lessonId": "acides-bases",
+    "title": "pH d'une base forte",
+    "difficulty": 2,
+    "problem": "Calculer le pH d'une solution de NaOH à C = 0.01 mol/L.",
+    "wrongSolution": {
+      "steps": [
+        "NaOH est une base forte, donc [OH⁻] = C = 0.01 mol/L",
+        "pH = -log(0.01) = 2"
+      ],
+      "finalAnswer": "pH = 2"
+    },
+    "error": {
+      "location": "Étape 2",
+      "description": "-log(C) donne le pOH, pas le pH ! Pour une base, pH = 14 - pOH.",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "NaOH est une base forte, donc [OH⁻] = C = 0.01 mol/L",
+        "pOH = -log(0.01) = 2",
+        "pH = 14 - pOH = 14 - 2 = 12"
+      ],
+      "finalAnswer": "pH = 12"
+    },
+    "hint": "Une base a un pH > 7. Si vous trouvez pH < 7, il y a une erreur !"
+  },
+  {
+    "id": "err-ph-2",
+    "lessonId": "acides-bases",
+    "title": "pH d'un acide faible",
+    "difficulty": 3,
+    "problem": "Calculer le pH d'une solution d'acide éthanoïque C = 0.1 mol/L (Ka = 10⁻⁵).",
+    "wrongSolution": {
+      "steps": [
+        "C'est un acide, donc [H₃O⁺] = C = 0.1 mol/L",
+        "pH = -log(0.1) = 1"
+      ],
+      "finalAnswer": "pH = 1"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "Un acide FAIBLE n'est pas totalement dissocié ! On ne peut pas écrire [H₃O⁺] = C. Il faut utiliser Ka pour calculer [H₃O⁺].",
+      "type": "concept"
+    },
+    "correctSolution": {
+      "steps": [
+        "Pour un acide faible : [H₃O⁺] ≈ √(Ka × C)",
+        "[H₃O⁺] = √(10⁻⁵ × 0.1) = √(10⁻⁶) = 10⁻³ mol/L",
+        "pH = -log(10⁻³) = 3"
+      ],
+      "finalAnswer": "pH = 3"
+    },
+    "hint": "La formule [H₃O⁺] = C n'est valable que pour un acide FORT"
+  },
+  {
+    "id": "err-cinetique-1",
+    "lessonId": "cinetique",
+    "title": "Temps de demi-réaction",
+    "difficulty": 2,
+    "problem": "Pour une réaction d'ordre 1, k = 0.02 min⁻¹. Calculer t₁/₂.",
+    "wrongSolution": {
+      "steps": [
+        "t₁/₂ = 1/(2k)",
+        "t₁/₂ = 1/(2 × 0.02) = 1/0.04 = 25 min"
+      ],
+      "finalAnswer": "t₁/₂ = 25 min"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "Mauvaise formule ! Pour l'ordre 1, t₁/₂ = ln(2)/k ≈ 0.693/k, et non 1/(2k).",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "t₁/₂ = ln(2)/k = 0.693/k",
+        "t₁/₂ = 0.693/0.02 = 34.65 min"
+      ],
+      "finalAnswer": "t₁/₂ ≈ 35 min"
+    },
+    "hint": "La formule 1/(2k) n'existe pas en cinétique. ln(2)/k pour l'ordre 1, 1/(k[A]₀) pour l'ordre 2."
+  },
+  {
+    "id": "err-energie-1",
+    "lessonId": "energie-mecanique",
+    "title": "Énergie cinétique",
+    "difficulty": 1,
+    "problem": "Un objet de masse m = 2 kg a une vitesse v = 5 m/s. Calculer Ec.",
+    "wrongSolution": {
+      "steps": [
+        "Ec = mv²",
+        "Ec = 2 × 5² = 2 × 25 = 50 J"
+      ],
+      "finalAnswer": "Ec = 50 J"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "Oubli du facteur 1/2 ! La formule est Ec = ½mv², pas Ec = mv².",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "Ec = ½mv²",
+        "Ec = ½ × 2 × 5² = ½ × 2 × 25 = 25 J"
+      ],
+      "finalAnswer": "Ec = 25 J"
+    },
+    "hint": "Vérifiez le facteur ½ devant mv²"
+  },
+  {
+    "id": "err-equilibre-1",
+    "lessonId": "equilibres-chimiques",
+    "title": "Quotient de réaction",
+    "difficulty": 3,
+    "problem": "Pour 2A ⇌ B + C avec [A] = 0.2 M, [B] = 0.1 M, [C] = 0.1 M. Calculer Qr.",
+    "wrongSolution": {
+      "steps": [
+        "Qr = [A]² / ([B][C])",
+        "Qr = (0.2)² / (0.1 × 0.1) = 0.04 / 0.01 = 4"
+      ],
+      "finalAnswer": "Qr = 4"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "Inversion produits/réactifs ! Qr = [produits]/[réactifs] = [B][C]/[A]², pas l'inverse.",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "Qr = [B][C] / [A]²",
+        "Qr = (0.1 × 0.1) / (0.2)² = 0.01 / 0.04 = 0.25"
+      ],
+      "finalAnswer": "Qr = 0.25"
+    },
+    "hint": "Dans Qr (et K), les produits sont au numérateur, les réactifs au dénominateur."
+  },
+  {
+    "id": "err-interferences-1",
+    "lessonId": "interferences",
+    "title": "Interfrange",
+    "difficulty": 2,
+    "problem": "Fentes d'Young : λ = 600 nm, a = 0.5 mm, D = 1.5 m. Calculer l'interfrange.",
+    "wrongSolution": {
+      "steps": [
+        "i = λa/D",
+        "i = (600 × 10⁻⁹ × 0.5 × 10⁻³) / 1.5",
+        "i = 3 × 10⁻¹⁰ / 1.5 = 2 × 10⁻¹⁰ m"
+      ],
+      "finalAnswer": "i = 0.2 nm"
+    },
+    "error": {
+      "location": "Étape 1",
+      "description": "Erreur de formule : i = λD/a (D au numérateur, a au dénominateur), pas i = λa/D.",
+      "type": "formule"
+    },
+    "correctSolution": {
+      "steps": [
+        "i = λD/a",
+        "i = (600 × 10⁻⁹ × 1.5) / (0.5 × 10⁻³)",
+        "i = 9 × 10⁻⁷ / 5 × 10⁻⁴ = 1.8 × 10⁻³ m = 1.8 mm"
+      ],
+      "finalAnswer": "i = 1.8 mm"
+    },
+    "hint": "L'interfrange est de l'ordre du mm, pas du nm !"
+  },
+  {
+    "id": "err-newton-1",
+    "lessonId": "mouvement-newton",
+    "title": "Deuxième loi de Newton",
+    "difficulty": 2,
+    "problem": "Un objet de 500 g subit une force de 2 N. Calculer l'accélération.",
+    "wrongSolution": {
+      "steps": [
+        "F = ma donc a = F/m",
+        "a = 2 / 500 = 0.004 m/s²"
+      ],
+      "finalAnswer": "a = 0.004 m/s²"
+    },
+    "error": {
+      "location": "Étape 2",
+      "description": "Erreur d'unité : la masse doit être en kg, pas en g. 500 g = 0.5 kg.",
+      "type": "conversion"
+    },
+    "correctSolution": {
+      "steps": [
+        "F = ma donc a = F/m",
+        "m = 500 g = 0.5 kg",
+        "a = 2 / 0.5 = 4 m/s²"
+      ],
+      "finalAnswer": "a = 4 m/s²"
+    },
+    "hint": "Dans le SI : masse en kg, force en N, accélération en m/s²"
+  }
+]

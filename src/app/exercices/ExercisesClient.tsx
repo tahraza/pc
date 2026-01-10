@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ClipboardList, Tag, ChevronRight, Filter } from 'lucide-react'
+import { ClipboardList, Tag, ChevronRight, Filter, Shuffle, AlertTriangle } from 'lucide-react'
 import { getDifficultyLabel, getDifficultyColor } from '@/lib/utils'
 import MathText from '@/components/MathText'
 
@@ -114,13 +114,33 @@ export default function ExercisesClient() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3">
-            <ClipboardList className="h-8 w-8 text-amber-600" />
-            Exercices
-          </h1>
-          <p className="mt-2 text-slate-600 dark:text-slate-400">
-            {exercises.length} exercices corrigés avec indices et solutions détaillées
-          </p>
+          <div className="flex items-start justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3">
+                <ClipboardList className="h-8 w-8 text-amber-600" />
+                Exercices
+              </h1>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">
+                {exercises.length} exercices corrigés avec indices et solutions détaillées
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Link
+                href="/exercices-aleatoires"
+                className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors"
+              >
+                <Shuffle className="h-4 w-4" />
+                <span className="hidden sm:inline">Aléatoires</span>
+              </Link>
+              <Link
+                href="/trouver-erreur"
+                className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors"
+              >
+                <AlertTriangle className="h-4 w-4" />
+                <span className="hidden sm:inline">Trouver l'erreur</span>
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Filters */}

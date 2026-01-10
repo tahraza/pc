@@ -1,0 +1,236 @@
+[
+  {
+    "id": "cq-ondes-1",
+    "lessonId": "ondes-mecaniques",
+    "question": "Pourquoi une onde mécanique ne peut-elle pas se propager dans le vide ?",
+    "type": "pourquoi",
+    "answer": "Une onde mécanique a besoin d'un milieu matériel pour se propager car elle correspond à la propagation d'une perturbation de proche en proche entre particules. Sans matière, il n'y a pas de particules pour transmettre cette perturbation.",
+    "keyPoints": [
+      "Propagation = transfert d'énergie sans transport de matière",
+      "Les particules oscillent autour de leur position d'équilibre",
+      "Chaque particule 'pousse' sa voisine"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cq-ondes-2",
+    "lessonId": "ondes-mecaniques",
+    "question": "Que se passe-t-il si on double la fréquence d'une onde sans changer le milieu ?",
+    "type": "que-se-passe-t-il",
+    "answer": "La longueur d'onde est divisée par deux. En effet, v = λf, et comme la célérité v dépend uniquement du milieu (qui ne change pas), si f double alors λ doit être divisé par 2 pour que le produit reste constant.",
+    "keyPoints": [
+      "v = λf (relation fondamentale)",
+      "La célérité ne dépend que du milieu",
+      "λ et f sont inversement proportionnels à v constante"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-diffraction-1",
+    "lessonId": "diffraction",
+    "question": "Pourquoi observe-t-on de la diffraction quand l'ouverture est de l'ordre de grandeur de la longueur d'onde ?",
+    "type": "pourquoi",
+    "answer": "La diffraction est un phénomène d'interférence entre les différentes parties du front d'onde passant par l'ouverture. Quand l'ouverture est grande devant λ, les effets de bord sont négligeables. Quand a ≈ λ, toute l'ouverture contribue aux interférences, rendant le phénomène visible.",
+    "keyPoints": [
+      "Principe de Huygens-Fresnel",
+      "Chaque point de l'ouverture est une source secondaire",
+      "Rapport a/λ détermine l'importance de la diffraction"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "cq-interferences-1",
+    "lessonId": "interferences",
+    "question": "Deux ondes en opposition de phase peuvent-elles créer une frange brillante ?",
+    "type": "vrai-faux-explique",
+    "answer": "Non, deux ondes en opposition de phase (déphasage de π) produisent toujours une interférence destructive. Pour avoir une frange brillante, il faut que les ondes soient en phase (déphasage de 0 ou 2kπ).",
+    "keyPoints": [
+      "Opposition de phase = déphasage de π",
+      "Les amplitudes s'annulent",
+      "Condition de frange brillante : δ = kλ"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-circuit-rc-1",
+    "lessonId": "circuit-rc",
+    "question": "Pourquoi le courant diminue-t-il pendant la charge d'un condensateur ?",
+    "type": "pourquoi",
+    "answer": "Au fur et à mesure que le condensateur se charge, la tension à ses bornes augmente. Comme la tension du générateur est constante, la tension aux bornes de la résistance (E - uC) diminue. D'après la loi d'Ohm, le courant i = (E - uC)/R diminue donc aussi.",
+    "keyPoints": [
+      "Loi des mailles : E = uR + uC",
+      "uC augmente → uR diminue",
+      "i = uR/R donc i diminue"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-circuit-rc-2",
+    "lessonId": "circuit-rc",
+    "question": "Que se passe-t-il si on augmente la résistance R dans un circuit RC ?",
+    "type": "que-se-passe-t-il",
+    "answer": "La constante de temps τ = RC augmente, donc la charge/décharge devient plus lente. Le condensateur met plus de temps à atteindre sa tension finale. La tension finale reste la même (E pour la charge), mais le régime transitoire dure plus longtemps.",
+    "keyPoints": [
+      "τ = RC augmente",
+      "Charge plus lente",
+      "Même tension finale, temps différent"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-acides-bases-1",
+    "lessonId": "acides-bases",
+    "question": "Pourquoi le pH d'un acide fort est-il plus bas que celui d'un acide faible de même concentration ?",
+    "type": "pourquoi",
+    "answer": "Un acide fort est totalement dissocié : [H₃O⁺] = C. Un acide faible n'est que partiellement dissocié : [H₃O⁺] < C. Comme pH = -log[H₃O⁺], une concentration en H₃O⁺ plus élevée donne un pH plus bas.",
+    "keyPoints": [
+      "Acide fort : dissociation totale",
+      "Acide faible : équilibre, dissociation partielle",
+      "[H₃O⁺] plus grand → pH plus petit"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-acides-bases-2",
+    "lessonId": "acides-bases",
+    "question": "Que se passe-t-il si on dilue infiniment une solution d'acide fort ?",
+    "type": "que-se-passe-t-il",
+    "answer": "Le pH tend vers 7 (et non pas vers l'infini). En diluant, [H₃O⁺] apporté par l'acide devient négligeable devant [H₃O⁺] = 10⁻⁷ mol/L provenant de l'autoprotolyse de l'eau. L'eau impose sa neutralité.",
+    "keyPoints": [
+      "Dilution → [H₃O⁺]acide diminue",
+      "L'autoprotolyse de l'eau intervient",
+      "pH ne peut pas dépasser 7 pour un acide"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "cq-cinetique-1",
+    "lessonId": "cinetique",
+    "question": "Pourquoi le temps de demi-réaction d'une réaction d'ordre 1 est-il indépendant de la concentration initiale ?",
+    "type": "pourquoi",
+    "answer": "Pour l'ordre 1, [A] = [A]₀e^(-kt). À t½, [A] = [A]₀/2, donc [A]₀/2 = [A]₀e^(-kt½), ce qui donne e^(-kt½) = 1/2. On trouve t½ = ln(2)/k. Le [A]₀ s'élimine, donc t½ ne dépend que de k.",
+    "keyPoints": [
+      "Loi exponentielle pour l'ordre 1",
+      "[A]₀ se simplifie dans le calcul",
+      "t½ = ln(2)/k ≈ 0.693/k"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "cq-cinetique-2",
+    "lessonId": "cinetique",
+    "question": "Que se passe-t-il si on augmente la température d'une réaction chimique ?",
+    "type": "que-se-passe-t-il",
+    "answer": "La vitesse de réaction augmente (généralement elle double tous les 10°C). La constante de vitesse k augmente selon la loi d'Arrhenius car plus de molécules ont l'énergie nécessaire pour franchir la barrière d'activation.",
+    "keyPoints": [
+      "k augmente avec T (Arrhenius)",
+      "Plus de collisions efficaces",
+      "Ea = énergie d'activation"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-equilibre-1",
+    "lessonId": "equilibres-chimiques",
+    "question": "Pourquoi l'ajout d'un réactif déplace-t-il l'équilibre dans le sens direct ?",
+    "type": "pourquoi",
+    "answer": "Quand on ajoute un réactif, Qr devient inférieur à K (numérateur inchangé, dénominateur augmenté). Le système évolue pour que Qr retrouve la valeur K, ce qui nécessite de consommer les réactifs (sens direct) et former des produits.",
+    "keyPoints": [
+      "Qr < K → évolution sens direct",
+      "Le système cherche à rétablir Qr = K",
+      "Principe de Le Chatelier"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-equilibre-2",
+    "lessonId": "equilibres-chimiques",
+    "question": "La constante d'équilibre K change-t-elle si on ajoute un catalyseur ?",
+    "type": "vrai-faux-explique",
+    "answer": "Non, K ne change pas. Un catalyseur accélère la réaction dans les deux sens de la même façon. Il permet d'atteindre l'équilibre plus rapidement mais ne modifie pas la position de l'équilibre (les concentrations à l'équilibre restent les mêmes).",
+    "keyPoints": [
+      "Catalyseur = même accélération dans les deux sens",
+      "Équilibre atteint plus vite",
+      "K ne dépend que de T"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-energie-1",
+    "lessonId": "energie-mecanique",
+    "question": "Pourquoi l'énergie mécanique se conserve-t-elle en l'absence de frottements ?",
+    "type": "pourquoi",
+    "answer": "Sans frottements, seules des forces conservatives (poids, force élastique) travaillent. Le travail d'une force conservative correspond exactement à l'opposé de la variation d'énergie potentielle associée. Ainsi, toute perte d'Ep est compensée par un gain d'Ec et vice versa.",
+    "keyPoints": [
+      "Forces conservatives : W = -ΔEp",
+      "Théorème de l'énergie cinétique : W = ΔEc",
+      "Donc ΔEc = -ΔEp, soit Δ(Ec + Ep) = 0"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-energie-2",
+    "lessonId": "energie-mecanique",
+    "question": "Que se passe-t-il à l'énergie mécanique si une balle rebondit avec des pertes ?",
+    "type": "que-se-passe-t-il",
+    "answer": "L'énergie mécanique diminue à chaque rebond. Une partie de l'énergie est transférée sous forme de chaleur (déformation de la balle) et de son. La balle rebondit de moins en moins haut jusqu'à s'immobiliser.",
+    "keyPoints": [
+      "Choc inélastique = perte d'Em",
+      "Transfert vers énergie thermique",
+      "Hauteur de rebond diminue"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cq-newton-1",
+    "lessonId": "mouvement-newton",
+    "question": "Pourquoi un objet peut-il se déplacer à vitesse constante sans qu'aucune force ne s'exerce sur lui ?",
+    "type": "pourquoi",
+    "answer": "C'est le principe d'inertie (1ère loi de Newton). En l'absence de forces (ou si la somme des forces est nulle), un objet conserve son état de mouvement : repos ou mouvement rectiligne uniforme. Une force n'est pas nécessaire pour maintenir le mouvement, seulement pour le modifier.",
+    "keyPoints": [
+      "Principe d'inertie",
+      "ΣF = 0 → v = constante",
+      "Force = changement de mouvement"
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "cq-radioactivite-1",
+    "lessonId": "radioactivite",
+    "question": "Pourquoi ne peut-on pas prédire quand un noyau radioactif particulier va se désintégrer ?",
+    "type": "pourquoi",
+    "answer": "La désintégration radioactive est un phénomène quantique aléatoire. Chaque noyau a une probabilité de se désintégrer par unité de temps (λ), mais le moment exact est imprévisible. Seul le comportement statistique d'un grand nombre de noyaux est prévisible (loi de décroissance).",
+    "keyPoints": [
+      "Phénomène aléatoire au niveau individuel",
+      "Probabilité λ = constante de désintégration",
+      "Loi statistique pour N grand"
+    ],
+    "difficulty": 2
+  },
+  {
+    "id": "cq-thermochimie-1",
+    "lessonId": "thermochimie",
+    "question": "Une réaction exothermique peut-elle être non spontanée ?",
+    "type": "vrai-faux-explique",
+    "answer": "Oui, c'est possible. La spontanéité dépend de l'enthalpie libre ΔG = ΔH - TΔS. Une réaction exothermique (ΔH < 0) peut avoir un ΔS très négatif (diminution du désordre), rendant ΔG > 0 à certaines températures, donc la réaction non spontanée.",
+    "keyPoints": [
+      "Spontanéité : ΔG < 0",
+      "ΔG = ΔH - TΔS",
+      "L'entropie joue aussi un rôle"
+    ],
+    "difficulty": 3
+  },
+  {
+    "id": "cq-oxydoreduction-1",
+    "lessonId": "oxydoreduction",
+    "question": "Dans une pile, pourquoi les électrons circulent-ils de l'anode vers la cathode ?",
+    "type": "pourquoi",
+    "answer": "À l'anode, l'oxydation libère des électrons (le réducteur cède des e⁻). À la cathode, la réduction consomme des électrons (l'oxydant capte des e⁻). Les électrons circulent naturellement de là où ils sont produits vers là où ils sont consommés, créant le courant.",
+    "keyPoints": [
+      "Anode = oxydation = perte d'e⁻",
+      "Cathode = réduction = gain d'e⁻",
+      "Le courant va de + vers - (sens conventionnel inverse)"
+    ],
+    "difficulty": 2
+  }
+]

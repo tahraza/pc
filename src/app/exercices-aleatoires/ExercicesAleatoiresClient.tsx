@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { RandomExerciseTemplate } from '@/types'
 import { RandomExercise } from '@/components/RandomExercise'
-import { Shuffle, Filter, ChevronDown, Zap, ArrowLeft } from 'lucide-react'
+import { Shuffle, Filter, ChevronDown, Zap, ArrowLeft, Layers } from 'lucide-react'
 
 // Mapping des lessonId vers des noms lisibles
 const lessonNames: Record<string, string> = {
@@ -87,6 +87,10 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
   const [showFilters, setShowFilters] = useState(!!initialLesson)
   const [completedCount, setCompletedCount] = useState(0)
 
+  // Mode interleaving (mélange multi-chapitres)
+  const [interleavingMode, setInterleavingMode] = useState(false)
+  const [selectedLessons, setSelectedLessons] = useState<string[]>([])
+
   // Le filtre actif : soit le state (si modifié par l'utilisateur), soit initialLesson
   const activeFilter = selectedLesson === undefined ? initialLesson : selectedLesson
 
@@ -107,20 +111,29 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
   // Obtenir les leçons uniques
   const uniqueLessons = Array.from(new Set(templates.map(t => t.lessonId)))
 
-  // Filtrer les templates par leçon
-  const filteredTemplates = activeFilter
-    ? templates.filter(t => t.lessonId === activeFilter)
-    : templates
+  // Filtrer les templates par leçon(s)
+  const filteredTemplates = interleavingMode
+    ? (selectedLessons.length > 0
+        ? templates.filter(t => selectedLessons.includes(t.lessonId))
+        : templates)
+    : (activeFilter
+        ? templates.filter(t => t.lessonId === activeFilter)
+        : templates)
+
+  // Toggle une leçon dans la sélection multiple
+  const toggleLesson = (lessonId: string) => {
+    setSelectedLessons(prev =>
+      prev.includes(lessonId)
+        ? prev.filter(l => l !== lessonId)
+        : [...prev, lessonId]
+    )
+  }
 
   // Sélectionner un exercice aléatoire
   const handleRandomExercise = () => {
-    const pool = activeFilter
-      ? templates.filter(t => t.lessonId === activeFilter)
-      : templates
-
-    if (pool.length > 0) {
-      const randomIndex = Math.floor(Math.random() * pool.length)
-      setSelectedTemplate(pool[randomIndex])
+    if (filteredTemplates.length > 0) {
+      const randomIndex = Math.floor(Math.random() * filteredTemplates.length)
+      setSelectedTemplate(filteredTemplates[randomIndex])
     }
   }
 
@@ -187,43 +200,118 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
       </div>
 
       <div className="max-w-4xl mx-auto p-6">
-        {/* Filtres */}
+        {/* Mode interleaving toggle */}
         <div className="mb-6">
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2 text-slate-300 hover:text-white mb-3"
-          >
-            <Filter className="w-4 h-4" />
-            Filtrer par chapitre
-            <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
-          </button>
+          <div className="flex items-center gap-4 mb-4">
+            <button
+              onClick={() => {
+                setInterleavingMode(false)
+                setSelectedLessons([])
+              }}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                !interleavingMode
+                  ? 'bg-purple-600 text-white'
+                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+              }`}
+            >
+              <Filter className="w-4 h-4" />
+              Mode classique
+            </button>
+            <button
+              onClick={() => {
+                setInterleavingMode(true)
+                setShowFilters(true)
+              }}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                interleavingMode
+                  ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
+                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+              }`}
+            >
+              <Layers className="w-4 h-4" />
+              Mode interleaving
+              <span className="text-xs opacity-75">(mélange)</span>
+            </button>
+          </div>
 
-          {showFilters && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              <button
-                onClick={() => setSelectedLesson(null)}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                  activeFilter === null
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-                }`}
-              >
-                Tous
-              </button>
-              {uniqueLessons.map(lessonId => (
+          {interleavingMode && (
+            <div className="bg-orange-900/20 border border-orange-700/50 rounded-lg p-4 mb-4">
+              <p className="text-sm text-orange-200 mb-3">
+                <strong>Interleaving :</strong> Sélectionne plusieurs chapitres pour mélanger les exercices.
+                Plus efficace pour la mémorisation à long terme !
+              </p>
+              <div className="flex flex-wrap gap-2">
                 <button
-                  key={lessonId}
-                  onClick={() => setSelectedLesson(lessonId)}
+                  onClick={() => setSelectedLessons([])}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                    activeFilter === lessonId
-                      ? `${trackColors[lessonId] || 'bg-purple-600'} text-white`
+                    selectedLessons.length === 0
+                      ? 'bg-orange-600 text-white'
                       : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
                 >
-                  {lessonNames[lessonId] || lessonId}
+                  Tous les chapitres
                 </button>
-              ))}
+                {uniqueLessons.map(lessonId => (
+                  <button
+                    key={lessonId}
+                    onClick={() => toggleLesson(lessonId)}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                      selectedLessons.includes(lessonId)
+                        ? `${trackColors[lessonId] || 'bg-orange-600'} text-white ring-2 ring-white/30`
+                        : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    }`}
+                  >
+                    {lessonNames[lessonId] || lessonId}
+                  </button>
+                ))}
+              </div>
+              {selectedLessons.length > 1 && (
+                <p className="text-xs text-orange-300 mt-2">
+                  {selectedLessons.length} chapitres sélectionnés • {filteredTemplates.length} exercices disponibles
+                </p>
+              )}
             </div>
+          )}
+
+          {!interleavingMode && (
+            <>
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center gap-2 text-slate-300 hover:text-white mb-3"
+              >
+                <Filter className="w-4 h-4" />
+                Filtrer par chapitre
+                <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+              </button>
+
+              {showFilters && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <button
+                    onClick={() => setSelectedLesson(null)}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                      activeFilter === null
+                        ? 'bg-purple-600 text-white'
+                        : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    }`}
+                  >
+                    Tous
+                  </button>
+                  {uniqueLessons.map(lessonId => (
+                    <button
+                      key={lessonId}
+                      onClick={() => setSelectedLesson(lessonId)}
+                      className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                        activeFilter === lessonId
+                          ? `${trackColors[lessonId] || 'bg-purple-600'} text-white`
+                          : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      }`}
+                    >
+                      {lessonNames[lessonId] || lessonId}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </div>
 
@@ -231,13 +319,22 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
         <div className="flex justify-center mb-8">
           <button
             onClick={handleRandomExercise}
-            className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 rounded-xl text-lg font-medium shadow-lg shadow-purple-900/50 transition-all hover:scale-105"
+            className={`flex items-center gap-3 px-6 py-3 rounded-xl text-lg font-medium shadow-lg transition-all hover:scale-105 ${
+              interleavingMode
+                ? 'bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-400 hover:to-pink-400 shadow-orange-900/50'
+                : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 shadow-purple-900/50'
+            }`}
           >
-            <Zap className="w-6 h-6" />
-            Exercice aléatoire
-            {activeFilter && (
+            {interleavingMode ? <Layers className="w-6 h-6" /> : <Zap className="w-6 h-6" />}
+            {interleavingMode ? 'Exercice mélangé' : 'Exercice aléatoire'}
+            {!interleavingMode && activeFilter && (
               <span className="text-sm text-purple-200">
                 ({lessonNames[activeFilter] || activeFilter})
+              </span>
+            )}
+            {interleavingMode && selectedLessons.length > 0 && (
+              <span className="text-sm text-orange-200">
+                ({selectedLessons.length} chapitres)
               </span>
             )}
           </button>

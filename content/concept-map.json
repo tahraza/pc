@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    { "id": "ondes-mecaniques", "label": "Ondes mécaniques", "track": "physique", "category": "ondes" },
+    { "id": "ondes-lumineuses", "label": "Ondes lumineuses", "track": "physique", "category": "ondes" },
+    { "id": "ondes-sonores", "label": "Ondes sonores", "track": "physique", "category": "ondes" },
+    { "id": "diffraction", "label": "Diffraction", "track": "physique", "category": "ondes" },
+    { "id": "interferences", "label": "Interférences", "track": "physique", "category": "ondes" },
+    { "id": "circuit-rc", "label": "Circuit RC", "track": "physique", "category": "electricite" },
+    { "id": "radioactivite", "label": "Radioactivité", "track": "physique", "category": "nucleaire" },
+    { "id": "energie-mecanique", "label": "Énergie mécanique", "track": "physique", "category": "mecanique" },
+    { "id": "mouvement-circulaire", "label": "Mouvement circulaire", "track": "physique", "category": "mecanique" },
+    { "id": "mouvement-newton", "label": "Lois de Newton", "track": "physique", "category": "mecanique" },
+    { "id": "mouvement-champ-uniforme", "label": "Champ uniforme", "track": "physique", "category": "mecanique" },
+    { "id": "electromagnetisme", "label": "Électromagnétisme", "track": "physique", "category": "electricite" },
+    { "id": "thermodynamique", "label": "Thermodynamique", "track": "physique", "category": "energie" },
+    { "id": "travail-force", "label": "Travail et puissance", "track": "physique", "category": "mecanique" },
+    { "id": "cinetique", "label": "Cinétique chimique", "track": "chimie", "category": "reactions" },
+    { "id": "acides-bases", "label": "Acides et bases", "track": "chimie", "category": "reactions" },
+    { "id": "titrages", "label": "Titrages", "track": "chimie", "category": "reactions" },
+    { "id": "thermochimie", "label": "Thermochimie", "track": "chimie", "category": "energie" },
+    { "id": "oxydoreduction", "label": "Oxydoréduction", "track": "chimie", "category": "reactions" },
+    { "id": "piles-electrolyse", "label": "Piles et électrolyse", "track": "chimie", "category": "electricite" },
+    { "id": "spectroscopie-ir", "label": "Spectroscopie IR", "track": "chimie", "category": "analyse" },
+    { "id": "equilibres-chimiques", "label": "Équilibres chimiques", "track": "chimie", "category": "reactions" }
+  ],
+  "links": [
+    { "source": "ondes-mecaniques", "target": "ondes-sonores", "label": "cas particulier", "strength": "strong" },
+    { "source": "ondes-mecaniques", "target": "ondes-lumineuses", "label": "même formalisme", "strength": "strong" },
+    { "source": "ondes-lumineuses", "target": "diffraction", "label": "prérequis", "strength": "strong" },
+    { "source": "ondes-lumineuses", "target": "interferences", "label": "prérequis", "strength": "strong" },
+    { "source": "diffraction", "target": "interferences", "label": "complémentaires", "strength": "medium" },
+    { "source": "ondes-lumineuses", "target": "spectroscopie-ir", "label": "application", "strength": "medium" },
+
+    { "source": "mouvement-newton", "target": "energie-mecanique", "label": "théorème énergie cinétique", "strength": "strong" },
+    { "source": "mouvement-newton", "target": "mouvement-circulaire", "label": "application", "strength": "strong" },
+    { "source": "mouvement-newton", "target": "mouvement-champ-uniforme", "label": "application", "strength": "strong" },
+    { "source": "energie-mecanique", "target": "travail-force", "label": "définitions liées", "strength": "strong" },
+    { "source": "travail-force", "target": "thermodynamique", "label": "transfert énergie", "strength": "medium" },
+
+    { "source": "circuit-rc", "target": "electromagnetisme", "label": "même domaine", "strength": "medium" },
+    { "source": "electromagnetisme", "target": "piles-electrolyse", "label": "lien électricité-chimie", "strength": "medium" },
+    { "source": "oxydoreduction", "target": "piles-electrolyse", "label": "prérequis", "strength": "strong" },
+
+    { "source": "cinetique", "target": "equilibres-chimiques", "label": "vitesses directe/inverse", "strength": "strong" },
+    { "source": "acides-bases", "target": "titrages", "label": "application", "strength": "strong" },
+    { "source": "acides-bases", "target": "equilibres-chimiques", "label": "Ka, Kb", "strength": "medium" },
+    { "source": "oxydoreduction", "target": "titrages", "label": "titrages redox", "strength": "medium" },
+
+    { "source": "thermochimie", "target": "thermodynamique", "label": "même concepts (enthalpie)", "strength": "strong" },
+    { "source": "thermochimie", "target": "equilibres-chimiques", "label": "loi de Van't Hoff", "strength": "medium" },
+    { "source": "cinetique", "target": "radioactivite", "label": "décroissance exponentielle", "strength": "medium" },
+    { "source": "circuit-rc", "target": "cinetique", "label": "même maths (expo)", "strength": "weak" }
+  ],
+  "categories": {
+    "ondes": { "label": "Ondes", "color": "#3b82f6" },
+    "mecanique": { "label": "Mécanique", "color": "#10b981" },
+    "electricite": { "label": "Électricité", "color": "#f59e0b" },
+    "nucleaire": { "label": "Nucléaire", "color": "#ef4444" },
+    "energie": { "label": "Énergie", "color": "#8b5cf6" },
+    "reactions": { "label": "Réactions", "color": "#ec4899" },
+    "analyse": { "label": "Analyse", "color": "#06b6d4" }
+  }
+}
