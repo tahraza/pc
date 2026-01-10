@@ -1,12 +1,39 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { RandomExerciseTemplate, GeneratedExercise } from '@/types'
 import { generateExercise } from '@/lib/random-exercise-generator'
-import { RefreshCw, Eye, EyeOff, Lightbulb, CheckCircle, Star } from 'lucide-react'
+import { RefreshCw, Eye, EyeOff, Lightbulb, CheckCircle, Star, BookOpen } from 'lucide-react'
 import MathText from './MathText'
 import { useGamificationStore } from '@/stores/gamificationStore'
 import { showRewardNotification } from './RewardNotification'
+
+// Mapping lessonId vers track
+const lessonTracks: Record<string, string> = {
+  'ondes-mecaniques': 'physique',
+  'ondes-lumineuses': 'physique',
+  'ondes-sonores': 'physique',
+  'diffraction': 'physique',
+  'interferences': 'physique',
+  'circuit-rc': 'physique',
+  'radioactivite': 'physique',
+  'energie-mecanique': 'physique',
+  'mouvement-circulaire': 'physique',
+  'mouvement-newton': 'physique',
+  'mouvement-champ-uniforme': 'physique',
+  'electromagnetisme': 'physique',
+  'thermodynamique': 'physique',
+  'travail-force': 'physique',
+  'cinetique': 'chimie',
+  'acides-bases': 'chimie',
+  'titrages': 'chimie',
+  'thermochimie': 'chimie',
+  'oxydoreduction': 'chimie',
+  'piles-electrolyse': 'chimie',
+  'spectroscopie-ir': 'chimie',
+  'equilibres-chimiques': 'chimie',
+}
 
 // Points de base selon la difficulté
 const BASE_POINTS: Record<number, number> = {
@@ -223,6 +250,16 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
       <div className="p-4">
         {!showSolution ? (
           <div className="flex gap-3">
+            {lessonTracks[template.lessonId] && (
+              <Link
+                href={`/lecons/${lessonTracks[template.lessonId]}/${template.lessonId}`}
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-purple-700 hover:bg-purple-600 rounded-lg text-sm font-medium transition-colors"
+                title="Revoir la leçon"
+              >
+                <BookOpen className="w-4 h-4" />
+                Leçon
+              </Link>
+            )}
             <button
               onClick={handleShowSolution}
               className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-medium transition-colors"
