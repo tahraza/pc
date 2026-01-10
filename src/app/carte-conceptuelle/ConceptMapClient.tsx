@@ -77,13 +77,13 @@ export default function ConceptMapClient() {
 
   if (loading || !data) {
     return (
-      <div className="min-h-screen bg-slate-900 p-6">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-6">
         <div className="max-w-6xl mx-auto">
           <div className="animate-pulse">
-            <div className="h-10 bg-slate-800 rounded w-1/3 mb-6"></div>
+            <div className="h-10 bg-slate-200 dark:bg-slate-800 rounded w-1/3 mb-6"></div>
             <div className="grid grid-cols-3 gap-4">
               {[1, 2, 3, 4, 5, 6].map(i => (
-                <div key={i} className="h-24 bg-slate-800 rounded-lg"></div>
+                <div key={i} className="h-24 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
               ))}
             </div>
           </div>
@@ -124,15 +124,15 @@ export default function ConceptMapClient() {
   }, {} as Record<string, Node[]>)
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
-      <div className="bg-gradient-to-r from-cyan-900 to-blue-900 py-8 px-6">
+      <div className="bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-900 dark:to-blue-900 py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-2">
-            <Network className="w-8 h-8 text-cyan-400" />
+            <Network className="w-8 h-8 text-cyan-100 dark:text-cyan-400" />
             <h1 className="text-3xl font-bold text-white">Carte Conceptuelle</h1>
           </div>
-          <p className="text-cyan-200">
+          <p className="text-cyan-100 dark:text-cyan-200">
             Visualise les liens entre les chapitres pour comprendre la cohérence du programme
           </p>
         </div>
@@ -142,13 +142,13 @@ export default function ConceptMapClient() {
         {/* Légende des catégories */}
         <div className="mb-6">
           <div className="flex flex-wrap gap-2 items-center">
-            <span className="text-slate-400 text-sm mr-2">Filtrer par domaine:</span>
+            <span className="text-slate-600 dark:text-slate-400 text-sm mr-2">Filtrer par domaine:</span>
             <button
               onClick={() => setFilterCategory(null)}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                 filterCategory === null
-                  ? 'bg-white text-slate-900'
-                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
+                  : 'bg-slate-200 text-slate-700 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
               }`}
             >
               Tous
@@ -160,7 +160,7 @@ export default function ConceptMapClient() {
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                   filterCategory === key
                     ? 'text-white'
-                    : 'text-slate-300 hover:text-white'
+                    : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
                 }`}
                 style={{
                   backgroundColor: filterCategory === key ? cat.color : 'transparent',
@@ -175,10 +175,10 @@ export default function ConceptMapClient() {
         </div>
 
         {/* Info box */}
-        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 mb-6">
+        <div className="bg-cyan-50 border border-cyan-200 dark:bg-slate-800/50 dark:border-slate-700 rounded-lg p-4 mb-6">
           <div className="flex items-start gap-3">
-            <Info className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-slate-300">
+            <Info className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
+            <div className="text-sm text-slate-700 dark:text-slate-300">
               <p><strong>Cliquez</strong> sur un chapitre pour voir ses connexions en détail.</p>
               <p className="mt-1">Les liens montrent les <strong>prérequis</strong>, les <strong>applications</strong> et les <strong>concepts partagés</strong> entre chapitres.</p>
             </div>
@@ -216,29 +216,29 @@ export default function ConceptMapClient() {
                         onMouseLeave={() => setHoveredNode(null)}
                         className={`relative p-4 rounded-lg border-2 cursor-pointer transition-all ${
                           isActive
-                            ? 'ring-2 ring-white scale-105 z-10'
+                            ? 'ring-2 ring-slate-900 dark:ring-white scale-105 z-10'
                             : isConnected
-                            ? 'ring-2 ring-cyan-400'
+                            ? 'ring-2 ring-cyan-500 dark:ring-cyan-400'
                             : isDimmed
                             ? 'opacity-30'
                             : 'hover:scale-102'
-                        }`}
+                        } bg-white dark:bg-slate-800`}
                         style={{
                           borderColor: data.categories[node.category]?.color,
                           backgroundColor: isActive
-                            ? data.categories[node.category]?.color + '40'
-                            : 'rgb(30 41 59)'
+                            ? data.categories[node.category]?.color + '30'
+                            : undefined
                         }}
                       >
                         <div className="flex items-start justify-between gap-2">
                           <div>
-                            <h3 className="font-medium text-white text-sm">{node.label}</h3>
-                            <span className={`text-xs ${node.track === 'physique' ? 'text-blue-400' : 'text-emerald-400'}`}>
+                            <h3 className="font-medium text-slate-900 dark:text-white text-sm">{node.label}</h3>
+                            <span className={`text-xs ${node.track === 'physique' ? 'text-blue-600 dark:text-blue-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
                               {node.track === 'physique' ? 'Physique' : 'Chimie'}
                             </span>
                           </div>
                           {nodeLinks.length > 0 && (
-                            <span className="text-xs bg-slate-700 px-1.5 py-0.5 rounded text-slate-300">
+                            <span className="text-xs bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-300">
                               {nodeLinks.length}
                             </span>
                           )}
@@ -247,7 +247,7 @@ export default function ConceptMapClient() {
                         {isActive && (
                           <Link
                             href={`/lecons/${lessonTracks[node.id]}/${node.id}`}
-                            className="mt-2 flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300"
+                            className="mt-2 flex items-center gap-1 text-xs text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
                             onClick={(e) => e.stopPropagation()}
                           >
                             <BookOpen className="w-3 h-3" />
@@ -265,14 +265,14 @@ export default function ConceptMapClient() {
         {/* Panneau de détail des connexions */}
         {selectedNode && (
           <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4">
-            <div className="bg-slate-800 border border-slate-600 rounded-xl shadow-2xl p-6">
+            <div className="bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-600 rounded-xl shadow-2xl p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                   Connexions de {data.nodes.find(n => n.id === selectedNode)?.label}
                 </h3>
                 <button
                   onClick={() => setSelectedNode(null)}
-                  className="text-slate-400 hover:text-white"
+                  className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                 >
                   ✕
                 </button>
@@ -280,7 +280,7 @@ export default function ConceptMapClient() {
 
               <div className="space-y-3 max-h-60 overflow-y-auto">
                 {getNodeLinks(selectedNode).length === 0 ? (
-                  <p className="text-slate-400 text-sm">Aucune connexion directe répertoriée.</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">Aucune connexion directe répertoriée.</p>
                 ) : (
                   getNodeLinks(selectedNode).map((link, idx) => {
                     const otherNodeId = link.source === selectedNode ? link.target : link.source
@@ -290,26 +290,26 @@ export default function ConceptMapClient() {
                     return (
                       <div
                         key={idx}
-                        className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-slate-100 dark:bg-slate-700/50 rounded-lg"
                       >
                         <div className={`flex items-center gap-2 ${isOutgoing ? '' : 'flex-row-reverse'}`}>
-                          <span className="text-white font-medium text-sm">
+                          <span className="text-slate-900 dark:text-white font-medium text-sm">
                             {data.nodes.find(n => n.id === selectedNode)?.label}
                           </span>
-                          <ArrowRight className={`w-4 h-4 text-cyan-400 ${!isOutgoing && 'rotate-180'}`} />
+                          <ArrowRight className={`w-4 h-4 text-cyan-600 dark:text-cyan-400 ${!isOutgoing && 'rotate-180'}`} />
                           <Link
                             href={`/lecons/${lessonTracks[otherNodeId]}/${otherNodeId}`}
-                            className="text-cyan-400 hover:text-cyan-300 font-medium text-sm"
+                            className="text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 font-medium text-sm"
                           >
                             {otherNode?.label}
                           </Link>
                         </div>
                         <span className={`ml-auto text-xs px-2 py-1 rounded ${
                           link.strength === 'strong'
-                            ? 'bg-green-900/50 text-green-400'
+                            ? 'bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-400'
                             : link.strength === 'medium'
-                            ? 'bg-yellow-900/50 text-yellow-400'
-                            : 'bg-slate-600 text-slate-300'
+                            ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/50 dark:text-yellow-400'
+                            : 'bg-slate-200 text-slate-600 dark:bg-slate-600 dark:text-slate-300'
                         }`}>
                           {link.label}
                         </span>
