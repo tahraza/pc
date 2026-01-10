@@ -1,9 +1,10 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { RandomExerciseTemplate } from '@/types'
 import { RandomExercise } from '@/components/RandomExercise'
-import { Shuffle, Filter, ChevronDown, Zap } from 'lucide-react'
+import { Shuffle, Filter, ChevronDown, Zap, ArrowLeft } from 'lucide-react'
 
 // Mapping des lessonId vers des noms lisibles
 const lessonNames: Record<string, string> = {
@@ -45,6 +46,32 @@ const trackColors: Record<string, string> = {
   'energie-mecanique': 'bg-emerald-600',
   'mouvement-circulaire': 'bg-indigo-600',
   'equilibres-chimiques': 'bg-teal-600',
+}
+
+// Mapping lessonId vers track (physique ou chimie)
+const lessonTracks: Record<string, string> = {
+  'ondes-mecaniques': 'physique',
+  'ondes-lumineuses': 'physique',
+  'ondes-sonores': 'physique',
+  'diffraction': 'physique',
+  'interferences': 'physique',
+  'circuit-rc': 'physique',
+  'radioactivite': 'physique',
+  'energie-mecanique': 'physique',
+  'mouvement-circulaire': 'physique',
+  'mouvement-newton': 'physique',
+  'mouvement-champ-uniforme': 'physique',
+  'electromagnetisme': 'physique',
+  'thermodynamique': 'physique',
+  'travail-force': 'physique',
+  'cinetique': 'chimie',
+  'acides-bases': 'chimie',
+  'titrages': 'chimie',
+  'thermochimie': 'chimie',
+  'oxydoreduction': 'chimie',
+  'piles-electrolyse': 'chimie',
+  'spectroscopie-ir': 'chimie',
+  'equilibres-chimiques': 'chimie',
 }
 
 interface Props {
@@ -123,6 +150,16 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900 to-indigo-900 py-8 px-6">
         <div className="max-w-4xl mx-auto">
+          {/* Lien retour à la leçon */}
+          {activeFilter && lessonTracks[activeFilter] && (
+            <Link
+              href={`/lecons/${lessonTracks[activeFilter]}/${activeFilter}`}
+              className="inline-flex items-center gap-2 text-purple-300 hover:text-white mb-4 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Retour à la leçon {lessonNames[activeFilter] || activeFilter}
+            </Link>
+          )}
           <div className="flex items-center gap-3 mb-2">
             <Shuffle className="w-8 h-8 text-purple-400" />
             <h1 className="text-3xl font-bold text-white">Exercices Aléatoires</h1>
