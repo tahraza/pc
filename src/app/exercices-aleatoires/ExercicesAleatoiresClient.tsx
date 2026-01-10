@@ -53,19 +53,15 @@ export default function ExercicesAleatoiresClient() {
   const lessonParam = searchParams.get('lesson')
 
   const [templates, setTemplates] = useState<RandomExerciseTemplate[]>([])
-  const [selectedLesson, setSelectedLesson] = useState<string | null>(null)
+  // selectedLesson: null = tous, string = filtre actif, utilise lessonParam par défaut
+  const [selectedLesson, setSelectedLesson] = useState<string | null | undefined>(undefined)
   const [selectedTemplate, setSelectedTemplate] = useState<RandomExerciseTemplate | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showFilters, setShowFilters] = useState(false)
+  const [showFilters, setShowFilters] = useState(!!lessonParam)
   const [completedCount, setCompletedCount] = useState(0)
 
-  // Synchroniser le filtre avec le paramètre URL
-  useEffect(() => {
-    if (lessonParam) {
-      setSelectedLesson(lessonParam)
-      setShowFilters(true)
-    }
-  }, [lessonParam])
+  // Le filtre actif : soit le state (si modifié par l'utilisateur), soit le param URL
+  const activeFilter = selectedLesson === undefined ? lessonParam : selectedLesson
 
   // Charger les templates
   useEffect(() => {
@@ -81,18 +77,25 @@ export default function ExercicesAleatoiresClient() {
       })
   }, [])
 
+  // Ouvrir les filtres si paramètre URL
+  useEffect(() => {
+    if (lessonParam) {
+      setShowFilters(true)
+    }
+  }, [lessonParam])
+
   // Obtenir les leçons uniques
   const uniqueLessons = Array.from(new Set(templates.map(t => t.lessonId)))
 
   // Filtrer les templates par leçon
-  const filteredTemplates = selectedLesson
-    ? templates.filter(t => t.lessonId === selectedLesson)
+  const filteredTemplates = activeFilter
+    ? templates.filter(t => t.lessonId === activeFilter)
     : templates
 
   // Sélectionner un exercice aléatoire
   const handleRandomExercise = () => {
-    const pool = selectedLesson
-      ? templates.filter(t => t.lessonId === selectedLesson)
+    const pool = activeFilter
+      ? templates.filter(t => t.lessonId === activeFilter)
       : templates
 
     if (pool.length > 0) {
@@ -170,7 +173,7 @@ export default function ExercicesAleatoiresClient() {
               <button
                 onClick={() => setSelectedLesson(null)}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                  selectedLesson === null
+                  activeFilter === null
                     ? 'bg-purple-600 text-white'
                     : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                 }`}
@@ -182,7 +185,7 @@ export default function ExercicesAleatoiresClient() {
                   key={lessonId}
                   onClick={() => setSelectedLesson(lessonId)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                    selectedLesson === lessonId
+                    activeFilter === lessonId
                       ? `${trackColors[lessonId] || 'bg-purple-600'} text-white`
                       : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
@@ -202,9 +205,9 @@ export default function ExercicesAleatoiresClient() {
           >
             <Zap className="w-6 h-6" />
             Exercice aléatoire
-            {selectedLesson && (
+            {activeFilter && (
               <span className="text-sm text-purple-200">
-                ({lessonNames[selectedLesson] || selectedLesson})
+                ({lessonNames[activeFilter] || activeFilter})
               </span>
             )}
           </button>
@@ -221,9 +224,9 @@ export default function ExercicesAleatoiresClient() {
         <div>
           <h2 className="text-xl font-semibold text-white mb-4">
             Types d'exercices disponibles
-            {selectedLesson && (
+            {activeFilter && (
               <span className="text-slate-400 text-base font-normal ml-2">
-                ({lessonNames[selectedLesson] || selectedLesson})
+                ({lessonNames[activeFilter] || activeFilter})
               </span>
             )}
           </h2>
