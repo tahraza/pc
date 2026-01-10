@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
 import { RandomExerciseTemplate } from '@/types'
 import { RandomExercise } from '@/components/RandomExercise'
 import { Shuffle, Filter, ChevronDown, Zap } from 'lucide-react'
@@ -48,20 +47,21 @@ const trackColors: Record<string, string> = {
   'equilibres-chimiques': 'bg-teal-600',
 }
 
-export default function ExercicesAleatoiresClient() {
-  const searchParams = useSearchParams()
-  const lessonParam = searchParams.get('lesson')
+interface Props {
+  initialLesson: string | null
+}
 
+export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
   const [templates, setTemplates] = useState<RandomExerciseTemplate[]>([])
-  // selectedLesson: null = tous, string = filtre actif, utilise lessonParam par défaut
+  // selectedLesson: undefined = utiliser initialLesson, null = tous, string = filtre actif
   const [selectedLesson, setSelectedLesson] = useState<string | null | undefined>(undefined)
   const [selectedTemplate, setSelectedTemplate] = useState<RandomExerciseTemplate | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showFilters, setShowFilters] = useState(!!lessonParam)
+  const [showFilters, setShowFilters] = useState(!!initialLesson)
   const [completedCount, setCompletedCount] = useState(0)
 
-  // Le filtre actif : soit le state (si modifié par l'utilisateur), soit le param URL
-  const activeFilter = selectedLesson === undefined ? lessonParam : selectedLesson
+  // Le filtre actif : soit le state (si modifié par l'utilisateur), soit initialLesson
+  const activeFilter = selectedLesson === undefined ? initialLesson : selectedLesson
 
   // Charger les templates
   useEffect(() => {
@@ -76,13 +76,6 @@ export default function ExercicesAleatoiresClient() {
         setLoading(false)
       })
   }, [])
-
-  // Ouvrir les filtres si paramètre URL
-  useEffect(() => {
-    if (lessonParam) {
-      setShowFilters(true)
-    }
-  }, [lessonParam])
 
   // Obtenir les leçons uniques
   const uniqueLessons = Array.from(new Set(templates.map(t => t.lessonId)))
