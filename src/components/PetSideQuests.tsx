@@ -16,14 +16,16 @@ export function PetSideQuests() {
   const {
     selectedPetId,
     traits,
-    currentPoints,
     activeSideQuests,
     completedSideQuests,
     getActiveSideQuests,
+    getAvailablePoints,
     refreshSideQuests,
     feedPet,
     playWithPet,
   } = usePetStore()
+
+  const availablePoints = getAvailablePoints()
 
   useEffect(() => {
     setMounted(true)
@@ -78,10 +80,10 @@ export function PetSideQuests() {
         <div className="mt-4 flex gap-2">
           <button
             onClick={feedPet}
-            disabled={currentPoints < 20 || traits.energy >= 100}
+            disabled={availablePoints < 20 || traits.energy >= 100}
             className={cn(
               'flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-              currentPoints >= 20 && traits.energy < 100
+              availablePoints >= 20 && traits.energy < 100
                 ? 'bg-amber-100 text-amber-700 hover:bg-amber-200 dark:bg-amber-900/30 dark:text-amber-300 dark:hover:bg-amber-900/50'
                 : 'cursor-not-allowed bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500'
             )}
@@ -91,10 +93,10 @@ export function PetSideQuests() {
           </button>
           <button
             onClick={playWithPet}
-            disabled={currentPoints < 15 || traits.happiness >= 100}
+            disabled={availablePoints < 15 || traits.happiness >= 100}
             className={cn(
               'flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-              currentPoints >= 15 && traits.happiness < 100
+              availablePoints >= 15 && traits.happiness < 100
                 ? 'bg-pink-100 text-pink-700 hover:bg-pink-200 dark:bg-pink-900/30 dark:text-pink-300 dark:hover:bg-pink-900/50'
                 : 'cursor-not-allowed bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500'
             )}

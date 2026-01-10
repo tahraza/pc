@@ -237,7 +237,8 @@ export const AVAILABLE_PETS: PetType[] = [
 interface PetState {
   selectedPetId: string | null
   petName: string
-  currentPoints: number // Points accumulated for pet evolution
+  currentPoints: number // Points accumulated for pet evolution (cumulative, never decreases)
+  spentPoints: number // Points spent in shop
 
   // Customization
   ownedAccessories: string[]
@@ -263,6 +264,7 @@ interface PetState {
   renamePet: (name: string) => void
 
   // Shop actions
+  getAvailablePoints: () => number // Points available for spending
   buyAccessory: (accessoryId: string) => boolean
   buyBackground: (backgroundId: string) => boolean
   equipAccessory: (accessoryId: string | null) => void
@@ -287,6 +289,7 @@ export const usePetStore = create<PetState>()(
       selectedPetId: null,
       petName: '',
       currentPoints: 0,
+      spentPoints: 0,
       ownedAccessories: [],
       ownedBackgrounds: ['bg-default'],
       equippedAccessory: null,
@@ -374,31 +377,38 @@ export const usePetStore = create<PetState>()(
       },
 
       // Shop actions
+      getAvailablePoints: () => {
+        const { currentPoints, spentPoints } = get()
+        return currentPoints - spentPoints
+      },
+
       buyAccessory: (accessoryId) => {
-        const { currentPoints, ownedAccessories } = get()
+        const { ownedAccessories } = get()
+        const availablePoints = get().getAvailablePoints()
         const accessory = ACCESSORIES.find(a => a.id === accessoryId)
 
         if (!accessory) return false
         if (ownedAccessories.includes(accessoryId)) return false
-        if (currentPoints < accessory.price) return false
+        if (availablePoints < accessory.price) return false
 
         set((state) => ({
-          currentPoints: state.currentPoints - accessory.price,
+          spentPoints: state.spentPoints + accessory.price,
           ownedAccessories: [...state.ownedAccessories, accessoryId],
         }))
         return true
       },
 
       buyBackground: (backgroundId) => {
-        const { currentPoints, ownedBackgrounds } = get()
+        const { ownedBackgrounds } = get()
+        const availablePoints = get().getAvailablePoints()
         const background = BACKGROUNDS.find(b => b.id === backgroundId)
 
         if (!background) return false
         if (ownedBackgrounds.includes(backgroundId)) return false
-        if (currentPoints < background.price) return false
+        if (availablePoints < background.price) return false
 
         set((state) => ({
-          currentPoints: state.currentPoints - background.price,
+          spentPoints: state.spentPoints + background.price,
           ownedBackgrounds: [...state.ownedBackgrounds, backgroundId],
         }))
         return true
@@ -440,11 +450,12 @@ export const usePetStore = create<PetState>()(
       },
 
       feedPet: () => {
-        const { currentPoints, traits } = get()
+        const { traits } = get()
+        const availablePoints = get().getAvailablePoints()
         const cost = 20
-        if (currentPoints >= cost && traits.energy < 100) {
+        if (availablePoints >= cost && traits.energy < 100) {
           set((state) => ({
-            currentPoints: state.currentPoints - cost,
+            spentPoints: state.spentPoints + cost,
             traits: {
               ...state.traits,
               energy: Math.min(100, state.traits.energy + 30),
@@ -454,11 +465,12 @@ export const usePetStore = create<PetState>()(
       },
 
       playWithPet: () => {
-        const { currentPoints, traits } = get()
+        const { traits } = get()
+        const availablePoints = get().getAvailablePoints()
         const cost = 15
-        if (currentPoints >= cost && traits.happiness < 100) {
+        if (availablePoints >= cost && traits.happiness < 100) {
           set((state) => ({
-            currentPoints: state.currentPoints - cost,
+            spentPoints: state.spentPoints + cost,
             traits: {
               ...state.traits,
               happiness: Math.min(100, state.traits.happiness + 20),

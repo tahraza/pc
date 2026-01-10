@@ -37,7 +37,6 @@ export function PetShop() {
   const [purchaseMessage, setPurchaseMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
 
   const {
-    currentPoints,
     ownedAccessories,
     ownedBackgrounds,
     equippedAccessory,
@@ -46,7 +45,10 @@ export function PetShop() {
     buyBackground,
     equipAccessory,
     equipBackground,
+    getAvailablePoints,
   } = usePetStore()
+
+  const availablePoints = getAvailablePoints()
 
   useEffect(() => {
     setMounted(true)
@@ -103,7 +105,7 @@ export function PetShop() {
           </div>
           <div className="flex items-center gap-1 rounded-full bg-amber-100 px-3 py-1 dark:bg-amber-900/30">
             <Star className="h-4 w-4 text-amber-500" />
-            <span className="font-semibold text-amber-700 dark:text-amber-300">{currentPoints}</span>
+            <span className="font-semibold text-amber-700 dark:text-amber-300">{availablePoints}</span>
           </div>
         </div>
 
@@ -175,7 +177,7 @@ export function PetShop() {
               {filteredAccessories.map(accessory => {
                 const owned = ownedAccessories.includes(accessory.id)
                 const equipped = equippedAccessory === accessory.id
-                const canAfford = currentPoints >= accessory.price
+                const canAfford = availablePoints >= accessory.price
 
                 return (
                   <button
@@ -248,7 +250,7 @@ export function PetShop() {
             {BACKGROUNDS.map(background => {
               const owned = ownedBackgrounds.includes(background.id)
               const equipped = equippedBackground === background.id
-              const canAfford = currentPoints >= background.price
+              const canAfford = availablePoints >= background.price
 
               return (
                 <button
