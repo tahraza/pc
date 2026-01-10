@@ -137,6 +137,15 @@ function processContent(content: string): string {
     }
   )
 
+  // :::mnemonic
+  processed = processed.replace(
+    /:::mnemonic(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-pink-700 dark:text-pink-300">${title}</strong>` : '<strong class="text-pink-700 dark:text-pink-300">🧠 Moyen mnémotechnique</strong>'
+      return `<div class="mnemonic-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
+  )
+
   // Process basic markdown
   // Headers
   processed = processed.replace(/^### (.*$)/gm, '<h3>$1</h3>')

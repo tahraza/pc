@@ -180,6 +180,10 @@
     @apply my-6 rounded-lg border-l-4 border-success-500 bg-success-50 p-4 dark:bg-success-500/20;
   }
 
+  .mnemonic-box {
+    @apply my-6 rounded-lg border-l-4 border-pink-500 bg-pink-50 p-4 dark:bg-pink-900/20;
+  }
+
   /* Tables */
   .table-wrapper {
     @apply my-6 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700;

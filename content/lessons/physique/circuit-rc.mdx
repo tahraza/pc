@@ -104,6 +104,16 @@ $$u_C(t) = E \times \left(1 - e^{-t/\tau}\right)$$
 - À $t \to \infty$, $u_C = E$ (condensateur chargé)
 :::
 
+:::mnemonic[Retenir les formules de charge/décharge]
+**Charge** = on **ajoute** de l'énergie → formule avec **(1 - e)** : $u = E(1 - e^{-t/\tau})$
+
+**Décharge** = on **retire** de l'énergie → formule **simple** $e$ : $u = E \cdot e^{-t/\tau}$
+
+**Astuce visuelle :**
+- Charge : la courbe **monte** (part de 0, va vers E)
+- Décharge : la courbe **descend** (part de E, va vers 0)
+:::
+
 :::example[Vérification de la solution]
 **Question :** Montrer que $u_C(t) = E(1 - e^{-t/\tau})$ est bien solution de $RC \frac{du_C}{dt} + u_C = E$.
 
@@ -157,6 +167,16 @@ La grandeur $\tau = R \times C$ donne l'ordre de grandeur de la durée du phéno
 **À $t = 5\tau$ :**
 - Le régime transitoire est terminé (charge > 99%)
 - On est en **régime permanent**
+:::
+
+:::mnemonic[Retenir τ = RC et les pourcentages]
+**"RC, c'est le Temps"** : τ = R × C (Ohm × Farad = seconde)
+
+**63% et 37%** : Ce sont des complémentaires (63 + 37 = 100)
+- **63%** ≈ $1 - 1/e$ ≈ $1 - 0{,}37$
+- À τ, on a fait **2/3 du chemin** (approximation utile)
+
+**Règle des 5τ** : Après 5τ, c'est **fini** (99% atteint)
 :::
 
 ### Méthodes graphiques pour trouver $\tau$
