@@ -108,13 +108,13 @@ export default function ConceptualQuestionsClient() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-900 p-6">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-6">
         <div className="max-w-4xl mx-auto">
           <div className="animate-pulse">
-            <div className="h-10 bg-slate-800 rounded w-1/2 mb-6"></div>
+            <div className="h-10 bg-slate-200 dark:bg-slate-800 rounded w-1/2 mb-6"></div>
             <div className="space-y-4">
               {[1, 2, 3].map(i => (
-                <div key={i} className="h-32 bg-slate-800 rounded-lg"></div>
+                <div key={i} className="h-32 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
               ))}
             </div>
           </div>
@@ -124,24 +124,24 @@ export default function ConceptualQuestionsClient() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-900 to-purple-900 py-8 px-6">
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-900 dark:to-purple-900 py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-2">
-            <HelpCircle className="w-8 h-8 text-indigo-400" />
+            <HelpCircle className="w-8 h-8 text-indigo-200 dark:text-indigo-400" />
             <h1 className="text-3xl font-bold text-white">Questions Conceptuelles</h1>
           </div>
-          <p className="text-indigo-200">
+          <p className="text-indigo-100 dark:text-indigo-200">
             Comprendre le "pourquoi" et pas seulement le "comment calculer"
           </p>
           <div className="flex gap-4 mt-4">
             <div className="bg-white/10 rounded-lg px-4 py-2">
-              <p className="text-sm text-indigo-300">Questions</p>
+              <p className="text-sm text-indigo-200 dark:text-indigo-300">Questions</p>
               <p className="text-2xl font-bold text-white">{questions.length}</p>
             </div>
             <div className="bg-white/10 rounded-lg px-4 py-2">
-              <p className="text-sm text-indigo-300">Chapitres</p>
+              <p className="text-sm text-indigo-200 dark:text-indigo-300">Chapitres</p>
               <p className="text-2xl font-bold text-white">{uniqueLessons.length}</p>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function ConceptualQuestionsClient() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
               !randomMode
                 ? 'bg-indigo-600 text-white'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
             }`}
           >
             <Filter className="w-4 h-4" />
@@ -171,7 +171,7 @@ export default function ConceptualQuestionsClient() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
               randomMode
                 ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
             }`}
           >
             <Shuffle className="w-4 h-4" />
@@ -184,7 +184,7 @@ export default function ConceptualQuestionsClient() {
           <div className="mb-6">
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 text-slate-300 hover:text-white mb-3"
+              className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white mb-3"
             >
               <Filter className="w-4 h-4" />
               Filtres
@@ -192,16 +192,16 @@ export default function ConceptualQuestionsClient() {
             </button>
 
             {showFilters && (
-              <div className="space-y-3 bg-slate-800/50 rounded-lg p-4">
+              <div className="space-y-3 bg-slate-100 dark:bg-slate-800/50 rounded-lg p-4">
                 <div>
-                  <p className="text-sm text-slate-400 mb-2">Par chapitre:</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Par chapitre:</p>
                   <div className="flex flex-wrap gap-2">
                     <button
                       onClick={() => setFilterLesson(null)}
                       className={`px-3 py-1 rounded-lg text-sm ${
                         filterLesson === null
                           ? 'bg-indigo-600 text-white'
-                          : 'bg-slate-700 text-slate-300'
+                          : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                       }`}
                     >
                       Tous
@@ -213,7 +213,7 @@ export default function ConceptualQuestionsClient() {
                         className={`px-3 py-1 rounded-lg text-sm ${
                           filterLesson === lessonId
                             ? 'bg-indigo-600 text-white'
-                            : 'bg-slate-700 text-slate-300'
+                            : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                         }`}
                       >
                         {lessonNames[lessonId] || lessonId}
@@ -222,14 +222,14 @@ export default function ConceptualQuestionsClient() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-400 mb-2">Par type:</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Par type:</p>
                   <div className="flex flex-wrap gap-2">
                     <button
                       onClick={() => setFilterType(null)}
                       className={`px-3 py-1 rounded-lg text-sm ${
                         filterType === null
                           ? 'bg-indigo-600 text-white'
-                          : 'bg-slate-700 text-slate-300'
+                          : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                       }`}
                     >
                       Tous
@@ -241,7 +241,7 @@ export default function ConceptualQuestionsClient() {
                         className={`px-3 py-1 rounded-lg text-sm ${
                           filterType === type
                             ? typeLabels[type]?.color + ' text-white'
-                            : 'bg-slate-700 text-slate-300'
+                            : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                         }`}
                       >
                         {typeLabels[type]?.icon} {typeLabels[type]?.label}
@@ -265,19 +265,19 @@ export default function ConceptualQuestionsClient() {
             <div className="flex justify-center gap-3 mt-4">
               <button
                 onClick={handleShuffle}
-                className="flex items-center gap-2 px-4 py-3 bg-slate-700 hover:bg-slate-600 rounded-xl font-medium transition-all"
+                className="flex items-center gap-2 px-4 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-xl font-medium text-slate-700 dark:text-slate-200 transition-all"
               >
                 <Shuffle className="w-5 h-5" />
                 Mélanger
               </button>
               <button
                 onClick={handleNextRandom}
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-medium hover:from-purple-500 hover:to-pink-500 transition-all"
+                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-medium hover:from-purple-500 hover:to-pink-500 transition-all"
               >
                 Question suivante
               </button>
             </div>
-            <p className="text-center text-slate-400 text-sm mt-2">
+            <p className="text-center text-slate-500 dark:text-slate-400 text-sm mt-2">
               Question {currentRandomIndex + 1} / {displayedRandomQuestions.length}
             </p>
           </div>
@@ -287,7 +287,7 @@ export default function ConceptualQuestionsClient() {
         {!randomMode && (
           <div className="space-y-4">
             {filteredQuestions.length === 0 ? (
-              <p className="text-slate-400 text-center py-8">
+              <p className="text-slate-500 dark:text-slate-400 text-center py-8">
                 Aucune question ne correspond aux filtres sélectionnés.
               </p>
             ) : (
@@ -319,10 +319,10 @@ function QuestionCard({
   const typeInfo = typeLabels[question.type]
 
   return (
-    <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700">
+    <div className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm">
       <div
         onClick={onToggle}
-        className="p-4 cursor-pointer hover:bg-slate-700/50 transition-colors"
+        className="p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
       >
         <div className="flex items-start gap-3">
           <span className="text-2xl">{typeInfo?.icon}</span>
@@ -331,7 +331,7 @@ function QuestionCard({
               <span className={`px-2 py-0.5 rounded text-xs font-medium ${typeInfo?.color} text-white`}>
                 {typeInfo?.label}
               </span>
-              <span className="text-xs text-slate-400">
+              <span className="text-xs text-slate-500 dark:text-slate-400">
                 {lessonNames[question.lessonId] || question.lessonId}
               </span>
               <div className="flex gap-0.5 ml-auto">
@@ -339,40 +339,40 @@ function QuestionCard({
                   <span
                     key={i}
                     className={`w-2 h-2 rounded-full ${
-                      i <= question.difficulty ? 'bg-amber-500' : 'bg-slate-600'
+                      i <= question.difficulty ? 'bg-amber-500' : 'bg-slate-300 dark:bg-slate-600'
                     }`}
                   />
                 ))}
               </div>
             </div>
-            <h3 className="text-white font-medium">{question.question}</h3>
+            <h3 className="text-slate-900 dark:text-white font-medium">{question.question}</h3>
           </div>
           {expanded ? (
-            <ChevronUp className="w-5 h-5 text-slate-400" />
+            <ChevronUp className="w-5 h-5 text-slate-400 dark:text-slate-400" />
           ) : (
-            <ChevronDown className="w-5 h-5 text-slate-400" />
+            <ChevronDown className="w-5 h-5 text-slate-400 dark:text-slate-400" />
           )}
         </div>
       </div>
 
       {expanded && (
-        <div className="px-4 pb-4 border-t border-slate-700">
-          <div className="mt-4 p-4 bg-slate-900/50 rounded-lg">
-            <div className="flex items-center gap-2 text-green-400 mb-2">
+        <div className="px-4 pb-4 border-t border-slate-200 dark:border-slate-700">
+          <div className="mt-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
+            <div className="flex items-center gap-2 text-green-600 dark:text-green-400 mb-2">
               <CheckCircle className="w-4 h-4" />
               <span className="font-medium text-sm">Réponse</span>
             </div>
-            <p className="text-slate-200">{question.answer}</p>
+            <p className="text-slate-700 dark:text-slate-200">{question.answer}</p>
           </div>
 
           <div className="mt-4">
-            <div className="flex items-center gap-2 text-amber-400 mb-2">
+            <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400 mb-2">
               <Lightbulb className="w-4 h-4" />
               <span className="font-medium text-sm">Points clés à retenir</span>
             </div>
             <ul className="space-y-1">
               {question.keyPoints.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                <li key={idx} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
                   <span className="text-amber-500 mt-1">•</span>
                   {point}
                 </li>
@@ -383,7 +383,7 @@ function QuestionCard({
           {lessonTracks[question.lessonId] && (
             <Link
               href={`/lecons/${lessonTracks[question.lessonId]}/${question.lessonId}`}
-              className="mt-4 inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300"
             >
               <BookOpen className="w-4 h-4" />
               Revoir la leçon

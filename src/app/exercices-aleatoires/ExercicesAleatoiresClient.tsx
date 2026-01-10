@@ -143,13 +143,13 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-900 p-6">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 p-6">
         <div className="max-w-4xl mx-auto">
           <div className="animate-pulse">
-            <div className="h-10 bg-slate-800 rounded w-1/2 mb-6"></div>
+            <div className="h-10 bg-slate-200 dark:bg-slate-800 rounded w-1/2 mb-6"></div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {[1, 2, 3, 4].map(i => (
-                <div key={i} className="h-20 bg-slate-800 rounded-lg"></div>
+                <div key={i} className="h-20 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
               ))}
             </div>
           </div>
@@ -159,40 +159,40 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-900 to-indigo-900 py-8 px-6">
+      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-900 dark:to-indigo-900 py-8 px-6">
         <div className="max-w-4xl mx-auto">
           {/* Lien retour à la leçon */}
           {activeFilter && lessonTracks[activeFilter] && (
             <Link
               href={`/lecons/${lessonTracks[activeFilter]}/${activeFilter}`}
-              className="inline-flex items-center gap-2 text-purple-300 hover:text-white mb-4 transition-colors"
+              className="inline-flex items-center gap-2 text-purple-200 dark:text-purple-300 hover:text-white mb-4 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Retour à la leçon {lessonNames[activeFilter] || activeFilter}
             </Link>
           )}
           <div className="flex items-center gap-3 mb-2">
-            <Shuffle className="w-8 h-8 text-purple-400" />
+            <Shuffle className="w-8 h-8 text-purple-200 dark:text-purple-400" />
             <h1 className="text-3xl font-bold text-white">Exercices Aléatoires</h1>
           </div>
-          <p className="text-purple-200">
+          <p className="text-purple-100 dark:text-purple-200">
             Entraînement infini avec des valeurs qui changent à chaque fois
           </p>
 
           {/* Stats */}
           <div className="flex gap-6 mt-4">
             <div className="bg-white/10 rounded-lg px-4 py-2">
-              <p className="text-sm text-purple-300">Templates disponibles</p>
+              <p className="text-sm text-purple-200 dark:text-purple-300">Templates disponibles</p>
               <p className="text-2xl font-bold text-white">{templates.length}</p>
             </div>
             <div className="bg-white/10 rounded-lg px-4 py-2">
-              <p className="text-sm text-purple-300">Chapitres</p>
+              <p className="text-sm text-purple-200 dark:text-purple-300">Chapitres</p>
               <p className="text-2xl font-bold text-white">{uniqueLessons.length}</p>
             </div>
             <div className="bg-white/10 rounded-lg px-4 py-2">
-              <p className="text-sm text-purple-300">Complétés (session)</p>
+              <p className="text-sm text-purple-200 dark:text-purple-300">Complétés (session)</p>
               <p className="text-2xl font-bold text-white">{completedCount}</p>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 !interleavingMode
                   ? 'bg-purple-600 text-white'
-                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
               }`}
             >
               <Filter className="w-4 h-4" />
@@ -225,7 +225,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 interleavingMode
                   ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
-                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
               }`}
             >
               <Layers className="w-4 h-4" />
@@ -235,8 +235,8 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
           </div>
 
           {interleavingMode && (
-            <div className="bg-orange-900/20 border border-orange-700/50 rounded-lg p-4 mb-4">
-              <p className="text-sm text-orange-200 mb-3">
+            <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700/50 rounded-lg p-4 mb-4">
+              <p className="text-sm text-orange-700 dark:text-orange-200 mb-3">
                 <strong>Interleaving :</strong> Sélectionne plusieurs chapitres pour mélanger les exercices.
                 Plus efficace pour la mémorisation à long terme !
               </p>
@@ -246,7 +246,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                     selectedLessons.length === 0
                       ? 'bg-orange-600 text-white'
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                   }`}
                 >
                   Tous les chapitres
@@ -258,7 +258,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
                     className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                       selectedLessons.includes(lessonId)
                         ? `${trackColors[lessonId] || 'bg-orange-600'} text-white ring-2 ring-white/30`
-                        : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                        : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                     }`}
                   >
                     {lessonNames[lessonId] || lessonId}
@@ -266,7 +266,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
                 ))}
               </div>
               {selectedLessons.length > 1 && (
-                <p className="text-xs text-orange-300 mt-2">
+                <p className="text-xs text-orange-600 dark:text-orange-300 mt-2">
                   {selectedLessons.length} chapitres sélectionnés • {filteredTemplates.length} exercices disponibles
                 </p>
               )}
@@ -277,7 +277,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
             <>
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center gap-2 text-slate-300 hover:text-white mb-3"
+                className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white mb-3"
               >
                 <Filter className="w-4 h-4" />
                 Filtrer par chapitre
@@ -291,7 +291,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
                     className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                       activeFilter === null
                         ? 'bg-purple-600 text-white'
-                        : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                        : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                     }`}
                   >
                     Tous
@@ -303,7 +303,7 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                         activeFilter === lessonId
                           ? `${trackColors[lessonId] || 'bg-purple-600'} text-white`
-                          : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                          : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                       }`}
                     >
                       {lessonNames[lessonId] || lessonId}
@@ -319,10 +319,10 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
         <div className="flex justify-center mb-8">
           <button
             onClick={handleRandomExercise}
-            className={`flex items-center gap-3 px-6 py-3 rounded-xl text-lg font-medium shadow-lg transition-all hover:scale-105 ${
+            className={`flex items-center gap-3 px-6 py-3 rounded-xl text-lg font-medium shadow-lg transition-all hover:scale-105 text-white ${
               interleavingMode
-                ? 'bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-400 hover:to-pink-400 shadow-orange-900/50'
-                : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 shadow-purple-900/50'
+                ? 'bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-400 hover:to-pink-400 shadow-orange-500/25 dark:shadow-orange-900/50'
+                : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 shadow-purple-500/25 dark:shadow-purple-900/50'
             }`}
           >
             {interleavingMode ? <Layers className="w-6 h-6" /> : <Zap className="w-6 h-6" />}
@@ -349,10 +349,10 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
 
         {/* Liste des templates disponibles */}
         <div>
-          <h2 className="text-xl font-semibold text-white mb-4">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
             Types d'exercices disponibles
             {activeFilter && (
-              <span className="text-slate-400 text-base font-normal ml-2">
+              <span className="text-slate-500 dark:text-slate-400 text-base font-normal ml-2">
                 ({lessonNames[activeFilter] || activeFilter})
               </span>
             )}
@@ -365,27 +365,27 @@ export default function ExercicesAleatoiresClient({ initialLesson }: Props) {
                 onClick={() => setSelectedTemplate(template)}
                 className={`text-left p-4 rounded-lg border transition-all hover:scale-[1.01] ${
                   selectedTemplate?.id === template.id
-                    ? 'bg-purple-900/50 border-purple-500'
-                    : 'bg-slate-800 border-slate-700 hover:border-slate-500'
+                    ? 'bg-purple-100 dark:bg-purple-900/50 border-purple-500'
+                    : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500'
                 }`}
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="font-medium text-white">{template.title}</h3>
-                    <p className="text-sm text-slate-400 mt-1">{template.description}</p>
+                    <h3 className="font-medium text-slate-900 dark:text-white">{template.title}</h3>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{template.description}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className={`px-2 py-0.5 rounded text-xs ${trackColors[template.lessonId] || 'bg-slate-600'} text-white`}>
+                    <span className={`px-2 py-0.5 rounded text-xs ${trackColors[template.lessonId] || 'bg-slate-500 dark:bg-slate-600'} text-white`}>
                       {lessonNames[template.lessonId] || template.lessonId}
                     </span>
-                    <span className="px-2 py-0.5 rounded text-xs bg-slate-600 text-slate-300">
+                    <span className="px-2 py-0.5 rounded text-xs bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300">
                       Niv. {template.difficulty}
                     </span>
                   </div>
                 </div>
                 <div className="flex gap-2 mt-2">
                   {template.tags.slice(0, 3).map(tag => (
-                    <span key={tag} className="text-xs text-slate-500">
+                    <span key={tag} className="text-xs text-slate-400 dark:text-slate-500">
                       #{tag}
                     </span>
                   ))}
