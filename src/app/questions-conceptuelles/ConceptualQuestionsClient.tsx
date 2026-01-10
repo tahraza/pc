@@ -62,12 +62,14 @@ export default function ConceptualQuestionsClient() {
   const [showFilters, setShowFilters] = useState(false)
   const [randomMode, setRandomMode] = useState(false)
   const [currentRandomIndex, setCurrentRandomIndex] = useState(0)
+  const [shuffledQuestions, setShuffledQuestions] = useState<ConceptualQuestion[]>([])
 
   useEffect(() => {
     fetch('/api/conceptual-questions')
       .then(res => res.json())
       .then(data => {
         setQuestions(data)
+        setShuffledQuestions([...data].sort(() => Math.random() - 0.5))
         setLoading(false)
       })
       .catch(err => {
@@ -85,16 +87,24 @@ export default function ConceptualQuestionsClient() {
     return true
   })
 
-  const shuffledQuestions = randomMode
-    ? [...filteredQuestions].sort(() => Math.random() - 0.5)
-    : filteredQuestions
+  const displayedRandomQuestions = shuffledQuestions.filter(q => {
+    if (filterLesson && q.lessonId !== filterLesson) return false
+    if (filterType && q.type !== filterType) return false
+    return true
+  })
 
   const handleNextRandom = () => {
     setExpandedId(null)
-    setCurrentRandomIndex(prev => (prev + 1) % shuffledQuestions.length)
+    setCurrentRandomIndex(prev => (prev + 1) % displayedRandomQuestions.length)
   }
 
-  const currentQuestion = randomMode ? shuffledQuestions[currentRandomIndex] : null
+  const handleShuffle = () => {
+    setShuffledQuestions([...questions].sort(() => Math.random() - 0.5))
+    setCurrentRandomIndex(0)
+    setExpandedId(null)
+  }
+
+  const currentQuestion = randomMode ? displayedRandomQuestions[currentRandomIndex] : null
 
   if (loading) {
     return (
@@ -252,17 +262,23 @@ export default function ConceptualQuestionsClient() {
               expanded={expandedId === currentQuestion.id}
               onToggle={() => setExpandedId(expandedId === currentQuestion.id ? null : currentQuestion.id)}
             />
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center gap-3 mt-4">
+              <button
+                onClick={handleShuffle}
+                className="flex items-center gap-2 px-4 py-3 bg-slate-700 hover:bg-slate-600 rounded-xl font-medium transition-all"
+              >
+                <Shuffle className="w-5 h-5" />
+                Mélanger
+              </button>
               <button
                 onClick={handleNextRandom}
                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-medium hover:from-purple-500 hover:to-pink-500 transition-all"
               >
-                <Shuffle className="w-5 h-5" />
                 Question suivante
               </button>
             </div>
             <p className="text-center text-slate-400 text-sm mt-2">
-              Question {currentRandomIndex + 1} / {shuffledQuestions.length}
+              Question {currentRandomIndex + 1} / {displayedRandomQuestions.length}
             </p>
           </div>
         )}
