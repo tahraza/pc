@@ -54,15 +54,18 @@ function evaluateExpression(
   }
 }
 
-// Formate un nombre pour l'affichage
+// Formate un nombre pour l'affichage avec notation scientifique LaTeX
 function formatNumber(value: number, maxDecimals: number = 3): string {
   if (Number.isInteger(value)) {
     return value.toString()
   }
 
-  // Gestion des très grands ou très petits nombres
+  // Gestion des très grands ou très petits nombres - format LaTeX
   if (Math.abs(value) >= 1e6 || (Math.abs(value) < 1e-3 && value !== 0)) {
-    return value.toExponential(2)
+    const exp = Math.floor(Math.log10(Math.abs(value)))
+    const mantissa = value / Math.pow(10, exp)
+    const formattedMantissa = mantissa.toFixed(2).replace(/\.?0+$/, '')
+    return `${formattedMantissa} \\times 10^{${exp}}`
   }
 
   // Arrondir à maxDecimals décimales significatives

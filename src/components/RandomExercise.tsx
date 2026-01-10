@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { RandomExerciseTemplate, GeneratedExercise } from '@/types'
 import { generateExercise } from '@/lib/random-exercise-generator'
 import { RefreshCw, Eye, EyeOff, Lightbulb, CheckCircle } from 'lucide-react'
+import MathText from './MathText'
 
 interface RandomExerciseProps {
   template: RandomExerciseTemplate
@@ -103,7 +104,9 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
       {/* Énoncé */}
       <div className="p-4 border-b border-slate-700">
         <h4 className="text-sm font-medium text-slate-400 mb-2">Énoncé</h4>
-        <p className="text-white whitespace-pre-line">{exercise.statement}</p>
+        <div className="text-white whitespace-pre-line">
+          <MathText text={exercise.statement} />
+        </div>
       </div>
 
       {/* Indices */}
@@ -183,13 +186,9 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
               <h5 className="font-medium text-purple-400 mb-2">
                 {exercise.solutionSteps[currentStep].title}
               </h5>
-              <div
-                className="text-white mb-2"
-                dangerouslySetInnerHTML={{
-                  __html: exercise.solutionSteps[currentStep].content
-                    .replace(/\$([^$]+)\$/g, '<span class="font-mono text-cyan-400">$1</span>')
-                }}
-              />
+              <div className="text-white mb-2">
+                <MathText text={exercise.solutionSteps[currentStep].content} />
+              </div>
               {exercise.solutionSteps[currentStep].explanation && (
                 <p className="text-sm text-slate-400 italic">
                   💡 {exercise.solutionSteps[currentStep].explanation}
@@ -218,10 +217,12 @@ export function RandomExercise({ template, onComplete }: RandomExerciseProps) {
             {isCompleted && (
               <div className="mt-4 p-4 bg-green-900/30 border border-green-700 rounded-lg">
                 <h5 className="font-medium text-green-400 mb-1">Réponse finale</h5>
-                <p className="text-white font-mono">{exercise.finalAnswer}</p>
-                <p className="text-sm text-slate-400 mt-2">
-                  <strong>Méthode:</strong> {exercise.method}
-                </p>
+                <div className="text-white">
+                  <MathText text={exercise.finalAnswer} />
+                </div>
+                <div className="text-sm text-slate-400 mt-2">
+                  <strong>Méthode:</strong> <MathText text={exercise.method} />
+                </div>
               </div>
             )}
           </div>
