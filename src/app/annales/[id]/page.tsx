@@ -5,102 +5,54 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
-  Award,
   Calendar,
-  ChevronDown,
+  Download,
+  FileText,
+  CheckCircle,
+  MapPin,
+  ChevronLeft,
   ChevronRight,
-  Clock,
-  Eye,
-  EyeOff,
-  CheckCircle2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import MathText from '@/components/MathText'
-import { useStore } from '@/store/useStore'
-import { useGamificationStore } from '@/stores/gamificationStore'
-import annalesData from '../../../../content/annales.json'
-
-interface Question {
-  number: string
-  text: string
-  points: number
-  answer: string
-}
-
-interface Part {
-  id: string
-  title: string
-  questions: Question[]
-}
+import PDFViewer from '@/components/PDFViewer'
+import annalesData from '../../../../content/annales-pdf.json'
 
 interface Annale {
   id: string
   year: number
+  sessionId: string
   session: string
-  exerciseNumber: number
-  title: string
-  subject: string
-  themes: string[]
-  points: number
-  duration: number
-  difficulty: string
-  description: string
-  parts: Part[]
+  number: number
+  sujetFile: string | null
+  corrigeFile: string | null
+  hasCorrige: boolean
+  sujetUrl: string | null
+  corrigeUrl: string | null
 }
 
 export default function AnnalePage() {
   const params = useParams()
   const [mounted, setMounted] = useState(false)
-  const [expandedParts, setExpandedParts] = useState<string[]>([])
-  const [shownAnswers, setShownAnswers] = useState<string[]>([])
-
-  const { exerciseProgress, markExerciseCompleted } = useStore()
-  const { recordExerciseCompleted } = useGamificationStore()
+  const [activeTab, setActiveTab] = useState<'sujet' | 'corrige'>('sujet')
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
   const annaleId = params.id as string
-  const annale = annalesData.annales.find((a) => a.id === annaleId) as Annale | undefined
+  const annales = annalesData.annales as Annale[]
+  const annale = annales.find((a) => a.id === annaleId)
 
-  // Vérifier si l'annale est déjà complétée
-  const isCompleted = exerciseProgress[annaleId]?.status === 'completed'
+  // Find prev/next annales from same session
+  const sameSession = annales.filter(a => a.session === annale?.session && a.year === annale?.year)
+  const currentIndex = sameSession.findIndex(a => a.id === annaleId)
+  const prevAnnale = currentIndex > 0 ? sameSession[currentIndex - 1] : null
+  const nextAnnale = currentIndex < sameSession.length - 1 ? sameSession[currentIndex + 1] : null
 
-  const handleMarkCompleted = () => {
-    if (!isCompleted) {
-      recordExerciseCompleted(annaleId, true)
-      markExerciseCompleted(annaleId, annale?.subject || 'physique')
-    }
-  }
-
-  const togglePart = (partId: string) => {
-    setExpandedParts(prev =>
-      prev.includes(partId)
-        ? prev.filter(p => p !== partId)
-        : [...prev, partId]
-    )
-  }
-
-  const toggleAnswer = (questionId: string) => {
-    setShownAnswers(prev =>
-      prev.includes(questionId)
-        ? prev.filter(q => q !== questionId)
-        : [...prev, questionId]
-    )
-  }
-
-  const showAllAnswers = () => {
-    const allQuestionIds = annale?.parts.flatMap(p =>
-      p.questions.map(q => `${p.id}-${q.number}`)
-    ) || []
-    setShownAnswers(allQuestionIds)
-    setExpandedParts(annale?.parts.map(p => p.id) || [])
-  }
-
-  const hideAllAnswers = () => {
-    setShownAnswers([])
-  }
+  // Other annales from same year
+  const otherAnnales = annales
+    .filter(a => a.year === annale?.year && a.id !== annaleId)
+    .slice(0, 6)
 
   if (!mounted) {
     return (
@@ -115,7 +67,8 @@ export default function AnnalePage() {
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-xl border border-slate-200 bg-white p-12 text-center dark:border-slate-700 dark:bg-slate-800">
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+            <FileText className="mx-auto h-12 w-12 text-slate-400" />
+            <h2 className="mt-4 text-xl font-semibold text-slate-900 dark:text-slate-100">
               Annale non trouvée
             </h2>
             <p className="mt-2 text-slate-600 dark:text-slate-400">
@@ -136,9 +89,9 @@ export default function AnnalePage() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Navigation */}
-        <div className="mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <Link
             href="/annales"
             className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
@@ -146,221 +99,183 @@ export default function AnnalePage() {
             <ArrowLeft className="h-4 w-4" />
             Retour aux annales
           </Link>
+
+          {/* Prev/Next navigation */}
+          <div className="flex items-center gap-2">
+            {prevAnnale ? (
+              <Link
+                href={`/annales/${prevAnnale.id}`}
+                className="flex items-center gap-1 rounded-lg bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                Sujet {prevAnnale.number}
+              </Link>
+            ) : (
+              <span className="flex items-center gap-1 rounded-lg bg-slate-50 px-3 py-1.5 text-sm text-slate-400 dark:bg-slate-800/50 dark:text-slate-600">
+                <ChevronLeft className="h-4 w-4" />
+                Sujet préc.
+              </span>
+            )}
+            {nextAnnale ? (
+              <Link
+                href={`/annales/${nextAnnale.id}`}
+                className="flex items-center gap-1 rounded-lg bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+              >
+                Sujet {nextAnnale.number}
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            ) : (
+              <span className="flex items-center gap-1 rounded-lg bg-slate-50 px-3 py-1.5 text-sm text-slate-400 dark:bg-slate-800/50 dark:text-slate-600">
+                Sujet suiv.
+                <ChevronRight className="h-4 w-4" />
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Header */}
-        <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+        <div className="mb-6 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="flex items-center gap-1 rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
               <Calendar className="h-4 w-4" />
               Bac {annale.year}
             </span>
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+            <span className="flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+              <MapPin className="h-4 w-4" />
               {annale.session}
             </span>
-            <span className={cn(
-              'rounded-full px-3 py-1 text-sm font-medium',
-              annale.subject === 'physique'
-                ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
-                : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300'
-            )}>
-              {annale.subject === 'physique' ? 'Physique' : 'Chimie'}
+            <span className="rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700 dark:bg-primary-900/30 dark:text-primary-300">
+              Sujet {annale.number}
             </span>
-          </div>
-
-          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100">
-            Exercice {annale.exerciseNumber} : {annale.title}
-          </h1>
-
-          <p className="mb-4 text-slate-600 dark:text-slate-400">
-            {annale.description}
-          </p>
-
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                <Award className="h-4 w-4" />
-                {annale.points} points
-              </div>
-              <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                <Clock className="h-4 w-4" />
-                ~{annale.duration} minutes
-              </div>
-            </div>
-            {isCompleted ? (
-              <span className="flex items-center gap-2 rounded-full bg-success-100 px-4 py-2 text-sm font-semibold text-success-700 dark:bg-success-900/30 dark:text-success-300">
-                <CheckCircle2 className="h-4 w-4" />
-                Terminé
+            {annale.hasCorrige && (
+              <span className="flex items-center gap-1 rounded-full bg-success-100 px-3 py-1 text-sm font-medium text-success-700 dark:bg-success-900/30 dark:text-success-300">
+                <CheckCircle className="h-4 w-4" />
+                Corrigé disponible
               </span>
-            ) : (
-              <button
-                onClick={handleMarkCompleted}
-                className="flex items-center gap-2 rounded-lg bg-success-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-success-700"
-              >
-                <CheckCircle2 className="h-4 w-4" />
-                Marquer comme terminé
-              </button>
             )}
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-1">
-            {annale.themes.map(theme => (
-              <span
-                key={theme}
-                className="rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-400"
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            {annale.session} {annale.year} - Sujet {annale.number}
+          </h1>
+
+          {/* Download buttons */}
+          <div className="mt-4 flex flex-wrap gap-3">
+            {annale.sujetUrl && (
+              <a
+                href={annale.sujetUrl}
+                download
+                className="flex items-center gap-2 rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-700"
               >
-                {theme}
-              </span>
-            ))}
+                <Download className="h-4 w-4" />
+                Télécharger le sujet
+              </a>
+            )}
+            {annale.corrigeUrl && (
+              <a
+                href={annale.corrigeUrl}
+                download
+                className="flex items-center gap-2 rounded-lg bg-success-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-success-700"
+              >
+                <Download className="h-4 w-4" />
+                Télécharger le corrigé
+              </a>
+            )}
           </div>
         </div>
 
-        {/* Show/Hide all answers */}
-        <div className="mb-6 flex gap-2">
+        {/* Tabs */}
+        <div className="mb-4 flex gap-2">
           <button
-            onClick={showAllAnswers}
-            className="flex items-center gap-2 rounded-lg bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-200 dark:bg-primary-900/30 dark:text-primary-300 dark:hover:bg-primary-900/50"
+            onClick={() => setActiveTab('sujet')}
+            className={cn(
+              'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors',
+              activeTab === 'sujet'
+                ? 'bg-amber-600 text-white'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+            )}
           >
-            <Eye className="h-4 w-4" />
-            Voir toutes les réponses
+            <FileText className="h-4 w-4" />
+            Sujet
           </button>
-          <button
-            onClick={hideAllAnswers}
-            className="flex items-center gap-2 rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
-          >
-            <EyeOff className="h-4 w-4" />
-            Cacher les réponses
-          </button>
+          {annale.hasCorrige && (
+            <button
+              onClick={() => setActiveTab('corrige')}
+              className={cn(
+                'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors',
+                activeTab === 'corrige'
+                  ? 'bg-success-600 text-white'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
+              )}
+            >
+              <CheckCircle className="h-4 w-4" />
+              Corrigé
+            </button>
+          )}
         </div>
 
-        {/* Parts and questions */}
-        <div className="space-y-4">
-          {annale.parts.map((part) => {
-            const isExpanded = expandedParts.includes(part.id)
+        {/* PDF Viewer */}
+        {activeTab === 'sujet' && annale.sujetUrl && (
+          <PDFViewer
+            url={annale.sujetUrl}
+            title={`Sujet - ${annale.session} ${annale.year}`}
+          />
+        )}
+        {activeTab === 'corrige' && annale.corrigeUrl && (
+          <PDFViewer
+            url={annale.corrigeUrl}
+            title={`Corrigé - ${annale.session} ${annale.year}`}
+          />
+        )}
 
-            return (
-              <div
-                key={part.id}
-                className="rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800"
-              >
-                {/* Part header */}
-                <button
-                  onClick={() => togglePart(part.id)}
-                  className="flex w-full items-center justify-between p-5"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
-                      {part.id}
-                    </span>
-                    <span className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                      {part.title}
-                    </span>
-                  </div>
-                  {isExpanded ? (
-                    <ChevronDown className="h-5 w-5 text-slate-400" />
-                  ) : (
-                    <ChevronRight className="h-5 w-5 text-slate-400" />
-                  )}
-                </button>
+        {/* No corrigé message */}
+        {activeTab === 'corrige' && !annale.corrigeUrl && (
+          <div className="rounded-xl border border-slate-200 bg-white p-12 text-center dark:border-slate-700 dark:bg-slate-800">
+            <FileText className="mx-auto h-12 w-12 text-slate-400" />
+            <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-slate-100">
+              Corrigé non disponible
+            </h3>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">
+              Le corrigé de ce sujet n'est pas encore disponible.
+            </p>
+          </div>
+        )}
 
-                {/* Questions */}
-                {isExpanded && (
-                  <div className="border-t border-slate-200 p-5 dark:border-slate-700">
-                    <div className="space-y-6">
-                      {part.questions.map((question) => {
-                        const questionId = `${part.id}-${question.number}`
-                        const isAnswerShown = shownAnswers.includes(questionId)
-
-                        return (
-                          <div key={question.number} className="space-y-3">
-                            {/* Question */}
-                            <div className="flex gap-3">
-                              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-600 dark:bg-slate-700 dark:text-slate-300">
-                                {question.number}
-                              </span>
-                              <div className="flex-1">
-                                <div className="flex items-start justify-between gap-2">
-                                  <p className="text-slate-700 dark:text-slate-300">
-                                    <MathText text={question.text} />
-                                  </p>
-                                  <span className="flex-shrink-0 rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-400">
-                                    {question.points} pt{question.points > 1 ? 's' : ''}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Answer toggle */}
-                            {!isAnswerShown ? (
-                              <button
-                                onClick={() => toggleAnswer(questionId)}
-                                className="ml-9 flex items-center gap-2 rounded-lg bg-primary-50 px-3 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-100 dark:bg-primary-900/20 dark:text-primary-300 dark:hover:bg-primary-900/30"
-                              >
-                                <Eye className="h-4 w-4" />
-                                Voir la réponse
-                              </button>
-                            ) : (
-                              <div className="ml-9 rounded-lg border border-success-200 bg-success-50 p-4 dark:border-success-800 dark:bg-success-900/20">
-                                <div className="mb-2 flex items-center gap-2 text-success-700 dark:text-success-300">
-                                  <CheckCircle2 className="h-4 w-4" />
-                                  <span className="font-medium">Correction</span>
-                                  <button
-                                    onClick={() => toggleAnswer(questionId)}
-                                    className="ml-auto text-xs text-success-600 hover:text-success-700 dark:text-success-400"
-                                  >
-                                    Cacher
-                                  </button>
-                                </div>
-                                <div className="text-sm text-slate-700 dark:text-slate-300">
-                                  <MathText text={question.answer} />
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        )
-                      })}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Navigation to other annales */}
-        <div className="mt-8 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
-          <h3 className="mb-4 font-semibold text-slate-900 dark:text-slate-100">
-            Autres annales de {annale.year}
-          </h3>
-          <div className="space-y-2">
-            {annalesData.annales
-              .filter((a) => a.year === annale.year && a.id !== annale.id)
-              .slice(0, 3)
-              .map((a) => (
+        {/* Other annales */}
+        {otherAnnales.length > 0 && (
+          <div className="mt-8 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+            <h3 className="mb-4 font-semibold text-slate-900 dark:text-slate-100">
+              Autres sujets de {annale.year}
+            </h3>
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {otherAnnales.map((a) => (
                 <Link
                   key={a.id}
                   href={`/annales/${a.id}`}
                   className="flex items-center justify-between rounded-lg bg-slate-50 p-3 transition-colors hover:bg-slate-100 dark:bg-slate-800/50 dark:hover:bg-slate-700/50"
                 >
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                    Ex. {a.exerciseNumber} : {a.title}
-                  </span>
-                  <span className={cn(
-                    'text-xs',
-                    a.subject === 'physique' ? 'text-primary-600 dark:text-primary-400' : 'text-emerald-600 dark:text-emerald-400'
-                  )}>
-                    {a.subject === 'physique' ? 'Physique' : 'Chimie'}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                      {a.session}
+                    </span>
+                    <span className="rounded bg-slate-200 px-1.5 py-0.5 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-400">
+                      #{a.number}
+                    </span>
+                  </div>
+                  {a.hasCorrige && (
+                    <CheckCircle className="h-4 w-4 text-success-600 dark:text-success-400" />
+                  )}
                 </Link>
               ))}
+            </div>
+            <Link
+              href="/annales"
+              className="mt-4 block text-center text-sm font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400"
+            >
+              Voir toutes les annales
+            </Link>
           </div>
-          <Link
-            href="/annales"
-            className="mt-4 block text-center text-sm font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400"
-          >
-            Voir toutes les annales
-          </Link>
-        </div>
+        )}
       </div>
     </div>
   )
